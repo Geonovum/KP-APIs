@@ -2,7 +2,7 @@ var respecConfig = {
   specStatus: "GN-BASIS",
   specType: "HR",
   pubDomain: "etc",
-  publishDate: "2017-12-13",
+  publishDate: "2018-06-15",
   editors: [
     {
       name: "Frank Terpstra",
@@ -15,10 +15,10 @@ var respecConfig = {
       companyURL: "http://www.organisatie.nl/",
     },
   ],
-  shortName: "Nederlands profiel OAuth 2.0",
+  shortName: "API strategie",
   subtitle: "Werkversie",
-  github: "https://github.com/Geonovum/KP-APIs-OAuthNL",
-  issueBase: "https://github.com/Geonovum/KP-APIs-OAuthNL/issues/",
+  github: "https://github.com/fterpstra/KP-APIs",
+  issueBase: "https://github.com/fterpstra/KP-APIs/issues/",
   localBiblio: {
     "OAuth2": {
       href: "https://tools.ietf.org/html/rfc6749",
