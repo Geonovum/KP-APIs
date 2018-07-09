@@ -11,7 +11,7 @@ Paul dam(bureau forum standaardisatie), Frank Terpstra(Geonovum), Peter Haasnoot
 Gestart wordt met een voorstel ronde. 
 
 ## Stand van zaken field lab data visibility
-Het opzetten van het fieldlab heeft langer geduurd dan verwacht. OP dit moment wordt met DSO Knooppunt, DSO Catalogus, Common Ground, gemeente Amsterdam data ingepland.
+Het opzetten van het fieldlab heeft langer geduurd dan verwacht. Op dit moment wordt met DSO Knooppunt, DSO Catalogus, Common Ground, gemeente Amsterdam data ingepland.
 
 ## Terugkoppeling vanuit kennisplatform APIs
 Mededeling door Frank Terpstra: Overige werkgroepen zijn op 26 april opgestart tijdens de startbijeenkomst. Meer informatie is te vinden in de nieuwsbrief:
@@ -80,7 +80,7 @@ Suggestie: Namespace aanmaken in subject.
 Han Zuidweg ligt procedure voor evaluatie OAuth door europese commissie toe. OAuth is bij de EU aangemeld door nederland als standaard. Dit is nodig om hem in aanbestedingen e.d. te mogen gebruiken. Op basis van een evaluatie rapport wordt aan experts gevraagd om commentaar. Het evaluatie rapport is bijgevoegd. WErkgroepleden zijn welkom om hun commmentaar op het evaluatie rapport aan te leveren bij Frank Terpstra.  
 
 ## Afsluiting
-Volgende bijeenkomst is gepland op .... 
+Volgende bijeenkomst zal worden ingepland op een vrijdag nadat het fieldlab datavisibility heeft plaatsgevonden 
 
 ## Actiepunten
 * Eelco Hotting: plaatjes op github zetten *open*
