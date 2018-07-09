@@ -17,8 +17,8 @@ var respecConfig = {
   ],
   shortName: "API strategie",
   subtitle: "Werkversie",
-  github: "https://github.com/fterpstra/KP-APIs",
-  issueBase: "https://github.com/fterpstra/KP-APIs/issues/",
+  github: "https://github.com/geonovum/KP-APIs",
+  issueBase: "https://github.com/geonovum/KP-APIs/issues/",
   localBiblio: {
     "OAuth2": {
       href: "https://tools.ietf.org/html/rfc6749",
