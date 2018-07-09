@@ -75,9 +75,12 @@ UUIDs betekenis kunnen in een dienstencatalogus van betekenis worden voorzien.
 Suggestie: Epic (european persistent identifier consortium), pURL voordeel het is persistent en te resolven via een catalogus en je hoeft het niet zelf te onderhouden.
 Er mag maar één subject in openidconnect. Welke is dat BSN? RSIN ?pseudoID herleidbaar naar meerdere?
 Suggestie: Namespace aanmaken in subject.
+Remco heeft een aantal spcifieke technische vragen. Deze zal hij nasturen en worden met het verslag gedeeld.
+https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20Authenticatie%20Autorisatie/Verslagen/vragen%20OpenIDConnect%20Logius.md
 
 ## OAuth evaluatie voor Europese Commissie
-Han Zuidweg ligt procedure voor evaluatie OAuth door europese commissie toe. OAuth is bij de EU aangemeld door nederland als standaard. Dit is nodig om hem in aanbestedingen e.d. te mogen gebruiken. Op basis van een evaluatie rapport wordt aan experts gevraagd om commentaar. Het evaluatie rapport is bijgevoegd. WErkgroepleden zijn welkom om hun commmentaar op het evaluatie rapport aan te leveren bij Frank Terpstra.  
+Han Zuidweg ligt procedure voor evaluatie OAuth door europese commissie toe. OAuth is bij de EU aangemeld door nederland als standaard. Dit is nodig om hem in aanbestedingen e.d. te mogen gebruiken. Op basis van een evaluatie rapport wordt aan experts gevraagd om commentaar. Het evaluatie rapport is te vinden in github https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20Authenticatie%20Autorisatie/Verslagen/601v1%20CAMSS%20FINALDRAFT%20REPORT_OAuth%202%200%20(IETF)%20For%20advice.docx
+. Werkgroepleden zijn welkom om hun commmentaar op het evaluatie rapport aan te leveren bij Frank Terpstra.  
 
 ## Afsluiting
 Volgende bijeenkomst zal worden ingepland op een vrijdag nadat het fieldlab datavisibility heeft plaatsgevonden 
