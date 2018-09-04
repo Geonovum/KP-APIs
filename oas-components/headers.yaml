@@ -1,0 +1,20 @@
+contentCrs:
+  description: CRS van de geometrie in de response body
+  schema:
+    type: string
+    enum:
+      - 'epsg:4326'
+      - 'epsg:28992'
+    default: 'epsg:4326'
+xPaginationPage:
+  description: 'Current page numer (pages are numbered, starting at 1)'
+  schema:
+    type: integer
+xPaginationLimit:
+  description: Number of object per page
+  schema:
+    type: integer
+xTotalCount:
+  description: Total number of results
+  schema:
+    type: integer
