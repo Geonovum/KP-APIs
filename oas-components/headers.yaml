@@ -1,5 +1,5 @@
 contentCrs:
-  description: CRSs van de geometrie in de response body
+  description: CRS van de geometrie in de response body
   schema:
     type: string
     enum:
