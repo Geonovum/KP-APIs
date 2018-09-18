@@ -10,11 +10,11 @@ HalCollectionLinks:
   properties:
     self:
       allOf: [$ref: '#/HalLink']
-      description: Absolute link naar huidige pagina
+      description: Absolute link naar huidige pagina.
     next:
       allOf: [$ref: '#/HalLink']
       description: Absolute link naar volgende pagina (niet aanwezig als er geen
-        volgende pagina is)
+        volgende pagina is).
 GeoJsonObject:
   type: object
   required:

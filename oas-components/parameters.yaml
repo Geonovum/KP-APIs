@@ -2,14 +2,14 @@ contentType:
   name: Content-Type
   in: header
   required: false
-  description: Media type van het request
+  description: Media type van het request.
   schema:
     type: string
 contentCrs:
   name: Content-Crs
   in: header
   required: false
-  description: Coordinaatreferentiesysteem van de meegegeven geometrie
+  description: CRS van de meegegeven geometrie.
   schema:
     type: string
     enum:
@@ -20,7 +20,7 @@ acceptCrs:
   name: Accept-Crs
   in: header
   required: false
-  description: Gewenste CRS van de coördinaten in de response
+  description: Gewenste CRS van de coördinaten in de response.
   schema:
     type: string
     enum:
