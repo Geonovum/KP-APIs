@@ -12,6 +12,12 @@
     application/problem+json:
       schema:
         $ref: 'errors.yaml#/403'
+'404':
+  description: Niet gevonden.
+  content:
+    application/problem+json:
+      schema:
+        $ref: 'errors.yaml#/404'
 '406':
   description: >-
     Not Acceptable. Je hebt waarschijnlijk een gewenst formaat met de
