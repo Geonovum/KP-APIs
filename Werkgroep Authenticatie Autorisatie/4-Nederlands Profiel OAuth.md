@@ -172,7 +172,7 @@ In de huidige versie van het Nederlandse profiel beperken we de grant types. Hie
 
 | Grant Type | Use-Case | Opmerkingen | Binnen scope profiel |
 | ---------- | -------- | ----------- | ----------- |
-| Authorization Code | Traditionele web applicaties die op een server draaien of mobiele applicatie die gebruik maken van "Proof key for Code Exchange" (PKCE) (RFC 7636) | | ja |
+| Authorization Code | Traditionele web applicaties die op een server draaien of mobiele applicatie die gebruik maken van "Proof key for Code Exchange" (PKCE) (RFC 7636) || ja |
 | implicit | Javascript gebaseerde Web applicaties die in de web browser van de gebruiker draaien | Geen client secret en geen refresh token, de client heeft toegang | ja |
 | Resource Owner Credentials | Zeer vertrouwde (native) applicaties | De client heeft hierbij toegang tot de credentials van de Resource Owner | nee |
 | Client Credentials | Machine-naar-machine communicatie | De Client is tevens de Resource Owner | nee |
@@ -259,12 +259,12 @@ Het Nederlands profiel OAuth vereist het toepassen van RSA 256 bit signing. Dit 
 
 NCSC [ICT-Beveiligingsrichtlijnen voor Webapplicaties](https://www.ncsc.nl/actueel/whitepapers/ict-beveiligingsrichtlijnen-voor-webapplicaties.html)
 
-* RFC 6749; The OAuth 2.0 Authorization Framework
-* RFC 6750; The OAuth 2.0 Authorization Framework: Bearer Token Usage
-* RFC 6819; OAuth 2.0 Threat Model and Security Considerations
-* RFC 7519; JSON Web Token (JWT)
-* RFC 7636; Proof Key for Code Exchange (PKCE) by OAuth Public Clients
-* RFC 7662; OAuth 2.0 Token Introspection
+* RFC 6749; The OAuth 2.0 Authorization Framework [[rfc6749]]
+* RFC 6750; The OAuth 2.0 Authorization Framework: Bearer Token Usage [[rfc6750]]
+* RFC 6819; OAuth 2.0 Threat Model and Security Considerations [[rfc6819]]
+* RFC 7519; JSON Web Token (JWT) [[rfc7519]]
+* RFC 7636; Proof Key for Code Exchange (PKCE) by OAuth Public Clients[[rfc7636]]
+* RFC 7662; OAuth 2.0 Token Introspection [[rfc7662]]
 
 De complete lijst van OAuth 2.0 RFC's https://datatracker.ietf.org/doc/search/?name=oauth&sort=&rfcs=on&activedrafts=on&by=group&group=
 
