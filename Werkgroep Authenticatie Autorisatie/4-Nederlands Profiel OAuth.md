@@ -1,6 +1,6 @@
 # Nederlands profiel OAuth 2.0
 
-## Inleding
+## Inleiding
 Dit hoofdstuk geeft een inleiding op het Nederlands profiel OAuth 
 
 ### Waarom deze standaard? 
@@ -160,7 +160,7 @@ Binnen het verkrijgen van autorisatie spelen de volgende onderwerpen:
 Deze interactie kent binnen RFC 6749 4 Grant Types:
 
 * Authorization Code Grant Type
-* Implicid Grant Type
+* implicit Grant Type
 * Client Cedentials Grant Type
 * Resource Owner Credentials Grant Type
 
@@ -168,20 +168,18 @@ Eigenlijk is het verversen van de grant d.m.v. een Refresh Token ook een grant t
 
 Welke Grant Type je kiest is afhankelijk van de Client en of er überhaupt sprake is van een Resource Owner.
 
-####### Keuze 1
+In de huidige versie van het Nederlandse profiel beperken we de grant types. Hieronder staan de grant types die onderkend worden binnen OAuth 2.0 en wordt aagegeven of ze binnen scope zijn op basis van de usecase zoals beschreven in het hoofdstuk usecases.
 
-Alle Grant types hebben een Use-Case, het heeft geen zin om Grant types weg te laten in het Nederlandse profiel.
-
-| Grant Type | Use-Case | Opmerkingen |
-| ---------- | -------- | ----------- |
-| Authorization Code | Traditionele web applicaties die op een server draaien of mobiele applicatie die gebruik maken van "Proof key for Code Exchange" (PKCE) (RFC 7636) | |
-| Implicid | Javascript gebaseerde Web applicaties die in de web browser van de gebruiker draaien | Geen client secret en geen refresh token, de client heeft toegang |
-| Resource Owner Credentials | Zeer vertrouwde (native) applicaties | De client heeft hierbij toegang tot de credentials van de Resource Owner |
-| Client Credentials | Machine-naar-machine communicatie | De Client is tevens de Resource Owner |
+| Grant Type | Use-Case | Opmerkingen | Binnen scope profiel |
+| ---------- | -------- | ----------- | ----------- |
+| Authorization Code | Traditionele web applicaties die op een server draaien of mobiele applicatie die gebruik maken van "Proof key for Code Exchange" (PKCE) (RFC 7636) | | ja |
+| implicit | Javascript gebaseerde Web applicaties die in de web browser van de gebruiker draaien | Geen client secret en geen refresh token, de client heeft toegang | ja |
+| Resource Owner Credentials | Zeer vertrouwde (native) applicaties | De client heeft hierbij toegang tot de credentials van de Resource Owner | nee |
+| Client Credentials | Machine-naar-machine communicatie | De Client is tevens de Resource Owner | nee |
 
 ####### Keuze 2
 
-Bij de Authorization Code Grant en de Implicid Grant wordt een optioneel de parameter 'state' als http query parameter gebruikt. Deze parameter wordt gebruikt om Cross Site Reqest Forgery CSRF tegen te gaan. Aangezien CSRF onderdeel is van een pas-to-of-leg-uit standaard stellen we het gebruik van de 'state' query parameter als verplicht.
+Bij de Authorization Code Grant en de implicit Grant wordt een optioneel de parameter 'state' als http query parameter gebruikt. Deze parameter wordt gebruikt om Cross Site Reqest Forgery CSRF tegen te gaan. Aangezien CSRF onderdeel is van een pas-to-of-leg-uit standaard stellen we het gebruik van de 'state' query parameter als verplicht.
 
 ###### Scopes
 
@@ -206,9 +204,7 @@ Een voorbeeld van de scopes gedefinieerd voor de Google Drive API v3:
 
 Het kan ook zijn dat er informatie is waar beperkingen op zitten of kosten aan zitten. In dat geval is het handig hier aparte scopes voor te definiëren. In overheidscontext kan dit bijvoorbeeld de toegang tot BSN nummers zijn.
 
-####### Keuze 3
-
-Het voorstel is om scope namen te hanteren zoals Google ze definieert. Dit is in de vorm van een URI.
+Het is een best practice om scope namen te hanteren zoals Google ze definieert. Dat wil zeggenin de vorm van een URI.
 
 ###### Tokens
 
@@ -217,18 +213,14 @@ Het technische resultaat van het verkrijgen van autorisatie is een JSON document
 * access_token; verplicht; het token waarmee toegang verkregen wordt tot de resource.
 * token_type; verplicht; zegt iets over het token en hoe het gebruikt moet worden. In de praktijk bevat token_type de string "bearer" gebruikt. Zie ook RFC 6750.
 * expires_in; geadviseerd; verplicht als het token maar een beperkte tijd geldig is. In de praktijk zien we hier vaak 3600 staan. De eenheid is in seconden.
-* refresh_token; optioneel; het token waarmee een nieuw token setje verkregen kan worden. Niet gebruiken bij Implicid Grant Type.
+* refresh_token; optioneel; het token waarmee een nieuw token setje verkregen kan worden. Niet gebruiken bij implicit Grant Type.
 * scope; optioneel als de door de Resource Owner toegekende scopes gelijk zijn als de gevraagde scopes. Anders verplicht.
 
 Het is mogelijk extra attributen aan deze lijst toe te voegen.
 
-####### Keuze 4
+Als best practice geldt 3600 seconden als expires_in parameter. Dit heeft geen interoperability impact. Op basis van data classificatie(en daarbij behorend beveligings niveau) kan er echter voor gekozen worden om hier van af te wijken.
 
-Adviseer 3600 seconden als expires_in parameter. Dit heeft geen interoperability impact.
-
-####### Keuze 5
-
-Adviseer geen zelf extra attributen in het autorisatie antwoord. Dit heeft geen interoperability impact.
+Het is best practice om in het (bij autorisatie verkregen) JSON document zelf geen extra attributen toe te voegen. Dit geeft de beste interoperabiliteit.
 
 ####### access_token
 
@@ -236,7 +228,7 @@ Voor de OAuth 2.0 standaard is het access_token niet meer dan een sleutel naar a
 
 ####### id_token
 
-OpenID Connect voegt indien gevraagd het id_token toe aan deze lijst. Het id_token is een RFC 7519 JWT.
+OpenID Connect voegt indien gevraagd het id_token toe aan deze lijst. Het id_token is een RFC 7519 JWT[[jwt]].
 OpenID Connect voegt naast het ID token het UserInfo Endpoint toe aan de Authorisation Server. Het UserInfo Endpoint is een standaard Resource Server die informatie, claims, verstrekt over de eindgebruiker.
 
 ####### refresh_token
@@ -250,24 +242,18 @@ De Resource Server gebruikt vervolgens het Access Token om de Authorozation Serv
 
 ##### Het ophalen van informatie behorende bij een access token (RFC 7662)
 
-Het ophalen van informatie behorende bij het access token is in RFC 7662 gestandaardiseerd waarmee Cloud dienst providers standaard OAuth 2.0 diensten kunnen aanbieden waarbij er een Token Introspection service is waar de Resource Server gegevens over een token kan ophalen.
+Het ophalen van informatie behorende bij het access token is in RFC 7662 [[introspection]] gestandaardiseerd waarmee Cloud dienst providers standaard OAuth 2.0 diensten kunnen aanbieden waarbij er een Token Introspection service is waar de Resource Server gegevens over een token kan ophalen.
 De Token Introspection service is een REST service waarbij de Resource Server met http basic of een Client Credentials Grant type de service benadert om de gegevens op te halen.
 
 In een modern applicatie landschap met microservices wordt het Access Token doorgegeven tussen services. Elke microservice zou dan d.m.v. Token Introspection de benodigde gegevens behorende bij het token moeten ophalen. Daarmee krijgt een Token Introspection service het vrij snel heel erg druk.
-Dit is de voornaamste reden waarom veel implementaties ervoor kiezen om het OAuth 2.0 Access Token van inhoud voorzien in de vorm van een RFC 7519 JSON Web Token (JWT).
+Dit is de voornaamste reden waarom veel implementaties ervoor kiezen om het OAuth 2.0 Access Token van inhoud voorzien in de vorm van een RFC 7519 JSON Web Token (JWT)[[jwt]].
 Deze JWT bevat alle benodigde informatie voor een microservice om fijnmazige autorisatie beslissingen te kunnen nemen, zonder dat daarvoor eerste informatie opgehaald hoeft te worden.
 
-###### Keuze 6
+Het Nederlands profiel OAuth Maakt gebruik van JWT's als Access Tokens. Dit vereist OpenID Connect core 1.0[[OIDcore]] . Dit heeft geen interoperability impact voor de Client.
 
-Maak gebruik van JWT's als Access Tokens. Dit vereist OpenID Connect core 1.0. Dit heeft geen interoperability impact voor de Client.
+JWT is bedoeld om zo compact mogelijk te zijn. Het is een best practice om er alleen die gegevens in te stoppen is die daadwerkelijk nodig zijn om een toegangsbesluit te kunnen nemen. Mochten er in een asynchroon afhandel proces adres of email gegevens van de Resource Owner nodig zijn, haal deze dan op op het moment dat ze nodig zijn.
 
-###### Keuze 7
-
-Een JWT is bedoeld om zo compact mogelijk te zijn, dus stop er alleen die gegevens is die daadwerkelijk nodig zijn om een toegangsbesluit te kunnen nemen. Mochten er in een asynchroon afhandel proces adres of email gegevens van de Resource Owner nodig zijn, haal deze dan op op het moment dat ze nodig zijn.
-
-###### Keuze 8
-
-Pas minimaal RSA 256 bit signing toe. Dit vereist OpenID Connect discovery 1.0. Dit heeft geen interoperability impact voor de Client.
+Het Nederlands profiel OAuth vereist het toepassen van RSA 256 bit signing. Dit vereist OpenID Connect discovery 1.0[[OIDdiscovery]]. Dit heeft geen interoperability impact voor de Client.
 
 ### Referenties
 
