@@ -119,7 +119,7 @@ Dit wordt gedaan door de resources als een komma's gescheiden lijst te specifice
 
 Dit levert het volgende resultaat op:
 
-```json
+```JSON
 {
   "id": "https: //.../api/register/v1/aanvragen/12",
   "naam": "Mijn dakkapel",
