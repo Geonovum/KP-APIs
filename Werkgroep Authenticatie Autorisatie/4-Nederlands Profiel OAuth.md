@@ -46,7 +46,7 @@ aanmerking komt.
 
 ## Usecases
  <figure id='authorization_code'>
-	<img src='media/use_case4_authorization_code' width="600" />
+	<img src='/Werkgroep Authenticatie Autorisatie/media/use_case4_authorization_code' width="600" />
 	<figcaption>Use case Authorization code flow</figcaption>
  </figure>
 
