@@ -108,5 +108,13 @@ var respecConfig = {
       date: "October 5 2018",
       publisher: "OpenID foundation",
     },
+	"OIDdiscovery": {
+      href: "https://openid.net/specs/openid-connect-discovery-1_0.html",
+      title:
+        "OpenID Connect Discovery 1.0",
+      authors: ["N. Sakimura, J. Bradley, M. Jones, E. Jay"],
+      date: "November 8 2014",
+      publisher: "OpenID foundation",
+    },
   },
 };
