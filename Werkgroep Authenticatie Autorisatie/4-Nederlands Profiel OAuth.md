@@ -228,7 +228,7 @@ Voor de OAuth 2.0 standaard is het access_token niet meer dan een sleutel naar a
 
 ####### id_token
 
-OpenID Connect voegt indien gevraagd het id_token toe aan deze lijst. Het id_token is een RFC 7519 JWT[[jwt]].
+OpenID Connect voegt indien gevraagd het id_token toe aan deze lijst. Het id_token is een RFC 7519 JWT[[!rfc7519]].
 OpenID Connect voegt naast het ID token het UserInfo Endpoint toe aan de Authorisation Server. Het UserInfo Endpoint is een standaard Resource Server die informatie, claims, verstrekt over de eindgebruiker.
 
 ####### refresh_token
