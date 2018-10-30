@@ -10,9 +10,9 @@ var respecConfig = {
       companyURL: "http://www.geonovum.nl/",
     },
     {
-      name: "auteur 2",
-      company: "organisatie",
-      companyURL: "http://www.organisatie.nl/",
+      name: "Jan van Gelder",
+      company: "Geonovum",
+      companyURL: "http://www.Geonovum.nl/",
     },
   ],
   shortName: "API strategie",
