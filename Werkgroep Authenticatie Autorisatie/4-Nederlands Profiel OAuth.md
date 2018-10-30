@@ -1,30 +1,32 @@
-# Inleiding 
+# Nederlands profiel OAuth 2.0
+
+## Inleding
 Dit hoofdstuk geeft een inleiding op het Nederlands profiel OAuth 
 
-## Waarom deze standaard? 
+### Waarom deze standaard? 
 
-## Leeswijzer 
+### Leeswijzer 
 Dit document beschrijft het Nederlands profiel op de internationale OAuth 2.0 standaard [[OAuth2]].
 
-## Relatie met andere Nationale standaarden 
+### Relatie met andere Nationale standaarden 
 
-## Relatie met Internationale standaard OAuth 2.0
+### Relatie met Internationale standaard OAuth 2.0
 
-# Uitgangspunten 
+## Uitgangspunten 
 
 Dit hoofdstuk beschrijft de uitgangspunten voor het Nederlands profiel OAuth. 
 
-## Expert advies OAuth forum standaardisatie 
+### Expert advies OAuth forum standaardisatie 
 
 Het opstellen van deze standaard is voortgekomen uit het Expert advies OAuth [[Expert]]. Daarin wordt aangeraden eerst een nederlands profiel op stellen alvorens OAuth op de pas toe of leg uit lijst van het forum standaardisatie te plaatsen.
 
-## Werkingsgebied standaard
+### Werkingsgebied standaard
 
 Als organisatorisch werkingsgebied wordt geadviseerd:
 Nederlandse overheden (Rijk, provincies, gemeenten en waterschappen)
 en instellingen uit de (semi-) publieke sector
 
-## Toepassingsgebied standaard
+### Toepassingsgebied standaard
 
 Als functioneel toepassingsgebied wordt voorgesteld:
 Het gebruik van OAuth 2.0 is verplicht voor applicaties waarbij gebruikers
@@ -34,7 +36,7 @@ gegevens via een RESTful API.
 Het gaat dan om een RESTful API waar de resource owner recht tot
 toegang heeft.
 
-## OpenID connect buiten scope
+### OpenID connect buiten scope
 
 de expertgroep is op 7 juli en op 22 september 2016 bijeengekomen
 om de standaarden, de aandachtspunten en openstaande vragen uit
@@ -42,10 +44,10 @@ het voorbereidingsdossier te bespreken. Daarbij is vastgesteld dat
 OpenID Connect niet voor opneming op de lijst open standaarden in
 aanmerking komt.
 
-# Usecases
+## Usecases
 Eerste versie van het hoofdstuk usecases met de aangeleverde usecases per deelnemer
 
-## Logius
+### Logius
 Hieronder even een hele kort overzicht van een paar aspecten voor de interfaces waar wij aan werken. Vanuit onze context gaan we hierbij alleen uit van use cases waarbij een burger/natuurlijk persoon zich richting een dienst (in het publieke domein) authenticeert. Use cases met bedrijven/organisaties/rechtspersonen, interne medewerkers e.d. zijn voor ons (nu) buiten scope.
 
 Use Cases
@@ -76,38 +78,38 @@ Benodigde specificaties
 *	bijbehorende processing rules
 *	metadata specificaties
  
-## Kennisnet
+### Kennisnet
 De twee use cases van DSO, client credentials grant en OIDC met authorization code grant, sluiten hoog over aan bij use cases binnen de onderwijssector. Voor met name de onderwijssectoren  VO en MBO zorgt de federatieve hub van Kennisnet, Entree Federatie, er voor dat de authenticatiedienst van een onderwijsinstelling niet met alle service providers hoeft te koppelen, maar slechts één SAML koppeling heeft met Entree Federatie. Dezelfde constructie geldt voor een service provider. In de toekomstvisie toegang van de Educatieve contentketen wordt voorgesteld om een dergelijke centrale hub uit te breiden met standaarden als Oauth en OpenID Connect. Er zijn nog onderzoeksvragen die met de toekomstvisie samenhangen. Een relevante voor de werkgroep is of we het binnen de werkgroep het onderkennen van een federatieve hub wenselijk vinden (afwegen voor- en nadelen) en wat is mogelijk de impact op een bepaald profiel. 
 
-## Kamer van koophandel
+### Kamer van koophandel
 
-### Use Case 1 Inzien eigen overheidsgegevens 
+#### Use Case 1 Inzien eigen overheidsgegevens 
 
 Een persoon logt in bij een uitvoeringsinstantie en wil zijn eigen overheidsgegevens inzien. Voor het ophalen van eigen overheidsgegevens uit een basisregister is het nodig dat de gebruiker geïdentificeerd wordt zodat autorisatie en authenticatie mogelijk is. 
 
-### Use Case 2 Eigen overheidsgegevens hergebruiken
+#### Use Case 2 Eigen overheidsgegevens hergebruiken
 
 Een persoon logt in bij een uitvoeringsinstantie en wil een dienst afnemen. Hiervoor zijn gegevens nodig uit andere basisregisters. Voor het ophalen van eigen overheidsgegevens uit een basisregister is het nodig dat de gebruiker geïdentificeerd wordt zodat autorisatie en authenticatie mogelijk is. 
 
-### Use Case 3 Ophalen privacy gevoelige gegevens door derden
+#### Use Case 3 Ophalen privacy gevoelige gegevens door derden
 
 Enkele basisregisters kennen semi open informatie die als (digitale) informatie producten tegen een vergoeding verstrekt worden aan derden. Voor specifieke beroepsgroepen is het mogelijk om privacy gevoelige gegevens in te zien op een informatie product. Voor het ophalen van privacy gevoelige overheidsgegevens uit een basisregister is het nodig dat de gebruiker geïdentificeerd wordt zodat autorisatie en authenticatie mogelijk is.
 
-## Digitaal stelsel omgevingswet
+### Digitaal stelsel omgevingswet
 
-### Use Case 1
+#### Use Case 1
 De eerste en tevens eenvoudigste use case, bestaat uit koppelingen tussen applicaties onderling. Een voorbeeld is een loket met een content API. De communicatie verloopt via een api gateway. Hierbij is het alleen van belang dat de applicatie zelf informatie nodig heeft en is er geen sprake van bijvoorbeeld ingelogde eindgebruikers die een bevraging doen. De identiteit die gepropageerd wordt is in dit geval die van een applicatie. Dit is een technische identiteit. Omdat de services blootgesteld worden via de api gateway met API store zullen partijen bij aanmelden in de API store kenbaar moeten maken dat ze geautoriseerd zijn op de API’s die ze bevragen. Dit word afgedwongen door de API gateway.
-### Use Case 2
+#### Use Case 2
 De tweede use case betreft, naast applicaties, ook ingelogde eindgebruikers. Deze gebruikers kunnen ingelogd zijn met bijvoorbeeld DigiD, eHerkenning of een organisatie specifiek inlogmiddel. Een voorbeeld van deze use case is een gebruiker die ingelogd is in een loket, en een aanvraag in wil dienen naar een achterliggende toepassing die niet in het loket zelf maar ergens anders binnen de overheid gehost wordt. De identiteit van de eindgebruiker door de keten heen worden doorgeven. In deze use-case werken meerdere samen en wordt gebruik gemaakt van de GDI componenten DigiD / EHerkenning. Deze use case is dus een uitbreiding/ specialisatie van de eerste usecase.
 
 
-# Nederlandse Profiel OAuth 2.0
+## Nederlandse Profiel OAuth 2.0
 
-## Inleiding
+### Inleiding
 
 Om tot een Nederlands Profiel voor OAuth 2.0 te komen beginnen we met de voornaamste keuzes die er in de specificatie zoals vastgelegd in RFC 6749 te maken zijn.
 
-## OAuth 2.0; het framework RFC 6749
+### OAuth 2.0; het framework RFC 6749
 
 Het hogere doel van OAuth 2.0 is dat een eindegebruiker niet zijn credentials aan een applicatie of internet dienst hoeft te geven om informatie van hem in een andere internet dienst te kunnen gebruiken.
 Met OAuth 2.0 legt de eindgebruiker vast welke rechten een applicatie of dienst op het internet heeft tot zijn informatie.
@@ -117,7 +119,7 @@ OAuth 2.0 maakt gebruik van REST API's, en wisselt in de meeste situaties inform
 OAuth 2.0 is een autorisatie framework en onderkent een aantal actoren waarvan een aantal zich binnen het proces moeten kunnen identificeren. Het OAuth 2.0 framewerk legt echter alleen van de systeem actoren vast hoe ze zich identificeren. De identificatie van de eindgebruiker en de gegevens over die eindgebruiker maken geen deel uit van het OAuth 2.0 framework.
 Er bestaat een OAuth 2.0 add-on die zich nadrukkelijk bezig houd met gegevens over de eindgebruiker en dat is OpenID Connect.
 
-### Actoren
+#### Actoren
 
 Binnen OAuth 2.0 zijn de volgende actoren gedefinieerd:
 
@@ -126,7 +128,7 @@ Binnen OAuth 2.0 zijn de volgende actoren gedefinieerd:
 * Client: de applicatie of internet dienst die voor de Resource Owner iets met de door de Resource Server ontsloten informatie van de Resource Owner doet
 * Authorization Server: de server die het autorisatie verzoek van de Client met de Resource Owner afhandelt en vastlegt. Daarnaast versterkt de Authorization Server 'tokens' waarmee de Client de Resource Server kan benaderen. De Resource Server gebruikt het door de Authorization Server uitgegeven token om te bepalen of het door de Client uitgevoerde verzoek, tot het benaderen van informatie van een Resource Owner, toegestaan is.
 
-### Clients
+#### Clients
 
 Een Client is binnen OAuth een applicatie. Deze applicatie kan een native applicatie op een desktop computer zijn, een app op een mobiel device, maar ook een web applicatie in een browser.
 
@@ -137,7 +139,7 @@ Van een applicatie in de browser kun je eenvoudig de broncode in de browser zich
 
 Voor clients waar geen geheim aan toevertrouwd kan worden, verstrek je geen informatie die door kwaadwillenden misbruikt zou kunnen worden.
 
-### Interacties
+#### Interacties
 
 Los van de authorization flows kent OAuth de volgende interacties:
 
@@ -145,7 +147,7 @@ Los van de authorization flows kent OAuth de volgende interacties:
 * Het ophalen van informatie bij de Resource Server
 * Het ophalen van informatie behorende bij een access token zoals een unieke identificatie van de Resource Owner (RFC 7662)
 
-#### Het verkrijgen van autorisatie
+##### Het verkrijgen van autorisatie
 
 Binnen het verkrijgen van autorisatie spelen de volgende onderwerpen:
 
@@ -153,7 +155,7 @@ Binnen het verkrijgen van autorisatie spelen de volgende onderwerpen:
 * Scopes
 * Tokens
 
-##### Grant types
+###### Grant types
 
 Deze interactie kent binnen RFC 6749 4 Grant Types:
 
@@ -166,7 +168,7 @@ Eigenlijk is het verversen van de grant d.m.v. een Refresh Token ook een grant t
 
 Welke Grant Type je kiest is afhankelijk van de Client en of er überhaupt sprake is van een Resource Owner.
 
-###### Keuze 1
+####### Keuze 1
 
 Alle Grant types hebben een Use-Case, het heeft geen zin om Grant types weg te laten in het Nederlandse profiel.
 
@@ -177,11 +179,11 @@ Alle Grant types hebben een Use-Case, het heeft geen zin om Grant types weg te l
 | Resource Owner Credentials | Zeer vertrouwde (native) applicaties | De client heeft hierbij toegang tot de credentials van de Resource Owner |
 | Client Credentials | Machine-naar-machine communicatie | De Client is tevens de Resource Owner |
 
-###### Keuze 2
+####### Keuze 2
 
 Bij de Authorization Code Grant en de Implicid Grant wordt een optioneel de parameter 'state' als http query parameter gebruikt. Deze parameter wordt gebruikt om Cross Site Reqest Forgery CSRF tegen te gaan. Aangezien CSRF onderdeel is van een pas-to-of-leg-uit standaard stellen we het gebruik van de 'state' query parameter als verplicht.
 
-##### Scopes
+###### Scopes
 
 De OAuth manier om rechten tot resources te definiëren heet scopes.
 
@@ -204,11 +206,11 @@ Een voorbeeld van de scopes gedefinieerd voor de Google Drive API v3:
 
 Het kan ook zijn dat er informatie is waar beperkingen op zitten of kosten aan zitten. In dat geval is het handig hier aparte scopes voor te definiëren. In overheidscontext kan dit bijvoorbeeld de toegang tot BSN nummers zijn.
 
-###### Keuze 3
+####### Keuze 3
 
 Het voorstel is om scope namen te hanteren zoals Google ze definieert. Dit is in de vorm van een URI.
 
-##### Tokens
+###### Tokens
 
 Het technische resultaat van het verkrijgen van autorisatie is een JSON document met de volgende attributen:
 
@@ -220,33 +222,33 @@ Het technische resultaat van het verkrijgen van autorisatie is een JSON document
 
 Het is mogelijk extra attributen aan deze lijst toe te voegen.
 
-###### Keuze 4
+####### Keuze 4
 
 Adviseer 3600 seconden als expires_in parameter. Dit heeft geen interoperability impact.
 
-###### Keuze 5
+####### Keuze 5
 
 Adviseer geen zelf extra attributen in het autorisatie antwoord. Dit heeft geen interoperability impact.
 
-###### access_token
+####### access_token
 
 Voor de OAuth 2.0 standaard is het access_token niet meer dan een sleutel naar autorisatie informatie.
 
-###### id_token
+####### id_token
 
 OpenID Connect voegt indien gevraagd het id_token toe aan deze lijst. Het id_token is een RFC 7519 JWT.
 OpenID Connect voegt naast het ID token het UserInfo Endpoint toe aan de Authorisation Server. Het UserInfo Endpoint is een standaard Resource Server die informatie, claims, verstrekt over de eindgebruiker.
 
-###### refresh_token
+####### refresh_token
 
 Een Refresh token is vergelijkbaar met de authorization code in de Authorization Code Grant, maar wordt gebruikt om de autorisatie te verlengen. Hierbij krijgt de Client een nieuwe set tokens.
 
-#### Het ophalen van informatie bij de Resource Server
+##### Het ophalen van informatie bij de Resource Server
 
 De Client gebruikt het verkregen Access Token om informatie, al dan niet van een Resource Owner, bij de Resource Server te kunnen raadplegen.
 De Resource Server gebruikt vervolgens het Access Token om de Authorozation Server te vragen wie de Resource Owner is en welke autorisaties de Client heeft gekregen. De OAuth 2.0 Specificatie beschrijft verder niet hoe dit werkt.
 
-#### Het ophalen van informatie behorende bij een access token (RFC 7662)
+##### Het ophalen van informatie behorende bij een access token (RFC 7662)
 
 Het ophalen van informatie behorende bij het access token is in RFC 7662 gestandaardiseerd waarmee Cloud dienst providers standaard OAuth 2.0 diensten kunnen aanbieden waarbij er een Token Introspection service is waar de Resource Server gegevens over een token kan ophalen.
 De Token Introspection service is een REST service waarbij de Resource Server met http basic of een Client Credentials Grant type de service benadert om de gegevens op te halen.
@@ -255,19 +257,19 @@ In een modern applicatie landschap met microservices wordt het Access Token door
 Dit is de voornaamste reden waarom veel implementaties ervoor kiezen om het OAuth 2.0 Access Token van inhoud voorzien in de vorm van een RFC 7519 JSON Web Token (JWT).
 Deze JWT bevat alle benodigde informatie voor een microservice om fijnmazige autorisatie beslissingen te kunnen nemen, zonder dat daarvoor eerste informatie opgehaald hoeft te worden.
 
-##### Keuze 6
+###### Keuze 6
 
 Maak gebruik van JWT's als Access Tokens. Dit vereist OpenID Connect core 1.0. Dit heeft geen interoperability impact voor de Client.
 
-##### Keuze 7
+###### Keuze 7
 
 Een JWT is bedoeld om zo compact mogelijk te zijn, dus stop er alleen die gegevens is die daadwerkelijk nodig zijn om een toegangsbesluit te kunnen nemen. Mochten er in een asynchroon afhandel proces adres of email gegevens van de Resource Owner nodig zijn, haal deze dan op op het moment dat ze nodig zijn.
 
-##### Keuze 8
+###### Keuze 8
 
 Pas minimaal RSA 256 bit signing toe. Dit vereist OpenID Connect discovery 1.0. Dit heeft geen interoperability impact voor de Client.
 
-## Referenties
+### Referenties
 
 NCSC [ICT-Beveiligingsrichtlijnen voor Webapplicaties](https://www.ncsc.nl/actueel/whitepapers/ict-beveiligingsrichtlijnen-voor-webapplicaties.html)
 
