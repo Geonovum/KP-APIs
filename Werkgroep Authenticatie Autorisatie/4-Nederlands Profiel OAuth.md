@@ -263,8 +263,8 @@ Effectively this means that a Native Client MUST include a cryptographic random 
 
 Request fields:
 <dl>
-<dt>client\_id</dt>
-<dd>Mandatory.</dd>
+<dt>client_id</dt>
+<dd>Mandatory. MUst have the value as obtained during registration.</dd>
 <dt>scope</dt>
 <dd>Optional.</dd>
 <dt>response_type</dt>
@@ -272,10 +272,10 @@ Request fields:
 <dt>redirect_uri</dt>
 <dd>Mandatory. MUST be an absolute HTTPS URL, pre-registered with the Authorization Server.</dd>
 <dt>state</dt>
-<dd>Mandatry, see above.</dd>
-<dt>code\_challenge</dt>
+<dd>Mandatory, see above.</dd>
+<dt>code_challenge</dt>
 <dd>In case of using a native app as user-agent mandatory.</dd>
-<dt>code\_challenge\_method</dt>
+<dt>code_challenge_method</dt>
 <dd>In case `code_challenge` is used, mandatory. MUST use the value `S256`.</dd>
 </dl>
 **/NLprofile**
@@ -302,6 +302,23 @@ This causes the browser to send the following (non-normative) request to the aut
   &redirect_uri=https%3A%2F%2Fclient.example.org%2Fcb HTTP/1.1
 Host: idp-p.example.com
 </pre>
+
+
+### Response from the Token Endpoint
+
+**NLprofile**
+
+Response parameters
+<dl>
+<dt>code</dt>
+<dd>Mandatory. MUST be a cryptographic random value.</dd>
+<dt>state</dt>
+<dd>Mandatory. MUST be a verbatim copy of the value of the <code>state</code> parameter in the Authorization Request.</dd>
+</dl>
+
+**/NLPRofile**
+
+
 
 ### [2.3.2.](#rfc.section.2.3.2) [Requests to the Token Endpoint](#RequestsToTokenEndpoint)
 
@@ -351,6 +368,22 @@ The JWT assertion MUST be signed by the client using the client's private key. S
 
 **NLProfile**
 TODO Add SHOULD PS256 signing of the private\_key\_jwt.
+
+Effectively, the Token Request has the following content:
+<dl>
+<dt>grant_type</dt>
+<dd>Mandatory. MUST contain the value `authorization_code`</dd>
+<dt>code</dt>
+<dd>Mandatory. MUST be the value obtained from the Authorization Response.</dd>
+<dt>scope<dt>
+<dd>Optional. TODO.</dd>
+<dt>client_id</dt>
+<dd>Mandatory. MUST have the value as obtained during registration.</dd>
+<dt>client_assertion_type</dt>
+<dd>Mandatory. MUST have the value `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`, properly encoded.</dd>
+<dt>client_assertion</dt>
+<dd>Mandatory. MUST have the above specified signed JWT as contents.</dd>
+</dl>
 **/NLProfile**
 
 The following sample JWT contains the above claims and has been signed using the RS256 JWS algorithm and the client's own private key (with line breaks for display purposes only):
@@ -418,6 +451,14 @@ cNt1H2_VQ_Ww1JOLn9vRn-H48FDj7TxlIT74XdTZgTv31w_GRPAOfyxEw_ZUmxhz5Z-gTlQ",
 </pre>
 
 **NLProfile**
+
+In case the Authorization Server, Resource Server and client are not operated under responsibility of the same organisation, each party MUST use PKIoverheid certificates.
+TODO PKIoverheid with OIN!
+
+The PKIoverheid certificate MUST be included as a <code>x5c</code> parameter.
+The <code>x5c</code> parameter MUST be included as a list (array) of X509 certificate(s), as Base64 DER encoded PKIoverheid certificate(s).
+The first certificate MUST be the Client's certificate, optionally followed by the rest of that certificate's chain.
+The jwks structure MUST include the public key parameters with the same values of the corresponding X509 certificate included as <code>x5c</code>, as per [[rfc7517]] §4.7.
 
 **/NLProfile**
 
@@ -670,6 +711,7 @@ The authorization server MUST compare a client's registered redirect URIs with t
 ### [3.1.9.](#rfc.section.3.1.9) RefreshTokens
 
 Authorization Servers MAY issue refresh tokens to clients under the following context:
+
 
 Clients MUST be registered with the Authorization Server.
 
