@@ -33,6 +33,9 @@ het voorbereidingsdossier te bespreken. Daarbij is vastgesteld dat
 OpenID Connect niet voor opneming op de lijst open standaarden in
 aanmerking komt.
 
+###
+Het Nederlands profiel OAuth baseren we het internationale iGOV OAuth 2.0 profiel [[iGOV.OAuth2]] we nemen niet alle keuzes van dit internationale profiel over aangezien dit een aantal keuzes bevat die sterk leunen op de amerikaanse situatie. Het kan het best beschouwd worden als een fork waar we in ons profiel aangeven waar we afwijken.
+
 ## Usecases
  <figure id='authorization_code'>
 	<img src='media/use_case4_authorization_code.png' width="600" />
@@ -126,7 +129,8 @@ The contents and protocol of the Resource Request and Resource Response are out 
 
 
 
-## Nederlandse Profiel OAuth 2.0
+## Dutch government Assurance profile for OAuth 2.0
+This profile is based upon the international government assurance profile for OAuth 2.0 (iGOV) [[iGOV.OAuth2]] as published by the openID Foundation (https://openid.net/foundation/). It should be considered a fork of this profile as the iGov profile is geared more towards the American situtation and in the Netherlands we have to deal with an European Union context. 
 ### [Abstract](#rfc.abstract)
 
 The OAuth 2.0 protocol framework defines a mechanism to allow a resource owner to delegate access to a protected resource for a client application.
@@ -147,9 +151,9 @@ This OAuth profile is intended to be shared broadly, and has been greatly influe
 
 ### [1.1.](#rfc.section.1.1) [Requirements Notation and Conventions](#rnc)
 
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC 2119](#RFC2119) .
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [[!rfc2119]] .
 
-All uses of [JSON Web Signature (JWS)](#RFC7515) and [JSON Web Encryption (JWE)](#RFC7516) data structures in this specification utilize the JWS Compact Serialization or the JWE Compact Serialization; the JWS JSON Serialization and the JWE JSON Serialization are not used.
+All uses of [JSON Web Signature (JWS)] [[!rfc7515]] and [JSON Web Encryption (JWE)] [[!rfc7516]] data structures in this specification utilize the JWS Compact Serialization or the JWE Compact Serialization; the JWS JSON Serialization and the JWE JSON Serialization are not used.
 
 ### [1.2.](#rfc.section.1.2) [Terminology](#Terminology)
 
