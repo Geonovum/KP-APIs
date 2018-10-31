@@ -261,20 +261,20 @@ Effectively this means that a Native Client MUST include a cryptographic random 
 
 Request fields:
 <dl>
-<dd>client\_id</dd>
-<dt>Mandatory.</dt>
-<dd>scope</dd>
-<dt>Optional.</dt>
-<dd>response_type</dd>
-<dt>Mandatory. MUST have value `code` for the Authorization Code Flow.</dt>
-<dd>redirect_uri</dd>
-<dt>Mandatory. MUST be an absolute HTTPS URL, pre-registered with the Authorization Server.</dt>
-<dd>state</dd>
-<dt>Mandatry, see above.</dt>
-<dd>code\_challenge</dd>
-<dt>In case of using a native app as user-agent mandatory.</dt>
-<dd>code\_challenge\_method</dd>
-<dt>In case `code_challenge` is used, mandatory. MUST use the value `S256`.</dt>
+<dt>client\_id</dt>
+<dd>Mandatory.</dd>
+<dt>scope</dt>
+<dd>Optional.</dd>
+<dt>response_type</dt>
+<dd>Mandatory. MUST have value `code` for the Authorization Code Flow.</dd>
+<dt>redirect_uri</dt>
+<dd>Mandatory. MUST be an absolute HTTPS URL, pre-registered with the Authorization Server.</dd>
+<dt>state</dt>
+<dd>Mandatry, see above.</dd>
+<dt>code\_challenge</dt>
+<dd>In case of using a native app as user-agent mandatory.</dd>
+<dt>code\_challenge\_method</dt>
+<dd>In case `code_challenge` is used, mandatory. MUST use the value `S256`.</dd>
 </dl>
 **/NLprofile**
 
