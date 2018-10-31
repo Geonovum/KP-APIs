@@ -261,13 +261,22 @@ As `code_verifier` the S256 method MUST be applied.
 Effectively this means that a Native Client MUST include a cryptographic random `code_challenge` of at least 128 bits of entropy and the `code_challenge_method` with the value `S256`.
 
 Request fields:
-| client_id | Mandatory. |
-| scope | Optional. |
-| response_type | Mandatory. MUST have value `code` for the Authorization Code Flow. |
-| redirect_uri | Mandatory. MUST be an absolute HTTPS URL, pre-registered with the Authorization Server. |
-| state | Mandatry, see above. |
-| code_challenge | In case of using a native app as user-agent mandatory. |
-| code\_challenge\_method | In case `code_challenge` is used, mandatory. MUST use the value `S256`. |
+<dl>
+<dt>client\_id</dt>
+<dd>Mandatory.</dd>
+<dt>scope</dt>
+<dd>Optional.</dd>
+<dt>response_type</dt>
+<dd>Mandatory. MUST have value `code` for the Authorization Code Flow.</dd>
+<dt>redirect_uri</dt>
+<dd>Mandatory. MUST be an absolute HTTPS URL, pre-registered with the Authorization Server.</dd>
+<dt>state</dt>
+<dd>Mandatry, see above.</dd>
+<dt>code\_challenge</dt>
+<dd>In case of using a native app as user-agent mandatory.</dd>
+<dt>code\_challenge\_method</dt>
+<dd>In case `code_challenge` is used, mandatory. MUST use the value `S256`.</dd>
+</dl>
 **/NLprofile**
 
 The following is a sample response from a web-based client to the end user’s browser for the purpose of redirecting the end user to the authorization server's authorization endpoint:
