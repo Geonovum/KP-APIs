@@ -222,11 +222,12 @@ Native applications not registering a separate public key for each instance are 
 
 ### [2.1.3.](#rfc.section.2.1.3) [Direct Access Client](#DirectClient)
 
-This client type MUST NOT request or be issued a refresh token.
+~~This client type MUST NOT request or be issued a refresh token.
 
 This profile applies to clients that connect directly to protected resources and do not act on behalf of a particular resource owner, such as those clients that facilitate bulk transfers.
 
-These clients use the client credentials flow of OAuth 2 by sending a request to the token endpoint with the client's credentials and obtaining an access token in the response. Since this profile does not involve an authenticated user, this flow is appropriate only for trusted applications, such as those that would traditionally use a developer key. For example, a partner system that performs bulk data transfers between two systems would be considered a direct access client.
+These clients use the client credentials flow of OAuth 2 by sending a request to the token endpoint with the client's credentials and obtaining an access token in the response. Since this profile does not involve an authenticated user, this flow is appropriate only for trusted applications, such as those that would traditionally use a developer key. For example, a partner system that performs bulk data transfers between two systems would be considered a direct access client.~~
+Direct Access Clients are out of scope in this version of iGOV-NL
 
 ### [2.2.](#rfc.section.2.2) [Client Registration](#ClientRegistration)
 
@@ -256,7 +257,7 @@ Full clients and browser-embedded clients making a request to the authorization 
 
 Clients MUST include their full redirect URI in the authorization request. To prevent open redirection and other injection attacks, the authorization server MUST match the entire redirect URI using a direct string comparison against registered values and MUST reject requests with an invalid or missing redirect URI.
 
-**NLprofile**
+**iGov-NL**
 
 Native clients MUST apply PKCE, as per RFC7636.
 As `code_verifier` the S256 method MUST be applied.
@@ -280,7 +281,7 @@ Request fields:
 <dd>In case `code_challenge` is used, mandatory. MUST use the value `S256`.</dd>
 </dl>
 
-**/NLprofile**
+**/iGov-NL**
 
 The following is a sample response from a web-based client to the end user’s browser for the purpose of redirecting the end user to the authorization server's authorization endpoint:
 
@@ -308,7 +309,7 @@ Host: idp-p.example.com
 
 ### Response from the Token Endpoint
 
-**NLprofile**
+**iGov-NL**
 
 Response parameters
 <dl>
@@ -318,7 +319,7 @@ Response parameters
 <dd>Mandatory. MUST be a verbatim copy of the value of the <code>state</code> parameter in the Authorization Request.</dd>
 </dl>
 
-**/NLPRofile**
+**/iGov-NL**
 
 
 
@@ -368,7 +369,7 @@ The following sample claim set illustrates the use of the required claims for a 
 
 The JWT assertion MUST be signed by the client using the client's private key. See [Section 2.2](#ClientRegistration) for mechanisms by which the client can make its public key known to the server. The authorization server MUST support the RS256 signature method (the Rivest, Shamir, and Adleman (RSA) signature algorithm with a 256-bit hash) and MAY use other asymmetric signature methods listed in the JSON Web Algorithms ( [JWA] [[rfc7518]] ) specification.
 
-**NLProfile**
+**iGov-NL**
 
 TODO Add SHOULD PS256 signing of the private\_key\_jwt.
 
@@ -388,7 +389,7 @@ Effectively, the Token Request has the following content:
 <dd>Mandatory. MUST have the above specified signed JWT as contents.</dd>
 </dl>
 
-**/NLProfile**
+**/iGov-NL**
 
 The following sample JWT contains the above claims and has been signed using the RS256 JWS algorithm and the client's own private key (with line breaks for display purposes only):
 
@@ -454,7 +455,7 @@ cNt1H2_VQ_Ww1JOLn9vRn-H48FDj7TxlIT74XdTZgTv31w_GRPAOfyxEw_ZUmxhz5Z-gTlQ",
 }
 </pre>
 
-**NLProfile**
+**iGov-NL**
 
 In case the Authorization Server, Resource Server and client are not operated under responsibility of the same organisation, each party MUST use PKIoverheid certificates.
 TODO PKIoverheid with OIN!
@@ -464,7 +465,7 @@ The <code>x5c</code> parameter MUST be included as a list (array) of X509 certif
 The first certificate MUST be the Client's certificate, optionally followed by the rest of that certificate's chain.
 The jwks structure MUST include the public key parameters with the same values of the corresponding X509 certificate included as <code>x5c</code>, as per [[rfc7517]] §4.7.
 
-**/NLProfile**
+**/iGov-NL**
 
 For reference, the corresponding public/private key pair for this public key is the following (in JWK format):
 
@@ -491,7 +492,7 @@ Note that the second example contains both the public and private keys, while th
 
 ### Token Response
 
-**NLprofile**
+**iGov-NL**
 
 The Token Response has the following contents
 
@@ -508,7 +509,7 @@ The Token Response has the following contents
 <dd>Optional. TODO</dd>
 </dl>
 
-**/NLprofile**
+**/iGov-NL**
 
 
 ### [2.4.](#rfc.section.2.4) Connection to the Protected Resource
