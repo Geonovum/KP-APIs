@@ -803,6 +803,12 @@ The following sample claim set illustrates the use of the required claims for an
 
 The access tokens MUST be signed with [JWS] [[rfc7515]] . The authorization server MUST support the RS256 signature method for tokens and MAY use other asymmetric signing methods as defined in the [IANA JSON Web Signatures and Encryption Algorithms registry] [[JWS.JWE.Algs]] . The JWS header MUST contain the following fields:
 
+**NLProfile**
+
+TODO Add SHOULD PS256 signing.
+
+**/NLProfile**
+
 <dl>
 
 <dt>kid</dt>
@@ -827,6 +833,15 @@ pXDaLyyY-4HT9XHT9V73fKF8rLWJu9grrA</pre>
 Refresh tokens SHOULD be signed with [JWS] [[rfc7515]] using the same private key and contain the same set of claims as the access tokens.
 
 The authorization server MAY encrypt access tokens and refresh tokens using [JWE] [[rfc7516]] . Encrypted access tokens MUST be encrypted using the public key of the protected resource. Encrypted refresh tokens MUST be encrypted using the authorization server's public key.
+
+**NLprofile**
+
+SHOULD encrypt instead of MAY encrypt?
+FIXME Which key / how to obtain key of protected resource?
+
+TODO use PKIo when inter-organisational, see above.
+
+**/NLProfile**
 
 ### [3.2.2.](#rfc.section.3.2.2) Introspection
 
@@ -988,7 +1003,14 @@ In this manner, protected resources and authorization servers work together to m
 
 ### [4.2.](#rfc.section.4.2) Connections with Clients
 
-A protected resource MUST accept bearer tokens passed in the authorization header as described in [[rfc6750]] . A protected resource MAY also accept bearer tokens passed in the form parameter or query parameter methods.
+A protected resource MUST accept bearer tokens passed in the authorization header as described in [[rfc6750]] . A protected resource MAY also accept bearer tokens passed in the form parameter ~~or query parameter~~ method~~s~~.
+
+**NLProfile**
+
+A Protected Resource under this profile MUST NOT accept access tokens passed using the query paramter method.
+
+**/NLProfile**
+
 
 Protected resources MUST define and document which scopes are required for access to the resource.
 
