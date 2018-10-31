@@ -131,7 +131,11 @@ The contents and protocol of the Resource Request and Resource Response are out 
 
 The OAuth 2.0 protocol framework defines a mechanism to allow a resource owner to delegate access to a protected resource for a client application.
 
+TODO revise
+
 This specification profiles the OAuth 2.0 protocol framework to increase baseline security, provide greater interoperability, and structure deployments in a manner specifically applicable, but not limited to consumer-to-government deployments.
+
+/TODO
 
 * * *
 
@@ -143,7 +147,7 @@ This document profiles the OAuth 2.0 web authorization framework for use in the 
 1.  Define a mandatory baseline set of security controls suitable for a wide range of government use cases, while maintaining reasonable ease of implementation and functionality
 2.  Identify optional, advanced security controls for sensitive use cases where increased risk justifies more stringent controls.
 
-This OAuth profile is intended to be shared broadly, and has been greatly influenced by the [HEART OAuth2 Profile](#HEART.OAuth2).
+This OAuth profile is intended to be shared broadly, and has been ~~greatly influenced by the [HEART OAuth2 Profile](#HEART.OAuth2).~~ derived from the [iGov OAuth2 profile](#iGOV.OAuth2).
 
 ### [1.1.](#rfc.section.1.1) [Requirements Notation and Conventions](#rnc)
 
@@ -168,13 +172,13 @@ The specification also defines features for interaction between these components
 *   Client to authorization server.
 *   Protected resource to authorization server.
 
-When an iGov-compliant component is interacting with other iGov-compliant components, in any valid combination, all components MUST fully conform to the features and requirements of this specification. All interaction with non-iGov components is outside the scope of this specification.
+When an ~~iGov~~NLprofile-compliant component is interacting with other ~~iGov~~NLProfile-compliant components, in any valid combination, all components MUST fully conform to the features and requirements of this specification. All interaction with non-~~iGov~~NLProfile components is outside the scope of this specification.
 
-An iGov-compliant OAuth 2.0 authorization server MUST support all features as described in this specification. A general-purpose authorization server MAY support additional features for use with non-iGov clients and protected resources.
+An ~~iGov~~NLprofile-compliant OAuth 2.0 authorization server MUST support all features as described in this specification. A general-purpose authorization server MAY support additional features for use with non-~~iGov~~NLprofile clients and protected resources.
 
-An iGov-compliant OAuth 2.0 client MUST use all functions as described in this specification. A general-purpose client library MAY support additional features for use with non-iGov authorization servers and protected resources.
+An ~~iGov~~NLprofile-compliant OAuth 2.0 client MUST use all functions as described in this specification. A general-purpose client library MAY support additional features for use with non-iGov authorization servers and protected resources.
 
-An iGov-compliant OAuth 2.0 protected resource MUST use all functions as described in this specification. A general-purpose protected resource library MAY support additional features for use with non-iGov authorization servers and clients.
+An ~~iGov~~NLprofile-compliant OAuth 2.0 protected resource MUST use all functions as described in this specification. A general-purpose protected resource library MAY support additional features for use with non-~~iGov~~NLprofile authorization servers and clients.
 
 ### [2.](#rfc.section.2) [Client Profiles](#ClientProfiles)
 
@@ -245,6 +249,21 @@ Full clients and browser-embedded clients making a request to the authorization 
 
 Clients MUST include their full redirect URI in the authorization request. To prevent open redirection and other injection attacks, the authorization server MUST match the entire redirect URI using a direct string comparison against registered values and MUST reject requests with an invalid or missing redirect URI.
 
+**NLprofile**
+Native clients MUST apply PKCE, as per RFC7636.
+As `code_verifier` the S256 method MUST be applied.
+Effectively this means that a Native Client MUST include a cryptographic random `code_challenge` of at least 128 bits of entropy and the `code_challenge_method` with the value `S256`.
+
+Request fields:
+|client_id|Mandatory.|
+|scope|Optional.|
+|response_type|Mandatory. MUST have value `code` for the Authorization Code Flow.|
+|redirect_uri|Mandatory. MUST be an absolute HTTPS URL, pre-registered with the Authorization Server.|
+|state|Mandatry, see above.|
+|code_challenge|In case of using a native app as user-agent mandatory|.
+|code\_challenge\_method|In case `code_challenge` is used, mandatory. MUST use the value `S256`.|
+**/NLprofile**
+
 The following is a sample response from a web-based client to the end user’s browser for the purpose of redirecting the end user to the authorization server's authorization endpoint:
 
 <pre>HTTP/1.2 302 Found
@@ -313,6 +332,10 @@ The following sample claim set illustrates the use of the required claims for a 
 </pre>
 
 The JWT assertion MUST be signed by the client using the client's private key. See [Section 2.2](#ClientRegistration) for mechanisms by which the client can make its public key known to the server. The authorization server MUST support the RS256 signature method (the Rivest, Shamir, and Adleman (RSA) signature algorithm with a 256-bit hash) and MAY use other asymmetric signature methods listed in the JSON Web Algorithms ( [JWA](#RFC7518) ) specification.
+
+**NLProfile**
+TODO Add SHOULD PS256 signing of the private\_key\_jwt.
+**/NLProfile**
 
 The following sample JWT contains the above claims and has been signed using the RS256 JWS algorithm and the client's own private key (with line breaks for display purposes only):
 
