@@ -222,11 +222,12 @@ Native applications not registering a separate public key for each instance are 
 
 ### [2.1.3.](#rfc.section.2.1.3) [Direct Access Client](#DirectClient)
 
-This client type MUST NOT request or be issued a refresh token.
+~~This client type MUST NOT request or be issued a refresh token.
 
 This profile applies to clients that connect directly to protected resources and do not act on behalf of a particular resource owner, such as those clients that facilitate bulk transfers.
 
-These clients use the client credentials flow of OAuth 2 by sending a request to the token endpoint with the client's credentials and obtaining an access token in the response. Since this profile does not involve an authenticated user, this flow is appropriate only for trusted applications, such as those that would traditionally use a developer key. For example, a partner system that performs bulk data transfers between two systems would be considered a direct access client.
+These clients use the client credentials flow of OAuth 2 by sending a request to the token endpoint with the client's credentials and obtaining an access token in the response. Since this profile does not involve an authenticated user, this flow is appropriate only for trusted applications, such as those that would traditionally use a developer key. For example, a partner system that performs bulk data transfers between two systems would be considered a direct access client.~~
+Direct Access Clients are out of scope in this version of iGOV-NL
 
 ### [2.2.](#rfc.section.2.2) [Client Registration](#ClientRegistration)
 
