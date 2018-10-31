@@ -261,8 +261,8 @@ Effectively this means that a Native Client MUST include a cryptographic random 
 
 Request fields:
 <dl>
-<dt>client\_id</dt>
-<dd>Mandatory.</dd>
+<dt>client_id</dt>
+<dd>Mandatory. MUst have the value as obtained during registration.</dd>
 <dt>scope</dt>
 <dd>Optional.</dd>
 <dt>response_type</dt>
@@ -270,10 +270,10 @@ Request fields:
 <dt>redirect_uri</dt>
 <dd>Mandatory. MUST be an absolute HTTPS URL, pre-registered with the Authorization Server.</dd>
 <dt>state</dt>
-<dd>Mandatry, see above.</dd>
-<dt>code\_challenge</dt>
+<dd>Mandatory, see above.</dd>
+<dt>code_challenge</dt>
 <dd>In case of using a native app as user-agent mandatory.</dd>
-<dt>code\_challenge\_method</dt>
+<dt>code_challenge_method</dt>
 <dd>In case `code_challenge` is used, mandatory. MUST use the value `S256`.</dd>
 </dl>
 **/NLprofile**
@@ -349,6 +349,22 @@ The JWT assertion MUST be signed by the client using the client's private key. S
 
 **NLProfile**
 TODO Add SHOULD PS256 signing of the private\_key\_jwt.
+
+Effectively, the fToken Request has the following content:
+<dl>
+<dt>grant_type</dt>
+<dd>Mandatory. MUST contain the value `authorization_code`</dd>
+<dt>code</dt>
+<dd>Mandatory. MUST be the value obtained from the Authorization Response.</dd>
+<dt>scope<dt>
+<dd>Optional. TODO.</dd>
+<dt>client_id</dt>
+<dd>Mandatory. MUST have the value as obtained during registration.</dd>
+<dt>client_assertion_type</dt>
+<dd>Mandatory. MUST have the value `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`, properly encoded.</dd>
+<dt>client_assertion</dt>
+<dd>Mandatory. MUST have the above specified signed JWT as contents.</dd>
+</dl>
 **/NLProfile**
 
 The following sample JWT contains the above claims and has been signed using the RS256 JWS algorithm and the client's own private key (with line breaks for display purposes only):
