@@ -14,6 +14,21 @@ var respecConfig = {
       company: "Geonovum",
       companyURL: "http://www.Geonovum.nl/",
     },
+	{
+      name: "Remco Schaar",
+      company: "Logius",
+      companyURL: "http://www.logius.nl/",
+    },
+	{
+      name: "Martin Borgman",
+      company: "het Kadaster",
+      companyURL: "http://www.kadaster.nl/",
+    },
+	{
+      name: "Jan Jaap Zoutendijk",
+      company: "Rijkswaterstaat",
+      companyURL: "http://www.rws.nl/",
+    },
   ],
   shortName: "API strategie",
   subtitle: "Werkversie",
