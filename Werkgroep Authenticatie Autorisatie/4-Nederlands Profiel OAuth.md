@@ -151,11 +151,8 @@ This document profiles the OAuth 2.0 web authorization framework for use in the 
 1.  Define a mandatory baseline set of security controls suitable for a wide range of government use cases, while maintaining reasonable ease of implementation and functionality
 2.  Identify optional, advanced security controls for sensitive use cases where increased risk justifies more stringent controls.
 
-<<<<<<< HEAD
-This OAuth profile is intended to be shared broadly, and has been greatly influenced by the [HEART OAuth2 Profile] [[HEART.OAuth2]].
-=======
-This OAuth profile is intended to be shared broadly, and has been ~~greatly influenced by the [HEART OAuth2 Profile](#HEART.OAuth2).~~ derived from the [iGov OAuth2 profile](#iGOV.OAuth2).
->>>>>>> 44d9c79bbd8ded744b4e8e2e2f8dbccda7ef1c00
+
+This OAuth profile is intended to be shared broadly, and has been ~~greatly influenced by the [HEART OAuth2 Profile][[HEART.OAuth2]].~~ derived from the [iGov OAuth2 profile] [[iGOV.OAuth2]].
 
 ### [1.1.](#rfc.section.1.1) [Requirements Notation and Conventions](#rnc)
 
