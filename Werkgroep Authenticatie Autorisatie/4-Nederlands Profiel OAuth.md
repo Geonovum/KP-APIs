@@ -260,13 +260,13 @@ As `code_verifier` the S256 method MUST be applied.
 Effectively this means that a Native Client MUST include a cryptographic random `code_challenge` of at least 128 bits of entropy and the `code_challenge_method` with the value `S256`.
 
 Request fields:
-|client_id|Mandatory.|
-|scope|Optional.|
-|response_type|Mandatory. MUST have value `code` for the Authorization Code Flow.|
-|redirect_uri|Mandatory. MUST be an absolute HTTPS URL, pre-registered with the Authorization Server.|
-|state|Mandatry, see above.|
-|code_challenge|In case of using a native app as user-agent mandatory|.
-|code\_challenge\_method|In case `code_challenge` is used, mandatory. MUST use the value `S256`.|
+| client_id | Mandatory. |
+| scope | Optional. |
+| response_type | Mandatory. MUST have value `code` for the Authorization Code Flow. |
+| redirect_uri | Mandatory. MUST be an absolute HTTPS URL, pre-registered with the Authorization Server. |
+| state | Mandatry, see above. |
+| code_challenge | In case of using a native app as user-agent mandatory. |
+| code\_challenge\_method | In case `code_challenge` is used, mandatory. MUST use the value `S256`. |
 **/NLprofile**
 
 The following is a sample response from a web-based client to the end user’s browser for the purpose of redirecting the end user to the authorization server's authorization endpoint:
@@ -385,9 +385,9 @@ xuCxgOotXY6O3et4n77GtgspMgOEKj3b_WpCiuNEwQ
 
 ### [2.3.3.](#rfc.section.2.3.3) Client Keys
 
-Clients using the authorization code grant type or direct access clients using the client credentials grant type MUST have a public and private key pair for use in authentication to the token endpoint. These clients MUST register their public keys in their client registration metadata by either sending the public key directly in the <samp>jwks</samp> field or by registering a <samp>jwks_uri</samp> that MUST be reachable by the authorization server. It is RECOMMENDED that clients use a <samp>jwks_uri</samp> if possible as this allows for key rotation more easily. This applies to both dynamic and static (out-of-band) client registration.
+Clients using the authorization code grant type or direct access clients using the client credentials grant type MUST have a public and private key pair for use in authentication to the token endpoint. These clients MUST register their public keys in their client registration metadata by either sending the public key directly in the <samp>jwks</samp> field or by registering a <samp>jwks\_uri</samp> that MUST be reachable by the authorization server. It is RECOMMENDED that clients use a <samp>jwks_uri</samp> if possible as this allows for key rotation more easily. This applies to both dynamic and static (out-of-band) client registration.
 
-The <samp>jwks</samp> field or the content available from the <samp>jwks_uri</samp> of a client MUST contain a public key in [JSON Web Key Set (JWK Set)] [[rfc7517]] format. The authorization server MUST validate the content of the client's registered jwks_uri document and verify that it contains a JWK Set. The following example is of a 2048-bit RSA key:
+The <samp>jwks</samp> field or the content available from the <samp>jwks\_uri</samp> of a client MUST contain a public key in [JSON Web Key Set (JWK Set)] [[rfc7517]] format. The authorization server MUST validate the content of the client's registered jwks_uri document and verify that it contains a JWK Set. The following example is of a 2048-bit RSA key:
 
 <pre>{
    "keys": [
@@ -405,6 +405,10 @@ cNt1H2_VQ_Ww1JOLn9vRn-H48FDj7TxlIT74XdTZgTv31w_GRPAOfyxEw_ZUmxhz5Z-gTlQ",
    ]
 }
 </pre>
+
+**NLProfile**
+
+**/NLProfile**
 
 For reference, the corresponding public/private key pair for this public key is the following (in JWK format):
 
