@@ -46,7 +46,7 @@ aanmerking komt.
 
 ## Usecases
  <figure id='authorization_code'>
-	<img src='/Werkgroep Authenticatie Autorisatie/media/use_case4_authorization_code' width="600" />
+	<img src='/media/use_case4_authorization_code' width="600" />
 	<figcaption>Use case Authorization code flow</figcaption>
  </figure>
 
@@ -119,7 +119,7 @@ In de huidige versie van het Nederlandse profiel beperken we de grant types. Hie
 
 | Grant Type | Use-Case | Opmerkingen | Binnen scope profiel |
 | ---------- | -------- | ----------- | ----------- |
-| Authorization Code | Traditionele web applicaties die op een server draaien of mobiele applicatie die gebruik maken van "Proof key for Code Exchange" (PKCE) (RFC 7636) || ja |
+| Authorization Code | Traditionele web applicaties die op een server draaien of mobiele applicatie die gebruik maken van "Proof key for Code Exchange" (PKCE) (RFC 7636) |	| ja |
 | implicit | Javascript gebaseerde Web applicaties die in de web browser van de gebruiker draaien | Geen client secret en geen refresh token, de client heeft toegang | ja |
 | Resource Owner Credentials | Zeer vertrouwde (native) applicaties | De client heeft hierbij toegang tot de credentials van de Resource Owner | nee |
 | Client Credentials | Machine-naar-machine communicatie | De Client is tevens de Resource Owner | nee |
