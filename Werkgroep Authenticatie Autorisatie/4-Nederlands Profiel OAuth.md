@@ -33,6 +33,9 @@ het voorbereidingsdossier te bespreken. Daarbij is vastgesteld dat
 OpenID Connect niet voor opneming op de lijst open standaarden in
 aanmerking komt.
 
+###
+Het Nederlands profiel OAuth baseren we het internationale iGOV OAuth 2.0 profiel [[iGOV.OAuth2]] we nemen niet alle keuzes van dit internationale profiel over aangezien dit een aantal keuzes bevat die sterk leunen op de amerikaanse situatie. Het kan het best beschouwd worden als een fork waar we in ons profiel aangeven waar we afwijken.
+
 ## Usecases
  <figure id='authorization_code'>
 	<img src='media/use_case4_authorization_code.png' width="600" />
@@ -126,7 +129,8 @@ The contents and protocol of the Resource Request and Resource Response are out 
 
 
 
-## Nederlandse Profiel OAuth 2.0
+## Dutch government Assurance profile for OAuth 2.0
+This profile is based upon the international government assurance profile for OAuth 2.0 (iGOV) [[iGOV.OAuth2]] as published by the openID Foundation (https://openid.net/foundation/). It should be considered a fork of this profile as the iGov profile is geared more towards the American situtation and in the Netherlands we have to deal with an European Union context. 
 ### [Abstract](#rfc.abstract)
 
 The OAuth 2.0 protocol framework defines a mechanism to allow a resource owner to delegate access to a protected resource for a client application.
@@ -151,13 +155,13 @@ This OAuth profile is intended to be shared broadly, and has been ~~greatly infl
 
 ### [1.1.](#rfc.section.1.1) [Requirements Notation and Conventions](#rnc)
 
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC 2119](#RFC2119) .
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [[!rfc2119]] .
 
-All uses of [JSON Web Signature (JWS)](#RFC7515) and [JSON Web Encryption (JWE)](#RFC7516) data structures in this specification utilize the JWS Compact Serialization or the JWE Compact Serialization; the JWS JSON Serialization and the JWE JSON Serialization are not used.
+All uses of [JSON Web Signature (JWS)] [[!rfc7515]] and [JSON Web Encryption (JWE)] [[!rfc7516]] data structures in this specification utilize the JWS Compact Serialization or the JWE Compact Serialization; the JWS JSON Serialization and the JWE JSON Serialization are not used.
 
 ### [1.2.](#rfc.section.1.2) [Terminology](#Terminology)
 
-This specification uses the terms "Access Token", "Authorization Code", "Authorization Endpoint", "Authorization Grant", "Authorization Server", "Client", "Client Authentication", "Client Identifier", "Client Secret", "Grant Type", "Protected Resource", "Redirection URI", "Refresh Token", "Resource Owner", "Resource Server", "Response Type", and "Token Endpoint" defined by [OAuth 2.0](#RFC6749) , the terms "Claim Name", "Claim Value", and "JSON Web Token (JWT)" defined by [JSON Web Token (JWT)](#RFC7519) , and the terms defined by [OpenID Connect Core 1.0](#OpenID.Core) .
+This specification uses the terms "Access Token", "Authorization Code", "Authorization Endpoint", "Authorization Grant", "Authorization Server", "Client", "Client Authentication", "Client Identifier", "Client Secret", "Grant Type", "Protected Resource", "Redirection URI", "Refresh Token", "Resource Owner", "Resource Server", "Response Type", and "Token Endpoint" defined by [OAuth 2.0] [[rfc6749]] , the terms "Claim Name", "Claim Value", and "JSON Web Token (JWT)" defined by [JSON Web Token (JWT)] [[rfc7519]] , and the terms defined by [OpenID Connect Core 1.0] [[OpenID.Core]] .
 
 ### [1.3.](#rfc.section.1.3) Conformance
 
@@ -205,13 +209,13 @@ These clients MUST use the authorization code flow of OAuth 2 by sending the res
 Native clients MUST either:
 
 *   use dynamic client registration to obtain a separate client id for each instance, or
-*   act as a public client by using a common client id and use [PKCE](#RFC7636) to protect calls to the token endpoint.
+*   act as a public client by using a common client id and use [PKCE][[!RFC7636]] to protect calls to the token endpoint.
 
 Native applications using dynamic registration SHOULD generate a unique public and private key pair on the device and register that public key value with the authorization server. Alternatively, an authorization server MAY issue a public and private key pair to the client as part of the registration process. In such cases, the authorization server MUST discard its copy of the private key. Client credentials MUST NOT be shared among instances of client software.
 
 Dynamically registered native applications MAY use PKCE.
 
-Native applications not registering a separate public key for each instance are considered Public Clients, and MUST use [PKCE](#RFC7636) with the S256 code challenge mechanism. Public Clients do not authenticate with the Token Endpoint in any other way.
+Native applications not registering a separate public key for each instance are considered Public Clients, and MUST use [PKCE][[#rfc7636]] with the S256 code challenge mechanism. Public Clients do not authenticate with the Token Endpoint in any other way.
 
 ### [2.1.3.](#rfc.section.2.1.3) [Direct Access Client](#DirectClient)
 
@@ -289,7 +293,7 @@ Host: idp-p.example.com
 
 ### [2.3.2.](#rfc.section.2.3.2) [Requests to the Token Endpoint](#RequestsToTokenEndpoint)
 
-Full clients, native clients with dynamically registered keys, and direct access clients as defined above MUST authenticate to the authorization server's token endpoint using a JWT assertion as defined by the [JWT Profile for OAuth 2.0 Client Authentication and Authorization Grants](#RFC7523) using only the <samp>private_key_jwt</samp> method defined in [OpenID Connect Core](#OpenID.Core) . The assertion MUST use the claims as follows:
+Full clients, native clients with dynamically registered keys, and direct access clients as defined above MUST authenticate to the authorization server's token endpoint using a JWT assertion as defined by the [JWT Profile for OAuth 2.0 Client Authentication and Authorization Grants][[!rfc7523]] using only the <samp>private_key_jwt</samp> method defined in [OpenID Connect Core](#OpenID.Core) . The assertion MUST use the claims as follows:
 
 <dl>
 
@@ -331,7 +335,7 @@ The following sample claim set illustrates the use of the required claims for a 
 }
 </pre>
 
-The JWT assertion MUST be signed by the client using the client's private key. See [Section 2.2](#ClientRegistration) for mechanisms by which the client can make its public key known to the server. The authorization server MUST support the RS256 signature method (the Rivest, Shamir, and Adleman (RSA) signature algorithm with a 256-bit hash) and MAY use other asymmetric signature methods listed in the JSON Web Algorithms ( [JWA](#RFC7518) ) specification.
+The JWT assertion MUST be signed by the client using the client's private key. See [Section 2.2](#ClientRegistration) for mechanisms by which the client can make its public key known to the server. The authorization server MUST support the RS256 signature method (the Rivest, Shamir, and Adleman (RSA) signature algorithm with a 256-bit hash) and MAY use other asymmetric signature methods listed in the JSON Web Algorithms ( [JWA] [[rfc7518]] ) specification.
 
 **NLProfile**
 TODO Add SHOULD PS256 signing of the private\_key\_jwt.
@@ -382,7 +386,7 @@ xuCxgOotXY6O3et4n77GtgspMgOEKj3b_WpCiuNEwQ
 
 Clients using the authorization code grant type or direct access clients using the client credentials grant type MUST have a public and private key pair for use in authentication to the token endpoint. These clients MUST register their public keys in their client registration metadata by either sending the public key directly in the <samp>jwks</samp> field or by registering a <samp>jwks_uri</samp> that MUST be reachable by the authorization server. It is RECOMMENDED that clients use a <samp>jwks_uri</samp> if possible as this allows for key rotation more easily. This applies to both dynamic and static (out-of-band) client registration.
 
-The <samp>jwks</samp> field or the content available from the <samp>jwks_uri</samp> of a client MUST contain a public key in [JSON Web Key Set (JWK Set)](#RFC7517) format. The authorization server MUST validate the content of the client's registered jwks_uri document and verify that it contains a JWK Set. The following example is of a 2048-bit RSA key:
+The <samp>jwks</samp> field or the content available from the <samp>jwks_uri</samp> of a client MUST contain a public key in [JSON Web Key Set (JWK Set)] [[rfc7517]] format. The authorization server MUST validate the content of the client's registered jwks_uri document and verify that it contains a JWK Set. The following example is of a 2048-bit RSA key:
 
 <pre>{
    "keys": [
@@ -427,7 +431,7 @@ Note that the second example contains both the public and private keys, while th
 
 ### [2.4.1.](#rfc.section.2.4.1) [Requests to the Protected Resource](#RequestsToProtectedResource)
 
-Clients SHOULD send bearer tokens passed in the Authentication header as defined by [[RFC6750]](#RFC6750) . Clients MAY use the form-parameter or query-parameter methods in [[RFC6750]](#RFC6750) . Authorized requests MUST be made over TLS, and clients MUST validate the protected resource server's certificate.
+Clients SHOULD send bearer tokens passed in the Authentication header as defined by [[rfc6750]] . Clients MAY use the form-parameter or query-parameter methods in [[rfc6750]] . Authorized requests MUST be made over TLS, and clients MUST validate the protected resource server's certificate.
 
 An example of an OAuth-protected call to the OpenID Connect UserInfo endpoint, sending the token in the Authorization header, follows:
 
@@ -448,7 +452,7 @@ User-Agent: Apache-HttpClient/4.2.3 (java 1.5)
 
 ### [3.](#rfc.section.3) [Authorization Server Profile](#ServerProfile)
 
-All servers MUST conform to applicable recommendations found in the Security Considerations sections of [[RFC6749]](#RFC6749) and those found in the [OAuth Threat Model Document](#RFC6819) .
+All servers MUST conform to applicable recommendations found in the Security Considerations sections of [[RFC6749]] [[rfc6749]] and those found in the [OAuth Threat Model Document] [[rfc6819]] .
 
 The authorization server MUST protect all communications to and from its OAuth endpoints using TLS.
 
@@ -466,9 +470,9 @@ The authorization server MUST validate all redirect URIs for authorization code 
 
 ### [3.1.3.](#rfc.section.3.1.3) [Dynamic Registration](#DynamicRegistration)
 
-Dynamic Registration allows for authorized Clients to on-board programatically without administrative intervention. This is particularly important in ecosystems with many potential Clients, including Mobile Apps acting as independent Clients. Authorization servers MUST support dynamic client registration, and clients MAY register using the [Dynamic Client Registration Protocol](#RFC7591) for authorization code grant types. Clients MUST NOT dynamically register for the client credentials grant type. Authorization servers MAY limit the scopes available to dynamically registered clients.
+Dynamic Registration allows for authorized Clients to on-board programatically without administrative intervention. This is particularly important in ecosystems with many potential Clients, including Mobile Apps acting as independent Clients. Authorization servers MUST support dynamic client registration, and clients MAY register using the [Dynamic Client Registration Protocol] [[rfc7591]] for authorization code grant types. Clients MUST NOT dynamically register for the client credentials grant type. Authorization servers MAY limit the scopes available to dynamically registered clients.
 
-Authorization servers MAY protect their Dynamic Registration endpoints by requiring clients to present credentials that the authorization server would recognize as authorized participants. Authorization servers MAY accept signed software statements as described in [[RFC7591]](#RFC7591) issued to client software developers from a trusted registration entity. The software statement can be used to tie together many instances of the same client software that will be run, dynamically registered, and authorized separately at runtime. The software statement MUST include the following client metadata parameters:
+Authorization servers MAY protect their Dynamic Registration endpoints by requiring clients to present credentials that the authorization server would recognize as authorized participants. Authorization servers MAY accept signed software statements as described in [[RFC7591]] [[rfc7591]] issued to client software developers from a trusted registration entity. The software statement can be used to tie together many instances of the same client software that will be run, dynamically registered, and authorized separately at runtime. The software statement MUST include the following client metadata parameters:
 
 <dl>
 
@@ -506,7 +510,7 @@ For example, for native clients a message indicating a new App installation has 
 
 ### [3.1.5.](#rfc.section.3.1.5) [Discovery](#Discovery)
 
-The authorization server MUST provide an [OpenID Connect service discovery](#OpenID.Discovery) endpoint listing the components relevant to the OAuth protocol:
+The authorization server MUST provide an [OpenID Connect service discovery] [[OpenID.Discovery]] endpoint listing the components relevant to the OAuth protocol:
 
 <dl>
 
@@ -516,23 +520,23 @@ The authorization server MUST provide an [OpenID Connect service discovery](#Ope
 
 <dt>authorization_endpoint</dt>
 
-<dd style="margin-left: 8">REQUIRED. The fully qualified URL of the server's authorization endpoint defined by [OAuth 2.0](#RFC6749)</dd>
+<dd style="margin-left: 8">REQUIRED. The fully qualified URL of the server's authorization endpoint defined by [OAuth 2.0] [[rfc6749]]</dd>
 
 <dt>token_endpoint</dt>
 
-<dd style="margin-left: 8">REQUIRED. The fully qualified URL of the server's token endpoint defined by [OAuth 2.0](#RFC6749)</dd>
+<dd style="margin-left: 8">REQUIRED. The fully qualified URL of the server's token endpoint defined by [OAuth 2.0] [[RFC6749]]</dd>
 
 <dt>introspection_endpoint</dt>
 
-<dd style="margin-left: 8">OPTIONAL. The fully qualified URL of the server's introspection endpoint defined by [OAuth Token Introspection](#RFC7662)</dd>
+<dd style="margin-left: 8">OPTIONAL. The fully qualified URL of the server's introspection endpoint defined by [OAuth Token Introspection] [[rfc7662]] </dd>
 
 <dt>revocation_endpoint</dt>
 
-<dd style="margin-left: 8">OPTIONAL. The fully qualified URL of the server's revocation endpoint defined by [OAuth 2.0 Token Revocation](#RFC7009)</dd>
+<dd style="margin-left: 8">OPTIONAL. The fully qualified URL of the server's revocation endpoint defined by [OAuth 2.0 Token Revocation] [[rfc7009]] </dd>
 
 <dt>jwks_uri</dt>
 
-<dd style="margin-left: 8">REQUIRED. The fully qualified URI of the server's public key in [JWK Set](#RFC7517) format</dd>
+<dd style="margin-left: 8">REQUIRED. The fully qualified URI of the server's public key in [JWK Set] [[rfc7517]] format</dd>
 
 </dl>
 
@@ -641,7 +645,7 @@ A client MUST immediately discard the token and not use it again after revoking 
 
 ### [3.1.7.](#rfc.section.3.1.7) PKCE
 
-An authorization server MUST support the Proof Key for Code Exchange ([PKCE](#RFC7636)) extension to the authorization code flow, including support for the S256 code challenge method. The authorization server MUST NOT allow an iGov client to use the plain code challenge method.
+An authorization server MUST support the Proof Key for Code Exchange ([PKCE] [[rfc7636]] ) extension to the authorization code flow, including support for the S256 code challenge method. The authorization server MUST NOT allow an iGov client to use the plain code challenge method.
 
 ### [3.1.8.](#rfc.section.3.1.8) Redirect URIs
 
@@ -712,7 +716,7 @@ The following sample claim set illustrates the use of the required claims for an
 }
 </pre>
 
-The access tokens MUST be signed with [JWS](#RFC7515) . The authorization server MUST support the RS256 signature method for tokens and MAY use other asymmetric signing methods as defined in the [IANA JSON Web Signatures and Encryption Algorithms registry](#JWS.JWE.Algs) . The JWS header MUST contain the following fields:
+The access tokens MUST be signed with [JWS] [[rfc7515]] . The authorization server MUST support the RS256 signature method for tokens and MAY use other asymmetric signing methods as defined in the [IANA JSON Web Signatures and Encryption Algorithms registry](#JWS.JWE.Algs) . The JWS header MUST contain the following fields:
 
 <dl>
 
@@ -735,9 +739,9 @@ M70-GXuRY4iucKbuytz9e7eW4Egkk4Aagl3iTk9-l5V-tvL6dYu8IlR93GKsaKE8bng0
 EZ04xcnq8s4V5Yykuc_NARBJENiKTJM8w3wh7xWP2gvMp39Y0XnuCOLyIx-J1ttX83xm
 pXDaLyyY-4HT9XHT9V73fKF8rLWJu9grrA</pre>
 
-Refresh tokens SHOULD be signed with [JWS](#RFC7515) using the same private key and contain the same set of claims as the access tokens.
+Refresh tokens SHOULD be signed with [JWS] [[rfc7515]] using the same private key and contain the same set of claims as the access tokens.
 
-The authorization server MAY encrypt access tokens and refresh tokens using [JWE](#RFC7516) . Encrypted access tokens MUST be encrypted using the public key of the protected resource. Encrypted refresh tokens MUST be encrypted using the authorization server's public key.
+The authorization server MAY encrypt access tokens and refresh tokens using [JWE] [[rfc7516]] . Encrypted access tokens MUST be encrypted using the public key of the protected resource. Encrypted refresh tokens MUST be encrypted using the authorization server's public key.
 
 ### [3.2.2.](#rfc.section.3.2.2) Introspection
 
@@ -848,7 +852,7 @@ The following fields MUST be included in the response:
 
 </dl>
 
-PKCE parameters MUST be associated with the "code" as per Section 4.4 of [Proof Key for Code Exchange by OAuth Public Clients (PKCE)](#RFC7636)
+PKCE parameters MUST be associated with the "code" as per Section 4.4 of [Proof Key for Code Exchange by OAuth Public Clients (PKCE)] [[rfc7636]]
 
 The following is an example response:
 
@@ -893,13 +897,13 @@ Authorization servers MAY set the expiry time (<samp>exp</samp>) of access_token
 
 Authorization servers MAY allow a <samp>refresh_token</samp> issued at a higher level to be used to obtain an access_token for a lower level resource scope with an extended expiry time. The client MUST request both the higher level scope and lower level scope in the original authorization request. This allows clients to continue accessing lower level resources after the higher level resource access has expired -- without requiring an additonal user authentication/authorization.
 
-For example: a resource server has resources classified as "public" and "sensitive". "Sensitive" resources require the user to perform a two-factor authentication, and those access grants are short-lived: 15 minutes. For a client to obtain access to both "public" and "sensitive" resources, it makes an authorization request to the authorization server with <samp>scope=public+sensitive</samp>. The authorization server authenticates the end-user as required to meet the required trust level (two-factor authentication or some approved equivalent) and issues an <samp>access_token</samp> for the "public" and "sensitive" scopes with an expiry time of 15mins, and a <samp>refresh_token</samp> for the "public" scope with an expiry time of 24 hrs. The client can access both "public" and "sensitive" resources for 15mins with the access_token. When the access_token expires, the client will NOT be able to access "public" or "sensitive" resources any longer as the access_token has expired, and must obtain a new access_token. The client makes a access grant request (as described in [OAuth 2.0](#RFC6749) section 6) with the refresh_token, and the reduced scope of just "public". The token endpoint validates the refresh_token, and issues a new access_token for just the "public" scopewith an expiry time set to 24hrs. An access grant request for a new access_token with the "sensitive" scope would be rejected, and require the client to get the end-user to re-authenticate/authorize the "sensitive" scope request.
+For example: a resource server has resources classified as "public" and "sensitive". "Sensitive" resources require the user to perform a two-factor authentication, and those access grants are short-lived: 15 minutes. For a client to obtain access to both "public" and "sensitive" resources, it makes an authorization request to the authorization server with <samp>scope=public+sensitive</samp>. The authorization server authenticates the end-user as required to meet the required trust level (two-factor authentication or some approved equivalent) and issues an <samp>access_token</samp> for the "public" and "sensitive" scopes with an expiry time of 15mins, and a <samp>refresh_token</samp> for the "public" scope with an expiry time of 24 hrs. The client can access both "public" and "sensitive" resources for 15mins with the access_token. When the access_token expires, the client will NOT be able to access "public" or "sensitive" resources any longer as the access_token has expired, and must obtain a new access_token. The client makes a access grant request (as described in [OAuth 2.0] [[rfc6749]] section 6) with the refresh_token, and the reduced scope of just "public". The token endpoint validates the refresh_token, and issues a new access_token for just the "public" scopewith an expiry time set to 24hrs. An access grant request for a new access_token with the "sensitive" scope would be rejected, and require the client to get the end-user to re-authenticate/authorize the "sensitive" scope request.
 
 In this manner, protected resources and authorization servers work together to meet risk tolerance levels for sensitive resources and end-user authentication.
 
 ### [4.2.](#rfc.section.4.2) Connections with Clients
 
-A protected resource MUST accept bearer tokens passed in the authorization header as described in [[RFC6750]](#RFC6750) . A protected resource MAY also accept bearer tokens passed in the form parameter or query parameter methods.
+A protected resource MUST accept bearer tokens passed in the authorization header as described in [[rfc6750]] . A protected resource MAY also accept bearer tokens passed in the form parameter or query parameter methods.
 
 Protected resources MUST define and document which scopes are required for access to the resource.
 
@@ -923,10 +927,10 @@ Proof of Possession tokens are somewhat analogous to the Security Assertion Mark
 
 ### [6.](#rfc.section.6) Security Considerations
 
-All transactions MUST be protected in transit by TLS as described in [BCP195](#BCP195) .
+All transactions MUST be protected in transit by TLS as described in [[BCP195]] .
 
 Authorization Servers SHOULD take into account device postures when dealing with native apps if possible. Device postures include characteristics such as a user's lock screen setting, or if the app has 'root access' (meaning the device OS may be compromised to gain additional privilages not intended by the vendor), or if there is a device attestation for the app for its validity. Specific policies or capabilities are outside the scope of this specification.
 
-All clients MUST conform to applicable recommendations found in the Security Considerations sections of [[RFC6749]](#RFC6749) and those found in the [OAuth 2.0 Threat Model and Security Considerations document](#RFC6819) .
+All clients MUST conform to applicable recommendations found in the Security Considerations sections of [[rfc6749]] and those found in the [OAuth 2.0 Threat Model and Security Considerations document] [[rfc6819]] .
 
 ### [7.](#rfc.references) Normative References
