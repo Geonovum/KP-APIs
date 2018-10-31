@@ -92,7 +92,7 @@ var respecConfig = {
       date: "October 2015",
       publisher: "IETF",
     },
-	"OIDcore": {
+	"OpenID.core": {
       href: "https://openid.net/specs/openid-connect-core-1_0.html",
       title:
         "OpenID Connect Core 1.0",
@@ -116,7 +116,7 @@ var respecConfig = {
       date: "October 5 2018",
       publisher: "OpenID foundation",
     },
-	"OIDdiscovery": {
+	"OpenID.Discovery": {
       href: "https://openid.net/specs/openid-connect-discovery-1_0.html",
       title:
         "OpenID Connect Discovery 1.0",
@@ -124,5 +124,29 @@ var respecConfig = {
       date: "November 8 2014",
       publisher: "OpenID foundation",
     },
+	"I-D.ietf-oauth-pop-architecture": {
+      href: "https://tools.ietf.org/html/draft-ietf-oauth-pop-architecture-08",
+      title:
+        "OAuth 2.0 Proof-of-Possession (PoP) Security Architecture",
+      authors: ["P. Hunt, J. Richer, W. Mills, P. Mishra, H. Tschofenig"],
+      date: "July 8, 2016",
+      publisher: "IETF",
+    },
+	"HEART.OAuth2": {
+      href: "https://openid.net/specs/openid-heart-oauth2-1_0.html",
+      title:
+        "Health Relationship Trust Profile for OAuth 2.0",
+      authors: ["J. Richer"],
+      date: "April 25, 2017",
+      publisher: "OpenID foundation",
+    },
+	"JWS.JWE.Algs": {
+      href: "https://www.iana.org/assignments/jose/jose.xhtml#web-signature-encryption-algorithms",
+      title:
+        "IANA JSON Web Signatures and Encryption Algorithms registry",
+      authors: ["Jim Schaad, Jeff Hodges, Joe Hildebrand, Sean Turner"],
+      date: "",
+      publisher: "IANA",
+    },	
   },
 };
