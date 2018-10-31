@@ -257,6 +257,7 @@ Full clients and browser-embedded clients making a request to the authorization 
 Clients MUST include their full redirect URI in the authorization request. To prevent open redirection and other injection attacks, the authorization server MUST match the entire redirect URI using a direct string comparison against registered values and MUST reject requests with an invalid or missing redirect URI.
 
 **NLprofile**
+
 Native clients MUST apply PKCE, as per RFC7636.
 As `code_verifier` the S256 method MUST be applied.
 Effectively this means that a Native Client MUST include a cryptographic random `code_challenge` of at least 128 bits of entropy and the `code_challenge_method` with the value `S256`.
@@ -278,6 +279,7 @@ Request fields:
 <dt>code_challenge_method</dt>
 <dd>In case `code_challenge` is used, mandatory. MUST use the value `S256`.</dd>
 </dl>
+
 **/NLprofile**
 
 The following is a sample response from a web-based client to the end user’s browser for the purpose of redirecting the end user to the authorization server's authorization endpoint:
@@ -367,6 +369,7 @@ The following sample claim set illustrates the use of the required claims for a 
 The JWT assertion MUST be signed by the client using the client's private key. See [Section 2.2](#ClientRegistration) for mechanisms by which the client can make its public key known to the server. The authorization server MUST support the RS256 signature method (the Rivest, Shamir, and Adleman (RSA) signature algorithm with a 256-bit hash) and MAY use other asymmetric signature methods listed in the JSON Web Algorithms ( [JWA] [[rfc7518]] ) specification.
 
 **NLProfile**
+
 TODO Add SHOULD PS256 signing of the private\_key\_jwt.
 
 Effectively, the Token Request has the following content:
@@ -384,6 +387,7 @@ Effectively, the Token Request has the following content:
 <dt>client_assertion</dt>
 <dd>Mandatory. MUST have the above specified signed JWT as contents.</dd>
 </dl>
+
 **/NLProfile**
 
 The following sample JWT contains the above claims and has been signed using the RS256 JWS algorithm and the client's own private key (with line breaks for display purposes only):
@@ -483,6 +487,29 @@ H2_VQ_Ww1JOLn9vRn-H48FDj7TxlIT74XdTZgTv31w_GRPAOfyxEw_ZUmxhz5Z-gTlQ",
 </pre>
 
 Note that the second example contains both the public and private keys, while the first example contains the public key only.
+
+
+### Token Response
+
+**NLprofile**
+
+The Token Response has the following contents
+
+<dl>
+<dt>access_token</dt>
+<dd>Mandatory. TODO</dd>
+<dt>token_type</dt>
+<dd>Mandatory. TODO</dd>
+<dt>refresh_toke</dt>
+<dd>Optional. Under this profile, refresh tokens are (currently) not supported. MUST NOT be used, unless explicitly speficied in an additional applicable profile based on this profile.</dd>
+<dt>expires_in</dt>
+<dd>Optional. Lifetime of the access token, in seconds.</dd>
+<dt>scope</scope>
+<dd>Optional. TODO</dd>
+</dl>
+
+**/NLprofile**
+
 
 ### [2.4.](#rfc.section.2.4) Connection to the Protected Resource
 
