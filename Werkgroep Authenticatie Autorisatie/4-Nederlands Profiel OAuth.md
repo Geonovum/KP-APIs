@@ -302,6 +302,23 @@ This causes the browser to send the following (non-normative) request to the aut
 Host: idp-p.example.com
 </pre>
 
+
+### Response from the Token Endpoint
+
+**NLprofile**
+
+Response parameters
+<dl>
+<dt>code</dt>
+<dd>Mandatory. MUST be a cryptographic random value.</dd>
+<dt>state</dt>
+<dd>Mandatory. MUST be a verbatim copy of the value of the <code>state</code> parameter in the Authorization Request.</dd>
+</dl>
+
+**/NLPRofile**
+
+
+
 ### [2.3.2.](#rfc.section.2.3.2) [Requests to the Token Endpoint](#RequestsToTokenEndpoint)
 
 Full clients, native clients with dynamically registered keys, and direct access clients as defined above MUST authenticate to the authorization server's token endpoint using a JWT assertion as defined by the [JWT Profile for OAuth 2.0 Client Authentication and Authorization Grants][[!rfc7523]] using only the <samp>private_key_jwt</samp> method defined in [OpenID Connect Core] [[OpenID.Core]] . The assertion MUST use the claims as follows:
@@ -351,7 +368,7 @@ The JWT assertion MUST be signed by the client using the client's private key. S
 **NLProfile**
 TODO Add SHOULD PS256 signing of the private\_key\_jwt.
 
-Effectively, the fToken Request has the following content:
+Effectively, the Token Request has the following content:
 <dl>
 <dt>grant_type</dt>
 <dd>Mandatory. MUST contain the value `authorization_code`</dd>
@@ -433,6 +450,14 @@ cNt1H2_VQ_Ww1JOLn9vRn-H48FDj7TxlIT74XdTZgTv31w_GRPAOfyxEw_ZUmxhz5Z-gTlQ",
 </pre>
 
 **NLProfile**
+
+In case the Authorization Server, Resource Server and client are not operated under responsibility of the same organisation, each party MUST use PKIoverheid certificates.
+TODO PKIoverheid with OIN!
+
+The PKIoverheid certificate MUST be included as a <code>x5c</code> parameter.
+The <code>x5c</code> parameter MUST be included as a list (array) of X509 certificate(s), as Base64 DER encoded PKIoverheid certificate(s).
+The first certificate MUST be the Client's certificate, optionally followed by the rest of that certificate's chain.
+The jwks structure MUST include the public key parameters with the same values of the corresponding X509 certificate included as <code>x5c</code>, as per [[rfc7517]] §4.7.
 
 **/NLProfile**
 
@@ -685,6 +710,7 @@ The authorization server MUST compare a client's registered redirect URIs with t
 ### [3.1.9.](#rfc.section.3.1.9) RefreshTokens
 
 Authorization Servers MAY issue refresh tokens to clients under the following context:
+
 
 Clients MUST be registered with the Authorization Server.
 
