@@ -63,38 +63,47 @@ te dubbelklikken. Volg nu de instructie van het installatieprogramma.
 Nadat de GitHub Client is geinstalleerd, moet je de centrale GitHub Repository
 overhalen naar je PC/Laptop. Dit doe je door de Repository te "clonen".
 
-Start de GitHub Client, en kies in het menu **File** voor **Clone Repository**.
-En kies de Repository die je wil **clonen** (in dit geval Geonovum/KP-API). Als
-**Local Path** kies je een logische plek op je PC/Laptop. (Tip: het is handig om
+Start de GitHub Client, en kies in het menu *File* voor *Clone Repository*.
+En kies de Repository die je wil *clonen* (in dit geval Geonovum/KP-APIs). Als
+*Local Path* kies je een logische plek op je PC/Laptop. (Tip: het is handig om
 één plek voor je Github Repositories te maken, bijvoorbeeld C:. Na het
-aanklikken van de knop **clone** wordt een lokale kopie gemaakt. Github weet
+aanklikken van de knop *clone* wordt een lokale kopie gemaakt. Github weet
 welke versie je hebt opgehaald, en zal de wijzingen die je maakt netjes voor je
 bijhouden.
 
 In de map die je als *local path* hebt opgegeven komt de mappen structuur te
 staan zoals hierboven beschreven.
 
-### GitHub Pull: Ophalen van wijzigingen
+### GitHub *Pull origin:* Ophalen van wijzigingen
 
-Een *pull ** request werkt de lokale versie van je GitHub Repository bij.
+Een *pull* request werkt de lokale versie van je GitHub Repository bij.
 Wijzigingen die zijn gedaan in de centrale repository (dus op Github.com) worden
 ook doorgevoerd in je lokale kopie. Het uitvoeren van een pull doe je door in
-het menu **Repository** op **pull** te klikken.
+het menu *Repository* op *pull* te klikken.
 
-### GitHub Push: Uploaden van wijzigingen
+### Github *Commit to Master:* Wijzigingen opslaan
 
-Zodra je klaar bent met het editen van je documenten **commit** je die
-wijzingen, en doe je vervolgens een **push** naar de centrale repository. Bij de
-**commit** geef je een commit-tekst mee, waarmee je aan de rest van de
-werkgroep(en) in een paar woorden kan aangeven wat je hebt gewijzigd. Na het
-uitvoeren van de **push** is de Centrale GitHub Repositiry weer bijgewerkt.
+Met de knop *Commit to master*  zet je de wijzigingen die je hebt gedaan klaar 
+om te uploaden naar de Centrale GitHub Repository. GitHub maakt daartoe een versie aan,  
+die je verplicht voorziet van een *summary* en optioneel van een *Description* Let op: met  
+het committen heb je dus nog niks ge-upload.
+
+### Github *Push orgigin* of *Pull origin* Wijzigingen uploaden
+
+Nadat je de wijzigen hebt gecommit, moeten ze richting de centrale repository. Nu zijn er
+twee mogelijkheden. Ofwel je hebt schrijfrechten op de Centrale Repository, of je hebt ze niet.
+In het eerste geval kan je een *Push Origin* uitvoeren, dan worden de wijzigingen meteen in  
+de Centrale GitHub Repository verwerkt. In het tweede geval doe je een *Pull request* bij de eigenaar
+van de Repository om de wijzigingen door te voeren. Github maakt dan een eigen versie voor je aan 
+(dat heet een fork) en vraagt aan de eigenaar van de Repository om die fork te verwerken in de 
+Centrale Repository.  
 
 ## Markdown Editors
 
 Markdown is een "plat" bestandsformaat, dat maakt dat jezelf kan kiezen welke
 editor of edit-omgeving je wil gebruiken, mits je je maar houdt aan het markdown
-formaat. Een beschrijving van markdown vind je hier:
-https://nl.wikipedia.org/wiki/Markdown
+formaat. Een beschrijving van markdown vind je hier: https://nl.wikipedia.org/wiki/Markdown.
+Een cheatsheet vind je hier: https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf
 
 Voor MS-Word bestaat een markdown plugin. Het voordeel daarvan is dat je niet na
 hoeft te denken over de te gebruiken markdown-tags,  
@@ -121,8 +130,8 @@ Ze zullen tijdens de looptijd van het project worden aangepast en uitgebreid.
 Met de wetenschap van dat moment.
 
 ### Rule-1: Taal
-Technische documentatie schrijven we in het Engels, 
-Niet-Technische Documentatie schrijven we in het Nederlands!
+>Technische documentatie schrijven we in het Engels, 
+>Niet-Technische Documentatie schrijven we in het Nederlands!
 
 ### Rule-2:
 
