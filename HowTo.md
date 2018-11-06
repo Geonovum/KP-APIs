@@ -76,7 +76,7 @@ staan zoals hierboven beschreven.
 
 ### GitHub Pull: Ophalen van wijzigingen
 
-Een **pull** request werkt de lokale versie van je GitHub Repository bij.
+Een *pull ** request werkt de lokale versie van je GitHub Repository bij.
 Wijzigingen die zijn gedaan in de centrale repository (dus op Github.com) worden
 ook doorgevoerd in je lokale kopie. Het uitvoeren van een pull doe je door in
 het menu **Repository** op **pull** te klikken.
@@ -89,8 +89,7 @@ wijzingen, en doe je vervolgens een **push** naar de centrale repository. Bij de
 werkgroep(en) in een paar woorden kan aangeven wat je hebt gewijzigd. Na het
 uitvoeren van de **push** is de Centrale GitHub Repositiry weer bijgewerkt.
 
-Markdown Editors
-----------------
+## Markdown Editors
 
 Markdown is een "plat" bestandsformaat, dat maakt dat jezelf kan kiezen welke
 editor of edit-omgeving je wil gebruiken, mits je je maar houdt aan het markdown
@@ -119,9 +118,11 @@ dan een tekstverwerker, hier moet je wel de markdown tags kennen.
 Hieronder komen de “Golden Rules” te staan. Deze gelden voor alle Werkgroepen,
 en zijn bedoeld om het uiteindelijke document dezelfde look-and-feel te geven.
 Ze zullen tijdens de looptijd van het project worden aangepast en uitgebreid.
-Met de wetenscahp van dat moment.
+Met de wetenschap van dat moment.
 
-### Rule-1:
+### Rule-1: Taal
+Technische documentatie schrijven we in het Engels, 
+Niet-Technische Documentatie schrijven we in het Nederlands!
 
 ### Rule-2:
 
