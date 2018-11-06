@@ -1,13 +1,11 @@
-Getting Started
-===============
+# Getting Started
 
 In dit document kort samengevat hoe we samen gaan werken aan de documentatie van
 het Kennis Platform API's Kort beschreven staat hoe je met GitHub werkt, hoe je
 met Markdown werkt en welke afspraken (Golden Rules) het gezamenlijk werken
 gemakkelijker maken.
 
-GitHub Repository
------------------
+## GitHub Repository
 
 We gebruiken GitHub als samenwerk omgeving voor de documentatie. Er is een
 centrale GitHub repository gemaakt op https://github.com/Geonovum, deze heet
@@ -116,8 +114,7 @@ Een andere optie is om *Visual Studio Code* (VSC) te installeren. De download
 vind je hier: https://code.visualstudio.com/ VSC is meer een ontwikkelomgeving
 dan een tekstverwerker, hier moet je wel de markdown tags kennen.
 
-Golden Rules
-------------
+## Golden Rules
 
 Hieronder komen de “Golden Rules” te staan. Deze gelden voor alle Werkgroepen,
 en zijn bedoeld om het uiteindelijke document dezelfde look-and-feel te geven.
