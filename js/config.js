@@ -1,9 +1,24 @@
-var respecConfig = {
+//-------------------------------------------------------------------------------------
+//-- File. . . :  config.js
+//-- Bevat . . :  Template voor de  configuratie voor respec  
+//--              Gebaseerd op https://github.com/Geonovum/respec/wiki
+//--              Deze file moet worden neergezet in de root-directory van de 
+//--              betreffende standaard. 
+//-- Door. . . :  Frank Terpstra/Jan van Gelder
+//-------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------
+//-- Log . . . :  20180615 - FT  - Initiele versie
+//-- . . . . . :  20181106 - JvG - verplaatst naar root KP-APIs
+//-------------------------------------------------------------------------------------
+
+var respecConfig = 
+{
   specStatus: "GN-BASIS",
   specType: "HR",
   pubDomain: "etc",
   publishDate: "2018-06-15",
-  editors: [
+  editors: 
+  [
     {
       name: "Frank Terpstra",
       company: "Geonovum",
@@ -35,7 +50,7 @@ var respecConfig = {
   github: "https://github.com/geonovum/KP-APIs",
   issueBase: "https://github.com/geonovum/KP-APIs/issues/",
   localBiblio: {
-    "OAuth2": {
+  "OAuth2": {
       href: "https://tools.ietf.org/html/rfc6749",
       title:
         "The OAuth 2.0 Authorization Framework",

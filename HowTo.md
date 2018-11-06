@@ -88,7 +88,7 @@ om te uploaden naar de Centrale GitHub Repository. GitHub maakt daartoe een vers
 die je verplicht voorziet van een *summary* en optioneel van een *Description* Let op: met  
 het committen heb je dus nog niks ge-upload.
 
-### Github *Push orgigin* of *Pull origin* Wijzigingen uploaden
+### Github *Push origin* of *Pull origin* Wijzigingen uploaden
 
 Nadat je de wijzigen hebt gecommit, moeten ze richting de centrale repository. Nu zijn er
 twee mogelijkheden. Ofwel je hebt schrijfrechten op de Centrale Repository, of je hebt ze niet.
@@ -136,5 +136,7 @@ Met de wetenschap van dat moment.
 >Niet-Technische Documentatie schrijven we in het Nederlands!
 
 ### Rule-2:
+tbd
 
 ### Rule-3:
+tbd
