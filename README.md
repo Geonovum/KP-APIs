@@ -4,4 +4,4 @@ Hier vindt je ook de mogelijkheid je aan te melden voor de werkgroepen, het slac
 
 **Bekijk de werkversie van de API strategie voor de nederlandse overheid op:** https://geonovum.github.io/KP-APIs/
 
-Voor de editors van de bestanden op GitHub: zie HowTo.md in deze map.
+Voor de editors van de bestanden op GitHub: zie de [HowTo](https://geonovum.github.io/KP-APIs/HowTo.md) in deze map.
