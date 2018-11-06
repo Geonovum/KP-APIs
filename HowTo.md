@@ -112,9 +112,11 @@ en meteen kan zien hoe het document er uit komt te zien.
 ### Microsoft Word plugin
 
 Om de plugin te installeren ga je naar Ga naar http://www.writage.com/, download
-je het installatie bestand, en voer je het uit. Er wordt  
-dan stijl aangemaakt voor Markdown, en bij *save as* kan je het bestand opslaan
-als een markdown bestand.
+je het installatie bestand, en voer je het uit. Er wordt dan een stijl aangemaakt voor 
+Markdown bestanden, en bij *save as* kan je het bestand opslaan als een markdown bestand.
+In Word zelf geef je gewoon met stijlen aan hoe de tekst er uit moet zien, kopteksten,
+tabellen, standaard tekst, enz. Bij het opslaan maakt de plugin er dan een Markdoen bestand
+van.
 
 ### Visual Studio Code
 
