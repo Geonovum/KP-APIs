@@ -122,7 +122,7 @@ var respecConfig =
       date: "October 2015",
       publisher: "IETF",
     },
-	"OpenID.core": {
+	"OpenID.Core": {
       href: "https://openid.net/specs/openid-connect-core-1_0.html",
       title:
         "OpenID Connect Core 1.0",
