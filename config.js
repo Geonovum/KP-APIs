@@ -139,10 +139,10 @@ var respecConfig =
       publisher: "OpenID foundation",
     },
 	"iGOV.OAuth2": {
-      href: "https://openid.net/specs/openid-igov-openid-connect-1_0.html",
+      href: "https://openid.net/specs/openid-igov-oauth2-1_0.html",
       title:
-        "International Government Assurance Profile (iGov) for OpenID Connect 1.0 - draft 3",
-      authors: ["M. Varley, P. Grassi"],
+        "International Government Assurance Profile (iGov) for OAuth 2.0",
+      authors: ["J. Richer, M. Varley, P. Grassi"],
       date: "October 5 2018",
       publisher: "OpenID foundation",
     },
