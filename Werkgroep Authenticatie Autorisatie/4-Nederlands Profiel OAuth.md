@@ -134,7 +134,7 @@ The contents and protocol of the Resource Request and Resource Response are out 
 This profile is based upon the international government assurance profile for OAuth 2.0 (iGOV) [[iGOV.OAuth2]] as published by the openID Foundation (https://openid.net/foundation/). It should be considered a fork of this profile as the iGov profile is geared more towards the American situtation and in the Netherlands we have to deal with an European Union context. 
 
 <!-- ### [Abstract](#rfc.abstract) -->
-### Abstract]
+### Abstract
 
 
 The OAuth 2.0 protocol framework defines a mechanism to allow a resource owner to delegate access to a protected resource for a client application.
@@ -149,7 +149,7 @@ This specification profiles the OAuth 2.0 protocol framework to increase baselin
 
 
 <!-- ### [1.](#rfc.section.1) [Introduction](#Introduction) -->
-### Introduction]
+### Introduction
 
 
 This document profiles the OAuth 2.0 web authorization framework for use in the context of securing web-facing application programming interfaces (APIs), particularly Representational State Transfer (RESTful) APIs. The OAuth 2.0 specifications accommodate a wide range of implementations with varying security and usability considerations, across different types of software clients. The OAuth 2.0 client, protected resource, and authorization server profiles defined in this document serve two purposes:
