@@ -178,5 +178,12 @@ var respecConfig =
       date: "",
       publisher: "IANA",
     },	
+    "BCP195": {
+      href: "https://tools.ietf.org/html/bcp195",
+      title: "Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)",
+      authors: ["Y. Sheffer, R. Holz, P. Saint-Andre"],
+      date: "May 2015",
+      publisher: "IETF",
+    },  
   },
 };
