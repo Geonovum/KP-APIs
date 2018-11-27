@@ -248,7 +248,7 @@ All clients MUST register with the authorization server. For client software tha
 Client registration MAY be completed by either static configuration (out-of-band, through an administrator, etc...) or dynamically.
 
 <!-- ### [2.2.1.](#rfc.section.2.2.1) [Redirect URI](#RedirectURI) -->
-### [2.2.1.](#rfc.section.2.2.1) [Redirect URI](#RedirectURI)
+### Redirect URI
 
 Clients using the authorization code grant type MUST register their full redirect URIs. The Authorization Server MUST validate the redirect URI given by the client at the authorization endpoint using strict string comparison.
 
@@ -263,11 +263,11 @@ Clients SHOULD NOT have multiple redirect URIs on different domains.
 Clients MUST NOT forward values passed back to their redirect URIs to other arbitrary or user-provided URIs (a practice known as an "open redirector”).
 
 <!-- ### [2.3.](#rfc.section.2.3) Connection to the Authorization Server -->
-### [2.3.](#rfc.section.2.3) Connection to the Authorization Server
+### Connection to the Authorization Server
 
 
 <!-- ### [2.3.1.](#rfc.section.2.3.1) [Requests to the Authorization Endpoint](#RequestsToAuthorizationEndpoint) -->
-### [2.3.1.](#rfc.section.2.3.1) [Requests to the Authorization Endpoint](#RequestsToAuthorizationEndpoint)
+### Requests to the Authorization Endpoint
 
 Full clients and browser-embedded clients making a request to the authorization endpoint MUST use an unpredictable value for the state parameter with at least 128 bits of entropy. Clients MUST validate the value of the <samp>state</samp> parameter upon return to the redirect URI and MUST ensure that the state value is securely tied to the user’s current session (e.g., by relating the state value to a session identifier issued by the client software to the browser).
 
@@ -578,7 +578,7 @@ The authorization server MUST enforce client authentication as described above f
 The authorization server MUST validate all redirect URIs for authorization code and implicit grant types.
 
 <!-- ### [3.1.3.](#rfc.section.3.1.3) [Dynamic Registration](#DynamicRegistration) -->
-### [3.1.3.](#rfc.section.3.1.3) [Dynamic Registration](#DynamicRegistration)
+### Dynamic Registration
 
 Dynamic Registration allows for authorized Clients to on-board programatically without administrative intervention. This is particularly important in ecosystems with many potential Clients, including Mobile Apps acting as independent Clients. Authorization servers MUST support dynamic client registration, and clients MAY register using the [Dynamic Client Registration Protocol] [[rfc7591]] for authorization code grant types. Clients MUST NOT dynamically register for the client credentials grant type. Authorization servers MAY limit the scopes available to dynamically registered clients.
 
