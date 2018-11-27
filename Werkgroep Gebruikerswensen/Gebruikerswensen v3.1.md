@@ -1,4 +1,4 @@
-# Hoofdstuk 4 Inspelen op gebruikerswensen: dé sleutel tot gebruik
+# <!-- Hoofdstuk 4 --> Inspelen op gebruikerswensen: dé sleutel tot gebruik
 
 ## <!-- 4.1 --> Inleiding
 

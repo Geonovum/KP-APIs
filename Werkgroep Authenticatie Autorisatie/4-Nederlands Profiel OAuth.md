@@ -146,7 +146,7 @@ This specification profiles the OAuth 2.0 protocol framework to increase baselin
 * * *
 
 
-### [1.](#rfc.section.1) [Introduction](#Introduction)
+### <!-- [1.] --> (#rfc.section.1) [Introduction](#Introduction)
 
 This document profiles the OAuth 2.0 web authorization framework for use in the context of securing web-facing application programming interfaces (APIs), particularly Representational State Transfer (RESTful) APIs. The OAuth 2.0 specifications accommodate a wide range of implementations with varying security and usability considerations, across different types of software clients. The OAuth 2.0 client, protected resource, and authorization server profiles defined in this document serve two purposes:
 
@@ -156,7 +156,7 @@ This document profiles the OAuth 2.0 web authorization framework for use in the 
 
 This OAuth profile is intended to be shared broadly, and has been ~~greatly influenced by the [HEART OAuth2 Profile][[HEART.OAuth2]].~~ derived from the [iGov OAuth2 profile] [[iGOV.OAuth2]].
 
-### [1.1.](#rfc.section.1.1) [Requirements Notation and Conventions](#rnc)
+### <!-- [1.1.] --> (#rfc.section.1.1) [Requirements Notation and Conventions](#rnc)
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [[!rfc2119]] .
 
