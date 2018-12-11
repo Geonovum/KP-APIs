@@ -1,5 +1,4 @@
-Werkgroep Architectuur
-======================
+# Werkgroep Architectuur
 
 *Website:*
 
@@ -49,30 +48,30 @@ data ‘gebruiken’ bij het werken met API’s.
 >   De werkgroep leden hebben in november 2018 gekozen voor de volgende
 >   thematische indeling:
 
-### 6.2.1 Beveiliging
+### <!-- 6.2.1 --> Beveiliging
 
-### 6.2.2 Autorisatie
+### <!-- 6.2.2 --> Autorisatie
 
-### 6.2.3 Semantiek
+### <!-- 6.2.3 --> Semantiek
 
 >   Noemen: ontwikkelingen op het gebied van Linked (open) Data, stelsel van
 >   overheidsgegevens en link: <https://www.noraonline.nl/wiki/Semantiek>
 
-### 6.2.4 Metadata
+### <!-- 6.2.4 --> Metadata
 
 >   ?Noemen: Toepassingsprofiel Metadata Rijk, TMLO? Relatie leggen.
 >   <https://www.noraonline.nl/wiki/Metagegevens_Duurzame_Toegankelijkheid>
 
-### 6.2.5 Interoperabiliteit
+### <!-- 6.2.5 --> Interoperabiliteit
 
 >   ?Benadrukken voordelen voor interoperabiliteit.
 >   <https://www.noraonline.nl/wiki/Interoperabiliteit>
 
-### 6.3 3. Patronen
+### <!-- 6.3.3 --> Patronen
 
 >   ?Behandelen: patronen uit presentatie Joost/ Dennis als use cases
 
-### 6.4 4. Componenten
+### <!-- 6.4.4 --> Componenten
 
 >   Hamvraag: zijn REST API’s bouwstenen (architectuur component)? Behandelen:
 >   op welke wijze API’s eenduidig zijn te beschrijven en vindbaar te maken
@@ -80,17 +79,17 @@ data ‘gebruiken’ bij het werken met API’s.
 >   regels voor API Register’s meegeven? Wie hebben er een use case rond een API
 >   register?
 
-### 6.5 5. Begrippen
+### <!-- 6.5.5 --> Begrippen
 
 >   Noemen/ overnemen begrippen uit document BFS over API’s. Proberen een steeds
 >   meer gestandaardiseerd begrippenkader voor REST API’s neer te zetten
 
-### 6.6 6. Standaarden
+### <!-- 6.6.6 --> Standaarden
 
 >   Updaten en overnemen lijst met API standaarden uit het document BFS
 >   (Lancelot Schellevis)
 
-### 6.7 7. Use cases
+### <!-- 6.7.7 --> Use cases
 
 >   Iig: use case Drechtsteden. Overige? Let wel: use cases zijn in dit stadium
 >   het uitgangspunt
