@@ -69,8 +69,7 @@ Alternatively, the Authorization Server can identify and authenticate the User a
 #### Client
 The User uses a client, which can be any arbitrary application decided upon by the User.
 Assumed is that the User trusts this client for interaction with the service.
-The Client is not trusted by the Resource Server.
-   **TODO** public versus semi-confidential after pre-registration.
+The authorization server has at least low trust in the client when the client is either public or semi-confidential.
 Assumptions is that the Client is aware of the specifications of the API and authorization is required.
 The Client is either using a user-agent, typically a browser, or the relevant parts are integrated into the Client application.
 
@@ -84,7 +83,6 @@ See RFC 8252 for more information on implementation of native applications.
 A Client wishes to send a request to an API, on behalf of the User.
 The API requires to have a trusted identification of the User, before providing the Service.
 A Client has pre-registered with the Authorization Endpoint and has been assigned a client_id.
-    **TODO** ref pre-registration process/spec.
 
 The normal flow, that is without any error handling, is described below.
 
@@ -139,11 +137,7 @@ This profile is based upon the international government assurance profile for OA
 
 The OAuth 2.0 protocol framework defines a mechanism to allow a resource owner to delegate access to a protected resource for a client application.
 
-TODO revise
-
-This specification profiles the OAuth 2.0 protocol framework to increase baseline security, provide greater interoperability, and structure deployments in a manner specifically applicable, but not limited to consumer-to-government deployments.
-
-/TODO
+This specification profiles the OAuth 2.0 protocol framework to increase baseline security, provide greater interoperability, and structure deployments in a manner specifically applicable, but not limited to consumer-to-government deployments in the Netherlands.
 
 * * *
 
@@ -388,7 +382,7 @@ The JWT assertion MUST be signed by the client using the client's private key. S
 
 **iGov-NL**
 
-TODO Add SHOULD PS256 signing of the private\_key\_jwt.
+In addition to above signing methods, the Authorization server SHOULD support PS256 signing algorithm [[RFC7518]] for the signing of the private\_key\_jwt.
 
 Effectively, the Token Request has the following content:
 <dl>
