@@ -28,18 +28,41 @@ var respecConfig =
       name: "Jan van Gelder",
       company: "Geonovum",
       companyURL: "http://www.Geonovum.nl/",
+    }
+  ],
+  authors: 
+  [
+    {
+      name: "Lancelot Schellevis",
+      company: "Forum Standaardisatie",
+      companyURL: "http://www.forumstandaardisatie.nl/",
     },
-	{
+    {
+      name: "Friso Penninga",
+      company: "Geonovum",
+      companyURL: "http://geonovum.nl/",
+    },
+    {
+      name: "Matthias Snoei",
+      company: "Swis",
+      companyURL: "http://swis.nl/",
+    },
+    {
       name: "Remco Schaar",
       company: "Logius",
       companyURL: "http://www.logius.nl/",
     },
-	{
-      name: "Martin Borgman",
-      company: "het Kadaster",
+	  {
+      name: "Jasper Roes",
+      company: "Het Kadaster",
       companyURL: "http://www.kadaster.nl/",
     },
-	{
+    {
+      name: "Emile van de Maas",
+      company: "",
+      companyURL: "",
+    },
+	  {
       name: "Jan Jaap Zoutendijk",
       company: "Rijkswaterstaat",
       companyURL: "http://www.rws.nl/",
