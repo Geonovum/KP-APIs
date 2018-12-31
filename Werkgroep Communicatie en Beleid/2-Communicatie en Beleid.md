@@ -1,5 +1,5 @@
-Application Programming Interfaces, wat is het en waarom hierop in te zetten
-============================================================================
+Application Programming Interfaces, wat zijn het en waarom hierop in te zetten
+==============================================================================
 
 Dit hoofdstuk heeft als doel om voor het beleid- en managementniveau te duiden
 wat API’s zijn en wat het belang ervan is. Het geeft inzicht in de mogelijkheden
