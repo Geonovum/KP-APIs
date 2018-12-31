@@ -1,10 +1,5 @@
-Communicatie en beleid
-======================
-
-Titel nog Communicatie en Beleid bijwerken naar:
-
-**Application Programming Interfaces, wat is het en waarom hierop in te
-zetten.**
+Application Programming Interfaces, wat is het en waarom hierop in te zetten
+============================================================================
 
 Dit hoofdstuk heeft als doel om voor het beleid- en managementniveau te duiden
 wat API’s zijn en wat het belang ervan is. Het geeft inzicht in de mogelijkheden
@@ -45,9 +40,9 @@ softwareontwikkelaar, zodat andere ontwikkelaars weten hoe de software te
 koppelen aan de eigen software. Zodoende kunnen twee applicaties rechtstreeks en
 online met elkaar communiceren. Het is daarmee geen standaard, maar eerder een
 handleiding die kan worden gebruikt voor een machine tot machine koppeling. Met
-name daar waar veel digitale diensten met elkaar samenwerken en informatie op
-een makkelijke en toegankelijke manier willen delen zijn API’s zeer geschikt. De
-belangrijke eigenschappen van moderne API’s zijn:
+name daar waar veel digitale diensten met elkaar samenwerken en informatie
+realtime op een makkelijke en toegankelijke manier willen delen zijn API’s zeer
+geschikt. De belangrijke eigenschappen van moderne API’s zijn:
 
 -   prestaties (het zorgt ervoor dat machines snel met elkaar praten);
 
@@ -121,9 +116,10 @@ meer in te zetten op gegevensuitwisseling via API’s:
     API gedreven informatie uitwisseling draait dit om en gaat ervan uit dat
     potentieel iedereen zou moeten kunnen aansluiten en met elkaar samenwerken,
     ook nu nog onbekende partijen. Aansluiten moet dan zo makkelijk, eenduidig
-    en goedkoop mogelijk zijn en de kwaliteit van data moet hoog zijn. Op deze
-    manier wordt innovatie beter gefaciliteerd en kunnen bedrijven en overheden
-    meer met elkaar samenwerken.
+    en goedkoop mogelijk zijn en de kwaliteit van data moet hoog zijn zodat
+    realtime gegevensuitwisseling mogelijk is. Op deze manier wordt innovatie
+    beter gefaciliteerd en kunnen bedrijven en overheden meer met elkaar
+    samenwerken.
 
 -   Er is een tekort aan goed geschoold ICT personeel en de overheid heeft
     moeite om goed ICT personeel te vinden. Zodra beter wordt aangesloten op wat
@@ -188,13 +184,17 @@ erbij te pakken. Kunnen de daarin gestelde doelstelling niet veel beter en
 makkelijker gerealiseerd worden als meer gebruik wordt gemaakt van
 gegevensuitwisseling via API’s?
 
-Een goede twee stap is om te onderzoeken welke informatie uit welke bronnen je
-nodig hebt om de business doelstellingen te behalen, en of de kwaliteit van de
-bronnen voldoende is. Dit kunnen zowel externe als interne bronnen zijn. Een
-vervolgstap is om te onderzoeken welke externe koppelingen met andere systemen
-(zowel interne als extern) er al zijn, hoe deze zijn ingericht en welke
-afspraken daar achter liggen en of het niet goedkoper en makkelijker kan via
-API’s.
+Een goede twee stap is om te onderzoeken welke informatie je organisatie
+aanbiedt (denk bijvoorbeeld aan (basis)registraties), deze informatie is vaak
+ook informatie die hoort bij gekoppeld aan de primaire taken van een
+organisatie, en met API’s zijn deze mogelijk makkelijker te ontsluiten. De derde
+stap is dan om te kijken uit welke externe bronnen je informatie nodig hebt om
+de business doelstellingen te behalen. Kijk daarbij ook, en of de kwaliteit van
+de bronnen nu voldoende is., Dit kunnen zzowel voor de externe als interne
+bronnen zijn. Een vervolgstap is om te onderzoeken welke externe koppelingen met
+andere systemen (zowel interne als extern) er al zijn, hoe deze zijn ingericht
+en welke afspraken daar achter liggen en of het niet goedkoper en makkelijker
+kan via API’s.
 
 Als hieruit voorkomt dat de organisatie veel te winnen heeft bij
 gegevensuitwisseling via API’s, dan is het vervolg van deze API strategie
@@ -204,4 +204,24 @@ voorwaarden, designprincipes en standaarden daarbij te hanteren.
 
 ##### Enkele voorbeelden
 
-Nog nader in te vullen
+-   De NS beschikt over een grote hoeveelheid data met informatie over de
+    geplande en actuele dienstregeling. Deze informatie wordt via een API
+    aangeboden en wordt bijvoorbeeld door Google Maps weer geïntegreerd voor
+    optimale routeplanning. Google Maps wordt trouwens ook via een API
+    aangeboden en veel verwerkt in bijvoorbeeld website.
+
+-   Amsterdam Data Exchange en Amsterdam Data Portal. Dit is een samenwerking
+    voor de onafhankelijke en betrouwbare data-uitwisseling voor iedereen. Het
+    is een eerlijke en betrouwbare datamarkt, waarin gebruikers controle hebben
+    over hun data. Zowel overheden als bedrijven kunnen participeren.
+    Gevensuitwisseling gaat vaak via API’s, zo worden bijvoorbeeld via de
+    Amsterdam Data Portal verschillende API’s aangeboden.
+
+-   Parkeren via de mobiel gaat ook via API’s die weer gekoppeld zijn aan de
+    ‘parkeersystemen’ van gemeenten, op deze markt zijn veel verschillende
+    aanbieders actief.
+
+-   De Kamer van Koophandel biedt een API aan om aan te sluiten op het
+    Handelsregister hierdoor is het mogelijk om te zoeken en gegevens te
+    controleren (denk aan handelsnaam, adresgegevens en KVK-nummer) via externe
+    softwareprogramma’s. Hiervoor moet apart toegang voor worden aangevraagd.
