@@ -37,6 +37,10 @@ aanmerking komt.
 Het Nederlands profiel OAuth baseren we het internationale iGOV OAuth 2.0 profiel [[iGOV.OAuth2]] we nemen niet alle keuzes van dit internationale profiel over aangezien dit een aantal keuzes bevat die sterk leunen op de amerikaanse situatie. Het kan het best beschouwd worden als een fork waar we in ons profiel aangeven waar we afwijken.
 iGov heeft twee naast het OAuth profiel ook een OpenID connect profiel [[iGOV.OpenID]] wanneer mogelijk ook OpenID connect op de pas toe of leg uit lijst van het Forum standaardisatie komt kan dit Nederlandse profiel uitgebreid worden met een Nederlandse variant van het iGov OpenID Connect profiel. De usecase die hieronder wordt beschreven sorteerd daar al op voor.
 
+
+
+
+
 ## Usecases
  <figure id='authorization_code'>
 	<img src='media/use_case4_authorization_code.png' width="600" />

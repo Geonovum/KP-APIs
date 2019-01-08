@@ -1,20 +1,8 @@
-## Dutch government Assurance profile for OAuth 2.0
-This profile is based upon the international government assurance profile for OAuth 2.0 (iGOV) [[iGOV.OAuth2]] as published by the openID Foundation (https://openid.net/foundation/). It should be considered a fork of this profile as the iGov profile is geared more towards the American situtation and in the Netherlands we have to deal with an European Union context. 
-
-<!-- ### [Abstract](#rfc.abstract) -->
-### Abstract
-
-
-The OAuth 2.0 protocol framework defines a mechanism to allow a resource owner to delegate access to a protected resource for a client application.
-
-This specification profiles the OAuth 2.0 protocol framework to increase baseline security, provide greater interoperability, and structure deployments in a manner specifically applicable, but not limited to consumer-to-government deployments in the Netherlands.
-
-* * *
-
+# Dutch government Assurance profile for OAuth 2.0  
+This profile is based upon the international government assurance profile for OAuth 2.0 (iGOV) [[iGOV.OAuth2]] as published by the openID Foundation (https://openid.net/foundation/). It should be considered a fork of this profile as the iGov profile is geared more towards the American situtation and in the Netherlands we have to deal with an European Union context.
 
 <!-- ### [1.](#rfc.section.1) [Introduction](#Introduction) -->
-### Introduction
-
+## Introduction  
 
 This document profiles the OAuth 2.0 web authorization framework for use in the context of securing web-facing application programming interfaces (APIs), particularly Representational State Transfer (RESTful) APIs. The OAuth 2.0 specifications accommodate a wide range of implementations with varying security and usability considerations, across different types of software clients. The OAuth 2.0 client, protected resource, and authorization server profiles defined in this document serve two purposes:
 
@@ -25,19 +13,18 @@ This document profiles the OAuth 2.0 web authorization framework for use in the 
 This OAuth profile is intended to be shared broadly, and has been ~~greatly influenced by the [HEART OAuth2 Profile][[HEART.OAuth2]].~~ derived from the [iGov OAuth2 profile] [[iGOV.OAuth2]].
 
 <!-- ### [1.1.](#rfc.section.1.1) [Requirements Notation and Conventions](#rnc) -->
-### Requirements Notation and Conventions
-
+## Requirements Notation and Conventions  
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [[!rfc2119]] .
 
 All uses of [JSON Web Signature (JWS)] [[!rfc7515]] and [JSON Web Encryption (JWE)] [[!rfc7516]] data structures in this specification utilize the JWS Compact Serialization or the JWE Compact Serialization; the JWS JSON Serialization and the JWE JSON Serialization are not used.
 
 <!-- ### [1.2.](#rfc.section.1.2) [Terminology](#Terminology) -->
-### Terminology
+## Terminology
 
 This specification uses the terms "Access Token", "Authorization Code", "Authorization Endpoint", "Authorization Grant", "Authorization Server", "Client", "Client Authentication", "Client Identifier", "Client Secret", "Grant Type", "Protected Resource", "Redirection URI", "Refresh Token", "Resource Owner", "Resource Server", "Response Type", and "Token Endpoint" defined by [OAuth 2.0] [[rfc6749]] , the terms "Claim Name", "Claim Value", and "JSON Web Token (JWT)" defined by [JSON Web Token (JWT)] [[rfc7519]] , and the terms defined by [OpenID Connect Core 1.0] [[OpenID.Core]] .
 
 <!-- ### [1.3.](#rfc.section.1.3) Conformance -->
-### Conformance
+## Conformance
 
 This specification defines requirements for the following components:
 
@@ -387,7 +374,7 @@ The Token Response has the following contents
 <dd>Optional. Under this profile, refresh tokens are (currently) not supported. MUST NOT be used, unless explicitly speficied in an additional applicable profile based on this profile.</dd>
 <dt>expires_in</dt>
 <dd>Optional. Lifetime of the access token, in seconds.</dd>
-<dt>scope</scope>
+<dt>scope</dt>
 <dd>Optional. TODO</dd>
 </dl>
 
