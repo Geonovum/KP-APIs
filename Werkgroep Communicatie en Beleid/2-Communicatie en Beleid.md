@@ -1,5 +1,14 @@
-Application Programming Interfaces, wat zijn het en waarom hierop in te zetten
-==============================================================================
+# Communicatie en Beleid
+
+> *Dit hoofdstuk is een Management samenvatting voor managers van overheden en partijen die met de overheid te maken hebben.*
+> *Dit hoofdstuk beschrijft:* 
+> *- waarom wil je API's gebruiken.*
+> *- Hoe relateert het gebruik van API's aan de maatschappelijke discussie.*
+> *- Wat is de uitwerking voor inclusiviteit regie op gegevens veiligheid.*
+> *- Uitgelegd en verduidelijkt met voorbeelden*
+
+
+##### Application Programming Interfaces, wat zijn het en waarom hierop in te zetten
 
 Dit hoofdstuk heeft als doel om voor het beleid- en managementniveau te duiden
 wat API’s zijn en wat het belang ervan is. Het geeft inzicht in de mogelijkheden

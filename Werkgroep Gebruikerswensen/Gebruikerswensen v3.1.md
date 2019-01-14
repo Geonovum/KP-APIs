@@ -1,6 +1,11 @@
-# <!-- Hoofdstuk 4 --> Inspelen op gebruikerswensen: dé sleutel tot gebruik
+# <!-- Hoofdstuk 3 --> Inspelen op gebruikerswensen: dé sleutel tot gebruik
 
-## <!-- 4.1 --> Inleiding
+> *In dit hoofdstuk: Niet alleen wat je aanbiedt moet goed zijn maar vooral ook hoe je dat doet!*
+>  *Onderwerpen:*
+> *- De gebruikers ervaring is erg belangrijk.* 
+> *- Hoe krijg je partijen laagdrempelig snel echt aan de slag(niet alleen technisch)*
+
+## <!-- 3.1 --> Inleiding
 
 Overheden bezitten kwalitatief hoogwaardige data en bieden deze aan via API’s.
 Vanuit het open data-perspectief maken overheden het hiermee mogelijk dat
@@ -30,7 +35,7 @@ verkeerd gaan interpreteren en de ICT-infrastructuur onnodig zwaar belasten,
 wanneer zij slechts omslachtig (met veel API-calls) de gewenste gegevens kunnen
 krijgen.
 
-## <!-- 4.2 --> Overkoepelende aanbeveling: biedt een goede ‘developer experience (DX)’
+## <!-- 3.2 --> Overkoepelende aanbeveling: biedt een goede ‘developer experience (DX)’
 
 De belangrijkste aanbeveling aan aanbieders van API’s is om zich te richten op
 die gebruikservaring; op een goede ‘developer experience (DX)’. Goede DX komt
@@ -49,7 +54,7 @@ helemaal niet in het door Johan gewenst formaat. Elke kleine irritatie is op
 zichzelf niet onoverkomelijk, maar de optelsom maakt dat Johan concludeert: “Dit
 is niet te doen, ik zoek wel wat anders!”.
 
-## <!-- 4.3 --> Gebruik: van ‘onboarding’ tot ‘in productie’
+## <!-- 3.3 --> Gebruik: van ‘onboarding’ tot ‘in productie’
 
 De zwakte van veel teksten over ‘developer experience’ is dat men zich vaak
 alleen richt op de use case van een technische developer die een API wil
@@ -80,7 +85,7 @@ ontdekte en zij vervolgens samen met Steven en Jeffrey de API beoordeelde) veel
 invloed heeft op het verdere gebruik ervan. Oftewel: de kans is groot dat dit
 bedrijf vervolgens ook andere API’s op dit ontwikkelaarsportaal gaat gebruiken.
 
-## <!-- 4.4 --> Specifieke aanbevelingen voor een goede DX
+## <!-- 3.4 --> Specifieke aanbevelingen voor een goede DX
 
 ### Aanbeveling 1: werk met (meerdere) persona’s
 
@@ -142,7 +147,7 @@ indruk te bieden van functionaliteit. Voor de technische developer is de
 documentatie conform de Open API Specifiction 3.0 (OAS 3); deze staat in
 Nederland op de ‘Pas toe of leg uit-lijst’ van het Forum Standaardisatie.
 
-## Aanbeveling 4: minimaliseer Time to First Call met een goede Sandbox
+### Aanbeveling 4: minimaliseer Time to First Call met een goede Sandbox
 
 Zorg dat een developer snel een werkend voorbeeld heeft. Dit vraagt om een goed
 gedocumenteerde, realistische Sandbox. Deze Sandbox dient alle aspecten van de
@@ -185,7 +190,7 @@ je gebruikers duidelijkheid biedt:
 >   voorgenomen wijzigingen e.d. Het gebruik van API keys is een manier om je
 >   gebruikers te kennen.
 
-## Aanbeveling 6: maak duidelijk wat je data betekent
+### Aanbeveling 6: maak duidelijk wat je data betekent
 
 Wanneer je data openstelt voor derden, inclusief niet-specialisten, is het
 essentieel om eenduidig vast te leggen wat de data betekent, waarbij deze
