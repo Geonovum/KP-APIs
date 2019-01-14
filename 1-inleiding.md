@@ -6,12 +6,11 @@ Dit hoofdstuk geeft een inleiding op de Nederlandse API strategie
 
 ## Leeswijzer
 
-Dit document bevat twee delen, waarbij deel 1 "niet-technisch" en deel 2 "technisch" van aard is.
+Dit document bevat twee delen, waarbij het eerste deel "niet-technisch" en het tweede deel "technisch" van aard is.
+In het eerste deel zitten de hoofdstukken [Communicatie en Beleid](#communicatie-en-beleid) en [Gebruikerswensen](#gebruikerswensen).
 
-Het tweede hoofdstuk beschrijft wat API's zijn, en waarvoor ze gebruikt kunnen worden.
-Hoofdstuk 3 gaat in op gebruikerswensen, waarbij gebruikers vooral "delvelopers"  zijn.
-Hoofdstuk 4 bevat Design-rules/Ontwerpregels waaraan API's moeten voldoen
-Hoofdstuk 5 en 6 zijn veel technischer van aard, en gaan in op beveiliging en architectuur van API's  
+Het tweede deel bevat de hoofdstukken [API designrules](#api-designrules), [Beveiliging](#beveiliging) en [Architectuur](#architectuur), 
+waarin een technische uitwerking van de eerste twee hoofdstukken staat. 
 
 ## Opmerking
 

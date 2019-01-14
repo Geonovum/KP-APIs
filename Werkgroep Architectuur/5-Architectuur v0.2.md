@@ -1,4 +1,12 @@
-# Werkgroep Architectuur
+# Architectuur
+
+> *Dit hoofdstuk gaat in op de vraag: Hoe kan je je applicatie landschap inrichten zodat je APIs kan*
+> *aanbieden. Welke componenten zijn hiervoor nodig. Hoe ga je om met opschalen, beschikbaarheid.*
+> *Wat zijn afwegingen om beveiliging al dan niet toe te passen.*
+
+
+
+
 
 *Website:*
 

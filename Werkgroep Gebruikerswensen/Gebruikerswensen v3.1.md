@@ -1,9 +1,12 @@
-# <!-- Hoofdstuk 3 --> Inspelen op gebruikerswensen: dé sleutel tot gebruik
+# <!-- Hoofdstuk 3 --> Gebruikerswensen 
 
-> *In dit hoofdstuk: Niet alleen wat je aanbiedt moet goed zijn maar vooral ook hoe je dat doet!*
->  *Onderwerpen:*
-> *- De gebruikers ervaring is erg belangrijk.* 
-> *- Hoe krijg je partijen laagdrempelig snel echt aan de slag(niet alleen technisch)*
+**Inspelen op gebruikerswensen: dé sleutel tot gebruik**
+
+> *In dit hoofdstuk: Niet alleen wat je aanbiedt moet goed zijn maar vooral ook hoe je dat doet!*  
+> *Onderwerpen:*  
+> *- De gebruikers ervaring is erg belangrijk.*   
+> *- Hoe krijg je partijen laagdrempelig snel echt aan de slag(niet alleen technisch)*  
+
 
 ## <!-- 3.1 --> Inleiding
 

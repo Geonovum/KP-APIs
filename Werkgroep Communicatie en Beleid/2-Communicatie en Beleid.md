@@ -1,11 +1,12 @@
 # Communicatie en Beleid
 
 > *Dit hoofdstuk is een Management samenvatting voor managers van overheden en partijen die met de overheid te maken hebben.*
-> *Dit hoofdstuk beschrijft:* 
-> *- waarom wil je API's gebruiken.*
-> *- Hoe relateert het gebruik van API's aan de maatschappelijke discussie.*
-> *- Wat is de uitwerking voor inclusiviteit regie op gegevens veiligheid.*
-> *- Uitgelegd en verduidelijkt met voorbeelden*
+> *Dit hoofdstuk beschrijft:*  
+> *- waarom wil je API's gebruiken.*  
+> *- Hoe relateert het gebruik van API's aan de maatschappelijke discussie.*  
+> *- Wat is de uitwerking voor inclusiviteit regie op gegevens veiligheid.*  
+> *- Uitgelegd en verduidelijkt met voorbeelden*  
+
 
 
 ##### Application Programming Interfaces, wat zijn het en waarom hierop in te zetten
