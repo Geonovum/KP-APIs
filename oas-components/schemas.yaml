@@ -1,0 +1,49 @@
+HalLink:
+  type: object
+  required:
+    - href
+  properties:
+    href:
+      type: string
+HalCollectionLinks:
+  type: object
+  properties:
+    self:
+      allOf: [$ref: '#/HalLink']
+      description: Absolute link naar huidige pagina.
+    next:
+      allOf: [$ref: '#/HalLink']
+      description: Absolute link naar volgende pagina (niet aanwezig als er geen
+        volgende pagina is).
+GeoJsonObject:
+  type: object
+  required:
+    - coordinates
+    - type
+  properties:
+    type:
+      type: string
+      enum:
+        - Point
+        - Polygon
+        - LineString
+        - MultiPoint
+        - MultiLineString
+        - MultiPolygon
+      example: Polygon
+    coordinates:
+      type: array
+      items:
+        type: string
+      description: >-
+        Array met coördinaten behorende bij dit GeoJSON object. De structuur
+        van de array hangt af van het `type`.
+      example:
+        - - - 5.858910083770752
+            - 51.84376540294041
+          - - 5.85968255996704
+            - 51.84259879644993
+          - - 5.860852003097533
+            - 51.84413658957469
+          - - 5.858910083770752
+            - 51.84376540294041
