@@ -31,9 +31,9 @@ Per operatie is tevens bepaald of deze gegarandeerd "veilig" en/of "idempotent" 
 |PATCH|Nee|Optioneel|
 |Delete|Nee|Ja|
 
-> **API’s garanderen dat operaties “Veilig” en/of “Idempotent” zijn.**
+> **API's garanderen dat operaties "Veilig" en/of "Idempotent" zijn.**
 >
-> Operaties van een API zijn gegarandeerd “Veilig” en/of “Idempotent” als dat zo is bepaald (zie tabel).
+> Operaties van een API zijn gegarandeerd "Veilig" en/of "Idempotent" als dat zo is bepaald (zie tabel).
 
 REST maakt gebruik van het client stateless server ontwerpprincipe dat is afgeleid van client server met als aanvullende beperking dat het niet toegestaan is om toestand (state) op de server bij te houden. Elk verzoek van de client naar de server moet alle informatie bevatten die nodig is om het verzoek te verwerken, zonder gebruik te hoeven maken van toestand-informatie op de server.
 
@@ -47,7 +47,7 @@ Het fundamenteel concept in elke RESTful API is de resource. Een resource is een
 
 Het is mogelijk om interne datamodellen één-op-één toe te wijzen aan resources, maar dit hoeft niet per definitie zo te zijn. De crux is om alle niet relevante implementatiedetails te verbergen. Enkele voorbeelden van resources van het DSO zijn: aanvraag, activiteit, juridische regel, toepasbare regel, vergunning.
 
-Als de resources geïdentificeerd zijn, wordt bepaald welke operaties van toepassing zijn en hoe deze worden ondersteund door de API. RESTful API’s realiseren CRUD (Create, Read, Update, Delete) operaties met behulp van HTTP-operaties:
+Als de resources geïdentificeerd zijn, wordt bepaald welke operaties van toepassing zijn en hoe deze worden ondersteund door de API. RESTful API's realiseren CRUD (Create, Read, Update, Delete) operaties met behulp van HTTP-operaties:
 
 |Request|Omschrijving|
 |-|-|
@@ -106,21 +106,21 @@ Indien er sprake is van een n-op-n relatie zijn er verschillende manieren om de 
 
 Bij een n-op-m relatie wordt het opvragen van de individuele resources sowieso ondersteund, waarbij minimaal de identificatie van gerelateerde resources (relatie) wordt teruggegeven. De afnemers moet zelf het eindpunt van de gerelativeerde resource (relatie) aanroepen om deze op te vragen. Dit wordt ook wel aangeduid als lazy loading. De afnemer bepaalt zelf of de relatie geladen wordt en op welk moment.
 
-De resource dient naast “lazy loading” (de standaard) ook “eager loading” te ondersteunen, zodat de afnemer kan aangeven dat relaties direct meegeladen moeten worden. Dit wordt gerealiseerd middels de standaard query-parameter expand=true. Dit voorkomt dat er twee of meer aparte aanroepen nodig zijn. In beide gevallen is de afnemer in control.
+De resource dient naast "lazy loading" (de standaard) ook "eager loading" te ondersteunen, zodat de afnemer kan aangeven dat relaties direct meegeladen moeten worden. Dit wordt gerealiseerd middels de standaard query-parameter expand=true. Dit voorkomt dat er twee of meer aparte aanroepen nodig zijn. In beide gevallen is de afnemer in control.
 
-> **Resources ondersteunen “lazy” en “eager” laden van relaties**
+> **Resources ondersteunen "lazy" en "eager" laden van relaties**
 >
 > Resources die een n-op-n relatie kennen ondersteunen zowel het teruggeven van identificaties van gerelateerde resources (lazy loading) als het teruggeven van de resources zelf (eager loading).
 
 ### Automatische laden van gelinkte resources
 
-Vaak wordt er vanuit één resource verwezen (gelinkt) naar andere (geneste) resources. De RESTful manier om dit op te lossen is de verwijzing naar andere resources als URI op te nemen in een resource. Op basis hiervan kan de afnemer, indien gewenst, de gelinkte resources zelf opvragen. Dit is vergelijkbaar met “lazy loading” in een ORM oplossing: resources worden alleen opgehaald als ze nodig zijn.  In sommige gevallen, als de afnemer alle resources nodig heeft, is het efficiënter als de geneste resources in één keer opgehaald worden. Dit is vergelijkbaar met “eager loading” patroon in een ORM-oplossing.
+Vaak wordt er vanuit één resource verwezen (gelinkt) naar andere (geneste) resources. De RESTful manier om dit op te lossen is de verwijzing naar andere resources als URI op te nemen in een resource. Op basis hiervan kan de afnemer, indien gewenst, de gelinkte resources zelf opvragen. Dit is vergelijkbaar met "lazy loading" in een ORM oplossing: resources worden alleen opgehaald als ze nodig zijn.  In sommige gevallen, als de afnemer alle resources nodig heeft, is het efficiënter als de geneste resources in één keer opgehaald worden. Dit is vergelijkbaar met "eager loading" patroon in een ORM-oplossing.
 
 Omdat dit tegen de REST principes in gaat, moet het toepassen van dit mechanisme een expliciete keuze zijn. De keuze wordt bij de afnemers van de API belegd, zij weten immers of ze extra informatie nodig hebben en welke informatie precies. Dit mechanisme wordt mogelijk gemaakt met de `expand` query-parameter.
 
 Als `expand=true` wordt meegegeven, dan worden alle geneste resources geladen en embedded in het resultaat teruggegeven. Om de hoeveelheid informatie die geretourneerd wordt te beperken, is verplicht om te specificeren welke resources en zelfs welke velden van een resource teruggeven moeten worden. Hiermee wordt voorkomen dat de hele database wordt leeg getrokken.
 
-Dit wordt gedaan door de resources als een komma's gescheiden lijst te specificeren, bijvoorbeeld: `expand=aanvrager,bevoegdGezag`. De dot-notatie wordt gebruikt om specifieke velden van resources te selecteren. In het onderstaande voorbeeld wordt van de aanvrager alleen het veld “naam” teruggeven en van het bevoegd gezag de complete resource. Conform de HAL-standaard zijn de gelinkte resources embedded in de standaard representatie (zie ook aanpasbare representatie).
+Dit wordt gedaan door de resources als een komma's gescheiden lijst te specificeren, bijvoorbeeld: `expand=aanvrager,bevoegdGezag`. De dot-notatie wordt gebruikt om specifieke velden van resources te selecteren. In het onderstaande voorbeeld wordt van de aanvrager alleen het veld "naam" teruggeven en van het bevoegd gezag de complete resource. Conform de HAL-standaard zijn de gelinkte resources embedded in de standaard representatie (zie ook aanpasbare representatie).
 
 `GET /aanvragen/12?expand=aanvrager.naam,bevoegdGezag`
 
@@ -188,7 +188,7 @@ Er zijn ook resource-acties die niet data manipulatie (CRUD) gerelateerd zijn. E
 
 2. Behandel de actie als een sub-resource. Bijvoorbeeld, een aanvraag markeren met `PUT /aanvragen/12/markeringen` en verwijderen van de markering met `DELETE /aanvragen/12/markeringen`. Om de REST principes volledig te volgen moet ook de GET methode voor deze sub-resource beschikbaar zijn.
 
-3. Soms is er geen logische manier om een actie aan een bestaande resource te koppelen. Een voorbeeld hiervan is een zoekopdracht over meerdere resources heen. Deze actie kan niet worden toegekend aan een specifieke resource. In dit geval is de keuze voor een zelfstandig service-eindpunt `/_zoek` het meest logische. Gebruik werkwoorden in gebiedende wijs om het onderscheid t.o.v. "echte" resource end-points zo duidelijk mogelijk te maken. Dit is vanuit het perspectief van de gebruiker het meest logisch ontwerp. In de URI-strategie is voor dit doel het fragment `<service>` opgenomen. Dit fragment volgt na de “/api” en maakt daarmee de routering eenvoudig.
+3. Soms is er geen logische manier om een actie aan een bestaande resource te koppelen. Een voorbeeld hiervan is een zoekopdracht over meerdere resources heen. Deze actie kan niet worden toegekend aan een specifieke resource. In dit geval is de keuze voor een zelfstandig service-eindpunt `/_zoek` het meest logische. Gebruik werkwoorden in gebiedende wijs om het onderscheid t.o.v. "echte" resource end-points zo duidelijk mogelijk te maken. Dit is vanuit het perspectief van de gebruiker het meest logisch ontwerp. In de URI-strategie is voor dit doel het fragment `<service>` opgenomen. Dit fragment volgt na de "/api" en maakt daarmee de routering eenvoudig.
 
 In de DSO API-strategie wordt gekozen voor manier 2 en 3.
 
@@ -224,7 +224,7 @@ In de DSO API-strategie wordt gekozen voor manier 2 en 3.
 
 ## Beveiliging
 
-API’s zijn vanaf elke locatie vanaf het internet te benaderen. Om uitgewisselde informatie af te schermen wordt altijd gebruik gemaakt van een versleutelde verbinding op basis van TLS. Geen uitzonderingen, dus overal en altijd.
+API's zijn vanaf elke locatie vanaf het internet te benaderen. Om uitgewisselde informatie af te schermen wordt altijd gebruik gemaakt van een versleutelde verbinding op basis van TLS. Geen uitzonderingen, dus overal en altijd.
 
 Doordat de verbinding altijd is versleuteld maakt het authenticatiemechanisme eenvoudiger. Hierdoor wordt het mogelijk om eenvoudige toegangstokens te gebruiken in plaats van toegangstokens met encryptie.
 
@@ -232,9 +232,9 @@ Doordat de verbinding altijd is versleuteld maakt het authenticatiemechanisme ee
 >
 > De verbinding is ALTIJD versleuteld op basis van minimaal TLS V1.2. Geen uitzonderingen, dus overal en altijd. In het geval van toegangsbeperking of doelbinding wordt tweezijdig TLS toegepast.
 >
-> **API’s zijn alleen bruikbaar met behulp van een API-key**
+> **API's zijn alleen bruikbaar met behulp van een API-key**
 >
-> Voor alle DSO API’s wordt minimaal een registratie inclusief acceptatie van de fair use voorwaarden vereist. Op basis hiervan zal dan een API-key wordt uitgegeven.
+> Voor alle DSO API's wordt minimaal een registratie inclusief acceptatie van de fair use voorwaarden vereist. Op basis hiervan zal dan een API-key wordt uitgegeven.
 
 ### Authenticatie en autorisatie
 
@@ -257,9 +257,9 @@ Bij het ontbreken van de juiste headers zijn geen authenticatiedetails beschikba
 >
 > Een REST API mag geen state hebben. Elk verzoek moet daarom zijn voorzien van een token. OAuth 2.0 is hiervoor de voorgeschreven standaard.
 >
-> **Authenticatie voor API’s met toegangsbeperking of doelbinding is gebaseerd op PKIoverheid**
+> **Authenticatie voor API's met toegangsbeperking of doelbinding is gebaseerd op PKIoverheid**
 >
-> In het geval van API’s met toegangsbeperking of doelbinding zal er aanvullend sprake zijn van authenticatie op basis PKIoverheid certificaten en tweezijdig TLS. In de URI-strategie is vastgelegd welke kaders gelden voor API’s die gebruik maken van tweezijdig TLS.
+> In het geval van API's met toegangsbeperking of doelbinding zal er aanvullend sprake zijn van authenticatie op basis PKIoverheid certificaten en tweezijdig TLS. In de URI-strategie is vastgelegd welke kaders gelden voor API's die gebruik maken van tweezijdig TLS.
 
 ### digid/oauth, oauth: werkgroep auth
 
@@ -280,13 +280,13 @@ In een productieomgeving is het wenselijk om voor het (kunnen) autoriseren zo mi
 |Nee|Ja|Nee|`403 Forbidden`|
 |Nee|Nee|?|`403 Forbidden`|
 
-Het idee van deze regels is dat eerst wordt bepaald of de aanroeper (principal) gerechtigd is voor een resource. Is het antwoord ‘nee’ of kan dat niet worden bepaald, bijvoorbeeld omdat de resource nodig is om deze beslissing te kunnen nemen en de resource niet bestaat, dan wordt 403 Forbidden teruggegeven. Op deze manier wordt geen informatie teruggegeven over het al dan niet bestaan van een resource aan een niet-geautoriseerde principal.
+Het idee van deze regels is dat eerst wordt bepaald of de aanroeper (principal) gerechtigd is voor een resource. Is het antwoord ‘nee' of kan dat niet worden bepaald, bijvoorbeeld omdat de resource nodig is om deze beslissing te kunnen nemen en de resource niet bestaat, dan wordt 403 Forbidden teruggegeven. Op deze manier wordt geen informatie teruggegeven over het al dan niet bestaan van een resource aan een niet-geautoriseerde principal.
 
 Een bijkomend voordeel van de strategie om eerst te bepalen of er toegang is, meer ruimte biedt om de access control logica te scheiden van de business code.
 
 #### Openbare identifiers
 
-Openbaar zichtbare identifiers (ID's), zoals die veelal in URI’s van RESTful API’s voorkomen, zouden onderliggende mechanismen (zoals een nummergenerator) niet bloot moeten leggen en zeker geen zakelijke betekenis moeten hebben.
+Openbaar zichtbare identifiers (ID's), zoals die veelal in URI's van RESTful API's voorkomen, zouden onderliggende mechanismen (zoals een nummergenerator) niet bloot moeten leggen en zeker geen zakelijke betekenis moeten hebben.
 
 > **UUID**
 >
@@ -294,21 +294,21 @@ Openbaar zichtbare identifiers (ID's), zoals die veelal in URI’s van RESTful A
 >
 > `550e8400-e29b-41d4-a716-446655440000`
 >
-> Om te zorgen dat de UUID’s korter en gegarandeerd “web-veilig” zijn, is het advies om alleen de base64-gecodeerde variant van 22 tekens te gebruiken. De bovenstaande UUID ziet er dan als volgt uit:
+> Om te zorgen dat de UUID's korter en gegarandeerd "web-veilig" zijn, is het advies om alleen de base64-gecodeerde variant van 22 tekens te gebruiken. De bovenstaande UUID ziet er dan als volgt uit:
 >
 > `abcdEFh4520juieUKHWgJQ`
 
 #### Blootstellen API-key
 
-De API-key’s die standaard worden uitgegeven zijn “unrestricted”. Dat wil zeggen dat er geen gebruiksbeperkingen op zitten en ze niet blootgesteld mogen worden via een webapplicatie. Door API-key’s zonder gebruiksbeperkingen toe te passen in JavaScript, is er een reële kans op misbruik en quotum-diefstal. Om dit te voorkomen dienen in dit geval zogenaamde “restricted” API-key’s te worden uitgegeven en gebruikt.
+De API-key's die standaard worden uitgegeven zijn "unrestricted". Dat wil zeggen dat er geen gebruiksbeperkingen op zitten en ze niet blootgesteld mogen worden via een webapplicatie. Door API-key's zonder gebruiksbeperkingen toe te passen in JavaScript, is er een reële kans op misbruik en quotum-diefstal. Om dit te voorkomen dienen in dit geval zogenaamde "restricted" API-key's te worden uitgegeven en gebruikt.
 
-> **Gebruik “publieke” API-Key**
+> **Gebruik "publieke" API-Key**
 >
-> In JavaScript dient alleen gebruik te worden gemaakt van een zogenaamde “restricted” API-key. Dit is API-key die gekoppeld is aan specifieke kenmerken van de aanroeper (web-app, mobile-app), waaronder een clientId en/of verwijzer-URL.
+> In JavaScript dient alleen gebruik te worden gemaakt van een zogenaamde "restricted" API-key. Dit is API-key die gekoppeld is aan specifieke kenmerken van de aanroeper (web-app, mobile-app), waaronder een clientId en/of verwijzer-URL.
 
 #### CORS-policy
 
-Webbrowsers implementeren een zogenaamde “same origin policy”, een belangrijk beveiligingsconcept om te voorkomen dat verzoeken naar een ander domein gaan dan waarop het is aangeboden. Hoewel dit beleid effectief is in het voorkomen van aanroepen in verschillende domeinen, voorkomt het ook legitieme interactie tussen een API’s en clients van een bekende en vertrouwde oorsprong.
+Webbrowsers implementeren een zogenaamde "same origin policy", een belangrijk beveiligingsconcept om te voorkomen dat verzoeken naar een ander domein gaan dan waarop het is aangeboden. Hoewel dit beleid effectief is in het voorkomen van aanroepen in verschillende domeinen, voorkomt het ook legitieme interactie tussen een API's en clients van een bekende en vertrouwde oorsprong.
 
 > **Controleer toegang en gebruik CORS-header**
 > Controleer eerst het domein van de inkomende aanvraag en genereer de response-header afhankelijk van of dit domein verzoeken mag verzenden of niet (whitelist). In dat geval wordt alleen dit specifieke domein aan de response-header `Access-Control-Allow-Origin` toegevoegd.
@@ -325,11 +325,11 @@ Een API is zo goed als de bijbehorende documentatie. De documentatie moet gemakk
 >
 > **Documentatie is in het Nederlands tenzij er sprake is van bestaande documentatie in het Engels of er sprake is van een officieel Engelstalig begrippenkader**
 >
-> De voertaal voor de API’s is Nederlands. Het is wel toegestaan om te verwijzen naar bestaande documentatie is het Engels en als er sprake is van een officieel Engelstalig begrippenkader.
+> De voertaal voor de API's is Nederlands. Het is wel toegestaan om te verwijzen naar bestaande documentatie is het Engels en als er sprake is van een officieel Engelstalig begrippenkader.
 
 De documentatie dient voorzien te zijn van voorbeelden inclusief complete request en response cycli. Het moet mogelijk zijn om direct vanuit de documentatie verzoeken te testen (uit te voeren). Daarnaast is elke fout beschreven en voorzien van een unieke foutcode die gebruikt kan worden om de fout op te zoeken.
 
-Als een API in productie is mag het “contract” (koppelvlak) niet zonder voorafgaande kennisgeving worden gewijzigd. De documentatie moet voorzien zijn van een uitfaseringsplanning (deprecation schedule) en alle details van de wijziging bevatten. Wijzigingen worden via een publiek toegankelijke blog als changelog bekendgemaakt en via een mailinglijst. Hierbij wordt primair gebruik gemaakt van de emailadressen die zijn gekoppeld aan de uitgifte van API-keys.
+Als een API in productie is mag het "contract" (koppelvlak) niet zonder voorafgaande kennisgeving worden gewijzigd. De documentatie moet voorzien zijn van een uitfaseringsplanning (deprecation schedule) en alle details van de wijziging bevatten. Wijzigingen worden via een publiek toegankelijke blog als changelog bekendgemaakt en via een mailinglijst. Hierbij wordt primair gebruik gemaakt van de emailadressen die zijn gekoppeld aan de uitgifte van API-keys.
 
 > **Wijzigingen worden gepubliceerd met een uitfaseringschema**
 >
@@ -339,7 +339,7 @@ Als een API in productie is mag het “contract” (koppelvlak) niet zonder voor
 
 > **OAS via basis-URI beschikbaar in JSON-formaat**
 >
-> Om te zorgen dat de actuele documentatie altijd publiekelijk toegankelijk is, is het advies om de inhoud van de Open API Specification op het “root end-point” van de API beschikbaar te maken in JSON-formaat:
+> Om te zorgen dat de actuele documentatie altijd publiekelijk toegankelijk is, is het advies om de inhoud van de Open API Specification op het "root end-point" van de API beschikbaar te maken in JSON-formaat:
 >
 > `https://service.omgevingswet.overheid.nl/publiek/catalogus/api/raadplegen/v1`
 >
@@ -349,7 +349,7 @@ Als een API in productie is mag het “contract” (koppelvlak) niet zonder voor
 
 ## Versionering
 
-API’s zijn altijd geversioneerd. Versioneren zorgt voor een soepele overgang bij wijzigingen. De oude en nieuwe versies worden voor een beperkte overgangsperiode (één jaar) aangeboden. Er worden bovendien maximaal 3 versies van een API ondersteund. Afnemers kiezen zelf het moment dat ze overschakelen van de oude naar de nieuwe versie van een API, als ze het maar voor het einde van de overgangsperiode is.
+API's zijn altijd geversioneerd. Versioneren zorgt voor een soepele overgang bij wijzigingen. De oude en nieuwe versies worden voor een beperkte overgangsperiode (één jaar) aangeboden. Er worden bovendien maximaal 3 versies van een API ondersteund. Afnemers kiezen zelf het moment dat ze overschakelen van de oude naar de nieuwe versie van een API, als ze het maar voor het einde van de overgangsperiode is.
 
 > **De overgangsperiode bij een nieuwe API versie is maximaal 1 jaar**
 >
@@ -365,13 +365,162 @@ De header (zowel request als response) is als volgt gedefinieerd:
 |-|-|
 |`API-Version`|Geeft een specifieke API-versie aan in de context van een specifieke aanroep. Bijvoorbeeld: `API-version: 1.2.56`|
 
-Via de optionele request-header kan één minor/patch-versie worden aangewezen. Hiermee wordt bedoeld dat in (pre)productie- of aansluitomgeving naast bijvoorbeeld v1 en v2 (de aangewezen versies die alleen bereikbaar zijn via de URI’s) ook nog de mogelijkheid bestaat om één "oudere" of "nieuwere" versie van deze API’s aan te wijzen en via de request-header te benaderen. De onderstaande URI’s wijzen bijvoorbeeld naar de aangewezen productie-release van de API die alleen bereikbaar zijn via de URI:
+Via de optionele request-header kan één minor/patch-versie worden aangewezen. Hiermee wordt bedoeld dat in (pre)productie- of aansluitomgeving naast bijvoorbeeld v1 en v2 (de aangewezen versies die alleen bereikbaar zijn via de URI's) ook nog de mogelijkheid bestaat om één "oudere" of "nieuwere" versie van deze API's aan te wijzen en via de request-header te benaderen. De onderstaande URI's wijzen bijvoorbeeld naar de aangewezen productie-release van de API die alleen bereikbaar zijn via de URI:
+
+`https://service.omgevingswet.overheid.nl/publiek/catalogus/api/raadplegen/v1`
+
+`API-version: 1.0.2` (response header)
+
+`https://service.omgevingswet.overheid.nl/publiek/catalogus/api/raadplegen/v2`
+
+`API-version: 2.1.0` (response header)
+
+Het weglaten van de request-header (`API-version: x.y.z`) selecteert altijd de "aangewezen" productieversie. Indien er voor V2 ook één andere aangewezen versie beschikbaar is, met bijvoorbeeld versienummer V2.1.1, dan kan deze via hetzelfde basis end-point worden aangeboden en geselecteerd door het meegeven van de juiste request-parameter:
+
+`API-version: 2.1.1` (request header)
+
+`https://service.omgevingswet.overheid.nl/publiek/catalogus/api/raadplegen/v2`
+
+`API-version: 2.1.1` (response header)
+
+Het toevoegen van een end-point of een niet verplichte attribuut aan de payload zijn voorbeelden van wijzigingen die backward compatible zijn.
+
+> **Alleen het major versienummer is onderdeel van de URI**
+>
+> In de URI wordt alleen het major versienummer opgenomen. Minor versienummer en patch versienummer worden in de header van het bericht zelf opgenomen. Het uitgangspunt dat hierbij wordt gehanteerd is dat minor versies en patches geen impact hebben op bestaande code, maar major versies wel.
+
+Een API zal nooit helemaal stabiel zijn. Verandering is onvermijdelijk. Het is belangrijk hoe met deze verandering wordt omgegaan. Goed gedocumenteerde en tijdig gecommuniceerde uitfaseringsplanningen zijn in het algemeen voor veel APIgebruikers werkbaar.  
+
+### Uitfaseren van een major API versie
+
+Major releases van API's zijn altijd backward incompatible. Immers, als een nieuwe release van de API niet tot backward incompatibiliteit leidt, is er geen reden om een hele versie omhoog te gaan en spreken we van een minor release. Op het moment dat er een major release plaatsvindt, is het de bedoeling dat alle (potentiële) clients deze nieuwe versie implementeren.  
+
+Omdat we geen clients willen breken kunnen we niet van de een op de andere dag overschakelen van de oude naar de nieuwe versie, zoals dat bijvoorbeeld bij een update van een website wel vaak gebeurt. Daarom is het noodzakelijk om na de livegang van de nieuwe versie óók de oude versie in de lucht te houden. Omdat we de oude versie niet tot in de eeuwigheid willen blijven onderhouden en juist iedereen willen stimuleren om de nieuwe versie te gaan gebruiken, communiceren we een periode waarin clients de gelegenheid krijgen om hun code aan te passen aan de nieuwe versie. Deze periode noemen we de deprecation periode. De lengte van deze periode kan verschillen per API, vaak is dit zes maanden, maar niet meer dan één jaar. Met het oog op beheersbaarheid is het ten zeerste aan te bevelen om maximaal twee major versies (waarvan één de deprecated variant) naast elkaar te draaien. In deze fase is communicatie met clients van de oude versie cruciaal. De volgende zaken moeten gecommuniceerd worden:
+
+- Een link naar de (documentatie van de) nieuwe versie van de API;
+- Deprecation periode met exacte datum waarop de deprecated versie offline wordt gehaald;
+- Migratieplan om eenvoudig over te stappen naar de nieuwe versie;
+- Welke features er toegevoegd, gewijzigd of verwijderd worden;
+- Welke wijzigingen de huidige implementaties kunnen breken;
+- Contactmogelijkheid om een verlenging van de deprecation periode aan te vragen.
+
+Deze zaken dienen gecommuniceerd te worden via de volgende kanalen:
+
+- Per e-mail van de clients (indien bekend);
+- Duidelijk leesbaar in de API documentatie van de oude versie;
+- Via een topic op het DSO forum;
+- Met een `Warning` response header in alle responses van de oude API.
+
+Stap voor stap betekent dit het volgende:
+
+1. Lanceren nieuwe versie;
+2. Bepalen deprecation periode;
+3. Schrijven migratieplan;
+4. Communiceren in de API-documentatie van de oude versie;
+5. Deprecation periode communiceren per e-mail, forum en eventuele andere kanalen;
+6. Warning header toevoegen aan responses van de oude versie;
+7. Logs checken om gebruik van de oude versie te monitoren gedurende deprecation periode;
+8. End-point oude versie dichtzetten op geplande datum en feedback monitoren;
+9. Indien er binnen twee weken geen feedback op de oude versie komt kan de oude versie (inclusief docs) verwijderd worden;
+
+### De Warning response header
+
+De Warning header (zie: RFC 7234) die we hier gebruiken heeft warn-code 299 ("Miscellaneous Persistent Warning") en het API endpoint (inclusief versienummer) als de warn-agent van de warning, gevolgd door de warn-text met de human-readable waarschuwing. Voorbeeld:
+
+`Waarschuwing: 299 https://service.../api/.../v1 "Deze versie van de API is verouderd en zal uit dienst worden genomen op 2018-02-01. Raadpleeg voor meer informatie hier de documentatie: https://omgevingswet.../api/.../v1".`
+
+Gebruikers moeten voldoende tijd hebben om de oude API uit te faseren. Een periode van 6 tot 12 maanden wordt aanbevolen.
+
+> **Gebruikers van een ‘deprecated' API worden actief gewaarschuwd**
+>
+> Met een `Warning` response-header in alle responses van de oude API's worden gebruikers gewaarschuwd voor de aanstaande uitfasering.
 
 - Best practice(s)
 
 ## JSON
 
+JavaScript Object Notation (JSON) is een formaat, net zoals XML, om gegevens te serialiseren, op te slaan en te versturen. JSON is het primaire representatieformaat voor API's. In tegenstelling tot XML kent JSON een compacte notatie, bijvoorbeeld:
+
+```json
+{
+  "persoon": {
+    "naam": "Jan",
+    "geboortejaar": 1983
+  }
+}
+```
+
+> **JSON first - API's ontvangen en versturen JSON**
+>
+> API's ontvangen en versturen JSON.
+
+> **API's zijn optioneel voorzien van een JSON Schema**
+>
+> API's ondersteunen JSON Schema (<http://json-schema.org>), zodat validatie mogelijk (optioneel) is en vereenvoudigd wordt.
+
+> **Content negotiation wordt volledig ondersteund**
+>
+> Andere representaties zoals XML en RDF worden naast JSON via het standaard HTTP content negotiation mechanisme ondersteund. Als het gewenste formaat niet geleverd kan worden zal er een `406 Not Acceptable` worden teruggegeven.
+
+> **API's controleren dat de Content-Type header is ingesteld**
+>
+> Er wordt gecontroleerd of het `Content-Type` header is ingesteld op `application/json` of andere ondersteunde content types, anders wordt HTTP-status code `415 Unsupported Media Type` geretourneerd.
+
 - Best practice(s)
+
+### Veldnamen in snake_case, camelCase, UpperCamelCase of koppelteken?
+
+Bij veldnamen wordt gebruik gemaakt van camelCase.
+
+> Woorden in veldnamen zijn gedefinieerd in camelCase
+>
+> Een veldnaam begint met kleine letters (eerste woord) en ieder opvolgend woord begint met een hoofdletter.
+
+### Pretty print
+
+De meeste REST clients en browsers (al dan niet met extensies) kunnen JSON netjes geformatteerd weergeven, ook als de response geen white-space bevat.
+
+> **Pretty print is standaard uitgeschakeld**
+>
+> Het uitgangspunt is dat REST clients en browsers (al dan niet met extensies) JSON netjes geformatteerd kunnen weergeven.
+
+### Gebruik geen envelop
+
+Veel API's wikkelen antwoorden in enveloppen zoals hieronder is weergegeven:
+
+```json
+{
+  "persoon": {
+    "naam": "Jan",
+    "geboortejaar": 1983
+  }
+}
+```
+
+Een toekomstbestendig API is vrij van enveloppen.
+
+> **Een JSON-response heeft geen omhullende envelop**
+>
+> Er worden standaard geen enveloppen toegepast.
+
+### JSON gecodeerde POST, PUT en PATCH payloads
+
+API's ondersteunen minimaal JSON gecodeerde POST, PUT en PATCH payloads. Encoded form data (`application/x-www-form-urlencoded`) payloads worden niet ondersteund. Wat is het verschil?
+
+`Content-Type: application/json` resulteert in:
+
+```json
+{
+  "Name": "John Smith",
+  "Age": 23
+}
+```
+
+en `Content-Type: application/x-www-form-urlencoded` resulteert in: `Name=John+Smith&Age=23`
+
+> **API's ondersteunen JSON gecodeerde POST, PUT en PATCH payloads**
+>
+> API's ondersteunen minimaal JSON gecodeerde POST, PUT en PATCH payloads. Encoded form data (`application/x-www-form-urlencoded`) wordt niet ondersteund.
 
 ## HAL/HATEOAS
 
@@ -379,8 +528,95 @@ Via de optionele request-header kan één minor/patch-versie worden aangewezen. 
 
 ## Filteren, sorteren en zoeken
 
+Er wordt gekozen om de basis URL's van resources zo eenvoudig mogelijk te houden. Complexe resultaatfilters, sorteren en geavanceerd zoeken (wanneer dit beperkt blijft tot een enkele resource) worden geïmplementeerd als query-parameters bovenop de basis URL.  
+
+### Filteren
+
+Om te filteren wordt gebruik gemaakt van unieke query-parameters die gelijk zijn aan de velden waarop gefilterd kan worden. Als je bijvoorbeeld een lijst met aanvragen wilt opvragen van het eindpunt `/aanvragen` en deze wilt beperken tot open aanvragen, dan wordt het verzoek `GET /aanvragen?status=open` gebruikt. Hier is `status` een veld waarop gefilterd kan worden.
+
+> **Filter query-parameters zijn gelijk aan de velden waarop gefilterd kan worden**
+>
+> Gebruik unieke query-parameters die gelijk zijn aan de velden waarop gefilterd kan worden.
+
+Dezelfde systematiek kan worden gehanteerd voor geneste properties. Zoals uitgewerkt met een voorbeeld op basis van de volgende collectie:
+
+```json
+[{
+  "id": 1,
+  "status": "actief",
+  "overheid": {
+    "code": "0000",
+    "naam": "Ministerie van BZK"
+  }
+}, {
+  "id": 2,
+  "status": "inactief",
+  "overheid": {
+    "code": "9901",
+    "naam": "Provincie Gelderland"
+  }
+}]
+```
+
+Alle objecten met de status "actief" kunnen worden gefilterd met `/?status=actief`. Maar als daarnaast ook op objecten met code "0000" van de overheid gefilterd moeten worden, heeft dit betrekking op een geneste property. Hier kan dan de puntnotatie (zoals bij Javascript) voor worden gebruikt: `/?status=actief&overheid.code=0000`.
+
+### Sorteren
+
+Voor sorteren wordt de query-parameter `sorteer` gebruikt. Deze query-parameter accepteert een lijst van velden waarop gesorteerd moet worden gescheiden door een komma. Door een minteken ("-") voor de veldnaam te zetten wordt het veld in aflopende sorteervolgorde gesorteerd. Een aantal voorbeelden:
+
+|Request|Toelichting|
+|-|-|
+|`GET /aanvragen?sorteer=-prio`|Haalt een lijst van aanvragen op gesorteerd in aflopende volgorde van prioriteit.|
+|`GET /aanvragen?sorteer=-prio,aanvraagDatum`|Haalt een lijst van aanvragen in aflopende volgorde van prioriteit op. Binnen een specifieke prioriteit, komen oudere aanvragen eerst.|
+
+> **Voor sorteren wordt de query-parameter sorteer gebruikt**
+> De generieke query-parameter `sorteer` wordt gebruikt voor het specificeren van door komma's gescheiden velden waarop gesorteerd moet worden. Door een minteken ("-") voor de veldnaam te zetten wordt het veld in aflopende sorteervolgorde gesorteerd.
+
+### Zoeken
+
+Soms zijn eenvoudige filters onvoldoende en is de kracht van vrije-tekst zoekmachines nodig. Hiervoor is de bouwsteen Zoeken (technisch component ElasticSearch) beschikbaar. API's ondersteunen dit middels de query-parameter `zoek`. Een zoekopdracht die meegegeven wordt met deze query-parameter wordt 1-op-1 doorgegeven aan de bouwsteen Zoeken. Het resultaat wordt in dezelfde representatie teruggegeven.
+
+> **Voor vrije-tekst zoeken wordt een query-parameter zoek gebruikt**
+>
+> API's die vrije-tekst zoeken ondersteunen doen dit middels de query-parameter `zoek`.
+
+Voorbeelden van de combinatie filteren, sorteren en zoeken:
+
+|Request|Toelichting|
+|-|-|
+|`GET /aanvragen?sorteer=-wijzigingDatum`|Haalt een lijst van recente aanvragen op|
+|`GET /aanvragen?status=gesloten&sorteer=-wijzigingDatum`|Haalt een lijst van recent gesloten aanvragen op|
+|`GET /aanvragen?zoek=urgent&status=open&sorteer=-prio,aanvraagDatum`|Haalt een lijst van aanvragen op met de status 'open' en waarin het woord 'urgent' voorkomt, gesorteerd van hoogste naar laagste prioriteit, en daarbinnen op aanvraagdatum van oud naar nieuw|
+
+### Wildcards
+
+API's die vrije-tekst zoeken ondersteunen kunnen overweg met twee soorten wildcard karakters:
+
+- `*` Komt overeen met nul of meer (niet-spatie) karakters
+- `?`  Komt precies overeen met één (niet-spatie) karakter
+
+Bijvoorbeeld, `he*` zal overeenkomen met elk woord dat begint met `he`, zoals `hek`, `hemelwaterafvoer`, enzovoort. In het geval van `he?` komt dit alleen overeen met drie letterwoorden die beginnen met `he`, zoals `hek`, `heg`, enzovoort.
+
+> **API's die vrije-tekst zoeken ondersteunen kunnen overweg met twee soorten wildcard karakters: * en ?**
+>
+> API's die vrije-tekst zoeken ondersteunen kunnen overweg met twee soorten wildcard karakters:
+> - `*`  Komt overeen met nul of meer (niet-spatie) karakters
+> - `?`  Komt precies overeen met één (niet-spatie) karakter
+
+Hieronder volgen nog een aantal basisregels voor wildcards in zoekopdrachten:
+
+- Er kan meer dan één wildcard in één zoekterm of zin voorkomen.
+- De twee wildcard karakters kunnen in combinatie worden gebruikt. Bijvoorbeeld `m*??` komt overeen met woorden die beginnen met `m` en drie of meer tekens hebben.
+- Spaties (URL-encoded als `%20`) worden gebruikt als woordscheiding en wildcardmatching werkt alleen binnen een enkel woord. Bijvoorbeeld, `r*te*` komt overeen met de **`r`**`uim`**`te`**`lijk`, maar niet met **`r`**`uimte` **`te`**`kort`.
+- Wildcards werken alleen op JSON-velden met tekst (string) waarden.  
+
+### Aliassen voor terugkerende queries
+
+Om de API ervaring verder te verbeteren is het mogelijk om terugkerende queries als end-points aan te bieden. Zo kunnen onlangs gesloten aanvragen als volgt worden benaderd:
+
+`GET /aanvragen/recent-gesloten`
+
 - Best practice(s)
-- wildcards
 
 ## Tijdreizen
 
@@ -389,15 +625,230 @@ Via de optionele request-header kan één minor/patch-versie worden aangewezen. 
 - RCE periodes (middeleeuwen, pleistoceem)
 - Best practice(s)
 
-## Geo ondersteuning
+## GEO-ondersteuning
+
+REST API's voor het werken met geometrieën kunnen een filter aanbieden op basis van geografische gegevens. Het is hierbij belangrijk om een onderscheid te maken tussen een geometrie in het resultaat (response) en een geografische filter in de aanroep (request). Het is immers niet vanzelfsprekend dat als iemand wil weten in welk perceel ik hij/zij zich momenteel bevindt, dat ook de geometrie in de response wordt teruggegeven; een naam of nummer kan dan al voldoende zijn.
+
+Het is wél belangrijk dat dit antwoord juist is, en de brondata dus zeer gedetailleerde geometrieën bevat; een gebruiker wil immers geen fout antwoord krijgen. Mocht iemand andersom alle percelen met status = actief willen plotten op een kaartje, dan wil hij/zij juist de geometrieën in de response ontvangen, maar is het detailniveau weer niet zo belangrijk.
+
+> **GEO API's ontvangen en versturen GeoJSON**
+>
+> Voor GEO API's wordt de standaard GeoJSON gebruikt.
+
+### Resultaat (response)
+
+In een JSON API wordt een geometrie teruggegeven als GeoJSON. We kiezen er voor om dit binnen de `application/json` te ‘wrappen' in een apart GeoJSON object.
+
+> **GeoJSON is onderdeel van de embedded resource in de JSON response**  
+>
+> GeoJSON wordt in een JSON response (`application/json`) geplaatst waarbij geo attributen als GeoJSON-compatible object in de resource ge-embed zijn.
+
+### Aanroep (requests)
+
+Een geografisch filter kan erg complex en groot zijn. Het is daarom een best practice om dergelijke complexe vragen niet in de request URI, maar in de body mee te sturen. Omdat GET geen payload mag hebben (hoewel sommige clients dit wel ondersteunen) moet hier dus een andere methode voor gebruikt worden.
+
+In analogie met API's zoals die van Elasticsearch, is een POST naar een apart endpoint de juiste weg om te bewandelen. Het onderstaande voorbeeld doet een zogenaamde GEO-query naar alle panden waarin het veld `_geo` (er kunnen ook andere velden zijn, zoals `hoofdgeometrie`, `binnenOmtrek`, `buitenOmtrek`, etc.) het GeoJSON object (in dit geval een `Point`, dus één coördinaat) bevat:
+
+```json
+// POST /api/v1/panden/_zoek met request body:
+{
+  "_geo": {
+    "contains": {
+      "type": "Point",
+      "coordinates": [5.9623762, 52.2118093]
+    }
+  }
+}
+```
+
+> **Voor GEO queries is een POST end-point beschikbaar**
+>
+> Geometrische queries worden in een POST naar een apart end-point verzonden.
+
+Omdat we ons met het geo end-point beperken tot een GEO-query en we wellicht ook gecombineerde queries willen doen is het sterk aan te bevelen om een generiek query end-point in te richten:
+
+```json
+// POST /api/v1/panden/_zoek met request body:
+{
+  "_geo": {
+    "contains": {
+      "type": "Point",
+      "coordinates": [5.9623762, 52.2118093]
+    }
+  },
+  "status": "Actief"
+}
+```
+
+> **POST end-points zijn uitbreidbaar voor gecombineerde vragen**
+>
+> De geometrie is uitbreidbaar met andere properties voor gecombineerde queries.
+
+Naast contains kan er ook intersects (snijdt) of within (valt binnen) als operators gebruikt worden. De benamingen van deze operators komen uit de GEO-wereld en die willen we niet opnieuw uitvinden.  
+
+Omdat we voor de geometrie een GeoJSON object gebruiken hoeven we hier geen syntax meer voor te verzinnen. Daarnaast kunnen we in het GeoJSON object ook aangeven welk CRS (zie volgende paragraaf) de opgegeven geometrie hanteert.
+
+> **Resultaten van een globale geometrische zoekvraag worden in de relevante geometrische context geplaatst**
+>
+> In het geval van een globale zoekvraag `/api/v1/_zoek` is het noodzakelijk om de resultaten in een relevante geometrische context te plaatsen.
+
+In het volgende voorbeeld wordt aangegeven hoe dit kan worden gerealiseerd:
+
+```json
+// POST /api/v1/_zoek:
+{
+  "_embedded": {
+    "results": [{
+      "type": "enkelbestemming",
+      "_links": {
+        "self": {
+          "title": "Enkelbestemming 1234",
+          "href": "/enkelbestemmingen/1234"
+        }
+      }
+    }, {
+      "type": "dubbelbestemming",
+      "_links": {
+        "self": {
+          "title": "Dubbelbestemming 8765",
+          "href": "/dubbelbestemmingen/8765"
+        }
+      }
+    }]
+  }
+}
+```
+
+### CRS-negotiation
+
+Het default CRS (Coordinate Reference System) van GeoJSON is WGS84. Dit is het globale coördinatenstelsel dat vanwege de verschuiving van de tektonische platen minder nauwkeurig is dan lokale coördinatenstelsels zoals ETRS89 (EPSG:4258, Europees) of RD (EPSG:28992, Nederlands).
+
+Omdat de meeste client-bibliotheken met WGS84 werken, schrijft de W3C/OGC werkgroep "Spatial Data on the Web" voor om dit standaard te ontsluiten. Dit kan direct op een kaart geplot worden zonder moeilijke transformaties. De API-strategie voorziet hierin door naast ETRS89 en RD ook WGS84 te ondersteunen.
+
+> **Het voorkeur-coördinatenstelsels (CRS) is ETRS89, maar het CRS wordt niet impliciet geselecteerd**
+>
+> Algemeen gebruik van het Europese ETRS89 coördinatenstelsel (CRS) heeft sterk de voorkeur, maar dit wordt niet door API's afgedwongen als de "default". Derhalve moet het te gebruiken CRS in elke aanroep expliciet worden opgegeven.
+
+Het is mogelijk om het CRS voor vraag en antwoord via headers afzonderlijk te specificeren. Hierin zijn vervolgens drie opties (met voorgeschreven projecties) voorhanden: RD, ETRS89 en WGS84.
+
+Een nadere opsomming van de uitgangspunten voor het CRS in de OGAS:
+
+- Leg als bronsysteem binnenkomende formaat vast (juridische context);
+- Coördinatenstelsels API-strategie: vraag/antwoord in RD; ETRS89; WGS84;
+- Overweeg no-regret: vastleggen in ETRS89 én RD i.p.v. realtime bepalen;
+- Hanteer RDNAPTRANS™ 2018 bij transformatie RD versus ETRS89 (correctiegrid);
+- Presentatie afhankelijk van context (o.a. gebruikerswensen);
+- Uitwisselingsformaat (notatie) ETRS89 en WGS84 X Y in decimale graden: DD.ddddddddd (voorbeeld: `52.255023450`)
+- Uitwisselingsformaat (notatie) RD X Y in meters (niet afgerond): `195427.5200 311611.8400`
+
+> **Het coördinatenstelsel (CRS) van de vraag en het antwoord wordt in de header meegestuurd**
+>
+> Het gekozen coördinatenstelsel (CRS) voor zowel de vraag als het antwoord worden meegestuurd als onderdeel van de request-header en de response-header. Bij het ontbreken van deze headers wordt `412 Precondition Failed` teruggegeven. Hiermee wordt voorkomen dat per abuis met het verkeerde CRS wordt gewerkt
+
+De hier genoemde headers zijn puur bedoeld voor de onderhandeling tussen de client en de server. Afhankelijk van de toepassing zal naast de geometrieën ook specifieke metadata onderdeel vormen van het antwoord, bijvoorbeeld de oorspronkelijke realisatie inclusief een inwindatum.
+
+Vraag en antwoord kunnen op een ander coördinatensysteem zijn gebaseerd. Hiervoor wordt het HTTP-mechanisme voor content negotiation gebruikt. Het CRS van de geometrie in de vraag (request body) wordt aangeduid met de header `Content-Crs`.
+
+|HTTP header|Waarde|Toelichting|
+|-|-|-|
+|`Content-Crs`|EPSG:3856|WGS84, Wereld (Web-Mercator-projectie)|
+|`Content-Crs`|EPSG:4258|ETRS89, Europees|
+|`Content-Crs`|EPSG:28992|RD, Nederlands|
+
+Het gewenste CRS voor de geometrie in het antwoord (response body) wordt aangeduid met de header `Accept-Crs`.  
+
+|HTTP header|Waarde|Toelichting|
+|-|-|-|
+|`Accept-Crs`|EPSG:3856|WGS84, Wereld (Web-Mercator-projectie)|
+|`Accept-Crs`|EPSG:4258|ETRS89, Europees|
+|`Accept-Crs`|EPSG:28992|RD, Nederlands|
+
+### CRS-transformatie
+
+Voor het transformeren tussen coördinaatreferentiesystemen is binnen de Rijksoverheid software met een keurmerk beschikbaar.
+
+> **Het gewenste coördinatenstelsel wordt op basis van content negotiation overeengekomen**
+>
+> Het gewenste CRS voor de geometrie in het antwoord (response body) wordt aangeduid met een `Accept-Crs` header. Als het gewenste CRS niet geleverd kan worden zal er een `406 Not Acceptable` worden teruggegeven.
 
 - Best practice(s)
 
 ## Paginering
 
+Voor paginering wordt aangesloten op Hypertext Application Language (HAL). Dit is een standaard voor het uitdrukken van hyperlinks met JSON [RFC4627]. Aan geretourneerde objecten worden twee gereserveerde velden (gedefinieerd door RFC5988) `_links` (verplicht) en `_embedded` (optioneel) toegevoegd. Deze velden vertegenwoordigen respectievelijk hyperlinks en embedded resources.  
+
+Hier is een voorbeeld van een JSON+HAL representatie:
+
+```json
+{
+  "_links": {
+    "self": {
+      "href": "https://.../api/registratie/v1/aanvragen?pagina=3"
+    },
+    "first": {
+      "href": "https://.../api/registratie/v1/aanvragen"
+    },
+    "prev": {
+      "href": "https://.../api/registratie/v1/aanvragen?pagina=2"
+    },
+    "next": {
+      "href": "https://.../api/registratie/v1/aanvragen?pagina=4"
+    },
+    "last": {
+      "href": "https://.../api/registratie/v1/aanvragen?pagina=5"
+    }
+  },
+  "id": "https://.../api/registratie/v1/aanvragen/12",
+  "naam": "Mijn dakkapel",
+  "samenvatting": "Ik wil een dakkapel bouwen!",
+  "_embedded": {
+    "aanvrager": {
+      "naam": "Bob"
+    }
+  }
+}
+```
+
+Indien het "plain" JSON, GeoJSON of iets anders dan HAL betreft zijn er geen `_links`. Deze kunnen dan opgenomen worden in de link response headers. Naast de representatie wordt de volgende metadata teruggegeven als HTTP-headers.
+
+|HTTP header|Toelichting|
+|-|-|
+|`X-Total-Count` (optioneel)|Totaal aantal resultaten|
+|`X-Pagination-Count` (optioneel)|Totaal aantal pagina's|
+|`X-Pagination-Page` (optioneel)|Huidige pagina|
+|`X-Pagination-Limit` (optioneel)|Aantal resultaten per pagina|
+
+Bij grote datasets kunnen de berekeningen voor X-Total-Count en X-Pagination-Count behoorlijke impact hebben op de performance, voornamelijk als er niet of nauwelijks gefilterd wordt.
+
+> **Paginering wordt gerealiseerd op basis van JSON+HAL**
+>
+> Aan de representatie worden twee gereserveerde velden (gedefinieerd door RFC5988) `_links` (verplicht) en `_embedded` (optioneel) toegevoegd. Daarnaast wordt paginerings-metadata als HTTP-headers meegegeven.
+
+Alle links in HAL zijn absoluut. Dit in verband met mogelijke externe links (naar andere end-points, linked-data resources, etc.) en eenvoudigere navigatie door clients ie dan niet zelf de URL hoeven op te bouwen.  
+
 - Best practice(s)
 
 ## Caching
+
+Voor sommige resources kan het nuttig zijn om caching toe te passen. HTTP biedt voor caching standaard mechanismes. Door deze mechanismes te gebruiken wordt gebruik gemaakt van standaard caching oplossingen van de client en in de infrastructuur.  
+
+Het enige wat nodig is om hiervan gebruik te maken is:
+
+- Een aantal extra uitgaande HTTP-headers toevoegen;
+- Functionaliteit om een aantal specifieke inkomende HTTP-headers af te handelen.
+
+Er zijn 2 manieren om caching te realiseren: ETag en Last-Modified.
+
+### ETag
+
+Een ETag (Entity Tag) is een hashcode of checksum van een resource. Als de resource wijzigt ontstaat een andere ETag. Een ETag is dus uniek voor een bepaalde versie van een resource. De ETag wordt als de HTTP-header `ETag` teruggegeven met de resource. De afnemer cached de resource en de ETag. Als de afnemer dezelfde resource opvraagt dan stuurt deze de ETag mee in de HTTP-header `If-None-Match`. De server controleert of de ETag in de HTTP-header `If-None-Match` gelijk is aan de eigen ETag. Indien dit het geval geeft de server een HTTP-statuscode `304 Not Modified` terug. De afnemer laadt dan de resource uit de eigen cache. Dit gaat alleen op over clientside caching, dus is alleen van toepassing als de client ook daadwerkelijk de request headers meestuurt, anders altijd een `200 OK`.
+
+### Last-Modified
+
+Dit werkt in principe net als ETag, behalve dat het gebruik maakt van tijdstempels. De HTTP-header `Last-Modified` bevat een tijdstempel in het RFC 1123 formaat die wordt gevalideerd tegen de HTTP-header `If-Modified-Since`. De server controleert of de resource gewijzigd is sinds het aangegeven tijdstip. Indien dit niet het geval is dan geeft de server een HTTP-statuscode `304 Not Modified` terug. De afnemer laadt dan de resource uit de eigen cache. Dit gaat alleen op over client-side caching, dus is alleen van toepassing als de client ook daadwerkelijk de request headers meestuurt, anders altijd een `200 OK`.
+
+> **Waar relevant wordt caching toegepast**
+> Voor caching wordt gebruikt van de HTTP standaard caching mechanismes door het toevoegen van een aantal extra uitgaande HTTP-headers (`ETag` of `Last-Modified`) en functionaliteit om te bepalen of een aantal specifieke inkomende HTTP-headers (`If-None-Match` of `If-Modified-Since`).
 
 - Best practice(s)
 
