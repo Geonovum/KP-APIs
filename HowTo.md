@@ -10,7 +10,7 @@ GitHub Repository
 -----------------
 
 We gebruiken GitHub als samenwerk omgeving voor de documentatie. Er is een
-centrale GitHub repository gemaakt op https://github.com/Geonovum, deze heet
+centrale GitHub repository gemaakt op <https://github.com/Geonovum,> deze heet
 KP-APIs, en is ingedeeld volgens onderstaande tabel:
 
 ### Mappenstructuur
@@ -54,7 +54,7 @@ Verplichte bestanden en mappen in de werkgroepmap:
 
 Editen van de documenten doe je in principe lokaal op je eigen pc/laptop. Om de
 verschillende wijzigingen te kunnen integreren in de GitHub Repository heb je de
-GitHub Client nodig. Ga in je internet browser naar https://desktop.github.com/,
+GitHub Client nodig. Ga in je internet browser naar <https://desktop.github.com/>,
 en Klik daar op download for Windows (64bit). De installer wordt nu gedownload.
 Als de download klaar is, ga je naar de maps “downloads” met je windows
 explorer. Je zoek het programma “GitHubDesktopSetup” op, en start dat door erop
@@ -110,8 +110,8 @@ Markdown Editors
 Markdown is een "plat" bestandsformaat, dat maakt dat jezelf kan kiezen welke
 editor of edit-omgeving je wil gebruiken, mits je je maar houdt aan het markdown
 formaat. Een beschrijving van markdown vind je hier:
-https://nl.wikipedia.org/wiki/Markdown. Een cheatsheet vind je hier:
-https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf
+<https://nl.wikipedia.org/wiki/Markdown>. Een cheatsheet vind je hier:
+<https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf>
 
 Voor MS-Word bestaat een markdown plugin. Het voordeel daarvan is dat je niet na
 hoeft te denken over de te gebruiken markdown-tags,  
@@ -119,7 +119,7 @@ en meteen kan zien hoe het document er uit komt te zien.
 
 ### Microsoft Word plugin
 
-Om de plugin te installeren ga je naar Ga naar http://www.writage.com/, download
+Om de plugin te installeren ga je naar Ga naar <http://www.writage.com/>, download
 je het installatie bestand, en voer je het uit. Er wordt dan een stijl
 aangemaakt voor Markdown bestanden, en bij *save as* kan je het bestand opslaan
 als een markdown bestand. In Word zelf geef je gewoon met stijlen aan hoe de
@@ -129,7 +129,7 @@ opslaan maakt de plugin er dan een Markdoen bestand van.
 ### Visual Studio Code
 
 Een andere optie is om *Visual Studio Code* (VSC) te installeren. De download
-vind je hier: https://code.visualstudio.com/ VSC is meer een ontwikkelomgeving
+vind je hier: <https://code.visualstudio.com/> VSC is meer een ontwikkelomgeving
 dan een tekstverwerker, hier moet je wel de markdown tags kennen.
 
 Golden Rules
@@ -142,8 +142,8 @@ Met de wetenschap van dat moment.
 
 ### Rule-1: Taal
 
->   Technische documentatie schrijven we in het Engels, Niet-Technische
->   Documentatie schrijven we in het Nederlands!
+> Technische documentatie schrijven we in het Engels, Niet-Technische
+> Documentatie schrijven we in het Nederlands!
 
 ### Rule-2:
 
