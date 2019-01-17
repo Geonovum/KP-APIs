@@ -48,11 +48,6 @@ var respecConfig =
       companyURL: "http://swis.nl/",
     },
     {
-      name: "Remco Schaar",
-      company: "Logius",
-      companyURL: "http://www.logius.nl/",
-    },
-	  {
       name: "Jasper Roes",
       company: "Het Kadaster",
       companyURL: "http://www.kadaster.nl/",
@@ -61,11 +56,6 @@ var respecConfig =
       name: "Emile van de Maas",
       company: "",
       companyURL: "",
-    },
-	  {
-      name: "Jan Jaap Zoutendijk",
-      company: "Rijkswaterstaat",
-      companyURL: "http://www.rws.nl/",
     },
   ],
   shortName: "API strategie",
