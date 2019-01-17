@@ -10,7 +10,7 @@ GitHub Repository
 -----------------
 
 We gebruiken GitHub als samenwerk omgeving voor de documentatie. Er is een
-centrale GitHub repository gemaakt op <https://github.com/Geonovum,> deze heet
+centrale GitHub repository gemaakt op <https://github.com/Geonovum>, deze heet
 KP-APIs, en is ingedeeld volgens onderstaande tabel:
 
 ### Mappenstructuur
