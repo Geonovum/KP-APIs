@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OAUTH2 Client</title>
+
+    <link rel="stylesheet" href="https://path/to/webserver/client/irma.css">
+    <script src="https://path/to/webserver/client/irma.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <h1>OAUTH2 Client</h1>
+    {% block content %}
+    {% endblock content %}
+
+    <script>
+        IRMA.init("https://demo.irmacard.org/tomcat/irma_api_server/api/v2/");
+    </script>
+</body>
+</html>
