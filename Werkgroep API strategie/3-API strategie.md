@@ -918,8 +918,8 @@ HTTP headers worden gebruikt om de bevragingslimit naar de gebruiker te communic
 |HTTP header|Toelichting|
 |-|-|
 |`X-Rate-Limit-Limit`|Geeft aan hoeveel verzoeken een applicatie mag doen per tijdsperiode. Voor het DSO is dit 60 seconden|
-|`X-Rate-Limit-Remaining`|Geeft aan hoeveel seconden over zijn in de huidige tijdsperiode|
-|`X-Rate-Limit-Reset`|Geeft aan hoeveel verzoeken nog gedaan kunnen worden in de huidige tijdsperiode|
+|`X-Rate-Limit-Remaining`|Geeft aan hoeveel verzoeken nog gedaan kunnen worden in de huidige tijdsperiode|
+|`X-Rate-Limit-Reset`|Geeft aan hoeveel seconden over zijn in de huidige tijdsperiode|
 
 > **Beperken van het aantal verzoeken per tijdsperiode wordt centraal opgelost door het Stelselknooppunt**
 >
