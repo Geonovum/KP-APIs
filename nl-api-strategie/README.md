@@ -522,6 +522,60 @@ en `Content-Type: application/x-www-form-urlencoded` resulteert in: `Name=John+S
 
 ### @TODO Best practice(s)
 
+### Veldnamen in snake_case, camelCase, UpperCamelCase of koppelteken?
+
+Bij veldnamen wordt gebruik gemaakt van camelCase.
+
+> Woorden in veldnamen zijn gedefinieerd in camelCase
+>
+> Een veldnaam begint met kleine letters (eerste woord) en ieder opvolgend woord begint met een hoofdletter.
+
+### Pretty print
+
+De meeste REST clients en browsers (al dan niet met extensies) kunnen JSON netjes geformatteerd weergeven, ook als de response geen white-space bevat.
+
+> **Pretty print is standaard uitgeschakeld**
+>
+> Het uitgangspunt is dat REST clients en browsers (al dan niet met extensies) JSON netjes geformatteerd kunnen weergeven.
+
+### Gebruik geen envelop
+
+Veel API's wikkelen antwoorden in enveloppen zoals hieronder is weergegeven:
+
+```json
+{
+  "persoon": {
+    "naam": "Jan",
+    "geboortejaar": 1983
+  }
+}
+```
+
+Een toekomstbestendig API is vrij van enveloppen.
+
+> **Een JSON-response heeft geen omhullende envelop**
+>
+> Er worden standaard geen enveloppen toegepast.
+
+### JSON gecodeerde POST, PUT en PATCH payloads
+
+API's ondersteunen minimaal JSON gecodeerde POST, PUT en PATCH payloads. Encoded form data (`application/x-www-form-urlencoded`) payloads worden niet ondersteund. Wat is het verschil?
+
+`Content-Type: application/json` resulteert in:
+
+```json
+{
+  "Name": "John Smith",
+  "Age": 23
+}
+```
+
+en `Content-Type: application/x-www-form-urlencoded` resulteert in: `Name=John+Smith&Age=23`
+
+> **API's ondersteunen JSON gecodeerde POST, PUT en PATCH payloads**
+>
+> API's ondersteunen minimaal JSON gecodeerde POST, PUT en PATCH payloads. Encoded form data (`application/x-www-form-urlencoded`) wordt niet ondersteund.
+
 ## HAL/HATEOAS
 
 ### @TODO Best practice(s)
