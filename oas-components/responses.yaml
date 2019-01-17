@@ -1,0 +1,45 @@
+'401':
+  description: >-
+    Unauthorized. Je hebt waarschijnlijk geen geldige `X-Api-Key` header
+    meegestuurd.
+  content:
+    application/problem+json:
+      schema:
+        $ref: 'errors.yaml#/401'
+'403':
+  description: Forbidden. Je hebt geen rechten om deze URL te benaderen.
+  content:
+    application/problem+json:
+      schema:
+        $ref: 'errors.yaml#/403'
+'404':
+  description: Niet gevonden.
+  content:
+    application/problem+json:
+      schema:
+        $ref: 'errors.yaml#/404'
+'406':
+  description: >-
+    Not Acceptable. Je hebt waarschijnlijk een gewenst formaat met de
+    `Accept` header verstuurd welke niet ondersteund wordt.
+  content:
+    application/problem+json:
+      schema:
+        $ref: 'errors.yaml#/406'
+'503':
+  description: >-
+    Service Unavailable. Er vindt mogelijk (gepland) onderhoud of een
+    storing plaats.
+  headers:
+    Retry-After:
+      description: >-
+        Tijdstip waarop verwacht is dat de service weer beschikbaar zal
+        zijn.
+      x-example: 'Sun, 28 Nov 2017 16:41:41 GMT'
+      schema:
+        type: string
+        format: date-time
+  content:
+    application/problem+json:
+      schema:
+        $ref: 'errors.yaml#/503'

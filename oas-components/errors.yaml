@@ -1,0 +1,55 @@
+'401':
+  allOf:
+  - $ref: '#/Error'
+  - properties:
+      status:
+        example: 401
+'403':
+  allOf:
+  - $ref: '#/Error'
+  - properties:
+      status:
+        example: 403
+'404':
+  allOf:
+  - $ref: '#/Error'
+  - properties:
+      status:
+        example: 404
+'406':
+  allOf:
+  - $ref: '#/Error'
+  - properties:
+      status:
+        example: 406
+'503':
+  allOf:
+  - $ref: '#/Error'
+  - properties:
+      status:
+        example: 503
+Error:
+  type: object
+  required:
+    - detail
+    - instance
+    - status
+    - title
+    - type
+  properties:
+    type:
+      type: string
+      description: >-
+        URI naar een pagina met meer informatie over deze foutmelding voor
+        de ontwikkelaar.
+      default: 'about:blank'
+      example: 'about:blank'
+    title:
+      type: string
+    status:
+      type: integer
+      description: De HTTP status code
+    detail:
+      type: string
+    instance:
+      type: string
