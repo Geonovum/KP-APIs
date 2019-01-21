@@ -58,6 +58,8 @@ data ‘gebruiken’ bij het werken met API’s.
 
 ### <!-- 6.2.1 --> Beveiliging
 
+<redactie>Blijft deze paragraaf? Heel Hoofdstuk *Beveiliging* is eraan gewijd.</redactie>
+
 ### <!-- 6.2.2 --> Autorisatie
 
 ### <!-- 6.2.3 --> Semantiek

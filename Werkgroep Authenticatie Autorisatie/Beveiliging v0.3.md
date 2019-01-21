@@ -1,9 +1,11 @@
 # Beveiliging
 
-> *In dit hoofdstuk wordt beschreven hoe de API's op een veilige manier worden aangeboden aan de afnemers*
-> *Uitgangspunt voor die beveiliging is het _Nederlands profiel OAuth_*
+
+> *Doel van dit hoofdstuk: Hoe kan je je applicatie landschap inrichten zodat je APIs kan aanbieden. Welke componenten zijn hiervoor nodig. Hoe ga je om met opschalen, beschikbaarheid. Wat zijn afwegingen om beveiliging al dan niet toe te passen.*
 
 
+
+<redactie>Heel hoofdstuk 5 gaat over beveiliging, hier ook nog eens beschrijven? of alleen een link...</redactie>
 
 
 ## Uitgangspunten 

@@ -1,6 +1,16 @@
-# API designrules
+# API designrules/ontwerpregels
 
 > *Het doel van dit hoofdstuk is te komen tot regels waarmee de hele overheid op eenduidige manier APIs aanbiedt. Hiermee wordt bereikt dat de overheid voorspelbaar is en ontwikkelaars makkelijk aan de slag kunnen en APIs kunnen consumeren en combineren*
+
+
+<redactie><br>@Werkgroep: graag checken of de tekst in het hoofdstuk de lading dekt!</redactie>
+
+<redactie><br>@Werkgroep: Zoals nu is opgeschreven is de tekst nog teveel DSO API Strategie. De tekst DSO staat er letterlijk in!</redactie>
+
+<redactie><br>@Werkgroep: Delen van de tekst zijn behoorlijk technisch van aard. Misschien kunnen die stukken tekst naar het hoofdstuk Arhitectuur...</redactie>
+
+<redactie><br>@Werkgroep: Veel staat nog op @TODO. Gaat het lukken die hoofdstukken gevuld te krijgen voor eind van januari?</redactie>
+
 
 ## RESTful principes
 

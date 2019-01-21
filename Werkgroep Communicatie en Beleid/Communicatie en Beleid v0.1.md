@@ -7,7 +7,7 @@
 > *- Wat is de uitwerking voor inclusiviteit regie op gegevens veiligheid.*  
 > *- Uitgelegd en verduidelijkt met voorbeelden*  
 
-
+<redactie>@Werkgroep: graag checken of de volgende hoofstukken de lading dekken</redactie>
 
 ##### Application Programming Interfaces, wat zijn het en waarom hierop in te zetten
 
@@ -140,6 +140,8 @@ meer in te zetten op gegevensuitwisseling via API’s:
 
 ##### Developer First
 
+<redactie>Zie ook Paragraaf '*Beveiliging* bij *Architectuur*</redactie>
+
 De belangrijkste doelgroep van de digitale overheid die vaak wordt vergeten, is
 de programmeur. Vaak gaat het binnen de digitale overheid over betere
 dienstverlening voor burgers en bedrijven, maar bij het neerzetten van een goede
@@ -172,6 +174,7 @@ gebruikerswensen zijn te faciliteren.
 
 ##### Gegevens bevragen bij de bron
 
+<redactie>Inhoudelijke vraag: wat is hier de bron? de organisatie, of de database waarin de data staat?</redactie>
 Binnen de overheid worden nog vaak databases gedupliceerd die vervolgens vanuit
 de bron worden gesynchroniseerd. Hierdoor worden gegevens op verschillende
 plekken bijgehouden, zowel in systemen van overheden als leveranciers. Het
