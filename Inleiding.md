@@ -16,4 +16,4 @@ waarin een technische uitwerking van de eerste twee hoofdstukken staat.
 
 De key words: "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
 NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", en
-"OPTIONAL" in dit document moeten geinterpreteerd worden zoals beschreven in RFC 2119.
+"OPTIONAL" in dit document moeten geinterpreteerd worden zoals beschreven in [[rfc2119]].
