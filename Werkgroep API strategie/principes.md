@@ -195,10 +195,6 @@ Aan de representatie worden twee gereserveerde velden (gedefinieerd door RFC5988
 
 Voor caching wordt gebruikt van de HTTP standaard caching mechanismes door het toevoegen van een aantal extra uitgaande HTTP-headers (ETag of Last-Modified) en functionaliteit om te bepalen of een aantal specifieke inkomende HTTP-headers (Is-None_Match of Is-Modified-Since).
 
-## API-48: Beperken van het aantal verzoeken per tijdsperiode wordt centraal opgelost door het Stelselknooppunt
-
-Alle verzoeken naar API's lopen via het Stelselknooppunt. Het Stelselknooppunt lost het beperken van het aantal verzoeken per tijdsperiode centraal op om overbelasting van servers te voorkomen om een hoog serviceniveau te garanderen.
-
 ## API-49: Begrenzingen worden proactief gemeld
 
 Gebruik X-Rate-Limit headers om limieten aan de gebruiker te communiceren en HTTP-statuscode 429 Too Many Requests als de limieten overschreden worden.

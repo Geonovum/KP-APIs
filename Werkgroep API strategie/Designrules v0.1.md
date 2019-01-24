@@ -931,10 +931,6 @@ HTTP headers worden gebruikt om de bevragingslimit naar de gebruiker te communic
 |`X-Rate-Limit-Remaining`|Geeft aan hoeveel seconden over zijn in de huidige tijdsperiode|
 |`X-Rate-Limit-Reset`|Geeft aan hoeveel verzoeken nog gedaan kunnen worden in de huidige tijdsperiode|
 
-> **Beperken van het aantal verzoeken per tijdsperiode wordt centraal opgelost door het Stelselknooppunt**
->
-> Alle verzoeken naar API’s lopen via het Stelselknooppunt. Het Stelselknooppunt lost het beperken van het aantal verzoeken per tijdsperiode centraal op om overbelasting van servers te voorkomen om een hoog serviceniveau te garanderen.
-
 RFC 6585 introduceerde een HTTP statuscode `429 Too Many Requests` die wordt gebruikt om het overschrijden van het aantal verzoeken te melden aan de gebruiker.
 
 > **Begrenzingen worden proactief gemeld**
