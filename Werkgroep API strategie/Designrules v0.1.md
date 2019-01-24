@@ -70,7 +70,7 @@ Als de resources geïdentificeerd zijn, wordt bepaald welke operaties van toepas
 |`PATCH /aanvragen/12`|Wijzigt een gedeelte van aanvraag #12|
 |`DELETE /aanvragen/12`|Verwijdert aanvraag #12|
 
-Het mooie van REST is dat er gebruik wordt gemaakt van de bestaande HTTPoperaties om de functionaliteit te implementeren met één enkele eindpunt. Hierdoor zijn er geen aanvullende naamgevingsconventies nodig in de URI en blijft de URIstructuur eenvoudig.
+Het mooie van REST is dat er gebruik wordt gemaakt van de bestaande HTTP operaties om de functionaliteit te implementeren met één enkel eindpunt. Hierdoor zijn er geen aanvullende naamgevingsconventies nodig in de URI en blijft de URIstructuur eenvoudig.
 
 > **Alleen standaard HTTP-operaties worden toegepast**
 >
