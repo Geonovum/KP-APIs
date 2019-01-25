@@ -242,7 +242,7 @@ n:m etc.
 
 API's zijn vanaf elke locatie vanaf het internet te benaderen. Om uitgewisselde informatie af te schermen wordt altijd gebruik gemaakt van een versleutelde verbinding op basis van TLS. Geen uitzonderingen, dus overal en altijd.
 
-Doordat de verbinding altijd is versleuteld maakt het authenticatiemechanisme eenvoudiger. Hierdoor wordt het mogelijk om eenvoudige toegangstokens te gebruiken in plaats van toegangstokens met encryptie.
+Doordat de verbinding altijd is versleuteld is het authenticatiemechanisme eenvoudiger. Hierdoor wordt het mogelijk om eenvoudige toegangstokens te gebruiken in plaats van toegangstokens met encryptie.
 
 > **De verbinding is ALTIJD versleuteld met minimaal TLS V1.2**
 >
@@ -253,6 +253,7 @@ Doordat de verbinding altijd is versleuteld maakt het authenticatiemechanisme ee
 > Voor alle DSO API's wordt minimaal een registratie inclusief acceptatie van de fair use voorwaarden vereist. Op basis hiervan zal dan een API-key wordt uitgegeven.
 
 ### Authenticatie en autorisatie
+<p class="issue">Hoort dit niet thuis in hfd 5?</p>
 
 Een REST API mag geen toestand (state) bijhouden. Dit betekent dat authenticatie en autorisatie van een verzoek niet mag afhangen van cookies of sessies. In plaats daarvan wordt elk verzoek voorzien van een token. Binnen het DSO is gekozen voor OAuth 2.0 als de standaarden voor het autorisatiemechanisme.
 
@@ -296,6 +297,8 @@ In een productieomgeving is het wenselijk om voor het (kunnen) autoriseren zo mi
 |Nee|Ja|Nee|`403 Forbidden`|
 |Nee|Nee|?|`403 Forbidden`|
 
+<p class="issue">Komt dit overeen met het <a href="https://rawgit.com/opengeospatial/WFS_FES/master/docs/17-069.html#http_status_codes">gebruik van status codes in WFS 3.0</a>? `401`: The request requires user authentication. The response includes a WWW-Authenticate header field containing a challenge applicable to the requested resource. `403`: The server understood the request, but is refusing to fulfill it. While status code 401 indicates missing or bad authentication, status code 403 indicates that authentication is not the issue, but the client is not authorised to perform the requested operation on the resource."</p>
+
 Het idee van deze regels is dat eerst wordt bepaald of de aanroeper (principal) gerechtigd is voor een resource. Is het antwoord ‘nee' of kan dat niet worden bepaald, bijvoorbeeld omdat de resource nodig is om deze beslissing te kunnen nemen en de resource niet bestaat, dan wordt 403 Forbidden teruggegeven. Op deze manier wordt geen informatie teruggegeven over het al dan niet bestaan van een resource aan een niet-geautoriseerde principal.
 
 Een bijkomend voordeel van de strategie om eerst te bepalen of er toegang is, meer ruimte biedt om de access control logica te scheiden van de business code.
@@ -337,7 +340,7 @@ Een API is zo goed als de bijbehorende documentatie. De documentatie moet gemakk
 
 > **Documentatie is gebaseerd op OAS 3.0 of hoger**
 >
-> Specificaties (documentatie) is beschikbaar als Open API Specification (OAS)9 V3.0 of hoger.
+> Specificaties (documentatie) zijn beschikbaar als Open API Specification (OAS)9 V3.0 of hoger.
 
 > **Documentatie is in het Nederlands tenzij er sprake is van bestaande documentatie in het Engels of er sprake is van een officieel Engelstalig begrippenkader**
 >
