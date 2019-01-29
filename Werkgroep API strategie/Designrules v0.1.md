@@ -1,16 +1,11 @@
 # API designrules/ontwerpregels
 
-> *Het doel van dit hoofdstuk is te komen tot regels waarmee de hele overheid op eenduidige manier APIs aanbiedt. Hiermee wordt bereikt dat de overheid voorspelbaar is en ontwikkelaars makkelijk aan de slag kunnen en APIs kunnen consumeren en combineren*
+> *Het doel van dit hoofdstuk is een set van regels te beschrijven op basis waarvan de hele overheid op eenduidige manier RESTful APIs (afgekort tot APIs) aan kan bieden. Hiermee wordt bereikt dat de overheid voorspelbaar is en ontwikkelaars makkelijk aan de slag kunnen en APIs kunnen consumeren en combineren. Vooralsnog is niet voorzien dat in dit hoofdstuk ook regels worden opgenomen voor ander type APIs zoals SOAP. In bijlage 7.1 is de set van regels samengevat in een aantal principes die in de kern beschrijven waarmee rekening moet worden gehouden bij het ontwerpen en realiseren van API's*
 
+## Inleiding
+Binnen de overheid zijn meer en meer organisaties bezig met het implementeren en aanbieden van RESTful APIs, in veel gevallen worden deze APIs naast bestaande koppelvlakken zoals SOAP en WFS aangeboden om bestaande datasets te ontsluiten. Eén van de doelen die hiermee vaak nagestreefd wordt is het aanbieden van een API die developer friendly is (zie voor de uitleg hierover paragraaf 2.6 en hoofdstuk 3) en waarmee een developer snel aan de slag kan. Dit is uiterard een mooi streven, maar het borgt nog niet dat een developer voor iedere nieuwe API niet alsnog een flinke leercurve heeft. Een developer moet uiteraard bij iedere nieuwe API wel begrijpen waarvoor de API ingezet kan worden, echter zou het niet nodig moeten zijn dat ook de technische werking tussen APIs sterk verschilt. Het Kennisplatform APIs heeft zich daarom als doel gesteld om te komen tot een set met designrules/ontwerpregels voor APIs waarmee APIs overheidsbreed technisch gezien vergelijkbaar werken en daarmee eenvoudiger worden om te implementeren. Dit hoofdstuk beschrijft de set met designrules die breed toepasbaar zijn. Vanuit het Kennisplatform APIs hopen we dat organisaties deze designrules gaan inzetten in hun eigen API strategie, dat eventuele uitzonderingen of aanvullingen terug gegeven worden aan het platform zodat de designrules verbeterd kunnen worden.
 
-<redactie><br>@Werkgroep: graag checken of de tekst in het hoofdstuk de lading dekt!</redactie>
-
-<redactie><br>@Werkgroep: Zoals nu is opgeschreven is de tekst nog teveel DSO API Strategie. De tekst DSO staat er letterlijk in!</redactie>
-
-<redactie><br>@Werkgroep: Delen van de tekst zijn behoorlijk technisch van aard. Misschien kunnen die stukken tekst naar het hoofdstuk Arhitectuur...</redactie>
-
-<redactie><br>@Werkgroep: Veel staat nog op @TODO. Gaat het lukken die hoofdstukken gevuld te krijgen voor eind van januari?</redactie>
-
+Belangrijk om in het achterhoofd te houden bij het realiseren van een API is dat de design rules die in dit hoofdstuk worden geschreven allen toegepast dienen te worden als de beschreven functionaliteit gewenst is. Indien in een API bijvoorbeeld paginering benut wordt dient dit conform de in dit hoofdstuk beschreven desing rule geimplementeerd te worden, indien geen paginering gewenst is hoeft dit uiteraard niet opgenomen te worden in de API.
 
 ## RESTful principes
 
@@ -33,7 +28,7 @@ Per operatie is tevens bepaald of deze gegarandeerd "veilig" en/of "idempotent" 
 
 > **Idempotent**
 >
-> Onder idempotent wordt verstaan dat meerdere identieke verzoeken exact hetzelfde effect hebben als één verzoek..
+> Onder idempotent wordt verstaan dat meerdere identieke verzoeken exact hetzelfde effect hebben als één verzoek.
 
 |Operatie|Veilig|Idempotent|
 |-|-|-|
@@ -43,13 +38,13 @@ Per operatie is tevens bepaald of deze gegarandeerd "veilig" en/of "idempotent" 
 |`PATCH`|Nee|Optioneel|
 |Delete|Nee|Ja|
 
-> **API's garanderen dat operaties "Veilig" en/of "Idempotent" zijn.**
->
+> **API principe: API's garanderen dat operaties "Veilig" en/of "Idempotent" zijn.** @dvh: link toevoegen
+> 
 > Operaties van een API zijn gegarandeerd "Veilig" en/of "Idempotent" als dat zo is bepaald (zie tabel).
 
 REST maakt gebruik van het client stateless server ontwerpprincipe dat is afgeleid van client server met als aanvullende beperking dat het niet toegestaan is om toestand (state) op de server bij te houden. Elk verzoek van de client naar de server moet alle informatie bevatten die nodig is om het verzoek te verwerken, zonder gebruik te hoeven maken van toestand-informatie op de server.
 
-> **Toestandsinformatie wordt nooit op de server opgeslagen.**
+> **API principe: Toestandsinformatie wordt nooit op de server opgeslagen.** @dvh: link toevoegen
 >
 > De client-toestand wordt volledig bijgehouden door de client zelf.
 
@@ -57,7 +52,7 @@ REST maakt gebruik van het client stateless server ontwerpprincipe dat is afgele
 
 Het fundamenteel concept in elke RESTful API is de resource. Een resource is een object met een type, bijbehorende data, relaties met andere resources en een aantal operaties om deze te bewerken. Resources worden aangeduid met zelfstandige naamwoorden (niet werkwoorden!) die relevant zijn vanuit het perspectief van de afnemer van de API. Dus resources zijn zelfstandige naamwoorden en operaties zijn werkwoorden. Operaties zijn acties die op resources worden uitgevoerd.
 
-Het is mogelijk om interne datamodellen één-op-één toe te wijzen aan resources, maar dit hoeft niet per definitie zo te zijn. De crux is om alle niet relevante implementatiedetails te verbergen. Enkele voorbeelden van resources van het DSO zijn: aanvraag, activiteit, juridische regel, toepasbare regel, vergunning.
+Het is mogelijk om interne datamodellen één-op-één toe te wijzen aan resources, maar dit hoeft niet per definitie zo te zijn. De crux is om alle niet relevante implementatiedetails te verbergen. Enkele voorbeelden van resources zijn: aanvraag, activiteit, pand, rijksmonument en vergunning.
 
 Als de resources geïdentificeerd zijn, wordt bepaald welke operaties van toepassing zijn en hoe deze worden ondersteund door de API. RESTful API's realiseren CRUD (Create, Read, Update, Delete) operaties met behulp van HTTP-operaties:
 
@@ -72,7 +67,7 @@ Als de resources geïdentificeerd zijn, wordt bepaald welke operaties van toepas
 
 Het mooie van REST is dat er gebruik wordt gemaakt van de bestaande HTTPoperaties om de functionaliteit te implementeren met één enkele eindpunt. Hierdoor zijn er geen aanvullende naamgevingsconventies nodig in de URI en blijft de URIstructuur eenvoudig.
 
-> **Alleen standaard HTTP-operaties worden toegepast**
+> **API principe: Alleen standaard HTTP-operaties worden toegepast** @dvh: link toevoegen
 >
 > Een RESTful API is een application programming interface die de standaard HTTP-operaties `GET`, `PUT`, `POST`, `PATCH` en `DELETE` gebruikt.
 
@@ -80,21 +75,21 @@ Het mooie van REST is dat er gebruik wordt gemaakt van de bestaande HTTPoperatie
 
 Omdat de exacte betekenis van concepten en begrippen vaak in een vertaling verloren gaan, worden resources en de achterliggende entiteiten, velden, etc. (het informatiemodel en externe koppelvlak) in het Nederlands gedefinieerd.
 
-> **Definitie van het koppelvlak is in het Nederlands tenzij er sprake is van een officieel Engelstalig begrippenkader**
+> **API principe: Definitie van het koppelvlak is in het Nederlands tenzij er sprake is van een officieel Engelstalig begrippenkader** @dvh: link toevoegen
 >
 > Resources en de achterliggende entiteiten, velden, etc. (het informatiemodel en het externe koppelvlak) worden in het Nederlands gedefinieerd. Engels is toegestaan indien er sprake is van een officieel Engelstalig begrippenkader.
 
 ### Naamgeving eindpunten in enkelvoud of meervoud?
 
-De Keep It Simple Stupid (KISS) regel is hier van toepassing. Hoewel grammaticaal gezien het verkeerd aanvoelt om bij het opvragen van een enkele resource gebruik te maken van een resource naam in het meervoud, is het pragmatisch om te kiezen voor consistente eindpunten en altijd meervoud te gebruiken. Voor de afnemer is het gebruik veel eenvoudiger als er geen rekening gehouden hoeft te worden met enkel- en meervoud (aanvraag/aanvragen, regel/regels). Daarnaast is de implementatie eenvoudiger omdat de meeste ontwikkel frameworks het afhandelen van enkele resource (`/aanvragen/12`) en meervoudige resources (`/aanvragen`) met één controller kan oplossen.
+De Keep It Simple Stupid (KISS) regel is hier van toepassing. Hoewel grammaticaal gezien het verkeerd aanvoelt om bij het opvragen van een enkele resource gebruik te maken van een resource naam in het meervoud, is het pragmatisch om te kiezen voor consistente eindpunten en altijd meervoud te gebruiken. Voor de afnemer is het gebruik veel eenvoudiger als er geen rekening gehouden hoeft te worden met enkel- en meervoud (aanvraag/aanvragen, regel/regels). Daarnaast is de implementatie eenvoudiger omdat de meeste ontwikkel frameworks het afhandelen van enkele resource (`/aanvragen/12`) en meervoudige resources (`/aanvragen`) met één controller kunnen oplossen.
 
-> **Resource namen zijn zelfstandige naamwoorden in het meervoud**
+> **API principe: Resource namen zijn zelfstandige naamwoorden in het meervoud** @dvh: link toevoegen
 >
-> Namen van resources zijn zelfstandige naamwoorden en altijd in het meervoud, zoals aanvragen, activiteiten, vergunningen. Ook als het om het een enkel resource betreft.
+> Namen van resources zijn zelfstandige naamwoorden en altijd in het meervoud, zoals aanvragen, activiteiten, panden en vergunningen. Ook als het een enkel resource betreft.
 
 ### Hoe omgaan met relaties?
 
-Als een relatie alleen kan bestaan binnen een andere resource (1-op-n relatie), dan kan de afhankelijke resource (kind) alleen via de ouder benaderd worden. Het volgende voorbeeld maakt dit duidelijk. Een activiteit hoort bij één aanvraag. De activiteiten wordt als volgt benaderd via het eindpunt `/aanvragen`:
+Als een relatie alleen kan bestaan binnen een andere resource (1-op-n relatie), dan kan de afhankelijke resource (kind) alleen via de ouder benaderd worden. Het volgende voorbeeld maakt dit duidelijk. Een status hoort bij één aanvraag. De statussen worden als volgt benaderd via het eindpunt `/aanvragen`:
 
 |Request|Omschrijving|
 |-|-|
@@ -105,7 +100,7 @@ Als een relatie alleen kan bestaan binnen een andere resource (1-op-n relatie), 
 |`PATCH /aanvragen/12/statussen/5`|Wijzigt een gedeelte van status #5 van aanvraag #12|
 |`DELETE /aanvragen/12/statussen/5`|Verwijdert status #5 uit aanvraag #12|
 
-> **Relaties van geneste resources worden binnen het eindpunt gecreëerd**
+> **API principe: Relaties van geneste resources worden binnen het eindpunt gecreëerd** @dvh: link toevoegen
 >
 > Als een relatie alleen kan bestaan binnen een andere resource (geneste resource), wordt de relatie binnen het eindpunt gecreëerd. De afhankelijke resource heeft geen eigen eindpunt.
 
@@ -120,7 +115,7 @@ Bij een n-op-m relatie wordt het opvragen van de individuele resources sowieso o
 
 De resource dient naast "lazy loading" (de standaard) ook "eager loading" te ondersteunen, zodat de afnemer kan aangeven dat relaties direct meegeladen moeten worden. Dit wordt gerealiseerd middels de standaard query-parameter expand=true. Dit voorkomt dat er twee of meer aparte aanroepen nodig zijn. In beide gevallen is de afnemer in control.
 
-> **Resources ondersteunen "lazy" en "eager" laden van relaties**
+> **API principe: Resources ondersteunen "lazy" en "eager" laden van relaties** @dvh: link toevoegen
 >
 > Resources die een n-op-n relatie kennen ondersteunen zowel het teruggeven van identificaties van gerelateerde resources (lazy loading) als het teruggeven van de resources zelf (eager loading).
 
@@ -176,7 +171,7 @@ Dit levert het volgende resultaat op:
 
 Afhankelijk van de implementatie zal door het selectief kunnen laden van gelinkte resources in veel gevallen de overhead van database selecties, hoeveelheid serialisatie en hoeveelheid uitgewisselde data worden beperkt.
 
-> **Gelinkte resources worden expliciet en selectief mee-geladen**
+> **API principe: Gelinkte resources worden expliciet en selectief mee-geladen** @dvh: link toevoegen
 >
 > Gelinkte resources worden expliciet en selectief mee-geladen als onderdeel van een resource verzoek middels de expand query-parameter.
 
@@ -188,7 +183,7 @@ In het geval van HAL zijn de gelinkte resources embedded in de standaard represe
 
 `GET /aanvragen?fields=id,onderwerp,aanvrager,wijzigDatum&status=open&sorteer=wijzigDatum`
 
-> **Representatie op maat wordt ondersteund**
+> **API principe: Representatie op maat wordt ondersteund** @dvh: link toevoegen
 >
 > Het is mogelijk om een door komma's gescheiden lijst van veldennamen op te geven met de query-parameter fields om een representatie op maat te krijgen. Als niet-bestaande veldnamen worden meegegeven wordt een 400 Bad Request teruggegeven.
 
@@ -202,37 +197,13 @@ Er zijn ook resource-acties die niet data manipulatie (CRUD) gerelateerd zijn. E
 
 3. Soms is er geen logische manier om een actie aan een bestaande resource te koppelen. Een voorbeeld hiervan is een zoekopdracht over meerdere resources heen. Deze actie kan niet worden toegekend aan een specifieke resource. In dit geval is de keuze voor een zelfstandig service-eindpunt `/_zoek` het meest logische. Gebruik werkwoorden in gebiedende wijs om het onderscheid t.o.v. "echte" resource endpoints zo duidelijk mogelijk te maken. Dit is vanuit het perspectief van de gebruiker het meest logisch ontwerp. In de URI-strategie is voor dit doel het fragment `<service>` opgenomen. Dit fragment volgt na de "/api" en maakt daarmee de routering eenvoudig.
 
-In de DSO API-strategie wordt gekozen voor manier 2 en 3.
+In de Nederlandse API-strategie wordt gekozen voor manier 2 en 3.
 
-> **Acties die niet passen in het CRUD model worden een sub-resource**
+> **API principe: Acties die niet passen in het CRUD model worden een sub-resource** @dvh: link toevoegen
 >
 > Acties die niet passen in het CRUD model worden op de volgende manieren opgelost:
 > - Behandel een actie als een sub-resource.
 > - Alleen in uitzonderlijke gevallen wordt een actie met een eigen eindpunt opgelost.
-
-## @TODO Interactiepatronen
-
-### @TODO Asynchrone calls
-
-Callbacks
-
-### @TODO Synchrone calls
-
-### @TODO Best practice(s)
-
-## @TODO API Design
-
-### @TODO "Your API is not your datamodel"
-
-### @TODO experience/convenience endpoints
-
-### @TODO Best practice(s)
-
-## @TODO Relaties tussen resources
-
-n:m etc.
-
-## @TODO identificatie resources
 
 ## Beveiliging
 
@@ -240,19 +211,19 @@ API's zijn vanaf elke locatie vanaf het internet te benaderen. Om uitgewisselde 
 
 Doordat de verbinding altijd is versleuteld maakt het authenticatiemechanisme eenvoudiger. Hierdoor wordt het mogelijk om eenvoudige toegangstokens te gebruiken in plaats van toegangstokens met encryptie.
 
-> **De verbinding is ALTIJD versleuteld met minimaal TLS V1.2**
+> **API principe: De verbinding is ALTIJD versleuteld met minimaal TLS V1.2** @dvh: link toevoegen
 >
 > De verbinding is ALTIJD versleuteld op basis van minimaal TLS V1.2. Geen uitzonderingen, dus overal en altijd. In het geval van toegangsbeperking of doelbinding wordt tweezijdig TLS toegepast.
 
-> **API's zijn alleen bruikbaar met behulp van een API-key**
+> **API principe: API's zijn alleen bruikbaar met behulp van een API-key** @dvh: link toevoegen
 >
-> Voor alle DSO API's wordt minimaal een registratie inclusief acceptatie van de fair use voorwaarden vereist. Op basis hiervan zal dan een API-key wordt uitgegeven.
+> Voor alle API's wordt minimaal een registratie inclusief acceptatie van de fair use voorwaarden vereist. Op basis hiervan zal dan een API-key wordt uitgegeven.
 
 ### Authenticatie en autorisatie
 
-Een REST API mag geen toestand (state) bijhouden. Dit betekent dat authenticatie en autorisatie van een verzoek niet mag afhangen van cookies of sessies. In plaats daarvan wordt elk verzoek voorzien van een token. Binnen het DSO is gekozen voor OAuth 2.0 als de standaarden voor het autorisatiemechanisme.
+Een REST API mag geen toestand (state) bijhouden. Dit betekent dat authenticatie en autorisatie van een verzoek niet mag afhangen van cookies of sessies. In plaats daarvan wordt elk verzoek voorzien van een token. Binnen het Kennisplatform APIs is gekozen voor OAuth 2.0 als de standaarden voor het autorisatiemechanisme.
 
-> **Tokens worden niet gebruikt in query parameters**
+> **API principe: Tokens worden niet gebruikt in query parameters** @dvh: link toevoegen
 >
 > Er is een inherent beveiligingsprobleem bij het gebruik van een query parameter voor tokens omdat de meeste webservers queryparameters in de server logs wegschrijven.
 
@@ -265,19 +236,13 @@ Bij het gebruik van tokens wordt onderscheid gemaakt tussen geauthentiseerde en 
 
 Bij het ontbreken van de juiste headers zijn geen authenticatiedetails beschikbaar en dient de statuscode `403 Forbidden` terug te worden gegeven.
 
-> **Autorisatie is gebaseerd op OAuth 2.0**
+> **API principe: Autorisatie is gebaseerd op OAuth 2.0** @dvh: link toevoegen
 >
 > Een REST API mag geen state hebben. Elk verzoek moet daarom zijn voorzien van een token. OAuth 2.0 is hiervoor de voorgeschreven standaard.
 
-> **Authenticatie voor API's met toegangsbeperking of doelbinding is gebaseerd op PKIoverheid**
+> **API principe: Authenticatie voor API's met toegangsbeperking of doelbinding is gebaseerd op PKIoverheid** @dhv: link toevoegen
 >
-> In het geval van API's met toegangsbeperking of doelbinding zal er aanvullend sprake zijn van authenticatie op basis PKIoverheid certificaten en tweezijdig TLS. In de URI-strategie is vastgelegd welke kaders gelden voor API's die gebruik maken van tweezijdig TLS.
-
-### @TODO digid/oauth, oauth: werkgroep auth
-
-### @TODO architectuur werkgroep uitwerken, hier technische implementatie
-
-### @TODO Best practice(s)
+> In het geval van API's met toegangsbeperking of doelbinding zal er aanvullend sprake zijn van authenticatie op basis PKIoverheid certificaten en tweezijdig TLS.
 
 #### Autorisatiefouten
 
@@ -314,7 +279,7 @@ Openbaar zichtbare identifiers (ID's), zoals die veelal in URI's van RESTful API
 
 De API-key's die standaard worden uitgegeven zijn "unrestricted". Dat wil zeggen dat er geen gebruiksbeperkingen op zitten en ze niet blootgesteld mogen worden via een webapplicatie. Door API-key's zonder gebruiksbeperkingen toe te passen in JavaScript, is er een reële kans op misbruik en quotum-diefstal. Om dit te voorkomen dienen in dit geval zogenaamde "restricted" API-key's te worden uitgegeven en gebruikt.
 
-> **Gebruik "publieke" API-Key**
+> **API principe: Gebruik "publieke" API-Key** @dvh: link toevoegen
 >
 > In JavaScript dient alleen gebruik te worden gemaakt van een zogenaamde "restricted" API-key. Dit is API-key die gekoppeld is aan specifieke kenmerken van de aanroeper (web-app, mobile-app), waaronder een clientId en/of verwijzer-URL.
 
@@ -322,7 +287,7 @@ De API-key's die standaard worden uitgegeven zijn "unrestricted". Dat wil zeggen
 
 Webbrowsers implementeren een zogenaamde "same origin policy", een belangrijk beveiligingsconcept om te voorkomen dat verzoeken naar een ander domein gaan dan waarop het is aangeboden. Hoewel dit beleid effectief is in het voorkomen van aanroepen in verschillende domeinen, voorkomt het ook legitieme interactie tussen een API's en clients van een bekende en vertrouwde oorsprong.
 
-> **Controleer toegang en gebruik CORS-header**
+> **API principe: Controleer toegang en gebruik CORS-header** @dvh: link toevoegen
 > Controleer eerst het domein van de inkomende aanvraag en genereer de response-header afhankelijk van of dit domein verzoeken mag verzenden of niet (whitelist). In dat geval wordt alleen dit specifieke domein aan de response-header `Access-Control-Allow-Origin` toegevoegd.
 >
 > **LET OP: Het is technisch mogelijk om in de Access-Control-Allow-Origin responsheader een wildcard ("*") terug geven en zo alle bronnen toe te staan.  Dit is een onveilige praktijk!**
@@ -331,11 +296,11 @@ Webbrowsers implementeren een zogenaamde "same origin policy", een belangrijk be
 
 Een API is zo goed als de bijbehorende documentatie. De documentatie moet gemakkelijk te vinden, te doorzoeken en publiekelijk toegankelijk zijn. De meeste ontwikkelaars zullen eerst de documenten doornemen voordat ze starten met de implementatie. Wanneer de documentatie is weggestopt in pdf-bestanden en achter een inlog, dan vormt dit een drempel voor ontwikkelaars om aan de gang te gaan en de documentatie is niet vindbaar met zoekmachines.
 
-> **Documentatie is gebaseerd op OAS 3.0 of hoger**
+> **API principe: Documentatie is gebaseerd op OAS 3.0 of hoger** @dvh: link toevoegen
 >
-> Specificaties (documentatie) is beschikbaar als Open API Specification (OAS)9 V3.0 of hoger.
+> Specificaties (documentatie) is beschikbaar als Open API Specification (OAS) V3.0 of hoger.
 
-> **Documentatie is in het Nederlands tenzij er sprake is van bestaande documentatie in het Engels of er sprake is van een officieel Engelstalig begrippenkader**
+> **API principe: Documentatie is in het Nederlands tenzij er sprake is van bestaande documentatie in het Engels of er sprake is van een officieel Engelstalig begrippenkader** @dvh: link toevoegen
 >
 > De voertaal voor de API's is Nederlands. Het is wel toegestaan om te verwijzen naar bestaande documentatie is het Engels en als er sprake is van een officieel Engelstalig begrippenkader.
 
@@ -343,13 +308,13 @@ De documentatie dient voorzien te zijn van voorbeelden inclusief complete reques
 
 Als een API in productie is mag het "contract" (koppelvlak) niet zonder voorafgaande kennisgeving worden gewijzigd. De documentatie moet voorzien zijn van een uitfaseringsplanning (deprecation schedule) en alle details van de wijziging bevatten. Wijzigingen worden via een publiek toegankelijke blog als changelog bekendgemaakt en via een mailinglijst. Hierbij wordt primair gebruik gemaakt van de emailadressen die zijn gekoppeld aan de uitgifte van API-keys.
 
-> **Wijzigingen worden gepubliceerd met een uitfaseringschema**
+> **API principe: Wijzigingen worden gepubliceerd met een uitfaseringschema** @dvh: link toevoegen
 >
 > Koppelvlak wijzigingen worden met bijbehorende planning op een publiek toegankelijke blog als changelog bekendgemaakt en via een mailinglijst.
 
 ### Best practice(s)
 
-> **OAS via basis-URI beschikbaar in JSON-formaat**
+> **API principe: OAS via basis-URI beschikbaar in JSON-formaat** @dvh: link + principe toevoegen
 >
 > Om te zorgen dat de actuele documentatie altijd publiekelijk toegankelijk is, is het advies om de inhoud van de Open API Specification op het "root endpoint" van de API beschikbaar te maken in JSON-formaat:
 >
@@ -363,11 +328,11 @@ Als een API in productie is mag het "contract" (koppelvlak) niet zonder voorafga
 
 API's zijn altijd geversioneerd. Versioneren zorgt voor een soepele overgang bij wijzigingen. De oude en nieuwe versies worden voor een beperkte overgangsperiode (één jaar) aangeboden. Er worden bovendien maximaal 3 versies van een API ondersteund. Afnemers kiezen zelf het moment dat ze overschakelen van de oude naar de nieuwe versie van een API, als ze het maar voor het einde van de overgangsperiode is.
 
-> **De overgangsperiode bij een nieuwe API versie is maximaal 1 jaar**
+> **API principe: De overgangsperiode bij een nieuwe API versie is maximaal 1 jaar** @dhv: link + principe toevoegen
 >
 > Oude en nieuwe versies (max. 3) van een API worden voor een beperkte overgangsperiode (1 jaar) naast elkaar aangeboden.
 
-Er zijn verschillende meningen over de vraag of de versie in de URI of in de header hoort. De URI-strategie heeft hier een keuze in gemaakt: alleen het major versienummer wordt in de URI opgenomen. Hierdoor is het mogelijk om verschillende versies van een API via de browser te verkennen. Hiermee wordt ook voldaan aan het derde punt van de vijf basiseisen in paragraaf 2.3.
+Er zijn verschillende meningen over de vraag of de versie in de URI of in de header hoort. Het Kennisplatform APIs heeft hier een keuze in gemaakt: alleen het major versienummer wordt in de URI opgenomen. Hierdoor is het mogelijk om verschillende versies van een API via de browser te verkennen.
 
 Het versienummer begint bij 1 en wordt met 1 opgehoogd voor elke major release waarbij het koppelvlak niet backward compatible wijzigt. De minor en patch versienummers staan altijd in de response-header van het bericht zelf in het formaat `major.minor.patch`.
 
@@ -397,7 +362,7 @@ Het weglaten van de request-header (`API-version: x.y.z`) selecteert altijd de "
 
 Het toevoegen van een endpoint of een niet verplichte attribuut aan de payload zijn voorbeelden van wijzigingen die backward compatible zijn.
 
-> **Alleen het major versienummer is onderdeel van de URI**
+> **API principe: Alleen het major versienummer is onderdeel van de URI** @dvh: link toevoegen
 >
 > In de URI wordt alleen het major versienummer opgenomen. Minor versienummer en patch versienummer worden in de header van het bericht zelf opgenomen. Het uitgangspunt dat hierbij wordt gehanteerd is dat minor versies en patches geen impact hebben op bestaande code, maar major versies wel.
 
@@ -420,7 +385,6 @@ Deze zaken dienen gecommuniceerd te worden via de volgende kanalen:
 
 - Per e-mail van de clients (indien bekend);
 - Duidelijk leesbaar in de API documentatie van de oude versie;
-- Via een topic op het DSO forum;
 - Met een `Warning` response header in alle responses van de oude API.
 
 Stap voor stap betekent dit het volgende:
@@ -443,11 +407,9 @@ De Warning header (zie: RFC 7234) die we hier gebruiken heeft warn-code 299 ("Mi
 
 Gebruikers moeten voldoende tijd hebben om de oude API uit te faseren. Een periode van 6 tot 12 maanden wordt aanbevolen.
 
-> **Gebruikers van een 'deprecated' API worden actief gewaarschuwd**
+> **API princpe: Gebruikers van een 'deprecated' API worden actief gewaarschuwd** @dvh: link toevoegen
 >
 > Met een `Warning` response-header in alle responses van de oude API's worden gebruikers gewaarschuwd voor de aanstaande uitfasering.
-
-### @TODO Best practice(s)
 
 ## JSON
 
@@ -462,19 +424,19 @@ JavaScript Object Notation (JSON) is een formaat, net zoals XML, om gegevens te 
 }
 ```
 
-> **JSON first - API's ontvangen en versturen JSON**
+> **API principe: JSON first - API's ontvangen en versturen JSON** @dvh: link toevoegen
 >
 > API's ontvangen en versturen JSON.
 
-> **API's zijn optioneel voorzien van een JSON Schema**
+> **API principe: API's zijn optioneel voorzien van een JSON Schema** @dhv: link toevoegen
 >
 > API's ondersteunen JSON Schema (<http://json-schema.org>), zodat validatie mogelijk (optioneel) is en vereenvoudigd wordt.
 
-> **Content negotiation wordt volledig ondersteund**
+> **API principe: Content negotiation wordt volledig ondersteund** @dhv: link toevoegen
 >
 > Andere representaties zoals XML en RDF worden naast JSON via het standaard HTTP content negotiation mechanisme ondersteund. Als het gewenste formaat niet geleverd kan worden zal er een `406 Not Acceptable` worden teruggegeven.
 
-> **API's controleren dat de Content-Type header is ingesteld**
+> **API principe: API's controleren dat de Content-Type header is ingesteld** @dhv: link toevoegen
 >
 > Er wordt gecontroleerd of het `Content-Type` header is ingesteld op `application/json` of andere ondersteunde content types, anders wordt HTTP statuscode `415 Unsupported Media Type` geretourneerd.
 
@@ -490,7 +452,7 @@ Bij veldnamen wordt gebruik gemaakt van `camelCase`.
 
 De meeste REST clients en browsers (al dan niet met extensies) kunnen JSON netjes geformatteerd weergeven, ook als de response geen white-space bevat.
 
-> **Pretty print is standaard uitgeschakeld**
+> **API principe: Pretty print is standaard uitgeschakeld** @dhv: link toevoegen
 >
 > Het uitgangspunt is dat REST clients en browsers (al dan niet met extensies) JSON netjes geformatteerd kunnen weergeven.
 
@@ -509,7 +471,7 @@ Veel API's wikkelen antwoorden in enveloppen zoals hieronder is weergegeven:
 
 Een toekomstbestendig API is vrij van enveloppen.
 
-> **Een JSON-response heeft geen omhullende envelop**
+> **API principe: Een JSON-response heeft geen omhullende envelop** @dhv: link toevoegen
 >
 > Er worden standaard geen enveloppen toegepast.
 
@@ -528,69 +490,9 @@ API's ondersteunen minimaal JSON gecodeerde `POST`, `PUT` en `PATCH` payloads. E
 
 en `Content-Type: application/x-www-form-urlencoded` resulteert in: `Name=John+Smith&Age=23`
 
-> **API's ondersteunen JSON gecodeerde `POST`, `PUT` en `PATCH` payloads**
+> **API principe: API's ondersteunen JSON gecodeerde `POST`, `PUT` en `PATCH` payloads** @dhv: link toevoegen
 >
 > API's ondersteunen minimaal JSON gecodeerde `POST`, `PUT` en `PATCH` payloads. Encoded form data (`application/x-www-form-urlencoded`) wordt niet ondersteund.
-
-### @TODO Best practice(s)
-
-### Veldnamen in snake_case, camelCase, UpperCamelCase of koppelteken?
-
-Bij veldnamen wordt gebruik gemaakt van camelCase.
-
-> Woorden in veldnamen zijn gedefinieerd in camelCase
->
-> Een veldnaam begint met kleine letters (eerste woord) en ieder opvolgend woord begint met een hoofdletter.
-
-### Pretty print
-
-De meeste REST clients en browsers (al dan niet met extensies) kunnen JSON netjes geformatteerd weergeven, ook als de response geen white-space bevat.
-
-> **Pretty print is standaard uitgeschakeld**
->
-> Het uitgangspunt is dat REST clients en browsers (al dan niet met extensies) JSON netjes geformatteerd kunnen weergeven.
-
-### Gebruik geen envelop
-
-Veel API's wikkelen antwoorden in enveloppen zoals hieronder is weergegeven:
-
-```json
-{
-  "persoon": {
-    "naam": "Jan",
-    "geboortejaar": 1983
-  }
-}
-```
-
-Een toekomstbestendig API is vrij van enveloppen.
-
-> **Een JSON-response heeft geen omhullende envelop**
->
-> Er worden standaard geen enveloppen toegepast.
-
-### JSON gecodeerde POST, PUT en PATCH payloads
-
-API's ondersteunen minimaal JSON gecodeerde POST, PUT en PATCH payloads. Encoded form data (`application/x-www-form-urlencoded`) payloads worden niet ondersteund. Wat is het verschil?
-
-`Content-Type: application/json` resulteert in:
-
-```json
-{
-  "Name": "John Smith",
-  "Age": 23
-}
-```
-
-en `Content-Type: application/x-www-form-urlencoded` resulteert in: `Name=John+Smith&Age=23`
-
-> **API's ondersteunen JSON gecodeerde POST, PUT en PATCH payloads**
->
-> API's ondersteunen minimaal JSON gecodeerde POST, PUT en PATCH payloads. Encoded form data (`application/x-www-form-urlencoded`) wordt niet ondersteund.
-
-## HAL/HATEOAS
-
-### @TODO Best practice(s)
 
 ## Filteren, sorteren en zoeken
 
@@ -600,7 +502,7 @@ Er wordt gekozen om de basis URL's van resources zo eenvoudig mogelijk te houden
 
 Om te filteren wordt gebruik gemaakt van unieke query-parameters die gelijk zijn aan de velden waarop gefilterd kan worden. Als je bijvoorbeeld een lijst met aanvragen wilt opvragen van het eindpunt `/aanvragen` en deze wilt beperken tot open aanvragen, dan wordt het verzoek `GET /aanvragen?status=open` gebruikt. Hier is `status` een veld waarop gefilterd kan worden.
 
-> **Filter query-parameters zijn gelijk aan de velden waarop gefilterd kan worden**
+> **API principe: Filter query-parameters zijn gelijk aan de velden waarop gefilterd kan worden** @dhv: link toevoegen
 >
 > Gebruik unieke query-parameters die gelijk zijn aan de velden waarop gefilterd kan worden.
 
@@ -635,14 +537,14 @@ Voor sorteren wordt de query-parameter `sorteer` gebruikt. Deze query-parameter 
 |`GET /aanvragen?sorteer=-prio`|Haalt een lijst van aanvragen op gesorteerd in aflopende volgorde van prioriteit.|
 |`GET /aanvragen?sorteer=-prio,aanvraagDatum`|Haalt een lijst van aanvragen in aflopende volgorde van prioriteit op. Binnen een specifieke prioriteit, komen oudere aanvragen eerst.|
 
-> **Voor sorteren wordt de query-parameter sorteer gebruikt**
+> **API principe: Voor sorteren wordt de query-parameter sorteer gebruikt** @dhv: link toevoegen
 > De generieke query-parameter `sorteer` wordt gebruikt voor het specificeren van door komma's gescheiden velden waarop gesorteerd moet worden. Door een minteken ("-") voor de veldnaam te zetten wordt het veld in aflopende sorteervolgorde gesorteerd.
 
 ### Zoeken
 
-Soms zijn eenvoudige filters onvoldoende en is de kracht van vrije-tekst zoekmachines nodig. Hiervoor is de bouwsteen Zoeken (technisch component ElasticSearch) beschikbaar. API's ondersteunen dit middels de query-parameter `zoek`. Een zoekopdracht die meegegeven wordt met deze query-parameter wordt 1-op-1 doorgegeven aan de bouwsteen Zoeken. Het resultaat wordt in dezelfde representatie teruggegeven.
+Soms zijn eenvoudige filters onvoldoende en is de kracht van vrije-tekst zoekmachines nodig. API's ondersteunen dit middels de query-parameter `zoek`. Het resultaat wordt in dezelfde representatie teruggegeven.
 
-> **Voor vrije-tekst zoeken wordt een query-parameter zoek gebruikt**
+> **API principe: Voor vrije-tekst zoeken wordt een query-parameter zoek gebruikt** @dhv: link toevoegen
 >
 > API's die vrije-tekst zoeken ondersteunen doen dit middels de query-parameter `zoek`.
 
@@ -663,7 +565,7 @@ API's die vrije-tekst zoeken ondersteunen kunnen overweg met twee soorten wildca
 
 Bijvoorbeeld, `he*` zal overeenkomen met elk woord dat begint met `he`, zoals `hek`, `hemelwaterafvoer`, enzovoort. In het geval van `he?` komt dit alleen overeen met drie letterwoorden die beginnen met `he`, zoals `hek`, `heg`, enzovoort.
 
-> **API's die vrije-tekst zoeken ondersteunen kunnen overweg met twee soorten wildcard karakters: * en ?**
+> **API principe: API's die vrije-tekst zoeken ondersteunen kunnen overweg met twee soorten wildcard karakters: * en ?** @dhv: link toevoegen
 >
 > API's die vrije-tekst zoeken ondersteunen kunnen overweg met twee soorten wildcard karakters:
 > - `*`  Komt overeen met nul of meer (niet-spatie) karakters
@@ -682,15 +584,61 @@ Om de API ervaring verder te verbeteren is het mogelijk om terugkerende queries 
 
 `GET /aanvragen/recent-gesloten`
 
-### @TODO Best practice(s)
+## Tijdreizen
+Informatie over een resource is onderhevig aan verandering. Tijdreizen is een mechanisme waarmee het mogelijk is om op standaard manier informatie op te vragen over een bepaald moment in de tijd. De drie belangrijkste tijdsmomenten vanuit het perspectief van tijdreizen via een API zijn:
 
-## @TODO Tijdreizen
+|Tijdsmoment|Omschrijving|
+|-|-|
+|Geldig|Dit is een tijdstip waarop de teruggegeven gegevens in de werkelijkheid geldig zijn.|
+|Beschikbaar|Dit is een tijdstip waarop geldt dat de teruggegeven gegevens beschikbaar waren via dezelfde API.|
+|In werking (getreden op)|Dit is een tijdstip waarop een besluit (of delen daarvan), dan wel de daarvan afgeleide gegevens (zoals de definitie van een begrip) juridische werking krijgt.|
 
-- DSO tijdreisnotitie (link)
-- VNG periodes (van, tot en met)
-- RCE periodes (middeleeuwen, pleistoceem)
+Het basisprincipe voor het tijdreizen is daarbij als volgt:
+1. Indien er geen specifieke datum wordt meegegeven, dan wordt de meest actueel geldige informatie teruggegeven, zoals gebruikelijk op het internet. Indien er nog geen enkele geldige versie bestaat, dan wordt de meest actueel bekende versie teruggegeven;
+2. Indien een specifieke datum wordt meegegeven, wordt deze meegegeven als query-parameter die onderdeel is van de URI.
+3. Bij het opgeven van een specifieke datum wordt onderscheid gemaakt tussen:
+a. welke gegevens op die datum geldig waren(geldigOp);
+b. welke gegevens op die datum beschikbaar waren (beschikbaarOp);
+c. welke regels op die datum juridisch in werking waren getreden (inWerkingOp).
 
-### @TODO Best practice(s)
+De waarden van de drie query-parameters in de URI zijn als volgt opgebouwd (gebaseerd op RFC3339 / ISO 8601):
+
+|Parameter|Waarde|
+|-|-|
+|`geldigOp`|`YYYY-MM-DD`|
+|`beschikbaarOp`|`YYYY-MM-DDThh:mm:ss.s`|
+|`inWerkingOp`|`YYYY-MM-DD`|
+
+|Waarde|Betekenis|
+|-|-|
+|`YYYY`|Viercijferig jaar|
+|`MM`|Tweecijferige maand (01 = januari, enz.)|
+|`DD`|Tweecijferige dag van de maand (01 tot en met 31)|
+|`hh`|Twee cijfers van het uur (00 tot 23) (am / pm niet toegestaan)|
+|`mm`|Twee cijfers van de minuut (00 tot en met 59)|
+|`ss`|twee cijfers van de seconden (00 tot en met 59)|
+|`s`|Eén of meer cijfers die een decimale fractie van een seconde vertegenwoordigen|
+
+### Mate van ondersteuning
+Tijdreizen is een optioneel mechanisme met optionele features. Het kan dus voorkomen dat:
+- tijdreizen in het geheel niet wordt ondersteund;
+- het begrip inwerkingtreding niet wordt ondersteund;
+- tijdreizen naar de toekomst niet wordt ondersteund.
+Bij de verwerking van tijdreisvragen dient de afnemer geïnformeerd te worden over ongeldige/niet ondersteunde verzoeken. In de volgende specifieke gevallen wordt de bijbehorende statuscode en toelichting teruggegeven:
+
+|Wat wordt niet ondersteund?|HTTP statuscode en toelichting|
+|-|-|
+|Tijdreizen|`HTTP/1.1 403 Content-Type: application/problem+json Content-Language: nl { "type": ".../id/<c>/parameter/TijdreizenNietOndersteund", "title": "{Het verzoek is begrepen, maar de tijdreisparameters worden niet ondersteund}", "status": 403, "detail": "{Tijdreizen wordt niet ondersteund, verwijder alle tijdreisparameters}", "instance": "/resource/#id"}`|
+|Inwerkingtreding|`HTTP/1.1 403 Content-Type: application/problem+json Content-Language: nl { "type":".../id/<c>/parameter/InWerkingTredingNietOndersteund’", "title": "{Het verzoek is begrepen, maar de tijdreisparameter ‘inWerkingOp’ wordt niet ondersteund}", "status": 403, "detail": "{Tijdreizen met een inwerkingstredingsmoment wordt niet ondersteund, verwijder de parameter ‘inWerkingOp’}", "instance": "/resource/#id"}`|
+|Toekomst|`HTTP/1.1 403 Content-Type: application/problem+json Content-Language: nl { "type": ".../id/<c>/parameter/ToekomstNietOndersteund", "title": "{Het verzoek is begrepen, maar tijdreisparameters mogen geen tijdstip in de toekomst bevatten” }", "status": 403, "detail": "{Tijdreizen naar de toekomst wordt niet ondersteund, verwijder de tijdreisparameters of gebruik een tijdstip in het verleden}", "instance": "/resource/#id"}`|
+
+### Robuustheid
+Bij de verwerking van tijdreisvragen dient ook rekening te worden gehouden met het ontbreken van historie en globale vragen in een resource-collectie. In volgende specifieke gevallen wordt de bijbehorende statuscode en toelichting teruggegeven:
+
+|Soort verzoek|HTTP statuscode en toelichting|
+|-|-|
+|Specifieke resource|`HTTP/1.1 404 Content-Type: application/problem+json Content-Language: nl {"type": ".../id/<c>/BestaatNiet", "title": "De gevraagde versie bestaat niet.", "status": 404, "detail": "Versie 2017-01-01 van regeling 123 bestaat niet.", "instance": "/regelingen/v1/123?geldigOp=2017-01-01"}`|
+|Resource-collectie|`GET .../regelingen/v1?beschikbaarOp=2017-01-01T00:00:00 HTTP/1.1 200 Content-Type: application/json+hal {"_links": {"self": {"href": "/r-n/v1/123?beschikbaarOp=2017-01-01T00:00:00" }, "items": [ { "href": "/r-n/v1/123?beschikbaarOp=2017-01-01T00:00:00" }, { "href": "/r-n/v1/456?beschikbaarOp=2017-01-01T00:00:00" }, { "href": "/r-n/v1/789?beschikbaarOp=2017-01-01T00:00:00" }] } }`|
 
 ## GEO-ondersteuning
 
@@ -698,7 +646,7 @@ REST API's voor het werken met geometrieën kunnen een filter aanbieden op basis
 
 Het is wél belangrijk dat dit antwoord juist is, en de brondata dus zeer gedetailleerde geometrieën bevat; een gebruiker wil immers geen fout antwoord krijgen. Mocht iemand andersom alle percelen met status = actief willen plotten op een kaartje, dan wil hij/zij juist de geometrieën in de response ontvangen, maar is het detailniveau weer niet zo belangrijk.
 
-> **GEO API's ontvangen en versturen GeoJSON**
+> **API principe: GEO API's ontvangen en versturen GeoJSON** @dhv: link toevoegen
 >
 > Voor GEO API's wordt de standaard GeoJSON gebruikt.
 
@@ -706,7 +654,7 @@ Het is wél belangrijk dat dit antwoord juist is, en de brondata dus zeer gedeta
 
 In een JSON API wordt een geometrie teruggegeven als GeoJSON. We kiezen er voor om dit binnen de `application/json` te ‘wrappen' in een apart GeoJSON object.
 
-> **GeoJSON is onderdeel van de embedded resource in de JSON response**  
+> **API principe: GeoJSON is onderdeel van de embedded resource in de JSON response**  @dhv: link toevoegen
 >
 > GeoJSON wordt in een JSON response (`application/json`) geplaatst waarbij geo attributen als GeoJSON-compatible object in de resource ge-embed zijn.
 
@@ -728,7 +676,7 @@ In analogie met API's zoals die van Elasticsearch, is een `POST` naar een apart 
 }
 ```
 
-> **Voor GEO queries is een POST endpoint beschikbaar**
+> **API principe: Voor GEO queries is een POST endpoint beschikbaar** @dhv: link toevoegen
 >
 > Geometrische queries worden in een `POST` naar een apart endpoint verzonden.
 
@@ -747,7 +695,7 @@ Omdat we ons met het geo endpoint beperken tot een GEO-query en we wellicht ook 
 }
 ```
 
-> **POST endpoints zijn uitbreidbaar voor gecombineerde vragen**
+> **API principe: POST endpoints zijn uitbreidbaar voor gecombineerde vragen** @dhv: link toevoegen
 >
 > De geometrie is uitbreidbaar met andere properties voor gecombineerde queries.
 
@@ -755,7 +703,7 @@ Naast contains kan er ook intersects (snijdt) of within (valt binnen) als operat
 
 Omdat we voor de geometrie een GeoJSON object gebruiken hoeven we hier geen syntax meer voor te verzinnen. Daarnaast kunnen we in het GeoJSON object ook aangeven welk CRS (zie volgende paragraaf) de opgegeven geometrie hanteert.
 
-> **Resultaten van een globale geometrische zoekvraag worden in de relevante geometrische context geplaatst**
+> **API principe: Resultaten van een globale geometrische zoekvraag worden in de relevante geometrische context geplaatst** @dhv: link toevoegen
 >
 > In het geval van een globale zoekvraag `/api/v1/_zoek` is het noodzakelijk om de resultaten in een relevante geometrische context te plaatsen.
 
@@ -792,13 +740,13 @@ Het default CRS (Coordinate Reference System) van GeoJSON is WGS84. Dit is het g
 
 Omdat de meeste client-bibliotheken met WGS84 werken, schrijft de W3C/OGC werkgroep "Spatial Data on the Web" voor om dit standaard te ontsluiten. Dit kan direct op een kaart geplot worden zonder moeilijke transformaties. De API-strategie voorziet hierin door naast ETRS89 en RD ook WGS84 te ondersteunen.
 
-> **Het voorkeur-coördinatenstelsels (CRS) is ETRS89, maar het CRS wordt niet impliciet geselecteerd**
+> **API principe: Het voorkeur-coördinatenstelsels (CRS) is ETRS89, maar het CRS wordt niet impliciet geselecteerd** @dhv: link toevoegen
 >
 > Algemeen gebruik van het Europese ETRS89 coördinatenstelsel (CRS) heeft sterk de voorkeur, maar dit wordt niet door API's afgedwongen als de "default". Derhalve moet het te gebruiken CRS in elke aanroep expliciet worden opgegeven.
 
 Het is mogelijk om het CRS voor vraag en antwoord via headers afzonderlijk te specificeren. Hierin zijn vervolgens drie opties (met voorgeschreven projecties) voorhanden: RD, ETRS89 en WGS84.
 
-Een nadere opsomming van de uitgangspunten voor het CRS in de OGAS:
+Een nadere opsomming van de uitgangspunten voor het CRS:
 
 - Leg als bronsysteem binnenkomende formaat vast (juridische context);
 - Coördinatenstelsels API-strategie: vraag/antwoord in RD; ETRS89; WGS84;
@@ -808,7 +756,7 @@ Een nadere opsomming van de uitgangspunten voor het CRS in de OGAS:
 - Uitwisselingsformaat (notatie) ETRS89 en WGS84 X Y in decimale graden: DD.ddddddddd (voorbeeld: `52.255023450`)
 - Uitwisselingsformaat (notatie) RD X Y in meters (niet afgerond): `195427.5200 311611.8400`
 
-> **Het coördinatenstelsel (CRS) van de vraag en het antwoord wordt in de header meegestuurd**
+> **API principe: Het coördinatenstelsel (CRS) van de vraag en het antwoord wordt in de header meegestuurd** @dhv: link toevoegen
 >
 > Het gekozen coördinatenstelsel (CRS) voor zowel de vraag als het antwoord worden meegestuurd als onderdeel van de request-header en de response-header. Bij het ontbreken van deze headers wordt `412 Precondition Failed` teruggegeven. Hiermee wordt voorkomen dat per abuis met het verkeerde CRS wordt gewerkt
 
@@ -834,11 +782,9 @@ Het gewenste CRS voor de geometrie in het antwoord (response body) wordt aangedu
 
 Voor het transformeren tussen coördinaatreferentiesystemen is binnen de Rijksoverheid software met een keurmerk beschikbaar.
 
-> **Het gewenste coördinatenstelsel wordt op basis van content negotiation overeengekomen**
+> **API principe: Het gewenste coördinatenstelsel wordt op basis van content negotiation overeengekomen** @dhv: link toevoegen
 >
 > Het gewenste CRS voor de geometrie in het antwoord (response body) wordt aangeduid met een `Accept-Crs` header. Als het gewenste CRS niet geleverd kan worden zal er een `406 Not Acceptable` worden teruggegeven.
-
-### @TODO Best practice(s)
 
 ## Paginering
 
@@ -887,13 +833,11 @@ Indien het "plain" JSON, GeoJSON of iets anders dan HAL betreft zijn er geen `_l
 
 Bij grote datasets kunnen de berekeningen voor X-Total-Count en X-Pagination-Count behoorlijke impact hebben op de performance, voornamelijk als er niet of nauwelijks gefilterd wordt.
 
-> **Paginering wordt gerealiseerd op basis van JSON+HAL**
+> **API principe: Paginering wordt gerealiseerd op basis van JSON+HAL** @dhv: link toevoegen
 >
 > Aan de representatie worden twee gereserveerde velden (gedefinieerd door RFC5988) `_links` (verplicht) en `_embedded` (optioneel) toegevoegd. Daarnaast wordt paginerings-metadata als HTTP headers meegegeven.
 
 Alle links in HAL zijn absoluut. Dit in verband met mogelijke externe links (naar andere endpoints, linked-data resources, etc.) en eenvoudigere navigatie door clients ie dan niet zelf de URL hoeven op te bouwen.  
-
-### @TODO Best practice(s)
 
 ## Caching
 
@@ -914,34 +858,30 @@ Een ETag (Entity Tag) is een hashcode of checksum van een resource. Als de resou
 
 Dit werkt in principe net als ETag, behalve dat het gebruik maakt van tijdstempels. De HTTP header `Last-Modified` bevat een tijdstempel in het RFC 1123 formaat die wordt gevalideerd tegen de HTTP header `If-Modified-Since`. De server controleert of de resource gewijzigd is sinds het aangegeven tijdstip. Indien dit niet het geval is dan geeft de server een HTTP statuscode `304 Not Modified` terug. De afnemer laadt dan de resource uit de eigen cache. Dit gaat alleen op over client-side caching, dus is alleen van toepassing als de client ook daadwerkelijk de request headers meestuurt, anders altijd een `200 OK`.
 
-> **Waar relevant wordt caching toegepast**
+> **API principe: Waar relevant wordt caching toegepast** @dhv: link toevoegen
 > Voor caching wordt gebruikt van de HTTP standaard caching mechanismes door het toevoegen van een aantal extra uitgaande HTTP headers (`ETag` of `Last-Modified`) en functionaliteit om te bepalen of een aantal specifieke inkomende HTTP headers (`If-None-Match` of `If-Modified-Since`).
-
-### @TODO Best practice(s)
 
 ## Beperken van het aantal verzoeken per tijdsperiode
 
-API's beperken het aantal verzoeken dat per tijdsperiode gedaan kan worden, om te voorkomen dat de servers overbelast worden om een hoog serviceniveau te garanderen. API's van het DSO hanteren een bevragingslimiet (quota) die per maand wordt bijgehouden en die wordt afgedwongen per tijdsperiode van 60 seconden.
+API's beperken het aantal verzoeken dat per tijdsperiode gedaan kan worden, om te voorkomen dat de servers overbelast worden om een hoog serviceniveau te garanderen. API's kunnen een bevragingslimiet (quota) per maand bijhouden en die wordt afgedwongen per tijdsperiode van 60 seconden.
 
 HTTP headers worden gebruikt om de bevragingslimit naar de gebruiker te communiceren.
 
 |HTTP header|Toelichting|
 |-|-|
-|`X-Rate-Limit-Limit`|Geeft aan hoeveel verzoeken een applicatie mag doen per tijdsperiode. Voor het DSO is dit 60 seconden|
+|`X-Rate-Limit-Limit`|Geeft aan hoeveel verzoeken een applicatie mag doen per tijdsperiode|
 |`X-Rate-Limit-Remaining`|Geeft aan hoeveel seconden over zijn in de huidige tijdsperiode|
 |`X-Rate-Limit-Reset`|Geeft aan hoeveel verzoeken nog gedaan kunnen worden in de huidige tijdsperiode|
 
-> **Beperken van het aantal verzoeken per tijdsperiode wordt centraal opgelost door het Stelselknooppunt**
+> **API principe: Beperken van het aantal verzoeken per tijdsperiode wordt aangeraden** @dvh: link toevoegen
 >
-> Alle verzoeken naar API’s lopen via het Stelselknooppunt. Het Stelselknooppunt lost het beperken van het aantal verzoeken per tijdsperiode centraal op om overbelasting van servers te voorkomen om een hoog serviceniveau te garanderen.
+> Aangeraden worden om het aantal verzoeken per tijdsperiode te beperken om overbelasting van servers te voorkomen om een hoog serviceniveau te garanderen.
 
 RFC 6585 introduceerde een HTTP statuscode `429 Too Many Requests` die wordt gebruikt om het overschrijden van het aantal verzoeken te melden aan de gebruiker.
 
-> **Begrenzingen worden proactief gemeld**
+> **API principe: Begrenzingen worden proactief gemeld** @dvh: link toevoegen
 >
 > Gebruik X-Rate-Limit headers om limieten aan de gebruiker te communiceren en HTTP statuscode `429 Too Many Requests` als de limieten overschreden worden.
-
-### @TODO Best practice(s)
 
 ## Foutafhandeling (statuscodes)
 
@@ -993,17 +933,15 @@ Dit ziet er dan als volgt uit:
 }
 ```
 
-> **Foutafhandeling is gestandaardiseerd**
+> **API principe: Foutafhandeling is gestandaardiseerd** @dvh: link toevoegen
 >
 > API's ondersteunen de gestandaardiseerde foutmeldingen van de HTTP statuscodes 400 en 500 reeks inclusief een verwerkbare JSON representatie in lijn met RFC7807.
-
-In bijlage A staan de gestandaardiseerde foutmeldingsformaten in een verwerkbare JSON representatie die API's moeten implementeren.
 
 ### HTTP statuscodes
 
 HTTP definieert een hele reeks gestandaardiseerde statuscodes die gebruikt dienen te worden door API's. Deze helpen de gebruikers van de API's bij het afhandelen van fouten.  
 
-> **API's passen de verplichte HTTP statuscodes toe**
+> **API principe: API's passen de verplichte HTTP statuscodes toe** @dvh: link toevoegen
 >
 > De volgende HTTP statuscodes worden minimaal toegepast: 200, 201, 204, 304, 400, 401, 403, 405, 406, 409, 410, 415, 422, 429, 500, 503
 
@@ -1039,18 +977,3 @@ Hieronder een korte lijst met een beschrijving van de HTTP statuscodes die minim
 |429 Too Many Requests|Wanneer een aanvraag wordt afgewezen als het aantal verzoeken per tijdsperiode is overschreden|
 |500 Internal Server Error|Wanneer een onverwachte fout optreedt en het beantwoorden van het verzoek wordt verhinderd|
 |503 Service Unavailable|Wordt gebruikt als de API niet beschikbaar is (bijv. door gepland onderhoud)|
-
-### @TODO Best practice(s)
-
-## @TODO URI strategie
-
-### @TODO Best practice(s)
-
-## @TODO Includen van guidelines
-
-- <https://cdn.jsdelivr.net/gh/dvh/KP-APIs@0.1/>
-- Versiebeheer
-
-### @TODO Best practice(s)
-
-- eerst resolven in productie etc.
