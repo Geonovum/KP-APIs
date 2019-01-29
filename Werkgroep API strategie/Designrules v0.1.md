@@ -861,7 +861,7 @@ Dit werkt in principe net als ETag, behalve dat het gebruik maakt van tijdstempe
 > **API principe: Waar relevant wordt caching toegepast** @dhv: link toevoegen
 > Voor caching wordt gebruikt van de HTTP standaard caching mechanismes door het toevoegen van een aantal extra uitgaande HTTP headers (`ETag` of `Last-Modified`) en functionaliteit om te bepalen of een aantal specifieke inkomende HTTP headers (`If-None-Match` of `If-Modified-Since`).
 
-## Beperken van het aantal verzoeken per tijdsperiode
+## Begrenzingen
 
 API's beperken het aantal verzoeken dat per tijdsperiode gedaan kan worden, om te voorkomen dat de servers overbelast worden om een hoog serviceniveau te garanderen. API's kunnen een bevragingslimiet (quota) per maand bijhouden en die wordt afgedwongen per tijdsperiode van 60 seconden.
 
@@ -883,7 +883,7 @@ RFC 6585 introduceerde een HTTP statuscode `429 Too Many Requests` die wordt geb
 >
 > Gebruik X-Rate-Limit headers om limieten aan de gebruiker te communiceren en HTTP statuscode `429 Too Many Requests` als de limieten overschreden worden.
 
-## Foutafhandeling (statuscodes)
+## Foutafhandeling
 
 Net als een webpagina een bruikbare foutmelding toont aan bezoekers als een fout optreedt, moet een API een bruikbare foutmelding in een bekend en verwerkbaar formaat teruggeven. De representatie van een fout is niet anders dan de representatie van een willekeurige resource alleen met een eigen set van velden.
 
