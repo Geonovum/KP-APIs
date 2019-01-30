@@ -4,14 +4,6 @@
 
 ## API Principes
 
-### API-01: Bestaande API's voldoen waar mogelijk aan de API-strategie
-
-Er wordt een kosten baten afweging gemaakt of bestaande API's noodzakelijk zijn en eventueel dienen te worden omgezet om te voldoen aan de API-strategie.
-
-### API-02: Product- en leverancier-specifieke API's worden nooit direct aangeroepen
-
-Hierdoor is het mogelijk om een onderliggend systeem en/of bijbehorende technische API's te vervangen met geen of minimale impact voor de afnemers. Dit geldt niet voor producten die een gestandaardiseerde API aanbieden.
-
 ### API-03: API's garanderen dat operaties "Veilig" en/of "Idempotent" zijn
 
 Operaties van een API zijn gegarandeerd "Veilig" en/of "Idempotent" als dat zo is bepaald (zie tabel in DSO API Strategie) .
@@ -19,10 +11,6 @@ Operaties van een API zijn gegarandeerd "Veilig" en/of "Idempotent" als dat zo i
 ### API-04: Toestandsinformatie wordt nooit op de server opgeslagen
 
 De client-toestand wordt volledig bijgehouden door de client zelf.
-
-### API-05: Communicatie met API's verloopt alleen via het Stelselknooppunt
-
-Het Stelselknooppunt is het centrale punt waarop alle API's beschikbaar worden gesteld. Het is niet toegestaan API's direct te benaderen. Het Stelselknooppunt is verantwoordelijk voor het verlenen van toegang en afdwingen van fair-use policies (indien van toepassing).
 
 ### API-06: Alleen standaard HTTP-operaties worden toegepast
 
@@ -77,19 +65,15 @@ Een REST API mag geen state hebben. Elk verzoek moet daarom zijn voorzien van ee
 
 ### API-18: Authenticatie voor API's met toegangsbeperking of doelbinding is gebaseerd op PKIoverheid
 
-In het geval van API's met toegangsbeperking of doelbinding zal er aanvullend sprake zijn van authenticatie op basis PKIoverheid certificaten en tweezijdig TLS. In de URI-strategie [2] is vastgelegd welke kaders gelden voor API's die gebruik maken van tweezijdig TLS.
+In het geval van API's met toegangsbeperking of doelbinding zal er aanvullend sprake zijn van authenticatie op basis PKIoverheid certificaten en tweezijdig TLS.
 
-### API-19: Documentatie is gebaseerd op OAS 2.0 of hoger
+### API-19: Documentatie is gebaseerd op OAS 3.0 of hoger
 
-Specificaties (documentatie) is beschikbaar als Open API Specification (OAS)9 V2.0 of hoger. De nieuwere variant V3.0 is beschikbaar en het gebruik van deze versie wordt sterk aangeraden.
+Specificaties (documentatie) is beschikbaar als Open API Specification (OAS) V3.0 of hoger.
 
 ### API-20: Documentatie is in het Nederlands tenzij er sprake is van bestaande documentatie in het Engels of er sprake is van een officieel Engelstalig begrippenkader
 
 De voertaal voor de API's is Nederlands. Het is wel toegestaan om te verwijzen naar bestaande documentatie is het Engels en als er sprake is van een officieel Engelstalig begrippenkader.
-
-### API-21: Documentatie wordt getest en geaccepteerd
-
-De API-manager van het Stelselknooppunt biedt de mogelijk om direct vanuit de documentatie de API te testen. Hier dient bij het opzetten van de documentatie rekening mee gehouden te worden en dit dient getest te worden.
 
 ### API-22: Wijzigingen worden gepubliceerd met een uitfaseringschema
 
@@ -199,9 +183,9 @@ Aan de representatie worden twee gereserveerde velden (gedefinieerd door RFC5988
 
 Voor caching wordt gebruikt van de HTTP standaard caching mechanismes door het toevoegen van een aantal extra uitgaande HTTP-headers (ETag of Last-Modified) en functionaliteit om te bepalen of een aantal specifieke inkomende HTTP-headers (Is-None_Match of Is-Modified-Since).
 
-### API-48: Beperken van het aantal verzoeken per tijdsperiode wordt centraal opgelost door het Stelselknooppunt
+### API-48: Beperken van het aantal verzoeken per tijdsperiode wordt aangeraden
 
-Alle verzoeken naar API's lopen via het Stelselknooppunt. Het Stelselknooppunt lost het beperken van het aantal verzoeken per tijdsperiode centraal op om overbelasting van servers te voorkomen om een hoog serviceniveau te garanderen.
+Aangeraden worden om het aantal verzoeken per tijdsperiode te beperken om overbelasting van servers te voorkomen om een hoog serviceniveau te garanderen.
 
 ### API-49: Begrenzingen worden proactief gemeld
 
@@ -215,6 +199,6 @@ API's ondersteunen de gestandaardiseerde foutmeldingen van de HTTP-statuscodes 4
 
 De volgende http-statuscodes worden minimaal toegepast: 200, 201, 204, 304, 400, 401, 403, 405, 406, 409, 410, 415, 422, 429, 500, 503.
 
-### NLA-01: API-endpoints dienen géén trailing slashes te bevatten
+### NLA-01: API-endpoints dienen géén trailing slashes te bevatten @dvh: nog toe te voegen aan design rules document
 
 URIs die gebruikt worden om collecties van resources of individuele resources op te vragen eindigen nooit met een trailing slash. Een resource leeft op één plek/path. Resource paths eindigen zonder slash.
