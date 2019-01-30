@@ -2,7 +2,7 @@
 
 
 
-## API Principes test
+## API Principes
 
 ### API-01: Bestaande API's voldoen waar mogelijk aan de API-strategie
 

@@ -651,9 +651,9 @@ REST API's voor het werken met geometrieën kunnen een filter aanbieden op basis
 
 Het is wél belangrijk dat dit antwoord juist is, en de brondata dus zeer gedetailleerde geometrieën bevat; een gebruiker wil immers geen fout antwoord krijgen. Mocht iemand andersom alle percelen met status = actief willen plotten op een kaartje, dan wil hij/zij juist de geometrieën in de response ontvangen, maar is het detailniveau weer niet zo belangrijk.
 
-> **API principe: GEO API's ontvangen en versturen GeoJSON** @dhv: link toevoegen
+> **API principe: GEO API's ontvangen en versturen GeoJSON** 
 >
-> Voor GEO API's wordt de standaard GeoJSON gebruikt.
+> Voor GEO API's wordt de standaard GeoJSON [[rfc8142]] gebruikt.
 
 ### Resultaat (response)
 
@@ -741,9 +741,9 @@ In het volgende voorbeeld wordt aangegeven hoe dit kan worden gerealiseerd:
 
 ### CRS-negotiation
 
-Het default CRS (Coordinate Reference System) van GeoJSON is WGS84. Dit is het globale coördinatenstelsel dat vanwege de verschuiving van de tektonische platen minder nauwkeurig is dan lokale coördinatenstelsels zoals ETRS89 (EPSG:4258, Europees) of RD (EPSG:28992, Nederlands).
+Het default CRS (Coordinate Reference System) van GeoJSON is WGS84. Dit is het globale coördinatenstelsel dat overal ter wereld redelijk goed bruikbaar is, maar vanwege het gebruikte model van de aarde en de verschuiving van de tektonische platen minder nauwkeurig is dan lokale coördinatenstelsels zoals ETRS89 (EPSG:4258, Europees) of RD (EPSG:28992, Nederlands).
 
-Omdat de meeste client-bibliotheken met WGS84 werken, schrijft de W3C/OGC werkgroep "Spatial Data on the Web" voor om dit standaard te ontsluiten. Dit kan direct op een kaart geplot worden zonder moeilijke transformaties. De API-strategie voorziet hierin door naast ETRS89 en RD ook WGS84 te ondersteunen.
+Omdat de meeste client-bibliotheken met WGS84 werken, schrijft de W3C/OGC werkgroep "Spatial Data on the Web" voor om dit standaard te ontsluiten. Dit kan direct op een kaart geplot worden zonder moeilijke transformaties. De API-strategie voorziet hierin door naast ETRS89 en RD ook WGS84 of Web Mercator (EPSG:3857, voor rasterdata) te ondersteunen.
 
 > **API principe: Het voorkeur-coördinatenstelsels (CRS) is ETRS89, maar het CRS wordt niet impliciet geselecteerd** @dhv: link toevoegen
 >
@@ -793,7 +793,7 @@ Voor het transformeren tussen coördinaatreferentiesystemen is binnen de Rijksov
 
 ## Paginering
 
-Voor paginering wordt aangesloten op Hypertext Application Language (HAL). Dit is een standaard voor het uitdrukken van hyperlinks met JSON [RFC4627]. Aan geretourneerde objecten worden twee gereserveerde velden (gedefinieerd door RFC5988) `_links` (verplicht) en `_embedded` (optioneel) toegevoegd. Deze velden vertegenwoordigen respectievelijk hyperlinks en embedded resources.  
+Voor paginering wordt aangesloten op Hypertext Application Language (HAL). Dit is een standaard voor het uitdrukken van hyperlinks met JSON [[rfc4627]]. Aan geretourneerde objecten worden twee gereserveerde velden (gedefinieerd door RFC5988) `_links` (verplicht) en `_embedded` (optioneel) toegevoegd. Deze velden vertegenwoordigen respectievelijk hyperlinks en embedded resources.  
 
 Hier is een voorbeeld van een JSON+HAL representatie:
 
@@ -882,7 +882,7 @@ HTTP headers worden gebruikt om de bevragingslimit naar de gebruiker te communic
 >
 > Aangeraden worden om het aantal verzoeken per tijdsperiode te beperken om overbelasting van servers te voorkomen om een hoog serviceniveau te garanderen.
 
-RFC 6585 introduceerde een HTTP statuscode `429 Too Many Requests` die wordt gebruikt om het overschrijden van het aantal verzoeken te melden aan de gebruiker.
+[[rfc6585]] introduceert een HTTP statuscode `429 Too Many Requests` die wordt gebruikt om het overschrijden van het aantal verzoeken te melden aan de gebruiker.
 
 > **API principe: Begrenzingen worden proactief gemeld** @dvh: link toevoegen
 >
@@ -904,7 +904,7 @@ Een JSON representatie van een fout moet een aantal zaken bevatten om een ontwik
 - Een gedetailleerde beschrijving van de fout (die helpt bij het oplossen);
 - Een unieke identificatie in de vorm van een URI die hoort bij het specifieke voorkomen van de fout (de fout-instantie). Het strekt de voorkeur om een URN te gebruiken waarmee alleen daartoe gerechtigde gebruikers details kunnen opzoeken in de fout-log.  
 
-De basis voor deze standaardformaten is: <https://tools.ietf.org/html/rfc7807.> Een JSON-representatie van een fout ziet er als volgt uit:
+De basis voor deze standaardformaten is [[rfc7807]]. Een JSON-representatie van een fout ziet er als volgt uit:
 
 ```json
 {
