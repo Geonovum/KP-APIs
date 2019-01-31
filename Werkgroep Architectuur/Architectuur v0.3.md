@@ -83,7 +83,7 @@ Voor het notificeren en opvragen van gegevens worden patronen gevolgd. Deze patr
 
 <figure id='patronen'>
 	<img src='visualisatie%20patronen.png' width="400" />
-	<figcaption>Figuur: Visualisatie patronen (gelaagdheid tussen real life, proces en data).</figcaption>
+	<figcaption>Visualisatie patronen (gelaagdheid tussen real life, proces en data).</figcaption>
  </figure>
 <BR> 
 Toelichting bij de visualisatie: 
@@ -95,9 +95,9 @@ Voor Basisregistraties geldt: Afnemerindicaties worden geplaatst op niveau van g
 
 BRP (en eventueel ook HR) vormt een uitzondering, hiervoor geldt dat afnemerindicaties op persoonsniveau i.c.m. gebeurtenis worden geplaatst (het verzorgingsgebied is niet van belang en is dus gelijk aan heel Nederland). Hieronder wordt dit visueel weergegeven. 
 
-<figure id='patronen'>
+<figure id='notificeren'>
 	<img src='visualisatie%20notificeren.png' width="500" />
-	<figcaption>Figuur: Visualisatie notificeren (de wijze van notificeren en plaatsen van afnemerindicaties)</figcaption>
+	<figcaption>Visualisatie notificeren (de wijze van notificeren en plaatsen van afnemerindicaties)</figcaption>
  </figure>
 <BR> 
 
