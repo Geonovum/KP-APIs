@@ -87,7 +87,7 @@ Voor het notificeren en opvragen van gegevens worden patronen gevolgd. Deze patr
  </figure>
 <BR>
 
-##### Toelichting bij de visualisatie: 
+Toelichting bij de visualisatie: 
 Real-life gebeurtenissen liggen ten grondslag aan alles wat in systemen processen triggert. Indien een gebeurtenis wordt gevolgd door een afnemer (via een geplaatste afnemerindicatie) ontvangt de afnemer hierover notificaties. Op basis van ontvangen notificaties bepaalt een afnemer of de gebeurtenis voor hem interessant is. Indien de notificatie voldoende interessant is kan het leiden tot het opstarten van een vraag/antwoord verwerking. De afnemer stopt met het stellen van vragen als er geen verdere informatiebehoefte is. Merk op dat het verkrijgen van data enkel via vraag/antwoord plaatsvindt.
 
 
@@ -101,7 +101,7 @@ BRP (en eventueel ook HR) vormt een uitzondering, hiervoor geldt dat afnemerindi
 	<figcaption>Visualisatie notificeren (de wijze van notificeren en plaatsen van afnemerindicaties)</figcaption>
  </figure>
 
-###### Toelichting op de voorbeelden:
+Toelichting op de voorbeelden:
 - BAG: een afnemer volgt één of meerdere BAG-gebeurtenissen uit een bepaald verzorgingsgebied (zoals hierboven gemeente Dordrecht). Een voorbeeld van een BAG-gebeurtenis is een wijziging gebruiksdoel (zie 4.2 voor de lijst met gebeurtenissen voor de BAG). Een notificatie wordt verzonden naar de afnemer indien de combinatie gebeurtenis/verzorgingsgebied optreedt en gevolgd wordt door de afnemer.
 - BRP: een afnemer volgt één of meerdere BRP-gebeurtenissen van een bepaald ingeschreven natuurlijk persoon. Een voorbeeld van een BRP-gebeurtenis is een wijziging adresgegevens (zie 4.1 voor de lijst met gebeurtenissen voor de BRP). Een notificatie wordt verzonden naar de afnemer indien de combinatie persoon/gebeurtenis optreedt en gevolgd wordt door de afnemer.
 
@@ -124,6 +124,8 @@ De bovenstaande patronen worden bekrachtigd door onderstaande principes. De hier
 |Toelichting|Afhankelijk van de informatiebehoefte bij afnemers voor het triggeren van bedrijfsprocessen worden notificaties onderkend.<BR>In grote lijnen komt dit overeen met de gebeurtenissen die in de ontwerpdocumenten of berichtencatalogi van de basisregistraties zijn onderkend.|
 |Ratio|De overheid stuurt op gebeurtenis-gericht beschikbaar stellen van basisgegevens. De bronhouder is weliswaar de meest deskundige partij voor het bepalen van haar gebeurtenissen, echter weet de afnemer het beste in welke gebeurtenissen hij geïnteresseerd is. Aangezien bepaalde gebeurtenissen bij de bronhouder voor geen enkele afnemer interessant zullen zijn zal het aantal gebeurtenissen waarover genotificeerd wordt naar afnemers altijd kleiner zijn dan het daadwerkelijke aantal gebeurtenissen. Met deze regel wordt die deskundigheid maximaal benut. Bij wijzigingen in de gebeurtenissen is tevens geborgd dat het gegevensverkeer dit volgt.<BR>Niet alle gebeurtenissen uit de catalogi van de basisregistraties zijn echter voor binnengemeentelijk gebruik interessant. Inventariseer welke gebeurtenissen niet relevant zijn en neem die niet op in de te realiseren API’s. |
 |Implicaties|De definitie van API’s in de categorie Notificeren is bepaald door de behoefte van de afnemers in combinatie met de gebeurteniscatalogi van bronhouders.|
+
+#### Opvragen
 
 |Principe 4|Een API in de categorie Opvragen faciliteert het uitwisselen van gegevens op basis van een vraag-antwoord constructie.|
 |-|-|
