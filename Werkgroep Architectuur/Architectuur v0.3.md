@@ -81,7 +81,7 @@ data ‘gebruiken’ bij het werken met API’s.
 
 Voor het notificeren en opvragen van gegevens worden patronen gevolgd. Deze patronen worden hieronder visueel weergegeven. Merk op dat het patroon van opvragen ook terugkomt bij notificeren, dit is een resultaat van de ontwikkeling: "Van kopiëren van data naar bevragen bij de bron" (zie hoofstuk 2.7).
 
-![alt text](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20Architectuur/visualisatie%20patronen.png "Visualisatie patronen")
+![alt text](visualisatie%20patronen.png "Visualisatie patronen")
 
 <BR>Figuur: Visualisatie patronen (gelaagdheid tussen real life, proces en data).
 
@@ -94,7 +94,7 @@ Voor Basisregistraties geldt: Afnemerindicaties worden geplaatst op niveau van g
 
 BRP (en eventueel ook HR) vormt een uitzondering, hiervoor geldt dat afnemerindicaties op persoonsniveau i.c.m. gebeurtenis worden geplaatst (het verzorgingsgebied is niet van belang en is dus gelijk aan heel Nederland). Hieronder wordt dit visueel weergegeven. 
 
-![alt text]( https://github.com/Geonovum/KP-APIs/blob/master/media/visualisatie%20notificeren.png "Visualisatie notificeren")
+![alt text]( visualisatie%20notificeren.png "Visualisatie notificeren")
 <BR>Figuur: Visualisatie notificeren (de wijze van notificeren en plaatsen van afnemerindicaties)
 
 Toelichting op de voorbeelden:
