@@ -85,12 +85,13 @@ Voor het notificeren en opvragen van gegevens worden patronen gevolgd. Deze patr
 	<img src='visualisatie%20patronen.png' width="400" />
 	<figcaption>Visualisatie patronen (gelaagdheid tussen real life, proces en data).</figcaption>
  </figure>
-<BR> 
-Toelichting bij de visualisatie: 
+<BR>
+
+##### Toelichting bij de visualisatie: 
 Real-life gebeurtenissen liggen ten grondslag aan alles wat in systemen processen triggert. Indien een gebeurtenis wordt gevolgd door een afnemer (via een geplaatste afnemerindicatie) ontvangt de afnemer hierover notificaties. Op basis van ontvangen notificaties bepaalt een afnemer of de gebeurtenis voor hem interessant is. Indien de notificatie voldoende interessant is kan het leiden tot het opstarten van een vraag/antwoord verwerking. De afnemer stopt met het stellen van vragen als er geen verdere informatiebehoefte is. Merk op dat het verkrijgen van data enkel via vraag/antwoord plaatsvindt.
 
 
-Notificeren
+#### Notificeren
 Voor Basisregistraties geldt: Afnemerindicaties worden geplaatst op niveau van gebeurtenis en verzorgingsgebied. Hierdoor ontvangt de afnemer de gebeurtenissen van alle resources in dat geografische gebied. Het ontvangen van deze gebeurtenissen kan voor de afnemer een trigger zijn voor het opvragen van gegevens. 
 
 BRP (en eventueel ook HR) vormt een uitzondering, hiervoor geldt dat afnemerindicaties op persoonsniveau i.c.m. gebeurtenis worden geplaatst (het verzorgingsgebied is niet van belang en is dus gelijk aan heel Nederland). Hieronder wordt dit visueel weergegeven. 
@@ -99,11 +100,10 @@ BRP (en eventueel ook HR) vormt een uitzondering, hiervoor geldt dat afnemerindi
 	<img src='visualisatie%20notificeren.png' width="500" />
 	<figcaption>Visualisatie notificeren (de wijze van notificeren en plaatsen van afnemerindicaties)</figcaption>
  </figure>
-<BR> 
 
-Toelichting op de voorbeelden:
-•	BAG: een afnemer volgt één of meerdere BAG-gebeurtenissen uit een bepaald verzorgingsgebied (zoals hierboven gemeente Dordrecht). Een voorbeeld van een BAG-gebeurtenis is een wijziging gebruiksdoel (zie 4.2 voor de lijst met gebeurtenissen voor de BAG). Een notificatie wordt verzonden naar de afnemer indien de combinatie gebeurtenis/verzorgingsgebied optreedt en gevolgd wordt door de afnemer.
-•	BRP: een afnemer volgt één of meerdere BRP-gebeurtenissen van een bepaald ingeschreven natuurlijk persoon. Een voorbeeld van een BRP-gebeurtenis is een wijziging adresgegevens (zie 4.1 voor de lijst met gebeurtenissen voor de BRP). Een notificatie wordt verzonden naar de afnemer indien de combinatie persoon/gebeurtenis optreedt en gevolgd wordt door de afnemer.
+###### Toelichting op de voorbeelden:
+- BAG: een afnemer volgt één of meerdere BAG-gebeurtenissen uit een bepaald verzorgingsgebied (zoals hierboven gemeente Dordrecht). Een voorbeeld van een BAG-gebeurtenis is een wijziging gebruiksdoel (zie 4.2 voor de lijst met gebeurtenissen voor de BAG). Een notificatie wordt verzonden naar de afnemer indien de combinatie gebeurtenis/verzorgingsgebied optreedt en gevolgd wordt door de afnemer.
+- BRP: een afnemer volgt één of meerdere BRP-gebeurtenissen van een bepaald ingeschreven natuurlijk persoon. Een voorbeeld van een BRP-gebeurtenis is een wijziging adresgegevens (zie 4.1 voor de lijst met gebeurtenissen voor de BRP). Een notificatie wordt verzonden naar de afnemer indien de combinatie persoon/gebeurtenis optreedt en gevolgd wordt door de afnemer.
 
 De bovenstaande patronen worden bekrachtigd door onderstaande principes. De hieronder benoemde principes kunnen gezien worden als functionele inrichtingsprincipes voor API’s (specifiek opgesteld t.a.v. Basis- en Kernregistraties). Op basis van deze functionele principes (als toevoeging op de technische design/ontwerprules uit hoofdstuk 4) kunnen de API’s nauwkeurig worden gedefinieerd. Bij wijziging van de principes geldt dat dit impact heeft op alle API’s. 
 
