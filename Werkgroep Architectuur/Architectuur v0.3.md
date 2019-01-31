@@ -81,10 +81,11 @@ data ‘gebruiken’ bij het werken met API’s.
 
 Voor het notificeren en opvragen van gegevens worden patronen gevolgd. Deze patronen worden hieronder visueel weergegeven. Merk op dat het patroon van opvragen ook terugkomt bij notificeren, dit is een resultaat van de ontwikkeling: "Van kopiëren van data naar bevragen bij de bron" (zie hoofstuk 2.7).
 
-![alt text](visualisatie%20patronen.png "Visualisatie patronen")
-
-<BR>Figuur: Visualisatie patronen (gelaagdheid tussen real life, proces en data).
-
+ <figure id='patronen'>
+	<img src='visualisatie%20patronen.png' width="600" />
+	<figcaption>Figuur: Visualisatie patronen (gelaagdheid tussen real life, proces en data).</figcaption>
+ </figure>
+ 
 Toelichting bij de visualisatie: 
 Real-life gebeurtenissen liggen ten grondslag aan alles wat in systemen processen triggert. Indien een gebeurtenis wordt gevolgd door een afnemer (via een geplaatste afnemerindicatie) ontvangt de afnemer hierover notificaties. Op basis van ontvangen notificaties bepaalt een afnemer of de gebeurtenis voor hem interessant is. Indien de notificatie voldoende interessant is kan het leiden tot het opstarten van een vraag/antwoord verwerking. De afnemer stopt met het stellen van vragen als er geen verdere informatiebehoefte is. Merk op dat het verkrijgen van data enkel via vraag/antwoord plaatsvindt.
 
