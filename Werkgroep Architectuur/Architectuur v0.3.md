@@ -81,11 +81,11 @@ data ‘gebruiken’ bij het werken met API’s.
 
 Voor het notificeren en opvragen van gegevens worden patronen gevolgd. Deze patronen worden hieronder visueel weergegeven. Merk op dat het patroon van opvragen ook terugkomt bij notificeren, dit is een resultaat van de ontwikkeling: "Van kopiëren van data naar bevragen bij de bron" (zie hoofstuk 2.7).
 
- <figure id='patronen'>
-	<img src='visualisatie%20patronen.png' width="600" />
+<figure id='patronen'>
+	<img src='visualisatie%20patronen.png' width="400" />
 	<figcaption>Figuur: Visualisatie patronen (gelaagdheid tussen real life, proces en data).</figcaption>
  </figure>
- 
+<BR> 
 Toelichting bij de visualisatie: 
 Real-life gebeurtenissen liggen ten grondslag aan alles wat in systemen processen triggert. Indien een gebeurtenis wordt gevolgd door een afnemer (via een geplaatste afnemerindicatie) ontvangt de afnemer hierover notificaties. Op basis van ontvangen notificaties bepaalt een afnemer of de gebeurtenis voor hem interessant is. Indien de notificatie voldoende interessant is kan het leiden tot het opstarten van een vraag/antwoord verwerking. De afnemer stopt met het stellen van vragen als er geen verdere informatiebehoefte is. Merk op dat het verkrijgen van data enkel via vraag/antwoord plaatsvindt.
 
@@ -95,8 +95,11 @@ Voor Basisregistraties geldt: Afnemerindicaties worden geplaatst op niveau van g
 
 BRP (en eventueel ook HR) vormt een uitzondering, hiervoor geldt dat afnemerindicaties op persoonsniveau i.c.m. gebeurtenis worden geplaatst (het verzorgingsgebied is niet van belang en is dus gelijk aan heel Nederland). Hieronder wordt dit visueel weergegeven. 
 
-![alt text]( visualisatie%20notificeren.png "Visualisatie notificeren")
-<BR>Figuur: Visualisatie notificeren (de wijze van notificeren en plaatsen van afnemerindicaties)
+<figure id='patronen'>
+	<img src='visualisatie%20notificeren.png' width="500" />
+	<figcaption>Figuur: Visualisatie notificeren (de wijze van notificeren en plaatsen van afnemerindicaties)</figcaption>
+ </figure>
+<BR> 
 
 Toelichting op de voorbeelden:
 •	BAG: een afnemer volgt één of meerdere BAG-gebeurtenissen uit een bepaald verzorgingsgebied (zoals hierboven gemeente Dordrecht). Een voorbeeld van een BAG-gebeurtenis is een wijziging gebruiksdoel (zie 4.2 voor de lijst met gebeurtenissen voor de BAG). Een notificatie wordt verzonden naar de afnemer indien de combinatie gebeurtenis/verzorgingsgebied optreedt en gevolgd wordt door de afnemer.
