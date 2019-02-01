@@ -82,7 +82,7 @@ data ‘gebruiken’ bij het werken met API’s.
 Voor het notificeren en opvragen van gegevens worden patronen gevolgd. Deze patronen worden hieronder visueel weergegeven. Merk op dat het patroon van opvragen ook terugkomt bij notificeren, dit is een resultaat van de ontwikkeling: "Van kopiëren van data naar bevragen bij de bron" (zie hoofstuk 2.7).
 
 <figure id='patronen'>
-	<img src='visualisatie%20patronen.png' width="400" />
+	<img src='media/visualisatie%20patronen.png' width="400" />
 	<figcaption>Visualisatie patronen (gelaagdheid tussen real life, proces en data).</figcaption>
  </figure>
 <BR>
@@ -97,7 +97,7 @@ Voor Basisregistraties geldt: Afnemerindicaties worden geplaatst op niveau van g
 BRP (en eventueel ook HR) vormt een uitzondering, hiervoor geldt dat afnemerindicaties op persoonsniveau i.c.m. gebeurtenis worden geplaatst (het verzorgingsgebied is niet van belang en is dus gelijk aan heel Nederland). Hieronder wordt dit visueel weergegeven. 
 
 <figure id='notificeren'>
-	<img src='visualisatie%20notificeren.png' width="500" />
+	<img src='media/visualisatie%20notificeren.png' width="500" />
 	<figcaption>Visualisatie notificeren (de wijze van notificeren en plaatsen van afnemerindicaties)</figcaption>
  </figure>
 
