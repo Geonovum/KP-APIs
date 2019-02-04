@@ -5,12 +5,23 @@
 
 
 
-<redactie>Heel hoofdstuk 5 gaat over beveiliging, hier ook nog eens beschrijven? of alleen een link...</redactie>
+Voor de eerste versie van de Nederlandse API strategie bevat dit hoofdstuk alleen het onderwerp OAuth. voor toekomstige versies voorzien we mogelijk de volgende onderwerpen.
+wettelijke kaders en hun uitwerking in de praktijk: 
+* AVG
+* Wet digitale overheid (concept)
+
+Generieke beveiligingsonderwerpen: 
+* Privacy by Design
+* BIR
+* VIR(BI)
+* Indentificatie & Autorisatie
+* Authenticatie (OpenID-Connect)
+* Ondertekening en versleuteling (wanneer en waarom pas je deze technieken toe)
 
 
-## Uitgangspunten 
+## Nederlands profiel OAuth
 
-Dit hoofdstuk beschrijft de uitgangspunten voor het Nederlands profiel OAuth. 
+Deze sectie beschrijft de uitgangspunten voor het Nederlands profiel OAuth. het profiel zelf is een op zichzelfstaand document.
 
 ### Expert advies OAuth forum standaardisatie 
 
