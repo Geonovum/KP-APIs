@@ -142,7 +142,7 @@ API's die vrije-tekst zoeken ondersteunen kunnen overweg met twee soorten wildca
 
 ### <a name="api-38"></a>API-38: GEO API's ontvangen en versturen bij voorkeur GeoJSON
 
-Voor GEO API's wordt de standaard GeoJSON ([RFC-7946](https://tools.ietf.org/html/rfc7946)) gebruikt.
+Voor GEO API's wordt bij voorkeur de standaard GeoJSON ([RFC-7946](https://tools.ietf.org/html/rfc7946)) gebruikt.
 
 ### <a name="api-39"></a>API-39: GeoJSON is onderdeel van de embedded resource in de JSON response
 
