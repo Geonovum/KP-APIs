@@ -7,7 +7,6 @@
 > *- De gebruikers ervaring is erg belangrijk.*   
 > *- Hoe krijg je partijen laagdrempelig snel echt aan de slag(niet alleen technisch)*  
 
-<redactie>@Werkgroep: graag checken of de volgende hoofstukken de lading dekken</redactie>
 
 ## <!-- 3.1 --> Inleiding
 
@@ -41,7 +40,6 @@ krijgen.
 
 ## <!-- 3.2 --> Overkoepelende aanbeveling: biedt een goede ‘developer experience (DX)’
 
-<redactie>Dubbeling met H2.6? dat gaat ook over Developer first</redactie>
 
 De belangrijkste aanbeveling aan aanbieders van API’s is om zich te richten op
 die gebruikservaring; op een goede ‘developer experience (DX)’. Goede DX komt
@@ -206,7 +204,6 @@ maar ook door praktischere zaken als heldere naamgeving van variabelen etc.
 
 ### Aanbeveling 7: wees vindbaar voor developers
 
-<redactie>Dubbeling met H2.6? dat gaat ook over Developer first</redactie>
 
 Een goede, gebruiksgerichte API, die bovendien actief wordt beheerd en
 doorontwikkeld, kan nog steeds weinig gebruikt worden wanneer deze API niet goed
