@@ -39,7 +39,7 @@ Per operatie is tevens bepaald of deze gegarandeerd "veilig" en/of "idempotent" 
 |`PATCH`|Nee|Optioneel|
 |`DELETE`|Nee|Ja|
 
-> [API principe: API's garanderen dat operaties "Veilig" en/of "Idempotent" zijn](bijlagen.md#api-03)
+> [API principe: API's garanderen dat operaties "Veilig" en/of "Idempotent" zijn](../Bijlagen.md#api-03)
 
 REST maakt gebruik van het client stateless server ontwerpprincipe dat is afgeleid van client server met als aanvullende beperking dat het niet toegestaan is om toestand (state) op de server bij te houden. Elk verzoek van de client naar de server moet alle informatie bevatten die nodig is om het verzoek te verwerken, zonder gebruik te hoeven maken van toestand-informatie op de server.
 
