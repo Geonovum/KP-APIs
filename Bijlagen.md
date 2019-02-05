@@ -181,7 +181,7 @@ Het gewenste CRS voor de geometrie in het antwoord (response body) wordt aangedu
 
 ### <a name="api-42"></a>API-42: Paginering wordt gerealiseerd op basis van JSON+HAL bij media type: application/hal+json
 
-Aan de representatie worden twee gereserveerde velden (gedefinieerd door RFC5988) `_links` (verplicht) en `_embedded` (optioneel) toegevoegd. Daarnaast wordt paginerings-metadata als HTTP headers meegegeven.
+Aan de representatie worden twee gereserveerde velden `_links` (verplicht) en `_embedded` (optioneel) toegevoegd. Daarnaast wordt paginerings-metadata als HTTP headers meegegeven.
 
 ### <a name="api-43"></a>API-43: Waar relevant wordt caching toegepast
 
