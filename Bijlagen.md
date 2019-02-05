@@ -142,11 +142,18 @@ API's die vrije-tekst zoeken ondersteunen kunnen overweg met twee soorten wildca
 
 ### <a name="api-38"></a>API-38: GEO API's ontvangen en versturen bij voorkeur GeoJSON
 
-Voor GEO API's wordt bij voorkeur de standaard GeoJSON gebruikt.
+Voor GEO API's wordt bij voorkeur de standaard GeoJSON ([RFC-7946](https://tools.ietf.org/html/rfc7946)) gebruikt.
 
 ### <a name="api-39"></a>API-39: GeoJSON is onderdeel van de embedded resource in de JSON response
 
-GeoJSON wordt in een JSON response (`application/json`) geplaatst waarbij geo attributen als GeoJSON-compatible object in de resource ge-embed zijn.Voor GEO API's wordt de standaard GeoJSON gebruikt.
+Als een JSON (`application/json`) response een geometrie bevat, dan wordt deze geometrie op dezelfde manier teruggegeven als het `geometry` object van GeoJSON ([RFC-7946](https://tools.ietf.org/html/rfc7946)):
+
+```json
+{
+  "type": "Point",
+  "coordinates": [125.6, 10.1]
+}
+```
 
 ### <a name="api-40"></a>API-40: Voor GEO queries is een POST end-point beschikbaar
 
@@ -156,9 +163,9 @@ Geometrische queries worden in een `POST` naar een apart endpoint verzonden.
 
 De geometrie is uitbreidbaar met andere properties voor gecombineerde queries.
 
-### <a name="api-42"></a>API-42: Resultaten van een globale geometrische zoekvraag worden in de relevante geometrische context geplaatst
+### <a name="api-42"></a>API-42: Resultaten van een globale zoekvraag worden in de relevante context geplaatst
 
-In het geval van een globale zoekvraag `/api/v1/_zoek` is het noodzakelijk om de resultaten in een relevante geometrische context te plaatsen.
+In het geval van een globale zoekvraag `/api/v1/_zoek` is het noodzakelijk om de resultaten in een relevante context te plaatsen, omdat resultaten van verschillende collecties door elkaar teruggegeven worden. Met de property `type` kan in enkelvoud de naam van de collectie waar het resultaat toe behoort uitgedrukt worden.
 
 ### <a name="api-43"></a>API-43: Het voorkeur-coördinatenstelsels (CRS) is ETRS89, maar het CRS wordt niet impliciet geselecteerd
 
