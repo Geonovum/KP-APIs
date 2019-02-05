@@ -70,7 +70,7 @@ Het mooie van REST is dat er gebruik wordt gemaakt van de bestaande HTTP operati
 
 ### Welke taal?
 
-Omdat de exacte betekenis van concepten en begrippen vaak in een vertaling verloren gaan, worden resources en de achterliggende entiteiten, velden, etc. (het informatiemodel en externe koppelvlak) in het Nederlands gedefinieerd.
+Omdat de exacte betekenis van concepten en begrippen vaak in een vertaling verloren gaan, worden resources en de achterliggende entiteiten, velden, etc. in het Nederlands gedefinieerd.
 
 > [API principe: Definitie van het koppelvlak is in het Nederlands tenzij er sprake is van een officieel Engelstalig begrippenkader](#api-04)
 
@@ -579,8 +579,6 @@ Bij de verwerking van tijdreisvragen dient ook rekening te worden gehouden met h
 
 REST API's voor het werken met geometrieën kunnen een filter aanbieden op basis van geografische gegevens. Het is hierbij belangrijk om een onderscheid te maken tussen een geometrie in het resultaat (response) en een geografische filter in de aanroep (request). Het is immers niet vanzelfsprekend dat als iemand wil weten in welk perceel ik hij/zij zich momenteel bevindt, dat ook de geometrie in de response wordt teruggegeven; een naam of nummer kan dan al voldoende zijn.
 
-Het is wél belangrijk dat dit antwoord juist is, en de brondata dus zeer gedetailleerde geometrieën bevat; een gebruiker wil immers geen fout antwoord krijgen. Mocht iemand andersom alle percelen met status = actief willen plotten op een kaartje, dan wil hij/zij juist de geometrieën in de response ontvangen, maar is het detailniveau weer niet zo belangrijk.
-
 > [API principe: GEO API's ontvangen en versturen bij voorkeur GeoJSON](#api-34)
 
 Voor GEO API's wordt bij voorkeur de standaard GeoJSON [[rfc8142]] gebruikt.
@@ -628,7 +626,7 @@ Omdat we ons met het geo endpoint beperken tot een GEO-query en we wellicht ook 
 
 > [API principe: POST endpoints zijn uitbreidbaar voor gecombineerde vragen](#api-37)
 
-Naast contains kan er ook `intersects` (snijdt) of `within` (valt binnen) als operators gebruikt worden. De benamingen van deze operators komen uit de GEO-wereld en die willen we niet opnieuw uitvinden.  
+Naast contains kan er ook `intersects` (snijdt) of `within` (valt binnen) als operators gebruikt worden. De benamingen van deze operators komen uit de GEO-wereld en die willen we niet opnieuw uitvinden. Zie voor meer details: https://www.w3.org/TR/sdw-bp/#entity-level-links  
 
 Omdat we voor de geometrie een GeoJSON object gebruiken hoeven we hier geen syntax meer voor te verzinnen.
 
@@ -709,7 +707,7 @@ Voor het transformeren tussen coördinaatreferentiesystemen is binnen de Rijksov
 
 ## Paginering
 
-Voor paginering wordt aangesloten op Hypertext Application Language (HAL). Dit is een standaard voor het uitdrukken van hyperlinks met JSON [[rfc4627]]. Aan geretourneerde objecten worden twee gereserveerde velden (gedefinieerd door RFC5988) `_links` (verplicht) en `_embedded` (optioneel) toegevoegd. Deze velden vertegenwoordigen respectievelijk hyperlinks en embedded resources.  
+Voor paginering wordt voor het media type 'application/hal+json' aangesloten op Hypertext Application Language (HAL). Aan geretourneerde objecten worden twee gereserveerde velden `_links` (verplicht) en `_embedded` (optioneel) toegevoegd. Deze velden vertegenwoordigen respectievelijk hyperlinks en embedded resources.  
 
 Hier is een voorbeeld van een JSON+HAL representatie:
 
@@ -754,7 +752,7 @@ Indien het "plain" JSON, GeoJSON of iets anders dan HAL betreft zijn er geen `_l
 
 Bij grote datasets kunnen de berekeningen voor X-Total-Count en X-Pagination-Count behoorlijke impact hebben op de performance, voornamelijk als er niet of nauwelijks gefilterd wordt.
 
-> [API principe: Paginering wordt gerealiseerd op basis van JSON+HAL](#api-42)
+> [API principe: Paginering wordt gerealiseerd op basis van JSON+HAL bij media type: application/hal+json](#api-42)
 
 Alle links in HAL zijn absoluut. Dit in verband met mogelijke externe links (naar andere endpoints, linked-data resources, etc.) en eenvoudigere navigatie door clients ie dan niet zelf de URL hoeven op te bouwen.  
 
