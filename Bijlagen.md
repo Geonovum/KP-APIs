@@ -22,19 +22,19 @@ Resources en de achterliggende entiteiten, velden, etc. (het informatiemodel en 
 
 Namen van resources zijn zelfstandige naamwoorden en altijd in het meervoud, zoals aanvragen, activiteiten, vergunningen. Ook als het om het een enkel resource betreft.
 
-### <a name="api-06"></a>API-06: Relaties van geneste resources worden binnen het eindpunt gecreëerd
+### <a name="api-06"></a>API-06: Relaties van geneste resources worden bij voorkeur binnen het eindpunt gecreëerd
 
-Als een relatie alleen kan bestaan binnen een andere resource (geneste resource), wordt de relatie binnen het eindpunt gecreëerd. De afhankelijke resource heeft geen eigen eindpunt
+Als een relatie alleen kan bestaan binnen een andere resource (geneste resource), wordt de relatie bij voorkeur innen het eindpunt gecreëerd. De afhankelijke resource heeft in dat geval geen eigen eindpunt
 
-### <a name="api-07"></a>API-07: Resources ondersteunen "lazy" en "eager" laden van relaties
+### <a name="api-07"></a>API-07: Resources ondersteunen bij voorkeur "lazy" en "eager" laden van relaties
 
-Resources die een n-op-n relatie kennen ondersteunen zowel het teruggeven van identificaties van gerelateerde resources (lazy loading) als het teruggeven van de resources zelf (eager loading).
+Resources die een n-op-n relatie kennen ondersteunen bij voorkeur zowel het teruggeven van identificaties van gerelateerde resources (lazy loading) als het teruggeven van de resources zelf (eager loading).
 
 ### <a name="api-08"></a>API-08: Gelinkte resources worden expliciet en selectief mee-geladen
 
 Gelinkte resources worden expliciet en selectief mee-geladen als onderdeel van een resource verzoek middels de expand query-parameter.
 
-### <a name="api-09"></a>API-09: Representatie op maat wordt ondersteund
+### <a name="api-09"></a>API-09: Indien representatie op maat wordt ondersteund, dan conform dit principe.
 
 Het is mogelijk om een door komma's gescheiden lijst van veldennamen op te geven met de query-parameter fields om een representatie op maat te krijgen. Als niet-bestaande veldnamen worden meegegeven wordt een 400 Bad Request teruggegeven.
 
@@ -49,17 +49,17 @@ Het is mogelijk om een door komma's gescheiden lijst van veldennamen op te geven
 
 De verbinding is ALTIJD versleuteld op basis van minimaal TLS V1.2. Geen uitzonderingen, dus overal en altijd. In het geval van toegangsbeperking of doelbinding wordt tweezijdig TLS toegepast. Doordat de verbinding altijd is versleuteld maakt het authenticatiemechanisme eenvoudiger. Hierdoor wordt het mogelijk om eenvoudige toegangstokens te gebruiken in plaats van toegangstokens met encryptie.
 
-### <a name="api-12"></a>API-12: API's zijn alleen bruikbaar met behulp van een API-key
+### <a name="api-12"></a>API-12: API's zijn bij voorkeur alleen bruikbaar met behulp van een API-key
 
-Voor alle API's wordt minimaal een registratie inclusief acceptatie van de fair use voorwaarden vereist. Op basis hiervan zal dan een API-key wordt uitgegeven.
+Voor alle API's wordt bij voorkeur minimaal een registratie inclusief acceptatie van de fair use voorwaarden vereist. Op basis hiervan zal dan een API-key wordt uitgegeven.
 
 ### <a name="api-13"></a>API-13: Tokens worden niet gebruikt in query parameters
 
 Er is een inherent beveiligingsprobleem bij het gebruik van een query parameter voor tokens omdat de meeste webservers queryparameters in de server logs wegschrijven.
 
-### <a name="api-14"></a>API-14: Autorisatie is gebaseerd op OAuth 2.0
+### <a name="api-14"></a>API-14: Autorisatie is waar nodig gebaseerd op OAuth 2.0
 
-Een REST API mag geen state hebben. Elk verzoek moet daarom zijn voorzien van een token. OAuth 2.0 is hiervoor de voorgeschreven standaard.
+Een REST API mag geen state hebben. Elk verzoek moet daarom zijn voorzien van een token. OAuth 2.0 is hiervoor de voorgeschreven standaard, hoofstuk Beveiliging bevat meer informatie.
 
 ### <a name="api-15"></a>API-15: Authenticatie voor API's met toegangsbeperking of doelbinding is gebaseerd op PKIoverheid
 
