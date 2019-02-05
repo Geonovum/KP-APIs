@@ -111,7 +111,7 @@ meer in te zetten op gegevensuitwisseling via API’s:
     City waar veel verschillende organisaties en personen bij elkaar komen op
     verschillende onderwerpen. Relatief neemt het belang van vaste ketens
     hierdoor af. Makkelijke koppelingen zijn in deze situaties noodzakelijk
-    zonder dat grote investeringen of uitgebreide studies.
+    zonder grote investeringen of uitgebreide studies.
 
 -   De noodzaak van een meer flexibele ICT en minder faalkosten bij het
     ontwikkelen van ICT. De huidige manier van ICT ontwikkeling is door agile te
@@ -145,7 +145,7 @@ de programmeur. Vaak gaat het binnen de digitale overheid over betere
 dienstverlening voor burgers en bedrijven, maar bij het neerzetten van een goede
 ICT dienstverlening is de softwareontwikkelaar als doelgroep cruciaal. Het is
 immers de ontwikkelaar die de producten gaat bouwen en de data ontsluit en
-daarmee een cruciale rol inneemt in de dienstverlening naar burgers en
+daarmee een cruciale rol inneemt als intermediair in de dienstverlening naar burgers en
 bedrijven. In de praktijk is er echter weinig aandacht om deze doelgroep goed te
 faciliteren.
 
@@ -161,8 +161,8 @@ hergebruiken krijg je namelijk ook hun gebruikers of klanten erbij en heb je een
 breder bereik. Hergebruik is te realiseren door het programmeurs van andere
 partijen zo makkelijk mogelijk te maken.
 
-Er wordt dan ook gesproken om de ‘time to first call’ zo laag mogelijk te
-houden. Dus de tijd die het duurt voordat je succesvol tussen systemen gegevens
+Er wordt dan ook voor gepleit om de ‘time to first call’ zo laag mogelijk te
+houden. Dit is de tijd die het duurt voordat je succesvol tussen systemen gegevens
 kan uitwisselen via de API. De regel is: hoe korter, hoe beter. Het grote
 bijkomende voordeel van deze gereduceerde complexiteit is ook dat hiermee wordt
 voorkomen dat er allerlei tussenoplossingen ontstaan en dat men iets zelf gaat
@@ -196,11 +196,11 @@ gegevensuitwisseling via API’s?
 
 Een goede twee stap is om te onderzoeken welke informatie je organisatie
 aanbiedt (denk bijvoorbeeld aan (basis)registraties), deze informatie is vaak
-ook informatie die hoort bij gekoppeld aan de primaire taken van een
+ook informatie die gekoppeld is aan de primaire taken van een
 organisatie, en met API’s zijn deze mogelijk makkelijker te ontsluiten. De derde
 stap is dan om te kijken uit welke externe bronnen je informatie nodig hebt om
-de business doelstellingen te behalen. Kijk daarbij ook, en of de kwaliteit van
-de bronnen nu voldoende is., Dit kunnen zzowel voor de externe als interne
+de business doelstellingen te behalen. Kijk daarbij ook of de kwaliteit van
+de bronnen nu voldoende is. Dit kunnen zowel externe als interne
 bronnen zijn. Een vervolgstap is om te onderzoeken welke externe koppelingen met
 andere systemen (zowel interne als extern) er al zijn, hoe deze zijn ingericht
 en welke afspraken daar achter liggen en of het niet goedkoper en makkelijker
@@ -218,7 +218,7 @@ voorwaarden, designprincipes en standaarden daarbij te hanteren.
     geplande en actuele dienstregeling. Deze informatie wordt via een API
     aangeboden en wordt bijvoorbeeld door Google Maps weer geïntegreerd voor
     optimale routeplanning. Google Maps wordt trouwens ook via een API
-    aangeboden en veel verwerkt in bijvoorbeeld website.
+    aangeboden en veel verwerkt in bijvoorbeeld websites.
 
 -   Amsterdam Data Exchange en Amsterdam Data Portal. Dit is een samenwerking
     voor de onafhankelijke en betrouwbare data-uitwisseling voor iedereen. Het
@@ -232,6 +232,6 @@ voorwaarden, designprincipes en standaarden daarbij te hanteren.
     aanbieders actief.
 
 -   De Kamer van Koophandel biedt een API aan om aan te sluiten op het
-    Handelsregister hierdoor is het mogelijk om te zoeken en gegevens te
+    Handelsregister. Hierdoor is het mogelijk om te zoeken en gegevens te
     controleren (denk aan handelsnaam, adresgegevens en KVK-nummer) via externe
-    softwareprogramma’s. Hiervoor moet apart toegang voor worden aangevraagd.
+    softwareprogramma’s. Hiervoor moet apart toegang worden aangevraagd.

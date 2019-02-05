@@ -197,6 +197,12 @@ var respecConfig =
       authors: ["Y. Sheffer, R. Holz, P. Saint-Andre"],
       date: "May 2015",
       publisher: "IETF",
-    },  
+    },
+    "HAL": {
+      href: "http://stateless.co/hal_specification.html",
+      title: "HAL - Hypertext Application Language",
+      authors: ["Mike Kelly"],
+      date: " 2013-09-18",
+    }  
   },
 };
