@@ -581,7 +581,7 @@ Het is wél belangrijk dat dit antwoord juist is, en de brondata dus zeer gedeta
 
 > [API principe: GEO API's ontvangen en versturen GeoJSON](../Bijlagen.md#api-38)
 >
-> Voor GEO API's wordt de standaard GeoJSON gebruikt.
+> Voor GEO API's wordt bij voorkeur de standaard GeoJSON gebruikt.
 
 ### Resultaat (response)
 
