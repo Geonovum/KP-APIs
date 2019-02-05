@@ -7,15 +7,15 @@
 
 Voor de eerste versie van de Nederlandse API strategie bevat dit hoofdstuk alleen het onderwerp OAuth. voor toekomstige versies voorzien we mogelijk de volgende onderwerpen.
 wettelijke kaders en hun uitwerking in de praktijk: 
-* AVG
-* Wet digitale overheid (concept)
+* [AVG](https://autoriteitpersoonsgegevens.nl/nl/onderwerpen/avg-europese-privacywetgeving/algemene-informatie-avg)
+* [Wet digitale overheid (concept)](https://www.digitaleoverheid.nl/dossiers/wet-digitale-overheid/)
 
 Generieke beveiligingsonderwerpen: 
 * Privacy by Design
-* BIR
-* VIR(BI)
+* [BIR](https://www.earonline.nl/index.php/BIR-Baseline_Informatiebeveiliging_Rijksdienst)
+* [VIR(BI)](https://www.earonline.nl/index.php/Besluit_Voorschrift_Informatiebeveiliging_Rijksdienst_Bijzondere_Informatie_(VIRBI))
 * Indentificatie & Autorisatie
-* Authenticatie (OpenID-Connect)
+* [Authenticatie (OpenID-Connect)](https://openid.net/connect/)
 * Ondertekening en versleuteling (wanneer en waarom pas je deze technieken toe)
 
 

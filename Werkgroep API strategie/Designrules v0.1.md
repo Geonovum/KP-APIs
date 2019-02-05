@@ -213,6 +213,8 @@ Bij het ontbreken van de juiste headers zijn geen authenticatiedetails beschikba
 
 > [API principe: Autorisatie is gebaseerd op OAuth 2.0](principes.md#api-17)
 
+Zie ook [Het Nederlands profiel OAuth in het hoofdtuk beveiliging](#Beveiliging) voor een nadere uitwerking van de toepassing van OAuth.
+
 > [API principe: Authenticatie voor API's met toegangsbeperking of doelbinding is gebaseerd op PKIoverheid](principes.md#api-18)
 
 #### Autorisatiefouten
