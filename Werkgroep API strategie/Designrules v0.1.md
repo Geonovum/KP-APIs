@@ -62,7 +62,7 @@ Als de resources geïdentificeerd zijn, wordt bepaald welke operaties van toepas
 |`PATCH /aanvragen/12`|Wijzigt een gedeelte van aanvraag #12|
 |`DELETE /aanvragen/12`|Verwijdert aanvraag #12|
 
-Het mooie van REST is dat er gebruik wordt gemaakt van de bestaande HTTPoperaties om de functionaliteit te implementeren met één enkele eindpunt. Hierdoor zijn er geen aanvullende naamgevingsconventies nodig in de URI en blijft de URIstructuur eenvoudig.
+Het mooie van REST is dat er gebruik wordt gemaakt van de bestaande HTTP operaties om de functionaliteit te implementeren met één enkel eindpunt. Hierdoor zijn er geen aanvullende naamgevingsconventies nodig in de URI en blijft de URIstructuur eenvoudig.
 
 > [API principe: Alleen standaard HTTP-operaties worden toegepast](../Bijlagen.md#api-06)
 
@@ -108,15 +108,17 @@ De resource dient naast "lazy loading" (de standaard) ook "eager loading" te ond
 
 > [API principe: Resources ondersteunen "lazy" en "eager" laden van relaties](../Bijlagen.md#api-10)
 
+<p class="issue">Lazy en eager loading worden in de volgende paragraaf nog een keer helemaal uitgelegd.</p>
+
 ### Automatische laden van gelinkte resources
 
-Vaak wordt er vanuit één resource verwezen (gelinkt) naar andere (geneste) resources. De RESTful manier om dit op te lossen is de verwijzing naar andere resources als URI op te nemen in een resource. Op basis hiervan kan de afnemer, indien gewenst, de gelinkte resources zelf opvragen. Dit is vergelijkbaar met "lazy loading" in een ORM oplossing: resources worden alleen opgehaald als ze nodig zijn.  In sommige gevallen, als de afnemer alle resources nodig heeft, is het efficiënter als de geneste resources in één keer opgehaald worden. Dit is vergelijkbaar met "eager loading" patroon in een ORM-oplossing.
+Vaak wordt er vanuit één resource verwezen (gelinkt) naar andere (geneste) resources. De RESTful manier om dit op te lossen is de verwijzing naar andere resources als URI op te nemen in een resource. Op basis hiervan kan de afnemer, indien gewenst, de gelinkte resources zelf opvragen. Dit is vergelijkbaar met "lazy loading" in een Object Relational Mapping (ORM) oplossing: resources worden alleen opgehaald als ze nodig zijn.  In sommige gevallen, als de afnemer alle resources nodig heeft, is het efficiënter als de geneste resources in één keer opgehaald worden. Dit is vergelijkbaar met "eager loading" patroon in een ORM-oplossing.
 
 Omdat dit tegen de REST principes in gaat, moet het toepassen van dit mechanisme een expliciete keuze zijn. De keuze wordt bij de afnemers van de API belegd, zij weten immers of ze extra informatie nodig hebben en welke informatie precies. Dit mechanisme wordt mogelijk gemaakt met de `expand` query-parameter.
 
 Als `expand=true` wordt meegegeven, dan worden alle geneste resources geladen en embedded in het resultaat teruggegeven. Om de hoeveelheid informatie die geretourneerd wordt te beperken, is verplicht om te specificeren welke resources en zelfs welke velden van een resource teruggeven moeten worden. Hiermee wordt voorkomen dat de hele database wordt leeg getrokken.
 
-Dit wordt gedaan door de resources als een komma's gescheiden lijst te specificeren, bijvoorbeeld: `expand=aanvrager,bevoegdGezag`. De dot-notatie wordt gebruikt om specifieke velden van resources te selecteren. In het onderstaande voorbeeld wordt van de aanvrager alleen het veld "naam" teruggeven en van het bevoegd gezag de complete resource. Conform de HAL-standaard zijn de gelinkte resources embedded in de standaard representatie (zie ook aanpasbare representatie).
+Dit wordt gedaan door de resources als een komma's gescheiden lijst te specificeren, bijvoorbeeld: `expand=aanvrager,bevoegdGezag`. De dot-notatie wordt gebruikt om specifieke velden van resources te selecteren. In het onderstaande voorbeeld wordt van de aanvrager alleen het veld "naam" teruggeven en van het bevoegd gezag de complete resource. Conform de [[HAL]]-standaard zijn de gelinkte resources embedded in de standaard representatie (zie ook aanpasbare representatie).
 
 `GET /aanvragen/12?expand=aanvrager.naam,bevoegdGezag`
 
@@ -164,9 +166,9 @@ Afhankelijk van de implementatie zal door het selectief kunnen laden van gelinkt
 
 ### Aanpasbare representatie
 
-De gebruiker van een API heeft niet altijd de volledige representatie (lees alle velden) van een resource nodig. De mogelijkheid bieden om de gewenste velden te selecteren helpt bij het beperken van het netwerkverkeer (relevant voor lichtgewicht toepassingen), vereenvoudigt het gebruik van de API en maakt deze aanpasbaar (op maat). Om dit mogelijk te maken wordt de query-parameter `fields` ondersteund. De query-parameter accepteert een door komma's gescheiden lijst met veldnamen. Het resultaat is een representatie op maat. Het volgende verzoek haalt bijvoorbeeld voldoende informatie om een gesorteerde lijst van open aanvragen te tonen.
+De gebruiker van een API heeft niet altijd de volledige representatie (lees: alle velden) van een resource nodig. De mogelijkheid bieden om de gewenste velden te selecteren helpt bij het beperken van het netwerkverkeer (relevant voor lichtgewicht toepassingen), vereenvoudigt het gebruik van de API en maakt deze aanpasbaar (op maat). Om dit mogelijk te maken wordt de query-parameter `fields` ondersteund. De query-parameter accepteert een door komma's gescheiden lijst met veldnamen. Het resultaat is een representatie op maat. Het volgende verzoek haalt bijvoorbeeld voldoende informatie op om een gesorteerde lijst van open aanvragen te tonen.
 
-In het geval van HAL zijn de gelinkte resources embedded in de standaard representatie. Met de hier beschreven fields parameter ontstaat de mogelijkheid om de inhoud van de body naar behoefte aan te passen.
+In het geval van HAL zijn de gelinkte resources embedded in de standaard representatie. Met de hier beschreven `fields` parameter ontstaat de mogelijkheid om de inhoud van de body naar behoefte aan te passen.
 
 `GET /aanvragen?fields=id,onderwerp,aanvrager,wijzigDatum&status=open&sorteer=wijzigDatum`
 
@@ -190,13 +192,14 @@ In de Nederlandse API-strategie wordt gekozen voor manier 2 en 3.
 
 API's zijn vanaf elke locatie vanaf het internet te benaderen. Om uitgewisselde informatie af te schermen wordt altijd gebruik gemaakt van een versleutelde verbinding op basis van TLS. Geen uitzonderingen, dus overal en altijd.
 
-Doordat de verbinding altijd is versleuteld maakt het authenticatiemechanisme eenvoudiger. Hierdoor wordt het mogelijk om eenvoudige toegangstokens te gebruiken in plaats van toegangstokens met encryptie.
+Doordat de verbinding altijd is versleuteld is het authenticatiemechanisme eenvoudiger. Hierdoor wordt het mogelijk om eenvoudige toegangstokens te gebruiken in plaats van toegangstokens met encryptie.
 
 > [API principe: De verbinding is ALTIJD versleuteld met minimaal TLS V1.2](../Bijlagen.md#api-14)
 
 > [API principe: API's zijn alleen bruikbaar met behulp van een API-key](../Bijlagen.md#api-15)
 
 ### Authenticatie en autorisatie
+<p class="issue">Hoort dit niet thuis in hfd 5?</p>
 
 Een REST API mag geen toestand (state) bijhouden. Dit betekent dat authenticatie en autorisatie van een verzoek niet mag afhangen van cookies of sessies. In plaats daarvan wordt elk verzoek voorzien van een token. Binnen het Kennisplatform APIs is gekozen voor OAuth 2.0 als de standaarden voor het autorisatiemechanisme.
 
@@ -229,6 +232,8 @@ In een productieomgeving is het wenselijk om voor het (kunnen) autoriseren zo mi
 |Nee|Ja|Ja|`404 Not Found`|
 |Nee|Ja|Nee|`403 Forbidden`|
 |Nee|Nee|?|`403 Forbidden`|
+
+<p class="issue">Komt dit overeen met het <a href="https://rawgit.com/opengeospatial/WFS_FES/master/docs/17-069.html#http_status_codes">gebruik van status codes in WFS 3.0</a>? `401`: The request requires user authentication. The response includes a WWW-Authenticate header field containing a challenge applicable to the requested resource. `403`: The server understood the request, but is refusing to fulfill it. While status code 401 indicates missing or bad authentication, status code 403 indicates that authentication is not the issue, but the client is not authorised to perform the requested operation on the resource."</p>
 
 Het idee van deze regels is dat eerst wordt bepaald of de aanroeper (principal) gerechtigd is voor een resource. Is het antwoord ‘nee' of kan dat niet worden bepaald, bijvoorbeeld omdat de resource nodig is om deze beslissing te kunnen nemen en de resource niet bestaat, dan wordt 403 Forbidden teruggegeven. Op deze manier wordt geen informatie teruggegeven over het al dan niet bestaan van een resource aan een niet-geautoriseerde principal.
 
@@ -263,6 +268,7 @@ Webbrowsers implementeren een zogenaamde "same origin policy", een belangrijk be
 ## Documentatie
 
 Een API is zo goed als de bijbehorende documentatie. De documentatie moet gemakkelijk te vinden, te doorzoeken en publiekelijk toegankelijk zijn. De meeste ontwikkelaars zullen eerst de documenten doornemen voordat ze starten met de implementatie. Wanneer de documentatie is weggestopt in pdf-bestanden en achter een inlog, dan vormt dit een drempel voor ontwikkelaars om aan de gang te gaan en de documentatie is niet vindbaar met zoekmachines.
+Specificaties (documentatie) zijn beschikbaar als Open API Specification (OAS)9 V3.0 of hoger.
 
 > [API principe: Documentatie is gebaseerd op OAS 3.0 of hoger](../Bijlagen.md#api-19)
 
@@ -580,8 +586,8 @@ REST API's voor het werken met geometrieën kunnen een filter aanbieden op basis
 Het is wél belangrijk dat dit antwoord juist is, en de brondata dus zeer gedetailleerde geometrieën bevat; een gebruiker wil immers geen fout antwoord krijgen. Mocht iemand andersom alle percelen met status = actief willen plotten op een kaartje, dan wil hij/zij juist de geometrieën in de response ontvangen, maar is het detailniveau weer niet zo belangrijk.
 
 > [API principe: GEO API's ontvangen en versturen GeoJSON](../Bijlagen.md#api-38)
->
-> Voor GEO API's wordt bij voorkeur de standaard GeoJSON gebruikt.
+
+Voor GEO API's wordt bij voorkeur de standaard GeoJSON [[rfc8142]] gebruikt.
 
 ### Resultaat (response)
 
@@ -661,9 +667,9 @@ In het volgende voorbeeld wordt aangegeven hoe dit kan worden gerealiseerd:
 
 ### CRS-negotiation
 
-Het default CRS (Coordinate Reference System) van GeoJSON is WGS84. Dit is het globale coördinatenstelsel dat vanwege de verschuiving van de tektonische platen minder nauwkeurig is dan lokale coördinatenstelsels zoals ETRS89 (EPSG:4258, Europees) of RD (EPSG:28992, Nederlands).
+Het default CRS (Coordinate Reference System) van GeoJSON is WGS84. Dit is het globale coördinatenstelsel dat overal ter wereld redelijk goed bruikbaar is, maar vanwege het gebruikte model van de aarde en de verschuiving van de tektonische platen minder nauwkeurig is dan lokale coördinatenstelsels zoals ETRS89 (EPSG:4258, Europees) of RD (EPSG:28992, Nederlands).
 
-Omdat de meeste client-bibliotheken met WGS84 werken, schrijft de W3C/OGC werkgroep "Spatial Data on the Web" voor om dit standaard te ontsluiten. Dit kan direct op een kaart geplot worden zonder moeilijke transformaties. De API-strategie voorziet hierin door naast ETRS89 en RD ook WGS84 te ondersteunen.
+Omdat de meeste client-bibliotheken met WGS84 werken, schrijft de W3C/OGC werkgroep "Spatial Data on the Web" voor om dit standaard te ontsluiten. Dit kan direct op een kaart geplot worden zonder moeilijke transformaties. De API-strategie voorziet hierin door naast ETRS89 en RD ook WGS84 of Web Mercator (EPSG:3857, voor rasterdata) te ondersteunen.
 
 > [API principe: Het voorkeur-coördinatenstelsels (CRS) is ETRS89, maar het CRS wordt niet impliciet geselecteerd](../Bijlagen.md#api-43)
 
@@ -707,7 +713,7 @@ Voor het transformeren tussen coördinaatreferentiesystemen is binnen de Rijksov
 
 ## Paginering
 
-Voor paginering wordt aangesloten op Hypertext Application Language (HAL). Dit is een standaard voor het uitdrukken van hyperlinks met JSON [RFC4627]. Aan geretourneerde objecten worden twee gereserveerde velden (gedefinieerd door RFC5988) `_links` (verplicht) en `_embedded` (optioneel) toegevoegd. Deze velden vertegenwoordigen respectievelijk hyperlinks en embedded resources.  
+Voor paginering wordt aangesloten op Hypertext Application Language (HAL). Dit is een standaard voor het uitdrukken van hyperlinks met JSON [[rfc4627]]. Aan geretourneerde objecten worden twee gereserveerde velden (gedefinieerd door RFC5988) `_links` (verplicht) en `_embedded` (optioneel) toegevoegd. Deze velden vertegenwoordigen respectievelijk hyperlinks en embedded resources.  
 
 Hier is een voorbeeld van een JSON+HAL representatie:
 
@@ -791,7 +797,7 @@ HTTP headers worden gebruikt om de bevragingslimit naar de gebruiker te communic
 
 > [API principe: Beperken van het aantal verzoeken per tijdsperiode wordt aangeraden](../Bijlagen.md#api-48)
 
-RFC 6585 introduceerde een HTTP statuscode `429 Too Many Requests` die wordt gebruikt om het overschrijden van het aantal verzoeken te melden aan de gebruiker.
+[[rfc6585]] introduceert een HTTP statuscode `429 Too Many Requests` die wordt gebruikt om het overschrijden van het aantal verzoeken te melden aan de gebruiker.
 
 > [API principe: Begrenzingen worden proactief gemeld](../Bijlagen.md#api-49)
 
@@ -811,7 +817,7 @@ Een JSON representatie van een fout moet een aantal zaken bevatten om een ontwik
 - Een gedetailleerde beschrijving van de fout (die helpt bij het oplossen);
 - Een unieke identificatie in de vorm van een URI die hoort bij het specifieke voorkomen van de fout (de fout-instantie). Het strekt de voorkeur om een URN te gebruiken waarmee alleen daartoe gerechtigde gebruikers details kunnen opzoeken in de fout-log.  
 
-De basis voor deze standaardformaten is: <https://tools.ietf.org/html/rfc7807.> Een JSON-representatie van een fout ziet er als volgt uit:
+De basis voor deze standaardformaten is [[rfc7807]]. Een JSON-representatie van een fout ziet er als volgt uit:
 
 ```json
 {
