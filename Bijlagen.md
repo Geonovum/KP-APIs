@@ -4,7 +4,7 @@
 
 ### <a name="api-03"></a>API-03: API's garanderen dat operaties "Veilig" en/of "Idempotent" zijn
 
-Operaties van een API zijn gegarandeerd "Veilig" en/of "Idempotent" als dat zo is bepaald (zie tabel in DSO API Strategie) .
+Operaties van een API zijn gegarandeerd "Veilig" en/of "Idempotent" als dat zo is bepaald.
 
 ### <a name="api-04"></a>API-04: Toestandsinformatie wordt nooit op de server opgeslagen
 
@@ -51,7 +51,7 @@ De verbinding is ALTIJD versleuteld op basis van minimaal TLS V1.2. Geen uitzond
 
 ### <a name="api-15"></a>API-15: API's zijn alleen bruikbaar met behulp van een API-key
 
-Voor alle DSO API's wordt minimaal een registratie inclusief acceptatie van de fair use voorwaarden vereist. Op basis hiervan zal dan een API-key wordt uitgegeven.
+Voor alle API's wordt minimaal een registratie inclusief acceptatie van de fair use voorwaarden vereist. Op basis hiervan zal dan een API-key wordt uitgegeven.
 
 ### <a name="api-16"></a>API-16: Tokens worden niet gebruikt in query parameters
 
@@ -140,9 +140,9 @@ API's die vrije-tekst zoeken ondersteunen kunnen overweg met twee soorten wildca
 - `*` Komt overeen met nul of meer (niet-spatie) karakters
 - `?` Komt precies overeen met één (niet-spatie) karakter
 
-### <a name="api-38"></a>API-38: GEO API's ontvangen en versturen GeoJSON
+### <a name="api-38"></a>API-38: GEO API's ontvangen en versturen bij voorkeur GeoJSON
 
-Voor GEO API's wordt de standaard GeoJSON gebruikt.
+Voor GEO API's wordt bij voorkeur de standaard GeoJSON gebruikt.
 
 ### <a name="api-39"></a>API-39: GeoJSON is onderdeel van de embedded resource in de JSON response
 
