@@ -231,8 +231,7 @@ Hiermee wordt een unieke plek (die altijd synchroon loopt met de features die de
 
 ## Architectuur
 
-> Let op: Inleidende tekst.
-> Dit is het hoofdstuk Architectuur in wording. De onderwerpen in het hoofstuk staan nog ter discussie.  
+> **Let op:** Dit is het hoofdstuk Architectuur in wording. De onderwerpen in het hoofstuk staan nog ter discussie.  
 > Ze staan er nog niet met de bedoeling om normatief en/of best-procatice te zijn.
 
 
@@ -295,8 +294,6 @@ data ‘gebruiken’ bij het werken met API’s.
 >   thematische indeling:
 
 ### <!-- 6.2.1 --> Beveiliging
-
-<redactie>Blijft deze paragraaf? Heel Hoofdstuk *Beveiliging* is eraan gewijd.</redactie>
 
 ### <!-- 6.2.2 --> Autorisatie
 
@@ -400,7 +397,4 @@ De bovenstaande patronen worden bekrachtigd door onderstaande principes. De hier
 
 >   Iig: use case Drechtsteden. Overige? Let wel: use cases zijn in dit stadium
 >   het uitgangspunt
-
-
-
 
