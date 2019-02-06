@@ -231,8 +231,9 @@ Hiermee wordt een unieke plek (die altijd synchroon loopt met de features die de
 
 ## Architectuur
 
-> **Let op:** Dit is het hoofdstuk Architectuur in wording. De onderwerpen in het hoofstuk staan nog ter discussie.  
-> Ze staan er nog niet met de bedoeling om normatief en/of best-procatice te zijn.
+> **Let op:** Dit is het hoofdstuk Architectuur in wording.  
+> De onderwerpen in het hoofdstuk staan nog ter discussie, en ze staan er nog niet met de bedoeling om normatief  
+> en/of best-procatice te zijn.
 
 
 

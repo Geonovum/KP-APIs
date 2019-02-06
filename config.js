@@ -16,7 +16,7 @@ var respecConfig =
   specStatus: "GN-BASIS",
   specType: "HR",
   pubDomain: "etc",
-  publishDate: "2018-06-15",
+  publishDate: "2019-02-13",
   editors: 
   [
     {
