@@ -407,10 +407,9 @@ opvragen ook terugkomt bij notificeren, dit is een resultaat van de
 ontwikkeling: "Van kopiëren van data naar bevragen bij de bron" (zie hoofstuk
 2.7).
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<img src='media/visualisatie%20patronen.png' width="400" />
-<figcaption>Visualisatie patronen (gelaagdheid tussen real life, proces en data).</figcaption>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<figure id="patronen"><img src="media/visualisatie patronen.png" alt="">
+  <figcaption>Visualisatie patronen (gelaagdheid tussen real life, proces en data).</figcaption>
+</figure>
 
 Toelichting bij de visualisatie: Real-life gebeurtenissen liggen ten grondslag
 aan alles wat in systemen processen triggert. Indien een gebeurtenis wordt
@@ -435,10 +434,10 @@ afnemerindicaties op persoonsniveau i.c.m. gebeurtenis worden geplaatst (het
 verzorgingsgebied is niet van belang en is dus gelijk aan heel Nederland).
 Hieronder wordt dit visueel weergegeven.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<img src='media/visualisatie%20notificeren.png' width="500" />
-<figcaption>Visualisatie notificeren (de wijze van notificeren en plaatsen van afnemerindicaties)</figcaption>
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+<figure id="notificeren"><img src="media/visualisatie notificeren.png" alt="">
+  <figcaption>Visualisatie notificeren (de wijze van notificeren en plaatsen van afnemerindicaties).</figcaption>
+</figure>
 
 Toelichting op de voorbeelden: - BAG: een afnemer volgt één of meerdere
 BAG-gebeurtenissen uit een bepaald verzorgingsgebied (zoals hierboven gemeente
