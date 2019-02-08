@@ -510,5 +510,6 @@ op alle API’s.
 
 ### Architectuur bijlagen
 
-[Werkgroep Architectuur\\Werkgroep_API_Architectuur Draft
-D[29148].pdf](Werkgroep%20Architectuur/Werkgroep_API_Architectuur%20Draft%20D%5b29148%5d.pdf)
+Bijgevoegd document:
+
+[Werkgroep Architectuur\\Werkgroep_API_Architectuur Draft D[29148].pdf](Werkgroep%20Architectuur/Werkgroep_API_Architectuur%20Draft%20D%5b29148%5d.pdf)
