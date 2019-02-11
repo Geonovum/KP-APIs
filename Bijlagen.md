@@ -357,12 +357,12 @@ is management en beheer van de API's van de organisatie noodzakelijk.
 
 Een organisatie heeft verschillende soorten API's:
 
-_Open API's_: voor ontsluiten van diensten zonder toegangsbeperking bv open data.
+_Open API's:_ voor ontsluiten van diensten zonder toegangsbeperking bv open data.
 
 _Gesloten API's:_ voor ontsluiten van diensten met toegangsbeperking bv persoonsgegevens en vertrouwelijke gegevens of diensten voor specifieke partijen.
 
   
-In Figuur 2 beschrijft vanuit het perspectief van een overheidsorganisatie als dienstaanbieder de onderwerpen die aandacht vragen in een op API's gebaseerde architectuur. Hieronder worden deze onderwerpen uitgebreider toegelicht.
+Figuur 2 beschrijft vanuit het perspectief van een overheidsorganisatie als dienstaanbieder de onderwerpen die aandacht vragen in een op API's gebaseerde architectuur. Hieronder worden deze onderwerpen uitgebreider toegelicht.
 
 ![](media/clip04.png)
 
