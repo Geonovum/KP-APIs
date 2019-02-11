@@ -212,7 +212,7 @@ nationaal bij developer.overheid.nl. Presenteer breed toepasbare API’s en
 datasets daar prominenter dan specifiekere API’s en obscure datasets, wederom te
 vergelijken met de toptaken-aanpak bij gemeentelijke websites. Een goed
 developersportaal informeert niet alleen over beschikbare API’s, maar inspireert
-en verleidt zelfs developers op bepaalde API’s te gebruiken. Het vullen van het
+en verleidt zelfs developers om bepaalde API’s te gebruiken. Het vullen van het
 developersportaal mag daarom nooit sluitpost van een project zijn.
 
 ### Aanbeveling 8: niet alles is een API! 

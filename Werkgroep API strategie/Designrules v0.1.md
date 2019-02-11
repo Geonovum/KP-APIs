@@ -10,7 +10,7 @@ Belangrijk om in het achterhoofd te houden bij het realiseren van een API is dat
 
 ## RESTful principes
 
-De belangrijkste principe van REST is het scheiden van de API in logische resources ("dingen"). De resources beschrijven de informatie van het "ding". Deze resources worden gemanipuleerd met behulp van HTTP-verzoeken en HTTP-operaties. Elke operatie (GET, `POST`, `PUT`, `PATCH`, `DELETE`) heeft een specifieke betekenis.
+Het belangrijkste principe van REST is het scheiden van de API in logische resources ("dingen"). De resources beschrijven de informatie van het "ding". Deze resources worden gemanipuleerd met behulp van HTTP-verzoeken en HTTP-operaties. Elke operatie (GET, `POST`, `PUT`, `PATCH`, `DELETE`) heeft een specifieke betekenis.
 > HTTP definieert ook operaties als `HEAD`, `TRACE`, `OPTIONS` en `CONNECT`. Deze worden echter in de context van REST vrijwel niet gebruikt en zijn daarom in de verdere uitwerking weggelaten.
 
 |Operatie|CRUD|Toelichting|
