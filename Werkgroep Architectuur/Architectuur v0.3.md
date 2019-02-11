@@ -81,7 +81,7 @@ Principes ondersteunen het proces om te komen tot nauwkeurige afbakening en defi
 In de visualisatie hieronder is de structuur van de principes zichtbaar. Het blauw gekleurde principe is overkoepelend. Verder passen de overige principes binnen verschillende architectuurpatronen van API’s die ook in onderstaand figuur wordt weergegeven (zie oranje gekleurde principes).  
 
 <figure id='principes'>
-	<img src='media/visualisatie%20principes.png' width="400" />
+	<img src='media/visualisatie%20principes.png' width="800" />
 	<figcaption>Structuur tussen de principes.</figcaption>
  </figure>
 <BR>
@@ -155,7 +155,7 @@ Het proces van Terugmelden onderscheidt 3 fasen:
 De verschillende patronen zijn aan elkaar gerelateerd en hebben een duidelijke afhankelijkheid. Dit is in onderstaand figuur afgebeeld. Per patroon is ook aangegeven hoe gebeurtenissen, processen en datastromen zich tot elkaar verhouden.
 	
 <figure id='patronen'>
-	<img src='media/visualisatie%20patronen.png' width="400" />
+	<img src='media/visualisatie%20patronen.png' width="800" />
 	<figcaption>Visualisatie patronen (gelaagdheid tussen real life, proces en data).</figcaption>
  </figure>
 <BR>
