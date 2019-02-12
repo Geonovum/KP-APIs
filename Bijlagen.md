@@ -324,8 +324,7 @@ API biedt) gekoppeld aan de actuele documentatie.
 
 >   **Let op:** Dit is het hoofdstuk Architectuur in wording.  
 >   De onderwerpen in het hoofdstuk staan nog ter discussie, en ze staan er nog
->   niet met de bedoeling om normatief  
->   en/of best-procatice te zijn.
+>   niet met de bedoeling om normatief en/of best-practice te zijn.
 
 >   *Dit hoofdstuk gaat in op de vraag: Hoe kan je je applicatie landschap
 >   inrichten zodat je APIs kan aanbieden. Welke componenten zijn hiervoor
