@@ -4,6 +4,7 @@ Meer informatie over het Kennisplatform APIs is te vinden op via <https://www.ge
 Hier vindt je ook de mogelijkheid je aan te melden voor de werkgroepen, het slack kanaal en de nieuwsbrief.
 
 **Bekijk de werkversie van de API strategie voor de nederlandse overheid op:** <https://geonovum.github.io/KP-APIs/>
+
 **Van 13 februari tot 27 maart loopt de publieke consultatie. Reageren kan hier:**
 https://www.formdesk.com/geonovum/APIstrategie
 
