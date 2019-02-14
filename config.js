@@ -59,7 +59,7 @@ var respecConfig =
     },
   ],
   shortName: "API-Strategie",
-  subtitle: "Werkversie",
+  subtitle: "Consultatieversie",
   github: "https://github.com/geonovum/KP-APIs",
   issueBase: "https://github.com/geonovum/KP-APIs/issues/",
   localBiblio: {
@@ -77,7 +77,7 @@ var respecConfig =
         "Expertadvies OAuth 2.0",
       authors: ["P. Dam"],
       date: "24 februari 2017",
-      publisher: "Forum STandaardisatie",
+      publisher: "Forum Standaardisatie",
     },
 	"JWT": {
       href: "https://tools.ietf.org/html/rfc7519",
