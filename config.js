@@ -13,9 +13,9 @@
 
 var respecConfig = 
 {
-  specStatus: "GN-BASIS",
+  specStatus: "GN-CV",
   specType: "HR",
-  pubDomain: "etc",
+  pubDomain: "api",
   publishDate: "2019-02-13",
   editors: 
   [
@@ -58,7 +58,7 @@ var respecConfig =
       companyURL: "",
     },
   ],
-  shortName: "API strategie",
+  shortName: "API-Strategie",
   subtitle: "Werkversie",
   github: "https://github.com/geonovum/KP-APIs",
   issueBase: "https://github.com/geonovum/KP-APIs/issues/",
