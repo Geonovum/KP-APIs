@@ -61,7 +61,6 @@ var respecConfig =
     },
   ],
   shortName: "API-Strategie",
-  subtitle: "Consultatieversie",
   github: "https://github.com/geonovum/KP-APIs",
   issueBase: "https://github.com/geonovum/KP-APIs/issues/",
   localBiblio: {
