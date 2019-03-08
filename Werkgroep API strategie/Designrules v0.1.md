@@ -708,54 +708,43 @@ Voor het transformeren tussen coördinaatreferentiesystemen is binnen de Rijksov
 
 ## Paginering
 
-Voor paginering wordt voor het media type 'application/hal+json' aangesloten op Hypertext Application Language (HAL). Aan geretourneerde objecten worden twee gereserveerde velden `_links` (verplicht) en `_embedded` (optioneel) toegevoegd. Deze velden vertegenwoordigen respectievelijk hyperlinks en embedded resources.  
+Voor paginering worden de hypermedia controls `self`, `first`, `prev`, `next` en `last` gebruikt zoals beschreven in de [RFC5988](https://tools.ietf.org/html/rfc5988).
 
-Hier is een voorbeeld van een JSON+HAL representatie:
+Hieronder een voorbeeld van paginering voor het media type 'application/json':
 
-```json
+```
 {
-  "_links": {
-    "self": {
-      "href": "https://.../api/registratie/v1/aanvragen?pagina=3"
-    },
-    "first": {
-      "href": "https://.../api/registratie/v1/aanvragen"
-    },
-    "prev": {
-      "href": "https://.../api/registratie/v1/aanvragen?pagina=2"
-    },
-    "next": {
-      "href": "https://.../api/registratie/v1/aanvragen?pagina=4"
-    },
-    "last": {
-      "href": "https://.../api/registratie/v1/aanvragen?pagina=5"
-    }
-  },
-  "id": "https://.../api/registratie/v1/aanvragen/12",
-  "naam": "Mijn dakkapel",
-  "samenvatting": "Ik wil een dakkapel bouwen!",
-  "_embedded": {
-    "aanvrager": {
-      "naam": "Bob"
-    }
-  }
+	"self": "https://.../api/registratie/v1/aanvragen?page=3",
+	"first": "https://.../api/registratie/v1/aanvragen",
+	"prev": "https://.../api/registratie/v1/aanvragen?page=2",
+	"next": "https://.../api/registratie/v1/aanvragen?page=4",
+	"last": "https://.../api/registratie/v1/aanvragen?page=5",
+	results: [
+		{
+			"self": "https://.../api/registratie/v1/aanvragen/12",
+			"titel": "Mijn dakkapel",
+			"samenvatting": "Ik wil een dakkapel bouwen!",
+			"aanvrager": "Bob"
+		},
+		...
+	]
 }
 ```
-
-Indien het "plain" JSON, GeoJSON of iets anders dan HAL betreft zijn er geen `_links`. Deze kunnen dan opgenomen worden in de link response headers. Naast de representatie wordt de volgende metadata teruggegeven als HTTP headers.
+De query-parameter `page` wordt gebruikt om te referen naar een pagina binnen de collection. Naast de bovenstaande representatie wordt de volgende metadata teruggegeven als HTTP headers:
 
 |HTTP header|Toelichting|
 |-|-|
 |`X-Total-Count` (optioneel)|Totaal aantal resultaten|
 |`X-Pagination-Count` (optioneel)|Totaal aantal pagina's|
 |`X-Pagination-Page` (optioneel)|Huidige pagina|
-|`X-Pagination-Limit` (optioneel)|Aantal resultaten per pagina|
+|`X-Pagination-Limit` (optioneel)|Aantal resultaten per pagina
 
 Bij grote datasets kunnen de berekeningen voor X-Total-Count en X-Pagination-Count behoorlijke impact hebben op de performance, voornamelijk als er niet of nauwelijks gefilterd wordt.
 
-> [API principe: Paginering wordt gerealiseerd op basis van JSON+HAL bij media type: application/hal+json](#api-42)
+Voor andere media types (GeoJSON, JSON+HAL, etc.) wordt verwezen naar de desbetreffende standaard voor het omgaan met paginering.
 
-Alle links in HAL zijn absoluut. Dit in verband met mogelijke externe links (naar andere endpoints, linked-data resources, etc.) en eenvoudigere navigatie door clients ie dan niet zelf de URL hoeven op te bouwen.  
+> [API principe: Paginering wordt gerealiseerd op basis van [RFC5988](https://tools.ietf.org/html/rfc5988).](#api-42)
+  
 
 ## Caching
 
