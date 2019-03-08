@@ -729,7 +729,7 @@ Hieronder een voorbeeld van paginering voor het media type 'application/json':
 	]
 }
 ```
-De query-parameter `page` wordt gebruikt om te referen naar een pagina binnen de resource-collectie. Er is besloten om de pagineringsinformatie op te nemen in de JSON-body in plaats van de HTTP Link header omdat het meer developers-friendly is:
+De query-parameter `page` wordt gebruikt om te verwijzen naar een pagina binnen de resource-collectie. Er is besloten om de pagineringsinformatie op te nemen in de JSON-body in plaats van de HTTP Link header omdat het meer developers-friendly is:
 * JSON is makkelijker te parsen dan tekstuele structuren in een Link header.
 * HATEOAS-principe: door te klikken op de pagina-links kan de developer snel begrijpen hoe het mechanisme werkt.
 
