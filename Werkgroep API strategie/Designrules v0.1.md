@@ -1,4 +1,3 @@
-
 # API designrules (ontwerpregels)
 
 > *Het doel van dit hoofdstuk is een set van regels te beschrijven op basis waarvan de hele overheid op eenduidige manier RESTful APIs (afgekort tot APIs) aan kan bieden. Hiermee wordt bereikt dat de overheid voorspelbaar is en ontwikkelaars makkelijk aan de slag kunnen en APIs kunnen consumeren en combineren. Vooralsnog is niet voorzien dat in dit hoofdstuk ook regels worden opgenomen voor ander type APIs zoals SOAP. In bijlage API-principes is de set van regels samengevat in een aantal principes die in de kern beschrijven waarmee rekening moet worden gehouden bij het ontwerpen en realiseren van API's*
@@ -730,7 +729,11 @@ Hieronder een voorbeeld van paginering voor het media type 'application/json':
 	]
 }
 ```
-De query-parameter `page` wordt gebruikt om te referen naar een pagina binnen de collection. Naast de bovenstaande representatie wordt de volgende metadata teruggegeven als HTTP headers:
+De query-parameter `page` wordt gebruikt om te referen naar een pagina binnen de resource-collectie. Er is besloten om de pagineringsinformatie op te nemen in de JSON-body in plaats van de HTTP Link header omdat het meer developers-friendly is:
+* JSON is makkelijker te parsen dan tekstuele structuren in een Link header.
+* HATEOAS-principe: door te klikken op de pagina-links kan de developer snel begrijpen hoe het mechanisme werkt.
+
+Naast de bovenstaande JSON-response wordt de volgende metadata teruggegeven als HTTP headers.
 
 |HTTP header|Toelichting|
 |-|-|
@@ -743,8 +746,7 @@ Bij grote datasets kunnen de berekeningen voor X-Total-Count en X-Pagination-Cou
 
 Voor andere media types (GeoJSON, JSON+HAL, etc.) wordt verwezen naar de desbetreffende standaard voor het omgaan met paginering.
 
-> [API principe: Paginering wordt gerealiseerd op basis van [RFC5988](https://tools.ietf.org/html/rfc5988).](#api-42)
-  
+> [API principe: Voor het media type "application/json" wordt paginering gerealiseerd op basis van RFC5988](#api-42)
 
 ## Caching
 
