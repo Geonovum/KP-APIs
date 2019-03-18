@@ -713,6 +713,7 @@ Hieronder een voorbeeld van paginering voor het media type 'application/json':
 
 ```
 {
+	"count": 1500,
 	"self": "https://.../api/registratie/v1/aanvragen?page=3",
 	"first": "https://.../api/registratie/v1/aanvragen",
 	"prev": "https://.../api/registratie/v1/aanvragen?page=2",
@@ -729,7 +730,16 @@ Hieronder een voorbeeld van paginering voor het media type 'application/json':
 	]
 }
 ```
-De query-parameter `page` wordt gebruikt om te verwijzen naar een pagina binnen de resource-collectie. Er is besloten om de pagineringsinformatie op te nemen in de JSON-body in plaats van de HTTP Link header omdat het meer developers-friendly is:
+Het element `count` staat voor het totale aantal resultaten en is niet verplicht. De query-parameter `page` wordt gebruikt om te verwijzen naar een pagina binnen de resource-collectie. De resulaten binnen de pagina worden opgenomen in de `results` array. 
+
+|Hypermedia control|Toelichting|
+|`self` (verplicht)|Link naar de huidige pagina.|
+|`first` (optioneel)|Link naar de eerste pagina.|
+|`prev` (verplicht)|Link naar de vorige pagina. Indien de huidige pagina de eerste pagina is, dan moet deze link worden weggelaten.|
+|`next` (verplicht)|Link naar de volgende pagina. Indien de huidige pagina de laatste pagina is, dan moet deze link worden weggelaten.|
+|`last` (optioneel)|Link naar de laatste pagina.|
+
+Er is besloten om de pagineringsinformatie op te nemen in de JSON-body in plaats van de HTTP Link header omdat het meer developers-friendly is:
 * JSON is makkelijker te parsen dan tekstuele structuren in een Link header.
 * HATEOAS-principe: door te klikken op de pagina-links kan de developer snel begrijpen hoe het mechanisme werkt.
 
