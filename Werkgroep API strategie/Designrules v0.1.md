@@ -733,10 +733,11 @@ Hieronder een voorbeeld van paginering voor het media type 'application/json':
 Het element `count` staat voor het totale aantal resultaten en is niet verplicht. De query-parameter `page` wordt gebruikt om te verwijzen naar een pagina binnen de resource-collectie. De resulaten binnen de pagina worden opgenomen in de `results` array. 
 
 |Hypermedia control|Toelichting|
+|-|-|
 |`self` (verplicht)|Link naar de huidige pagina.|
 |`first` (optioneel)|Link naar de eerste pagina.|
-|`prev` (verplicht)|Link naar de vorige pagina. Indien de huidige pagina de eerste pagina is, dan moet deze link worden weggelaten.|
-|`next` (verplicht)|Link naar de volgende pagina. Indien de huidige pagina de laatste pagina is, dan moet deze link worden weggelaten.|
+|`prev` (conditioneel verplicht)|Link naar de vorige pagina. Indien de huidige pagina de eerste pagina is, dan moet deze link worden weggelaten. In alle andere gevallen is deze link verplicht.|
+|`next` (conditioneel verplicht)|Link naar de volgende pagina. Indien de huidige pagina de laatste pagina is, dan moet deze link worden weggelaten. In alle andere gevallen is deze link verplicht.|
 |`last` (optioneel)|Link naar de laatste pagina.|
 
 Er is besloten om de pagineringsinformatie op te nemen in de JSON-body in plaats van de HTTP Link header omdat het meer developers-friendly is:
@@ -752,7 +753,7 @@ Naast de bovenstaande JSON-response wordt de volgende metadata teruggegeven als 
 |`X-Pagination-Page` (optioneel)|Huidige pagina|
 |`X-Pagination-Limit` (optioneel)|Aantal resultaten per pagina
 
-Bij grote datasets kunnen de berekeningen voor X-Total-Count en X-Pagination-Count behoorlijke impact hebben op de performance, voornamelijk als er niet of nauwelijks gefilterd wordt.
+Bij grote datasets kunnen de berekeningen voor X-Total-Count en X-Pagination-Count behoorlijke impact hebben op de performance, voornamelijk als er niet of nauwelijks gefilterd wordt. De header `X-Total-Count` bevat dezelfde informatie als het element `count` in de JSON-body (alleen voor het tonen van het totale aantal resultaten is besloten om beide mogelijkheden te ondersteunen).
 
 Voor andere media types (GeoJSON, JSON+HAL, etc.) wordt verwezen naar de desbetreffende standaard voor het omgaan met paginering.
 
