@@ -1,0 +1,56 @@
+# Werkgroep Authenticatie/Autorisatie
+
+**Datum:** 22-03-2018 13:00-15:00
+
+**Aanwezig:** 
+Paul dam(bureau forum standaardisatie), Frank Terpstra(Geonovum), Jan Jaap Zoutendijk(Enable-U/RWS Digitaal Stelsel Omgevingswet), Peter Haasnoot(Logius), Erwin Reinhoud (Kennisnet), Bob te riele(RvIG), Remco Schaar(Logius), Martin Borgman(Kadaster), 
+**Afgemeld:** Frits Bouma (DUO) 
+
+##	Introductie OpenIDConnect specificaties (Remco Schaar)
+Logius gaat een routeringsvoorziening inrichten waarmee meerdere authenticatie-middelen(DigiD, eHerkenning, etc...) via één koppelvlak ontsloten kunnen worden. Dit vereenvoudigd de implementatie voor dienstverleners die gebruik willen maken van een authenticatiemiddel. Zie verder [bijgevoegde presentatie][1]. 
+REmco ligt de [koppelvlak specificatie][2] verder toe.
+Routeringsvoorziening is alleen voor publieke domein, dynamic registration is alleen voor dienstverleners met OIN
+Dynamic registration bedoeld om technische beheerlast zo laag mogelijk te houden. Er komt nog steeds een administratief proces waarmee een OIN op de whitelist komt.
+Vraag Erwin: Geen beperking van het aantal attributen?
+Antwoord: Klopt we ondersteunen nu alleen EIDAS attributen(minimale dataset) maar het landschap kan uitgebreid worden. Mechanisme is generiek.
+Erwin: We hebben SURFConnect, idee is om hier iGov NL te ondersteunen met extra attributen
+Werkt dat het in het onderwijsveld waar je te maken hebt met private partijen?
+Antwoord: Is mogelijk door o.a. gebruik te maken van pseudoniem voor die partijen die geen BSN mogen gebruiken.
+Vraag: Wordt er software geboden om dienstverleners te ondersteunen?
+Antwoord: Er wordt een docker container geboden om encryptie te ondersteunen.
+
+OpenIDconnect gebaseerd op interactie met browser
+Eerste versie gericht op webkanaal. Native apps, mobiel nog niet volledig uitgewerkt. Afhankelijk van de usecases verschillen de oplossingen. Bij IETF zie je twee lijnen : shared secret met PKCE of iedere instantie client individueel laten registreren.
+
+Graag feedback wanneer er dingen in de specificatie staan die niet goed in de markt ondersteund worden.
+In de uiteindelijke versie 1.0 worden links naar confluence (niet toegankelijk extern toegangkelijk) vervangen.
+## OpenIDConnect profiel
+Frank koppelt namens werkgroep terug aan openid foundation over onze profielen op iGov. Dit gebeurd als publieke consultatie profiel OAuth verwerkt is.
+
+Er staan een aantal beveiligingsvoorschriften in die specifiek lijken voor de keten. Kunnen we dit niet centraal definiëren?
+NCSC komt binnen enkele dagen met een nieuwe TLS handreiking. NCSC wordt niet vaak geupdate. 
+Het zou mooi zijn als er voor de overheid een tool komt als SSLabs om te controleren of je software op TLS gebied alles goed doet.
+
+Certificaten:
+Je kan opnemen of verwijzen. De spec zegt je kan beter met een referentie kan werken behalve de registratie daar moet hij mee gestuurd worden. Gebruik verwijzingen geeft risicos. Remco gaat checken op consistentie en of de keuzes inderdaad kloppen met OAuthNL profiel.
+
+Signing voor JSON is gebasser op een bestaande standaard (nog niet formeel vastgesteld). Gericht op het ondersteunen van onweerlegbaar uitwisselen van userinfo en andere bronnen.
+
+Jan Jaap: PKCE lijkt optioneel
+Remco: voor native apps is het verplicht. Indien PKCE gebruikt wordt is code verifier verplicht.
+Frank: Gaat helpen OpenID profiel in respec te zetten wanneer rijkshuisstijl beschikbaar is.
+
+## Signing & encryptie ondersteunen 
+Erwin Reinhoud ligt kort de behoefte toe vanuit Kennisnet. Frank ligt kort de uscase vanuit Geostandaarden toe. Besloten wordt om dit onderwerp op te pakken en de volgende bijeenkomst inhoudelijk te behandelen.
+Aan gezien signing en encryptie verder gaat dan alleen Authenticatie en Autorisatie gaan we onze werkgroep hernoemen naar "beveiliging"
+
+## terugkoppeling publieke consultatie OAuth profiel
+Frank laat de binnengekomen reacties zien. 
+De suggestie van Marc Fleischeuers om PKIOvoerheid certificaten naast als x5c paramater ook als x5u paramater mee te sturen nemen we over.
+Naar aanleiding van de reactie van Joost Molenaar gaan we ervoor proberen te zorgen dat ons profiel inderdaad alleen maar een vernauwing van de internationale standaarden wordt. Dit betekent dat we bij iGov een aantal changerequests moeten indienen.
+We gaan verwijzen naar NCSC TLS profiel. 
+Volledig schrappen implicit flow (buiten profiel plaatsen) hiermee volgen we de internationale trend.
+In API strategie hoofdstuk kunnen we onze keuzes in het OAuth profiel beter motiveren.
+
+[1]: https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20Authenticatie%20Autorisatie/Verslagen/20190321%20OIDC%20tbv%20NLmeeting.pdf
+[2]:https://github.com/Geonovum/KP-APIs/tree/master/Werkgroep%20Authenticatie%20Autorisatie/Verslagen/20190305%20OIDC%20specs%20DRAFT.pdf
