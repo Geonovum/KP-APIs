@@ -4,19 +4,26 @@
 
 **Aanwezig:** 
 Paul dam(bureau forum standaardisatie), Frank Terpstra(Geonovum), Jan Jaap Zoutendijk(Enable-U/RWS Digitaal Stelsel Omgevingswet), Peter Haasnoot(Logius), Erwin Reinhoud (Kennisnet), Bob te riele(RvIG), Remco Schaar(Logius), Martin Borgman(Kadaster), 
+
 **Afgemeld:** Frits Bouma (DUO) 
 
 ##	Introductie OpenIDConnect specificaties (Remco Schaar)
 Logius gaat een routeringsvoorziening inrichten waarmee meerdere authenticatie-middelen(DigiD, eHerkenning, etc...) via één koppelvlak ontsloten kunnen worden. Dit vereenvoudigd de implementatie voor dienstverleners die gebruik willen maken van een authenticatiemiddel. Zie verder [bijgevoegde presentatie][1]. 
-REmco ligt de [koppelvlak specificatie][2] verder toe.
+
+Remco ligt de [koppelvlak specificatie][2] verder toe.
 Routeringsvoorziening is alleen voor publieke domein, dynamic registration is alleen voor dienstverleners met OIN
 Dynamic registration bedoeld om technische beheerlast zo laag mogelijk te houden. Er komt nog steeds een administratief proces waarmee een OIN op de whitelist komt.
+
 Vraag Erwin: Geen beperking van het aantal attributen?
+
 Antwoord: Klopt we ondersteunen nu alleen EIDAS attributen(minimale dataset) maar het landschap kan uitgebreid worden. Mechanisme is generiek.
-Erwin: We hebben SURFConnect, idee is om hier iGov NL te ondersteunen met extra attributen
-Werkt dat het in het onderwijsveld waar je te maken hebt met private partijen?
+
+Erwin: Binnen het onderwijs zijn er vele ketens met een publiek-private samenwerking.  Biedt het profiel mogelijkheden om met iets anders te werken dan een BSN?
+
 Antwoord: Is mogelijk door o.a. gebruik te maken van pseudoniem voor die partijen die geen BSN mogen gebruiken.
+
 Vraag: Wordt er software geboden om dienstverleners te ondersteunen?
+
 Antwoord: Er wordt een docker container geboden om encryptie te ondersteunen.
 
 OpenIDconnect gebaseerd op interactie met browser
