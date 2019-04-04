@@ -37,17 +37,6 @@ Als een relatie alleen kan bestaan binnen een andere resource (geneste
 resource), wordt de relatie bij voorkeur innen het eindpunt gecreëerd. De
 afhankelijke resource heeft in dat geval geen eigen eindpunt
 
-### <a name="api-07"></a>API-07: Resources ondersteunen bij voorkeur "lazy" en "eager" laden van relaties
-
-Resources die een n-op-n relatie kennen ondersteunen bij voorkeur zowel het
-teruggeven van identificaties van gerelateerde resources (lazy loading) als het
-teruggeven van de resources zelf (eager loading).
-
-### <a name="api-08"></a>API-08: Gelinkte resources worden expliciet en selectief mee-geladen
-
-Gelinkte resources worden expliciet en selectief mee-geladen als onderdeel van
-een resource verzoek middels de expand query-parameter.
-
 ### <a name="api-09"></a>API-09: Indien representatie op maat wordt ondersteund, dan conform dit principe.
 
 Het is mogelijk om een door komma's gescheiden lijst van veldennamen op te geven
