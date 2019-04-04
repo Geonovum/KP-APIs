@@ -105,66 +105,6 @@ Indien er sprake is van een n-op-n relatie zijn er verschillende manieren om de 
 
 Bij een n-op-m relatie wordt het opvragen van de individuele resources sowieso ondersteund, waarbij minimaal de identificatie van gerelateerde resources (relatie) wordt teruggegeven. De afnemers moet zelf het eindpunt van de gerelativeerde resource (relatie) aanroepen om deze op te vragen. Dit wordt ook wel aangeduid als lazy loading. De afnemer bepaalt zelf of de relatie geladen wordt en op welk moment.
 
-De resource dient naast "lazy loading" (de standaard) ook "eager loading" te ondersteunen, zodat de afnemer kan aangeven dat relaties direct meegeladen moeten worden. Dit wordt gerealiseerd middels de standaard query-parameter expand=true. Dit voorkomt dat er twee of meer aparte aanroepen nodig zijn. In beide gevallen is de afnemer in control.
-
-> [API principe: Resources ondersteunen bij voorkeur "lazy" en "eager" laden van relaties](#api-07)
-
-<p class="issue">Lazy en eager loading worden in de volgende paragraaf nog een keer helemaal uitgelegd.</p>
-
-### Automatische laden van gelinkte resources
-
-Vaak wordt er vanuit één resource verwezen (gelinkt) naar andere (geneste) resources. De RESTful manier om dit op te lossen is de verwijzing naar andere resources als URI op te nemen in een resource. Op basis hiervan kan de afnemer, indien gewenst, de gelinkte resources zelf opvragen. Dit is vergelijkbaar met "lazy loading" in een Object Relational Mapping (ORM) oplossing: resources worden alleen opgehaald als ze nodig zijn.  In sommige gevallen, als de afnemer alle resources nodig heeft, is het efficiënter als de geneste resources in één keer opgehaald worden. Dit is vergelijkbaar met "eager loading" patroon in een ORM-oplossing.
-
-Omdat dit tegen de REST principes in gaat, moet het toepassen van dit mechanisme een expliciete keuze zijn. De keuze wordt bij de afnemers van de API belegd, zij weten immers of ze extra informatie nodig hebben en welke informatie precies. Dit mechanisme wordt mogelijk gemaakt met de `expand` query-parameter.
-
-Als `expand=true` wordt meegegeven, dan worden alle geneste resources geladen en embedded in het resultaat teruggegeven. Om de hoeveelheid informatie die geretourneerd wordt te beperken, is verplicht om te specificeren welke resources en zelfs welke velden van een resource teruggeven moeten worden. Hiermee wordt voorkomen dat de hele database wordt leeg getrokken.
-
-Dit wordt gedaan door de resources als een komma's gescheiden lijst te specificeren, bijvoorbeeld: `expand=aanvrager,bevoegdGezag`. De dot-notatie wordt gebruikt om specifieke velden van resources te selecteren. In het onderstaande voorbeeld wordt van de aanvrager alleen het veld "naam" teruggeven en van het bevoegd gezag de complete resource. Conform de [[HAL]]-standaard zijn de gelinkte resources embedded in de standaard representatie (zie ook aanpasbare representatie).
-
-`GET /aanvragen/12?expand=aanvrager.naam,bevoegdGezag`
-
-Dit levert het volgende resultaat op:
-
-```JSON
-{
-  "id": "12",
-  "naam": "Mijn dakkapel",
-  "samenvatting": "Ik wil een dakkapel bouwen!",
-  "_embedded": {
-    "aanvrager": {
-      "naam": "Bob",
-      "_links": {
-        "self": {
-          "href": "https: //.../api/register/v1/aanvragers/847",
-          "title": "Bob"
-        }
-      }
-    },
-    "bevoegdGezag": {
-      "id": "42",
-      "soort": "Gemeente",
-      "naam": "Rotterdam",
-      "_links": {
-        "self": {
-          "href": "https: //.../api/register/v1/bevoegde-gezagen/42",
-          "title": "Rotterdam"
-        }
-      }
-    }
-  },
-  "_links": {
-    "self": {
-      "href": "https: //.../api/register/v1/aanvragen/12",
-      "title": "Mijn dakkapel"
-    }
-  }
-}
-```
-
-Afhankelijk van de implementatie zal door het selectief kunnen laden van gelinkte resources in veel gevallen de overhead van database selecties, hoeveelheid serialisatie en hoeveelheid uitgewisselde data worden beperkt.
-
-> [API principe: Gelinkte resources worden expliciet en selectief mee-geladen](#api-08)
-
 ### Aanpasbare representatie
 
 De gebruiker van een API heeft niet altijd de volledige representatie (lees: alle velden) van een resource nodig. De mogelijkheid bieden om de gewenste velden te selecteren helpt bij het beperken van het netwerkverkeer (relevant voor lichtgewicht toepassingen), vereenvoudigt het gebruik van de API en maakt deze aanpasbaar (op maat). Om dit mogelijk te maken wordt de query-parameter `fields` ondersteund. De query-parameter accepteert een door komma's gescheiden lijst met veldnamen. Het resultaat is een representatie op maat. Het volgende verzoek haalt bijvoorbeeld voldoende informatie op om een gesorteerde lijst van open aanvragen te tonen.
