@@ -199,8 +199,10 @@ Doordat de verbinding altijd is versleuteld is het authenticatiemechanisme eenvo
 
 > [API principe: API's zijn bij voorkeur alleen bruikbaar met behulp van een API-key](#api-12)
 
+Voor meer informatie over beveiliging zie ook hoofdstuk 5.
+
 ### Authenticatie en autorisatie
-Een REST API mag geen toestand (state) bijhouden. Dit betekent dat authenticatie en autorisatie van een verzoek niet mag afhangen van cookies of sessies. In plaats daarvan wordt elk verzoek voorzien van een token. Binnen het Kennisplatform APIs is gekozen voor OAuth 2.0 als de standaarden voor het autorisatiemechanisme waar dit nodig is. In hoofdstuk 5 is meer informatie te vinden over het gebruike van OAuth 2.0.
+Een REST API mag geen toestand (state) bijhouden. Dit betekent dat authenticatie en autorisatie van een verzoek niet mag afhangen van cookies of sessies. In plaats daarvan wordt elk verzoek voorzien van een token. Binnen het Kennisplatform APIs is gekozen voor OAuth 2.0 als de standaarden voor het autorisatiemechanisme waar dit nodig is, in hoofdstuk 5 is meer informatie te vinden over deze keuze en het gebruik van OAuth 2.0.
 
 > [API principe: Tokens worden niet gebruikt in query parameters](#api-13)
 
@@ -289,7 +291,7 @@ API's zijn altijd geversioneerd. Versioneren zorgt voor een soepele overgang bij
 >
 > Oude en nieuwe versies (max. 3) van een API worden voor een beperkte overgangsperiode (1 jaar) naast elkaar aangeboden.
 
-Er zijn verschillende meningen over de vraag of de versie in de URI of in de header hoort. Het Kennisplatform APIs heeft hier een keuze in gemaakt: alleen het major versienummer wordt in de URI opgenomen. Hierdoor is het mogelijk om verschillende versies van een API via de browser te verkennen.
+In de URI van de API wordt alleen het major versienummer opgenomen. Hierdoor is het mogelijk om verschillende versies van een API via de browser te verkennen.
 
 Het versienummer begint bij 1 en wordt met 1 opgehoogd voor elke major release waarbij het koppelvlak niet backward compatible wijzigt. De minor en patch versienummers staan altijd in de response-header van het bericht zelf in het formaat `major.minor.patch`.
 
@@ -329,7 +331,7 @@ Een API zal nooit helemaal stabiel zijn. Verandering is onvermijdelijk. Het is b
 
 Major releases van API's zijn altijd backward incompatible. Immers, als een nieuwe release van de API niet tot backward incompatibiliteit leidt, is er geen reden om een hele versie omhoog te gaan en spreken we van een minor release. Op het moment dat er een major release plaatsvindt, is het de bedoeling dat alle (potentiële) clients deze nieuwe versie implementeren.  
 
-Omdat we geen clients willen breken kunnen we niet van de een op de andere dag overschakelen van de oude naar de nieuwe versie, zoals dat bijvoorbeeld bij een update van een website wel vaak gebeurt. Daarom is het noodzakelijk om na de livegang van de nieuwe versie óók de oude versie in de lucht te houden. Omdat we de oude versie niet tot in de eeuwigheid willen blijven onderhouden en juist iedereen willen stimuleren om de nieuwe versie te gaan gebruiken, communiceren we een periode waarin clients de gelegenheid krijgen om hun code aan te passen aan de nieuwe versie. Deze periode noemen we de deprecation periode. De lengte van deze periode kan verschillen per API, vaak is dit zes maanden, maar niet meer dan één jaar. Met het oog op beheersbaarheid is het ten zeerste aan te bevelen om maximaal twee major versies (waarvan één de deprecated variant) naast elkaar te draaien. In deze fase is communicatie met clients van de oude versie cruciaal. De volgende zaken moeten gecommuniceerd worden:
+Omdat we geen clients willen breken kunnen we niet van de een op de andere dag overschakelen van de oude naar de nieuwe versie. Daarom is het noodzakelijk om na de livegang van de nieuwe versie óók de oude versie in de lucht te houden. Omdat we de oude versie niet tot in de eeuwigheid willen blijven onderhouden en juist iedereen willen stimuleren om de nieuwe versie te gaan gebruiken, communiceren we een periode waarin clients de gelegenheid krijgen om hun code aan te passen aan de nieuwe versie. Deze periode noemen we de deprecation periode. De lengte van deze periode kan verschillen per API, vaak is dit zes maanden, maar niet meer dan één jaar. Met het oog op beheersbaarheid is het ten zeerste aan te bevelen om maximaal twee major versies (waarvan één de deprecated variant) naast elkaar te draaien. In deze fase is communicatie met clients van de oude versie cruciaal. De volgende zaken moeten gecommuniceerd worden:
 
 - Een link naar de (documentatie van de) nieuwe versie van de API;
 - Deprecation periode met exacte datum waarop de deprecated versie offline wordt gehaald;
@@ -368,7 +370,7 @@ Gebruikers moeten voldoende tijd hebben om de oude API uit te faseren. Een perio
 
 ## JSON
 
-JavaScript Object Notation (JSON) is een formaat, net zoals XML, om gegevens te serialiseren, op te slaan en te versturen. JSON is het primaire representatieformaat voor API's. In tegenstelling tot XML kent JSON een compacte notatie, bijvoorbeeld:
+JavaScript Object Notation (JSON) is een formaat, net zoals XML, om gegevens te serialiseren, op te slaan en te versturen. JSON is het primaire representatieformaat voor API's. Voor meer informatie over JSON zie https://json.org. In tegenstelling tot XML kent JSON een compacte notatie, bijvoorbeeld:
 
 ```json
 {
