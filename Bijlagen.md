@@ -65,9 +65,9 @@ opgelost:
 -   Alleen in uitzonderlijke gevallen wordt een actie met een eigen eindpunt
     opgelost."
 
-### <a name="api-11"></a>API-11: De verbinding is ALTIJD versleuteld met minimaal TLS V1.2
+### <a name="api-11"></a>API-11: De verbinding is ALTIJD versleuteld met minimaal TLS V1.3
 
-De verbinding is ALTIJD versleuteld op basis van minimaal TLS V1.2. Geen
+De verbinding is ALTIJD versleuteld op basis van minimaal TLS V1.3, TLS V1.2 is toegestaan als fall-back optie. Geen
 uitzonderingen, dus overal en altijd. In het geval van toegangsbeperking of
 doelbinding wordt tweezijdig TLS toegepast. Doordat de verbinding altijd is
 versleuteld maakt het authenticatiemechanisme eenvoudiger. Hierdoor wordt het
