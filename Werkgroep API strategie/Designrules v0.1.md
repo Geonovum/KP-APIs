@@ -11,7 +11,7 @@ Belangrijk om in het achterhoofd te houden bij het realiseren van een API is dat
 
 ## RESTful principes
 
-Het belangrijkste principe van REST is het scheiden van de API in logische resources ("dingen"). De resources beschrijven de informatie van het "ding". Deze resources worden gemanipuleerd met behulp van HTTP-verzoeken en HTTP-operaties. Elke operatie (GET, `POST`, `PUT`, `PATCH`, `DELETE`) heeft een specifieke betekenis.
+Het belangrijkste principe van REST is het scheiden van de API in logische resources ("dingen"). De resources beschrijven de informatie van het "ding". Deze resources worden gemanipuleerd met behulp van HTTP-verzoeken en HTTP-operaties. Elke operatie (`GET`, `POST`, `PUT`, `PATCH`, `DELETE`) heeft een specifieke betekenis.
 > HTTP definieert ook operaties als `HEAD`, `TRACE`, `OPTIONS` en `CONNECT`. Deze worden echter in de context van REST vrijwel niet gebruikt en zijn daarom in de verdere uitwerking weggelaten.
 
 |Operatie|CRUD|Toelichting|
@@ -205,7 +205,7 @@ Webbrowsers implementeren een zogenaamde "same origin policy", een belangrijk be
 ## Documentatie
 
 Een API is zo goed als de bijbehorende documentatie. De documentatie moet gemakkelijk te vinden, te doorzoeken en publiekelijk toegankelijk zijn. De meeste ontwikkelaars zullen eerst de documenten doornemen voordat ze starten met de implementatie. Wanneer de documentatie is weggestopt in pdf-bestanden en achter een inlog, dan vormt dit een drempel voor ontwikkelaars om aan de gang te gaan en de documentatie is niet vindbaar met zoekmachines.
-Specificaties (documentatie) zijn beschikbaar als Open API Specification (OAS)9 V3.0 of hoger.
+Specificaties (documentatie) zijn beschikbaar als Open API Specification (OAS) V3.0 of hoger.
 
 > [API principe: Documentatie is gebaseerd op OAS 3.0 of hoger](#api-16)
 
