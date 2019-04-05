@@ -34,7 +34,7 @@ resource betreft.
 ### <a name="api-06"></a>API-06: Relaties van geneste resources worden bij voorkeur binnen het eindpunt gecreëerd
 
 Als een relatie alleen kan bestaan binnen een andere resource (geneste
-resource), wordt de relatie bij voorkeur innen het eindpunt gecreëerd. De
+resource), wordt de relatie bij voorkeur binnen het eindpunt gecreëerd. De
 afhankelijke resource heeft in dat geval geen eigen eindpunt
 
 ### <a name="api-09"></a>API-09: Indien representatie op maat wordt ondersteund, dan conform dit principe.
