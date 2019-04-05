@@ -135,7 +135,7 @@ API's zijn vanaf elke locatie vanaf het internet te benaderen. Om uitgewisselde 
 
 Doordat de verbinding altijd is versleuteld is het authenticatiemechanisme eenvoudiger. Hierdoor wordt het mogelijk om eenvoudige toegangstokens te gebruiken in plaats van toegangstokens met encryptie.
 
-> [API principe: De verbinding is ALTIJD versleuteld met minimaal TLS V1.2](#api-11)
+> [API principe: De verbinding is ALTIJD versleuteld met minimaal TLS V1.3](#api-11)
 
 > [API principe: API's zijn bij voorkeur alleen bruikbaar met behulp van een API-key](#api-12)
 
