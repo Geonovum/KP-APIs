@@ -40,6 +40,11 @@ var respecConfig =
       companyURL: "http://www.forumstandaardisatie.nl/",
     },
     {
+      name: "Han Zuidweg",
+      company: "Forum Standaardisatie",
+      companyURL: "http://www.forumstandaardisatie.nl/",
+    },
+    {
       name: "Friso Penninga",
       company: "Geonovum",
       companyURL: "http://geonovum.nl/",
