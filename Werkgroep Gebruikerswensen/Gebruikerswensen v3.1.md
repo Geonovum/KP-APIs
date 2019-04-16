@@ -230,6 +230,7 @@ Formuleer hierbij ook goed het ambitieniveau:
 -   hybride oplossing: een combinatie van een catalogus en een store. Alle API's staan in de catalogus, een kleine subset (de high-value API's) wordt volledig aangeboden. Deze hybride oplossing zou
     een mooi ambitieniveau voor developer.overheid.nl kunnen zijn: alle overheids-API's zijn vindbaar en voor de meest generieke en populaire API's ben je direct op de juiste plaats.
 
+
 Een bijzondere categorie die de overheid ook nodig gaat hebben, o.a. door de ontwikkelingen in Common Ground, is de API spec store: een plaats waarin API specificaties gepubliceerd kunnen worden. Leveranciers kunnen op basis van die specificaties zelf hun specificatie-conforme API's ontwikkelen, waarmee de interoperabiliteit van gegevens binnen het gemeentelijke applicatielandschap wordt vergroot.
 
 In de context van API stores en API catalogi is het belangrijk om te realiseren dat developer experience niet alleen een externe focus heeft (gericht op laten ontdekken, evalueren, testen en gebruiken van API's), maar ook een interne focus, gericht op het activeren van potentiële API-aanbieders. Zij moeten getriggerd worden om API's te ontwikkelen, te ontsluiten in je API store of catalogus, te beschrijven conform bepaalde kwaliteitseisen, etc.
