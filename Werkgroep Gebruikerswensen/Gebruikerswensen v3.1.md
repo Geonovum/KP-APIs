@@ -1,5 +1,4 @@
- Gebruikerswensen
-=================
+## Inspelen op Gebruikerswensen
 
 **Inspelen op gebruikerswensen: dé sleutel tot gebruik**
 
