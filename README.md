@@ -5,7 +5,4 @@ Hier vind je ook de mogelijkheid je aan te melden voor de werkgroepen, het slack
 
 **Bekijk de werkversie van de API strategie voor de nederlandse overheid op:** <https://geonovum.github.io/KP-APIs/>
 
-**Van 13 februari tot 27 maart loopt de publieke consultatie. Reageren kan hier:**
-https://www.formdesk.com/geonovum/APIstrategie
-
 Voor de editors van de bestanden op GitHub: zie de [HowTo](./HowTo.md) in deze map.
