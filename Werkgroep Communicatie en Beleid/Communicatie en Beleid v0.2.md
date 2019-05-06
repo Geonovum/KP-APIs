@@ -13,7 +13,7 @@ Amsterdam en Den Haag houden elk hun eigen registratie van personen bij. De ICT 
 Den Haag verwerkt de verwijsgegevens voor Larissa in z’n lokale basisregistratie personen. Zowel Amsterdam als Den Haag geven periodiek de mutaties van hun lokale basisregistratie personen door aan de [centrale basisregistratie personen van de Autoriteit Persoonsgegevens](https://www.autoriteitpersoonsgegevens.nl/nl/onderwerpen/gemeente/basisregistratie-personen-brp?qa=brp). Zo kan het drie werkdagen kosten om een eenvoudige verhuizing volledig te registreren.
 
 Is het niet efficiënter om één basisregistratie personen bij te houden, in plaats van gegevens heen en weer te schuiven van de ene lokale registratie naar de andere? Natuurlijk. Dit idee zit achter het [nieuwe gegevenslandschap](https://www.gemmaonline.nl/images/gemmaonline/8/8b/Gemeentelijk_Gegevenslandschap_-_Beschrijving_informatiearchitectuur_v0_6.pdf) met als onderdelen [Haal Centraal](https://github.com/VNG-Realisatie/Haal-Centraal-BRP-bevragen) en [Common Ground](https://vng.nl/samen-organiseren/common-ground). En technisch kan het: met APIs.
-![Visualisatie van de voordelen van het bij de bron houden van data met APIs](../media/visualisatie%20data%20bij%20de%20bron.png)
+![Visualisatie van de voordelen van het bij de bron houden van data met APIs](../media/visualisatie%20data%20bij%20de%20bron.png =500x)
 
 ### 2.1 Wat is een API eigenlijk?
 Een [_application programming interface_ (API)](https://www.ensie.nl/dimitri-van-hees/api) is een gestructureerd en gedocumenteerd koppelvlak voor communicatie tussen applicaties. Je kan een API zien als een digitale stekkerdoos die applicaties met elkaar verbindt.
@@ -30,7 +30,7 @@ Websites zijn er voor mens-machine communicatie, APIs voor machine-machine commu
 Je browser gebruikt [http](https://www.w3schools.com/whatis/whatis_http.asp) (*hypertext transfer protocol*) om informatie op te halen van een website. De website stuurt de informatie in het *hypertext markup language* ([HTML](https://www.w3schools.com/whatis/whatis_html.asp)) standaard format, dat je browser laat zien als een opgemaakte pagina. Zo werkt het ook voor de pagina die je nu leest.
 
 APIs gebruiken dezelfde standaard http. Maar waar HTML bedoeld is voor webpagina's die zijn opgemaakt voor het menselijk oog, gebruiken APIs een machine leesbaar standaard format dat [JSON](https://www.w3schools.com/whatis/whatis_json.asp) (*JavaScript Object Notation*) heet. Net als HTML is JSON tekst met structuur. JSON heeft een nog eenvoudiger structuur dan HTML.
-![Visualisatie van APIs tegenover web browsen](../media/visualisatie%20API%20vs%20web%20browsen.png)
+![Visualisatie van APIs tegenover web browsen](../media/visualisatie%20API%20vs%20web%20browsen.png =500x)
 
 Als je hoort praten over [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) (of *RESTful*) APIs dan gaat het over de manier waarop deze URLs (weblinks), http en JSON gebruikt. REST beschrijft een duidelijk gestructureerde, efficiënte en laagdrempelige manier om APIs over het Internet aan te bieden. [Meer over REST in hoofdstuk 4](#restful-principes).
 
