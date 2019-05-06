@@ -1,4 +1,3 @@
-﻿# API Strategie
 ## 2. Communicatie en beleid
 > *Dit hoofdstuk geeft een niet-technische inleiding voor bestuurders en managers. In dit hoofdstuk bekijken we:*  
 > *- welk probleem willen we oplossen?*  
