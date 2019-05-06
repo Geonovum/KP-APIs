@@ -31,7 +31,7 @@ Je browser gebruikt [http](https://www.w3schools.com/whatis/whatis_http.asp) (*h
 
 APIs gebruiken dezelfde standaard http. Maar waar HTML bedoeld is voor webpagina's die zijn opgemaakt voor het menselijk oog, gebruiken APIs een machine leesbaar standaard format dat [JSON](https://www.w3schools.com/whatis/whatis_json.asp) (*JavaScript Object Notation*) heet. Net als HTML is JSON tekst met structuur. JSON heeft een nog eenvoudiger structuur dan HTML.
 
--> <img src="../media/visualisatie-browsen-vs-API.png" alt="Visualisatie van APIs tegenover web browsen" width="500" /> <-
+<img src="../media/visualisatie-browsen-vs-API.png" alt="Visualisatie van APIs tegenover web browsen" width="500" />
 
 Als je hoort praten over [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) (of *RESTful*) APIs dan gaat het over de manier waarop deze URLs (weblinks), http en JSON gebruikt. REST beschrijft een duidelijk gestructureerde, efficiënte en laagdrempelige manier om APIs over het Internet aan te bieden. [Meer over REST in hoofdstuk 4](#restful-principes).
 
