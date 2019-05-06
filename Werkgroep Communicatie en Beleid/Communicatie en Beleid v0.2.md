@@ -33,7 +33,7 @@ APIs gebruiken dezelfde standaard http. Maar waar HTML bedoeld is voor webpagina
 
 <img src="../media/visualisatie-browsen-vs-API.png" alt="Visualisatie van APIs tegenover web browsen" width="500" />
 
-Als je hoort praten over [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) (of *RESTful*) APIs dan gaat het over de manier waarop deze URLs (weblinks), http en JSON gebruikt. REST beschrijft een duidelijk gestructureerde, efficiënte en laagdrempelige manier om APIs over het Internet aan te bieden. [Meer over REST in hoofdstuk 4](#restful-principes).
+Als je hoort praten over [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) (of *RESTful*) APIs dan gaat het over de manier waarop deze URLs (weblinks), http en JSON gebruikt. REST beschrijft een duidelijk gestructureerde, efficiënte en laagdrempelige manier om APIs over het Internet aan te bieden. [Meer over REST in hoofdstuk 4](../Werkgroep%20API%20strategie/Designrules%20v0.1.md#restful-principes).
 
 ### Wie gebruiken er APIs?
 De meeste applicaties gebruiken APIs onder de motorkap zonder dat de eindgebruiker dat ziet. Als je een app opent voor het weer, dan merk je niet dat deze app gegevens ophaalt bij het [KNMI via een API](https://meteoserver.nl/real-time-KNMI-weer-API.php).
