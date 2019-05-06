@@ -1,4 +1,4 @@
-## 2. Communicatie en beleid
+## Communicatie en beleid
 > *Dit hoofdstuk geeft een niet-technische inleiding voor bestuurders en managers. In dit hoofdstuk bekijken we:*  
 > *- welk probleem willen we oplossen?*  
 > *- wat zijn APIs en hoe helpen ze bij dit probleem?*  
@@ -14,7 +14,7 @@ Den Haag verwerkt de verwijsgegevens voor Larissa in z’n lokale basisregistrat
 Is het niet efficiënter om één basisregistratie personen bij te houden, in plaats van gegevens heen en weer te schuiven van de ene lokale registratie naar de andere? Natuurlijk. Dit idee zit achter het [nieuwe gegevenslandschap](https://www.gemmaonline.nl/images/gemmaonline/8/8b/Gemeentelijk_Gegevenslandschap_-_Beschrijving_informatiearchitectuur_v0_6.pdf) met als onderdelen [Haal Centraal](https://github.com/VNG-Realisatie/Haal-Centraal-BRP-bevragen) en [Common Ground](https://vng.nl/samen-organiseren/common-ground). En technisch kan het: met APIs.
 ![Visualisatie van de voordelen van het bij de bron houden van data met APIs](../media/visualisatie%20data%20bij%20de%20bron.png)
 
-### 2.1 Wat is een API eigenlijk?
+### Wat is een API eigenlijk?
 Een [_application programming interface_ (API)](https://www.ensie.nl/dimitri-van-hees/api) is een gestructureerd en gedocumenteerd koppelvlak voor communicatie tussen applicaties. Je kan een API zien als een digitale stekkerdoos die applicaties met elkaar verbindt.
 
 APIs bestaan al zo lang er computers zijn. Het besturingssysteem van je computer bijvoorbeeld heeft APIs die in computerjargon vaak [*libraries*](https://en.wikipedia.org/wiki/Library_%28computing%29) heten. De software pakketten die op je computer draaien gebruiken deze APIs voor basisfuncties zoals het lezen van een bestand van schijf of het openen van een venster op het scherm.
@@ -23,7 +23,7 @@ Sommige applicaties bieden data of functionaliteit aan met APIs die over het Int
 
 APIs zijn dus niks nieuws. Maar de technologie om APIs mee te bouwen een aan te bieden ontwikkelt zich wel. Zo wordt het steeds makkelijker om APIs te bouwen, te publiceren en te gebruiken en kunnen APIs steeds grotere datasets en applicaties aan. Denk maar eens aan de [APIs van Google](https://developers.google.com/apis-explorer/) die overal gebruikt worden.
 
-### 2.2 Waarom hoor ik steeds over 'REST' en 'JSON'?
+### Waarom hoor ik steeds over 'REST' en 'JSON'?
 Websites zijn er voor mens-machine communicatie, APIs voor machine-machine communicatie. Websites presenteren informatie aan mensen, APIs maken gegevens en verwerkingsfuncties beschikbaar voor applicaties. De technologie voor websites en APIs heeft daarom veel overeenkomsten.
 
 Je browser gebruikt [http](https://www.w3schools.com/whatis/whatis_http.asp) (*hypertext transfer protocol*) om informatie op te halen van een website. De website stuurt de informatie in het *hypertext markup language* ([HTML](https://www.w3schools.com/whatis/whatis_html.asp)) standaard format, dat je browser laat zien als een opgemaakte pagina. Zo werkt het ook voor de pagina die je nu leest.
@@ -33,7 +33,7 @@ APIs gebruiken dezelfde standaard http. Maar waar HTML bedoeld is voor webpagina
 
 Als je hoort praten over [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) (of *RESTful*) APIs dan gaat het over de manier waarop deze URLs (weblinks), http en JSON gebruikt. REST beschrijft een duidelijk gestructureerde, efficiënte en laagdrempelige manier om APIs over het Internet aan te bieden. [Meer over REST in hoofdstuk 4](#restful-principes).
 
-### 2.3 Wie gebruiken er APIs?
+### Wie gebruiken er APIs?
 De meeste applicaties gebruiken APIs onder de motorkap zonder dat de eindgebruiker dat ziet. Als je een app opent voor het weer, dan merk je niet dat deze app gegevens ophaalt bij het [KNMI via een API](https://meteoserver.nl/real-time-KNMI-weer-API.php).
 
 Degene die het meest direct met een API te maken krijgt is de ontwikkelaar van de applicatie die de API gebruikt. Zij moet begrijpen hoe de API werkt en hoe je deze vanuit de applicatie moet bevragen.
@@ -42,7 +42,7 @@ Hier verschillen APIs dus van websites. Een website bouw je voor de eindgebruike
 
 Ook andere soorten gebruikers kunnen interesse hebben in een API. In een vroeg stadium van de planning van een product wil een *product manager* al APIs zoeken en weten wat hun mogelijkheden zijn. Een *architect* wil beoordelen of een API past in de architectuur. Met deze gebruikers moet je vooral rekening houden bij het documenteren en vindbaar maken van een API. [Meer over gebruikers in hoofdstuk 3](Werkgroep%20Gebruikerswensen/Gebruikerswensen%20v3.1.md).
 
-### 2.4 Wat betekenen APIs voor de Nederlandse overheden?
+### Wat betekenen APIs voor de Nederlandse overheden?
 De [overheid voert beleid](https://www.open-overheid.nl/) om openbare gegevens die niet privacy gevoelig zijn zoveel mogelijk openbaar te maken. Deze gegevens wil je op een uniforme manier veilig en gebruiksvriendelijk aanbieden. Meestal zijn het software ontwikkelaars die gegevens van de overheid gebruiken om diensten of producten te bouwen. Het gebruik van APIs ligt dan voor de hand.
 
 Overheden hebben zes goede redenen om hun gegevens met APIs te ontsluiten:
@@ -53,14 +53,14 @@ Overheden hebben zes goede redenen om hun gegevens met APIs te ontsluiten:
 5. **APIs voorkomen leveranciersafhankelijkheid.** APIs kun je helemaal met [open standaarden](https://www.forumstandaardisatie.nl/thema/open-standaarden) zoals [https](https://www.forumstandaardisatie.nl/standaard/https-en-hsts), [JSON](https://www.forumstandaardisatie.nl/standaard/json) en [OAS](https://www.forumstandaardisatie.nl/standaard/openapi-specification) bouwen. Met APIs ben je niet meer aangewezen op maatwerk en producten van specifieke leveranciers om aan te sluiten op een gegevensbron.
 6. **APIs bevorderen innovatie.** Door gegevens met een API aan te bieden kunnen zowel publieke als private ondernemingen ermee aan de slag. Zij gebruiken de gegevens soms op verrassende manieren die nieuwe kansen creëren. [APIs en bier](https://www.ratebeer.com/api-documentation.asp) bijvoorbeeld?
 
-### 2.5 Hebben APIs toegevoegde waarde voor mijn organisatie?
+### Hebben APIs toegevoegde waarde voor mijn organisatie?
 APIs zijn een middel, geen doel. De missie van je organisatie bepaalt of APIs toegevoegde waarde hebben in de ICT processen. Als je organisatie een dienstverlenende taak heeft en gegevens beheert die voor anderen bruikbaar zijn, dan hebben APIs mogelijk nut. Dat geldt ook als je organisatie deel uit maakt van een of meer ketens.
 
 Je organisatie kan een rol hebben als aanbieder of gebruiker van APIs, of beiden. Inventariseer welke gegevens organisatie voortbrengt en welke gegevens je gebruikt van andere organisaties. Bekijk hoe de bestaande ICT koppelingen ingericht zijn. Is je organisatie daarbij afhankelijk van bepaalde producten of leveranciers? Kan het  efficiënter, flexibeler, veiliger en meer open met APIs?
 
 Deze [API strategie](https://docs.geostandaarden.nl/api/API-Strategie/)  beschrijft de standaarden, ontwerpprincipes en veiligheidsmaatregelen die ervoor zorgen dat alle overheden hun APIs op een inzichtelijke, gebruikersvriendelijke, veilige en geharmoniseerde manier aanbieden. Door deel te nemen in het [Kennisplatform APIs](https://www.geonovum.nl/themas/kennisplatform-apis) krijgt je organisatie meer inzicht in de toegevoegde waarde die APIs voor jouw toepassing al dan niet kunnen bieden.
 
-### 2.6 Nederland heeft al schitterende  APIs
+### Nederland heeft al schitterende  APIs
 Veel publieke organisaties in Nederland bieden al APIs aan. De [Nederlandse Spoorwegen](https://www.ns.nl/reisinformatie/ns-api) bijvoorbeeld, die met APIs actuele vertrektijden, prijzen, storingen en reisadviezen publiceren om in apps te gebruiken. En de Rijksdienst voor het Wegverkeer die de [kentekenregistratie voor voertuigen](https://opendata.rdw.nl/resource/m9d7-ebf2.json) met een API aanbiedt.
 
 In februari 2019 won de [Basisregistratie Adressen en Gebouwen (BAG) API](https://zakelijk.kadaster.nl/-/bag-api) van Kadaster de [Gouden API](https://www.geonovum.nl/over-geonovum/actueel/kadaster-wint-prijs-beste-api-van-de-overheid) die het [Kennisplatform APIs](https://www.geonovum.nl/themas/kennisplatform-apis) uitloofde voor de beste API van de overheid. De [BAG](https://zakelijk.kadaster.nl/bag) registreert voor elk adres in Nederland gegevens als de geografische coördinaten, het bouwjaar van het pand, de oppervlakte en het vergunde gebruiksdoel. Verzekeraars, hypotheekverstrekkers, hulpdiensten, milieudiensten en vele anderen gebruiken informatie uit de BAG. 
