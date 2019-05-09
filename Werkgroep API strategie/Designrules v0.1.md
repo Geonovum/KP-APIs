@@ -775,7 +775,7 @@ Dit ziet er dan als volgt uit:
   "type": "https://content.omgevingswet.overheid.nl/id/<c>/ValidatieFout",
   "title": "Hier staat wat er is misgegaan…",
   "status": 400,
-  "invalid-params": [{
+  "invalidParams": [{
     "type": "https://content.omgevingswet.overheid.nl/id/<c>/validatie/Voornaam",
     "name": "voornaam",
     "reason": "De voornaam mag geen speciale karakters bevatten."
