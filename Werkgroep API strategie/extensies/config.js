@@ -4,11 +4,10 @@
 //--              Gebaseerd op https://github.com/Geonovum/respec/wiki
 //--              Deze file moet worden neergezet in de root-directory van de 
 //--              betreffende standaard. 
-//-- Door. . . :  Frank Terpstra/Jan van Gelder
+//-- Door. . . :  Linda van den Brink
 //-------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------
-//-- Log . . . :  20180615 - FT  - Initiele versie
-//-- . . . . . :  20181106 - JvG - verplaatst naar root KP-APIs
+//-- Log . . . :  20190503 - LvdB  - Initiele versie
 //-------------------------------------------------------------------------------------
 
 var respecConfig = 
@@ -16,57 +15,28 @@ var respecConfig =
   specStatus: "GN-WV",
   specType: "HR",
   pubDomain: "api",
-  publishDate: "2019-02-13",
+  //publishDate: "2019-02-13",
   //previousPublishDate: "2019-02-13",
   //previousMaturity: "GN-CV",
   editors: 
   [
-    {
-      name: "Frank Terpstra",
-      company: "Geonovum",
-      companyURL: "http://www.geonovum.nl/",
-    },
-    {
-      name: "Jan van Gelder",
-      company: "Geonovum",
-      companyURL: "http://www.Geonovum.nl/",
-    }
-  ],
-  authors: 
-  [
-    {
-      name: "Lancelot Schellevis",
-      company: "Forum Standaardisatie",
-      companyURL: "http://www.forumstandaardisatie.nl/",
-    },
-    {
-      name: "Han Zuidweg",
-      company: "Forum Standaardisatie",
-      companyURL: "http://www.forumstandaardisatie.nl/",
-    },
-    {
-      name: "Friso Penninga",
-      company: "Geonovum",
-      companyURL: "http://geonovum.nl/",
-    },
-    {
-      name: "Matthias Snoei",
-      company: "Swis",
-      companyURL: "http://swis.nl/",
-    },
     {
       name: "Jasper Roes",
       company: "Het Kadaster",
       companyURL: "http://www.kadaster.nl/",
     },
     {
-      name: "Emile van de Maas",
-      company: "",
-      companyURL: "",
-    },
+      name: "Linda van den Brink",
+      company: "Geonovum", 
+      companyURL: "https://www.geonovum.nl",
+    }
   ],
-  shortName: "API-Strategie",
-  github: "https://github.com/geonovum/KP-APIs",
+  authors: 
+  [
+    
+  ],
+  shortName: "API-Strategie-ext",
+  github: "https://github.com/geonovum/KP-APIs/Werkgroep API strategie/extensies",
   issueBase: "https://github.com/geonovum/KP-APIs/issues/",
   localBiblio: {
   "OAuth2": {
