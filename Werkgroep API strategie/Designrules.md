@@ -9,6 +9,8 @@ Binnen de overheid zijn meer en meer organisaties bezig met het implementeren en
 
 Belangrijk om in het achterhoofd te houden bij het realiseren van een API is dat de design rules die in dit hoofdstuk worden geschreven alleen toegepast dienen te worden als de beschreven functionaliteit gewenst is.
 
+Alle paragrafen in dit hoofdstuk, met uitzondering van paragraaf 4.5 zijn **"Normatief"**. Paragraaf 4.5 is **"Informatief"**
+
 ## RESTful principes
 
 Het belangrijkste principe van REST is het scheiden van de API in logische resources ("dingen"). De resources beschrijven de informatie van het "ding". Deze resources worden gemanipuleerd met behulp van HTTP-verzoeken en HTTP-operaties. Elke operatie (`GET`, `POST`, `PUT`, `PATCH`, `DELETE`) heeft een specifieke betekenis.
@@ -191,3 +193,11 @@ Het toevoegen van een endpoint of een niet verplichte attribuut aan de payload z
 > In de URI wordt alleen het major versienummer opgenomen. Minor versienummer en patch versienummer worden in de header van het bericht zelf opgenomen. Het uitgangspunt dat hierbij wordt gehanteerd is dat minor versies en patches geen impact hebben op bestaande code, maar major versies wel.
 
 Een API zal nooit helemaal stabiel zijn. Verandering is onvermijdelijk. Het is belangrijk hoe met deze verandering wordt omgegaan. Goed gedocumenteerde en tijdig gecommuniceerde uitfaseringsplanningen zijn in het algemeen voor veel APIgebruikers werkbaar.  
+
+
+Klik op de onderstaande link om het document, waarin de extensies worden beschreven, te openen.
+
+<section data-format="markdown" class="informative">
+## Extensies
+        [Extensies](https://geonovum.github.io/KP-APIs/Werkgroep%20API%20strategie/extensies/)
+</section>

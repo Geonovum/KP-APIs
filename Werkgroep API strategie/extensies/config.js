@@ -36,7 +36,7 @@ var respecConfig =
     
   ],
   shortName: "API-Strategie-ext",
-  github: "https://github.com/geonovum/KP-APIs/Werkgroep API strategie/extensies",
+  github: "https://github.com/geonovum/KP-APIs/Werkgroep%20API%20strategie/extensies",
   issueBase: "https://github.com/geonovum/KP-APIs/issues/",
   localBiblio: {
   "OAuth2": {
