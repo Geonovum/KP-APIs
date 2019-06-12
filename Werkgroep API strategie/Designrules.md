@@ -198,6 +198,6 @@ Een API zal nooit helemaal stabiel zijn. Verandering is onvermijdelijk. Het is b
 Klik op de onderstaande link om het document, waarin de extensies worden beschreven, te openen.
 
 <section data-format="markdown" class="informative">
-## Extensies
+        ## Extensies
         [Extensies](https://geonovum.github.io/KP-APIs/Werkgroep%20API%20strategie/extensies/)
 </section>
