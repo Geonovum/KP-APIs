@@ -3,19 +3,9 @@
 
 > *Doel van dit hoofdstuk: Hoe kan je je applicatie landschap inrichten zodat je APIs kan aanbieden. Welke componenten zijn hiervoor nodig. Hoe ga je om met opschalen, beschikbaarheid. Wat zijn afwegingen om beveiliging al dan niet toe te passen.*
 
-
-
-Voor de eerste versie van de Nederlandse API strategie bevat dit hoofdstuk alleen het onderwerp OAuth. voor toekomstige versies voorzien we mogelijk de volgende onderwerpen.
-wettelijke kaders en hun uitwerking in de praktijk: 
-* [AVG](https://autoriteitpersoonsgegevens.nl/nl/onderwerpen/avg-europese-privacywetgeving/algemene-informatie-avg)
-* [Wet digitale overheid (concept)](https://www.digitaleoverheid.nl/dossiers/wet-digitale-overheid/)
-
-Generieke beveiligingsonderwerpen: 
-* Privacy by Design
-* [BIR](https://www.earonline.nl/index.php/BIR-Baseline_Informatiebeveiliging_Rijksdienst)
-* [VIR(BI)](https://www.earonline.nl/index.php/Besluit_Voorschrift_Informatiebeveiliging_Rijksdienst_Bijzondere_Informatie_(VIRBI))
-* Indentificatie & Autorisatie
-* [Authenticatie (OpenID-Connect)](https://openid.net/connect/)
+In de huidige versie van de Nederlandse API strategie bevat dit hoofdstuk alleen het onderwerp OAuth. 
+In een volgende versie komen de volgende onderwerpen erbij:
+* [Authenticatie (OpenID-Connect)](https://openid.net/connect/) Deze standaard is voorgedragen voor de pas toe of leg uit lijst. Een Nederlands profiel afgestemd op het Nederlands profiel OAuth is in de maak.
 * Ondertekening en versleuteling (wanneer en waarom pas je deze technieken toe)
 
 
@@ -57,6 +47,9 @@ iGov heeft twee naast het OAuth profiel ook een OpenID connect profiel [[iGOV.Op
 
 Het Nederlands profiel OAuth is hier te vinden:
 https://geonovum.github.io/KP-APIs-OAuthNL/#dutch-government-assurance-profile-for-oauth-2-0
+In aanvulling hierop is er een document dat de verschillen met iGOV kort samenvat en voorziet van rationales.
+https://github.com/Geonovum/KP-APIs-OAuthNL/blob/master/Additional%20specification%20and%20constraints%20of%20iGov-NL%20to%20the%20iGov%20profile.md
+
 
 
 
