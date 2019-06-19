@@ -1,8 +1,8 @@
 ## Communicatie en beleid
-> *Dit hoofdstuk geeft een niet-technische inleiding voor bestuurders en managers. In dit hoofdstuk bekijken we:*  
-> *- welk probleem willen we oplossen?*  
-> *- wat zijn APIs en hoe helpen ze bij dit probleem?*  
-> *- waarom zijn APIs relevant voor de overheid?*  
+> *Dit hoofdstuk geeft een niet-technische inleiding voor bestuurders en managers. In dit hoofdstuk bekijken we:*
+> *- welk probleem willen we oplossen?*
+> *- wat zijn APIs en hoe helpen ze bij dit probleem?*
+> *- waarom zijn APIs relevant voor de overheid?*
 > *- wat kan mijn organisatie met APIs?*
 > *- voorbeelden van het gebruik van APIs in Nederland*
 
