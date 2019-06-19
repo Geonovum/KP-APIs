@@ -81,7 +81,7 @@ Since the exacy meaning of concepts are often lost in translation, resources are
 
 Here, the *Keep It Simple Stupid* (KISS) rule is applicable. Although grammatically, it may feel wrong to request a single resource using the plural of the resource, it is a pragmatic choice to refer to endpoints consistently using plural. For the user it is much easier to not have to keep in mind singular and plural (*aanvraag/aanvragen, regel/regels*). Furthermore, this implementation is much more straightforward as most development frameworks are able to resolve both a single resource (`/aanvragen/12`) and multiple resources (`/aanvragen`) using one controller.
 
-> [API principe: Use plural nouns to indicate resources](#api-05)
+> [API principle: Use plural nouns to indicate resources](#api-05)
 
 ### How to go deal with relations?
 
@@ -96,7 +96,7 @@ If a relation can only exist in the contexst of another resource (1 to n relatio
 |`PATCH /aanvragen/12/statussen/5`|Modifies status #5 of application #12 partially|
 |`DELETE /aanvragen/12/statussen/5`|Deletes status #5 of application #12|
 
-> [API principe: Create relations of nested resources within the endpoint](#api-06)
+> [API principle: Create relations of nested resources within the endpoint](#api-06)
 
 In case of an n-to-n relation, there are various ways to retrieve a resource. The following requests respond identically:
 
@@ -115,7 +115,7 @@ In the case of HAL, linked resources are embedded in the default representation.
 
 `GET /aanvragen?fields=id,onderwerp,aanvrager,wijzigDatum&status=open&sorteer=wijzigDatum`
 
-> [API principe: Implement custom representation through the `fields` parameter](#api-09)
+> [API principle: Implement custom representation through the `fields` parameter](#api-09)
 
 ### How to implement operations that do not fit the CRUD model?
 
