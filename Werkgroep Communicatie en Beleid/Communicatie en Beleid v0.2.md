@@ -1,10 +1,10 @@
 ## Communicatie en beleid
-> *Dit hoofdstuk geeft een niet-technische inleiding voor bestuurders en managers. In dit hoofdstuk bekijken we:* <
-> *- welk probleem willen we oplossen?* 
-> *- wat zijn APIs en hoe helpen ze bij dit probleem?* 
-> *- waarom zijn APIs relevant voor de overheid?* 
-> *- wat kan mijn organisatie met APIs?* 
-> *- voorbeelden van het gebruik van APIs in Nederland* 
+> *Dit hoofdstuk geeft een niet-technische inleiding voor bestuurders en managers. In dit hoofdstuk bekijken we:*  
+> *- welk probleem willen we oplossen?*  
+> *- wat zijn APIs en hoe helpen ze bij dit probleem?*  
+> *- waarom zijn APIs relevant voor de overheid?*  
+> *- wat kan mijn organisatie met APIs?*  
+> *- voorbeelden van het gebruik van APIs in Nederland*  
 
 Larissa gaat verhuizen van Den Haag naar Amsterdam. Ze gaat naar het gemeentehuis in Amsterdam om zich in te schrijven. Achter de schermen komt er nu een indrukwekkende gegevensstroom op gang.
 
