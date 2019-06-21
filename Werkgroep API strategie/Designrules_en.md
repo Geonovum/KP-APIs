@@ -139,35 +139,35 @@ An API is as good as the accompanying documentation. The documentation has to be
 
 > [API principle: Documentation is in Dutch unless there is existing documentation in English or there is an official English glossary availble](#api-17)
 
-De documentatie dient voorzien te zijn van voorbeelden inclusief complete request en response cycli. Het moet mogelijk zijn om direct vanuit de documentatie verzoeken te testen (uit te voeren). Daarnaast is elke fout beschreven en voorzien van een unieke foutcode die gebruikt kan worden om de fout op te zoeken.
+The documentation should provide examples including full request and response cycles. Developers should be able to test (and perform) requests directly from within the documentation. Furthermore, each error should be described and labeled with a unique error code to trace errors.
 
-Als een API in productie is mag het "contract" (koppelvlak) niet zonder voorafgaande kennisgeving worden gewijzigd. De documentatie moet voorzien zijn van een uitfaseringsplanning (deprecation schedule) en alle details van de wijziging bevatten. Wijzigingen worden via een publiek toegankelijke blog als changelog bekendgemaakt en via een mailinglijst. Hierbij wordt primair gebruik gemaakt van de emailadressen die zijn gekoppeld aan de uitgifte van API-keys.
+Once an API is in production, the *contract* (interface) should not be changed without prior notice. The documentation should include a deprecatin schedule and all details of the change. Changes should be published not only as a changelog on a publicly available blog but also through a mailing list, using the email addresses obtained when the API keys were issued.
 
-> [API principe: Wijzigingen worden gepubliceerd met een uitfaseringschema](#api-18)
+> [API principle: Include a deprecation schedule when publishing API changes](#api-18)
 
 ### Best practice(s)
 
-> [API principe: OAS via basis-URI beschikbaar in JSON-formaat](#api-51)
+> [API principle: Publish OAS at a base-URI in JSON-format](#api-51)
 
-## Versionering
+## Versioning
 
-API's zijn altijd geversioneerd. Versioneren zorgt voor een soepele overgang bij wijzigingen. De oude en nieuwe versies worden voor een beperkte overgangsperiode (één jaar) aangeboden. Er worden bovendien maximaal 3 versies van een API ondersteund. Afnemers kiezen zelf het moment dat ze overschakelen van de oude naar de nieuwe versie van een API, als ze het maar voor het einde van de overgangsperiode is.
+APIs should always be versioned. Versioning facilitates the transition between changes. Old and new versions are offered during a limited (1 year) transition period. A maximum of 3 versions of the API should be supported. Users decide themselves the moment they transition from the old to the new version of an API, as long as they do this prior to the end of the transition period.
 
-> [API principe: De overgangsperiode bij een nieuwe API versie is maximaal 1 jaar](#api-19)
+> [API principle: Allow for a (maximum) 1 year transition period to a new API version](#api-19)
 >
-> Oude en nieuwe versies (max. 3) van een API worden voor een beperkte overgangsperiode (1 jaar) naast elkaar aangeboden.
+> Provide old and new versions (maximum 3) of an API concurrently for a limited, maximum 1 year transition period.
 
-In de URI van de API wordt alleen het major versienummer opgenomen. Hierdoor is het mogelijk om verschillende versies van een API via de browser te verkennen.
+The URI of an API should include the major version number. This allows the exploration of multiple versions of an API in the browser.
 
-Het versienummer begint bij 1 en wordt met 1 opgehoogd voor elke major release waarbij het koppelvlak niet backward compatible wijzigt. De minor en patch versienummers staan altijd in de response-header van het bericht zelf in het formaat `major.minor.patch`.
+The version number start at 1 andis raised with 1 for every major release that breaks the backwards compatibility of the interface. The minor and patch version numbers are always in the response header of the message in the `major.minor.patch` format.
 
-De header (zowel request als response) is als volgt gedefinieerd:
+The header (both request and  response) should be implemented as follows:
 
-|HTTP header|Toelichting|
+|HTTP header|Description|
 |-|-|
-|`API-Version`|Geeft een specifieke API-versie aan in de context van een specifieke aanroep. Bijvoorbeeld: `API-version: 1.2.56`|
+|`API-Version`|Indicates a specific API version in the context of a specific request. For example: `API-version: 1.2.56`|
 
-Via de optionele request-header kan één minor/patch-versie worden aangewezen. Hiermee wordt bedoeld dat in (pre)productie- of aansluitomgeving naast bijvoorbeeld v1 en v2 (de aangewezen versies die alleen bereikbaar zijn via de URI's) ook nog de mogelijkheid bestaat om één "oudere" of "nieuwere" versie van deze API's aan te wijzen en via de request-header te benaderen. De onderstaande URI's wijzen bijvoorbeeld naar de aangewezen productie-release van de API die alleen bereikbaar zijn via de URI:
+Using an optional request header one minor/patch version can be addressed. This means, that the client can send a request header to not only access versions v1 and v2 (the designated versions that are addressed in the URIs) but also access one *older* or *newer* version of API in the (pre-) production or acceptance test environment. For example, the following URIs point to the designated production release of the API that can be accessed in the URI:
 
 `https://service.omgevingswet.overheid.nl/publiek/catalogus/api/raadplegen/v1`
 
@@ -177,7 +177,7 @@ Via de optionele request-header kan één minor/patch-versie worden aangewezen. 
 
 `API-version: 2.1.0` (response header)
 
-Het weglaten van de request-header (`API-version: x.y.z`) selecteert altijd de "aangewezen" productieversie. Indien er voor V2 ook één andere aangewezen versie beschikbaar is, met bijvoorbeeld versienummer V2.1.1, dan kan deze via hetzelfde basis endpoint worden aangeboden en geselecteerd door het meegeven van de juiste request-parameter:
+Leaving off the request-header (`API-version: x.y.z`), one addresses always the *designated* production version. In case there is one other designated version available, e.g. v2.1.1, then it can be provided and addressed at the same base endpoint passing the correct request parameter: 
 
 `API-version: 2.1.1` (request header)
 
@@ -185,18 +185,17 @@ Het weglaten van de request-header (`API-version: x.y.z`) selecteert altijd de "
 
 `API-version: 2.1.1` (response header)
 
-Het toevoegen van een endpoint of een niet verplichte attribuut aan de payload zijn voorbeelden van wijzigingen die backward compatible zijn.
+Examples of backward compatible changes are the addition of an endpoint or an optional attribute to the payload.
 
-> [API principe: Alleen het major versienummer is onderdeel van de URI](#api-20)
+> [API principle: Include only the major version number in the URI](#api-20)
 >
-> In de URI wordt alleen het major versienummer opgenomen. Minor versienummer en patch versienummer worden in de header van het bericht zelf opgenomen. Het uitgangspunt dat hierbij wordt gehanteerd is dat minor versies en patches geen impact hebben op bestaande code, maar major versies wel.
+> One should only include the major version number. Minor version number and patch version number are included in the header of the message. Minor and patch versions have no impact on existing code, but major version do.
 
-Een API zal nooit helemaal stabiel zijn. Verandering is onvermijdelijk. Het is belangrijk hoe met deze verandering wordt omgegaan. Goed gedocumenteerde en tijdig gecommuniceerde uitfaseringsplanningen zijn in het algemeen voor veel APIgebruikers werkbaar.  
+An API will never be fully stable. Change is inevitable. Managing change is important. In general, well documented and timely communicated deprecation schedules are the most importand for API users.
 
-
-Klik op de onderstaande link om het document, waarin de extensies worden beschreven, te openen.
+More about extensions (in Dutch only).
 
 <section data-format="markdown" class="informative">
-        ## Extensies
-        [Extensies](https://geonovum.github.io/KP-APIs/Werkgroep%20API%20strategie/extensies/)
+        ## Extensions
+        [Extensions](https://geonovum.github.io/KP-APIs/Werkgroep%20API%20strategie/extensies/)
 </section>
