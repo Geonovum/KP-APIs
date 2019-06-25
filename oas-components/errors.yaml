@@ -1,55 +1,196 @@
-'401':
-  allOf:
-  - $ref: '#/Error'
-  - properties:
-      status:
-        example: 401
-'403':
-  allOf:
-  - $ref: '#/Error'
-  - properties:
-      status:
-        example: 403
-'404':
-  allOf:
-  - $ref: '#/Error'
-  - properties:
-      status:
-        example: 404
-'406':
-  allOf:
-  - $ref: '#/Error'
-  - properties:
-      status:
-        example: 406
-'503':
-  allOf:
-  - $ref: '#/Error'
-  - properties:
-      status:
-        example: 503
+# Onderstaand component 'Foutbericht' kan gebruikt worden voor alle op https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html gedefinieerde statuscodes.
 Error:
   type: object
-  required:
-    - detail
-    - instance
-    - status
-    - title
-    - type
+  description: Terugmelding bij een fout. JSON representatie in lijn met [RFC7807](https://tools.ietf.org/html/rfc7807).
   properties:
     type:
       type: string
-      description: >-
-        URI naar een pagina met meer informatie over deze foutmelding voor
-        de ontwikkelaar.
-      default: 'about:blank'
-      example: 'about:blank'
+      format: uri
+      description: Link naar meer informatie over deze fout
     title:
       type: string
+      description: Beschrijving van de fout
     status:
       type: integer
-      description: De HTTP status code
+      description: "Http status code"
     detail:
       type: string
+      description: Details over de fout
     instance:
       type: string
+      format: uri
+      description: Uri van de aanroep die de fout heeft veroorzaakt
+    code:
+      type: string
+      description: Systeemcode die het type fout aangeeft
+      minLength: 1
+400:
+  allOf:
+   -  $ref: '#/Error'
+   -  properties:
+        type:
+          example: "https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#/10.4.1 400 Bad Request"
+        title:
+          example: "Bad Request"
+        status:
+          example: 400
+        detail:
+          example: "The request could not be understood by the server due to malformed syntax. The client SHOULD NOT repeat the request without modification."
+        instance:
+          example: "https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde"
+401:
+  allOf:
+   -  $ref: '#/Error'
+   -  properties:
+        type:
+          example: "https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#/10.4.2 401 Unauthorized"
+        title:
+          example: "Unauthorized"
+        status:
+          example: 401
+        detail:
+          example: "The request requires user authentication. The response MUST include a WWW-Authenticate header field (section 14.47) containing a challenge applicable to the requested resource."
+        instance:
+          example: "https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde"
+403:
+  allOf:
+   -  $ref: '#/Error'
+   -  properties:
+        type:
+          example: "https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#/10.4.4 403 Forbidden"
+        title:
+          example: "Forbidden"
+        status:
+          example: 403
+        detail:
+          example: "The server understood the request, but is refusing to fulfill it."
+        instance:
+          example: "https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde"
+404:
+  allOf:
+   -  $ref: '#/Error'
+   -  properties:
+        type:
+          example: "https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#/10.4.5 404 Not Found"
+        title:
+          example: "Not Found"
+        status:
+          example: 404
+        detail:
+          example: "The server has not found anything matching the Request-URI."
+        instance:
+          example: "https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde"
+406:
+  allOf:
+   -  $ref: '#/Error'
+   -  properties:
+        type:
+          example: "https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#/10.4.7 406 Not Acceptable"
+        title:
+          example: "Not Acceptable"
+        status:
+          example: 406
+        detail:
+          example: "The resource identified by the request is only capable of generating response entities which have content characteristics not acceptable according to thr accept headers sent in the request"
+        instance:
+          example: "https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde"
+409:
+  allOf:
+   -  $ref: '#/Error'
+   -  properties:
+        type:
+          example: "https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#/10.4.10 409 Conflict"
+        title:
+          example: "Conflict"
+        status:
+          example: 409
+        detail:
+          example: "The request could not be completed due to a conflict with the current state of the resource"
+        instance:
+          example: "https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde"
+410:
+  allOf:
+   -  $ref: '#/Error'
+   -  properties:
+        type:
+          example: "https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#/10.4.11 410 Gone"
+        title:
+          example: "Gone"
+        status:
+          example: 410
+        detail:
+          example: "The requested resource is no longer available at the server and no forwarding adress is known."
+        instance:
+          example: "https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde"
+415:
+  allOf:
+   -  $ref: '#/Error'
+   -  properties:
+        type:
+          example: "https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#/10.4.16 415 Unsupported Media Type"
+        title:
+          example: "Unsupported Media Type"
+        status:
+          example: 415
+        detail:
+          example: "The server is refusing the request because the entity of the request is in a format not supported by the requested resource for the requested method."
+        instance:
+          example: "https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde"
+429:
+  allOf:
+   -  $ref: '#/Error'
+   -  properties:
+        type:
+          example: "https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html"
+        title:
+          example: "Too many requests"
+        status:
+          example: 429
+        detail:
+          example: "The user has sent too many requests in a given amount of time (rate limiting)."
+        instance:
+          example: "https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde"
+500:
+  allOf:
+   -  $ref: '#/Error'
+   -  properties:
+        type:
+          example: "https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#/10.5.1 500 Internal server error"
+        title:
+          example: "Internal Server Error"
+        status:
+          example: 500
+        detail:
+          example: "The server encountered an unexpected condition which prevented it from fulfilling the request."
+        instance:
+          example: "https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde"
+ValidationError:
+  allOf:
+    - $ref: '#/400'
+    - type: object
+      properties:
+        invalid-params:
+          type: array
+          items:
+            $ref: "#/InvalidParams"
+          description: "Foutmelding per fout in een parameter. Alle gevonden fouten worden één keer teruggemeld."
+InvalidParams:
+  type: object
+  description: Details over fouten in opgegeven parameters
+  properties:
+    type:
+      type: string
+      format: uri
+      example: "https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde"
+    name:
+      type: string
+      description: Naam van de parameter
+      example: "parameternaam"
+    code:
+      type: string
+      description: Systeemcode die het type fout aangeeft
+      minLength: 1
+    reason:
+      type: string
+      description: Beschrijving van de fout op de parameterwaarde
+      example: "Mag alleen numeriek karakter bevatten"
