@@ -1,4 +1,4 @@
-# Onderstaand component 'Foutbericht' kan gebruikt worden voor alle op https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html gedefinieerde statuscodes.
+# Onderstaand component 'Error' kan gebruikt worden voor alle op https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html gedefinieerde statuscodes.
 Error:
   type: object
   description: Terugmelding bij een fout. JSON representatie in lijn met [RFC7807](https://tools.ietf.org/html/rfc7807).
