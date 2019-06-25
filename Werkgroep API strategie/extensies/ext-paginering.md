@@ -1,52 +1,53 @@
 ## Paginering
 
-<p class='warning'>Deze extensie is nog in ontwikkeling en kan elk moment wijzigen.</p>
+Voor paginering worden de hypermedia controls `self`, `first`, `prev`, `next` en `last` gebruikt zoals beschreven in de [RFC5988](https://tools.ietf.org/html/rfc5988).
 
-Voor paginering wordt voor het media type 'application/hal+json' aangesloten op Hypertext Application Language (HAL). Aan geretourneerde objecten worden twee gereserveerde velden `_links` (verplicht) en `_embedded` (optioneel) toegevoegd. Deze velden vertegenwoordigen respectievelijk hyperlinks en embedded resources.  
+Hieronder een voorbeeld van paginering voor het media type 'application/json':
 
-Hier is een voorbeeld van een JSON+HAL representatie:
-
-```json
+```
 {
-  "_links": {
-    "self": {
-      "href": "https://.../api/registratie/v1/aanvragen?pagina=3"
-    },
-    "first": {
-      "href": "https://.../api/registratie/v1/aanvragen"
-    },
-    "prev": {
-      "href": "https://.../api/registratie/v1/aanvragen?pagina=2"
-    },
-    "next": {
-      "href": "https://.../api/registratie/v1/aanvragen?pagina=4"
-    },
-    "last": {
-      "href": "https://.../api/registratie/v1/aanvragen?pagina=5"
-    }
-  },
-  "id": "https://.../api/registratie/v1/aanvragen/12",
-  "naam": "Mijn dakkapel",
-  "samenvatting": "Ik wil een dakkapel bouwen!",
-  "_embedded": {
-    "aanvrager": {
-      "naam": "Bob"
-    }
-  }
+	"count": 1500,
+	"self": "https://.../api/registratie/v1/aanvragen?page=3",
+	"first": "https://.../api/registratie/v1/aanvragen",
+	"prev": "https://.../api/registratie/v1/aanvragen?page=2",
+	"next": "https://.../api/registratie/v1/aanvragen?page=4",
+	"last": "https://.../api/registratie/v1/aanvragen?page=5",
+	results: [
+		{
+			"self": "https://.../api/registratie/v1/aanvragen/12",
+			"titel": "Mijn dakkapel",
+			"samenvatting": "Ik wil een dakkapel bouwen!",
+			"aanvrager": "Bob"
+		},
+		...
+	]
 }
 ```
+Het element `count` staat voor het totale aantal resultaten en is niet verplicht. De query-parameter `page` wordt gebruikt om te verwijzen naar een pagina binnen de resource-collectie. De resulaten binnen de pagina worden opgenomen in de `results` array. 
 
-Indien het "plain" JSON, GeoJSON of iets anders dan HAL betreft zijn er geen `_links`. Deze kunnen dan opgenomen worden in de link response headers. Naast de representatie wordt de volgende metadata teruggegeven als HTTP headers.
+|Hypermedia control|Toelichting|
+|-|-|
+|`self` (verplicht)|Link naar de huidige pagina.|
+|`first` (optioneel)|Link naar de eerste pagina.|
+|`prev` (conditioneel verplicht)|Link naar de vorige pagina. Indien de huidige pagina de eerste pagina is, dan moet deze link worden weggelaten. In alle andere gevallen is deze link verplicht.|
+|`next` (conditioneel verplicht)|Link naar de volgende pagina. Indien de huidige pagina de laatste pagina is, dan moet deze link worden weggelaten. In alle andere gevallen is deze link verplicht.|
+|`last` (optioneel)|Link naar de laatste pagina.|
+
+Er is besloten om de pagineringsinformatie op te nemen in de JSON-body in plaats van de HTTP Link header omdat het meer developers-friendly is:
+* JSON is makkelijker te parsen dan tekstuele structuren in een Link header.
+* HATEOAS-principe: door te klikken op de pagina-links kan de developer snel begrijpen hoe het mechanisme werkt.
+
+Naast de bovenstaande JSON-response wordt de volgende metadata teruggegeven als HTTP headers.
 
 |HTTP header|Toelichting|
 |-|-|
 |`X-Total-Count` (optioneel)|Totaal aantal resultaten|
 |`X-Pagination-Count` (optioneel)|Totaal aantal pagina's|
 |`X-Pagination-Page` (optioneel)|Huidige pagina|
-|`X-Pagination-Limit` (optioneel)|Aantal resultaten per pagina|
+|`X-Pagination-Limit` (optioneel)|Aantal resultaten per pagina
 
-Bij grote datasets kunnen de berekeningen voor X-Total-Count en X-Pagination-Count behoorlijke impact hebben op de performance, voornamelijk als er niet of nauwelijks gefilterd wordt.
+Bij grote datasets kunnen de berekeningen voor X-Total-Count en X-Pagination-Count behoorlijke impact hebben op de performance, voornamelijk als er niet of nauwelijks gefilterd wordt. De header `X-Total-Count` bevat dezelfde informatie als het element `count` in de JSON-body (alleen voor het tonen van het totale aantal resultaten is besloten om beide mogelijkheden te ondersteunen).
 
-> [API principe: Paginering wordt gerealiseerd op basis van JSON+HAL bij media type: application/hal+json](#api-42)
+Voor andere media types (GeoJSON, JSON+HAL, etc.) wordt verwezen naar de desbetreffende standaard voor het omgaan met paginering.
 
-Alle links in HAL zijn absoluut. Dit in verband met mogelijke externe links (naar andere endpoints, linked-data resources, etc.) en eenvoudigere navigatie door clients die dan niet zelf de URL hoeven op te bouwen.  
+> [API principe: Voor het media type "application/json" wordt paginering gerealiseerd op basis van RFC5988](#api-42)
