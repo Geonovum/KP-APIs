@@ -38,6 +38,13 @@ Error:
           example: "The request could not be understood by the server due to malformed syntax. The client SHOULD NOT repeat the request without modification."
         instance:
           example: "https://datapunt.voorbeeldgemeente.nl/api/v1/resourcenaam?parameter=waarde"
+   - type: object
+     properties:
+       invalid-params:
+         type: array
+         items:
+           $ref: "#/InvalidParams"
+         description: "Foutmelding per fout in een parameter. Alle gevonden fouten worden één keer teruggemeld."
 401:
   allOf:
    -  $ref: '#/Error'
