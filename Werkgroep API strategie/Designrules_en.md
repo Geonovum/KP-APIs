@@ -69,13 +69,13 @@ REST applies existing HTTP operations to implement functionality at one service 
 
 > [API principle: Only apply default HTTP operations](#api-03)
 
-> [API principle: Leave off trailing slashes at API endpoints](#api-48)
+> [API principle: Leave off trailing slashes from API endpoints](#api-48)
 
 ### Language usage
 
 Since the exacy meaning of concepts are often lost in translation, resources are the underlying entities and attributes are defined in Dutch.
 
-> [API principle: Define interfaces in Dutch unless these is an official English glossery](#api-04)
+> [API principle: Define interfaces in Dutch unless there is an official English glossary](#api-04)
 
 ### Interface nomenclature: singular or plural?
 
@@ -115,7 +115,7 @@ In the case of HAL, linked resources are embedded in the default representation.
 
 `GET /aanvragen?fields=id,onderwerp,aanvrager,wijzigDatum&status=open&sorteer=wijzigDatum`
 
-> [API principle: Implement custom representation through the `fields` parameter](#api-09)
+> [API principle: Implement custom representation if supported](#api-09)
 
 ### How to implement operations that do not fit the CRUD model?
 
@@ -137,11 +137,11 @@ An API is as good as the accompanying documentation. The documentation has to be
 
 > [API principle: Documentation conforms to OAS v3.0 or newer](#api-16)
 
-> [API principle: Documentation is in Dutch unless there is existing documentation in English or there is an official English glossary availble](#api-17)
+> [API principle: Publish documentation in Dutch unless there is existing documentation in English or there is an official English glossary available](#api-17)
 
 The documentation should provide examples including full request and response cycles. Developers should be able to test (and perform) requests directly from within the documentation. Furthermore, each error should be described and labeled with a unique error code to trace errors.
 
-Once an API is in production, the *contract* (interface) should not be changed without prior notice. The documentation should include a deprecatin schedule and all details of the change. Changes should be published not only as a changelog on a publicly available blog but also through a mailing list, using the email addresses obtained when the API keys were issued.
+Once an API is in production, the *contract* (interface) should not be changed without prior notice. The documentation should include a deprecation schedule and all details of the change. Changes should be published not only as a changelog on a publicly available blog but also through a mailing list, using the email addresses obtained when the API keys were issued.
 
 > [API principle: Include a deprecation schedule when publishing API changes](#api-18)
 
@@ -157,9 +157,9 @@ APIs should always be versioned. Versioning facilitates the transition between c
 >
 > Provide old and new versions (maximum 3) of an API concurrently for a limited, maximum 1 year transition period.
 
-The URI of an API should include the major version number. This allows the exploration of multiple versions of an API in the browser.
+The URI of an API should include the major version number only. This allows the exploration of multiple versions of an API in the browser.
 
-The version number start at 1 andis raised with 1 for every major release that breaks the backwards compatibility of the interface. The minor and patch version numbers are always in the response header of the message in the `major.minor.patch` format.
+The version number start at 1 and is raised with 1 for every major release that breaks the backwards compatibility of the interface. The minor and patch version numbers are always in the response header of the message in the `major.minor.patch` format.
 
 The header (both request and  response) should be implemented as follows:
 
