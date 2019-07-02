@@ -42,7 +42,7 @@ Figuur 2 beschrijft vanuit het perspectief van een overheidsorganisatie als dien
 
 Figuur 2: Onderdelen van een API architectuur - Algemeen overzicht
 
-**API-Gateway**
+### API-Gateway
 
 Dit is het runtime onderdeel dat op de organisatiegrens van de diensten aanbieder de API-aanroepen ontvangt.
 
@@ -62,7 +62,7 @@ Dit betreft het routeren van de API-aanroep naar de juiste achterliggende applic
 _Logging_  
 Dit betreft het loggen van API aanroepen van diensten afnemers;
 
-**API Management**
+### API Management
 
 Dit onderdeel betreft het beheren van de API's van de dienstenaanbieders. Op basis van de registratie van API's kan de life-cycle van de API beheerd worden, de runtime omgeving worden ingericht en partners en developers worden voorzien van informatie over het gebruik van de API's;
 
@@ -78,73 +78,22 @@ De dienstaanbieder beheert de levenscyclus van de API's (design, test, productie
 _Monitoring_
 De dienstaanbieder monitort beschikbaarheid en gebruik van de API's;
 
-**Developer Portal**
+### Developer Portal
 
-Het Developer portal ondersteunt de ontwikkelaar bij het gebruik van API's. Bijvoorbeeld door middel van documentatie, voorbeelden, API-register (overzicht van alle beschikbare API's), sandbox voor experimenten en ook 'onboarding' / aanmelden voor toegang en developer account beheer.
+Het Developer portal ondersteunt de ontwikkelaar bij het gebruik van API's. Bijvoorbeeld door middel van
+documentatie, voorbeelden, API-register (overzicht van alle beschikbare API's), sandbox voor experimenten en ook 'onboarding' / aanmelden
+voor toegang en developer account beheer.
 
-**Applicaties Afnemer & Applicaties Aanbieder**
+### Applicaties Afnemer & Applicaties Aanbieder
 
-De applicaties van de afnemer maken gebruik van de diensten van de dienstenaanbieder door het aanroepen van API's. De applicaties van de aanbieder leveren de diensten door het aanbieden van API's.
+De applicaties van de afnemer maken gebruik van de diensten van de dienstenaanbieder door het aanroepen 
+van API's. De applicaties van de aanbieder leveren de diensten door het aanbieden van API's.
 
-**Identity Management**
+### Identity Management
 
 In gevallen waar de identiteit van de dienstenaanvrager van belang is en onderdeel van de toegangs controle en gebruiksmonitoring, is de relatie met het identity management systeem van de organisatie relevant.  
 (Zie ook : [https://www.noraonline.nl/wiki/Begrippen_IAM](https://www.noraonline.nl/wiki/Begrippen_IAM))
 
-> Punten voor verdere uitwerking in vervolgtrajecten:
-> -Certificering van (mobile) apps / afnemer applicaties
-> -Afspraken / standaarden 'Overheid 2 Overheid' (gesloten) API's
-> -Centrale voorzieningen in de GDI mbt API's bv API-register 
-
-
-
-*Website:*
-
-*De impact van API's op de architectuur van alle organisaties die hier serieus
-mee aan de slag gaan is groot, net als de behoefte aan kennis op dit gebied. De
-werkgroep Architectuur buigt zich over vragen rond de volgende onderwerpen: de
-impact van het gebruik van API’s op de gehele informatievoorziening van een
-organisatie, de kennisopbouw over benodigde architectuur in
-overheidsorganisaties en het overzicht en sturing van gewenste beweging naar het
-gebruiken van data in plaats van het bezitten van data.*
-
-Sec:
-
-\-beschrijving van de impact van (gebruiken van ) API’s op de eigen
-informatievoorziening (vanuit bestaande use-cases)
-
-\-Werken aan kennis opbouw over de benodigde architectuur voor het kunnen werken
-met API’s
-
-\-sturing en richting geven aan de noodzakelijke beweging van data ‘hebben’ naar
-data ‘gebruiken’ bij het werken met API’s.
-
-1.  De GitHub tekst over REST API architectuur wordt een tekst over
-    architectuurthema’s (beveiliging, logging, semantiek, doelbinding etc) om
-    organisaties en mensen die zich aan het informeren zijn over REST API’s ’s
-    om hen te helpen bij beslissingsondersteuning
-
-2.  De architectuur tekst in GitHub wordt nog **geen** referentie architectuur:
-    daarvoor zijn API , methodieken, technieken, standaarden etc op dit moment
-    in 2018 nog teveel in ontwikkeling en onvoldoende stabiel
-
-3.  Daar waar mogelijk meer stabiele architectuur elementen worden voorzien,
-    kunnen deze van bv principes, begrippen, bouwstenen, standaarden, wettelijke
-    grondslagen, beleid en kaders voorzien. Dit is een eerste stap richting in
-    een nog uit te werken referentie architectuur
-
-4.  Hoofdmoot van het stuk zal zijn om stapsgewijs voor te sorteren op die
-    elementen, methodieken en technieken die mogelijk stabiel genoeg **kunnen**
-    gaan worden
-
-5.  Bijvoorbeeld rond NLX: <https://nlx.io/about/>
-
-6.  Daarmee geeft de werkgroep Architectuur API inrichting van de NORA
-    Applicatielaag vanuit API persperctief:
-    <https://www.noraonline.nl/wiki/Applicatielaag>
-
->   De werkgroep leden hebben in november 2018 gekozen voor de volgende
->   thematische indeling:
 
 ## <!-- 6.3.3 --> Patronen
 
@@ -230,29 +179,6 @@ De verschillende patronen zijn aan elkaar gerelateerd en hebben een duidelijke a
 	<figcaption>Visualisatie patronen (gelaagdheid tussen real life, proces en data).</figcaption>
  </figure>
 <BR>
-
-##  Componenten
-
->   Hamvraag: zijn REST API’s bouwstenen (architectuur component)? Behandelen:
->   op welke wijze API’s eenduidig zijn te beschrijven en vindbaar te maken
->   zijn. Wat kunnen we (concreet) van hieruit aan richtinggevende normen/
->   regels voor API Register’s meegeven? Wie hebben er een use case rond een API
->   register?
-
-##  Begrippen
-
->   Noemen/ overnemen begrippen uit document BFS over API’s. Proberen een steeds
->   meer gestandaardiseerd begrippenkader voor REST API’s neer te zetten
-
-##  Standaarden
-
->   Updaten en overnemen lijst met API standaarden uit het document BFS
->   (Lancelot Schellevis)
-
-##  Use cases
-
->   Iig: use case Drechtsteden. Overige? Let wel: use cases zijn in dit stadium
->   het uitgangspunt
 
 ## Architectuur bijlagen
 
