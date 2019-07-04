@@ -41,4 +41,4 @@ De Warning header (zie: RFC 7234) die we hier gebruiken heeft warn-code 299 ("Mi
 
 Gebruikers moeten voldoende tijd hebben om de oude API uit te faseren. Een periode van 6 tot 12 maanden wordt aanbevolen.
 
-> [API principe: Gebruikers van een 'deprecated' API worden actief gewaarschuwd](#api-21)
+> [API principe: Inform users of a deprecated API actively](#api-21)

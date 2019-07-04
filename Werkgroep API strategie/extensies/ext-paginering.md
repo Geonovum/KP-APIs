@@ -47,6 +47,6 @@ Indien het "plain" JSON, GeoJSON of iets anders dan HAL betreft zijn er geen `_l
 
 Bij grote datasets kunnen de berekeningen voor X-Total-Count en X-Pagination-Count behoorlijke impact hebben op de performance, voornamelijk als er niet of nauwelijks gefilterd wordt.
 
-> [API principe: Paginering wordt gerealiseerd op basis van JSON+HAL bij media type: application/hal+json](#api-42)
+> [API principe: Use JSON+HAL with media type `application/hal+json` for pagination](#api-42)
 
 Alle links in HAL zijn absoluut. Dit in verband met mogelijke externe links (naar andere endpoints, linked-data resources, etc.) en eenvoudigere navigatie door clients die dan niet zelf de URL hoeven op te bouwen.  

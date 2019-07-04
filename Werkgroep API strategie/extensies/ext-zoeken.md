@@ -4,7 +4,7 @@
 
 Soms zijn eenvoudige filters onvoldoende en is de kracht van vrije-tekst zoekmachines nodig. API's ondersteunen dit middels de query-parameter `zoek`. Het resultaat wordt in dezelfde representatie teruggegeven.
 
-> [API principe: Voor vrije-tekst zoeken wordt een query-parameter zoek gebruikt](#api-32)
+> [API principe: Use the query parameter `zoek` for full-text search](#api-32)
 
 Voorbeelden van de combinatie filteren, sorteren en zoeken:
 
@@ -23,7 +23,7 @@ API's die vrije-tekst zoeken ondersteunen kunnen overweg met twee soorten wildca
 
 Bijvoorbeeld, `he*` zal overeenkomen met elk woord dat begint met `he`, zoals `hek`, `hemelwaterafvoer`, enzovoort. In het geval van `he?` komt dit alleen overeen met drie letterwoorden die beginnen met `he`, zoals `hek`, `heg`, enzovoort.
 
-> [API principe: API's die vrije-tekst zoeken ondersteunen kunnen overweg met twee soorten wildcard karakters: * en ?](#api-33)
+> [API principe: Support both `*` and `?` wildcard characters for full-text search APIs](#api-33)
 
 Hieronder volgen nog een aantal basisregels voor wildcards in zoekopdrachten:
 

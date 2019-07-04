@@ -50,13 +50,13 @@ Dit ziet er dan als volgt uit:
 }
 ```
 
-> [API principe: Foutafhandeling is gestandaardiseerd](#api-46)
+> [API principe: Use default error handling](#api-46)
 
 ### HTTP statuscodes
 
 HTTP definieert een hele reeks gestandaardiseerde statuscodes die gebruikt dienen te worden door API's. Deze helpen de gebruikers van de API's bij het afhandelen van fouten.  
 
-> [API principe: API's passen de verplichte HTTP statuscodes toe](#api-47)
+> [API principe: Use the required HTTP status codes](#api-47)
 
 Samenvatting HTTP-operaties in combinatie met de primaire HTTP statuscodes:
 

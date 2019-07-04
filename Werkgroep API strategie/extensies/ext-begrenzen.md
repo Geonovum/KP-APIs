@@ -12,8 +12,8 @@ HTTP headers worden gebruikt om de bevragingslimit naar de gebruiker te communic
 |`X-Rate-Limit-Remaining`|Geeft aan hoeveel verzoeken nog gedaan kunnen worden in de huidige tijdsperiode|
 |`X-Rate-Limit-Reset`|Geeft aan hoeveel seconden over zijn in de huidige tijdsperiode|
 
-> [API principe: Beperken van het aantal verzoeken per tijdsperiode wordt aangeraden](#api-44)
+> [API principe: Apply rate limiting](#api-44)
 
 [[rfc6585]] introduceert een HTTP statuscode `429 Too Many Requests` die wordt gebruikt om het overschrijden van het aantal verzoeken te melden aan de gebruiker.
 
-> [API principe: Begrenzingen worden proactief gemeld](#api-45)
+> [API principe: Provide rate limiting information](#api-45)

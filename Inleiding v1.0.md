@@ -21,4 +21,3 @@ van de eerste twee hoofdstukken staat.
 De hoofdstukken API Designrules en de API Principes zijn *Engelstalig*, en zijn **Normatief**. 
 Het **Informatieve** deel dat hoort bij hoofdstuk 4 is in een apart document gezet met
 [Extensies](https://geonovum.github.io/KP-APIs/Werkgroep%20API%20strategie/extensies/)
-
