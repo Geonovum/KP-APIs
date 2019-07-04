@@ -16,7 +16,7 @@ var respecConfig =
   specStatus: "GN-VV",
   specType: "HR",
   pubDomain: "api",
-  publishDate: "2019-07-15",
+  publishDate: "2019-07-05",
   previousPublishDate: "2019-02-13",
   previousMaturity: "GN-CV",
   editors: 
@@ -60,9 +60,9 @@ var respecConfig =
       companyURL: "http://www.kadaster.nl/",
     },
     {
-      name: "Emile van de Maas",
-      company: "",
-      companyURL: "",
+      name: "Peter Haasnoot",
+      company: "Logius",
+      companyURL: "www.logius.nl",
     },
   ],
   shortName: "API-Strategie",

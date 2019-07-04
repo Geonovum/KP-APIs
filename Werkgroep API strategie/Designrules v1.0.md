@@ -195,7 +195,14 @@ An API will never be fully stable. Change is inevitable. Managing change is impo
 
 More about extensions (in Dutch only).
 
+
 <section data-format="markdown" class="informative">
-        ## Extensions
-        [Extensions](https://geonovum.github.io/KP-APIs/Werkgroep%20API%20strategie/extensies/)
+## Extensions
+
+        Er is een gepubliceerde versie en een werkversie van het document met extensies. De Werkversie staat op 
+        github en is het document dat "under construction" is, en dus de allerlaatste aanpassingen bevat.
+
+        De documenten zijn hier te vinden:  
+        [Extensions Gepubliceerde versie](https://docs.geostandaarden.nl/api/vv-hr-API-Strategie-ext-20190705/)  
+        [Extensions Werkversie](https://geonovum.github.io/KP-APIs/Werkgroep%20API%20strategie/extensies/)
 </section>
