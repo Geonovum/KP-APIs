@@ -13,12 +13,12 @@
 
 var respecConfig = 
 {
-  specStatus: "GN-WV",
+  specStatus: "GN-VV",
   specType: "HR",
   pubDomain: "api",
-  publishDate: "2019-02-13",
-  //previousPublishDate: "2019-02-13",
-  //previousMaturity: "GN-CV",
+  publishDate: "2019-07-15",
+  previousPublishDate: "2019-02-13",
+  previousMaturity: "GN-CV",
   editors: 
   [
     {

@@ -12,10 +12,10 @@
 
 var respecConfig = 
 {
-  specStatus: "GN-WV",
+  specStatus: "GN-VV",
   specType: "HR",
   pubDomain: "api",
-  //publishDate: "2019-02-13",
+  publishDate: "2019-07-05",
   //previousPublishDate: "2019-02-13",
   //previousMaturity: "GN-CV",
   editors: 
@@ -36,7 +36,8 @@ var respecConfig =
     
   ],
   shortName: "API-Strategie-ext",
-  github: "https://github.com/geonovum/KP-APIs/Werkgroep%20API%20strategie/extensies",
+  //github: "https://github.com/geonovum/KP-APIs/Werkgroep%20API%20strategie/extensies",
+  github: "https://github.com/geonovum/KP-APIs",
   issueBase: "https://github.com/geonovum/KP-APIs/issues/",
   localBiblio: {
   "OAuth2": {
