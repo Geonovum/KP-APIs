@@ -48,6 +48,4 @@ Naast de bovenstaande JSON-response wordt de volgende metadata teruggegeven als 
 
 Bij grote datasets kunnen de berekeningen voor X-Total-Count en X-Pagination-Count behoorlijke impact hebben op de performance, voornamelijk als er niet of nauwelijks gefilterd wordt. De header `X-Total-Count` bevat dezelfde informatie als het element `count` in de JSON-body (alleen voor het tonen van het totale aantal resultaten is besloten om beide mogelijkheden te ondersteunen).
 
-Voor andere media types (GeoJSON, JSON+HAL, etc.) wordt verwezen naar de desbetreffende standaard voor het omgaan met paginering.
-
-> [API principe: Voor het media type "application/json" wordt paginering gerealiseerd op basis van RFC5988](#api-42)
+> [API principe: Voor het mediatype "application/json" wordt paginering gerealiseerd op basis van RFC5988 zoals hierboven beschreven. Voor andere mediatypes zoals "application/hal+json" wordt verwezen naar de desbetreffende standaard voor het omgaan met paginering.](#api-42)
