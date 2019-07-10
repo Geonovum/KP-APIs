@@ -24,7 +24,7 @@ De huidige situatie brengt een aantal problemen met zich mee:
 3. Personen of bedrijven hebben geen regie over hun gegevens als deze overal verspreid staan.
 4. Veel van de systemen en koppelingen werken afhankelijkheid van leveranciers in de hand.
 
-We kunnen de digitale overheid veiliger, efficiënter en beter beheersbaar maken door applicaties beter te scheiden van de gegevens en de gegevens alleen bij de bron te bewaren. Door de gegevens alleen door de bronhouder te laten beheren, hoeven ze niet meer op grote schaal gekopieerd, gedupliceerd en gesynchroniseerd te worden. Dit idee zit achter het [nieuwe gegevenslandschap](https://www.gemmaonline.nl/images/gemmaonline/8/8b/Gemeentelijk_Gegevenslandschap_-_Beschrijving_informatiearchitectuur_v0_6.pdf) met als onderdelen [Haal Centraal](https://github.com/VNG-Realisatie/Haal-Centraal-BRP-bevragen) en [Common Ground](https://vng.nl/samen-organiseren/common-ground).
+We kunnen de digitale overheid veiliger, efficiënter en beter beheersbaar maken door applicaties beter te scheiden van de gegevens en de gegevens alleen bij de bron te bewaren. Door de gegevens alleen door de bronhouder te laten beheren, hoeven ze niet meer op grote schaal gekopieerd, gedupliceerd en gesynchroniseerd te worden. Dit idee zit achter het [nieuwe gegevenslandschap](https://www.gemmaonline.nl/images/gemmaonline/8/8b/Gemeentelijk_Gegevenslandschap_-_Beschrijving_informatiearchitectuur_v0_6.pdf) met als onderdelen [Haal Centraal](https://www.vngrealisatie.nl/nieuws/start-programma-haal-centraal) en [Common Ground](https://commonground.nl/).
 
 Dit vraagt om technologie waarmee je gegevens op een betrouwbare en schaalbare manier kan ontsluiten bij de bron. Dat kan met APIs.
 
