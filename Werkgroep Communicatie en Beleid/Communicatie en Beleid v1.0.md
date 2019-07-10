@@ -16,7 +16,7 @@ Is het niet efficiënter om één basisregistratie personen bij te houden, in pl
 ### De digitale overheid heeft een probleem
 Bij veel ICT systemen van de overheid zitten de gegevens (de data) helemaal verweven in de applicatie. Ieder systeem heeft z'n eigen database en kopieert data van en naar andere systemen. Zo werken veel systemen bij gemeenten met kopieën van de landelijke basisregistraties. Met de jaren ontstaat daardoor een wirwar aan koppelingen tussen systemen.
 
-<img src="../media/visualisatie-probleem.jpg" alt="Visualisatie van de ongestructureerde datakoppelingen tussen ICT systemen van de overheid" width="700" />
+<img src="../media/visualisatie-probleem.jpg" alt="Visualisatie van de ongestructureerde datakoppelingen tussen ICT systemen van de overheid. Bron: VNG Realisatie." width="700" /> Bron: VNG Realisatie.
 
 De huidige situatie brengt een aantal problemen met zich mee:
 1. De kans op fouten en datalekken neemt toe bij het veelvuldig kopiëren en gedupliceerd opslaan van gegevens.
