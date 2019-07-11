@@ -6,16 +6,16 @@ API's zijn vanaf elke locatie vanaf het internet te benaderen. Om uitgewisselde 
 
 Doordat de verbinding altijd is versleuteld is het authenticatiemechanisme eenvoudiger. Hierdoor wordt het mogelijk om eenvoudige toegangstokens te gebruiken in plaats van toegangstokens met encryptie.
 
-> [API principe: De verbinding is ALTIJD versleuteld met minimaal TLS V1.3](#api-11)
+> [API principe: Encrypt connections using at least TLS v1.3](#api-11)
 
-> [API principe: API's zijn bij voorkeur alleen bruikbaar met behulp van een API-key](#api-12)
+> [API principe: Allow access to an API only if an API key is provided](#api-12)
 
 Voor meer informatie over beveiliging zie ook hoofdstuk 5.
 
 ### Authenticatie en autorisatie
 Een REST API mag geen toestand (state) bijhouden. Dit betekent dat authenticatie en autorisatie van een verzoek niet mag afhangen van cookies of sessies. In plaats daarvan wordt elk verzoek voorzien van een token. Binnen het Kennisplatform APIs is gekozen voor OAuth 2.0 als de standaarden voor het autorisatiemechanisme waar dit nodig is, in hoofdstuk 5 is meer informatie te vinden over deze keuze en het gebruik van OAuth 2.0.
 
-> [API principe: Tokens worden niet gebruikt in query parameters](#api-13)
+> [API principe: Accept tokens as HTTP headers only](#api-13)
 
 Bij het gebruik van tokens wordt onderscheid gemaakt tussen geauthentiseerde en niet-geauthentiseerde services met de bijhorende headers:
 
@@ -26,11 +26,11 @@ Bij het gebruik van tokens wordt onderscheid gemaakt tussen geauthentiseerde en 
 
 Bij het ontbreken van de juiste headers zijn geen authenticatiedetails beschikbaar en dient de statuscode `403 Forbidden` terug te worden gegeven.
 
-> [API principe: Autorisatie is waar nodig gebaseerd op OAuth 2.0](#api-14)
+> [API principe: Use OAuth 2.0 for authorisation](#api-14)
 
 Zie ook [Het Nederlands profiel OAuth in het hoofdtuk beveiliging](#Beveiliging) voor een nadere uitwerking van de toepassing van OAuth.
 
-> [API principe: Authenticatie voor API's met toegangsbeperking of doelbinding is gebaseerd op PKIoverheid](#api-15)
+> [API principe: Use PKIoverheid certificates for access-restricted or purpose-limited API authentication](#api-15)
 
 #### Autorisatiefouten
 
@@ -67,10 +67,10 @@ Openbaar zichtbare identifiers (ID's), zoals die veelal in URI's van RESTful API
 
 De API-key's die standaard worden uitgegeven zijn "unrestricted". Dat wil zeggen dat er geen gebruiksbeperkingen op zitten en ze niet blootgesteld mogen worden via een webapplicatie. Door API-key's zonder gebruiksbeperkingen toe te passen in JavaScript, is er een reële kans op misbruik en quotum-diefstal. Om dit te voorkomen dienen in dit geval zogenaamde "restricted" API-key's te worden uitgegeven en gebruikt.
 
-> [API principe: Gebruik "publieke" API-Key](#api-49)
+> [API principe: Use *public* API-keys](#api-49)
 
 #### CORS-policy
 
 Webbrowsers implementeren een zogenaamde "same origin policy", een belangrijk beveiligingsconcept om te voorkomen dat verzoeken naar een ander domein gaan dan waarop het is aangeboden. Hoewel dit beleid effectief is in het voorkomen van aanroepen in verschillende domeinen, voorkomt het ook legitieme interactie tussen een API's en clients van een bekende en vertrouwde oorsprong.
 
-> [API principe: Controleer toegang en gebruik CORS-header](#api-50)
+> [API principe: Use CORS to control access](#api-50)

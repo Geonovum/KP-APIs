@@ -19,4 +19,4 @@ Een ETag (Entity Tag) is een hashcode of checksum van een resource. Als de resou
 
 Dit werkt in principe net als ETag, behalve dat het gebruik maakt van tijdstempels. De HTTP header `Last-Modified` bevat een tijdstempel in het RFC 1123 formaat die wordt gevalideerd tegen de HTTP header `If-Modified-Since`. De server controleert of de resource gewijzigd is sinds het aangegeven tijdstip. Indien dit niet het geval is dan geeft de server een HTTP statuscode `304 Not Modified` terug. De afnemer laadt dan de resource uit de eigen cache. Dit gaat alleen op over client-side caching, dus is alleen van toepassing als de client ook daadwerkelijk de request headers meestuurt, anders altijd een `200 OK`.
 
-> [API principe: Waar relevant wordt caching toegepast](#api-43)
+> [API principe: Apply caching to improve performance](#api-43)

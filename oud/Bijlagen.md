@@ -56,12 +56,12 @@ opgelost:
 
 ### <a name="api-11"></a>API-11: De verbinding is ALTIJD versleuteld met minimaal TLS V1.3
 
-De verbinding is ALTIJD versleuteld op basis van minimaal TLS V1.3, TLS V1.2 is toegestaan als fall-back optie. Geen
-uitzonderingen, dus overal en altijd. In het geval van toegangsbeperking of
-doelbinding wordt tweezijdig TLS toegepast. Doordat de verbinding altijd is
-versleuteld maakt het authenticatiemechanisme eenvoudiger. Hierdoor wordt het
-mogelijk om eenvoudige toegangstokens te gebruiken in plaats van toegangstokens
-met encryptie.
+De verbinding is ALTIJD versleuteld op basis van minimaal TLS V1.3, TLS V1.2 is
+toegestaan als fall-back optie. Geen uitzonderingen, dus overal en altijd. In
+het geval van toegangsbeperking of doelbinding wordt tweezijdig TLS toegepast.
+Doordat de verbinding altijd is versleuteld maakt het authenticatiemechanisme
+eenvoudiger. Hierdoor wordt het mogelijk om eenvoudige toegangstokens te
+gebruiken in plaats van toegangstokens met encryptie.
 
 ### <a name="api-12"></a>API-12: API's zijn bij voorkeur alleen bruikbaar met behulp van een API-key
 
@@ -126,14 +126,14 @@ API's ontvangen en versturen JSON.
 
 ### <a name="api-23"></a>API-23: API's zijn optioneel voorzien van een JSON Schema
 
-API's ondersteunen JSON Schema (<http://json-schema.org),> zodat validatie
+API's ondersteunen JSON Schema (<http://json-schema.org)> zodat validatie
 mogelijk (optioneel) is en vereenvoudigd wordt.
 
 ### <a name="api-24"></a>API-24: Content negotiation wordt volledig ondersteund
 
 Andere representaties zoals XML en RDF worden naast JSON via het standaard HTTP
 content negotiation mechanisme ondersteund. Als het gewenste formaat niet
-geleverd kan worden zal er een 406 Not Acceptable worden teruggegeven.
+geleverd kan worden zal er een `406 Not Acceptable` worden teruggegeven.
 
 ### <a name="api-25"></a>API-25: API's controleren dat de Content-Type header is ingesteld
 

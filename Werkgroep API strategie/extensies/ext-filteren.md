@@ -6,7 +6,7 @@ Er wordt gekozen om de basis URL's van resources zo eenvoudig mogelijk te houden
 
 Om te filteren wordt gebruik gemaakt van unieke query-parameters die gelijk zijn aan de velden waarop gefilterd kan worden. Als je bijvoorbeeld een lijst met aanvragen wilt opvragen van het eindpunt `/aanvragen` en deze wilt beperken tot open aanvragen, dan wordt het verzoek `GET /aanvragen?status=open` gebruikt. Hier is `status` een veld waarop gefilterd kan worden.
 
-> [API principe: Filter query-parameters zijn gelijk aan de velden waarop gefilterd kan worden](#api-30)
+> [API principe: Use query parameters corresponding to the queryable fields](#api-30)
 
 Dezelfde systematiek kan worden gehanteerd voor geneste properties. Zoals uitgewerkt met een voorbeeld op basis van de volgende collectie:
 

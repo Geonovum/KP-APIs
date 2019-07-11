@@ -4,7 +4,7 @@
 
 REST API's voor het werken met geometrieën kunnen een filter aanbieden op basis van geografische gegevens. Het is hierbij belangrijk om een onderscheid te maken tussen een geometrie in het resultaat (response) en een geografische filter in de aanroep (request). Het is immers niet vanzelfsprekend dat als iemand wil weten in welk perceel ik hij/zij zich momenteel bevindt, dat ook de geometrie in de response wordt teruggegeven; een naam of nummer kan dan al voldoende zijn.
 
-> [API principe: GEO API's ontvangen en versturen bij voorkeur GeoJSON](#api-34)
+> [API principe: Support GeoJSON for GEO APIs](#api-34)
 
 Voor GEO API's wordt bij voorkeur de standaard GeoJSON [[rfc8142]] gebruikt.
 
@@ -12,7 +12,7 @@ Voor GEO API's wordt bij voorkeur de standaard GeoJSON [[rfc8142]] gebruikt.
 
 In een JSON API wordt een geometrie teruggegeven als GeoJSON. We kiezen er voor om dit binnen de `application/json` te ‘wrappen' in een apart GeoJSON object.
 
-> [API principe: GeoJSON is onderdeel van de embedded resource in de JSON response](#api-35)
+> [API principe: Include GeoJSON as part of the embedded resource in the JSON response](#api-35)
 
 ### Aanroep (requests)
 
@@ -32,7 +32,7 @@ In analogie met API's zoals die van Elasticsearch, is een `POST` naar een apart 
 }
 ```
 
-> [API principe: Voor GEO queries is een POST endpoint beschikbaar](#api-36)
+> [API principe: Provide a `POST` endpoint for GEO queries](#api-36)
 
 Omdat we ons met het geo endpoint beperken tot een GEO-query en we wellicht ook gecombineerde queries willen doen is het sterk aan te bevelen om een generiek query endpoint in te richten:
 
@@ -49,13 +49,13 @@ Omdat we ons met het geo endpoint beperken tot een GEO-query en we wellicht ook 
 }
 ```
 
-> [API principe: POST endpoints zijn uitbreidbaar voor gecombineerde vragen](#api-37)
+> [API principe: Support mixed queries at `POST` endpoints](#api-37)
 
 Naast contains kan er ook `intersects` (snijdt) of `within` (valt binnen) als operators gebruikt worden. De benamingen van deze operators komen uit de GEO-wereld en die willen we niet opnieuw uitvinden. Zie voor meer details: https://www.w3.org/TR/sdw-bp/#entity-level-links  
 
 Omdat we voor de geometrie een GeoJSON object gebruiken hoeven we hier geen syntax meer voor te verzinnen.
 
-> [API principe: Resultaten van een globale zoekvraag worden in de relevante context geplaatst](#api-38)
+> [API principe: Put results of a global spatial query in the relevant geometric context](#api-38)
 
 In het volgende voorbeeld wordt aangegeven hoe dit kan worden gerealiseerd:
 
@@ -90,7 +90,7 @@ Het default CRS (Coordinate Reference System) van GeoJSON is WGS84. Dit is het g
 
 Omdat de meeste client-bibliotheken met WGS84 werken, schrijft de W3C/OGC werkgroep "Spatial Data on the Web" voor om dit standaard te ontsluiten. Dit kan direct op een kaart geplot worden zonder moeilijke transformaties. De API-strategie voorziet hierin door naast ETRS89 en RD ook WGS84 of Web Mercator (EPSG:3857, voor rasterdata) te ondersteunen.
 
-> [API principe: Het voorkeur-coördinatenstelsels (CRS) is ETRS89, maar het CRS wordt niet impliciet geselecteerd](#api-39)
+> [API principe: Use ETRS89 as the preferred coordinate reference system (CRS)](#api-39)
 
 Het is mogelijk om het CRS voor vraag en antwoord via headers afzonderlijk te specificeren. Hierin zijn vervolgens drie opties (met voorgeschreven projecties) voorhanden: RD, ETRS89 en WGS84.
 
@@ -104,7 +104,7 @@ Een nadere opsomming van de uitgangspunten voor het CRS:
 - Uitwisselingsformaat (notatie) ETRS89 en WGS84 X Y in decimale graden: DD.ddddddddd (voorbeeld: `52.255023450`)
 - Uitwisselingsformaat (notatie) RD X Y in meters (niet afgerond): `195427.5200 311611.8400`
 
-> [API principe: Het coördinatenstelsel (CRS) van de vraag en het antwoord wordt in de header meegestuurd](#api-40)
+> [API principe: Pass the coordinate reference system (CRS) of the request and the response in the headers](#api-40)
 
 De hier genoemde headers zijn puur bedoeld voor de onderhandeling tussen de client en de server. Afhankelijk van de toepassing zal naast de geometrieën ook specifieke metadata onderdeel vormen van het antwoord, bijvoorbeeld de oorspronkelijke realisatie inclusief een inwindatum.
 
@@ -128,4 +128,4 @@ Het gewenste CRS voor de geometrie in het antwoord (response body) wordt aangedu
 
 Voor het transformeren tussen coördinaatreferentiesystemen is binnen de Rijksoverheid software met een keurmerk beschikbaar.
 
-> [API principe: Het gewenste coördinatenstelsel wordt op basis van content negotiation overeengekomen](#api-41)
+> [API principe: Use content negotiation to serve different CRSs](#api-41)
