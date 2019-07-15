@@ -203,6 +203,6 @@ More about extensions (in Dutch only).
         github en is het document dat "under construction" is, en dus de allerlaatste aanpassingen bevat.
 
         De documenten zijn hier te vinden:  
-        [Extensions Gepubliceerde versie](https://docs.geostandaarden.nl/api/vv-hr-API-Strategie-ext-20190705/)  
+        [Extensions Gepubliceerde versie](https://docs.geostandaarden.nl/api/vv-hr-API-Strategie-ext-20190715/)  
         [Extensions Werkversie](https://geonovum.github.io/KP-APIs/Werkgroep%20API%20strategie/extensies/)
 </section>
