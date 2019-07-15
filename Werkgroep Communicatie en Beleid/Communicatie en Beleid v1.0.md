@@ -11,12 +11,12 @@ Amsterdam en Den Haag houden elk hun eigen registratie van personen bij. De ICT 
 
 Is het niet efficiënter om één basisregistratie personen bij te houden, in plaats van gegevens heen en weer te schuiven van de ene lokale registratie naar de andere?
 
-<img src="../media/visualisatie-data-bij-de-bron.png" alt="Visualisatie van de voordelen van het bij de bron houden van data met APIs" width="700" />
+<img src="media/visualisatie-data-bij-de-bron.png" alt="Visualisatie van de voordelen van het bij de bron houden van data met APIs" width="700" />
 
 ### De digitale overheid heeft een probleem
 Bij veel ICT systemen van de overheid zitten de gegevens (de data) helemaal verweven in de applicatie. Ieder systeem heeft z'n eigen database en kopieert data van en naar andere systemen. Zo werken veel systemen bij gemeenten met kopieën van de landelijke basisregistraties. Met de jaren ontstaat daardoor een wirwar aan koppelingen tussen systemen.
 
-<img src="../media/visualisatie-probleem.jpg" alt="Visualisatie van de ongestructureerde datakoppelingen tussen ICT systemen van de overheid. Bron: VNG Realisatie." width="700" /> Bron: VNG Realisatie.
+<img src="media/visualisatie-probleem.jpg" alt="Visualisatie van de ongestructureerde datakoppelingen tussen ICT systemen van de overheid. Bron: VNG Realisatie." width="700" /> Bron: VNG Realisatie.
 
 De huidige situatie brengt een aantal problemen met zich mee:
 1. De kans op fouten en datalekken neemt toe bij het veelvuldig kopiëren en gedupliceerd opslaan van gegevens.
