@@ -1,5 +1,5 @@
-## Voorbeeld: een extensie die nog in ontwikkeling is
+## Example: an extension that is still under development
 
-<p class='warning'>Deze extensie is nog in ontwikkeling en kan elk moment wijzigen.</p>
+<p class='warning'>This extension is still under development and can be altered at any time.</p>
 
-Tekst van de extensie...
+Text of the extension...

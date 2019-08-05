@@ -1,5 +1,5 @@
-## Voorbeeld: een stabiele extensie
+## Example: a stable extension
 
-<p class='note'>Deze extensie is stabiel bevonden door de werkgroep.</p>
+<p class='note'>The working group has indicated this extension to be stable.</p>
 
-Tekst van de extensie...
+Text of the extension...
