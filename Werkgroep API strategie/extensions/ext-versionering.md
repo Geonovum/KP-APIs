@@ -1,44 +1,44 @@
 ## Versionering
 
-<p class='warning'>Deze extensie is nog in ontwikkeling en kan elk moment wijzigen.</p>
+<p class='warning'>This extension is still in development and can be modified at any time.</p>
 
-### Uitfaseren van een major API versie
+### Deprication of a major API version
 
-Major releases van API's zijn altijd backward incompatible. Immers, als een nieuwe release van de API niet tot backward incompatibiliteit leidt, is er geen reden om een hele versie omhoog te gaan en spreken we van een minor release. Op het moment dat er een major release plaatsvindt, is het de bedoeling dat alle (potentiële) clients deze nieuwe versie implementeren.  
+Major API releases should always be backward incompatible. In case a new API release does _not_  result in backward incompatibility, it does not warrant a full version increase and it is merely a minor release. In case a major release takes place, all (potential) clients have to implement the new version.
 
-Omdat we geen clients willen breken kunnen we niet van de een op de andere dag overschakelen van de oude naar de nieuwe versie. Daarom is het noodzakelijk om na de livegang van de nieuwe versie óók de oude versie in de lucht te houden. Omdat we de oude versie niet tot in de eeuwigheid willen blijven onderhouden en juist iedereen willen stimuleren om de nieuwe versie te gaan gebruiken, communiceren we een periode waarin clients de gelegenheid krijgen om hun code aan te passen aan de nieuwe versie. Deze periode noemen we de deprecation periode. De lengte van deze periode kan verschillen per API, vaak is dit zes maanden, maar niet meer dan één jaar. Met het oog op beheersbaarheid is het ten zeerste aan te bevelen om maximaal twee major versies (waarvan één de deprecated variant) naast elkaar te draaien. In deze fase is communicatie met clients van de oude versie cruciaal. De volgende zaken moeten gecommuniceerd worden:
+As clients cannot be broken, a migration from the previous to the new release cannot happen abruptly. After the launch the new version, the previous version has to be available in production as well. As not to maintain the previous version indefinitely and to encourage clients to use the new version, a transition period is communicated for users to adjust their code to the new version. This period is referred to as *deprecation period*. The duration of this period may very per API. Typically, the deprecation period lasts 6 months, but not more than one year. From a maintenance perspective, at most two major versions (one of which is the deprecated version) should be available in production concurrently. Communication with users is crucial during this period. The following points have to be communicated:
 
-- Een link naar de (documentatie van de) nieuwe versie van de API;
-- Deprecation periode met exacte datum waarop de deprecated versie offline wordt gehaald;
-- Migratieplan om eenvoudig over te stappen naar de nieuwe versie;
-- Welke features er toegevoegd, gewijzigd of verwijderd worden;
-- Welke wijzigingen de huidige implementaties kunnen breken;
-- Contactmogelijkheid om een verlenging van de deprecation periode aan te vragen.
+- A link to the (documentation of the) new API version; 
+- Deprecation period with the exact date the deprecated version will be taken offline;
+- Migration plan to easily transition to the new version;
+- Overview of added, changed or removed features;
+- Breaking changes for the current implementation;
+- Contact details to request an extension of the deprecation period.
 
-Deze zaken dienen gecommuniceerd te worden via de volgende kanalen:
+These should be communicated using the following channels:
 
-- Per e-mail van de clients (indien bekend);
-- Duidelijk leesbaar in de API documentatie van de oude versie;
-- Met een `Warning` response header in alle responses van de oude API.
+- To the e-mail accounts of the users (if known)
+- Clearly visible in the documentation of the previous version;
+- Using a `Warning` response header in all responses from the old API.
 
-Stap voor stap betekent dit het volgende:
+A step-by-step approach:
 
-1. Lanceren nieuwe versie;
-2. Bepalen deprecation periode;
-3. Schrijven migratieplan;
-4. Communiceren in de API-documentatie van de oude versie;
-5. Deprecation periode communiceren per e-mail, forum en eventuele andere kanalen;
-6. Warning header toevoegen aan responses van de oude versie;
-7. Logs checken om gebruik van de oude versie te monitoren gedurende deprecation periode;
-8. End-point oude versie dichtzetten op geplande datum en feedback monitoren;
-9. Indien er binnen twee weken geen feedback op de oude versie komt kan de oude versie (inclusief docs) verwijderd worden;
+1. Launch new version;
+2. Determine deprecation period;
+3. Write migration plan;
+4. Communicate in the API documentation of the old version;
+5. Communicate per e-mail, Web forum and other channels;
+6. Add `Warning` response header to the old version;
+7. Check logs to monitor the usage of the old version during the deprecation period;
+8. Shut down end-point of the old version at the planned date and monitor feedback;
+9. No feeedback related to the old version within two weeks, remove the old version (including docs);
 
-### De Warning response header
+### The Warning response header
 
-De Warning header (zie: RFC 7234) die we hier gebruiken heeft warn-code 299 ("Miscellaneous Persistent Warning") en het API endpoint (inclusief versienummer) als de warn-agent van de warning, gevolgd door de warn-text met de human-readable waarschuwing. Voorbeeld:
+The `Warning` reponse header (see: RFC 7234) has the status code 299 ("Miscellaneous Persistent Warning") and the API endpoint (including version number) as the warn-agent of the warning, followed by the warn-text with the human-readable warning. For example:
 
-`Waarschuwing: 299 https://service.../api/.../v1 "Deze versie van de API is verouderd en zal uit dienst worden genomen op 2018-02-01. Raadpleeg voor meer informatie hier de documentatie: https://omgevingswet.../api/.../v1".`
+`Waarschuwing: 299 https://service.../api/.../v1 "Deze versie van de API is verouderd en zal uit dienst worden genomen op 2020-02-01. Raadpleeg voor meer informatie hier de documentatie: https://omgevingswet.../api/.../v1".`
 
-Gebruikers moeten voldoende tijd hebben om de oude API uit te faseren. Een periode van 6 tot 12 maanden wordt aanbevolen.
+Users should have sufficient time to phase out the old API. A period of 6 to 12 months is recommended.
 
-> [API principe: Inform users of a deprecated API actively](#api-21)
+> [API principle: Inform users of a deprecated API actively](#api-21)

@@ -1,27 +1,25 @@
-## GEO-ondersteuning
+## GEO support
 
-<p class='warning'>Deze extensie is nog in ontwikkeling en kan elk moment wijzigen.</p>
+<p class='warning'>This extension is in development and may be modified at any time.</p>
 
-REST API's voor het werken met geometrieën kunnen een filter aanbieden op basis van geografische gegevens. Het is hierbij belangrijk om een onderscheid te maken tussen een geometrie in het resultaat (response) en een geografische filter in de aanroep (request). Het is immers niet vanzelfsprekend dat als iemand wil weten in welk perceel ik hij/zij zich momenteel bevindt, dat ook de geometrie in de response wordt teruggegeven; een naam of nummer kan dan al voldoende zijn.
+REST APIs for handling spatial geometries may provide spatial filtering. There is a distinction between retrieving geometries in the result (response) and supplying a spatial filter in the call (request). When requesting parcel information, users do not necessarily require the geometry. A name or parcel ID may be sufficient.
 
-> [API principe: Support GeoJSON for GEO APIs](#api-34)
+> [API principle: Support GeoJSON for GEO APIs](#api-34)
 
-Voor GEO API's wordt bij voorkeur de standaard GeoJSON [[rfc8142]] gebruikt.
+For GEO APIs, preferably use the GeoJSON standard [[rfc8142]].
 
-### Resultaat (response)
+### Result (response)
 
-In een JSON API wordt een geometrie teruggegeven als GeoJSON. We kiezen er voor om dit binnen de `application/json` te ‘wrappen' in een apart GeoJSON object.
+In a JSON API the geometry is returned as GeoJSON, wrapped in a separate GeoJSON object.
 
-> [API principe: Include GeoJSON as part of the embedded resource in the JSON response](#api-35)
+> [API principle: Include GeoJSON as part of the embedded resource in the JSON response](#api-35)
 
-### Aanroep (requests)
+### Call (requests)
 
-Een geografisch filter kan erg complex en groot zijn. Het is daarom een best practice om dergelijke complexe vragen niet in de request URI, maar in de body mee te sturen. Omdat `GET` geen payload mag hebben (hoewel sommige clients dit wel ondersteunen) moet hier dus een andere methode voor gebruikt worden.
-
-In analogie met API's zoals die van Elasticsearch, is een `POST` naar een apart endpoint de juiste weg om te bewandelen. Het onderstaande voorbeeld doet een zogenaamde GEO-query naar alle panden waarin het veld `_geo` (er kunnen ook andere velden zijn, zoals `hoofdgeometrie`, `binnenOmtrek`, `buitenOmtrek`, etc.) het GeoJSON object (in dit geval een `Point`, dus één coördinaat) bevat:
+A spatial filter can be complex and large. It is best practice to supply complex queries in the body, not in the request URI. Since `GET` may not have a payload (although supported by some clients) use a `POST` request to a separate endpoint. For example, a GEO query to all *panden* where the geometry in the field `_geo` (there may be multiple geometry fields) contains a GeoJSON object (in this case a `Point`, so one coordinate pair):
 
 ```json
-// POST /api/v1/panden/_zoek met request body:
+// POST /api/v1/panden/_zoek with request body:
 {
   "_geo": {
     "contains": {
@@ -32,12 +30,12 @@ In analogie met API's zoals die van Elasticsearch, is een `POST` naar een apart 
 }
 ```
 
-> [API principe: Provide a `POST` endpoint for GEO queries](#api-36)
+> [API principle: Provide a `POST` endpoint for GEO queries](#api-36)
 
-Omdat we ons met het geo endpoint beperken tot een GEO-query en we wellicht ook gecombineerde queries willen doen is het sterk aan te bevelen om een generiek query endpoint in te richten:
+The `POST` endpoint is preferably set up as a generic query endpoint to support combined queries:
 
 ```json
-// POST /api/v1/panden/_zoek met request body:
+// POST /api/v1/panden/_zoek with request body:
 {
   "_geo": {
     "contains": {
@@ -49,15 +47,13 @@ Omdat we ons met het geo endpoint beperken tot een GEO-query en we wellicht ook 
 }
 ```
 
-> [API principe: Support mixed queries at `POST` endpoints](#api-37)
+> [API principle: Support mixed queries at `POST` endpoints](#api-37)
 
-Naast contains kan er ook `intersects` (snijdt) of `within` (valt binnen) als operators gebruikt worden. De benamingen van deze operators komen uit de GEO-wereld en die willen we niet opnieuw uitvinden. Zie voor meer details: https://www.w3.org/TR/sdw-bp/#entity-level-links  
+Other GEO queries like `intersects` or `within` operators can be used as well. For further information, read: https://www.w3.org/TR/sdw-bp/#entity-level-links  
 
-Omdat we voor de geometrie een GeoJSON object gebruiken hoeven we hier geen syntax meer voor te verzinnen.
+> [API principle: Put results of a global spatial query in the relevant geometric context](#api-38)
 
-> [API principe: Put results of a global spatial query in the relevant geometric context](#api-38)
-
-In het volgende voorbeeld wordt aangegeven hoe dit kan worden gerealiseerd:
+For example:
 
 ```json
 // POST /api/v1/_zoek:
@@ -86,46 +82,48 @@ In het volgende voorbeeld wordt aangegeven hoe dit kan worden gerealiseerd:
 
 ### CRS-negotiation
 
-Het default CRS (Coordinate Reference System) van GeoJSON is WGS84. Dit is het globale coördinatenstelsel dat overal ter wereld redelijk goed bruikbaar is, maar vanwege het gebruikte model van de aarde en de verschuiving van de tektonische platen minder nauwkeurig is dan lokale coördinatenstelsels zoals ETRS89 (EPSG:4258, Europees) of RD (EPSG:28992, Nederlands).
+The default CRS (Coordinate Reference System) for GeoJSON is WGS84. This is the global coordinate reference system that can b applied world-wide. Due the datum and the tectonic displacements it is not accurate enough for local coordinate reference systems like ETRS89 (EPSG:4258, European), or RD/Amersfoort (EPSG:28992, Dutch).
 
-Omdat de meeste client-bibliotheken met WGS84 werken, schrijft de W3C/OGC werkgroep "Spatial Data on the Web" voor om dit standaard te ontsluiten. Dit kan direct op een kaart geplot worden zonder moeilijke transformaties. De API-strategie voorziet hierin door naast ETRS89 en RD ook WGS84 of Web Mercator (EPSG:3857, voor rasterdata) te ondersteunen.
+Since most client-side mapping libraries use WGS84, the W3C/OGC working group *Spatial Data on the Web* recommends to use this as the default coordinate reference system. Thus, spatial data can be mapped without any complex transformations. The API strategy caters for this supporting not only ETRS89 and RD/Amersfoort, but also WGS84 and Web Mercator (EPSG:3857).
 
-> [API principe: Use ETRS89 as the preferred coordinate reference system (CRS)](#api-39)
+> [API principle: Use ETRS89 as the preferred coordinate reference system (CRS)](#api-39)
 
-Het is mogelijk om het CRS voor vraag en antwoord via headers afzonderlijk te specificeren. Hierin zijn vervolgens drie opties (met voorgeschreven projecties) voorhanden: RD, ETRS89 en WGS84.
+The CRS can be specified for request and response individually using custom headers: RD/Amersfoort, ETRS89, WGS84, and Web Mercator.
 
-Een nadere opsomming van de uitgangspunten voor het CRS:
+The guiding priciples for CRS support:
 
-- Leg als bronsysteem binnenkomende formaat vast (juridische context);
-- Coördinatenstelsels API-strategie: vraag/antwoord in RD; ETRS89; WGS84;
-- Overweeg no-regret: vastleggen in ETRS89 én RD i.p.v. realtime bepalen;
-- Hanteer RDNAPTRANS™ 2018 bij transformatie RD versus ETRS89 (correctiegrid);
-- Presentatie afhankelijk van context (o.a. gebruikerswensen);
-- Uitwisselingsformaat (notatie) ETRS89 en WGS84 X Y in decimale graden: DD.ddddddddd (voorbeeld: `52.255023450`)
-- Uitwisselingsformaat (notatie) RD X Y in meters (niet afgerond): `195427.5200 311611.8400`
+- Source systems record coordinates as they enter the system (legal context);
+- Coordinate reference systems API strategy: request/response in RD; ETRS89; WGS84; Web Mercator;
+- Consider no-regret: record both in ETRS89 and RD/Amersfoort instead of on-the-fly transformation;
+- Use RDNAPTRANS™ 2018 to transform RD/Amersfoort to ETRS89 (correction grid);
+- Presentation depending on context (e.g. user requirements);
+- Exchange format (notation) ETRS89 and WGS84 X Y in decimal degrees: DD.ddddddddd (for example: `5.962376256, 52.255023450`)
+- Exchange format (notation) RD and Web Mercator X Y in meters: `195427.5200 311611.8400`
 
 > [API principe: Pass the coordinate reference system (CRS) of the request and the response in the headers](#api-40)
 
-De hier genoemde headers zijn puur bedoeld voor de onderhandeling tussen de client en de server. Afhankelijk van de toepassing zal naast de geometrieën ook specifieke metadata onderdeel vormen van het antwoord, bijvoorbeeld de oorspronkelijke realisatie inclusief een inwindatum.
+The following headers are purely meant for negotiation between the client and the server. Depending on the application, the request not only contains geometries but also specific meta data, e.g. the original realistion including the collection date. 
 
-Vraag en antwoord kunnen op een ander coördinatensysteem zijn gebaseerd. Hiervoor wordt het HTTP-mechanisme voor content negotiation gebruikt. Het CRS van de geometrie in de vraag (request body) wordt aangeduid met de header `Content-Crs`.
+Request and response may be based on another coordinate reference system. This applies the HTTP-mechanism for content negotiation. The CRS of the geometry in the request (request body) is specified using the header `Content-Crs`.
 
-|HTTP header|Waarde|Toelichting|
+|HTTP header|Value|Explanation|
 |-|-|-|
-|`Content-Crs`|EPSG:3856|WGS84, Wereld (Web-Mercator-projectie)|
-|`Content-Crs`|EPSG:4258|ETRS89, Europees|
-|`Content-Crs`|EPSG:28992|RD, Nederlands|
+|`Content-Crs`|EPSG:4326|WGS84, global|
+|`Content-Crs`|EPSG:3857|Web Mecator, global|
+|`Content-Crs`|EPSG:4258|ETRS89, European|
+|`Content-Crs`|EPSG:28992|RD/Amersfoort, Dutch|
 
-Het gewenste CRS voor de geometrie in het antwoord (response body) wordt aangeduid met de header `Accept-Crs`.  
+The preferred CRS for the geometry in the response (response body) is specified using the header `Accept-Crs`.  
 
-|HTTP header|Waarde|Toelichting|
+|HTTP header|Value|Explanation|
 |-|-|-|
-|`Accept-Crs`|EPSG:3856|WGS84, Wereld (Web-Mercator-projectie)|
-|`Accept-Crs`|EPSG:4258|ETRS89, Europees|
-|`Accept-Crs`|EPSG:28992|RD, Nederlands|
+|`Accept-Crs`|EPSG:4326|WGS84, global|
+|`Accept-Crs`|EPSG:3857|Web Mercator, global|
+|`Accept-Crs`|EPSG:4258|ETRS89, European|
+|`Accept-Crs`|EPSG:28992|RD/Amersfoort, Dutch|
 
-### CRS-transformatie
+### CRS transformation
 
-Voor het transformeren tussen coördinaatreferentiesystemen is binnen de Rijksoverheid software met een keurmerk beschikbaar.
+Certified software is available to the national government to transform between coordinate reference systems.
 
-> [API principe: Use content negotiation to serve different CRSs](#api-41)
+> [API principle: Use content negotiation to serve different CRSs](#api-41)

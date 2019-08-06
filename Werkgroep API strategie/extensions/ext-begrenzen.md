@@ -1,19 +1,19 @@
-## Begrenzingen
+## Rate limiting
 
-<p class='warning'>Deze extensie is nog in ontwikkeling en kan elk moment wijzigen.</p>
+<p class='warning'>This extension is in development and may be modified at any time.</p>
 
-API's beperken het aantal verzoeken dat per tijdsperiode gedaan kan worden, om te voorkomen dat de servers overbelast worden om een hoog serviceniveau te garanderen. API's kunnen een bevragingslimiet (quota) per maand bijhouden en die wordt afgedwongen per tijdsperiode van 60 seconden.
+APIs limit the amount of requests that can be sent within a particular time frame to prevent server overload and to guarantee a high service level. APIs may track a rate limit (quota) per month that is enforced per 60 second time interval.
 
-HTTP headers worden gebruikt om de bevragingslimit naar de gebruiker te communiceren.
+HTTP headers communicate the rate limit to the users.
 
-|HTTP header|Toelichting|
+|HTTP header|Explanation|
 |-|-|
-|`X-Rate-Limit-Limit`|Geeft aan hoeveel verzoeken een applicatie mag doen per tijdsperiode|
-|`X-Rate-Limit-Remaining`|Geeft aan hoeveel verzoeken nog gedaan kunnen worden in de huidige tijdsperiode|
-|`X-Rate-Limit-Reset`|Geeft aan hoeveel seconden over zijn in de huidige tijdsperiode|
+|`X-Rate-Limit-Limit`|Amount of client requests per time frame|
+|`X-Rate-Limit-Remaining`|Amount of remaining client request in the current time frame|
+|`X-Rate-Limit-Reset`|Amount of remaing seconds in the current time frame|
 
 > [API principe: Apply rate limiting](#api-44)
 
-[[rfc6585]] introduceert een HTTP statuscode `429 Too Many Requests` die wordt gebruikt om het overschrijden van het aantal verzoeken te melden aan de gebruiker.
+[[rfc6585]] introduces an HTTP status code `429 Too Many Requests` to inform users the rate limit has been reached.
 
 > [API principe: Provide rate limiting information](#api-45)

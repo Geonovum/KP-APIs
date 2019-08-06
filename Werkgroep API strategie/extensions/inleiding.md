@@ -1,3 +1,3 @@
-De API strategie heeft een _core_, een generieke set regels die op alle overheidsAPI's van toepassing zijn; en diverse _extensies_ die specifiek zijn voor een sector of die nog niet rijp genoeg zijn om in de core te komen. 
+The API strategy consists of a _core_, a generic set of rules for all government APIs, and various _extensions_ that only pertain to a specific application or that are not maure enough for the core set.
 
-Deze extensies staan in dit document beschreven. Per extensie is aangegeven of deze stabiel is, of nog in beweging. 
+These extensions are described in this document. It is indicated whether an extension is stable or in development.

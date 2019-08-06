@@ -1,10 +1,8 @@
-## Paginering
+## Paging
 
-<p class='warning'>Deze extensie is nog in ontwikkeling en kan elk moment wijzigen.</p>
+<p class='warning'>This extension is in development and may be modified at any time.</p>
 
-Voor paginering wordt voor het media type 'application/hal+json' aangesloten op Hypertext Application Language (HAL). Aan geretourneerde objecten worden twee gereserveerde velden `_links` (verplicht) en `_embedded` (optioneel) toegevoegd. Deze velden vertegenwoordigen respectievelijk hyperlinks en embedded resources.  
-
-Hier is een voorbeeld van een JSON+HAL representatie:
+For content identified with the media type 'application/hal+json', Hypertext Application Language (HAL) is used for paging. Two reserved fields, `_links` (required) and `_embedded` (optional) are added to retrieved objects. These fields represent hyperlinks and embedded resources respectively:
 
 ```json
 {
@@ -36,17 +34,17 @@ Hier is een voorbeeld van een JSON+HAL representatie:
 }
 ```
 
-Indien het "plain" JSON, GeoJSON of iets anders dan HAL betreft zijn er geen `_links`. Deze kunnen dan opgenomen worden in de link response headers. Naast de representatie wordt de volgende metadata teruggegeven als HTTP headers.
+In case of plain JSON, GeoJSON, or something different from HAL, the `_links` field is omitted. These may be added to the link response headers. Besides the representation the following metadata is returned using HTTP headers.
 
-|HTTP header|Toelichting|
+|HTTP header|Explanation|
 |-|-|
-|`X-Total-Count` (optioneel)|Totaal aantal resultaten|
-|`X-Pagination-Count` (optioneel)|Totaal aantal pagina's|
-|`X-Pagination-Page` (optioneel)|Huidige pagina|
-|`X-Pagination-Limit` (optioneel)|Aantal resultaten per pagina|
+|`X-Total-Count` (optional)|Total number of results|
+|`X-Pagination-Count` (optional)|Total number of pages|
+|`X-Pagination-Page` (optional)|Current page|
+|`X-Pagination-Limit` (optional)|Number of results per page|
 
-Bij grote datasets kunnen de berekeningen voor X-Total-Count en X-Pagination-Count behoorlijke impact hebben op de performance, voornamelijk als er niet of nauwelijks gefilterd wordt.
+For large collections, the generation of `X-Total-Count` and `X-Pagination-Count` may have a considerable impact on the performance, particularly if there is no or limited filtering.
 
-> [API principe: Use JSON+HAL with media type `application/hal+json` for pagination](#api-42)
+> [API principle: Use JSON+HAL with media type `application/hal+json` for pagination](#api-42)
 
-Alle links in HAL zijn absoluut. Dit in verband met mogelijke externe links (naar andere endpoints, linked-data resources, etc.) en eenvoudigere navigatie door clients die dan niet zelf de URL hoeven op te bouwen.  
+All links in HAL are absolute. This relieves clients from the burder to resolve URLs to external links (to other endpoints, linked-data resources, etc.) for navigation.  

@@ -1,22 +1,22 @@
-## Foutafhandeling
+## Error handling
 
-<p class='warning'>Deze extensie is nog in ontwikkeling en kan elk moment wijzigen.</p>
+<p class='warning'>This extension is in development and may be modified at any time.</p>
 
-Net als een webpagina een bruikbare foutmelding toont aan bezoekers als een fout optreedt, moet een API een bruikbare foutmelding in een bekend en verwerkbaar formaat teruggeven. De representatie van een fout is niet anders dan de representatie van een willekeurige resource alleen met een eigen set van velden.
+Like a Web page displays useful error messages to visitors in case of an error, an API should return useful error message in a known and manageable format. The representation of an error is no different from the representation of a random resource, but with a particular set of fields.
 
-De API moet altijd zinvolle HTTP statuscodes teruggeven. HTTP statuscodes zijn opgesplitst in twee categorieën:
+APIs should always return useful HTTP status codes. HTTP status codes are divided in two categories:
 
-- 400 reeks: voor inhoudelijke fouten
-- 500 reeks: voor server problemen
+- 400 range: content errors
+- 500 range: internal server errors
 
-Een JSON representatie van een fout moet een aantal zaken bevatten om een ontwikkelaar, beheerder en eindgebruiker te helpen:  
+A JSON representation of an error should contain a few details to assist developers, operators, and users:  
 
-- Een uniek fouttype in de vorm van een URI die verwijst naar informatie in externe (HTML) documentatie;
-- Een korte maar nuttig foutmelding;
-- Een gedetailleerde beschrijving van de fout (die helpt bij het oplossen);
-- Een unieke identificatie in de vorm van een URI die hoort bij het specifieke voorkomen van de fout (de fout-instantie). Het strekt de voorkeur om een URN te gebruiken waarmee alleen daartoe gerechtigde gebruikers details kunnen opzoeken in de fout-log.  
+- A unique error type formulated as a URI pointing to further informtion in external (HTML) documentation;
+- A short, but useful error message;
+- A detailed description of the error (that assists in solving the issue);
+- A unique identifier formulated as a URI point to the specific occurence of the error (the error instance). Preferably, the URN should only allow authorized users to search the error logs.  
 
-De basis voor deze standaardformaten is [[rfc7807]]. Een JSON-representatie van een fout ziet er als volgt uit:
+The base for these default formats is [[rfc7807]]. A JSON-representation of an error is formulated like the following object:
 
 ```json
 {
@@ -24,13 +24,11 @@ De basis voor deze standaardformaten is [[rfc7807]]. Een JSON-representatie van 
   "title": "Hier staat wat er is misgegaan",
   "status": 401,
   "detail": "Meer details over de fout staan hier",
-  "instance": "urn:uuid:ebd2e7f0-1b27-11e8-accf-0ed5f89f718b" // De fout-instantie  
+  "instance": "urn:uuid:ebd2e7f0-1b27-11e8-accf-0ed5f89f718b" // The error instance  
 }
 ```
 
-Validatiefouten voor `POST`, `PUT` en `PATCH` verzoeken worden per veld gespecificeerd. De volledige lijst met fouten wordt in één keer teruggegeven. Dit wordt opgezet met een vast hoofdniveau en foutcode voor validatiefouten en extra foutvelden met gedetailleerde fouten per veld.  
-
-Dit ziet er dan als volgt uit:
+Validation errors for `POST`, `PUT`, and `PATCH` requests are specified per field. The full list of errors is returned concurrently. The response consists of a fixed top level and error code for validation error and additional error fields with detailed errors per field:
 
 ```json
 {
@@ -50,43 +48,43 @@ Dit ziet er dan als volgt uit:
 }
 ```
 
-> [API principe: Use default error handling](#api-46)
+> [API principle: Use default error handling](#api-46)
 
-### HTTP statuscodes
+### HTTP status codes
 
-HTTP definieert een hele reeks gestandaardiseerde statuscodes die gebruikt dienen te worden door API's. Deze helpen de gebruikers van de API's bij het afhandelen van fouten.  
+HTTP defines a range of default status codes for APIs. These assist users to of the APIs to handle errors.  
 
-> [API principe: Use the required HTTP status codes](#api-47)
+> [API principle: Use the required HTTP status codes](#api-47)
 
-Samenvatting HTTP-operaties in combinatie met de primaire HTTP statuscodes:
+Summary of HTTP operations and the primary HTTP status codes:
 
-|Operatie|CRUD|Gehele collectie (bijvoorbeeld /resource)<br>Specifieke item (bijvoorbeeld `/resource/\<id>`)|
+|Operation|CRUD|Full collection (e.g. `/resource`) <br/> specific item (e.g. `/resource/\<id>`)|
 |-|-|-|
-|`POST`|Create|201 (Created), HTTP header `Location` met de URI van de nieuwe resource (`/resource/\<id>`)<br>405 (Method Not Allowed), 409 (Conflict) als de resource al bestaat|
-|`GET`|Read|200 (OK), lijst van resources. Gebruik pagineren, filteren en sorteren om het werken met grote lijsten te vereenvoudigen<br>200 (OK) enkele resource, 404 (Not Found) als ID niet bestaat of ongeldig is|
-|`PUT`|Update|405 (Method Not Allowed), behalve als het de bedoeling is om elke resource in een collectie te wijzigen of vervangen<br>409 als een wijziging niet mogelijk is vanwege de huidige toestand van de instantie<br>200 (OK) of 204 (No Content), 404 (Not Found) als ID niet bestaat of ongeldig is|
-|`PATCH`|Update|405 (Method Not Allowed), behalve als het de bedoeling is de gehele collectie te vervangen. <br>409 als een wijziging niet mogelijk is vanwege de huidige toestand van de instantie.<br>200 (OK) of 204 (No Content), 404 (Not Found) als ID niet bestaat of ongeldig is|
-|`DELETE`|Delete|405 (Method Not Allowed), behalve als het de bedoeling is de gehele collectie te verwijderen<br>200 (OK) of 404 (Not Found) als ID niet bestaat of ongeldig is|
+|`POST`|Create|201 (Created), HTTP header `Location` with the URI to the new resource (`/resource/\<id>`)<br>405 (Method Not Allowed), 409 (Conflict) in case the resource already exists|
+|`GET`|Read|200 (OK), list of resources. Use paging, filtering and sorting to ease the handling of large collections<br>200 (OK) single resource, 404 (Not Found) if the ID does not exist or is invalid|
+|`PUT`|Update|405 (Method Not Allowed), except for the purpose to modify or replace every resource in a collection<br>409 in case a modification is not possible due to the current state of an instance<br>200 (OK) or 204 (No Content), 404 (Not Found) if the ID does not exist or is invalid|
+|`PATCH`|Update|405 (Method Not Allowed), except for the purpose to replace the full collection. <br>409 if a modification is not possible due to the current state of an instance.<br>200 (OK) or 204 (No Content), 404 (Not Found) if the ID does not exist or is invalid|
+|`DELETE`|Delete|405 (Method Not Allowed), except for the purpose to remove the full collection.<br>200 (OK) or 404 (Not Found) if the ID does not exist or is invalid|
 
-Hieronder een korte lijst met een beschrijving van de HTTP statuscodes die minimaal worden toegepast:
+A short list and description of HTTP status codes:
 
-|HTTP statuscode|Toelichting|
+|HTTP status code|Description|
 |-|-|
-|200 OK|Reactie op een succesvolle `GET`, `PUT`, patch of `DELETE`. Ook geschikt voor `POST` die niet resulteert in een creatie|
-|201 Created|Reactie op een `POST` die resulteert in een creatie. Moet worden gecombineerd met een locatie-header die wijst naar de locatie van de nieuwe resource|
-|204 No Content|Reactie op een succesvol verzoek die geen inhoud zal teruggeven (zoals een `DELETE`)|
-|304 Not Modified|Gebruikt wanneer HTTP caching headers worden toegepast|
-|400 Bad Request|Het verzoek is onjuist, bijvoorbeeld als het verzoek (body) niet kan worden geïnterpreteerd|
-|401 Unauthorized|Als er geen of ongeldige authenticatie details worden verstrekt. Ook handig om een authenticatie-venster te tonen als de API wordt gebruikt vanuit een browser |
-|403 Forbidden|Als de authenticatie gelukt is maar de geverifieerde gebruiker geen toegangsrechten heeft voor de resource|
-|404 Not Found|Wanneer een niet-bestaande resource is opgevraagd |
-|405 Method Not Allowed|Wanneer een HTTP-methode wordt gebruikt die niet is toegestaan voor de geauthentiseerde gebruiker|
-|406 Not Acceptable|Wordt teruggegeven als het gevraagde formaat niet ondersteund wordt (onderdeel van content negotiation)|
-|409 Conflict|Het verzoek kon ik niet worden verwerkt als het gevolg van een conflict met de huidige toestand van de resource|
-|410 Gone|Geeft aan dat de resource niet langer op het eindpunt beschikbaar is. Nuttig als een overkoepelend antwoord voor oude API versies|
-|412 Precondition Failed|De preconditie die wordt gegeven door één of meer velden in de request-header, ontbraken of zijn na validatie op de server afgekeurd|
-|415 Unsupported Media Type|Als een verkeerd content-type als onderdeel van het verzoek werd meegegeven|
-|422 Unprocessable Entity|Gebruikt voor een verzoek (body) dat correct is maar dat de server niet kan verwerken|
-|429 Too Many Requests|Wanneer een aanvraag wordt afgewezen als het aantal verzoeken per tijdsperiode is overschreden|
-|500 Internal Server Error|Wanneer een onverwachte fout optreedt en het beantwoorden van het verzoek wordt verhinderd|
-|503 Service Unavailable|Wordt gebruikt als de API niet beschikbaar is (bijv. door gepland onderhoud)|
+|200 OK|Response to a successful `GET`, `PUT`, patch or `DELETE`. Also suitable for `POST` that does not result in a creation|
+|201 Created|Response to a `POST` that results in a creation. Should be combined with a location header that points to the location of the newly created resource|
+|204 No Content|Response to a successful request that does not return content (e.g. a `DELETE`)|
+|304 Not Modified|If HTTP caching headers are applied|
+|400 Bad Request|The request is invalid, e.g. in case the request (body) cannot be interpreted|
+|401 Unauthorized|If no or invalid authentication credentials are supplied. Also useful to display an authentication window if the API is used in a Web browser|
+|403 Forbidden|Response to a successful authentication, but the verified users is not authorised to access the resource|
+|404 Not Found|Response to a request for a non-existing resource |
+|405 Method Not Allowed|Response to an HTTP method that is not allowed for the authenticated user|
+|406 Not Acceptable|Reponse to an unsupported format request (part of content negotiation)|
+|409 Conflict|The request cannot be handled due to a conflict with the current state of the resource|
+|410 Gone|Indicates the resource is no longer available at the requested endpoint. Useful top level response to requests for previous API versions|
+|412 Precondition Failed|The preconditions supplied in one or more fields in the request header have been omitted or failed upon validation by the server|
+|415 Unsupported Media Type|If the wrong content type is supplied as part of the request|
+|422 Unprocessable Entity|Response to a request (body) that is correct but that cannot be handled by the server|
+|429 Too Many Requests|Response if the rate limit has been exceeded.|
+|500 Internal Server Error|If an unexpected error occured and server cannot respond.|
+|503 Service Unavailable|If an API is not available (e.g. due to planned maintenance)|

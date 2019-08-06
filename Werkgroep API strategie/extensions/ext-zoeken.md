@@ -1,39 +1,39 @@
-## Zoeken
+## Search
 
-<p class='warning'>Deze extensie is nog in ontwikkeling en kan elk moment wijzigen.</p>
+<p class='warning'>This extension is in development and may be modified at any time.</p>
 
-Soms zijn eenvoudige filters onvoldoende en is de kracht van vrije-tekst zoekmachines nodig. API's ondersteunen dit middels de query-parameter `zoek`. Het resultaat wordt in dezelfde representatie teruggegeven.
+Sometimes, straightforward filters are not sufficient and the capabilities of full-text search engines are required. APIs support full-text search using the query parameter `zoek`. The result is returned in the same representation.
 
-> [API principe: Use the query parameter `zoek` for full-text search](#api-32)
+> [API principle: Use the query parameter `zoek` for full-text search](#api-32)
 
-Voorbeelden van de combinatie filteren, sorteren en zoeken:
+Examples combining filtering, sorting, and searching:
 
-|Request|Toelichting|
+|Request|Explanation|
 |-|-|
-|`GET /aanvragen?sorteer=-wijzigingDatum`|Haalt een lijst van recente aanvragen op|
-|`GET /aanvragen?status=gesloten&sorteer=-wijzigingDatum`|Haalt een lijst van recent gesloten aanvragen op|
-|`GET /aanvragen?zoek=urgent&status=open&sorteer=-prio,aanvraagDatum`|Haalt een lijst van aanvragen op met de status 'open' en waarin het woord 'urgent' voorkomt, gesorteerd van hoogste naar laagste prioriteit, en daarbinnen op aanvraagdatum van oud naar nieuw|
+|`GET /aanvragen?sorteer=-wijzigingDatum`|Retrieves a list of *aanvragen* sorted by *wijzigingsDatum*  in descending order|
+|`GET /aanvragen?status=gesloten&sorteer=-wijzigingDatum`|Retrieves a list of *aanvragen* filtered by the *status* property set to *gesloten* and sorted by *wijzigingsDatum*  in descending order|
+|`GET /aanvragen?zoek=urgent&status=open&sorteer=-prio,aanvraagDatum`|Retrieves a list of *aanvragen* containing the word *urgent* and filtered by the *status* property set to *open*. The list is sorted by *prio*  in descending order and subsequently sorted by *aanvraagDatum*  in ascending order.|
 
 ### Wildcards
 
-API's die vrije-tekst zoeken ondersteunen kunnen overweg met twee soorten wildcard karakters:
+APIs supporting full-text searching may take two types of wildcard characters:
 
-- `*` Komt overeen met nul of meer (niet-spatie) karakters
-- `?`  Komt precies overeen met één (niet-spatie) karakter
+- `*` Matches 0 or more (non-space) characters
+- `?` Matches exactly one (non-space) character
 
-Bijvoorbeeld, `he*` zal overeenkomen met elk woord dat begint met `he`, zoals `hek`, `hemelwaterafvoer`, enzovoort. In het geval van `he?` komt dit alleen overeen met drie letterwoorden die beginnen met `he`, zoals `hek`, `heg`, enzovoort.
+For example, `he*` matches any string starting with `he`, like `hek`, `hemelwaterafvoer`, et cetera. The search string `he?` only matches 3-letter strings that start with `he`, like `hek`, `heg`, et cetera.
 
-> [API principe: Support both `*` and `?` wildcard characters for full-text search APIs](#api-33)
+> [API principle: Support both `*` and `?` wildcard characters for full-text search APIs](#api-33)
 
-Hieronder volgen nog een aantal basisregels voor wildcards in zoekopdrachten:
+Find below some base rules for wildcard searches:
 
-- Er kan meer dan één wildcard in één zoekterm of zin voorkomen.
-- De twee wildcard karakters kunnen in combinatie worden gebruikt. Bijvoorbeeld `m*??` komt overeen met woorden die beginnen met `m` en drie of meer tekens hebben.
-- Spaties (URL-encoded als `%20`) worden gebruikt als woordscheiding en wildcardmatching werkt alleen binnen een enkel woord. Bijvoorbeeld, `r*te*` komt overeen met de **`r`**`uim`**`te`**`lijk`, maar niet met **`r`**`uimte` **`te`**`kort`.
-- Wildcards werken alleen op JSON-velden met tekst (string) waarden.  
+- A search term may contain multiple wildcard characters.
+- A search term may contain a combination of wildcard characters. For example `m*??` matches any string that starts with `m` and has three or more characters.
+- Spaces (URL-encoded as `%20`) are used as word boundaries and wildcard matching only operates within a single word. For example, `r*te*` matches the string **`r`**`uim`**`te`**`lijk`, but not the phrase **`r`**`uimte` **`te`**`kort`.
+- Wildcards only operate on fields that contain alphanumerical values.  
 
-### Aliassen voor terugkerende queries
+### Aliases for common queries
 
-Om de API ervaring verder te verbeteren is het mogelijk om terugkerende queries als endpoints aan te bieden. Zo kunnen onlangs gesloten aanvragen als volgt worden benaderd:
+To improve the API experience, common queries should be provided as end point. For example, *aanvragen* that have the *status* property set to *gesloten* and sorted by *wijzigingsDatum* in descending order, i.e. recently closed applications, can be retrieved using the following end point:
 
 `GET /aanvragen/recent-gesloten`

@@ -1,12 +1,12 @@
-## Sorteren
+## Sorting
 
-<p class='warning'>Deze extensie is nog in ontwikkeling en kan elk moment wijzigen.</p>
+<p class='warning'>This extension is in development and may be modified at any time.</p>
 
-Voor sorteren wordt de query-parameter `sorteer` gebruikt. Deze query-parameter accepteert een lijst van velden waarop gesorteerd moet worden gescheiden door een komma. Door een minteken ("-") voor de veldnaam te zetten wordt het veld in aflopende sorteervolgorde gesorteerd. Een aantal voorbeelden:
+To sort, use the query parameter `sorteer`. This query parameter takes a comma-separated list of field names to be used in the sort. Prefixing a filed name with a minus sign (*-*), the field is sorted in descending order. A few examples:
 
-|Request|Toelichting|
+|Request|Explanation|
 |-|-|
-|`GET /aanvragen?sorteer=-prio`|Haalt een lijst van aanvragen op gesorteerd in aflopende volgorde van prioriteit.|
-|`GET /aanvragen?sorteer=-prio,aanvraagDatum`|Haalt een lijst van aanvragen in aflopende volgorde van prioriteit op. Binnen een specifieke prioriteit, komen oudere aanvragen eerst.|
+|`GET /aanvragen?sorteer=-prio`|Retrieves a list of *aanvragen* sorted by the property *prio* in descending order.|
+|`GET /aanvragen?sorteer=-prio,aanvraagDatum`|Retrieves a list of *aanvragen* sorted by the property *prio*  in descending order. Within a specific value of *prio*, the objects are sorted by *aanvraagDatum* in ascending order.|
 
-> [API principe: Use the query parameter `sorteer` to sort](#api-31)
+> [API principle: Use the query parameter `sorteer` to sort](#api-31)

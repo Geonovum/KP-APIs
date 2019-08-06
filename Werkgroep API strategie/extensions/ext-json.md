@@ -1,8 +1,8 @@
 ## JSON
 
-<p class='warning'>Deze extensie is nog in ontwikkeling en kan elk moment wijzigen.</p>
+<p class='warning'>This extension is still in development and can be modified at any time.</p>
 
-JavaScript Object Notation (JSON) is een formaat, net zoals XML, om gegevens te serialiseren, op te slaan en te versturen. JSON is het primaire representatieformaat voor API's. Voor meer informatie over JSON zie https://json.org. In tegenstelling tot XML kent JSON een compacte notatie, bijvoorbeeld:
+JavaScript Object Notation (JSON) is a format, just like XML, to serialise, store and transfer data. JSON is the primary representation format for APIs. For more information about JSON, read https://json.org. In contrast to XML, JSON has a compact notation, for example:
 
 ```json
 {
@@ -13,29 +13,29 @@ JavaScript Object Notation (JSON) is een formaat, net zoals XML, om gegevens te 
 }
 ```
 
-> [API principe: JSON first - APIs receive and send JSON](#api-22)
+> [API principle: JSON first - APIs receive and send JSON](#api-22)
 
-> [API principe: APIs may provide a JSON Schema](#api-23)
+> [API principle: APIs may provide a JSON Schema](#api-23)
 
-> [API principe: Support content negotiation](#api-24)
+> [API principle: Support content negotiation](#api-24)
 
-> [API principe: Check the Content-Type header settings](#api-25)
+> [API principle: Check the Content-Type header settings](#api-25)
 
-### Veldnamen in `snake_case`, `camelCase`, `UpperCamelCase` of `kebab-case`?
+### Field names in `snake_case`, `camelCase`, `UpperCamelCase`, or `kebab-case`?
 
-Bij veldnamen wordt gebruik gemaakt van `camelCase`.
+Use `camelCase` for field names.
 
 > [API principe: Define field names in in `camelCase`](#api-26)
 
 ### Pretty print
 
-De meeste REST clients en browsers (al dan niet met extensies) kunnen JSON netjes geformatteerd weergeven, ook als de response geen white-space bevat.
+Most REST clients and browsers (whether or not using extensions) can display JSON nicely formatted, even if the response does not include white-space.
 
-> [API principe: Disable pretty print](#api-27)
+> [API principle: Disable pretty print](#api-27)
 
-### Gebruik geen envelop
+### Do not use envelope
 
-Veel API's wikkelen antwoorden in enveloppen zoals hieronder is weergegeven:
+Many APIs encapsulate responses in envelopes like below:
 
 ```json
 {
@@ -46,15 +46,15 @@ Veel API's wikkelen antwoorden in enveloppen zoals hieronder is weergegeven:
 }
 ```
 
-Een toekomstbestendig API is vrij van enveloppen.
+A future-proof API does not have envelopes.
 
-> [API principe: Send a JSON-response without enclosing envelope](#api-28)
+> [API principle: Send a JSON-response without enclosing envelope](#api-28)
 
-### JSON gecodeerde `POST`, `PUT` en `PATCH` payloads
+### JSON-encoded `POST`, `PUT`, and `PATCH` payloads
 
-API's ondersteunen minimaal JSON gecodeerde `POST`, `PUT` en `PATCH` payloads. Encoded form data (`application/x-www-form-urlencoded`) payloads worden niet ondersteund. Wat is het verschil?
+APIs should at least support JSON-encoded `POST`, `PUT`, and `PATCH` payloads. Encoded form data (`application/x-www-form-urlencoded`) payloads are not supported. What is the difference?
 
-`Content-Type: application/json` resulteert in:
+`Content-Type: application/json` results in:
 
 ```json
 {
@@ -63,6 +63,6 @@ API's ondersteunen minimaal JSON gecodeerde `POST`, `PUT` en `PATCH` payloads. E
 }
 ```
 
-en `Content-Type: application/x-www-form-urlencoded` resulteert in: `Name=John+Smith&Age=23`
+and `Content-Type: application/x-www-form-urlencoded` results in: `Name=John+Smith&Age=23`
 
-> [API principe: Support JSON-encoded `POST`, `PUT`, and `PATCH` payloads](#api-29)
+> [API principle: Support JSON-encoded `POST`, `PUT`, and `PATCH` payloads](#api-29)

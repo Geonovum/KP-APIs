@@ -1,76 +1,76 @@
-## API Beveiliging
+## API Security
 
-<p class='warning'>Deze extensie is nog in ontwikkeling en kan elk moment wijzigen.</p>
+<p class='warning'>This extension is in development and may be modified at any time.</p>
 
-API's zijn vanaf elke locatie vanaf het internet te benaderen. Om uitgewisselde informatie af te schermen wordt altijd gebruik gemaakt van een versleutelde verbinding op basis van TLS. Geen uitzonderingen, dus overal en altijd.
+APIs can be accessed from any location on the internet. Information is only exchanged over TLS-based encrypted connections. No exceptions, so everywhere and always.
 
-Doordat de verbinding altijd is versleuteld is het authenticatiemechanisme eenvoudiger. Hierdoor wordt het mogelijk om eenvoudige toegangstokens te gebruiken in plaats van toegangstokens met encryptie.
+Since the connection is always encrypted, the authentication mechanism is straightforward. This facilitates the use for simple accesss tokens instead of encrypted access tokens.
 
-> [API principe: Encrypt connections using at least TLS v1.3](#api-11)
+> [API principle: Encrypt connections using at least TLS v1.3](#api-11)
 
-> [API principe: Allow access to an API only if an API key is provided](#api-12)
+> [API principle: Allow access to an API only if an API key is provided](#api-12)
 
-Voor meer informatie over beveiliging zie ook hoofdstuk 5.
+For further information about security, see chapter 5.
 
-### Authenticatie en autorisatie
-Een REST API mag geen toestand (state) bijhouden. Dit betekent dat authenticatie en autorisatie van een verzoek niet mag afhangen van cookies of sessies. In plaats daarvan wordt elk verzoek voorzien van een token. Binnen het Kennisplatform APIs is gekozen voor OAuth 2.0 als de standaarden voor het autorisatiemechanisme waar dit nodig is, in hoofdstuk 5 is meer informatie te vinden over deze keuze en het gebruik van OAuth 2.0.
+### Authentication and authorisation
+A RESTful API should not maintain the state at the server. The authentication and authorisation of a request cannot depend on cookies or sessions. Instead, a token has to be sent for each request.  OAuth 2.0 is the recommended standard. Chapter 5 contains further information about this choice and the use of OAuth 2.0.
 
-> [API principe: Accept tokens as HTTP headers only](#api-13)
+> [API principle: Accept tokens as HTTP headers only](#api-13)
 
-Bij het gebruik van tokens wordt onderscheid gemaakt tussen geauthentiseerde en niet-geauthentiseerde services met de bijhorende headers:
+Using tokens a distinction is made between authorised and non-authorised services and related headers:
 
 |||
 |-|-|
-|Geauthentiseerd|`Authorization: Bearer <token>`|
-|Niet-geauthentiseerd|`X-Api-Key: <api-key>`|
+|Authorised|`Authorization: Bearer <token>`|
+|Non-authorised|`X-Api-Key: <api-key>`|
 
-Bij het ontbreken van de juiste headers zijn geen authenticatiedetails beschikbaar en dient de statuscode `403 Forbidden` terug te worden gegeven.
+In case the proper headers are not sent, then there are no authentication details available and the a status error code `403 Forbidden` is returned.
 
-> [API principe: Use OAuth 2.0 for authorisation](#api-14)
+> [API principle: Use OAuth 2.0 for authorisation](#api-14)
 
-Zie ook [Het Nederlands profiel OAuth in het hoofdtuk beveiliging](#Beveiliging) voor een nadere uitwerking van de toepassing van OAuth.
+See also [The Dutch profile OAuth in the chapter Security](#Security) for further explanation of the applicaton of OAuth.
 
-> [API principe: Use PKIoverheid certificates for access-restricted or purpose-limited API authentication](#api-15)
+> [API principle: Use PKIoverheid certificates for access-restricted or purpose-limited API authentication](#api-15)
 
-#### Autorisatiefouten
+#### Authorisation errors
 
-In een productieomgeving is het wenselijk om voor het (kunnen) autoriseren zo min mogelijk informatie weg te geven. Met dit in het achterhoofd is het advies om voor statuscode `401 Unauthorized`, `403 Forbidden` en `404 Not Found`, de volgende regels te hanteren:
+In a production environment as little information as possible is to be disclosed. Apply the following rules for returned the status error code `401 Unauthorized`, `403 Forbidden`, and `404 Not Found`:
 
-|Bestaat de resource?|Kan de autorisatie worden bepaald?|Geautoriseerd?|HTTP statuscode|
+|Does the resource exist?|Can authorisaton be determined?|Authorised?|HTTP statuscode|
 |-|-|-|-|
-|Ja|Ja|Ja|`20x (200 OK)`|
-|Ja|Ja|Nee|`401 Unauthorized`|
-|Ja|Nee|?|`403 Forbidden`|
-|Nee|Ja|Ja|`404 Not Found`|
-|Nee|Ja|Nee|`403 Forbidden`|
-|Nee|Nee|?|`403 Forbidden`|
+|Yes|Yes|Yes|`20x (200 OK)`|
+|Yes|Yes|No|`401 Unauthorized`|
+|Yes|No|?|`403 Forbidden`| 
+|No|Yes|Yes|`404 Not Found`|
+|No|Yes|No|`403 Forbidden`|
+|No|No|?|`403 Forbidden`|
 
-Het idee van deze regels is dat eerst wordt bepaald of de aanroeper (principal) gerechtigd is voor een resource. Is het antwoord ‘nee' of kan dat niet worden bepaald, bijvoorbeeld omdat de resource nodig is om deze beslissing te kunnen nemen en de resource niet bestaat, dan wordt 403 Forbidden teruggegeven. Op deze manier wordt geen informatie teruggegeven over het al dan niet bestaan van een resource aan een niet-geautoriseerde principal.
+First, it is established whether the requester (principal) is authorised for a resource. In case the requester is not authorised or the authorisation cannot be established, for example, the resource is required to establish authorisation and the resource does not exist, then a status error code `403 Forbidden` is returned. In this way, no information is returned about the existence of a resource to a non-authorised principal.
 
-Een bijkomend voordeel van de strategie om eerst te bepalen of er toegang is, meer ruimte biedt om de access control logica te scheiden van de business code.
+An additional advantage of the stategy that establishes whether there is authorisation is the opportunity to separate access control logic from business logic.
 
-#### Openbare identifiers
+#### Public identifiers
 
-Openbaar zichtbare identifiers (ID's), zoals die veelal in URI's van RESTful API's voorkomen, zouden onderliggende mechanismen (zoals een nummergenerator) niet bloot moeten leggen en zeker geen zakelijke betekenis moeten hebben.
+Publicly visible identifiers (IDs), that are frequently part of URLs a RESTful APIs shouldn't expose the underlying mechanisms (like number generations) and should certainly not have business logic.
 
 > **UUID**
 >
-> Het wordt aanbevolen om voor resources die een vertrouwelijk karakter hebben het concept van een UUID (Universally-Unique IDentifier) te gebruiken. Dit is een 16-bytes (128-bits) binaire representatie, weergegeven als een reeks van 32 hexadecimale cijfers, in vijf groepen gescheiden door koppeltekens en in totaal 36 tekens (32 alfanumerieke tekens plus vier afbreekstreepjes):
+> Preferrably use UUIDs (Universally-Unique IDentifier) for confidential resources. This is a 16-bytes (128-bits) binary representation, a sequence of 32 hexadecimal digits, in five groups separated by hyphens and consists of 36 characters (32 alphanumerical characters and 4 hyphens]):
 >
 > `550e8400-e29b-41d4-a716-446655440000`
->
-> Om te zorgen dat de UUID's korter en gegarandeerd "web-veilig" zijn, is het advies om alleen de base64-gecodeerde variant van 22 tekens te gebruiken. De bovenstaande UUID ziet er dan als volgt uit:
+> 
+> To ensure UUIDs are shorter and guaranteed *web-safe*, be advised to only use the base64-encoded variant consisting of 22 tokens. The above UUID looks like this:
 >
 > `abcdEFh4520juieUKHWgJQ`
 
-#### Blootstellen API-key
+#### Expose API-key
 
-De API-key's die standaard worden uitgegeven zijn "unrestricted". Dat wil zeggen dat er geen gebruiksbeperkingen op zitten en ze niet blootgesteld mogen worden via een webapplicatie. Door API-key's zonder gebruiksbeperkingen toe te passen in JavaScript, is er een reële kans op misbruik en quotum-diefstal. Om dit te voorkomen dienen in dit geval zogenaamde "restricted" API-key's te worden uitgegeven en gebruikt.
+API keys are "unrestricted" by default. There are no usage restrictions and these API keys should therefore not be exposed in a web application. Using API keys without usage restrictions in JavaScript creates a real change for abuse and quota theft. To prevent this, restricted API keys should be issued and used.
 
 > [API principe: Use *public* API-keys](#api-49)
 
 #### CORS-policy
 
-Webbrowsers implementeren een zogenaamde "same origin policy", een belangrijk beveiligingsconcept om te voorkomen dat verzoeken naar een ander domein gaan dan waarop het is aangeboden. Hoewel dit beleid effectief is in het voorkomen van aanroepen in verschillende domeinen, voorkomt het ook legitieme interactie tussen een API's en clients van een bekende en vertrouwde oorsprong.
+Web browsers implement a so-called "same origin policy", an important security conect to prevent requests go to another domain than where they are provided. While this policy is effective to prevent requests in different domain, it prevent ligitimate interaction between an API and clients from a known and trusted origin.
 
-> [API principe: Use CORS to control access](#api-50)
+> [API principle: Use CORS to control access](#api-50)
