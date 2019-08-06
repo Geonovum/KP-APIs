@@ -238,7 +238,7 @@ a few specific HTTP headers are supplied (`If-None-Match` or
 
 ### <a name="api-44"></a>API-44: Apply rate limiting
 
-To prevent server overload and the guarantee a high service level, apply rate
+To prevent server overload and to guarantee a high service level, apply rate
 limiting to API requests.
 
 ### <a name="api-45"></a>API-45: Provide rate limiting information

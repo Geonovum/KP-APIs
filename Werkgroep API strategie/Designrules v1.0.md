@@ -19,7 +19,7 @@ The most important prinicple of REST is the seperation of the API in logical res
 |Operation|CRUD|Description|
 |-|-|-|
 |`POST`|Create|Create resources that represent collections (i.e. `POST` adds a resource to a collection).|
-|`GET`|Read|Retrieve a resource from the server. Data is only retrieved and not altered.|
+|`GET`|Read|Retrieve a resource from the server. Data is only retrieved and not modified.|
 |`PUT`|Update|Replace a specific resource. Is also used as a *create* " if the resource at the indicated identifier/URI does not exist yet.|
 |`PATCH`|Update|Partially modify an existing resource. The request contains the data that have to be changed and the operations that modify the resource in the designated JSON merge patch format (RFC 7386).|
 |`DELETE`|Delete|Remove the specific resource.|
@@ -151,11 +151,11 @@ Once an API is in production, the *contract* (interface) should not be changed w
 
 ## Versioning
 
-APIs should always be versioned. Versioning facilitates the transition between changes. Old and new versions are offered during a limited (1 year) transition period. A maximum of 3 versions of the API should be supported. Users decide themselves the moment they transition from the old to the new version of an API, as long as they do this prior to the end of the transition period.
+APIs should always be versioned. Versioning facilitates the transition between changes. Old and new versions are offered during a limited (1 year) deprecation period. A maximum of 3 versions of the API should be supported. Users decide for themselves the moment they transition from the old to the new version of an API, as long as they do this prior to the end of the deprecation period.
 
-> [API principle: Allow for a (maximum) 1 year transition period to a new API version](#api-19)
+> [API principle: Allow for a (maximum) 1 year deprecation period to a new API version](#api-19)
 >
-> Provide old and new versions (maximum 3) of an API concurrently for a limited, maximum 1 year transition period.
+> Provide old and new versions (maximum 3) of an API concurrently for a limited, maximum 1 year deprecation period.
 
 The URI of an API should include the major version number only. This allows the exploration of multiple versions of an API in the browser.
 

@@ -19,7 +19,7 @@ The most important prinicple of REST is the seperation of the API in logical res
 |Operation|CRUD|Description|
 |-|-|-|
 |`POST`|Create|Create resources that represent collections (i.e. `POST` adds a resource to a collection).|
-|`GET`|Read|Retrieve a resource from the server. Data is only retrieved and not altered.|
+|`GET`|Read|Retrieve a resource from the server. Data is only retrieved and not modified.|
 |`PUT`|Update|Replace a specific resource. Is also used as a *create* " if the resource at the indicated identifier/URI does not exist yet.|
 |`PATCH`|Update|Partially modify an existing resource. The request contains the data that have to be changed and the operations that modify the resource in the designated JSON merge patch format (RFC 7386).|
 |`DELETE`|Delete|Remove the specific resource.|
