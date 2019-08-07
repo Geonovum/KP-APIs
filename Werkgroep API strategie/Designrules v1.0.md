@@ -193,16 +193,14 @@ Examples of backward compatible changes are the addition of an endpoint or an op
 
 An API will never be fully stable. Change is inevitable. Managing change is important. In general, well documented and timely communicated deprecation schedules are the most importand for API users.
 
-More about extensions (in Dutch only).
-
 
 <section data-format="markdown" class="informative">
-## Extensions
+## Extensions        
 
-        Er is een gepubliceerde versie en een werkversie van het document met extensies. De Werkversie staat op 
-        github en is het document dat "under construction" is, en dus de allerlaatste aanpassingen bevat.
-
-        De documenten zijn hier te vinden:  
-        [Extensions Gepubliceerde versie](https://docs.geostandaarden.nl/api/vv-hr-API-Strategie-ext-20190715/)  
-        [Extensions Werkversie](https://geonovum.github.io/KP-APIs/Werkgroep%20API%20strategie/extensies/)
+		The extensions document exists in a "latest published version"("Gepubliceerde versie" in Dutch) and a "latest editors draft"("Werkversie" in Dutch). The "latest editor's draft" is actively being worked on and can be found on Github. It contains the most recent changes.
+		
+		The documents can be found here:
+		[Extensions Gepubliceerde versie](https://docs.geostandaarden.nl/api/vv-hr-API-Strategie-ext-20190715/)  
+        [Extensions Werkversie](https://geonovum.github.io/KP-APIs/Werkgroep%20API%20strategie/extensions/)
+		  
 </section>
