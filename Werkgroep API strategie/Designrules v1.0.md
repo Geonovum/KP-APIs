@@ -197,7 +197,8 @@ An API will never be fully stable. Change is inevitable. Managing change is impo
 <section data-format="markdown" class="informative">
 ## Extensions        
 
-		The extensions document exists in a "latest published version"("Gepubliceerde versie" in Dutch) and a "latest editors draft"("Werkversie" in Dutch). The "latest editor's draft" is actively being worked on and can be found on Github. It contains the most recent changes.
+		The extensions document exists in a "latest published version" ("Gepubliceerde versie" in Dutch) and a "latest editors draft" ("Werkversie" in Dutch). 
+		The "latest editor's draft" is actively being worked on and can be found on Github. It contains the most recent changes.
 		
 		The documents can be found here:
 		[Extensions Gepubliceerde versie](https://docs.geostandaarden.nl/api/vv-hr-API-Strategie-ext-20190715/)  
