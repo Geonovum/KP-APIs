@@ -125,7 +125,7 @@ There are resource operations that are not related to data manipulation (CRUD). 
 
 2. Treat the operation as a sub-resource. For example, mark an application by `PUT /aanvragen/12/markeringen` and remove a mark by `DELETE /aanvragen/12/markeringen`. To fully follow the REST principles, also provide the `GET` operation for this sub-resource.
 
-3. Sometimes there is no logical way to link an operation to an existing resource. An example of this kind of operations is a search across multiple resources. This operation cannot be assigned to anyone specific resource. In this case, the creation of an independent service endpoint `/_zoek` is the most obvious solution. Use the imperative mood of a verb to distinguish these endpoints from *genuine*  endpoints that use the indicative mood of a verb.
+3. Sometimes there is no logical way to link an operation to an existing resource. An example of such an operation is a search across multiple resources. This operation cannot be assigned to any specific resource. In this case, the creation of an independent service endpoint is the most obvious solution. Use the imperative mood of a verb, maybe even prefix it with a underscore, to distinguish these endpoints from dedicated resource endpoints. For example: `/search` or `/_search`.
 
 The Dutch API strategy prefers approach 2 and 3.
 
