@@ -79,7 +79,7 @@ Since the exacy meaning of concepts are often lost in translation, resources are
 
 ### Interface nomenclature: singular or plural?
 
-Here, the *Keep It Simple Stupid* (KISS) rule is applicable. Although grammatically, it may feel wrong to request a single resource using the plural of the resource, it is a pragmatic choice to refer to endpoints consistently using plural. For the user it is much easier to not have to keep in mind singular and plural (*aanvraag/aanvragen, regel/regels*). Furthermore, this implementation is much more straightforward as most development frameworks are able to resolve both a single resource (`/aanvragen/12`) and multiple resources (`/aanvragen`) using one controller.
+Here, the *Keep It Simple Stupid* (KISS) rule is applicable. Collections and items of collections are addressed via the plural and single resources via the singular. Although grammatically, it may feel wrong to request a single resource using the plural of the resource, it is a pragmatic choice to refer to endpoints consistently using plural. For the user it is much easier to not have to keep in mind singular and plural (*aanvraag/aanvragen, regel/regels*). Furthermore, this implementation is much more straightforward as most development frameworks are able to resolve both a single resource (`/aanvragen/12`) and multiple resources (`/aanvragen`) using one controller.
 
 > [API principle: Use plural nouns to indicate resources](#api-05)
 
