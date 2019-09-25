@@ -23,10 +23,10 @@ Define resources and the underlying entities, fields and so on (the information
 model ad the external interface) in Dutch. English is allowed in case there is
 an official English glossary.
 
-### <a name="api-05"></a>API-05: Use plural nouns to indicate resources
+### <a name="api-05"></a>API-05: Use plural nouns to indicate collections and singlur noun only for single resources
 
-Names of resources are nouns and always in the plural form, e.g. *aanvragen* ,
-*activiteiten*, *vergunningen*, even when it applies to single resources.
+Names of resrouces collections are nouns and always in the plural form, e.g. *aanvragen*,
+*activiteiten*, *vergunningen*, even when it applies to items of the collections.
 
 ### <a name="api-06"></a>API-06: Create relations of nested resources within the endpoint
 
