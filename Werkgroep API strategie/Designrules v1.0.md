@@ -83,9 +83,9 @@ Here, the *Keep It Simple Stupid* (KISS) rule is applicable. Although grammatica
 
 > [API principle: Use plural nouns to indicate resources](#api-05)
 
-### How to go deal with relations?
+### How to deal with relations?
 
-If a relation can only exist in the contexst of another resource (1 to n relation), then the dependent resource (child) can only be retrieved through the parent. The next example explains this. A status belongs to one application. Statuses can be retrieved through the endpoint `/aanvragen`:
+If a relation can only exist in the context of another resource (1 to n relation), then the dependent resource (child) can only be retrieved through the parent. The next example explains this. A status belongs to one application. Statuses can be retrieved through the endpoint `/aanvragen`:
 
 |Request|Description|
 |-|-|

@@ -1,52 +1,66 @@
 
-# Supplements
+## Informative API Principles
 
+This chapter contains the **Informative Principles** 
 
-## <a name="api-principes"></a>API Principles
+<aside class="note">
+API principles have unique numbers, depricated principles are removed from the list, new principles
+will get a new and higher nunmber. Thus gaps in the sequence can occur 
+</aside>
 
-### <a name="api-01"></a>API-01: Operations are *Safe* and/or *Idempotent*
+!-- ## <a name="api-principes"></a>API Principles -->
+
+<!-- ### <a name="api-01"></a>API-01: Operations are *Safe* and/or *Idempotent*
 Operations of an API are guaranteed to be *safe* and/or *idempotent* if that has
 been specified.
+-->
 
-### <a name="api-02"></a>API-02: Do not maintain state information at the server
+<!-- ### <a name="api-02"></a>API-02: Do not maintain state information at the server
 
 The client state is tracked fully at the client.
+-->
 
-### <a name="api-03"></a>API-03: Only apply default HTTP operations
+<!--### <a name="api-03"></a>API-03: Only apply default HTTP operations
 
 A RESTful API is an application programming interface that supports the default
 HTTP operations GET, PUT, POST, PATCH and DELETE.
+-->
 
-### <a name="api-04"></a>API-04: Define interfaces in Dutch unless there is an official English glossary
+<!-- ### <a name="api-04"></a>API-04: Define interfaces in Dutch unless there is an official English glossary
 
 Define resources and the underlying entities, fields and so on (the information
 model ad the external interface) in Dutch. English is allowed in case there is
 an official English glossary.
+-->
 
-### <a name="api-05"></a>API-05: Use plural nouns to indicate resources
+<!-- ### <a name="api-05"></a>API-05: Use plural nouns to indicate resources
 
 Names of resources are nouns and always in the plural form, e.g. *aanvragen* ,
 *activiteiten*, *vergunningen*, even when it applies to single resources.
+-->
 
-### <a name="api-06"></a>API-06: Create relations of nested resources within the endpoint
+<!-- ### <a name="api-06"></a>API-06: Create relations of nested resources within the endpoint
 
 Preferrably, create relation within the endpoint if a relation can only exist
 with another resource (nested resource). In that case, the dependent resource
 does not have its own endpoint.
+-->
 
-### <a name="api-09"></a>API-09: Implement custom representation if supported
+<!-- ### <a name="api-09"></a>API-09: Implement custom representation if supported
 
 Provide a comma-separated list of field names using the query parameter `fields`
 te retrieve a custom representation. In case non-existent field names are
-passed, a 404 Bad Request error message is returned.
+passed, a 400 Bad Request error message is returned.
+-->
 
-### <a name="api-10"></a>API-10: Implement operations that do not fit the CRUD model as sub-resources
+<!-- ### <a name="api-10"></a>API-10: Implement operations that do not fit the CRUD model as sub-resources
 
 "Operations that do not fit the CRUD model are implemented as follows:
 
 -   Treat an operation as a sub-resource.
 
 -   Only in exceptional cases, an operator is implemented as an endpoint."
+-->
 
 ### <a name="api-11"></a>API-11: Encrypt connections using at least TLS v1.3
 
@@ -78,31 +92,36 @@ In the case of APIs that have access-restrictions or purpose-limitations,
 additional authentication based on PKIoverheid certificates and mutual TLS
 authentication should be provided.
 
-### <a name="api-16"></a>API-16: Use OAS 3.0 for documentation
+<!-- ### <a name="api-16"></a>API-16: Use OAS 3.0 for documentation
 
 Publish specifications (documentation) as Open API Specification (OAS) 3.0 or
 higher.
+-->
 
-### <a name="api-17"></a>API-17: Publish documentation in Dutch unless there is existing documentation in English or there is an official English glossary available
+<!-- ### <a name="api-17"></a>API-17: Publish documentation in Dutch unless there is existing documentation in English or there is an official English glossary available
 
 Publish API documentation in Dutch. You may refer to existing documentation in
 Engelish and in case there is an official English glossary avaialble.
+-->
 
-### <a name="api-18"></a>API-18: Include a deprecation schedule when publishing API changes
+<!-- ### <a name="api-18"></a>API-18: Include a deprecation schedule when publishing API changes
 
 API changes and a deprecation schedule should be published not only as a
 changelog on a publicly available blog but also through a mailing list.
+-->
 
-### <a name="api-19"></a>API-19: Allow for a maximum 1 year transition period to a new API version
+<!-- ### <a name="api-19"></a>API-19: Allow for a maximum 1 year transition period to a new API version
 
 Old and new versions (maximum 3) of an API should be provided concurrently for a
 limited, maximum 1 year transition period.
+-->
 
-### <a name="api-20"></a>API-20: Include the major version number only in ihe URI
+<!-- ### <a name="api-20"></a>API-20: Include the major version number only in ihe URI
 
 The URI of an API should include the major version number only. The minor and
 patch version numbers are in the response header of the message. Minor and patch
 versions have no impact on existing code, but major version do.
+-->
 
 ### <a name="api-21"></a>API-21: Inform users of a deprecated API actively
 
@@ -253,13 +272,14 @@ ranges, including the parsable JSON representation
 ### <a name="api-47"></a>API-47: Use the required HTTP status codes
 
 APIs should at least support the following HTTP status codes: 200, 201, 204,
-304, 400, 401, 403, 405, 406, 409, 410, 415, 422, 429, 500, and 503.
+304, 400, 401, 403, 404, 405, 406, 409, 410, 415, 422, 429, 500, and 503.
 
-### <a name="api-48"></a>API-48: Leave off trailing slashes from API endpoints
+<!-- ### <a name="api-48"></a>API-48: Leave off trailing slashes from API endpoints
 
 URIs to retrieve collections of resources or individual resources don't include
 a trailing slash. A resource is only available at one endpoint/path. Resource
 paths end without a slash.
+-->
 
 ### <a name="api-49"></a>API-49: Use *public* API-keys
 
@@ -278,7 +298,7 @@ case, only add this particular domain to the response header
 header `Access-Control-Allow-Origin` to allow all sources. However, this is
 malpractice!\*\*
 
-### <a name="api-51"></a>API-51: Publish OAS at the base-URI in JSON-format
+<!-- ### <a name="api-51"></a>API-51: Publish OAS at the base-URI in JSON-format
 
 Publish up-to-date documentation in the Open API Specification (OAS) at the
 publicly accessible root endpoint of the API in JSON format:
@@ -289,3 +309,4 @@ Makes the OAS relevant to v1 of the API available.
 
 Thus, the up-to-date documentation is linked to a unique location (that is
 always concurrent with the features available in the API).
+-->
