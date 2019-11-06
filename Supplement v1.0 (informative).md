@@ -1,14 +1,12 @@
 
-## Informative API Principles
-
-This chapter contains the **Informative Principles** 
+## **Informative API Principles**
 
 <aside class="note">
 API principles have unique numbers, depricated principles are removed from the list, new principles
 will get a new and higher nunmber. Thus gaps in the sequence can occur 
 </aside>
 
-!-- ## <a name="api-principes"></a>API Principles -->
+<!-- ## <a name="api-principes"></a>API Principles -->
 
 <!-- ### <a name="api-01"></a>API-01: Operations are *Safe* and/or *Idempotent*
 Operations of an API are guaranteed to be *safe* and/or *idempotent* if that has

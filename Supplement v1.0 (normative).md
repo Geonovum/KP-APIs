@@ -1,7 +1,5 @@
 
-## Normative API Principles
-
-This chapter contains the **Normative Principles**
+## **Normative API Principles**
 
 <aside class="note">
 API principles have unique numbers, depricated principles are removed from the list, new principles
