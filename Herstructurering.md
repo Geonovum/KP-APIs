@@ -12,6 +12,8 @@ het bevat de huidige hoofdstukken:
 - Inleiding
 - Communicatie en Beleid
 - Gebruikerswensen
+- verwijzing naar Deel 2a. 2b
+- verwijzing naar Nederlands profiel OAuth
 - Algemene Bijlagen
 
 
@@ -41,7 +43,7 @@ zoal ICTU of Logius.
 Voorstel:
 Repo: API-strategie-algemeen
 Repo: API-strategie-normatief
-Repo: API-strategie-informaties
+Repo: API-strategie-informatief
 
 Binnen de repo wordt de standaard Geonovum Respec indeling gebruikt (is iets anders dan de huisstijl!)
 
