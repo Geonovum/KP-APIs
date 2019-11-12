@@ -3,7 +3,9 @@ Binnen de Nederlandse publieke sector zijn meerdere standaarden die betrekking h
 
 ## API Designrules (Nederlandse API Strategie IIa)
 Deze sectie beschrijft de status en uitgangspunten voor de standaard "API Designrules". De standaard is een op zichzelfstaand document en is hier te vinden:
+
 https://geonovum.github.io/API-Designrules/ (werkversie)
+
 https://docs.geostandaarden.nl/api/API-Designrules/ (stabiele versie)
 
 ### Oorsprong standaard
@@ -19,11 +21,13 @@ Het aanbieden van RESTful APIs ten behoeve van het ontsluiten van overheids info
 
 ## API Designrules extensions (Nederlandse API Strategie IIb)
 Deze sectie beschrijft de status en uitgangspunten voor de standaard "API Designrules extensions". De (concept) standaard is een op zichzelfstaand document en is hier te vinden:
+
 https://geonovum.github.io/KP-APIs/API-strategie-extensies/ (werkversie)
+
 https://docs.geostandaarden.nl/api/vv-hr-API-Strategie-ext-20190715/ (stabiele versie)
 
 ### Oorsprong standaard
-De API designrules extensions bevatten ondwerpen die bij het opstellen van de eerste versie van de API designrules nog niet als stabiel werden beschouwd. Er wordt nog actief gewerkt om deze extensies tot een stabiele versie te maken. Uiteindelijk zal een deel van de extensies mogelijk direct onderdeel worden van de API design rules. Een ander deel zal een optionele extensie zijn die gebruikt kan worden wanneer specifieke extra functionaliteit nodig is.
+De API designrules extensions bevatten onderwerpen die bij het opstellen van de eerste versie van de API designrules nog niet als stabiel werden beschouwd. Er wordt nog actief gewerkt om deze extensies tot een stabiele versie te maken. Uiteindelijk zal een deel van de extensies mogelijk direct onderdeel worden van de API design rules. Een ander deel zal een optionele extensie zijn die gebruikt kan worden wanneer specifieke extra functionaliteit nodig is.
 ### Status 
 De API designrules extensions zijn nog in ontwikkeling en hebben geen enkele status.
 #### Werkingsgebied standaard
