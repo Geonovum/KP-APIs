@@ -11,7 +11,6 @@ authenticatie en autorisatie
 | I    | [API Strategie Algemeen](https://geonovum.github.io/KP-APIs/API-strategie-algemeen/)       |  
 | IIa  | [API Designrules](https://geonovum.github.io/API-Designrules/)                             |  
 | IIb  | [API Designrules Extensions](https://geonovum.github.io/KP-APIs/API-strategie-extensies/)  |  
-|      |                                                                                            |
 |      | [NL GOV Assurance profile for OAuth 2.0](https://geonovum.github.io/KP-APIs-OAuthNL/)      |
 
 Voor de editors van de bestanden op GitHub: zie de [HowTo](./HowTo.md) in deze map.
