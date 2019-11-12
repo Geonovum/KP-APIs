@@ -32,7 +32,7 @@ Doelgroep: Developers binnen en buiten de overheid
 Dit deel zal geschreven zijn in het _Engels_
 het bevat de huidige hoofdstukken:
 - Inleiding
-- Designrules **inclusief** het huidige extenstions document
+- Het huidige extenstions document
 - Niet normatieve bijlagen
 
 ## Herinrichting GitHub repo
@@ -41,9 +41,12 @@ alle 3 de documenten krijgen een eigen GitHub repository, dit maakt het
 ook mogelijk om tzt een document over te dragen aan een andere beheer organisatie
 zoal ICTU of Logius.
 Voorstel:
-Repo: API-strategie-algemeen
-Repo: API-strategie-normatief
-Repo: API-strategie-informatief
+Repo: KP-APIs met daarin:
+-   API-strategie-algemeen
+-   API-strategie-extensies
+
+Repo: API Designrules met daarin:
+-   API-designrules (dit is het normatieve deel)
 
 Binnen de repo wordt de standaard Geonovum Respec indeling gebruikt (is iets anders dan de huisstijl!)
 
