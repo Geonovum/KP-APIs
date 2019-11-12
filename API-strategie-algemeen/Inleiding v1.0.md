@@ -18,11 +18,11 @@ Architectuur, Authenticatie en Autorisatie, Communicatie en Beleid, en Gebruiker
 
 Dit document is onderdeel van de "Nederlandse API Strategie" 
 
-| Deel  | Omschrijving                                  | Status      | Link                                        |
-|-------|-----------------------------------------------| ------------|---------------------------------------------|
-| **I** | **Algemene beschrijving van de API Strategie**  | **Informatief** |                                             |
-| IIa   | Standard for designing APIs                   | Normatief   | https://github.com/Geonovum/API-Designrules |
-| IIb   | Extensie van de Standaard voor API ontwerp    | Informatief |                                             |
+| Deel  | Omschrijving                                    | Status          | Link                                                         | 
+|-------|-------------------------------------------------| ----------------|--------------------------------------------------------------|
+| **I** | **Algemene beschrijving van de API Strategie**  | **Informatief** | https://geonovum.github.io/KP-APIs/API-strategie-algemeen/   |
+| IIa   | Standard for designing APIs                     | Normatief       | https://geonovum.github.io/Geonovum/API-Designrules          |
+| IIb   | Extensie van de Standaard voor API ontwerp      | Informatief     | https://geonovum.github.io/KP-APIs/API-strategie-extensies/  |
 
 Dit document bevat twee delen, waarbij het eerste deel "niet-technisch" en het tweede deel "technisch" van aard is.
 In het eerste deel zitten de hoofdstukken [Communicatie en Beleid](#communicatie-en-beleid) 
