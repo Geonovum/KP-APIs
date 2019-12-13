@@ -37,7 +37,7 @@ A step-by-step approach:
 
 The `Warning` reponse header (see: RFC 7234) has the status code 299 ("Miscellaneous Persistent Warning") and the API endpoint (including version number) as the warn-agent of the warning, followed by the warn-text with the human-readable warning. For example:
 
-`Waarschuwing: 299 https://service.../api/.../v1 "Deze versie van de API is verouderd en zal uit dienst worden genomen op 2020-02-01. Raadpleeg voor meer informatie hier de documentatie: https://omgevingswet.../api/.../v1".`
+`Warning: 299 https://service.../api/.../v1 "Deze versie van de API is verouderd en zal uit dienst worden genomen op 2020-02-01. Raadpleeg voor meer informatie hier de documentatie: https://omgevingswet.../api/.../v1".`
 
 Users should have sufficient time to phase out the old API. A period of 6 to 12 months is recommended.
 
