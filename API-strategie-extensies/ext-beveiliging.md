@@ -2,17 +2,38 @@
 
 <p class='warning'>This extension is in development and may be modified at any time.</p>
 
-APIs can be accessed from any location on the internet. Information is only exchanged over TLS-based encrypted connections. No exceptions, so everywhere and always.
-
-Since the connection is always encrypted, the authentication mechanism is straightforward. This facilitates the use for simple accesss tokens instead of encrypted access tokens.
+APIs can be accessed from any location on the internet. Information is only exchanged over TLS-based encrypted connections. No exceptions, so everywhere and always. HSTS policy (HTTPS only) ondersteunen
 
 > [API principle: Encrypt connections using at least TLS v1.3](#api-11)
 
-> [API principle: Allow access to an API only if an API key is provided](#api-12)
+### Identification
 
-For further information about security, see chapter 5.
+For Identification of individual users always use a pseudonym to avoid exposing sensitive information about a user. 
+This pseudonym can optionally be translatable to actual personal information in a separate service, but access to this service should be tightly controlled and limited only to cases where there is a legal need to use this information.
+For identifying government organizations use the "organisatie-identificatienummer" (OIN)
+For identifying non-government organizations (companies, associations, foundations etc...) use the Handelsregisternummer (HRN)
+These are used in the PKIOverheid and e-Herkenning context. See https://www.logius.nl/diensten/oin for more information on these identifiers.
+In the EU context use the eIDAS legal identifier. for more information see https://ec.europa.eu/digital-single-market/en/trust-services-and-eid
 
-### Authentication and authorisation
+### Authentication
+The following authentication methods can be used:
+**Out of band** 
+When distributing API tokens to users an out of band authentication method can be used. Common methods include an API store where a user logs in and is able to acquire an API key. In this case the login method is the out-of-band authentication method used for accesing an API.
+
+**PKIOverheid**
+These are x509 certificates derived from a root certificate owned by the Dutch Government. for more information on PKIOverheid see https://www.logius.nl/diensten/pkioverheid
+In the API context use only server or services certificates that include an OIN/HRN for identification. Extended validation certificates (as used for websites do not include this identifier and are therefor not suitable for use with APIs. 
+
+**Openidconnect**
+A Dutch profile for OpenIDConnect is currently being drafted. The first version will be for web usecases, later on it will be extended to cover mobile. When this profile is complete it is expected its use will be mandated by the "pas toe of leg uit lijst" of Forum standaardisatie. 
+
+**OAuth**
+This is a standard for authorisation not authentication yet in some cases its use for machine to machine authentication can be appropriate ...... (further elaboration needed)
+
+**SAML**
+The underlying current Authentication method for DigiD & eHerkenning. It can be the basis as the out-of band method mentioned earlier. other usecases are.... (further elaboration needed)
+
+### Authorisation
 A RESTful API should not maintain the state at the server. The authentication and authorisation of a request cannot depend on cookies or sessions. Instead, a token has to be sent for each request.  OAuth 2.0 is the recommended standard. Chapter 5 contains further information about this choice and the use of OAuth 2.0.
 
 > [API principle: Accept tokens as HTTP headers only](#api-13)
@@ -59,15 +80,10 @@ Publicly visible identifiers (IDs), that are frequently part of URLs a RESTful A
 >
 > `550e8400-e29b-41d4-a716-446655440000`
 > 
-> To ensure UUIDs are shorter and guaranteed *web-safe*, be advised to only use the base64-encoded variant consisting of 22 tokens. The above UUID looks like this:
+> To ensure UUIDs are shorter and guaranteed *web-safe*, be advised to only use the base64-encoded variant consisting of 22 characters. The above UUID looks like this:
 >
 > `abcdEFh4520juieUKHWgJQ`
 
-#### Expose API-key
-
-API keys are "unrestricted" by default. There are no usage restrictions and these API keys should therefore not be exposed in a web application. Using API keys without usage restrictions in JavaScript creates a real change for abuse and quota theft. To prevent this, restricted API keys should be issued and used.
-
-> [API principe: Use *public* API-keys](#api-49)
 
 #### CORS-policy
 

@@ -17,3 +17,9 @@ HTTP headers communicate the rate limit to the users.
 [[rfc6585]] introduces an HTTP status code `429 Too Many Requests` to inform users the rate limit has been reached.
 
 > [API principe: Provide rate limiting information](#api-45)
+
+#### Expose API-key
+
+API keys are "unrestricted" by default. There are no usage restrictions and these API keys should therefore not be exposed in a web application. Using API keys without usage restrictions in JavaScript creates a real change for abuse and quota theft. To prevent this, restricted API keys should be issued and used.
+
+> [API principe: Use *public* API-keys](#api-49)
