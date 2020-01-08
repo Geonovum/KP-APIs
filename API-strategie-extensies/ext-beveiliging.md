@@ -10,13 +10,17 @@ APIs can be accessed from any location on the internet. Information is only exch
 
 For Identification of individual users always use a pseudonym to avoid exposing sensitive information about a user. 
 This pseudonym can optionally be translatable to actual personal information in a separate service, but access to this service should be tightly controlled and limited only to cases where there is a legal need to use this information.
+
 For identifying government organizations use the "organisatie-identificatienummer" (OIN)
+
 For identifying non-government organizations (companies, associations, foundations etc...) use the Handelsregisternummer (HRN)
 These are used in the PKIOverheid and e-Herkenning context. See https://www.logius.nl/diensten/oin for more information on these identifiers.
+
 In the EU context use the eIDAS legal identifier. for more information see https://ec.europa.eu/digital-single-market/en/trust-services-and-eid
 
 ### Authentication
 The following authentication methods can be used:
+
 **Out of band** 
 When distributing API tokens to users an out of band authentication method can be used. Common methods include an API store where a user logs in and is able to acquire an API key. In this case the login method is the out-of-band authentication method used for accesing an API.
 
@@ -66,7 +70,7 @@ In a production environment as little information as possible is to be disclosed
 |No|Yes|No|`403 Forbidden`|
 |No|No|?|`403 Forbidden`|
 
-First, it is established whether the requester (principal) is authorised for a resource. In case the requester is not authorised or the authorisation cannot be established, for example, the resource is required to establish authorisation and the resource does not exist, then a status error code `403 Forbidden` is returned. In this way, no information is returned about the existence of a resource to a non-authorised principal.
+First, it is established whether the requester (principal) has a valid authorisation(i.e. token is valid) then it is established whether this authorisation is valid for a requested resource. In case the requester is not authorised or the authorisation cannot be established, for example, the resource is required to establish authorisation and the resource does not exist, then a status error code `403 Forbidden` is returned. In this way, no information is returned about the existence of a resource to a non-authorised principal.
 
 An additional advantage of the stategy that establishes whether there is authorisation is the opportunity to separate access control logic from business logic.
 
@@ -90,3 +94,9 @@ Publicly visible identifiers (IDs), that are frequently part of URLs a RESTful A
 Web browsers implement a so-called "same origin policy", an important security conect to prevent requests go to another domain than where they are provided. While this policy is effective to prevent requests in different domain, it prevent ligitimate interaction between an API and clients from a known and trusted origin.
 
 > [API principle: Use CORS to control access](#api-50)
+
+#### CSP-policy
+Content Security Policy is a standard that allows API (and website) providers to define approved origins of contents that are accesable through an API but are not provided from the same origin as the API itself. When multiple origins are needed this standard can be use as a mechanism to explicitly provide exceptions to the CORS-policy.
+
+#### Subresource integrity
+Subresource integrity (SRI) is a standard that can be used to validate content delivered by a third party. It defines trusted location and a hash of external content. This allows a client to verify the integrity and trustworthyness of external content accessed through an API.
