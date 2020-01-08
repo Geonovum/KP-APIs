@@ -30,6 +30,9 @@ Signing can be used to achieve:
 #### Signing requests/response
 
 ##### Signing requests/respone with knowledge of encoding format
+JWT security best practices:
+https://datatracker.ietf.org/doc/draft-ietf-oauth-jwt-bcp/
+
 
 ##### Sigingn requests/response without knowledge of encoding format
 

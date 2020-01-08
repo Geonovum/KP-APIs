@@ -308,3 +308,7 @@ Makes the OAS relevant to v1 of the API available.
 Thus, the up-to-date documentation is linked to a unique location (that is
 always concurrent with the features available in the API).
 -->
+
+### <a name="api-52"></a>API-52: Use OAuth 2.0 for authorisation with rights delegation
+
+This is in line with the way the OAuth standard appears on the comply or explain list of forumstandaardisatie.

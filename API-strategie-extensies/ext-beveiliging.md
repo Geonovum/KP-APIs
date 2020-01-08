@@ -2,43 +2,59 @@
 
 <p class='warning'>This extension is in development and may be modified at any time.</p>
 
-APIs can be accessed from any location on the internet. Information is only exchanged over TLS-based encrypted connections. No exceptions, so everywhere and always. HSTS policy (HTTPS only) ondersteunen
+APIs can be accessed from any location on the internet. Information is only exchanged over TLS-based encrypted connections. No exceptions, so everywhere and always. One should follow the HTTP Strict Transport Security (HSTS) policy that mandates the use of HTTPS only.
 
 > [API principle: Encrypt connections using at least TLS v1.3](#api-11)
+
+**Should we not just use NCSC guidelines for HTTPS?** https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls
+
 
 ### Identification
 
 For Identification of individual users always use a pseudonym to avoid exposing sensitive information about a user. 
 This pseudonym can optionally be translatable to actual personal information in a separate service, but access to this service should be tightly controlled and limited only to cases where there is a legal need to use this information.
+Use of a Burgerservice nummer(BSN) is only allowed when the organization has the right to do this. Even when an orgnization has the right to do this it is still reccomended to use a pseudonym that is only translatable to a BSN for a limited number of services/users within the organization.
+** link naar DSO ontwerp?**
 
 For identifying government organizations use the "organisatie-identificatienummer" (OIN)
-
 For identifying non-government organizations (companies, associations, foundations etc...) use the Handelsregisternummer (HRN)
 These are used in the PKIOverheid and e-Herkenning context. See https://www.logius.nl/diensten/oin for more information on these identifiers.
+OINs can be queried using the COR API https://portaal.digikoppeling.nl/registers/corApi/index 
+HRNs are derived from the RSIN which can be queried in the "Handels register" https://developers.kvk.nl/documentation/search-v2
 
 In the EU context use the eIDAS legal identifier. for more information see https://ec.europa.eu/digital-single-market/en/trust-services-and-eid
 
 ### Authentication
-The following authentication methods can be used:
+We distinguish end user authentication methods and system authentication methods.
 
+#### End user authentication
+The following authentication methods can be used end user authentication:
 **Out of band** 
 When distributing API tokens to users an out of band authentication method can be used. Common methods include an API store where a user logs in and is able to acquire an API key. In this case the login method is the out-of-band authentication method used for accesing an API.
-
-**PKIOverheid**
-These are x509 certificates derived from a root certificate owned by the Dutch Government. for more information on PKIOverheid see https://www.logius.nl/diensten/pkioverheid
-In the API context use only server or services certificates that include an OIN/HRN for identification. Extended validation certificates (as used for websites do not include this identifier and are therefor not suitable for use with APIs. 
 
 **Openidconnect**
 A Dutch profile for OpenIDConnect is currently being drafted. The first version will be for web usecases, later on it will be extended to cover mobile. When this profile is complete it is expected its use will be mandated by the "pas toe of leg uit lijst" of Forum standaardisatie. 
 
-**OAuth**
-This is a standard for authorisation not authentication yet in some cases its use for machine to machine authentication can be appropriate ...... (further elaboration needed)
-
 **SAML**
 The underlying current Authentication method for DigiD & eHerkenning. It can be the basis as the out-of band method mentioned earlier. other usecases are.... (further elaboration needed)
 
+#### System authentication
+The following authentication methods can be used for system authentication:
+
+**PKIOverheid**
+These are x509 certificates derived from a root certificate owned by the Dutch Government. for more information on PKIOverheid see https://www.logius.nl/diensten/pkioverheid
+In the API context use only server or services certificates that include an OIN/HRN for identification. Extended validation certificates (as used for websites) do not include this identifier and are therefor not suitable for use with APIs. 
+
+**Out of band** 
+When distributing API tokens to users an out of band authentication method can be used. Common methods include an API store where a user logs in and is able to acquire an API key. In this case the login method is the out-of-band authentication method used for accesing an API.
+
+**OAuth**
+This is a standard for authorisation not authentication yet in some cases its use for machine to machine authentication can be appropriate. The client credentials authorization grant to be specific ...... (further elaboration needed)
+
+
+
 ### Authorisation
-A RESTful API should not maintain the state at the server. The authentication and authorisation of a request cannot depend on cookies or sessions. Instead, a token has to be sent for each request.  OAuth 2.0 is the recommended standard. Chapter 5 contains further information about this choice and the use of OAuth 2.0.
+A RESTful API should not maintain the state at the server. The authentication and authorisation of a request cannot depend on cookies or sessions. Instead, a token has to be sent for each request. Token based authorization is reccomended. 
 
 > [API principle: Accept tokens as HTTP headers only](#api-13)
 
@@ -51,7 +67,7 @@ Using tokens a distinction is made between authorised and non-authorised service
 
 In case the proper headers are not sent, then there are no authentication details available and the a status error code `403 Forbidden` is returned.
 
-> [API principle: Use OAuth 2.0 for authorisation](#api-14)
+> [API principle: Use OAuth 2.0 for authorisation with rights delegation](#api-52)
 
 See also [The Dutch profile OAuth in the chapter Security](#Security) for further explanation of the applicaton of OAuth.
 
@@ -88,10 +104,12 @@ Publicly visible identifiers (IDs), that are frequently part of URLs a RESTful A
 >
 > `abcdEFh4520juieUKHWgJQ`
 
+### security for webbrowser API clients
+When webbrowsers can be clients for an API these APIs should be compatible with the following policies and standards.
 
 #### CORS-policy
 
-Web browsers implement a so-called "same origin policy", an important security conect to prevent requests go to another domain than where they are provided. While this policy is effective to prevent requests in different domain, it prevent ligitimate interaction between an API and clients from a known and trusted origin.
+Web browsers implement a so-called "same origin policy", an important security conect to prevent requests go to another domain than where they are provided. While this policy is effective to prevent requests in different domains, it prevents ligitimate interaction between an API and clients from a known and trusted origin. 
 
 > [API principle: Use CORS to control access](#api-50)
 
