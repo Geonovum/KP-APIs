@@ -1,4 +1,7 @@
 ## Signing and Encryption
+
+<p class='warning'>This extension is in development and may be modified at any time.</p>
+
 Signing and encryption are mechanisms that can provide additional security on top of the transport layer security that is provided by HTTP TLS in combination with some form of authentication and authorization.
 
 In this API strategy we concern ourselves with RESTful APIs. In RESTful APIs you request the current value of a resource. This is different from SOAP based protocols where content is transported using messages. Using SOAP part of or all of the content is signed and/or encrypted by the sender of the message. This has utitlity as there are no pre conceptions about resources and their behaviour. When using REST you have to ask yourself what is being signed or encrypted. The value of a resource at a certain date and time. Does this have utility above and beyond the transport layer security thats already there?
@@ -17,15 +20,23 @@ Signing can be used to achieve:
 * **integrity:** allows the receiver of a request/response to establish that the request/response (or parts there of) have not been tampered with 
 * **non-repudiation:** ensures that the sender of a request/respons cannot plausibly deny that a request/reponse (or parts thereof) was sent by him. 
 
-#### Enveloping vs Enveloped signatures
+#### Detached, Enveloping and Enveloped signatures
+Generally speaking there are three distinct types of signature: Detached, Enveloping and Enveloped.
+A signature can be detached, that is the signature is separate from the content it is signing. 
+Signatures can be enveloping, that is the content being signed is contained within the signature itself. The last option is an enveloped signature, that is the signature structure/element is contained wihin the content that is signed.
 
-#### Detached vs Attached signatures
+#### Canonicalization
+Canonicalization(C14n) ensures that syntactically irrelavant information such as trailing whitespaces, different line terminators or tabs do not invalidate a signature. This is especially important with detached signatures where a different rendering of (semantically) the same content can invalidate a signature. A C14n algorithm ensures semantically identical content receives the same signature.
 
-#### Signing encoding formats
-
+#### Signing within encoding formats
+When signing takes place within an encoding format the way information is exchanged(e.g. through APIs) is not directly relevant to the way signatures are applied. The API design rules do not currently express any normative preference for encoding formats. We do have the JSON extension that expresses a non normative preference for JSON. Therefor we do include information on signing within the two most common encoding formats (XML & JSON) themselves even if it is not directly related to APIs. 
 ##### Signing XML
+The standard for XML digital signatures allows for Detached, enveloping and enveloped signatures of any XML format. https://www.w3.org/TR/xmldsig-core1/
+When using a specific XML encoding format (or instance GML for geograpic information) one should be aware that when this specific XML format was not made with digital signatures in mind it may be very difficult to implement digital signatures.
+For instance for enveloped XML digital signatures most implementations expect the signature element as either the first or last element of the XML root element. An encoding standard such as GML currently does not allow users to add a signature element to the root of an xml document. Making XML signatures practically unimplementable using standard software.
 
 ##### Signing JSON
+
 
 #### Signing requests/response
 
@@ -34,6 +45,6 @@ JWT security best practices:
 https://datatracker.ietf.org/doc/draft-ietf-oauth-jwt-bcp/
 
 
-##### Sigingn requests/response without knowledge of encoding format
+##### Signing requests/response without knowledge of encoding format
 
 ### Encryption
