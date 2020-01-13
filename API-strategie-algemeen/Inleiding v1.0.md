@@ -21,7 +21,7 @@ Dit document is onderdeel van de "Nederlandse API Strategie"
 | Deel  | Omschrijving                                    | Status          | Link                                                         | 
 |-------|-------------------------------------------------| ----------------|--------------------------------------------------------------|
 | **I** | **Algemene beschrijving van de API Strategie**  | **Informatief** | https://geonovum.github.io/KP-APIs/API-strategie-algemeen/   |
-| IIa   | Standard for designing APIs                     | Normatief       | https://geonovum.github.io/KP-APIs/Geonovum/API-Designrules/ |
+| IIa   | Standard for designing APIs                     | Normatief       | https://geonovum.github.io/API-Designrules/                  |
 | IIb   | Extensie van de Standaard voor API ontwerp      | Informatief     | https://geonovum.github.io/KP-APIs/API-strategie-extensies/  |
 
 Dit document bevat twee delen, waarbij het eerste deel "niet-technisch" en het tweede deel "technisch" van aard is.
