@@ -65,7 +65,7 @@ var respecConfig =
       companyURL: "www.logius.nl",
     },
   ],
-  shortName: "API-Strategie-Algemeen",
+  shortName: "API-Strategie-algemeen",
   github: "https://github.com/geonovum/KP-APIs/API-strategie-algemeen/",
   issueBase: "https://github.com/geonovum/KP-APIs/issues/",
   localBiblio: {
