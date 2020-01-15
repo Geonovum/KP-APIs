@@ -41,7 +41,7 @@ snapshot gegenereerd, en de volgende links handmatig aangepast:
 
 This Version:			https://docs.geostandaarden.nl/api/API-Strategie-extensions/vv-hr-API-Strategie-extensions-20190715/
 Laatst gepubliceerd:	https://docs.geostandaarden.nl/api/API-Strategie-extensions/
-Latest editor's draft:	https://geonovum.github.io/KP-APIs/API-Strategie-extensions/
+Latest editor's draft:	https://geonovum.github.io/KP-APIs/API-strategie-extensions/
 
 Participate:
 https://github.com/geonovum/KP-APIs/
