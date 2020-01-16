@@ -21,6 +21,7 @@ The base for these default formats is [[rfc7807]]. A JSON-representation of an e
 ```json
 {
   "type": "URI: https://content.omgevingswet.overheid.nl/id/<c>[/{categorie}]/{fout}",
+  "code": "Systeemcode die het type fout aangeeft",
   "title": "Hier staat wat er is misgegaan",
   "status": 401,
   "detail": "Meer details over de fout staan hier",
@@ -36,8 +37,8 @@ Validation errors for `POST`, `PUT`, and `PATCH` requests are specified per fiel
   "title": "Hier staat wat er is misgegaan…",
   "status": 400,
   "invalidParams": [{
-    "type": "https://content.omgevingswet.overheid.nl/id/<c>/validatie/Voornaam",
     "name": "voornaam",
+    "code": "Systeemcode die het type fout aangeeft",
     "reason": "De voornaam mag geen speciale karakters bevatten."
   }, {
     "type": " https://content.../<c>/fouten/validatie/Wachtwoord",
