@@ -13,7 +13,7 @@ APIs can be accessed from any location on the internet. Information is only exch
 
 For Identification of individual users always use a pseudonym to avoid exposing sensitive information about a user. 
 This pseudonym can optionally be translatable to actual personal information in a separate service, but access to this service should be tightly controlled and limited only to cases where there is a legal need to use this information.
-Use of a Burgerservice nummer(BSN) is only allowed when the organization has the right to do this. Even when an orgnization has the right to do this it is still reccomended to use a pseudonym that is only translatable to a BSN for a limited number of services/users within the organization.
+Use of a Burgerservice nummer(BSN) is only allowed when the organization has the right to do this. Even when an orgnization has the right to do this it is still recommended to use a pseudonym that is only translatable to a BSN for a limited number of services/users within the organization.
 ** link naar DSO ontwerp?**
 
 For identifying government organizations use the "organisatie-identificatienummer" (OIN)
@@ -54,7 +54,7 @@ This is a standard for authorisation not authentication yet in some cases its us
 
 
 ### Authorisation
-A RESTful API should not maintain the state at the server. The authentication and authorisation of a request cannot depend on sessions. Instead, a token has to be sent for each request. Token based authorization is reccomended. 
+A RESTful API should not maintain the state at the server. The authentication and authorisation of a request cannot depend on sessions. Instead, a token has to be sent for each request. Token based authorization is recommended.
 
 > [API principle: Accept tokens as HTTP headers only](#api-13)
 
