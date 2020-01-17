@@ -28,7 +28,7 @@ In the EU context use the eIDAS legal identifier. for more information see https
 We distinguish end user authentication methods and system authentication methods.
 
 #### End user authentication
-The following authentication methods can be used end user authentication:
+The following authentication methods can be used for end user authentication:
 **Out of band** 
 When distributing API tokens to users an out of band authentication method can be used. Common methods include an API store where a user logs in and is able to acquire an API key. In this case the login method is the out-of-band authentication method used for accesing an API.
 
@@ -54,7 +54,7 @@ This is a standard for authorisation not authentication yet in some cases its us
 
 
 ### Authorisation
-A RESTful API should not maintain the state at the server. The authentication and authorisation of a request cannot depend on cookies or sessions. Instead, a token has to be sent for each request. Token based authorization is reccomended. 
+A RESTful API should not maintain the state at the server. The authentication and authorisation of a request cannot depend on sessions. Instead, a token has to be sent for each request. Token based authorization is reccomended. 
 
 > [API principle: Accept tokens as HTTP headers only](#api-13)
 
@@ -69,7 +69,7 @@ In case the proper headers are not sent, then there are no authentication detail
 
 > [API principle: Use OAuth 2.0 for authorisation with rights delegation](#api-52)
 
-See also [The Dutch profile OAuth in the chapter Security](#Security) for further explanation of the applicaton of OAuth.
+See also [The Dutch profile OAuth in the chapter Security](#api-security) for further explanation of the applicaton of OAuth.
 
 > [API principle: Use PKIoverheid certificates for access-restricted or purpose-limited API authentication](#api-15)
 
