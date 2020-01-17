@@ -35,7 +35,7 @@ var respecConfig =
   [
     
   ],
-  shortName: "API-Strategie-extensions",
+  shortName: "API-Strategie-ext",
   //github: "https://github.com/geonovum/KP-APIs/Werkgroep%20API%20strategie/extensies",
   github: "https://github.com/geonovum/KP-APIs",
   issueBase: "https://github.com/geonovum/KP-APIs/issues/",
