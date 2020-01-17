@@ -16,9 +16,9 @@ var respecConfig =
   specStatus: "GN-VV",
   specType: "HR",
   pubDomain: "api",
-  publishDate: "2019-07-15",
-  previousPublishDate: "2019-02-13",
-  previousMaturity: "GN-CV",
+  publishDate: "2020-01-17",
+  previousPublishDate: "2019-07-15",
+  previousMaturity: "GN-VV",
   editors: 
   [
     {
@@ -65,8 +65,8 @@ var respecConfig =
       companyURL: "www.logius.nl",
     },
   ],
-  shortName: "API-Strategie-algemeen",
-  github: "https://github.com/geonovum/KP-APIs/API-strategie-algemeen/",
+  shortName: "API-Strategie",
+  github: "https://github.com/geonovum/KP-APIs/",
   issueBase: "https://github.com/geonovum/KP-APIs/issues/",
   localBiblio: {
   "OAuth2": {
