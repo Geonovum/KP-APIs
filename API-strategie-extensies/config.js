@@ -12,7 +12,7 @@
 
 var respecConfig = 
 {
-  specStatus: "GN-CV",
+  specStatus: "GN-WV",
   specType: "HR",
   pubDomain: "api",
   publishDate: "2020-01-17",
