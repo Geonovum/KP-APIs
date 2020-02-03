@@ -14,7 +14,7 @@ APIs can be accessed from any location on the internet. Information is only exch
 For Identification of individual users always use a pseudonym to avoid exposing sensitive information about a user. 
 This pseudonym can optionally be translatable to actual personal information in a separate service, but access to this service should be tightly controlled and limited only to cases where there is a legal need to use this information.
 Use of a Burgerservice nummer(BSN) is only allowed when the organization has the right to do this. Even when an orgnization has the right to do this it is still reccomended to use a pseudonym that is only translatable to a BSN for a limited number of services/users within the organization.
-** link naar DSO ontwerp?**
+** https://aandeslagmetdeomgevingswet.nl/publish/library/219/dso_-_gas_-_knooppunt_toegang_iam.pdf **
 
 For identifying government organizations use the "organisatie-identificatienummer" (OIN)
 For identifying non-government organizations (companies, associations, foundations etc...) use the Handelsregisternummer (HRN)
