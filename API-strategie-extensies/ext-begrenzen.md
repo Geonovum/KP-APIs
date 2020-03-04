@@ -23,3 +23,5 @@ HTTP headers communicate the rate limit to the users.
 API keys are "unrestricted" by default. There are no usage restrictions and these API keys should therefore not be exposed in a web application. Using API keys without usage restrictions in JavaScript creates a real change for abuse and quota theft. To prevent this, restricted API keys should be issued and used.
 
 > [API principe: Use *public* API-keys](#api-49)
+
+<p class='warning'>If the only way to publish open data is an API, using an API-key might be in conflict with the open data principles</p>
