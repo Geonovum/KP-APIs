@@ -1,5 +1,5 @@
 # API strategy extensions
 
-* [a relative link](Inleiding v1.0.md)
-* [a relative link](ext-vb-stabiel.md)
+* [introduction](Inleiding%20v1.0.md)
+* [stable example](ext-vb-stabiel.md)
     
