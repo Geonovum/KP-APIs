@@ -15,7 +15,7 @@ JavaScript Object Notation (JSON) is a format, just like XML, to serialise, stor
 
 > [API principle: JSON first - APIs receive and send JSON](#api-22)
 
-> [API principle: APIs may provide a JSON Schema](#api-23)
+> [API principle: APIs may provide an additional JSON Schema for data validation by the consumer (not being the OAS file)](#api-23)
 
 > [API principle: Support content negotiation](#api-24)
 
