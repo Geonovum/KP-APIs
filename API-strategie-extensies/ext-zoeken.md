@@ -37,3 +37,5 @@ Find below some base rules for wildcard searches:
 To improve the API experience, common queries should be provided as end point. For example, *aanvragen* that have the *status* property set to *gesloten* and sorted by *wijzigingsDatum* in descending order, i.e. recently closed applications, can be retrieved using the following end point:
 
 `GET /aanvragen/recent-gesloten`
+
+> [API principle: To improve API experience provide end points for common queries](#api-33)
