@@ -52,7 +52,7 @@ A future-proof API does not have envelopes.
 
 ### JSON-encoded `POST`, `PUT`, and `PATCH` payloads
 
-APIs should at least support JSON-encoded `POST`, `PUT`, and `PATCH` payloads. Encoded form data (`application/x-www-form-urlencoded`) payloads are not supported. What is the difference?
+APIs should at least support JSON-encoded `POST`, `PUT`, and `PATCH` payloads. Encoded form data (`application/x-www-form-urlencoded`) payloads are not supported. Other encodings are allowed. What is the difference?
 
 `Content-Type: application/json` results in:
 
