@@ -1,5 +1,20 @@
 # API strategy extensions
 
-* [introduction](Inleiding%20v1.0.md)
-* [stable example](ext-vb-stabiel.md)
+1. [Introduction](Inleiding%20v1.0.md)
+2. [Example: A stable extension](ext-vb-stabiel.md)
+3. [Example: An extension in progress](ext-vb-dev.md)
+4. [API Security - extension](ext-beveiliging.md)
+5. [Versioning - extension](ext-versionering.md)
+6. [JSON - extension](ext-json.md)
+7. [Filtering - extension](ext-filteren.md)
+8. [Sorting - extension](ext-sorteren.md)
+9. [Search - extension](ext-zoeken.md)
+10.[Time travel - extension](ext-tijd.md)
+11.[Geo - extension](ext-geo.md)
+12.[Pagination - extension](ext-paginering.md)
+13.[Caching - extension](ext-caching.md)
+14.[Rate limit - extension](ext-begrenzen.md)
+15.[Error handling - extension](ext-fouten.md)
+16.[Signing &amp; Encryption](ext-signing-encryptie.md)
+17.[Informational API Design rules](Supplement%20v1.0%20%28informative%29.md)
     
