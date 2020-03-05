@@ -65,4 +65,4 @@ APIs should at least support JSON-encoded `POST`, `PUT`, and `PATCH` payloads. E
 
 and `Content-Type: application/x-www-form-urlencoded` results in: `Name=John+Smith&Age=23`
 
-> [API principle: Support JSON-encoded `POST`, `PUT`, and `PATCH` payloads](#api-29)
+> [API principle: Support JSON-encoded `POST`, `PUT`, and `PATCH` payloads, do not support encode form data payloads](#api-29)
