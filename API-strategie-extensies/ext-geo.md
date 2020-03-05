@@ -86,13 +86,14 @@ The default CRS (Coordinate Reference System) for GeoJSON is WGS84. This is the 
 
 Since most client-side mapping libraries use WGS84, the W3C/OGC working group *Spatial Data on the Web* recommends to use this as the default coordinate reference system. Thus, spatial data can be mapped without any complex transformations. The API strategy caters for this supporting not only ETRS89 and RD/Amersfoort, but also WGS84 and Web Mercator (EPSG:3857).
 
-> [API principle: Use ETRS89 as the preferred coordinate reference system (CRS)](#api-39)
+> [API principle: Use WGS84 as the preferred coordinate reference system (CRS)](#api-39)
 
 The CRS can be specified for request and response individually using custom headers: RD/Amersfoort, ETRS89, WGS84, and Web Mercator.
 
 The guiding priciples for CRS support:
 
 - Source systems record coordinates as they enter the system (legal context);
+- Define a default CRS in the API, if the consumer does not specify the CRS it is assumed it uses the default.
 - Coordinate reference systems API strategy: request/response in RD; ETRS89; WGS84; Web Mercator;
 - Consider no-regret: record both in ETRS89 and RD/Amersfoort instead of on-the-fly transformation;
 - Use RDNAPTRANS™ 2018 to transform RD/Amersfoort to ETRS89 (correction grid);
