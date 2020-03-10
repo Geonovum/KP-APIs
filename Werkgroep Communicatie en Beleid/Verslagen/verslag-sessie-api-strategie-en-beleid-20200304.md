@@ -9,7 +9,7 @@ De nieuwe werkgroep API Strategie en Beleid van het Kennisplatform APIs heeft al
  - Waaruit zou zo'n API strategie moeten bestaan?
  - Hoe maken we een API strategie voor de overheid?
  - Welke rol moet het Kennisplatform APIs hierin spelen?
- - Hoe zorgen we dat de overheid de API strategie ook toepast?
+ - Hoe zorgen we dat de overheid de API strategie gaat toepassen?
 
 Hieronder worden de antwoorden weergegeven die de deelnemers tijdens de sessie zelf konden formuleren op hun mobiele telefoon. De antwoorden zijn niet bewerkt maar wel gegroepeerd naar concept.
 
