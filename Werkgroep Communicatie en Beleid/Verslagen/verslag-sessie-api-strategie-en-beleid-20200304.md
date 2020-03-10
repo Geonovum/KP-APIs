@@ -1,6 +1,6 @@
 ﻿## Resultaten uit de sessie API Strategie en Beleid van 4 maart 2020
 
-Vorig jaar publiceerde het [Kennisplatform APIs](https://www.geonovum.nl/themas/kennisplatform-apis) de [API Strategie](https://docs.geostandaarden.nl/api/API-Strategie/) voor de overheid. Deze richtte zich vooral op technische aspecten zoals de API Design Rules, technische extensies, het OAuth profiel en architectuur. Een echte strategie is het niet en de naam 'API Strategie' geeft daarom verwarring.
+Vorig jaar publiceerde het [Kennisplatform APIs](https://www.geonovum.nl/themas/kennisplatform-apis) de [API Strategie](https://docs.geostandaarden.nl/api/API-Strategie/) voor de overheid. Deze richtte zich vooral op technische aspecten zoals de API Design Rules, technische extensies, het OAuth profiel en architectuur. Een echte strategie is het (nog) niet en de naam 'API Strategie' geeft daarom verwarring.
 
 Verschillende organisaties binnen de overheid werken wel aan API strategie en beleid. Bijvoorbeeld het ministerie van [Binnenlandse Zaken en Koninkrijksrelaties](https://www.digitaleoverheid.nl/nieuws/developers-portal-wordt-verzamelplaats-van-apis/), Logius ([Digikoppeling](https://www.logius.nl/diensten/digikoppeling)), VNG Realisatie ([Common Ground](https://commonground.nl/)), een aantal gemeenten ([Haal Centraal](https://www.vngrealisatie.nl/nieuws/start-programma-haal-centraal)) en het [Digitaal Stelsel Omgevingswet](https://aandeslagmetdeomgevingswet.nl/digitaal-stelsel/aansluiten/standaarden/api-en-uri-strategie/).
 
