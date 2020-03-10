@@ -1,4 +1,4 @@
-﻿## Resultaten uit de sessie API Strategie en Beleid
+﻿## Resultaten uit de sessie API Strategie en Beleid van 4 maart 2020
 
 Vorig jaar publiceerde het Kennisplatform APIs de [API Strategie](https://docs.geostandaarden.nl/api/API-Strategie/) voor de overheid. Deze richtte zich vooral op technische aspecten zoals de API Design Rules, technische extensies, het OAuth profiel en architectuur. Een echte strategie is het niet en de naam 'API Strategie' geeft daarom verwarring.
 
