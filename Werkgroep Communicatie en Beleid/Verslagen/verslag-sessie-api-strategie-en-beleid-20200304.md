@@ -13,6 +13,8 @@ De nieuwe werkgroep API Strategie en Beleid van het [Kennisplatform APIs](https:
 
 Hieronder worden de antwoorden weergegeven die de deelnemers tijdens de sessie zelf konden formuleren op hun mobiele telefoon. De antwoorden zijn niet bewerkt maar wel gegroepeerd naar concept.
 
+Negen deelnemers aan de sessie gaven aan dat ze willen bijdragen aan de werkgroep API Strategie en Beleid van het Kennisplatform APIs. Als u wilt meedenken over een API strategie voor de overheid, kunt u contact opnemen met Han Zuidweg van het Forum Standaardisatie (han.zuidweg@forumstandaardisatie.nl).
+
 ## Welk doel heeft een API strategie voor de overheid?
 
 ### Duidelijkheid
