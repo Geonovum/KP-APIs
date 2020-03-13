@@ -3,7 +3,7 @@
 
 <aside class="note">
 API principles have unique numbers, depricated principles are removed from the list, new principles
-will get a new and higher nunmber. Thus gaps in the sequence can occur 
+will get a new and higher nunmber. Thus gaps in the sequence can occur
 </aside>
 
 <!-- ## <a name="api-principes"></a>API Principles -->
@@ -161,10 +161,9 @@ add-ons or extensions) can pretty print JSON.
 
 By default, don't apply an envelope.
 
-### <a name="api-29"></a>API-29: Support JSON-encoded `POST`, `PUT`, and `PATCH` payloads
+### <a name="api-29"></a>API-29: Support JSON request body for `POST` and `PUT` operations
 
-APIs support at least JSON-encoded `POST`, `PUT`, and `PATCH` payloads. Encoded
-form data (`application/x-www-form-urlencoded`) is not supported.
+Request bodies for POST and PUT operations should at least support the JSON media type. Media types designed for use in HTML forms should not be supported.
 
 ### <a name="api-30"></a>API-30: Use query parameters corresponding to the queryable fields
 
