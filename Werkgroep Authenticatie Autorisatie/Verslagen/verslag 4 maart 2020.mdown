@@ -10,7 +10,7 @@ Marcel van den Brink(KvK) Remco Schaar(Logius), Leon van der Ree(Logius), Paul D
 
 Marcel ligt zijn case toe waarbij BSNs met GET requests worden meegestuurd. Je wil hierbij voorkomen dat de BSNs daardoor ergens opgeslagen of gedeeld worden waar het niet de bedoeling is.
 
-** Optie 1. Encrypted parameters **
+**Optie 1. Encrypted parameters**
 Encrypten met publieke deel van certificaat eventueel met Salting
 
 Nadelen:
@@ -27,7 +27,7 @@ Risico’s:
 Voorbeeld implementatie is dan wel nodig
 
 
-** Optie 2. X-HTTP-Method-Override **
+**Optie 2. X-HTTP-Method-Override**
 
 Je gebruikt een POST ipv GET waarbij je een X-HTTP-Method-Override header meegeeft om aan te geven dat de POST eigenlijk als GET geïnterpreteerd moet worden. 
 
@@ -41,7 +41,7 @@ Voordelen:
 
 Kan interne implementaties helpen.
 
-** Optie 3. POST met query body **
+**Optie 3. POST met query body**
 
 In plaats van een GET gebruik je een POST waarbij de query (inclusief BSN) in de Body staat. Daarmee wordt het BSN via TLS versleuteld en niet op oneigenlijke plaatsen gecached.
 
@@ -58,7 +58,7 @@ Voordelen:
 
 Deze oplossing kan e eigenlijk niet alleen in een extensie opnemen, het zou ook in bij (de volgende versie van) API Design rules opgenomen moeten worden.
 
-** Optie 4. Gebruik van pseudoniem **
+**Optie 4. Gebruik van pseudoniem**
 
 Nadelen:
 * Risico dat herleidbaar is naar een persoon
@@ -71,7 +71,7 @@ REST principe
 
 eID en eHerkenning kennen pseudoniemen en polymorfe identiteiten. Dit is een goede optie wanneer de serverkant de mogelijkheid/middelen heeft om een pseudoniem generator voorziening in te richten. Wanneer dit zo is dan verdient deze oplossing de voorkeur boven een POST. Voor aanbieders(servers) met relatief weinig budget is deze oplossing meestal niet haalbaar.
 
-** Optie 5. GET vanuit server naar client **
+**Optie 5. GET vanuit server naar client**
 
 Client stuurt met GET een pseudoniem en server haalt met GET de query parameters op bij de client.
 
@@ -81,13 +81,13 @@ Nadelen:
 Voordelen:
 * Je werkt met GET
 
-** Optie 6. Query wordt als een Taskservice geïmplementeerd **
+**Optie 6. Query wordt als een Taskservice geïmplementeerd**
 
 Eerst een POST, daarna een GET van het task ID
 Nadelen:
 * Dubieus of dit nog REST/Stateless is
 
-** Advies: **
+**Advies:**
 
 Gebruik POST, past het dichts bij de kennis en ervaring van ontwikkelaars
 Gebruik van pseudoniemen waar er ruimte is.
