@@ -2,7 +2,7 @@
 ## **Informative API Principles**
 
 <aside class="note">
-API principles have unique numbers, depricated principles are removed from the list, new principles
+API principles have unique numbers, deprecated principles are removed from the list, new principles
 will get a new and higher nunmber. Thus gaps in the sequence can occur
 </aside>
 

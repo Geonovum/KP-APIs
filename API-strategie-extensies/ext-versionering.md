@@ -2,13 +2,13 @@
 
 <p class='warning'>This extension is still in development and can be modified at any time.</p>
 
-### Deprication of a major API version
+### Deprecation of a major API version
 
 Major API releases should always be backward incompatible. In case a new API release does _not_  result in backward incompatibility, it does not warrant a full version increase and it is merely a minor release. In case a major release takes place, all (potential) clients have to implement the new version.
 
 As clients cannot be broken, a migration from the previous to the new release cannot happen abruptly. After the launch the new version, the previous version has to be available in production as well. As not to maintain the previous version indefinitely and to encourage clients to use the new version, a transition period is communicated for users to adjust their code to the new version. This period is referred to as *deprecation period*. The duration of this period may very per API. Typically, the deprecation period lasts 6 months, but not more than one year. From a maintenance perspective, at most two major versions (one of which is the deprecated version) should be available in production concurrently. Communication with users is crucial during this period. The following points have to be communicated:
 
-- A link to the (documentation of the) new API version; 
+- A link to the (documentation of the) new API version;
 - Deprecation period with the exact date the deprecated version will be taken offline;
 - Migration plan to easily transition to the new version;
 - Overview of added, changed or removed features;
