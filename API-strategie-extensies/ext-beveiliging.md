@@ -82,7 +82,9 @@ When authentication is implicit or when just the presense of an Authorization he
 Figure 1: authentication is implicit 
 
 Links from flow chart in figure 1:
+
 https://tools.ietf.org/html/rfc6750#section-3.1
+
 https://tools.ietf.org/html/rfc7231#section-6.5.4
 
 **Explicit authentication**
@@ -93,8 +95,11 @@ When authentication is explicit, that is the authentication credentials are acti
 Figure 2: authentication is explicit
 
 Links from flow chart in figure 2:
+
 https://tools.ietf.org/html/rfc7235#section-3.1
+
 https://tools.ietf.org/html/rfc6750#section-3.1
+
 https://tools.ietf.org/html/rfc7231#section-6.5.4
 
 **Explicit authentication while matching client authorization CNF**
@@ -106,9 +111,13 @@ When authentication is explicit and there is a check wether the provided authori
 Figure 3: authentication is explicit, and client authorization confirmation claim matches authentication
 
 Links from flow chart in figure 3:
+
 https://tools.ietf.org/html/rfc7235#section-3.1
+
 https://tools.ietf.org/html/rfc6750#section-3.1
+
 https://tools.ietf.org/html/rfc7800
+
 https://tools.ietf.org/html/rfc7231#section-6.5.4
 
 
