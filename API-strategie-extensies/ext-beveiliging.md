@@ -72,35 +72,38 @@ See also [The Dutch profile OAuth in the chapter Security](#Security) for furthe
 
 #### Authorisation errors
 
-In a production environment as little information as possible is to be disclosed. Apply the following rules for returned the status error code `401 Unauthorized`, `403 Forbidden`, and `404 Not Found`:
+In a production environment as little information as possible is to be disclosed. Apply the following rules for returning the status error code `401 Unauthorized`, `403 Forbidden`, and `404 Not Found`.
+
+**Implicit authentication**
+When authentication is implicit or when just the presense of an Authorization header (API-Key) is enough for authentication: use the flow chart in figure 1 to determine the correct error code.
 
 ![](media/HTTP-FlowChart1.PNG)
 
-Figure 1: authentication implicit 
-
-When authentication is implicit or when just the precense of an Authorization header (API-Key) is enough for authentication use the flow chart in figure 1 to determine the correct error code.
+Figure 1: authentication is implicit 
 
 Links from flow chart in figure 1:
 https://tools.ietf.org/html/rfc6750#section-3.1
 https://tools.ietf.org/html/rfc7231#section-6.5.4
 
+**Explicit authentication**
+When authentication is explicit, that is the authentication credentials are actively verfied when present use the flow chart in figure 2 to determine the correct error codes. 
 
 ![](media/HTTP-FlowChart2.PNG)
 
-Figure 2: authentication explicit
-
-When authentication is explicit, that is the authentication credentials are actively verfied when present use the flow chart in figure 2 to determine the correct error codes. 
+Figure 2: authentication is explicit
 
 Links from flow chart in figure 2:
 https://tools.ietf.org/html/rfc7235#section-3.1
 https://tools.ietf.org/html/rfc6750#section-3.1
 https://tools.ietf.org/html/rfc7231#section-6.5.4
 
-![](media/HTTP-FlowChart3.PNG)
-
-Figure 3: authentication explicit, and client authorization confirmation claim matches authentication
+**Explicit authentication while matching client authorization CNF**
 
 When authentication is explicit and there is a check wether the provided authorization confirmation claim (CNF) matches the credentials provided for authentication use the flow chart in figure 3 to esteblish the correct error codes.
+
+![](media/HTTP-FlowChart3.PNG)
+
+Figure 3: authentication is explicit, and client authorization confirmation claim matches authentication
 
 Links from flow chart in figure 3:
 https://tools.ietf.org/html/rfc7235#section-3.1
@@ -108,7 +111,7 @@ https://tools.ietf.org/html/rfc6750#section-3.1
 https://tools.ietf.org/html/rfc7800
 https://tools.ietf.org/html/rfc7231#section-6.5.4
 
-In all three cases access control logic is seperated from business logic.
+
 
 <!--First, it is established whether the requester (principal) has a valid authorisation(i.e. token is valid) then it is established whether this authorisation is valid for a requested resource. In case the requester is not authorised or the authorisation cannot be established, for example, the resource is required to establish authorisation and the resource does not exist, then a status error code `403 Forbidden` is returned. In this way, no information is returned about the existence of a resource to a non-authorised principal.
 
