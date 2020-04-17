@@ -2,19 +2,16 @@
 
 <p class='warning'>This extension is in development and may be modified at any time.</p>
 
-APIs can be accessed from any location on the internet. Information is only exchanged over TLS-based encrypted connections. No exceptions, so everywhere and always. One should follow the HTTP Strict Transport Security (HSTS) policy that mandates the use of HTTPS only.
+APIs can be accessed from any location on the internet. Information is only exchanged over TLS-based encrypted connections. No exceptions, so everywhere and always. One should follow the latest NCSC huidelines for TLS https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls
 
-> [API principle: Encrypt connections using at least TLS v1.3](#api-11)
-
-**Should we not just use NCSC guidelines for HTTPS?** https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls
-
+> [API principle: Encrypt connections using according to latest NCSC guidelines](api-11)
 
 ### Identification
 
 For Identification of individual users always use a pseudonym to avoid exposing sensitive information about a user. 
 This pseudonym can optionally be translatable to actual personal information in a separate service, but access to this service should be tightly controlled and limited only to cases where there is a legal need to use this information.
-Use of a Burgerservice nummer(BSN) is only allowed when the organization has the right to do this. Even when an orgnization has the right to do this it is still reccomended to use a pseudonym that is only translatable to a BSN for a limited number of services/users within the organization.
-** https://aandeslagmetdeomgevingswet.nl/publish/library/219/dso_-_gas_-_knooppunt_toegang_iam.pdf **
+Use of a Burgerservice nummer(BSN) is only allowed when the organization has the right to do this. Even when an orgnization has the right to do this it is still reccomended to use a pseudonym that is only translatable to a BSN for a limited number of services/users within the organization. 
+An example of this can be found in the [architecture of the "digitaalstelsel omgevingswet"](https://aandeslagmetdeomgevingswet.nl/publish/library/219/dso_-_gas_-_knooppunt_toegang_iam.pdf)
 
 For identifying government organizations use the "organisatie-identificatienummer" (OIN)
 For identifying non-government organizations (companies, associations, foundations etc...) use the Handelsregisternummer (HRN)
@@ -77,7 +74,7 @@ See also [The Dutch profile OAuth in the chapter Security](#Security) for furthe
 
 In a production environment as little information as possible is to be disclosed. Apply the following rules for returned the status error code `401 Unauthorized`, `403 Forbidden`, and `404 Not Found`:
 
-![](media/HTTP-FlowChart1.png)
+![](media/HTTP-FlowChart1.PNG)
 
 Figure 1: authentication implicit 
 
@@ -88,7 +85,7 @@ https://tools.ietf.org/html/rfc6750#section-3.1
 https://tools.ietf.org/html/rfc7231#section-6.5.4
 
 
-![](media/HTTP-FlowChart2.png)
+![](media/HTTP-FlowChart2.PNG)
 
 Figure 2: authentication explicit
 
@@ -99,7 +96,7 @@ https://tools.ietf.org/html/rfc7235#section-3.1
 https://tools.ietf.org/html/rfc6750#section-3.1
 https://tools.ietf.org/html/rfc7231#section-6.5.4
 
-![](media/HTTP-FlowChart3.png)
+![](media/HTTP-FlowChart3.PNG)
 
 Figure 3: authentication explicit, and client authorization confirmation claim matches authentication
 

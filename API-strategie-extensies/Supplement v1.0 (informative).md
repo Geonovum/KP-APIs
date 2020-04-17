@@ -62,9 +62,8 @@ passed, a 400 Bad Request error message is returned.
 
 ### <a name="api-11"></a>API-11: Encrypt connections using at least TLS v1.3
 
-Encrypt connections using at least TLS v1.3. Use TLS v1.2 as a fall-back option
-only. In case of access restrictions use two-way TLD. Since the connection is
-always encrypted, the authentication method is straightforward. This allows the
+Encrypt connections using TLS in line with [the latest NCSC guidelines](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls)
+Since the connection is always encrypted, the authentication method is straightforward. This allows the
 application of basic authentication tokens instead of encrypted authentication
 tokens.
 
