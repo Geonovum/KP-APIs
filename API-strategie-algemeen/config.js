@@ -9,15 +9,40 @@
 //-------------------------------------------------------------------------------------
 //-- Log . . . :  20180615 - FT  - Initiele versie
 //-- . . . . . :  20181106 - JvG - verplaatst naar root KP-APIs
+//-- . . . . . :  20200417 - JvG - Definitieve versie van 04-02-2020 gemaakt
 //-------------------------------------------------------------------------------------
+
+//-- Postprocessors -------------------------------------------------------------------
+
+//-- haalt gh-pages weg aan het eind van een URL
+//-- Stopt zodra de eerste is gevonden (want komt maar 1x voor)
+//-- JvG 2019-11-12
+function custGHPG(respecConfig)  
+{
+  var tags = document.getElementsByTagName("a");
+  var srch = "gh-pages";
+  var slen = srch.length;
+  var i;
+
+  for (i = 0; i < tags.length; i++) 
+  {
+    if(tags[i].href.indexOf(srch) > -1)
+    {
+      console.log(tags[i].href + " is gevonden");
+      tags[i].href = tags[i].href.substring(0, tags[i].href.length - slen);
+      console.log(tags[i].href + " is aangepast");
+      break;
+    }
+  } 
+}
 
 var respecConfig = 
 {
-  specStatus: "GN-WV",
+  specStatus: "GN-DEF",
   specType: "HR",
   pubDomain: "api",
-  publishDate: "2020-01-17",
-  previousPublishDate: "2019-07-15",
+  publishDate: "2020-02-04",
+  previousPublishDate: "2020-01-17",
   previousMaturity: "GN-VV",
   editors: 
   [
@@ -211,4 +236,5 @@ var respecConfig =
       date: " 2013-09-18",
     }  
   },
+  postProcess:[custGHPG],
 };
