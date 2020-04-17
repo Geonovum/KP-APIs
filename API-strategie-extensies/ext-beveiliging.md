@@ -2,9 +2,9 @@
 
 <p class='warning'>This extension is in development and may be modified at any time.</p>
 
-APIs can be accessed from any location on the internet. Information is only exchanged over TLS-based encrypted connections. No exceptions, so everywhere and always. One should follow the latest NCSC huidelines for TLS https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls
+APIs can be accessed from any location on the internet. Information is only exchanged over TLS-based encrypted connections. No exceptions, so everywhere and always. One should follow [the latest NCSC huidelines for TLS](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls)
 
-> [API principle: Encrypt connections using according to latest NCSC guidelines](api-11)
+> [API principle: Encrypt connections using TLS following the latest NCSC guidelines](#api-11)
 
 ### Identification
 

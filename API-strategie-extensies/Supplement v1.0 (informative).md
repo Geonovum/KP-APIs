@@ -60,9 +60,9 @@ passed, a 400 Bad Request error message is returned.
 -   Only in exceptional cases, an operator is implemented as an endpoint."
 -->
 
-### <a name="api-11"></a>API-11: Encrypt connections using at least TLS v1.3
+### <a name="api-11"></a>API-11: Encrypt connections using TLS following the latest NCSC guidelines
 
-Encrypt connections using TLS in line with [the latest NCSC guidelines](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls)
+Encrypt connections using TLS following [the latest NCSC guidelines](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls)
 Since the connection is always encrypted, the authentication method is straightforward. This allows the
 application of basic authentication tokens instead of encrypted authentication
 tokens.
