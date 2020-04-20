@@ -136,9 +136,16 @@ Publicly visible identifiers (IDs), that are frequently part of URLs a RESTful A
 >
 > `550e8400-e29b-41d4-a716-446655440000`
 > 
-> To ensure UUIDs are shorter and guaranteed *web-safe*, be advised to only use the base64-encoded variant consisting of 22 characters. The above UUID looks like this:
+> To ensure UUIDs are shorter and guaranteed *web-safe*, be advised to only use the base64-url-encoded variant consisting of 22 characters. The above UUID looks like this:
 >
-> `abcdEFh4520juieUKHWgJQ`
+> `VQ6EAOKbQdSnFkRmVUQAAA`
+>
+> The following linux commands shows an example of how the hex string is transformed to bytes and then to the base64-url-encoded required format:
+>
+> `echo -n '550e8400-e29b-41d4-a716-446655440000' | sed 's/-//g' | xxd -r -p|base64 -w 0 | sed 's/+/-/g'|sed 's/\//_/g'|sed 's/=//g'`
+>
+
+
 
 ### security for webbrowser API clients
 When webbrowsers can be clients for an API these APIs should be compatible with the following policies and standards.
