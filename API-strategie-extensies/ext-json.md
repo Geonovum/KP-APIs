@@ -15,7 +15,7 @@ JavaScript Object Notation (JSON) is a format, just like XML, to serialise, stor
 
 > [API principle: JSON first - APIs receive and send JSON](#api-22)
 
-> [API principle: APIs may provide a JSON Schema](#api-23)
+> [API principle: APIs may provide an additional JSON Schema for data validation by the consumer (not being the OAS file)](#api-23)
 
 > [API principle: Support content negotiation](#api-24)
 
@@ -50,9 +50,9 @@ A future-proof API does not have envelopes.
 
 > [API principle: Send a JSON-response without enclosing envelope](#api-28)
 
-### JSON-encoded `POST`, `PUT`, and `PATCH` payloads
+### Support JSON request body for `POST` and `PUT` operations
 
-APIs should at least support JSON-encoded `POST`, `PUT`, and `PATCH` payloads. Encoded form data (`application/x-www-form-urlencoded`) payloads are not supported. What is the difference?
+Request bodies for `POST` and `PUT` operations should at least support the JSON media type (`application/json`). Media types designed for use in HTML forms (`application/x-www-form-urlencoded` or `multipart/form-data`) should not be supported. Other media types are allowed. What is the difference?
 
 `Content-Type: application/json` results in:
 
@@ -63,6 +63,10 @@ APIs should at least support JSON-encoded `POST`, `PUT`, and `PATCH` payloads. E
 }
 ```
 
-and `Content-Type: application/x-www-form-urlencoded` results in: `Name=John+Smith&Age=23`
+`Content-Type: application/x-www-form-urlencoded` results in:
 
-> [API principle: Support JSON-encoded `POST`, `PUT`, and `PATCH` payloads](#api-29)
+```
+Name=John+Smith&Age=23
+```
+
+> [API principle: Support JSON request body for `POST` and `PUT` operations](#api-29)

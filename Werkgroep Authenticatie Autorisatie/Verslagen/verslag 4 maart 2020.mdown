@@ -1,0 +1,112 @@
+# Werkgroep Beveiliging
+
+**Datum:** 04-03-2020
+
+**Aanwezig:** 
+Marcel van den Brink(KvK) Remco Schaar(Logius), Leon van der Ree(Logius), Paul Dam(Lexdigitalis), Erwin Reinhout (kennisnet), Peter Haasnoot(Logius), Jan-Jaap Zoutendijk (RWS/Enable-U), Jaron Azaria(Logius), Bob te Riele, Henri Korver(VNG)
+
+
+## Case KvK over privacy en REST APIs (Marcel van den Brink)
+
+Marcel ligt zijn case toe waarbij BSNs met GET requests worden meegestuurd. Je wil hierbij voorkomen dat de BSNs daardoor ergens opgeslagen of gedeeld worden waar het niet de bedoeling is.
+
+**Optie 1. Encrypted parameters**
+Encrypten met publieke deel van certificaat eventueel met Salting
+
+Nadelen:
+* Hogere drempel voor gebruik
+* Er is geen standaard voor in de markt
+
+Voordeel:
+* Heeft REST principes als uitgangspunt
+* Beveiliging op basis standaard HTTP methods
+
+Risico’s:
+* Caching lijkt niet mogelijk te zijn.
+
+Voorbeeld implementatie is dan wel nodig
+
+
+**Optie 2. X-HTTP-Method-Override**
+
+Je gebruikt een POST ipv GET waarbij je een X-HTTP-Method-Override header meegeeft om aan te geven dat de POST eigenlijk als GET geïnterpreteerd moet worden. 
+
+Nadelen:
+* Reverse proxy vertaald naar een GET, is niet handig
+* Is een extra header vanuit de client. Die gewoon een POST doet. Weinig toegevoegde waarde t.o.v. standaard POST.
+* Nadelen van optie 3.
+
+Voordelen:
+* Browser risico los je hier op
+
+Kan interne implementaties helpen.
+
+**Optie 3. POST met query body**
+
+In plaats van een GET gebruik je een POST waarbij de query (inclusief BSN) in de Body staat. Daarmee wordt het BSN via TLS versleuteld en niet op oneigenlijke plaatsen gecached.
+
+Nadelen:
+* In browser is een POST onhandig
+* Geen caching mogelijke
+* Volgt niet de REST principes en nadelen m.b.t. caching, standaard security patronen
+* Als je GET niet bewust blokkeerd dan kan er nog steeds informatie lekken bij verkeerd gebruik
+
+
+Voordelen:
+* Werkt wel en eenvoudig te gebruiken 
+* Werkt ook voor grote query parameters
+
+Deze oplossing kan e eigenlijk niet alleen in een extensie opnemen, het zou ook in bij (de volgende versie van) API Design rules opgenomen moeten worden.
+
+**Optie 4. Gebruik van pseudoniem**
+
+Nadelen:
+* Risico dat herleidbaar is naar een persoon
+* Pseudoniemen generator voorzieningen nodig
+* Extra interactie stap nodig voor pseudoniem, dubbele GET
+
+Voordelen:
+* Complexiteit van pseudoniem en encryptie ligt bij de server kant (aanbieder)
+REST principe
+
+eID en eHerkenning kennen pseudoniemen en polymorfe identiteiten. Dit is een goede optie wanneer de serverkant de mogelijkheid/middelen heeft om een pseudoniem generator voorziening in te richten. Wanneer dit zo is dan verdient deze oplossing de voorkeur boven een POST. Voor aanbieders(servers) met relatief weinig budget is deze oplossing meestal niet haalbaar.
+
+**Optie 5. GET vanuit server naar client**
+
+Client stuurt met GET een pseudoniem en server haalt met GET de query parameters op bij de client.
+
+Nadelen:
+* Client moet een API implementeren, dit is een hoge drempel
+
+Voordelen:
+* Je werkt met GET
+
+**Optie 6. Query wordt als een Taskservice geïmplementeerd**
+
+Eerst een POST, daarna een GET van het task ID
+Nadelen:
+* Dubieus of dit nog REST/Stateless is
+
+**Advies:**
+
+Gebruik POST, past het dichts bij de kennis en ervaring van ontwikkelaars
+Gebruik van pseudoniemen waar er ruimte is.
+
+Komt in de extensie en als feature request in de volgende versie van de API Design rules
+
+## Stand van zaken extensie beveiliging (Frank Terpstra)
+
+*	Redactiewerk link nscs, link DSO (via jan jaap) http error code diagrammen opnemen(aangeleverd door Remco), tekst aanleveren voor token authenticatie (Leon)
+*	Issue tokens in middag bespreken
+*	Issue tokens bespreken met italianen
+*	Remco levert tekst over OAuth als authenticatie
+
+## Stand van zaken extensie signing & encryptie (Frank Terpstra)
+*	Review commentaar en aanvullingen welkom
+
+## Stand van zaken profiel OpenIDConnect (Remco Schaar)
+* Er wordt gewerkt aan profiel,
+* Profiel komt op PTOLU lijst
+* Wordt nu uitgewerkt met grote groep stakeholders
+* Wordt gemikt op gereviewde draft in mei
+* Daarna hackathon om uit te proberen https://gitlab.com/logius/oidc

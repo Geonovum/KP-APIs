@@ -2,8 +2,8 @@
 ## **Informative API Principles**
 
 <aside class="note">
-API principles have unique numbers, depricated principles are removed from the list, new principles
-will get a new and higher nunmber. Thus gaps in the sequence can occur 
+API principles have unique numbers, deprecated principles are removed from the list, new principles
+will get a new and higher nunmber. Thus gaps in the sequence can occur
 </aside>
 
 <!-- ## <a name="api-principes"></a>API Principles -->
@@ -60,11 +60,10 @@ passed, a 400 Bad Request error message is returned.
 -   Only in exceptional cases, an operator is implemented as an endpoint."
 -->
 
-### <a name="api-11"></a>API-11: Encrypt connections using at least TLS v1.3
+### <a name="api-11"></a>API-11: Encrypt connections using TLS following the latest NCSC guidelines
 
-Encrypt connections using at least TLS v1.3. Use TLS v1.2 as a fall-back option
-only. In case of access restrictions use two-way TLD. Since the connection is
-always encrypted, the authentication method is straightforward. This allows the
+Encrypt connections using TLS following [the latest NCSC guidelines](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls)
+Since the connection is always encrypted, the authentication method is straightforward. This allows the
 application of basic authentication tokens instead of encrypted authentication
 tokens.
 
@@ -161,10 +160,9 @@ add-ons or extensions) can pretty print JSON.
 
 By default, don't apply an envelope.
 
-### <a name="api-29"></a>API-29: Support JSON-encoded `POST`, `PUT`, and `PATCH` payloads
+### <a name="api-29"></a>API-29: Support JSON request body for `POST` and `PUT` operations
 
-APIs support at least JSON-encoded `POST`, `PUT`, and `PATCH` payloads. Encoded
-form data (`application/x-www-form-urlencoded`) is not supported.
+Request bodies for POST and PUT operations should at least support the JSON media type. Media types designed for use in HTML forms should not be supported.
 
 ### <a name="api-30"></a>API-30: Use query parameters corresponding to the queryable fields
 
