@@ -60,6 +60,10 @@ passed, a 400 Bad Request error message is returned.
 -   Only in exceptional cases, an operator is implemented as an endpoint."
 -->
 
+### <a name="api-09"></a>API-09: Implement custom representation if supported
+
+Provide a comma-separated list of field names using the query parameter fields te retrieve a custom representation. In case non-existent field names are passed, a `400 Bad Request` error message is returned.
+
 ### <a name="api-11"></a>API-11: Encrypt connections using TLS following the latest NCSC guidelines
 
 Encrypt connections using TLS following [the latest NCSC guidelines](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls)
