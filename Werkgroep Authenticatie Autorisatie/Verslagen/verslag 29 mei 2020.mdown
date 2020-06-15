@@ -20,7 +20,7 @@ Het tweede issue hebben we besproken en geverifieerd. Dit speelt inderdaad bij m
 Martin borgman merkt op dat OAuth 2.1 eraan komt. Hier moet de volgende versie van het profiel mogelijk ook op aangepast worden. We hebben hiervoor ook een issue aangemaakt: https://github.com/Geonovum/KP-APIs-OAuthNL/issues/12
 
 ## Extensie API security
-We besprken de flow diagrammen die zijn toegevoegd voor error afhandeling. Er komen een aantal vragen naar boven:
+We bespreken de flow diagrammen die zijn toegevoegd voor error afhandeling. Er komen een aantal vragen naar boven:
 * Wat is authentication scheme voor API keys?
 * Moet  authorization valid niet authentication valid zijn?
 Verder wordt er opgemerkt dat expliciet benoemt moet worden dat error codes niet restrictief zijn. Dit is een basisset die uitbreidbaar is voor applicatie specifieke gevallen.
