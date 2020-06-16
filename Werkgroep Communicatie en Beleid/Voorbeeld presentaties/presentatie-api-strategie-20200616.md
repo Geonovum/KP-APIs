@@ -65,11 +65,11 @@ Waar zijn DSO? G4? Provincies? Informatiehuis Water? CBS? DUO? KvK? RDW? RIVM? R
 
 ## To-do lijst 
 
-1\. Probleemstelling 
-2\. Missende partijen aan tafel 
-3\. Manifest 
-4\. Transities StUF, DigiKoppeling 
-5\. Praktijkvoorbeelden
+1. Probleemstelling 
+2. Missende partijen aan tafel 
+3. Manifest 
+4. Transities StUF, DigiKoppeling 
+5. Praktijkvoorbeelden
 
 ## Dank voor je inzet!
 
