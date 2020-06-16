@@ -1,5 +1,6 @@
 # Werkgroep API Strategie en Beleid
-Verslag van de virtuele bijeenkomst van 16 juni 2020
+Verslag van de virtuele bijeenkomst van **16 juni 2020**
+
 Input: [agenda en presentatie](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20Communicatie%20en%20Beleid/Voorbeeld%20presentaties/presentatie-api-strategie-20200616.md)
 
 ## Aanwezig
