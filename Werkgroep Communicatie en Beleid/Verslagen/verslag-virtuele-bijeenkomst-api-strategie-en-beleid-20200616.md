@@ -36,7 +36,7 @@ Het is een goed idee om de API Strategie als manifest te laten ondertekenen door
 ## Welke organisaties moeten we betrekken?
 Voldoende draagvlak is van groot belang om ervoor te zorgen dat de API Strategie ook uitgevoerd wordt. We moeten daarom de organisaties die door de API Strategie geraakt worden er zoveel mogelijk bij betrekken.
 
-In de [presentatie](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20Communicatie%20en%20Beleid/Voorbeeld%20presentaties/presentatie-api-strategie-20200616.md#aan-boord) is te zien welke organisaties  geregistreerd staan als deelnemers van de werkgroep API Strategie en Beleid. Niet al deze organisaties waren in deze virtuele bijeenkomst aanwezig.
+In de [presentatie](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20Communicatie%20en%20Beleid/Voorbeeld%20presentaties/presentatie-api-strategie-20200616.md#aan-boord) is te zien welke organisaties nu geregistreerd staan als deelnemers van de werkgroep API Strategie en Beleid. Niet al deze organisaties waren in deze virtuele bijeenkomst aanwezig.
 
 In de discussie blijkt dat we nog verschillende belangrijke stakeholders missen:
 * **Provincies:** via de VNG is er wel contact met de Provincie Noord Holland. Martin zal de contactgegevens doorgeven van Frank Ossewaarde van het IPO.
