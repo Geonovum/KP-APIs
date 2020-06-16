@@ -34,7 +34,7 @@ In de bijeenkomst werd een aantal ideeën besproken over de nieuwe API Strategie
 Het is een goed idee om de API Strategie als manifest te laten ondertekenen door bestuurders van sleutelorganisaties. Dit manifest moet in de eerste plaats gaan over het beheren van data bij de bron (het probleem) en niet over APIs (de techniek). 
 
 ## Welke organisaties moeten we betrekken?
-Voldoende draagvlak van groot belang om ervoor te zorgen dat de API Strategie ook uitgevoerd wordt. We moeten daarom de belanghebbende organisaties zoveel mogelijk bij de API Strategie betrekken.
+Voldoende draagvlak is van groot belang om ervoor te zorgen dat de API Strategie ook uitgevoerd wordt. We moeten daarom de organisaties die door de API Strategie geraakt worden er zoveel mogelijk bij betrekken.
 
 In de [presentatie](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20Communicatie%20en%20Beleid/Voorbeeld%20presentaties/presentatie-api-strategie-20200616.md#aan-boord) is te zien welke organisaties  geregistreerd staan als deelnemers van de werkgroep API Strategie en Beleid. Niet al deze organisaties waren in deze virtuele bijeenkomst aanwezig.
 
