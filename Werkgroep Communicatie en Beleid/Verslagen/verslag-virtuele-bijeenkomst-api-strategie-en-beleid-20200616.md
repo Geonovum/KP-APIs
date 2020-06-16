@@ -31,7 +31,7 @@ In de bijeenkomst werd een aantal ideeën besproken over de nieuwe API Strategie
 * Er is vooral behoefte aan duidelijkheid: wanneer gebruik je wat. En met name over de relatie van APIs met DigiKoppeling en StUF. We moeten vanuit de community denken. (Pieter)
 
 
-Het is een goed idee om de API Strategie ook als manifest te laten ondertekenen door bestuurders van sleutelorganisaties. Dit manifest moet echter in de eerste plaats gaan over het beheren van data bij de bron (het probleem) en niet over APIs (de techniek). 
+Het is een goed idee om de API Strategie als manifest te laten ondertekenen door bestuurders van sleutelorganisaties. Dit manifest moet in de eerste plaats gaan over het beheren van data bij de bron (het probleem) en niet over APIs (de techniek). 
 
 ## Welke organisaties moeten we betrekken?
 Voldoende draagvlak van groot belang om ervoor te zorgen dat de API Strategie ook uitgevoerd wordt. We moeten daarom de belanghebbende organisaties zoveel mogelijk bij de API Strategie betrekken.
