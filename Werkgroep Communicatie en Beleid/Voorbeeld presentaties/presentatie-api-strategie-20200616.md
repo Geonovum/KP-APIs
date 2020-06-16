@@ -4,12 +4,12 @@ Virtuele bijeenkomst 16 juni 2020
 
 ## Agenda 
 
-1\. Opening, mededelingen, kort voorstelrondje 
-2\. Samenvatting van de bijeenkomst op 4 maart 
-3\. Plan van aanpak 
-4\. Welke organisaties moeten erbij zijn? 
-5\. Wie kan en wil wat bijdragen? 
-6\. Wat verder ter tafel komt (rondje)
+1. Opening, mededelingen, kort voorstelrondje 
+2. Samenvatting van de bijeenkomst op 4 maart 
+3. Plan van aanpak 
+4. Welke organisaties moeten erbij zijn? 
+5. Wie kan en wil wat bijdragen? 
+6. Wat verder ter tafel komt (rondje)
 
 ## Samenvatting van de [bijeenkomst op 4 maart](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20Communicatie%20en%20Beleid/Verslagen/verslag-sessie-api-strategie-en-beleid-20200304.md) 
 
@@ -42,10 +42,10 @@ Naar model [Veilig E-mail Coalitie?](https://www.cybersecurityalliantie.nl/het-n
 
 ## Vragen 
 
-1\. Welke organisaties moeten absoluut aan boord zijn? 
-2\. Welke zijn de 'moeters' (vs. 'willers')? 
-3\. Hoe betrekken we de bestuurders (manifest)? 
-4\. Wie kan/wil wat bijdragen?</section>
+1. Welke organisaties moeten absoluut aan boord zijn? 
+2. Welke zijn de 'moeters' (vs. 'willers')? 
+3. Hoe betrekken we de bestuurders (manifest)? 
+4. Wie kan/wil wat bijdragen?</section>
 
 ## Aan boord 
 
