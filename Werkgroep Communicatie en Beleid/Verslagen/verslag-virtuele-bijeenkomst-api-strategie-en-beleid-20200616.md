@@ -40,7 +40,7 @@ In de [presentatie](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20
 
 In de discussie blijkt dat we nog verschillende belangrijke stakeholders missen:
 * **Provincies:** via de VNG is er wel contact met de Provincie Noord Holland. Martin zal de contactgegevens doorgeven van Frank Ossewaarde van het IPO.
-* **RvIG:** een bijzonder belangrijke speler, maar wel met een gecompliceerde historie.
+* **RvIG:** een bijzonder belangrijke speler, maar niet duidelijk of ze hiervoor open staan.
 * **G4 gemeenten:** VNG geeft aan dat deze hun eigen voortgang maken en niet 'automatisch' via de VNg aangehaakt zijn.
 * **J4:** Justid geeft aan dat we de 4 grote juridische uitvoerders moeten betrekken waaronder de Politie en het CIB. Daar zijn ook goede praktijkcases te halen.
 * **Onderwijs** 
