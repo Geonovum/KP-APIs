@@ -204,7 +204,15 @@ var respecConfig =
       title: "HAL - Hypertext Application Language",
       authors: ["Mike Kelly"],
       date: " 2013-09-18",
-    }  
+    },
+    "OAuth2.Browser-Based-Apps": {
+      href: "https://tools.ietf.org/html/draft-ietf-oauth-browser-based-apps",
+      title:
+        "OAuth 2.0 for Browser-Based Apps",
+      authors: ["A. Parecki", "D. Waite"],
+      status: "Internet-Draft",
+      publisher: "IETF OAuth Working Group",
+    }
   },
   postProcess:[custGHPG],
 };
