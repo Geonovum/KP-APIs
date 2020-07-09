@@ -1,5 +1,9 @@
 # Leden van de werkgroep Strategie en Beleid
 
+In dit bestand staan de huidige leden van de werkgroep Strategie en Beleid van het Kennisplatform APIs. Omwille van privacy staan er geen contactgevens van de leden vermeld.
+
+Om e-mail verkeer te beperken vinden discussies plaats via de Issues op deze repository. Als je een nieuw issue aanmaakt vergeet het dan niet te labellen met 'API Strategie en Beleid'.
+
 ## Publieke sector
 
 **Belastingdienst**: Merijn Koster, Arnold de Graaff
