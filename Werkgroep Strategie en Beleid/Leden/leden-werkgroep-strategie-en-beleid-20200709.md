@@ -1,5 +1,4 @@
 # Leden van de werkgroep Strategie en Beleid
-Kennisplatform APIs
 
 ## Overheden
 
