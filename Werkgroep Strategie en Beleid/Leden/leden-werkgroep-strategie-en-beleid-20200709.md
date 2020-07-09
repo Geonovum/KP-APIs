@@ -10,6 +10,8 @@ Discussies vinden plaats via de [Issues](https://github.com/Geonovum/KP-APIs/iss
 
 **CJIB**: Ian Duijff
 
+**Forum Standaardisatie**: Han Zuidweg (voorzitter)
+
 **Gemeente Breda**: Nils Vissenberg
 
 **Gemeente Den Haag**: Arjen Monster
