@@ -1,20 +1,21 @@
 # Leden van de werkgroep Strategie en Beleid
 
-## Overheden
+## Publieke sector
 
 **Belastingdienst**: Merijn Koster, Arnold de Graaff
 
 **CJIB**: Ian Duijff
 
-**gemeente Breda**: Nils Vissenberg
+**Gemeente Breda**: Nils Vissenberg
 
-**gemeente Den Haag**: Arjen Monster
+**Gemeente Den Haag**: Arjen Monster
 
-**gemeente Haarlem**: Eelco Hotting
+**Gemeente Haarlem**: Eelco Hotting
 
-**gemeente Venlo**: Trudi Zegveld
+**Gemeente Venlo**: Trudi Zegveld
 
 **Geonovum**: Frank Terpstra
+
 **Informatiehuis Water**: Koos Boersma
 
 **iRaad**: Marcel Krassenburg
@@ -25,7 +26,7 @@
 
 **Logius**: Peter Haasnoot, Pieter Hering
 
-**ministerie van Binnenlandse Zaken**: Gino Laan, Paul Zeef
+**Ministerie van Binnenlandse Zaken en Koninkrijksrelaties**: Gino Laan, Paul Zeef
 
 **Politie**: Jeroen Prins
 
