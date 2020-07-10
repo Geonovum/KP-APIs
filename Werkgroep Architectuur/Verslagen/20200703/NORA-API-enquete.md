@@ -12,12 +12,6 @@ Toelichting :
 
 Hieronder staan NORA principes , geef per principe aan of API's (als concept) specifiek helpen invulling te geven aan dit principe
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-
-
 
 | - | gem  | opm  |
 | ---- |----  | ---  |
