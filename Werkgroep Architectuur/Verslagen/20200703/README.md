@@ -1,1 +1,1 @@
-Verlagen werkgroep architectuur
+Verslagen werkgroep architectuur
