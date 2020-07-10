@@ -4,7 +4,7 @@ Verzoek is onderstaande principes te scoren op basis van deze stelling:
 
 
 
-Stelling : API's (& API Architectuur concepten) helpen specifiek om invulling te geven aan dit principe
+_Stelling : API's (& API Architectuur concepten) helpen specifiek om invulling te geven aan dit principe_
 
 
 Toelichting :
@@ -12,7 +12,7 @@ Toelichting :
 
 Hieronder staan NORA principes , geef per principe aan of API's (als concept) specifiek helpen invulling te geven aan dit principe
 
-**Resultaten gesorteerd op score**
+**Resultaten gesorteerd op score:**
 
 | - | gem  | opm  |
 | ---- |----  | ---  |
