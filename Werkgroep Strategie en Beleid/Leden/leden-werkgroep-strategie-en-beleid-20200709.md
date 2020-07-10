@@ -12,6 +12,8 @@ Discussies vinden plaats via de [Issues](https://github.com/Geonovum/KP-APIs/iss
 
 **Forum Standaardisatie**: Han Zuidweg (voorzitter)
 
+**Gemeente Amsterdam**: Michiel Trimpe
+
 **Gemeente Breda**: Nils Vissenberg
 
 **Gemeente Den Haag**: Arjen Monster
