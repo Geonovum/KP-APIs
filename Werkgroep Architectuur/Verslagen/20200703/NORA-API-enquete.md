@@ -12,6 +12,7 @@ Toelichting :
 
 Hieronder staan NORA principes , geef per principe aan of API's (als concept) specifiek helpen invulling te geven aan dit principe
 
+**Resultaten gesorteerd op score**
 
 | - | gem  | opm  |
 | ---- |----  | ---  |
