@@ -1,8 +1,8 @@
 # Leden van de werkgroep Strategie en Beleid
 
-In dit bestand staan de huidige leden van de werkgroep Strategie en Beleid van het Kennisplatform APIs. Omwille van privacy staan er geen contactgevens van de leden vermeld.
+In dit bestand staan de huidige leden van de werkgroep Strategie en Beleid van het Kennisplatform APIs. Laatst bijgewerkt op 10 juli 2020.
 
-Discussies vinden plaats via de [Issues](https://github.com/Geonovum/KP-APIs/issues) op deze repository. Als je een nieuw issue aanmaakt vergeet het dan niet te labellen met 'Strategie en Beleid' (het donkergele label).
+Omwille van privacy staan er geen contactgevens van de leden vermeld. Discussies vinden plaats via de [Issues](https://github.com/Geonovum/KP-APIs/issues) op deze repository. Als je een nieuw issue aanmaakt vergeet het dan niet te labellen met 'Strategie en Beleid' (het donkergele label).
 
 ## Publieke sector
 
