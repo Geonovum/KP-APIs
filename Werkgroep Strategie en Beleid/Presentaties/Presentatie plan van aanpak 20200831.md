@@ -30,14 +30,14 @@ Samenvatting:
 
 ## Wie doen al mee?
 
--   **Overheid:** Belastingdienst · CJIB · Justid · Politie · RIVM · RvIG · SVB · Logius · Kadaster · Geonovum · minBZK
+-   **Overheid:** Belastingdienst · CJIB · Justid · Politie · RDW · RIVM · RvIG · SVB · Logius · Kadaster · Geonovum · minBZK
 -   **Gemeenten:** Amsterdam · Breda · Den Haag · Haarlem · Venlo · Servicepunt 71 · iRaad · VNG
 -   **Waterschappen:** Informatiehuis Water
 -   **Privaat:** Centric · Enable-U · EDSN
 
 ## Wie missen we?
 
--   **Overheid:** CAK · CBS · CIBG · DUO · IND · KvK · RVO · UWV · RDW · RWS
+-   **Overheid:** CAK · CBS · CIBG · DUO · IND · KvK · RVO · UWV · RWS
 -   **Gemeenten:** Rotterdam · Utrecht · Wigo4IT
 -   **Provincies:** IPO · individuele provincies?
 -   **Waterschappen:** UVW? · individuele waterschappen?
