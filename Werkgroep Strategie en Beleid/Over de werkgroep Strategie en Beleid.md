@@ -22,16 +22,16 @@ In de bijeenkomst van het Kennisplatform APIs op 4 maart 2020 werd onder meer de
 -   Zowel overheden als leveranciers hebben behoefte aan duidelijkheid. Dat betekent een duidelijke visie *en* een routeplan om daar te komen.
 - De strategie moet de bestaande initiatieven (Common Ground, Haal Centraal, Digitaal Stelsel Omgevingswet) bij elkaar brengen, en voorkomen dat deze uit elkaar gaan lopen.
 
-De werkgroep gaat met deze punten aan de slag en heeft z'n naam geactualiseerd van 'Communicatie en Beleid' tot '**Strategie en Beleid**'. De werkgroep heeft zich tot doel gesteld om in 2020 te werken naar een bindende strategie die voldoende draagvlak heeft over de breedte van de overheid.
+De werkgroep gaat met deze punten aan de slag en heeft z'n naam geactualiseerd van 'Communicatie en Beleid' tot '**Strategie en Beleid**'. De werkgroep stelt zich tot doel om in 2020 te werken naar een bindende strategie die voldoende draagvlak heeft over de breedte van de overheid.
 
 ## Leden
-Een overzicht van de organisaties die in deze werkgroep deelnemen vind je [in het mapje Leden](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20Strategie%20en%20Beleid/Leden/leden-werkgroep-strategie-en-beleid-20200709.md) van deze repository.
+Een overzicht van de organisaties die in deze werkgroep deelnemen vind je in het mapje [Leden](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20Strategie%20en%20Beleid/Leden/leden-werkgroep-strategie-en-beleid-20200709.md) van deze repository.
 
 Omwille van privacy staan er geen contactgegevens van de leden vermeld.
 
 ## Werkwijze
 
-### Informatie delen
+### Online samenwerken
 We werken samen via de Github repository van het Kennisplatform APIs. In deze repository vind je de volgende mappen:
 
 - [Leden](https://github.com/Geonovum/KP-APIs/tree/master/Werkgroep%20Strategie%20en%20Beleid/Leden) geeft een actueel overzicht van de organisaties die de werkgroep vormen.
