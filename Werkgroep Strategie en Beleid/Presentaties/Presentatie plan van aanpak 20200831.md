@@ -16,6 +16,7 @@ Dit is de tekstversie van de presentatie die we gaan bespreken tijdens de virtue
 
 ## Verslag [virtuele bijeenkomst op 16 juni](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20Communicatie%20en%20Beleid/Verslagen/verslag-virtuele-bijeenkomst-api-strategie-en-beleid-20200616.md)
 
+Samenvatting:
 -   Vermijd uiteenlopen Common Ground, Haal Centraal, DSO en andere initiatieven
 -   Ga uit van het probleem
 -   Begin met een visie
