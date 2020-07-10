@@ -1,7 +1,8 @@
-** Stelling **
+**Stelling**
 
 Verzoek is onderstaande principes te scoren op basis van deze stelling:
-
+
+
 
 Stelling : API's (& API Architectuur concepten) helpen specifiek om invulling te geven aan dit principe
 
@@ -10,7 +11,8 @@ Toelichting :
 (Denk m.n. aan RESTful API's en gerelateerde concepten en operatie/event API gerelateerde concepten)
 
 Hieronder staan NORA principes , geef per principe aan of API's (als concept) specifiek helpen invulling te geven aan dit principe
-
+
+
 
 
 
@@ -148,7 +150,7 @@ denk aan: controle integriteit transacties/data, api als gecontroleeerde toegang
  |  |
 |
 
-**Matrix: AP17 Informatie-objecten systematisch beschreven- De aan de dienst gerelateerde informatieobjecten zijn, uniek geïdentificeerd, in een informatiemodel beschreven.**
+**Matrix: AP17 Informatie-objecten systematisch beschreven- De aan de dienst gerelateerde informatieobjecten zijn, uniek geÃ¯dentificeerd, in een informatiemodel beschreven.**
 
  |
 
@@ -161,7 +163,7 @@ discovery via API, Link naar metadata / OAS / MIM
  |
 |
 
-**Matrix: AP27 Een verantwoordelijke organisatie- Eén organisatie is verantwoordelijk en aanspreekbaar voor de dienst**
+**Matrix: AP27 Een verantwoordelijke organisatie- EÃ©n organisatie is verantwoordelijk en aanspreekbaar voor de dienst**
 
  |
 
@@ -242,7 +244,7 @@ discovery via API, Link naar metadata / OAS / MIM
  |  |
 |
 
-**Matrix: AP25 Transparante dienstverlening- Afnemers worden geïnformeerd over de stand van zaken bij de gevraagde dienst.**
+**Matrix: AP25 Transparante dienstverlening- Afnemers worden geÃ¯nformeerd over de stand van zaken bij de gevraagde dienst.**
 
  |
 
@@ -269,7 +271,7 @@ discovery via API, Link naar metadata / OAS / MIM
  |  |
 |
 
-**Matrix: AP41 Beschikbaarheid- De beschikbaarheid van de dienst voldoet aan de met de afnemer gemaakte continuïteitsafspraken.**
+**Matrix: AP41 Beschikbaarheid- De beschikbaarheid van de dienst voldoet aan de met de afnemer gemaakte continuÃ¯teitsafspraken.**
 
  |
 
@@ -305,7 +307,7 @@ discovery via API, Link naar metadata / OAS / MIM
  |  |
 |
 
-**Matrix: AP21 Bundeling van diensten- De dienst wordt gebundeld met verwante diensten zodat deze samen met één aanvraag afgenomen kunnen worden.**
+**Matrix: AP21 Bundeling van diensten- De dienst wordt gebundeld met verwante diensten zodat deze samen met Ã©Ã©n aanvraag afgenomen kunnen worden.**
 
  |
 
@@ -332,7 +334,7 @@ discovery via API, Link naar metadata / OAS / MIM
  |  |
 |
 
-**Matrix: AP10 Aanvullend kanaal- De dienst kan, behalve via internet, via minimaal één ander kanaal voor persoonlijk contact worden aangevraagd.**
+**Matrix: AP10 Aanvullend kanaal- De dienst kan, behalve via internet, via minimaal Ã©Ã©n ander kanaal voor persoonlijk contact worden aangevraagd.**
 
  |
 
@@ -359,7 +361,7 @@ discovery via API, Link naar metadata / OAS / MIM
  |  |
 |
 
-**Matrix: AP20 Persoonlijke benadering- De dienst benadert geïdentificeerde afnemers op persoonlijke wijze.**
+**Matrix: AP20 Persoonlijke benadering- De dienst benadert geÃ¯dentificeerde afnemers op persoonlijke wijze.**
 
  |
 
