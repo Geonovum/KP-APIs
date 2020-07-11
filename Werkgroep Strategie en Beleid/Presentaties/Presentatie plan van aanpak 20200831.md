@@ -67,10 +67,14 @@ Dit moeten verder nuanceren en uitwerken. Het manifest moet duidelijk maar ook u
 
 ## Basisafspraken
 
+Kort door de bocht:
+
 - Gegevens die door andere organisaties gebruikt worden, ontsluiten we met APIs
 - Waar we REST APIs inzetten doen we dat volgens de [REST API Design Rules](https://geonovum.github.io/API-Designrules/)
 - Voor autorisatie van REST APIs gebruiken we het [NL Assurance Profile for OAuth](https://docs.geostandaarden.nl/api/oauth/)
 - We registreren onze (openbare) APIs bij developer.overheid.nl
+
+Ook dit moeten we verder uitwerken. De basisafspraken gaan uit van bestaande afspraken in Common Ground, Haal Centraal, DSO
 
 ## Transitie
 
