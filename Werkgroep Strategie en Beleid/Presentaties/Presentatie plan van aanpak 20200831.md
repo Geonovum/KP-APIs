@@ -74,11 +74,15 @@ Dit moeten verder nuanceren en uitwerken. Het manifest moet duidelijk maar ook u
 
 ## Transitie
 
+De strategie beschrijft transitiepaden voor:
+
 -   [DigiKoppeling](https://www.logius.nl/diensten/digikoppeling)
 -   [StUF](https://www.gemmaonline.nl/index.php/StUF_Berichtenstandaard)
 -   Andere?
 
 ## Praktijk
+
+De strategie verwijst naar bestaande initiatieven:
 
 -   [Common Ground](https://commonground.nl)
 -   [Haal Centraal](https://www.vngrealisatie.nl/producten/haal-centraal)
