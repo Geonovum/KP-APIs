@@ -4,7 +4,7 @@ API Strategie en Beleid
 
 Virtuele bijeenkomst 31 augustus 2020
 
-Dit is de tekstversie van de presentatie die we gaan bespreken tijdens de virtuele bijeenkomst van maandag 31 augustus 2020
+Dit is de tekstversie van de agenda en zaken die we gaan bespreken tijdens de virtuele bijeenkomst van maandag 31 augustus 2020
 
 ## Agenda
 
@@ -59,13 +59,18 @@ Dit is inefficient, foutgevoelig, kostbaar en maakt regie op gegevens onnodig mo
 
 ## Manifest
 
-Als digitale overheid maken we onze dienstverlening veiliger, efficiënter en beter beheersbaar door applicaties beter te scheiden van gegevens en gegevens alleen bij de bron te beheren.
+Kort door de bocht:
+
+> Als digitale overheid maken we onze dienstverlening veiliger, efficiënter en beter beheersbaar door applicaties beter te scheiden van gegevens en gegevens alleen bij de bron te beheren.
+
+Dit moeten verder nuanceren en uitwerken. Het manifest moet duidelijk maar ook uitvoerbaar zijn.
 
 ## Basisafspraken
 
--   Gegevens die door andere organisaties gebruikt worden, ontsluiten we met APIs
--   Waar we REST APIs inzetten doen we dat volgens de [REST API Design Rules](https://geonovum.github.io/API-Designrules/)
--   Voor autorisatie van REST APIs gebruiken we het [NL Assurance Profile for OAuth](https://docs.geostandaarden.nl/api/oauth/)
+- Gegevens die door andere organisaties gebruikt worden, ontsluiten we met APIs
+- Waar we REST APIs inzetten doen we dat volgens de [REST API Design Rules](https://geonovum.github.io/API-Designrules/)
+- Voor autorisatie van REST APIs gebruiken we het [NL Assurance Profile for OAuth](https://docs.geostandaarden.nl/api/oauth/)
+- We registreren onze (openbare) APIs bij developer.overheid.nl
 
 ## Transitie
 
