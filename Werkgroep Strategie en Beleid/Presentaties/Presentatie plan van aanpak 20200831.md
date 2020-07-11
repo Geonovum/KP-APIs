@@ -82,7 +82,7 @@ De strategie beschrijft transitiepaden voor:
 
 -   [DigiKoppeling](https://www.logius.nl/diensten/digikoppeling)
 -   [StUF](https://www.gemmaonline.nl/index.php/StUF_Berichtenstandaard)
--   Andere?
+-   Andere? Bijvoorbeeld Webservices (SOAP APIs)?
 
 ## Praktijk
 
