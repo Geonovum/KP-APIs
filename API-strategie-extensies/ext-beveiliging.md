@@ -23,33 +23,59 @@ HRNs are derived from the RSIN which can be queried in the "Handels register" ht
 In the EU context use the eIDAS legal identifier. for more information see https://ec.europa.eu/digital-single-market/en/trust-services-and-eid
 
 ### Authentication
-We distinguish end user authentication methods and system authentication methods.
+Authentication determines whether individuals and applications accessing APIs are really who they say they are. In the context of APIs, authentication is applicable to the *End-User*, i.e. the individual on behalf of whom API resources are being accessed, and to the *Client*, i.e. the application that accesses the API resources on behalf of the end-user.
 
-#### End user authentication
-The following authentication methods can be used for end user authentication:
-**Out of band** 
-When distributing API tokens to users an out of band authentication method can be used. Common methods include an API store where a user logs in and is able to acquire an API key. In this case the login method is the out-of-band authentication method used for accesing an API.
+#### End-User authentication
+In most Use Cases that involve API interaction, authenticating the End-User on behalf of whom the API resources are accessed is required. End-User authentication is not required in situations where the API Client is solely accessing API resources on behalf of itself, without requiring an End-User context, but may be used nevertheless.
 
-**Openidconnect**
-A Dutch profile for OpenIDConnect is currently being drafted. The first version will be for web usecases, later on it will be extended to cover mobile. When this profile is complete it is expected its use will be mandated by the "pas toe of leg uit lijst" of Forum standaardisatie. 
+The following methods can be used for End-User authentication:
 
 **SAML**
-The underlying current Authentication method for DigiD & eHerkenning. It can be the basis as the out-of band method mentioned earlier. other usecases are.... (further elaboration needed)
+SAML is a standard for securely communicating assertions about an authenticated End-User from the Identity Provider to the Service Provider. Although it existed before APIs became mainstream and is not aimed at API authentication specifically, communicating Access Tokens that can be used to access API resources in the exchanged assertions is possible.
 
-#### System authentication
-The following authentication methods can be used for system authentication:
-
-**PKIOverheid**
-These are x509 certificates derived from a root certificate owned by the Dutch Government. for more information on PKIOverheid see https://www.logius.nl/diensten/pkioverheid
-In the API context use only server or services certificates that include an OIN/HRN for identification. Extended validation certificates (as used for websites) do not include this identifier and are therefor not suitable for use with APIs. 
-
-**Out of band** 
-When distributing API tokens to users an out of band authentication method can be used. Common methods include an API store where a user logs in and is able to acquire an API key. In this case the login method is the out-of-band authentication method used for accesing an API.
+SAML 2.0 is included on the list of required standards by Forum Standaardisatie. It is expected, however, that the following standards will become preferred over SAML in Use Cases that involve access to API resources.
 
 **OAuth**
-This is a standard for authorisation not authentication yet in some cases its use for machine to machine authentication can be appropriate. The client credentials authorization grant to be specific ...... (further elaboration needed)
+Although technically an authorization method, OAuth is  used for End-Users authenticating themselves and providing the Client with an Access Token upon succesful End-User (and Client) authentication. This Access Token can be used to make authorised API requests. Using OAuth is appropriate when the Client does not need to know the identity of the authenticated End-User.
 
+A Dutch OAuth 2.0 Assurance profile is included on the list of required standards by Forum Standaardisatie. The latest version of the profile can be found at https://docs.geostandaarden.nl/api/oauth/.
 
+**OpenID Connect**
+OpenID Connect adds an identity layer on top of OAuth, making it into an actual authentication method. It enables API Clients to verify the identity of authenticated End-Users and to obtain profile information about the End-User.
+
+A Dutch OpenID Connect Assurance profile is currently being drafted. It is expected to be added to the list of required standards by Forum Standaardisatie. The latest version of the profile can be found at https://logius.gitlab.io/oidc/.
+
+**Out of band**
+For some Use Cases it may be appropriate to distribute Access Tokens using an Out of band authentication method. Out of band authentication is generally appropriate when API resources are accessed via an application that already provides an authentication method. Based on an End-User authentication performed, the application subsequently requests an Access Token for API access from the Identity Provider via a secure channel.
+
+#### Client authentication
+Authenticating the Client application that accesses API resources, being it on behalf of an End-User or in a system-to-system setting, is almost always required. Also, although listed separately, the abovementioned methods for End-User authentication require Client authentication.
+
+The following methods can be used for Client authentication.
+
+Note that Client authentication using HTTP Basic authentication or communicating client credentials in the request body are prone to credential theft and therefore not recommended and not listed as options below.
+
+**Mutual TLS authentication (mTLS)**
+Mutual TLS authentication is a feature of TLS with which the Client authenticates itself to the Server using its X.509 certificate. mTLS provides a strong Client authentication for server-based Clients and cannot be used with Native or User-Agent-based Clients that are not backed with a server.
+
+In contexts where Dutch (semi) governmental organisations are involved, the X.509 certificate used for Client authentication must be a PKIOverheid certificate. These are x509 certificates derived from a root certificate owned by the Dutch Government. for more information on PKIOverheid see https://www.logius.nl/diensten/pkioverheid.
+
+In the API context, only Server or Services certificates should be used as these include an OIN/HRN for identification; Extended Validation certificates (as used for websites) do not include this identifier and are therefore not suitable to use with APIs.
+
+**Private key JWT**
+With Private key JWT authentication, the Client registers a public key with the Server and accompanies every API request with a JWT signed using this key. This Client Authentication method is part of the OAuth 2.0 and OpenID Connect standards for Clients authenticating to the token endpoint, but the use of Private key JWT Client authentication is not limited to these Use Cases.
+
+This authentication method may be used with Clients that are able to securely store private keys and sign JWTs with this key.
+
+In contexts where Dutch (semi) governmental organisations are involved, the certificate used for signing the Private key JWTs must be a PKIOverheid certificate.
+
+**Client Credentials using OAuth 2.0**
+In Use Cases where the Client is solely accessing API resources on behalf of itself, without requiring an End-User context, Client authentication using the OAuth 2.0 Client Credentials grant type can be appropriate. In such cases, the Server securely communicates Client credentials to the Client upon registration (e.g. via an API Developer portal) and the Client uses these credentials to obtain an Access Token from the Identity provider.
+
+**Client authentication and Public clients**
+In Use Cases that involve Native and User-Agent based Clients, strong Client authentication is generally not possible. Whereas it may be possible for individual Clients to implement a decent means of Client authentication (e.g. by using the Web Crypto API in User-Agent based Clients), the Server cannot make any assumptions about the confidentiality of credentials exchanged with such Clients.
+
+When dealing with Use Cases involving Native and User-Agent based Clients, the policies and standards described in [Section 4.4](#security-for-webbrowser-api-clients) should be followed, as well as best practices [[OAuth2.Browser-Based-Apps]] and [[RFC8252]], which are defined for use with OAuth but may be applicable for API communication in general.
 
 ### Authorisation
 A RESTful API should not maintain the state at the server. The authentication and authorisation of a request cannot depend on sessions. Instead, a token has to be sent for each request. Token based authorization is recommended.
