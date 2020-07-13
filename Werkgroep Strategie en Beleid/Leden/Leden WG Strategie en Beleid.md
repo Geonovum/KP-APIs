@@ -8,6 +8,8 @@ Omwille van privacy staan er geen contactgevens van de leden vermeld. Discussies
 
 **Belastingdienst**: Merijn Koster, Arnold de Graaff
 
+**CBS**: Peter Zandbergen
+
 **CJIB**: Ian Duijff
 
 **Forum Standaardisatie**: Han Zuidweg (voorzitter)
