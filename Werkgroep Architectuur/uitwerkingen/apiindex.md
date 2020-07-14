@@ -1,4 +1,4 @@
-  [Ondersteuning API Strategie Algemeen(./uitwerkingen/apialg.md)
+  [Ondersteuning API Strategie Algemeen](./uitwerkingen/apialg.md)
   [API Capability model](./uitwerkingen/apicap.md)
   [Typologie van API's](./uitwerkingen/apitypes.md)
   [Informatiearchitectuur](./uitwerkingen/apiinfmod.md)
