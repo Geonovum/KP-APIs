@@ -12,6 +12,8 @@ Omwille van privacy staan er geen contactgevens van de leden vermeld. Discussies
 
 **CJIB**: Ian Duijff
 
+**DSO** (minBZK / Architecit.nl): Tony Sloos
+
 **Forum Standaardisatie**: Han Zuidweg (voorzitter)
 
 **Gemeente Amsterdam**: Michiel Trimpe
