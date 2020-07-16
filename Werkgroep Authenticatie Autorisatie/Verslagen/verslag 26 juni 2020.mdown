@@ -1,0 +1,29 @@
+# Werkgroep Beveiliging
+
+**Datum:** 26-06-2020
+
+**Aanwezig:** 
+Peter Haasnoot(Logius), Paul Dam(Lexdigitalis), Joost Farla(Kadaster), Jaron Azaria(Logius), Martin Borgman(Kadaster), Erwin Reinhoud (kennisnet), Heiko Hudig(Politie), 
+
+##Verslag vorige keer
+Geen opmerkingen over het [verslag van de vorige keer](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20Authenticatie%20Autorisatie/Verslagen/verslag%2029%20mei%202020.mdown) 
+
+## Flow diagrammen error codes
+De [Brondocumenten zijn beschikbaar] dus mochten we aanpassingen willen doen dan kan dat.
+Terugkoppeling Remco Schaar: de verwarring over authorized en authenticated ligt in de HTTP standaard zelf die daar tegenintuitief in is. 
+Conclusie van discussie over diagrammen is dat met een extra toelichting dat de diagrammen architectuur onafhankelijk bedoeld zijn, ze verder correct zijn.
+
+## Discussie over gevoelige parameters
+In [issue 219 op Github](https://github.com/Geonovum/KP-APIs/issues/219) is een uitgebreide discussie gevoerd. Conclusie is dat we niet één oplossing normatief gaan voorschrijven maar dat we waarschuwen voor meegeven van gevoelige informaite in queries en een aantal bestpractices aanreiken hoe hier in verschillende situaties mee om te gaan.
+Joost Farla gaat een voorstel schrijven.
+
+## Wat is nodig voor afronding extensie 
+We zijn door de [extensie API security](https://geonovum.github.io/KP-APIs/API-strategie-extensies/#api-security) heengelopen met de vraag wat nodig is voor afronding.
+Daar zijn de volgende acties uit gekomen:
+*Cookies [Github issue 193](https://github.com/Geonovum/KP-APIs/issues/193) komt op de agenda van het volgende overleg  
+*Frank van Es doet een voorstel voor herformulering authenticatie
+*Martin Borgman doet een review van de hele extensie
+*Sectie 4.3.2 kan weggelaten worden (Actie redactie API strategie)
+*Sectie 4.4 herschrijven met DSO API strategie als uitgangspunt (nog geen actiehouder)
+*Referenties naar genoemde standaarden toevoegen(Actie redactie API strategie) 
+
