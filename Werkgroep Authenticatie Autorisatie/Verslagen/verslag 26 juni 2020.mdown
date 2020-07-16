@@ -3,7 +3,7 @@
 **Datum:** 26-06-2020
 
 **Aanwezig:** 
-Peter Haasnoot(Logius), Paul Dam(Lexdigitalis), Joost Farla(Kadaster), Jaron Azaria(Logius), Martin Borgman(Kadaster), Erwin Reinhoud (kennisnet), Heiko Hudig(Politie), 
+Peter Haasnoot(Logius), Paul Dam(Lexdigitalis), Joost Farla(Kadaster), Jaron Azaria(Logius), Martin Borgman(Kadaster), Erwin Reinhoud (kennisnet), Heiko Hudig(Politie), Frank van Es(Logius)
 
 ## Verslag vorige keer
 Geen opmerkingen over het [verslag van de vorige keer](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20Authenticatie%20Autorisatie/Verslagen/verslag%2029%20mei%202020.mdown) 
