@@ -9,7 +9,7 @@ Peter Haasnoot(Logius), Paul Dam(Lexdigitalis), Joost Farla(Kadaster), Jaron Aza
 Geen opmerkingen over het [verslag van de vorige keer](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20Authenticatie%20Autorisatie/Verslagen/verslag%2029%20mei%202020.mdown) 
 
 ## Flow diagrammen error codes
-De [Brondocumenten zijn beschikbaar] dus mochten we aanpassingen willen doen dan kan dat.
+De [Brondocumenten zijn beschikbaar](https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20Authenticatie%20Autorisatie/HTTP-authnz-flow.vsdx) dus mochten we aanpassingen willen doen dan kan dat.
 Terugkoppeling Remco Schaar: de verwarring over authorized en authenticated ligt in de HTTP standaard zelf die daar tegenintuitief in is. 
 Conclusie van discussie over diagrammen is dat met een extra toelichting dat de diagrammen architectuur onafhankelijk bedoeld zijn, ze verder correct zijn.
 
