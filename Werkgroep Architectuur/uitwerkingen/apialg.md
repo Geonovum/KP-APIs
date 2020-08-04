@@ -7,4 +7,4 @@ G2B : Government 2 Business
 G2G : Government 2 Government
 
 
-![alt text](media/API-arch-v22.png)
+![alt text](https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20Architectuur/uitwerkingen/media/API-arch-v22.png)
