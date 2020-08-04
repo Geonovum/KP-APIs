@@ -1,5 +1,6 @@
 
 ![alt text](https://github.com/Geonovum/KP-APIs/new/master/Werkgroep%20Architectuur/uitwerkingen/media/apitypes.png)
+![alt text](/uitwerkingen/media/apitypes.png)
 
 Afkortingen:
 G2C : Government 2 Citizen
