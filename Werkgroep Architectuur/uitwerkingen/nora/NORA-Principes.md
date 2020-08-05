@@ -1,6 +1,6 @@
 # NORA Principes & API Architectuur 
 
-__Resultaten van prioritering__ 
+## Resultaat van prioritering 
 
 **Stelling**
 
