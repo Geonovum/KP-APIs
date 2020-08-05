@@ -104,6 +104,6 @@ Om als organisatie API's aan te bieden aan andere partijen op een gecontroleerde
 - Gebruikers en Rol Beheer
 
 ```
-Opmerking: Zie ook huidige vulling op : https://geonovum.github.io/KP-APIs/API-strategie-algemeen/#diensten-toegang-api-management 
+>Opmerking: Zie ook huidige vulling op : https://geonovum.github.io/KP-APIs/API-strategie-algemeen/#diensten-toegang-api-management 
 (De capabilities kunnen mogelijk gebruikt worden om dit model uit te breiden)
 ```
