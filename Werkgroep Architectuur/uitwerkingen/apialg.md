@@ -18,5 +18,5 @@ Interne API's : voor ontsluiten van diensten binnen de organisatie
 
 ![alt text](https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20Architectuur/uitwerkingen/media/API-arch-v22.png)
 
-- A : API Contactoppervlak Overheid naar Burgers en Bedrijven
-- B : API Contactoppervlak Overheid naar Overheid (bv onderdelen GDI)
+- (A) : API Contactoppervlak Overheid naar Burgers en Bedrijven
+- (B) : API Contactoppervlak Overheid naar Overheid (bv onderdelen GDI)
