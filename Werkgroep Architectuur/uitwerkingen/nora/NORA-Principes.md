@@ -1,6 +1,10 @@
+# NORA Principes & API Architectuur 
+
+__Resultaten van prioritering__ 
+
 **Stelling**
 
-Verzoek is onderstaande principes te scoren op basis van deze stelling:
+Verzoek was onderstaande principes te scoren op basis van deze stelling:
 
 
 
