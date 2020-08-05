@@ -1,6 +1,6 @@
 **API Capability Model**
 
-Om als organisatie API's aan te bieden aan andere partijen op een gecontroleerde beheersbare manier moet je als organisatie bepaalde functionaliteit bieden, processen inregelen en ondersteuning aanbieden. Het onderstaande API Capability model geeft weer aan welke onderwerpen men aandacht moet schenken bij het inrichten van dienstverlening via API's
+Om als organisatie API's aan te bieden aan andere partijen op een gecontroleerde beheersbare manier moet je bepaalde functionaliteit bieden, processen inregelen en ondersteuning aanbieden. Het onderstaande API Capability model geeft weer aan welke onderwerpen men aandacht moet schenken bij het inrichten van dienstverlening via API's
 
 
 ![alt text](https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20Architectuur/uitwerkingen/media/API-Capability.png)
@@ -102,3 +102,8 @@ Om als organisatie API's aan te bieden aan andere partijen op een gecontroleerde
 - Foutafhandeling
 
 - Gebruikers en Rol Beheer
+
+```
+Opmerking: Zie ook huidige vulling op : https://geonovum.github.io/KP-APIs/API-strategie-algemeen/#diensten-toegang-api-management 
+(De capabilities kunnen mogelijk gebruikt worden om dit model uit te breiden)
+```
