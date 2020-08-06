@@ -8,7 +8,7 @@ Extern:
 Intern:
 - Interne API's : voor ontsluiten van diensten binnen de organisatie
 
-![alt text](https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20Architectuur/uitwerkingen/media/apigov.png)
+![alt text](https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20Architectuur/uitwerkingen/media/govapi.png)
 
 ### Afkortingen:
 - G2C : Government 2 Citizen
