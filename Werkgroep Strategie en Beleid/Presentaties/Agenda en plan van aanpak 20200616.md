@@ -2,7 +2,7 @@
 
 Virtuele bijeenkomst 16 juni 2020
 
-Dit is de tekstversie van de presentatie die werd besproken tijdens de virtuele bijeenkomst van dinsdag 16 juni 2020
+Dit is de tekstversie van de agenda en presentatie die werd besproken tijdens de virtuele bijeenkomst van dinsdag 16 juni 2020
 
 ## Agenda 
 
