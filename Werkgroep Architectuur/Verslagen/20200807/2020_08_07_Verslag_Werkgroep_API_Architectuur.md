@@ -35,8 +35,6 @@ Eric: Per principe kan gekeken worden hoe API concepten bijdragen aan het invull
 API Capability model zoals door Frank van Es opgesteld lijkt goed bruikbaar, het is wenselijk dat Frank deze indeling in volgend overleg nader toelicht, ook zou het goed zijn
 om aan te geven welke aspecten voor een architect mn relevant zijn
 
-
-
 **2 Typologie van API's**
 
 Drewes Tebbes geeft aan dat de uitwerking van de subgroep informatiearchitectuur input geeft voor dit onderwerp
@@ -54,8 +52,6 @@ Eric Brouwer: Notificatie services zoals laatst besproken in de sessie georganis
 **5 Beveiligingsarchitectuur**
 
 Geen opm ivm vakantie
-
-**5	Afspraken & vervolgstappen**
 
 Op github is een indeling gemaakt voor de uitwerking van deelonderwerpen, verzoek is deze aan te vullen
 
