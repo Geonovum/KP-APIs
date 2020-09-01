@@ -30,8 +30,6 @@ Omwille van privacy staan er geen contactgevens van de leden vermeld. Discussies
 
 **Informatiehuis Water**: Koos Boersma
 
-**iRaad**: Marcel Krassenburg
-
 **Justid**: Raymond Kers
 
 **Kadaster**: Wlbert Kroon, Jasper Roes
@@ -63,5 +61,7 @@ Omwille van privacy staan er geen contactgevens van de leden vermeld. Discussies
 **EDSN**: Jan de Jong, Laura Rutte
 
 **Enable-U**: Frank Arts, Jascha Gregorowitsch, Kees Neven
+
+**MKidee**: Marcel Krassenburg (iRaad, CCoverheid)
 
 **VM-Advies**: Ten Hendriks
