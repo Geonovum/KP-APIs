@@ -53,5 +53,8 @@ Eric Brouwer: Notificatie services zoals laatst besproken in de sessie georganis
 
 Geen opm ivm vakantie
 
+
+**6 Rondvraag**
+
 Op github is een indeling gemaakt voor de uitwerking van deelonderwerpen, verzoek is deze aan te vullen
 
