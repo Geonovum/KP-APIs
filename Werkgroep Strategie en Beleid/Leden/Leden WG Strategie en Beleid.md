@@ -44,7 +44,7 @@ Omwille van privacy staan er geen contactgevens van de leden vermeld. Discussies
 
 **RIVM**: Pascal Thuis
 
-**RvIG**: Liesbeth van der Feen
+**RvIG**: naam op aanvraag
 
 **Servicepunt71**: Eelco Rouw
 
