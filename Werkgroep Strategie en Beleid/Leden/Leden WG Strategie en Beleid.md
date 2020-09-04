@@ -10,7 +10,7 @@ Omwille van privacy staan er geen contactgevens van de leden vermeld. Discussies
 
 **CBS**: Peter Zandbergen
 
-**CJIB**: Rob Bastings, Ian Duijff
+**CJIB**: Ian Duijff
 
 **DSO** (minBZK / Architecit.nl): Tony Sloos
 
@@ -44,7 +44,7 @@ Omwille van privacy staan er geen contactgevens van de leden vermeld. Discussies
 
 **RDW**: Richard Janssen
 
-**RIVM**: Pascal Thuis
+**RIVM**: Rob Bastings, Pascal Thuis
 
 **RvIG**: naam op aanvraag
 
