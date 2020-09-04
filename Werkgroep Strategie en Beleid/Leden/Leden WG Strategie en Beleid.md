@@ -10,7 +10,7 @@ Omwille van privacy staan er geen contactgevens van de leden vermeld. Discussies
 
 **CBS**: Peter Zandbergen
 
-**CJIB**: Ian Duijff
+**CJIB**: Rob Bastings, Ian Duijff
 
 **DSO** (minBZK / Architecit.nl): Tony Sloos
 
@@ -39,6 +39,8 @@ Omwille van privacy staan er geen contactgevens van de leden vermeld. Discussies
 **Ministerie van Binnenlandse Zaken en Koninkrijksrelaties**: Gino Laan, Paul Zeef
 
 **Politie**: Jeroen Prins
+
+**Provincie Overijssel**: Gerard Nienhuis
 
 **RDW**: Richard Janssen
 
