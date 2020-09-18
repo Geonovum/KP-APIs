@@ -17,7 +17,7 @@ Vakantie-editie
 
 Op github is een indeling gemaakt voor de uitwerking van deelonderwerpen.
 
-https://github.com/Geonovum/KP-APIs/new/master/Werkgroep%20Architectuur
+https://github.com/Geonovum/KP-APIs/tree/master/Werkgroep%20Architectuur
 
 **2	Introductie**
 
