@@ -3,11 +3,11 @@
 ## Doel
 de werkgroep Design Visie wil een bijdrage leveren aan de vorming van jouw design visie voor jouw eerst volgende API project door te beschrijven: 
 
-> 1. waarom het het belangrijk is om strategische en businessdoelstellingen voor jouw API project te definieren;
+> 1. waarom het belangrijk is om strategische en businessdoelstellingen voor jouw API project te definieren;
 > 2. welke eigenschappen een API moet hebben om deze doelstelling te realiseren; 
-> 3. hoe de keuze van een API Style, de toepassing van bijbehorende constraints, en de toepassing van design principes jouw API alle gewenste eigenschappen kan geven die nodig zijn om jouw doelen te halen.
+> 3. hoe de keuze van een API Style, het toepassen van bijbehorende constraints, en het toepassen van design principes jouw API alle gewenste eigenschappen geeft die nodig zijn om jouw doelen te halen.
 
-Hierbij zien we APIs als middel om specifieke strategische doelen te bereiken.
+Hierbij zien we APIs als middel om specifieke strategische doelen te bereiken in de context van een systeem, een domein, een organisatie of de BV NL.
 
 ## Leden
 
