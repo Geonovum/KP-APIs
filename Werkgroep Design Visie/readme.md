@@ -1,4 +1,4 @@
-# Over de werkgroep Design visie
+# Over de werkgroep design visie
 
 ## Doel
 de werkgroep Design Visie wil een bijdrage leveren aan de vorming van jouw design visie voor jouw eerst volgende API project door te beschrijven: 
