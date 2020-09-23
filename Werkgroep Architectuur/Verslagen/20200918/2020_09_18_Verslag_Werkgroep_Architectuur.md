@@ -1,17 +1,17 @@
 
 **Aanwezig:**
 
-    *Dennis de Wit
-    *Eelco Hotting
-    *Peter Haasnoot
-    *Eric Brouwer
-    *Drewes Tebbes
-    *John Zwart
-    *Joost Farla
-    *Gert Jan van der Kooij
-    *Martin van der Plas
-    *Rob Bastings
-    *Ronald Doest
+    * Dennis de Wit
+    * Eelco Hotting
+    * Peter Haasnoot
+    * Eric Brouwer
+    * Drewes Tebbes
+    * John Zwart
+    * Joost Farla
+    * Gert Jan van der Kooij
+    * Martin van der Plas
+    * Rob Bastings
+    * Ronald Doest
     
 **Agenda**
 
@@ -39,6 +39,8 @@ In de resterende tijd is een korte ronde langs de onderwerpen gemaakt:
 Eric Brouwer : toelichtingen bij principes zullen worden geplaatst op noraonline
 
 **4 API Architectuur onderwerpen (Ontwikkelingen & Invulling)**
+
+Geen bijzonderheden
 
 **5 Rondvraag**
 
