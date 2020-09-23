@@ -1,4 +1,3 @@
-akantie-editie
 
 Aanwezig:
 
