@@ -1,18 +1,32 @@
 
 **Aanwezig:**
 
-    * Dennis de Wit
-    * Eelco Hotting
-    * Peter Haasnoot
-    * Eric Brouwer
-    * Drewes Tebbes
-    * John Zwart
-    * Joost Farla
-    * Gert Jan van der Kooij
-    * Martin van der Plas
-    * Rob Bastings
-    * Ronald Doest
+* Dennis de Wit
+
+* Eelco Hotting
+
+* Peter Haasnoot
+
+* Eric Brouwer
+
+* Drewes Tebbes
     
+* John Zwart
+
+* Joost Farla
+
+* Gert Jan van der Kooij
+
+* Martin van der Plas
+    
+* Rob Bastings
+    
+* Ronald Doest
+
+
+
+
+
 **Agenda**
 
 **1 Welkom**
