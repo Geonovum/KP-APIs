@@ -44,5 +44,5 @@ Eric Brouwer : toelichtingen bij principes zullen worden geplaatst op noraonline
 5 Rondvraag
 
 Een vraag was wat de beschikbare kaders voor gebruik van API's zijn:
-Momenteel beschikbaar en op de PTLU geplaatst zijn de API Design Rules en het NL OAuth profiel
-Voor Digikoppeling is een REST-API profiel in ontwikkeling obv de API Design Rules 
+- Momenteel beschikbaar en op de PTLU geplaatst zijn de API Design Rules en het NL OAuth profiel
+- Voor Digikoppeling is een REST-API profiel in ontwikkeling obv de API Design Rules 
