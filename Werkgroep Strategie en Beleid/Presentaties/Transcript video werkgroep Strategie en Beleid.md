@@ -1,6 +1,6 @@
 # Werkgroep Strategie en Beleid
 
-Dit is de tekst van de video waarin de werkgroep wordt voorgesteld.
+Dit is een transcript van de video voor de meet-up van 1 oktober 2020 waarin de werkgroep Strategie en Beleid wordt voorgesteld:
 
 Hallo, ik ben Han Zuidweg, de voorzitter van de werkgroep Strategie en Beleid en werk bij het Forum Standaardisatie. Forum Standaardisatie is een onafhankelijke organisatie die de digitale overheid adviseert over het gebruik van open standaarden. We besteden veel aandacht aan standaarden voor het gegevenslandschap van de overheid. Daarom zijn wij betrokken bij het Kennisplatform APIs.
 
