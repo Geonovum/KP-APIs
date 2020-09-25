@@ -30,7 +30,7 @@ Concreet werken we in de werkgroep aan vijf onderdelen van de strategie en belei
 
 We willen het probleem centraal stellen en niet de oplossing. We willen het dus eerst eens worden over het probleem dat de overheid moet oplossen. Dat zou iets kunnen zijn als:
 
-Bij veel ICT systemen van de overheid zitten de gegevens verweven in de applicatie. Vaak werken systemen met kopieën van de basisregistraties en andere gegevensbronnen. Dit is inefficiënt, foutgevoelig, kostbaar en maakt regie op gegevens moeilijk.
+> Bij veel ICT systemen van de overheid zitten de gegevens verweven in de applicatie. Vaak werken systemen met kopieën van de basisregistraties en andere gegevensbronnen. Dit is inefficiënt, foutgevoelig, kostbaar en maakt regie op gegevens moeilijk.
 
 Maar dat moeten we verder uitwerken.
 
@@ -40,7 +40,7 @@ Het is de bedoeling dat de API Strategie een verklaring wordt dat de overheid he
 
 Het manifest kan iets worden als:
 
-Als digitale overheid maken we onze dienstverlening veiliger, efficiënter en beter beheersbaar door applicaties beter te scheiden van gegevens en gegevens alleen bij de bron te beheren.
+> Als digitale overheid maken we onze dienstverlening veiliger, efficiënter en beter beheersbaar door applicaties beter te scheiden van gegevens en gegevens alleen bij de bron te beheren.
 
 Dit moeten we ook verder uitwerken.
 
