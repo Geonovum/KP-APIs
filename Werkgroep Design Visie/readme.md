@@ -9,12 +9,14 @@ de werkgroep Design Visie wil een bijdrage leveren aan de vorming van jouw desig
 
 Hierbij zien we APIs als middel om specifieke strategische doelen te bereiken in de context van een systeem, een domein, een organisatie of de BV NL.
 
-## Leden
+## Auteurs
+Cathy Dingemanse (Haal Centraal, gemeente Den Haag)
+Melvin Lee (Haal Centraal, VNG Realisatie)
+Frank Samwel (Haal Centraal, gemeente Den Haag)
 
 ## Werkwijze
 
-### Online samenwerken
-
+Toevoegingen of wijzigingen op de "Main" versie (nu nog Master) kan door middel van een pull request worden aangeboden.   
 
 ### Discussies
 
