@@ -249,9 +249,8 @@ Om de door jou gewenste eigenschappen te behouden en te versterken is een bepaal
 
 API’s binnen eenzelfde domein \(bijvoorbeeld de overheid\) conformeren zich aan dezelfde contract design standaarden. Je houden aan de regels leidt tot consistentie binnen en tussen contracten, ook al zijn ze door verschillende teams in verschillende organisaties gemaakt. Developers binnen het domein of land die zo'n gestandaardiseerd contract gebruiken, begrijpen daardoor sneller wat de mogelijkheden van de API zijn.
 
-{% hint style="info" %}
-De keuze voor een REST API Style zorgt al voor generieke herbruikbare en gestandaardiseerde methodes en media types. Ook de syntax die je gebruikt om resource identifiers uit te drukken is gestandaardiseerd. De basis is er dus al. Door toepassing van het "gestandaardiseerd contract" principe wordt het API contract nog verder gestandaardiseerd. Voorbeelden hiervan zijn de API Designrules \([https://docs.geostandaarden.nl/api/API-Designrules/](https://docs.geostandaarden.nl/api/API-Designrules/)\), en de API Designrules Extensions [\(Nederlandse API Strategie IIb\)](https://docs.geostandaarden.nl/api/API-Strategie-ext/). Andere voorbeelden zijn: afspreken om een bepaalde http methode beperkt te gebruiken, of het standaardiseren van custom media types in een bepaald domein.
-{% endhint %}
+> _De keuze voor een REST API Style zorgt al voor generieke herbruikbare en gestandaardiseerde methodes en media types. Ook de syntax die je gebruikt om resource identifiers uit te drukken is gestandaardiseerd. De basis is er dus al. Door toepassing van het "gestandaardiseerd contract" principe wordt het API contract nog verder gestandaardiseerd. Voorbeelden hiervan zijn de [API Designrules](https://docs.geostandaarden.nl/api/API-Designrules/), en de [API Designrules Extensions](https://docs.geostandaarden.nl/api/API-Strategie-ext/). Andere voorbeelden zijn: afspreken om een bepaalde http methode beperkt te gebruiken, of het standaardiseren van custom media types in een bepaald domein._
+
 
 ### Loose coupling
 
@@ -259,11 +258,9 @@ De keuze voor een REST API Style zorgt al voor generieke herbruikbare en gestand
 
 Het principe schrijft voor dat _een consumer van de API uitsluitend aan het contract van de API gekoppeld mag zijn, en niet direct aan de onderliggende implementatie_. Dit moet je voorkomen om onafhankelijke beheer en doorontwikkeling van je API contract mogelijk te maken. Hoe meer negatieve “coupling” vormen in het servicecontract terecht komen, hoe groter de beheerlast wordt voor jouw API EN de systemen van afnemers. Heb je een agnostische API die door een groot aantal consumers wordt hergebruikt? Dan kan een negatieve vorm van coupling serieuze problemen en hoge kosten veroorzaken bij jou en bij al jouw afnemers. Met een volledig ontkoppeld contract voorkom je onvoorspelbaar gedrag van je API \(zonder dat het contract breekt\) en onnodige breaking changes bij wijzigingen in de achterliggende implementatie.
 
-{% hint style="info" %}
-Een voorbeeld van “tight coupling” waarmee je onnodig een breaking change kunt vooroorzaken is het geven van een speciale betekenis aan specifieke waarden, zoals “00-00-0000” uit de database van jouw bron als “onbekende datum” in je API contract. Wijzigt de bron, dan worden al jouw afnemers opgezadeld met een breaking change en moeten zij hun koppeling opnieuw maken.
+> _Een voorbeeld van “tight coupling” waarmee je onnodig een breaking change kunt vooroorzaken is het geven van een speciale betekenis aan specifieke waarden, zoals “00-00-0000” uit de database van jouw bron als “onbekende datum” in je API contract. Wijzigt de bron, dan worden al jouw afnemers opgezadeld met een breaking change en moeten zij hun koppeling opnieuw maken._
 
-Een negatieve vorm van coupling ontstaat bijvoorbeeld als je aan de volgorde waarin de bron iets levert een bepaalde betekenis toekent omdat jouw bron dat altijd zo doet. Bijvoorbeeld, OUDER1 is altijd de vader en OUDER2 is altijd de moeder. Je kunt je voorstellen wat er gebeurt als daar \(onbedoeld\) iets aan verandert. Dit wordt ook wel “implementation bleed” genoemd, en is erger dan het onnodig veroorzaken van een breaking change die van tevoren wordt aangekondigd en gemanaged. Omdat het contract niet breekt, merk je de fout vaak niet op, of te laat als er iets fout is gegaan. Bijvoorbeeld in de dienstverlening van jouw afnemer… 😥
-{% endhint %}
+> _Een negatieve vorm van coupling ontstaat bijvoorbeeld als je aan de volgorde waarin de bron iets levert een bepaalde betekenis toekent omdat jouw bron dat altijd zo doet. Bijvoorbeeld, OUDER1 is altijd de vader en OUDER2 is altijd de moeder. Je kunt je voorstellen wat er gebeurt als daar \(onbedoeld\) iets aan verandert. Dit wordt ook wel “implementation bleed” genoemd, en is erger dan het onnodig veroorzaken van een breaking change die van tevoren wordt aangekondigd en gemanaged. Omdat het contract niet breekt, merk je de fout vaak niet op, of te laat als er iets fout is gegaan. Bijvoorbeeld in de dienstverlening van jouw afnemer… 😥_
 
 ### API Abstractie
 
@@ -272,23 +269,21 @@ De nadruk van dit principe ligt op het zo veel mogelijk verbergen van onderligge
 
 De crux van API abstraction zit hem in het antwoord op de vraag: wat is essentiële informatie? Abstractie van technologie gaat over de metadata die de technische implementatie van de onderliggende service logica beschrijft \(bijvoorbeeld: deze API kun je aanroepen met een op JSON gebaseerd media type\). In welke taal de implementatie is geprogrammeerd \(bijv. Java\) blijft voor jouw afnemer verborgen. Abstractie van programmalogica gaat over de metadata die beschrijft hoe de API zijn mogelijkheden voor de afnemer uitvoert \(GetIets, UpdateIets etc.\) terwijl de uitvoering zelf verborgen blijft \(validatie, authenticatie etc.\). Over beide vormen van abstractie is voldoende geschreven, ook binnen het kennisplatform.
 
-{% hint style="info" %}
-Wanneer de API specificaties erg veel details communiceren over het formaat en inhoud van berichten, leiden wijzigingen daaraan snel tot breaking changes in de API. Het is dan erg moeilijk om de API nog uit te breiden. Bijvoorbeeld wanneer het veld “straatnaam” volgens de API specificaties een maximale lengte van 40 tekens heeft, omdat de provider die maximale lengte in haar database heeft gedefinieerd, dan betekent uitbreiding van de maximale lengte een breaking change. De vraag is dus of het echt noodzakelijk is om in het contract de maximale lengte vast te leggen.
-{% endhint %}
+> _Wanneer de API specificaties erg veel details communiceren over het formaat en inhoud van berichten, leiden wijzigingen daaraan snel tot breaking changes in de API. Het is dan erg moeilijk om de API nog uit te breiden. Bijvoorbeeld wanneer het veld “straatnaam” volgens de API specificaties een maximale lengte van 40 tekens heeft, omdat de provider die maximale lengte in haar database heeft gedefinieerd, dan betekent uitbreiding van de maximale lengte een breaking change. De vraag is dus of het echt noodzakelijk is om in het contract de maximale lengte vast te leggen._
 
 Functionele abstractie gaat over wat de API aanbiedt, en is het meest onderbelicht en misschien ook wel het lastigste, omdat het een andere aanpak vereist dan we gewend zijn. Daarom gaat het nog vaak mis. Veel overheidsstandaarden zijn gebaseerd op het idee om vooral alles te leveren wat je hebt. Je weet maar nooit of iemand het nodig heeft en dan is het er maar alvast. Toch? En we leveren de gegevens het liefst exact zoals de bron het heeft opgeslagen, in hun meest “pure vorm”. Dan “kan iedereen er mee doen wat hij wil”. Klinkt bekend?
 
 _**Gebruikersperspectief- povider perspectief \#\#\#\#\#\#\#\#\#\#\#\#\#uitwerken waarom dit invulling geeft aan service abstraction\#\#\#\#\#\#\#\#\#\#\#. Misschien een hele paragraaf wijden aan gebruikersperspectief op zich als design principe, los van service abstraction/loose coupling?**_
 
-{% hint style="info" %}
-Twee voorbeelden van functionele abstractie:
-
-_Weergave van adressen_.  
-In de basisregistratie adressen en gebouwen zijn adressen gemodelleerd vanuit nummeraanduidingen, openbare ruimten en woonplaatsen, met relaties daartussen. Veel gebruikers zijn in essentie geïnteresseerd in het adres, dus de samenstelling van nummeraanduiding \(postcode en huisnummer\), straatnaam \(openbare ruimte\) en woonplaatsnaam. Levert de API adressen, dan hoeft een gebruiker niets te weten over nummeraanduidingen, openbare ruimten en woonplaatsen en hoeft de gebruiker minder requests te doen om tot de benodigde informatie te komen. Bovendien kan de provider haar modellering en registratie vrij aanpassen zonder dat de gebruiker daar iets van merkt.
-
-_Aanschrijfwijze_  
-Veel gebruikers van basisregistraties hebben een samengestelde naam nodig om een persoon te kunnen aanschrijven. De basisregistratie personen heeft hiervoor een code naamgebruik \(bijvoorbeeld “V”, wat betekent dat de achternaam van de partner voor de achternaam van de persoon zelf moet worden gezet\), naamgegevens, adellijke titel, en gegevens van de eventuele \(ex\)partner. De gebruiker moet dan al deze gegevens opvragen en een algoritme maken voor het hieruit samenstellen van de naam. Wanneer de API deze samengestelde naam al levert, kan de API veel compacter en eenvoudiger zijn en hoeft een gebruiker veel minder gegevens op te vragen. Dit komt ook de evolvability van de API ten goede: de onderliggende gegevens kunnen totaal veranderen \(geslachtsaanduidingen krijgen bijvoorbeeld andere waarden\), zonder dat de consumer zijn koppeling moet aanpassen of vernieuwen.
-{% endhint %}
+> _Twee voorbeelden van functionele abstractie:_
+>
+>
+> _**Weergave van adressen**  
+In de basisregistratie adressen en gebouwen zijn adressen gemodelleerd vanuit nummeraanduidingen, openbare ruimten en woonplaatsen, met relaties daartussen. Veel gebruikers zijn in essentie geïnteresseerd in het adres, dus de samenstelling van nummeraanduiding \(postcode en huisnummer\), straatnaam \(openbare ruimte\) en woonplaatsnaam. Levert de API adressen, dan hoeft een gebruiker niets te weten over nummeraanduidingen, openbare ruimten en woonplaatsen en hoeft de gebruiker minder requests te doen om tot de benodigde informatie te komen. Bovendien kan de provider haar modellering en registratie vrij aanpassen zonder dat de gebruiker daar iets van merkt._
+>
+>
+> _**Aanschrijfwijze**  
+Veel gebruikers van basisregistraties hebben een samengestelde naam nodig om een persoon te kunnen aanschrijven. De basisregistratie personen heeft hiervoor een code naamgebruik \(bijvoorbeeld “V”, wat betekent dat de achternaam van de partner voor de achternaam van de persoon zelf moet worden gezet\), naamgegevens, adellijke titel, en gegevens van de eventuele \(ex\)partner. De gebruiker moet dan al deze gegevens opvragen en een algoritme maken voor het hieruit samenstellen van de naam. Wanneer de API deze samengestelde naam al levert, kan de API veel compacter en eenvoudiger zijn en hoeft een gebruiker veel minder gegevens op te vragen. Dit komt ook de evolvability van de API ten goede: de onderliggende gegevens kunnen totaal veranderen \(geslachtsaanduidingen krijgen bijvoorbeeld andere waarden\), zonder dat de consumer zijn koppeling moet aanpassen of vernieuwen._
 
 De conclusie is dat functionele abstractie essentieel is voor de houdbaarheidsdatum van je API contract. Het design van het API contract op basis van het gebruikersperspectief is de allerbeste truc om dit voor elkaar te krijgen.
 
