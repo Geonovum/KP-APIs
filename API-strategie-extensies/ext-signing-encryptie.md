@@ -41,9 +41,7 @@ For instance for enveloped XML digital signatures most implementations expect th
 #### Signing requests/response
 
 ##### Signing requests/respone with knowledge of encoding format
-JWT security best practices:
-https://datatracker.ietf.org/doc/draft-ietf-oauth-jwt-bcp/
-
+JSON Web Token Best Current Practices: [RFC 8725](https://www.rfc-editor.org/rfc/rfc8725.html)
 
 ##### Signing requests/response without knowledge of encoding format
 
