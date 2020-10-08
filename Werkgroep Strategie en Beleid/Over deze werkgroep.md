@@ -18,7 +18,7 @@ Het Kennisplatform APIs heeft zich georganiseerd in verschillende werkgroepen. E
 De huidige [API Strategie](https://docs.geostandaarden.nl/api/API-Strategie/) is eigenlijk geen strategie, maar beschrijft vooral de (technische) voordelen die APIs bieden bij het ontsluiten van gegevens. In de bijeenkomst op 4 maart 2020 besprak het Kennisplatform APIs de doorontwikkeling van de API Strategie. Hoofdpunten die hierbij naar voren kwamen:
 -   De strategie moet uitgaan van het probleem, niet oplossing. APIs zijn geen doel op zich. Het doel is een betere dienstverlening van de overheid. 
 -   Zowel overheden als leveranciers hebben behoefte aan duidelijkheid. Dat betekent een duidelijke visie *en* een routeplan om daar te komen.
-- De strategie moet de bestaande initiatieven (Common Ground, Haal Centraal, Digitaal Stelsel Omgevingswet) bij elkaar brengen, en voorkomen dat deze uit elkaar gaan lopen.
+- De strategie moet de bestaande initiatieven (Common Ground, Haal Centraal, Digitaal Stelsel Omgevingswet, Juridische keten) bij elkaar brengen en voorkomen dat deze uit elkaar gaan lopen.
 
 De werkgroep gaat met deze punten aan de slag en heeft z'n naam geactualiseerd van 'Communicatie en Beleid' tot '**Strategie en Beleid**'. De werkgroep stelt zich tot doel om in 2020 te werken naar een bindende strategie die voldoende draagvlak heeft over de breedte van de overheid.
 
