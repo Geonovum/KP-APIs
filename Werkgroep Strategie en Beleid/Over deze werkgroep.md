@@ -3,7 +3,7 @@
 ## Doel
 Het doel van de werkgroep Strategie en Beleid is:
 
-> 1. Initiatieven voor het bij de bron beheren en ontsluiten van gegevens, waaronder Common Ground, Haal Centraal en DSO, bij elkaar brengen. 
+> 1. Initiatieven voor het bij de bron beheren en ontsluiten van gegevens, waaronder Common Ground, Haal Centraal, DSO, en de Juridische keten bij elkaar brengen. 
 > 2. UItgaand van deze initiatieven een eenduidige en uitvoerbare strategie formuleren voor het bij de bron beheren en ontsluiten van gegevens.
 > 3. Draagvlak voor deze strategie  tot stand brengen over de breedte van de overheid.
 
