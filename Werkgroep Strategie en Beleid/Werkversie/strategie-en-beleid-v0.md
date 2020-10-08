@@ -19,7 +19,7 @@ basisregistratie personen. Maar gemeente A moet weten dat je nu staat ingeschrev
 naar gemeente A. Gemeente A verwerkt deze verwijsgegevens in z’n basisregistratie personen.
 
 Daarna moeten zowel gemeente A als gemeente B de mutaties van hun lokale basisregistratie personen nog doorgeven aan de 
-[centrale basisregistratie personen van de Autoriteit Persoonsgegevens](https://www.autoriteitpersoonsgegevens.nl/nl/onderwerpen/gemeente/basisregistratie-personen-brp?qa=brp). Zo kan het drie werkdagen kosten om een eenvoudige verhuizing volledig te registreren. En er komen drie registraties aan te pas die deels kopieën van elkaar zijn en met elkaar synchroon gehouden moeten worden.
+[centrale basisregistratie personen van de Autoriteit Persoonsgegevens](https://www.autoriteitpersoonsgegevens.nl/nl/onderwerpen/gemeente/basisregistratie-personen-brp?qa=brp). Zo kan het drie werkdagen kosten om een verhuizing volledig te registreren. En er komen drie registraties aan te pas die deels kopieën van elkaar zijn en met elkaar synchroon gehouden moeten worden.
 
 Is het niet efficiënter en veiliger om één basisregistratie personen bij te houden, in plaats van gegevens heen en weer te 
 schuiven van de ene registratie naar de andere?
