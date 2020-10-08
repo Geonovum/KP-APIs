@@ -15,7 +15,7 @@ Begin 2018 riepen Forum Standaardisatie, Geonovum, Kadaster, Kamer van Koophande
 
 Het Kennisplatform APIs heeft zich georganiseerd in verschillende werkgroepen. Een van deze werkgroepen was de 'werkgroep Communicatie en Beleid'. Deze werkgroep leverde het [hoofdstuk Communicatie en Beleid](https://docs.geostandaarden.nl/api/API-Strategie/#communicatie-en-beleid) van de [API Strategie](https://docs.geostandaarden.nl/api/API-Strategie/) die het Kennisplatform APIs in juli 2019 publiceerde.
 
-De huidige [API Strategie](https://docs.geostandaarden.nl/api/API-Strategie/) is eigenlijk geen strategie, maar beschrijft vooral de (technische) voordelen die APIs bieden bij het ontsluiten van gegevens. In de bijeenkomst op 4 maart 2020 besprak het Kennisplatform APIs de doorontwikkeling van de API Strategie. Zaken die hierbij naar voren kwamen:
+De huidige [API Strategie](https://docs.geostandaarden.nl/api/API-Strategie/) is eigenlijk geen strategie, maar beschrijft vooral de (technische) voordelen die APIs bieden bij het ontsluiten van gegevens. In de bijeenkomst op 4 maart 2020 besprak het Kennisplatform APIs de doorontwikkeling van de API Strategie. Hoofdpunten die hierbij naar voren kwamen:
 -   De strategie moet uitgaan van het probleem, niet oplossing. APIs zijn geen doel op zich. Het doel is een betere dienstverlening van de overheid. 
 -   Zowel overheden als leveranciers hebben behoefte aan duidelijkheid. Dat betekent een duidelijke visie *en* een routeplan om daar te komen.
 - De strategie moet de bestaande initiatieven (Common Ground, Haal Centraal, Digitaal Stelsel Omgevingswet) bij elkaar brengen, en voorkomen dat deze uit elkaar gaan lopen.
