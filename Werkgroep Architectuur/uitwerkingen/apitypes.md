@@ -32,4 +32,13 @@ Een API die toegang geeft tot de (basis)functionaliteit en data van een (specifi
 ### Aanvulling 3 : API Virtualisatie
 ![](https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20Architectuur/uitwerkingen/media/api-virt.png)
 
+### Aanvulling 4 : API Language styles
+
+
+- Tunnel Style: XML-RPC, SOAP, gRPC, Avro
+- Resource Style: OpenAPI/Swagger, RAML, API Blueprint
+- Hypermedia Style: HAL, Siren, Atom, HATEOAS
+- Query Style: GraphQL, OData, SPARQL
+- Event-based Style: MQ, WebSub, MQTT, XMPP, AMQP, Kafka, AsyncAPI
+
 
