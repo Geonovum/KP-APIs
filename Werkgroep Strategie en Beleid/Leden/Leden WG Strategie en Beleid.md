@@ -24,6 +24,8 @@ Omwille van privacy staan er geen contactgevens van de leden vermeld. Discussies
 
 **Gemeente Haarlem**: Eelco Hotting
 
+**Gemeente Rotterdam**: Edward Nuiten
+
 **Gemeente Venlo**: Trudi Zegveld
 
 **Geonovum**: Frank Terpstra
