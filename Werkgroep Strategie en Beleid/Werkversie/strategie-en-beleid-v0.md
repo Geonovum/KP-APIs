@@ -10,7 +10,8 @@ basisregistraties en andere gegevensbronnen. De huidige situatie brengt een aant
 3. Personen en bedrijven hebben geen regie over hun gegevens als deze overal verspreid staan.
 4. De huidige systemen en koppelingen kunnen afhankelijkheid van leveranciers in de hand werken.
 
-Een voorbeeld. Als je gaat verhuizen van gemeente A naar gemeente B, dan moet je je inschrijven bij de gemeente B. Achter de schermen 
+### Voorbeeld: verhuizing naar een andere gemeente
+Als je gaat verhuizen van gemeente A naar gemeente B, dan moet je je inschrijven bij de gemeente B. Achter de schermen 
 komt er dan een ingewikkelde gegevensstroom op gang.
 
 Beide gemeenten houden hun eigen registratie van personen bij. De ICT systemen van gemeente A moeten daarom je persoonsgegevens 
@@ -24,8 +25,16 @@ Daarna moeten zowel gemeente A als gemeente B de mutaties van hun lokale basisre
 Is het niet efficiënter en veiliger om één basisregistratie personen bij te houden, in plaats van gegevens heen en weer te 
 schuiven van de ene registratie naar de andere?
 
-[*Dit voorbeeld is nogal abstract. Andere en betere voorbeelden zijn welkom! Vooral een aansprekend voorbeelden van waar 
-iets echt misgegaan is door de huidige praktijk van gegevens rondpompen.*]
+### Voorbeeld: regie op gegevens
+
+De [Wet bescherming persoonsgegevens](https://wetten.overheid.nl/BWBR0011468/2018-05-01) (Wrp) en z'n opvolger, de [Algemene verordening gegevensbescherming](https://eur-lex.europa.eu/legal-content/NL/TXT/HTML/?uri=CELEX:32016R0679&from=NL) (AVG) geven ons al bijna twintig jaar recht op inzage en correctie van de gegevens die de overheid over ons verzamelt en beheert. Dit betekent dat je als burger het recht hebt om te weten welke persoonsgegevens de overheid over je heeft vastgelegd en welke gegevens de overheid heeft gebruikt en uitgewisseld voor welk doel.
+
+In de praktijk kan de overheid vaak niet naar behoren voldoen aan dit recht. Als je aan je gemeente vraagt welke instanties je persoonsgegevens uit de BRP hebben geraadpleegd, kan je meestal op niet meer rekenenen dan een uitdraai van het logbestand uit het lokale ICT systeem. Zo'n logbestand is een lange lijst termen en codes waar je weinig aan hebt als je het ICT systeem niet kent. En dan weet je nog niet wie er in het centrale BRP bij je gegevens geweest is. Daarvoor moet je dan weer bij de RvIG zijn.
+
+In 2017 liet het ministerie van Binnenlandse Zaken en Koninkrijksrelaties op verzoek van de Tweede Kamer door Berenschot een [onderzoek](https://zoek.officielebekendmakingen.nl/blg-817465.pdf) doen om inzicht te krijgen hoe, wanneer en met welk budget de overheid werkelijk kan voldoen aan het recht van inzage en correctie.
+
+In de [beleidsbrief regie op gegevens](https://www.rijksoverheid.nl/documenten/brieven/2019/07/11/beleidsbrief-regie-op-gegevens-nadere-uitwerking) van 2019 onderstreept het kabinet nog eens het beleidsvoornemen om hier werk van te maken.
+
 
 ## Verklaring
 Als digitale overheid maken we onze dienstverlening veiliger, efficiënter en beter beheersbaar door applicaties beter te 
