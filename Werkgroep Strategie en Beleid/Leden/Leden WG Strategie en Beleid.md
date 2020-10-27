@@ -32,6 +32,8 @@ Omwille van privacy staan er geen contactgevens van de leden vermeld. Discussies
 
 **Informatiehuis Water**: Koos Boersma
 
+**Inspectie Overheidsinformatie en Erfgoed**: Frans Smit
+
 **Justid**: Raymond Kers
 
 **Kadaster**: Wlbert Kroon, Jasper Roes
