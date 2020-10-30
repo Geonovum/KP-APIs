@@ -1,4 +1,4 @@
-# Strategie en beleid voor een modern gegevenslandschap van de overheid
+# Strategie en beleid voor moderne gegevensuitwisseling bij de overheid
 [*Dit is nog een werktitel. We zoeken een betere titel, waarin we de term 'API's' het liefst vermijden omdat het probleem
 centraal staat, en niet de oplossing.*]
 
