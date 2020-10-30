@@ -1,6 +1,5 @@
 # Strategie en beleid voor moderne gegevensuitwisseling bij de overheid
-[*Dit is nog een werktitel. We zoeken een betere titel, waarin we de term 'API's' het liefst vermijden omdat het probleem
-centraal staat, en niet de oplossing.*]
+[*Titel aangepast naar suggestie van Michel van der Plas. Suggesties nog welkom.*]
 
 ## Probleembeschrijving
 Bij de meeste ICT systemen van de overheid zitten de gegevens verweven in de applicatie. Veel systemen werken met kopieën van de 
