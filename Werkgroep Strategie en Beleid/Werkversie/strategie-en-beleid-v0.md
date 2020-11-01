@@ -53,7 +53,7 @@ Alle basisregistraties zijn over 3 jaar realtime te bevragen en over 5 jaar gebr
 [*Michel stelt voor om een stappenplan te geven om naar deze eindsituatie toe te komen.*]
 
 ## Basisafspraken
-[* Hier kunnen we afspraken maken over waar/wanneer/hoe de overheid (REST) API's inzet om het bovenstaande doel uit het 
+[*Hier kunnen we afspraken maken over waar/wanneer/hoe de overheid (REST) API's inzet om het bovenstaande doel uit het 
 manifest te bereiken. En verder bijvoorbeeld:*
  - *Als de overheid REST APIs inzet, doen we dat volgens de [REST API Design Rules](https://docs.geostandaarden.nl/api/API-Designrules/).*
   - *De beveiliging van REST APIs doet de overheid met het [NL GOV Assurance Profile for OAuth 2.0](https://docs.geostandaarden.nl/api/oauth/).*
