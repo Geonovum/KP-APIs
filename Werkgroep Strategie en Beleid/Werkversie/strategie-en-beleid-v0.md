@@ -1,5 +1,5 @@
 # Strategie en beleid voor moderne gegevensuitwisseling bij de overheid
-[*Titel aangepast naar suggestie van Michel van der Plas. Suggesties nog welkom.*]
+[*Titel aangepast naar suggestie van Martin van der Plas. Suggesties nog welkom.*]
 
 ## Probleembeschrijving
 Bij de meeste ICT systemen van de overheid zitten de gegevens verweven in de applicatie. Veel systemen werken met kopieën van de 
@@ -26,7 +26,7 @@ schuiven van de ene registratie naar de andere?
 
 ### Voorbeeld: rijvaardigheid bewijzen
 
-[*Dit voorbeeld is van Michel. Is dit voldoende overtuigend? Wat is in dit voorbeeld precies het probleem van de overheid?*]
+[*Dit voorbeeld is van Martin. Is dit voldoende overtuigend? Wat is in dit voorbeeld precies het probleem van de overheid?*]
 
 Als je met een auto de weg op wilt moet je je rijvaardigheid bewijzen bij de centrale overheid, bij het [CBR](https://www.cbr.nl/). Bij het CBR moet je je legitimeren met een identiteitsbewijs (paspoort of identiteitsbewijs) dat je gemeente uitgeeft. En als je de weg op gaat moet je het rijbewijs bij je hebben zodat de politie je rijvaardigheid kan controleren. Dit is geen toonbeeld van efficiëntie. Het rijbewijs zou een verwijzing moeten zijn naar een gegevensbron waarin je rijvaardigheid is vastgelegd. De politie kan dit direct controleren bij de bron, en je kan deze gegevens ook online delen. En het CBR zou het rijbewijs direct kunnen sturen naar het adres wat bekend is bij de gemeente.
 
@@ -46,11 +46,11 @@ Als de overheid gegevens bij de bron gaat beheren en ontsluiten, wordt het gemak
 Als digitale overheid maken we onze dienstverlening veiliger, efficiënter en beter beheersbaar door applicaties beter te 
 scheiden van gegevens en gegevens alleen bij de bron te beheren.
 
-[*Michel stelt voor om een visie van de eindsituatie te geven, bijvoobreeld:*]
+[*Martin stelt voor om een visie van de eindsituatie te geven, bijvoobreeld:*]
 
 Alle basisregistraties zijn over 3 jaar realtime te bevragen en over 5 jaar gebruikt de overheid geen lokale kopieën meer van gegevensbronnen.
 
-[*Michel stelt voor om een stappenplan te geven om naar deze eindsituatie toe te komen.*]
+[*Martin stelt voor om een stappenplan te geven om naar deze eindsituatie toe te komen.*]
 
 ## Basisafspraken
 [*Hier kunnen we afspraken maken over waar/wanneer/hoe de overheid (REST) API's inzet om het bovenstaande doel uit het 
