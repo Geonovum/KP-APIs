@@ -24,6 +24,12 @@ Daarna moeten zowel gemeente A als gemeente B de mutaties van hun lokale basisre
 Is het niet efficiënter en veiliger om één basisregistratie personen bij te houden, in plaats van gegevens heen en weer te 
 schuiven van de ene registratie naar de andere?
 
+### Voorbeeld: rijvaardigheid bewijzen
+
+[*Dit voorbeeld is van Michel. Is dit voldoende overtuigend? Wat is in dit voorbeeld precies het probleem van de overheid?*]
+
+Als je met een auto de weg op wilt moet je je rijvaardigheid bewijzen bij de centrale overheid, bij het [CBR](https://www.cbr.nl/). Bij het CBR moet je je legitimeren met een identiteitsbewijs (paspoort of identiteitsbewijs) dat je gemeente uitgeeft. En als je de weg op gaat moet je het rijbewijs bij je hebben zodat de politie je rijvaardigheid kan controleren. Dit is geen toonbeeld van efficiëntie. Het rijbewijs zou een verwijzing moeten zijn naar een gegevensbron waarin je rijvaardigheid is vastgelegd. De politie kan dit direct controleren bij de bron, en je kan deze gegevens ook online delen. En het CBR zou het rijbewijs direct kunnen sturen naar het adres wat bekend is bij de gemeente.
+
 ### Voorbeeld: regie op gegevens
 
 De [Wet bescherming persoonsgegevens](https://wetten.overheid.nl/BWBR0011468/2018-05-01) (Wrp) en z'n opvolger, de [Algemene verordening gegevensbescherming](https://eur-lex.europa.eu/legal-content/NL/TXT/HTML/?uri=CELEX:32016R0679&from=NL) (AVG) geven ons al bijna twintig jaar recht op inzage en correctie van de gegevens die de overheid over ons verzamelt en beheert. Dit betekent dat je als burger het recht hebt om te weten welke persoonsgegevens de overheid over je heeft vastgelegd en welke gegevens de overheid heeft gebruikt en uitgewisseld voor welk doel.
@@ -36,12 +42,15 @@ In de [beleidsbrief regie op gegevens](https://www.rijksoverheid.nl/documenten/b
 
 Als de overheid gegevens bij de bron gaat beheren en ontsluiten, wordt het gemakkelijker om bij de bron volledige inzage te geven. De overheid kan dan digitale inzage geven in een uniform gebruiksvriendelijk format, en ook de correctie van gegevens wordt eenvoudiger.
 
-## Verklaring
+## Visie en stappenplan
 Als digitale overheid maken we onze dienstverlening veiliger, efficiënter en beter beheersbaar door applicaties beter te 
 scheiden van gegevens en gegevens alleen bij de bron te beheren.
 
-[*Dit moeten we verder uitwerken. Willen we dit SMARTer maken en iets zeggen over de termijn waarin de overheid dit wil 
-bereiken? Willen we hier al APIs noemen als oplossing?*]
+[*Michel stelt voor om een visie van de eindsituatie te geven, bijvoobreeld: *]
+
+Alle basisregistraties zijn over 3 jaar realtime te bevragen en over 5 jaar gebruikt de overheid geen lokale kopieën meer van gegevensbronnen.
+
+[*Michel stelt voor om een stappenplan te geven om naar deze eindsituatie toe te komen.*]
 
 ## Basisafspraken
 [*Hier kunnen we afspraken maken over waar/wanneer/hoe de overheid (REST) API's inzet om het bovenstaande doel uit het 
