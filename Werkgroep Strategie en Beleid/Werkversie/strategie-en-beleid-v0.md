@@ -46,14 +46,14 @@ Als de overheid gegevens bij de bron gaat beheren en ontsluiten, wordt het gemak
 Als digitale overheid maken we onze dienstverlening veiliger, efficiënter en beter beheersbaar door applicaties beter te 
 scheiden van gegevens en gegevens alleen bij de bron te beheren.
 
-[*Michel stelt voor om een visie van de eindsituatie te geven, bijvoobreeld: *]
+[*Michel stelt voor om een visie van de eindsituatie te geven, bijvoobreeld:*]
 
 Alle basisregistraties zijn over 3 jaar realtime te bevragen en over 5 jaar gebruikt de overheid geen lokale kopieën meer van gegevensbronnen.
 
 [*Michel stelt voor om een stappenplan te geven om naar deze eindsituatie toe te komen.*]
 
 ## Basisafspraken
-[*Hier kunnen we afspraken maken over waar/wanneer/hoe de overheid (REST) API's inzet om het bovenstaande doel uit het 
+[* Hier kunnen we afspraken maken over waar/wanneer/hoe de overheid (REST) API's inzet om het bovenstaande doel uit het 
 manifest te bereiken. En verder bijvoorbeeld:*
  - *Als de overheid REST APIs inzet, doen we dat volgens de [REST API Design Rules](https://docs.geostandaarden.nl/api/API-Designrules/).*
   - *De beveiliging van REST APIs doet de overheid met het [NL GOV Assurance Profile for OAuth 2.0](https://docs.geostandaarden.nl/api/oauth/).*
