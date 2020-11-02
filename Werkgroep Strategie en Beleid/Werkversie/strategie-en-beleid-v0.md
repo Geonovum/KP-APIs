@@ -31,7 +31,9 @@ schuiven van de ene registratie naar de andere?
 Als je met een auto de weg op wilt moet je je rijvaardigheid bewijzen bij de centrale overheid, bij het [CBR](https://www.cbr.nl/). Bij het CBR moet je je legitimeren met een identiteitsbewijs (paspoort of identiteitsbewijs) dat je gemeente uitgeeft. En als je de weg op gaat moet je het rijbewijs bij je hebben zodat de politie je rijvaardigheid kan controleren. Dit is geen toonbeeld van efficiëntie. Het rijbewijs zou een verwijzing moeten zijn naar een gegevensbron waarin je rijvaardigheid is vastgelegd. De politie kan dit direct controleren bij de bron, en je kan deze gegevens ook online delen. En het CBR zou het rijbewijs direct kunnen sturen naar het adres wat bekend is bij de gemeente.
 
 ### Voorbeeld: regie op gegevens
+
 [*Voorbeeld van Paul.*]
+
 De [Wet bescherming persoonsgegevens](https://wetten.overheid.nl/BWBR0011468/2018-05-01) (Wrp) en z'n opvolger, de [Algemene verordening gegevensbescherming](https://eur-lex.europa.eu/legal-content/NL/TXT/HTML/?uri=CELEX:32016R0679&from=NL) (AVG) geven ons al bijna twintig jaar recht op inzage en correctie van de gegevens die de overheid over ons verzamelt en beheert. Dit betekent dat je als burger het recht hebt om te weten welke persoonsgegevens de overheid over je heeft vastgelegd en welke gegevens de overheid heeft gebruikt en uitgewisseld voor welk doel.
 
 In de praktijk kan de overheid vaak niet naar behoren voldoen aan dit recht. Als je aan je gemeente vraagt welke instanties je persoonsgegevens uit de BRP hebben geraadpleegd, kan je meestal op niet meer rekenen dan een uitdraai van het logbestand uit het lokale ICT systeem. Zo'n logbestand is een lange lijst termen en codes waar je weinig aan hebt als je het ICT systeem niet kent. En dan weet je nog niet wie er in het centrale BRP bij je gegevens geweest is. Daarvoor moet je dan weer bij de RvIG zijn.
