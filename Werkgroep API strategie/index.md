@@ -24,7 +24,7 @@ Binnen de werkgroep wordt er door verschillende subgroepen gewerkt aan de extens
 > - Tijdreizen (trekker Tony Sloos)
 > - Post/Put/Patch/Delete (trekker Henri Korver)
 
-Wil je bijdragen aan de uitwerking van deze onderwerpen dan kun je je melden bij de trekker van het onderwerp of contact opnemen met Jasper Roes.
+Wil je bijdragen aan de uitwerking van deze onderwerpen dan kun je je melden bij de trekker van het onderwerp of contact opnemen met Jasper Roes (jasper.roes@kadaster.nl).
 
 ### Discussies
 
@@ -35,4 +35,12 @@ De subgroepen zullen (de samenvatting van) hun discussies over het onderwerp waa
 ### Bijeenkomsten
 
 De werkgroep komt vier keer per jaar bijeen. Zolang de maatregelen tegen de COVID-19 pandemie van kracht zijn, vinden de bijeenkomsten online plaats.
+
+De geplande bijeenkomsten in 2021 zijn:
+- woensdag 10 februari van 10.00u tot 11.30u
+- woensdag 12 mei van 10.00u tot 11.30u
+- woensdag 8 september van 10.00u tot 11.30u
+- woensdag 15 december van 10.00u tot 11.30u
+
+### Wil je aanhaken bij de werkgroep neem dan contact op met Jasper Roes (jasper.roes@kadaster.nl)
 
