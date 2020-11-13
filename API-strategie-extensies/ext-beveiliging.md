@@ -153,26 +153,6 @@ https://tools.ietf.org/html/rfc7231#section-6.5.4
 
 An additional advantage of the stategy that establishes whether there is authorisation is the opportunity to separate access control logic from business logic.-->
 
-#### Public identifiers
-
-Publicly visible identifiers (IDs), that are frequently part of URLs a RESTful APIs shouldn't expose the underlying mechanisms (like number generations) and should certainly not have business logic.
-
-> **UUID**
->
-> Preferrably use UUIDs (Universally-Unique IDentifier) for confidential resources. This is a 16-bytes (128-bits) binary representation, a sequence of 32 hexadecimal digits, in five groups separated by hyphens and consists of 36 characters (32 alphanumerical characters and 4 hyphens]):
->
-> `550e8400-e29b-41d4-a716-446655440000`
-> 
-> To ensure UUIDs are shorter and guaranteed *web-safe*, be advised to only use the base64-url-encoded variant consisting of 22 characters. The above UUID looks like this:
->
-> `VQ6EAOKbQdSnFkRmVUQAAA`
->
-> The following linux commands shows an example of how the hex string is transformed to bytes and then to the base64-url-encoded required format:
->
-> `echo -n '550e8400-e29b-41d4-a716-446655440000' | sed 's/-//g' | xxd -r -p|base64 -w 0 | sed 's/+/-/g'|sed 's/\//_/g'|sed 's/=//g'`
->
-
-
 
 ### security for webbrowser API clients
 When webbrowsers can be clients for an API these APIs should be compatible with the following policies and standards.
