@@ -2,6 +2,15 @@
 
 <p class='warning'>This extension is in development and may be modified at any time.</p>
 
+### Introduction
+This section describes security principles, concepts and technologies to apply when working with APIs. Controls need to be applied for the security objectives of integrity, confidentiality and availability of the API and services and data provided thereby.
+
+The scope of this section is limited to generic security controls that directly influence the visible parts of an API. Effectively, only security standards directly applicable to interactions are discussed here.
+In order to meet the complete security objectives, every implementer must also apply a range of controls not mentioned in this section.
+
+Note: security controls for signing and encrypting of application level messages will be part of a separate extension, [Signing and Encryption](#signing-and-encryption).
+
+### Transport security
 APIs can be accessed from any location on the internet. Information is only exchanged over TLS-based encrypted connections. No exceptions, so everywhere and always. One should follow [the latest NCSC huidelines for TLS](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls)
 
 > [API principle: Encrypt connections using TLS following the latest NCSC guidelines](#api-11)
