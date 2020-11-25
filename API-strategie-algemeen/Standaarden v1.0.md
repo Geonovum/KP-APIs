@@ -13,7 +13,7 @@ https://publicatie.centrumvoorstandaarden.nl/api/adr/ (stabiele versie)
 ### Oorsprong standaard
 De API designrules vinden hun oorsprong in de ["API strategie" van het digitaal stelsel omgevingswet (DSO)](https://aandeslagmetdeomgevingswet.nl/digitaal-stelsel/aansluiten/standaarden/api-en-uri-strategie/). Bij het opstellen van de API Designrules is de DSO API strategie het startpunt geweest en heeft de werkgroep API strategie (onder leiding van Jasper Roes) gekeken hoe deze toepasbaar gemaakt kunnen worden voor de hele Nederlandse publieke sector.
 ### Status bij forum standaardisatie
-De API designrules standaard is op 3 oktober 2019 door de stuurgroep van het Kennisplatform API's aangemeld voor opname op de "pas toe of leg uit" van het [forum standaardisatie](https://www.forumstandaardisatie.nl/lijst-open-standaarden/in_lijst/verplicht-pas-toe-leg-uit). Er zullen nog een aantal stappen moeten volgen in de procedure voordat duidelijk is of en onder welke voorwaarden de standaard daadwerkelijk wordt opgenomen.
+De API designrules standaard is op 9 juli 2020 goedgekeurd door het OBDO voor opname op de "pas toe of leg uit lijst" van het [forum standaardisatie](https://www.forumstandaardisatie.nl/lijst-open-standaarden/in_lijst/verplicht-pas-toe-leg-uit). 
 #### Werkingsgebied standaard
 Bij aanmelding was het beoogd organisatorisch werkingsgebied:
 Overheden, semi-overheden en instellingen uit de publieke sector
@@ -53,7 +53,9 @@ https://github.com/Logius-standaarden/OAuth-NL-profiel/blob/master/Additional%20
 Het opstellen van deze standaard is voortgekomen uit het Expert advies OAuth [[Expert]]. Daarin wordt aangeraden eerst een nederlands profiel op stellen alvorens OAuth op de pas toe of leg uit lijst van het forum standaardisatie te plaatsen. Het maken van dit Nederlandse profiel is opgepakt door de werkgroep Authenticatie/Autorisatie van het Kennisplatform API's.
 
 ### Status bij forum standaardisatie
-De standaard OAuth is momenteel nog [in behandeling bij het forum standaardisatie](https://www.forumstandaardisatie.nl/open-standaarden/lijst/in-behandeling). De verwachting is dat de internationale standaard OAuth op [de lijst met aanbevolen standaarden](https://www.forumstandaardisatie.nl/open-standaarden/lijst/aanbevolen) komt en het Nederlands profiel OAuth op de ["pas toe of leg uit" lijst](https://www.forumstandaardisatie.nl/open-standaarden/lijst/verplicht) komt.
+Het Nederlands OAuth profiel is op 9 juli 2020 goedgekeurd door het OBDO voor opname op de "pas toe of leg uit lijst" van het [forum standaardisatie](https://www.forumstandaardisatie.nl/lijst-open-standaarden/in_lijst/verplicht-pas-toe-leg-uit). 
+De internationale standaard OAuth is opgenomen op [de lijst met aanbevolen standaarden](https://www.forumstandaardisatie.nl/open-standaarden/lijst/aanbevolen).
+
 #### Werkingsgebied standaard
 
 Als organisatorisch werkingsgebied wordt in het expert advies geadviseerd:
