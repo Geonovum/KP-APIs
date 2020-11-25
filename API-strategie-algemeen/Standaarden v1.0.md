@@ -4,9 +4,11 @@ Binnen de Nederlandse publieke sector zijn meerdere standaarden die betrekking h
 ## API Designrules (Nederlandse API Strategie IIa)
 Deze sectie beschrijft de status en uitgangspunten voor de standaard "API Designrules". De standaard is een op zichzelfstaand document en is hier te vinden:
 
-https://geonovum.github.io/API-Designrules/ (werkversie)
+<!-- https://geonovum.github.io/API-Designrules/ (werkversie) -->
+https://logius-standaarden.github.io/API-Design-Rules/ (werkversie)
 
-https://docs.geostandaarden.nl/api/API-Designrules/ (stabiele versie)
+<!-- https://docs.geostandaarden.nl/api/API-Designrules/ (stabiele versie) -->
+https://publicatie.centrumvoorstandaarden.nl/api/adr/ (stabiele versie)
 
 ### Oorsprong standaard
 De API designrules vinden hun oorsprong in de ["API strategie" van het digitaal stelsel omgevingswet (DSO)](https://aandeslagmetdeomgevingswet.nl/digitaal-stelsel/aansluiten/standaarden/api-en-uri-strategie/). Bij het opstellen van de API Designrules is de DSO API strategie het startpunt geweest en heeft de werkgroep API strategie (onder leiding van Jasper Roes) gekeken hoe deze toepasbaar gemaakt kunnen worden voor de hele Nederlandse publieke sector.
@@ -39,10 +41,12 @@ Een toepassingsgebied (nog) niet van toepassing.
 
 Deze sectie beschrijft de status en uitgangspunten voor het Nederlands profiel OAuth. het profiel zelf is een op zichzelfstaand document.
 Het Nederlands profiel OAuth is hier te vinden:
-https://geonovum.github.io/KP-APIs-OAuthNL/#dutch-government-assurance-profile-for-oauth-2-0
-In aanvulling hierop is er een document dat de verschillen met iGOV kort samenvat en voorziet van rationales.
-https://github.com/Geonovum/KP-APIs-OAuthNL/blob/master/Additional%20specification%20and%20constraints%20of%20iGov-NL%20to%20the%20iGov%20profile.md
+<!-- https://geonovum.github.io/KP-APIs-OAuthNL/#dutch-government-assurance-profile-for-oauth-2-0 -->
+https://publicatie.centrumvoorstandaarden.nl/api/oauth/static.html
 
+In aanvulling hierop is er een document dat de verschillen met iGOV kort samenvat en voorziet van rationales.
+<!-- https://github.com/Geonovum/KP-APIs-OAuthNL/blob/master/Additional%20specification%20and%20constraints%20of%20iGov-NL%20to%20the%20iGov%20profile.md -->
+https://github.com/Logius-standaarden/OAuth-NL-profiel/blob/master/Additional%20specification%20and%20constraints%20of%20iGov-NL%20to%20the%20iGov%20profile.md
 
 ### Oorsprong standaard
 
