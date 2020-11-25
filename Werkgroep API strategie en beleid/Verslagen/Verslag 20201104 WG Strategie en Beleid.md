@@ -18,7 +18,7 @@ René Bliekendaal (Centric), Jascha Gregorowitsch (Enable-U), Richard Janssen (R
 Er waren geen aanvullingen of opmerkingen op het [verslag van de virtuele bijeenkomst op 31 augustus 2020.](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20Strategie%20en%20Beleid/Verslagen/Verslag%2020200831%20WG%20Strategie%20en%20Beleid.md) 
 
 ## Doelgroep
-Han merkt op dat wij de doelgroep en output van deze werkgroep in voorgaande bijeenkomsten niet expliciet benoemd hebben. Daarom werd dit kort besproken.
+In de voorgaande bijeenkomsten werd de doelgroep en output van deze werkgroep niet expliciet benoemd. Daarom werd dit kort besproken.
 
 De doelgroep van het document over strategie en beleid bestaat uit **bestuurders**, **beleidsmakers** en **managers**. Want deze groep beslist uiteindelijk of een organisatie inzet op het vernieuwen van de gegevensuitwisseling, en stelt daar de middelen voor beschikbaar. En juist bij bestuurders zit vaak weerstand tegen verandering.
 
