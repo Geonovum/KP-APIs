@@ -16,6 +16,8 @@ Architectuur, Authenticatie en Autorisatie, Communicatie en Beleid, en Gebruiker
 
 ## Leeswijzer
 
+De API strategie bestaat uit een [drietal verschillende documenten](https://www.geonovum.nl/themas/kennisplatform-apis#APIStrategie).
+
 Dit document bevat twee delen, waarbij het eerste deel "niet-technisch" en het tweede deel "technisch" van aard is.
 In het eerste deel zitten de hoofdstukken [Communicatie en Beleid](#communicatie-en-beleid) 
 en [Gebruikerswensen](#inspelen-op-gebruikerswensen-de-sleutel-tot-gebruik).
