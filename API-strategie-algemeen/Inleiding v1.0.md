@@ -16,14 +16,6 @@ Architectuur, Authenticatie en Autorisatie, Communicatie en Beleid, en Gebruiker
 
 ## Leeswijzer
 
-Dit document is onderdeel van de "Nederlandse API Strategie" 
-
-| Deel  | Omschrijving                                    | Status          | Link                                                         | 
-|-------|-------------------------------------------------| ----------------|--------------------------------------------------------------|
-| **I** | **Algemene beschrijving van de API Strategie**  | **Informatief** | https://docs.geostandaarden.nl/api/API-Strategie/            |
-| IIa   | Standard for designing APIs                     | Normatief       | https://docs.geostandaarden.nl/api/API-Designrules/          |
-| IIb   | Extensie van de Standaard voor API ontwerp      | Informatief     | https://docs.geostandaarden.nl/api/API-Strategie-ext/        |
-
 Dit document bevat twee delen, waarbij het eerste deel "niet-technisch" en het tweede deel "technisch" van aard is.
 In het eerste deel zitten de hoofdstukken [Communicatie en Beleid](#communicatie-en-beleid) 
 en [Gebruikerswensen](#inspelen-op-gebruikerswensen-de-sleutel-tot-gebruik).
