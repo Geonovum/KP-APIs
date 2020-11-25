@@ -4,9 +4,11 @@ Verslag van de virtuele bijeenkomst van **4 november 2020**
 ## Aanwezig
 
 Publieke sector, op alfabetische volgorde van organisatie:
+
 Merijn Koster (Belastingdienst), Ian Duijff (CJIB), Han Zuidweg (Forum Standaardisatie), Jeroen Temme en Michiel Trimpe (gemeente Amsterdam), Edward Nuiten (gemeente Rotterdam), Arjen Monster (gemeente Den Haag), Koos Boersma (Informatiehuis Water), Frans Smit (Inspectie Overheidsinformatie en Erfgoed), Pieter Hering (Logius), Gino Laan (minBZK), Liesbeth (RvIG), Martin van der Plas (VNG)
 
 Private sector, op alfabetische volgorde naar organisatie:
+
 Jan de Blaaij (Centric), Frank Arts (Enable-U), Marcel Krassenburg (MKIdee)
 
 ## Afgemeld
