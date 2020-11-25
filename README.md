@@ -6,11 +6,6 @@ Hier vind je ook de mogelijkheid je aan te melden voor de werkgroepen, het slack
 De API strategie is opgebouwd uit een drietal documenten, en er is een separaat document gewijd aan
 authenticatie en autorisatie  
 
-| Deel | Omschrijving en Link                                                                  
-|------|--------------------------------------------------------------------------------------------------------------|
-| I    | [API Strategie Algemeen](https://geonovum.github.io/KP-APIs/API-strategie-algemeen/)                         |
-| IIa  | [API Designrules](https://logius-standaarden.github.io/API-Design-Rules/)                                    |
-| IIb  | [API Designrules Extensions](https://geonovum.github.io/KP-APIs/API-strategie-extensies/)                    |
-|      | [NL GOV Assurance profile for OAuth 2.0](https://publicatie.centrumvoorstandaarden.nl/api/oauth/static.html) |
+De API strategie bestaat uit een [drietal verschillende documenten](https://www.geonovum.nl/themas/kennisplatform-apis#APIStrategie).
 
 Voor de editors van de bestanden op GitHub: zie de [HowTo](./HowTo.md) in deze map.
