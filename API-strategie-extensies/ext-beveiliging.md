@@ -163,17 +163,55 @@ https://tools.ietf.org/html/rfc7231#section-6.5.4
 An additional advantage of the stategy that establishes whether there is authorisation is the opportunity to separate access control logic from business logic.-->
 
 
-### security for webbrowser API clients
-When webbrowsers can be clients for an API these APIs should be compatible with the following policies and standards.
+### HTTP-level Security
+The guidelines and principles defined in this extensions are client agnostic. When implementing a client agnostic API, one should at least facilitate that multi-purpose generic HTTP-clients like browsers are able to securely interact with the API. When implementing an API for a specific client it is possible to limit measures as long as it ensures secure access for this specific client. Nevertheless it is adviced to review the follwing security measures, which are mostly inspired by the [OWASP REST Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html)
+
+#### Security Headers
+There are a number of security related headers that can be returned in the HTTP responses to instruct browsers to act in specific ways. However, some of these headers are intended to be used with HTML responses, and as such may provide little or no security benefits on an API that does not return HTML. The following headers should be included in all API responses:
+
+| Header                                            | Rationale                                                                                              |
+|---------------------------------------------------|--------------------------------------------------------------------------------------------------------|
+| `Cache-Control: no-store`                         | Prevent sensitive information from being cached.                                                       |
+| `Content-Security-Policy: frame-ancestors 'none'` | To protect against drag-and-drop style clickjacking attacks.                                           |
+| `Content-Type`                                    | To specify the content type of the response. This should be `application/json` for JSON responses.     |
+| `Strict-Transport-Security`                       | To require connections over HTTPS and to protect against spoofed certificates.                         |
+| `X-Content-Type-Options: nosniff`                 | To prevent browsers from performing MIME sniffing, and inappropriately interpreting responses as HTML. |
+| `X-Frame-Options: DENY`                           | To protect against drag-and-drop style clickjacking attacks.                                           |
+| `Access-Control-Allow-Origin`                     | To relax the 'same origin' policy and allow cross-origin access. See CORS-policy below                 |
+
+
+The headers below are only intended to provide additional security when responses are rendered as HTML. As such, if the API will never return HTML in responses, then these headers may not be necessary. However, if there is any uncertainty about the function of the headers, or the types of information that the API returns (or may return in future), then it is recommended to include them as part of a defence-in-depth approach.
+
+| Header                                        | Rationale                                                              |
+|-----------------------------------------------|------------------------------------------------------------------------|
+| `Content-Security-Policy: default-src 'none'` | The majority of CSP functionality only affects pages rendered as HTML. |
+| `Feature-Policy: 'none'`                      | Feature policies only affect pages rendered as HTML.                   |
+| `Referrer-Policy: no-referrer`                | Non-HTML responses should not trigger additional requests.             |
 
 #### CORS-policy
+Modern web browsers use Cross-Origin Resource Sharing (CORS) to minimize the risk associated with cross-site HTTP-requests. By default browsers only allow 'same origin' access to resources. This means that responses on requests to another `[scheme]://[hostname]:[port]` than the `Origin` request header of the initial request will not be processed by the browser. To enable cross-site requests API's can return a `Access-Control-Allow-Origin` response header. It is recommended to use a whitelist to determine the validity of different cross-site request. To do this check the `Origin` header of the incoming request and check if the domain in this header is on the whitelist. If this is the case, set the incoming `Origin` header in the `Access-Control-Allow-Origin` response header.
 
-Web browsers implement a so-called "same origin policy", an important security conect to prevent requests go to another domain than where they are provided. While this policy is effective to prevent requests in different domains, it prevents ligitimate interaction between an API and clients from a known and trusted origin. 
+Using a wildcard `*` in the `Access-Control-Allow-Origin` response header is not recommended, because it disables CORS-security measures. Only for an open API which has to be accessed by numerous other websites this is appropriate.
 
-> [API principle: Use CORS to control access](#api-50)
+#### Restrict HTTP methods
+Apply a whitelist of permitted HTTP Methods e.g. `GET`, `POST`, `PUT`. Reject all requests not matching the whitelist with HTTP response code `405 Method not allowed`.
 
-#### CSP-policy
-Content Security Policy is a standard that allows API (and website) providers to define approved origins of contents that are accesable through an API but are not provided from the same origin as the API itself. When multiple origins are needed this standard can be use as a mechanism to explicitly provide exceptions to the CORS-policy.
+#### Validate content types
+A REST request or response body should match the intended content type in the header. Otherwise this could cause misinterpretation at the consumer/producer side and lead to code injection/execution.
 
-#### Subresource integrity
-Subresource integrity (SRI) is a standard that can be used to validate content delivered by a third party. It defines trusted location and a hash of external content. This allows a client to verify the integrity and trustworthyness of external content accessed through an API.
+- Reject requests containing unexpected or missing content type headers with HTTP response status `406 Unacceptable` or `415 Unsupported Media Type`.
+- Avoid accidentally exposing unintended content types by explicitly defining content types e.g. Jersey (Java) `@consumes("application/json"); @produces("application/json")`. This avoids XXE-attack vectors for example.
+
+It is common for REST services to allow multiple response types (e.g. `application/xml` or `application/json`, and the client specifies the preferred order of response types by the Accept header in the request.
+- Do NOT simply copy the `Accept` header to the `Content-type` header of the response.
+- Reject the request (ideally with a `406 Not Acceptable` response) if the Accept header does not specifically contain one of the allowable types.
+
+Services including script code (e.g. JavaScript) in their responses must be especially careful to defend against header injection attack.
+- Ensure sending intended content type headers in your response matching your body content e.g. `application/json` and not `application/javascript`.
+
+#### HTTP Return Code
+HTTP defines status codes. When designing a REST API, don't just use `200` for success or `404` for error. Always use the semantically appropriate [status code](https://httpstatuses.com/) for the response. 
+
+#### Error handling
+- Respond with generic error messages - avoid revealing details of the failure unnecessarily.
+- Do not pass technical details (e.g. call stacks or other internal hints) to the client.
