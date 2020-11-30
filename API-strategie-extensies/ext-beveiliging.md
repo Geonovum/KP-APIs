@@ -6,21 +6,63 @@
 This section describes security principles, concepts and technologies to apply when working with APIs. Controls need to be applied for the security objectives of integrity, confidentiality and availability of the API and services and data provided thereby.
 
 The scope of this section is limited to generic security controls that directly influence the visible parts of an API. Effectively, only security standards directly applicable to interactions are discussed here.
-In order to meet the complete security objectives, every implementer must also apply a range of controls not mentioned in this section.
+In order to meet the complete security objectives, every implementer MUST also apply a range of controls not mentioned in this section.
 
 Note: security controls for signing and encrypting of application level messages will be part of a separate extension, [Signing and Encryption](#signing-and-encryption).
 
 ### Transport security
-APIs can be accessed from any location on the internet. Information is only exchanged over TLS-based encrypted connections. No exceptions, so everywhere and always. One should follow [the latest NCSC huidelines for TLS](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls)
+APIs can be accessed from any location on the internet. Information is only exchanged over TLS-based encrypted connections. No exceptions, so everywhere and always. One should follow [the latest NCSC guidelines for TLS](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls)
 
 > [API principle: Encrypt connections using TLS following the latest NCSC guidelines](#api-11)
 
+### API usage patterns
+Because security is about compromises one should first be aware of what usage patterns need to be supported.
+
+#### Session based API access pattern
+While this method is sometimes considered legacy it is in common use. Typical characteristics are:
+* The access to the API is strictly bound to a end user session
+* The session ends when the end user logs out
+* The end users credentials are exchanged for a token, usually stored in a cookie
+* tokens have a limited lifetime
+* tokens are no longer valid when the end user logs out
+
+In most cases the tokens used are a reference to session data. Retrieving session data can be expensive in particular when microservices are used. The obvious solution to this problem is caching and the choice you have to make is how and when you invalidate cache entries. You typically want the cash entry related to a session to be invalidated when the end user logs out of the application.
+
+One important thing to considder in this pattern is that the token represents the identity the end user. Anyone or anything in possession of this token has the same permissions as the end user within the same security domain. This is breaking the least privilege principle.
+
+Because this pattern is more a standard web application pattern we refer to [the latest NCSC guidelines on the subject of web application security](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-webapplicaties) for security considerations.
+
+We considder this method to be outside the scope of this document and refer to the aforementioned NCSC document. for security considerations.
+
+#### mTLS or Client Certificate based API access pattern
+As of this writing, this method is to be includes in an upcoming release of the Open API specification. It is however widely used for both end user, B2B and a2a patterns.
+
+The important thing to remember when using certificates is that the certificate only identifies the requester. During authentication we typically do a lookup of some subject information in a identity store to retrieve the requesters permissions. In PKIOverheid certificates we typically use the subject.serialNumber for this purpose.
+The problem here is that the identity identified by the certificate may have significantly more permissions than required by the client doing the request. This is breaking the least privilege principle.
+
+Another use case for the use of Client certificates is in the world of microservices where we want to control access to services. Terms used are zero trust, micro segmentation and service mesh. Proposed standards are [SPIFFE](https://spiffe.io). The proposed standard is not limited to the use of Client certificates but also describes the use of JWT's. This topic is outside the scope of this document.
+
+#### OAuth 2.0 token based API access pattern
+The important thing te remember about OAuth is its intended use. In Oauth the end user grants permissions to a client to access resources on its behalf. This grant is stored at the authorization server. After permissions are granted the client can perform is duties with or without the presence of an end user. To deny the client access to the end users resources, the end user MUST remove the grant at authorization Server.
+
+While both the end user and the client need to identify themselves OAuth typically does not use sessions or support logout. It's sole purpose is solving the problem of authorizing a client with the least amount of privileges required.
+
+OAuth is usually extended with OpenID Connect or OIDC. OIDC adds identity and identity federation.
+
+When using OAuth within the Dutch Government sector, you are required to use [the OAuth 2.0 profile for the Dutch Government](https://docs.geostandaarden.nl/api/oauth/). In the security section you will find security considerations using the OAuth 2.0 profile for the Dutch Government.
+
+The flow described here is what is known as the Authorization Code Grant. This is currently the only Grant type supported by the Dutch OAuth 2.0 profile.
+
+#### JWT based API access pattern
+To the resource server, serving the API, this method appears identical to the OAuth 2.0 based API access pattern because we use JWT access tokens in the Dutch Government OAuth 2.0 profile. In this pattern the resource server MUST completely rely on the information provided in the JWT. It has no notion of an end user session, client grant. It performs te requested action based on the request an de provided token for as long as the token is valid. 
+
 ### Identification
 
-For Identification of individual users always use a pseudonym to avoid exposing sensitive information about a user. 
+**End Users and Organizations**
+For Identification of individual users use a pseudonym when possible to avoid exposing sensitive information about a user. 
 This pseudonym can optionally be translatable to actual personal information in a separate service, but access to this service should be tightly controlled and limited only to cases where there is a legal need to use this information.
 
-Use of a Burgerservice nummer(BSN) is only allowed when the organization has the right to do this. Even when an orgnization has the right to do this it is still reccomended to use a pseudonym that is only translatable to a BSN for a limited number of services/users within the organization. 
+Use of a Burger Service Number (BSN) is only allowed when the organization has permission to do so. Even when an organization has permission to use BSN's it is still recommended to use a pseudonym that is only translatable to a BSN for a limited number of services/users within the organization. 
 An example of this can be found in the [architecture of the "digitaalstelsel omgevingswet"](https://aandeslagmetdeomgevingswet.nl/publish/library/219/dso_-_gas_-_knooppunt_toegang_iam.pdf)
 
 For identifying government organizations use the "organisatie-identificatienummer" (OIN)
@@ -30,6 +72,11 @@ OINs can be queried using the COR API https://portaal.digikoppeling.nl/registers
 HRNs are derived from the RSIN which can be queried in the "Handels register" https://developers.kvk.nl/documentation/search-v2
 
 In the EU context use the eIDAS legal identifier. for more information see https://ec.europa.eu/digital-single-market/en/trust-services-and-eid
+
+**Clients**
+The authorization server issues the registered client a client identifier - a unique string representing the registration information provided by the client. The client identifier is not a secret; it is exposed to the resource owner and MUST NOT be used alone for client authentication. The client identifier is unique to the authorization server.
+
+Authorization servers SHOULD NOT allow clients to choose or influence their client_id value.
 
 ### Authentication
 Authentication determines whether individuals and applications accessing APIs are really who they say they are. In the context of APIs, authentication is applicable to the *End-User*, i.e. the individual on behalf of whom API resources are being accessed, and to the *Client*, i.e. the application that accesses the API resources on behalf of the end-user.
@@ -45,7 +92,7 @@ SAML is a standard for securely communicating assertions about an authenticated 
 SAML 2.0 is included on the list of required standards by Forum Standaardisatie. It is expected, however, that the following standards will become preferred over SAML in Use Cases that involve access to API resources.
 
 **OAuth**
-Although technically an authorization method, OAuth is  used for End-Users authenticating themselves and providing the Client with an Access Token upon succesful End-User (and Client) authentication. This Access Token can be used to make authorised API requests. Using OAuth is appropriate when the Client does not need to know the identity of the authenticated End-User.
+Although technically an authorization method, OAuth is used for End-Users authenticating themselves and providing the Client with an Access Token upon successful End-User (and Client) authentication. This Access Token can be used to make authorized API requests. Using OAuth is appropriate when the Client does not need to know the identity of the authenticated End-User.
 
 A Dutch OAuth 2.0 Assurance profile is included on the list of required standards by Forum Standaardisatie. The latest version of the profile can be found at https://docs.geostandaarden.nl/api/oauth/.
 
@@ -57,27 +104,46 @@ A Dutch OpenID Connect Assurance profile is currently being drafted. It is expec
 **Out of band**
 For some Use Cases it may be appropriate to distribute Access Tokens using an Out of band authentication method. Out of band authentication is generally appropriate when API resources are accessed via an application that already provides an authentication method. Based on an End-User authentication performed, the application subsequently requests an Access Token for API access from the Identity Provider via a secure channel.
 
+Depending on the technology used by the applications accessing the API the Access Token may technically be communicated using a secure cookie. This however limits the technologies used to create client applications.
+
+Using sessions and secure cookies is outside the scope of this document. For security considerations please refer to [the latest NCSC guidelines on the subject of web application security](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-webapplicaties). 
+
 #### Client authentication
-Authenticating the Client application that accesses API resources, being it on behalf of an End-User or in a system-to-system setting, is almost always required. Also, although listed separately, the abovementioned methods for End-User authentication require Client authentication.
+Authenticating the Client application that accesses API resources, being it on behalf of an End-User or in a system-to-system setting, is required when possible. Also, although listed separately, the aforementioned methods for End-User authentication require Client authentication.
+
+It is RECOMMENDED to use asymmetric (public-key based) methods for client authentication such as mTLS [RFC8705](https://www.rfc-editor.org/info/rfc8705) or "private_key_jwt" [OpenID](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication).
+
+[The OAuth 2.0 profile for the Dutch Government](https://docs.geostandaarden.nl/api/oauth/) REQUIRES the use of private_key_jwt for full clients, native clients with dynamically registered keys, and direct access clients as mentioned in this profile.
+
+The authorization server MUST require the use of TLS when sending requests using password authentication.
+
+Since this client authentication method involves a password, the authorization server MUST protect any endpoint utilizing it against brute force attacks.
 
 The following methods can be used for Client authentication.
 
+(allinea hieronder is suggestie van Jaron, die conflicteerd met de aanvulling van Martin)
 Note that Client authentication using HTTP Basic authentication or communicating client credentials in the request body are prone to credential theft and therefore not recommended and not listed as options below.
 
-**Mutual TLS authentication (mTLS)**
-Mutual TLS authentication is a feature of TLS with which the Client authenticates itself to the Server using its X.509 certificate. mTLS provides a strong Client authentication for server-based Clients and cannot be used with Native or User-Agent-based Clients that are not backed with a server.
 
-In contexts where Dutch (semi) governmental organisations are involved, the X.509 certificate used for Client authentication must be a PKIOverheid certificate. These are x509 certificates derived from a root certificate owned by the Dutch Government. for more information on PKIOverheid see https://www.logius.nl/diensten/pkioverheid.
+
+**Mutual TLS authentication (mTLS)**
+Mutual TLS authentication [RFC8705](https://www.rfc-editor.org/info/rfc8705), is a feature of TLS with which the Client authenticates itself to the Server using its X.509 certificate. mTLS provides a strong Client authentication for server-based Clients and cannot be used with Native or User-Agent-based Clients that are not backed with a server.
+
+In contexts where Dutch (semi) governmental organizations are involved, the X.509 certificate used for Client authentication MUST be a PKIOverheid certificate. These are x509 certificates derived from a root certificate owned by the Dutch Government. for more information on PKIOverheid see https://www.logius.nl/diensten/pkioverheid.
 
 In the API context, only Server or Services certificates should be used as these include an OIN/HRN for identification; Extended Validation certificates (as used for websites) do not include this identifier and are therefore not suitable to use with APIs.
 
 **Private key JWT**
-With Private key JWT authentication, the Client registers a public key with the Server and accompanies every API request with a JWT signed using this key. This Client Authentication method is part of the OAuth 2.0 and OpenID Connect standards for Clients authenticating to the token endpoint, but the use of Private key JWT Client authentication is not limited to these Use Cases.
+With Private key JWT authentication [OpenID](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication), the Client registers a public key with the Server and accompanies every API request with a JWT signed using this key. This Client Authentication method is part of the OAuth 2.0 and OpenID Connect standards for Clients authenticating to the token endpoint, but the use of Private key JWT Client authentication is not limited to these Use Cases.
 
-This authentication method may be used with Clients that are able to securely store private keys and sign JWTs with this key.
+This authentication method may be used with Clients that are able to securely store private keys and sign JWT's with this key.
 
-In contexts where Dutch (semi) governmental organisations are involved, the certificate used for signing the Private key JWTs must be a PKIOverheid certificate.
+In contexts where Dutch (semi) governmental organizations are involved, the certificate used for signing the Private key JWT's MUST be a PKIOverheid certificate.
 
+[The OAuth 2.0 profile for the Dutch Government](https://docs.geostandaarden.nl/api/oauth/) REQUIRES the use of private_key_jwt for full clients, native clients with dynamically registered keys, and direct access clients as mentioned in this profile.
+
+
+(hieronder volgen eerst twee authenticatie methode toevoegingen van Jaron, daarn twee van Martin)
 **Client Credentials using OAuth 2.0**
 In Use Cases where the Client is solely accessing API resources on behalf of itself, without requiring an End-User context, Client authentication using the OAuth 2.0 Client Credentials grant type can be appropriate. In such cases, the Server securely communicates Client credentials to the Client upon registration (e.g. via an API Developer portal) and the Client uses these credentials to obtain an Access Token from the Identity provider.
 
@@ -86,8 +152,25 @@ In Use Cases that involve Native and User-Agent based Clients, strong Client aut
 
 When dealing with Use Cases involving Native and User-Agent based Clients, the policies and standards described in [Section 4.4](#security-for-webbrowser-api-clients) should be followed, as well as best practices [[OAuth2.Browser-Based-Apps]] and [[RFC8252]], which are defined for use with OAuth but may be applicable for API communication in general.
 
+**Client Password**
+Clients in possession of a client password, also known as a client secret, MAY use the HTTP Basic authentication scheme as defined in [RFC2617](https://www.rfc-editor.org/info/rfc2617) to authenticate with the authorization server. The client identifier is encoded using the application/x-www-form-urlencoded encoding algorithm, and the encoded value is used as the username; the client secret is encoded using the same algorithm and used as the password. The authorization server MUST support the HTTP Basic authentication scheme for authenticating clients that were issued a client secret.
+
+Alternatively, the authorization server MAY support including the client credentials in the request-body using the following parameters:
+
+||||
+|-|-|-|
+|client_id:|REQUIRED|The client identifier issued to the client during the registration process|
+|client_secret:|REQUIRED|The client secret|
+
+Including the client credentials in the request-body using the two parameters is NOT RECOMMENDED and SHOULD be limited to clients unable to directly utilize the HTTP Basic authentication scheme (or other password-based HTTP authentication schemes). The parameters can only be transmitted in the request-body and MUST NOT be included in the request URI.
+
+**Other Authentication Methods**
+The authorization server MAY support any suitable authentication scheme matching its security requirements. When using other authentication methods, the authorization server MUST define a mapping between the client identifier (registration record) and authentication scheme.
+
+Some additional authentication methods are defined in the [OAuth Token Endpoint Authentication Methods](https://www.iana.org/assignments/oauth-parameters/oauth-parameters.xhtml#token-endpoint-auth-method) registry, and may be useful as generic client authentication methods beyond the specific use of protecting the token endpoint.
+
 ### Authorisation
-A RESTful API should not maintain the state at the server. The authentication and authorisation of a request cannot depend on sessions. Instead, a token has to be sent for each request. Token based authorization is recommended.
+It is RECOMMENDED to use Token bases access to API's. RESTful API should not maintain the state at the server. The authentication and authorization of a request should not depend on sessions. Instead, a token has to be sent for each request.
 
 > [API principle: Accept tokens as HTTP headers only](#api-13)
 
