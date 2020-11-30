@@ -92,12 +92,12 @@ SAML is a standard for securely communicating assertions about an authenticated 
 [SAML 2.0 is included on the list of required standards by Forum Standaardisatie](https://forumstandaardisatie.nl/open-standaarden/saml). It is expected, however, that the following standards will become preferred over SAML in Use Cases that involve access to API resources.
 
 **OAuth**
-Although technically an authorization method, [OAuth][[OAuth2]] is used for End-Users authenticating themselves and providing the Client with an Access Token upon successful End-User (and Client) authentication. This Access Token can be used to make authorized API requests. Using OAuth is appropriate when the Client does not need to know the identity of the authenticated End-User.
+Although technically an authorization method, OAuth[[OAuth2]] is used for End-Users authenticating themselves and providing the Client with an Access Token upon successful End-User (and Client) authentication. This Access Token can be used to make authorized API requests. Using OAuth is appropriate when the Client does not need to know the identity of the authenticated End-User.
 
 A Dutch OAuth 2.0 Assurance profile is included on the list of required standards by Forum Standaardisatie. The latest version of the profile can be found at https://publicatie.centrumvoorstandaarden.nl/api/oauth/.
 
 **OpenID Connect**
-[OpenID Connect][[OpenID.Core]] adds an identity layer on top of OAuth, making it into an actual authentication method. It enables API Clients to verify the identity of authenticated End-Users and to obtain profile information about the End-User.
+OpenID Connect[[OpenID.Core]] adds an identity layer on top of OAuth, making it into an actual authentication method. It enables API Clients to verify the identity of authenticated End-Users and to obtain profile information about the End-User.
 
 A Dutch OpenID Connect Assurance profile is currently being drafted. It is expected to be added to the list of required standards by Forum Standaardisatie. The latest version of the profile can be found at https://logius.gitlab.io/oidc/.
 
@@ -121,7 +121,7 @@ Since this client authentication method involves a password, the authorization s
 
 The following methods can be used for Client authentication.
 
-<p class='warning'>allinea hieronder is suggestie van Jaron, die conflicteerd met de aanvulling van Martin)</p>
+<p class='warning'>De zin hieronder is een suggestie van Jaron, die conflicteerd mogelijk met de aanvulling van Martin</p>
 
 Note that Client authentication using HTTP Basic authentication or communicating client credentials in the request body are prone to credential theft and therefore not recommended and not listed as options below.
 
@@ -144,7 +144,7 @@ In contexts where Dutch (semi) governmental organizations are involved, the cert
 [The OAuth 2.0 profile for the Dutch Government](https://publicatie.centrumvoorstandaarden.nl/api/oauth/) REQUIRES the use of private_key_jwt for full clients, native clients with dynamically registered keys, and direct access clients as mentioned in this profile.
 
 
-<p class='warning'>hieronder volgen eerst twee authenticatie methode toevoegingen van Jaron, daarn twee van Martin</p>
+<p class='warning'>hieronder volgen eerst twee authenticatie methode toevoegingen van Jaron, daarna twee van Martin</p>
 
 **Client Credentials using OAuth 2.0**
 In Use Cases where the Client is solely accessing API resources on behalf of itself, without requiring an End-User context, Client authentication using the OAuth 2.0 Client Credentials grant type can be appropriate. In such cases, the Server securely communicates Client credentials to the Client upon registration (e.g. via an API Developer portal) and the Client uses these credentials to obtain an Access Token from the Identity provider.
