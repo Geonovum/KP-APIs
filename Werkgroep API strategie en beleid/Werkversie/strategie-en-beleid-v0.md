@@ -46,9 +46,9 @@ Als de overheid gegevens bij de bron gaat beheren en ontsluiten, wordt het gemak
 
 ### Voorbeeld: publiekrechtelijke beperkingen
 
-[*Frans suggereerde het voorbeeld van de [Basisregistratie Kadaster publiekrechtelijke beperkingen](https://www.kadaster.nl/zakelijk/registraties/landelijke-voorzieningen/wkpb-wordt-brk-pb/beter-kenbaar-en-brk-pb) die het oude systeem voor kenbaarheid publiekrechtelijke beperkingen vanaf 2021 gaat vervangen. Hiermee wordt onder andere voorkomen dat gegevens zowel door het Kadaster als door gemeenten worden bewaard, en tussen de verschillende systemen gekopieerd moeten worden.
+[ *Frans suggereerde het voorbeeld van de [Basisregistratie Kadaster publiekrechtelijke beperkingen](https://www.kadaster.nl/zakelijk/registraties/landelijke-voorzieningen/wkpb-wordt-brk-pb/beter-kenbaar-en-brk-pb) die het oude systeem voor kenbaarheid publiekrechtelijke beperkingen vanaf 2021 gaat vervangen. Hiermee wordt onder andere voorkomen dat gegevens zowel door het Kadaster als door gemeenten worden bewaard, en tussen de verschillende systemen gekopieerd moeten worden.
 
-Verder noemde Frans het portaal [ruimtelijkeplannen.nl](https://www.ruimtelijkeplannen.nl/) als mogelijk voorbeeld.*]
+Verder noemde Frans het portaal [ruimtelijkeplannen.nl](https://www.ruimtelijkeplannen.nl/) als mogelijk voorbeeld.* ]
 
 ## Visie en stappenplan
 Als digitale overheid maken we onze dienstverlening veiliger, efficiënter en beter beheersbaar door applicaties beter te 
