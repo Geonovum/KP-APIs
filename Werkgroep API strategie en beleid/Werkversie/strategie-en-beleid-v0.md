@@ -10,6 +10,9 @@ basisregistraties en andere gegevensbronnen. De huidige situatie brengt een aant
 4. De huidige systemen en koppelingen kunnen afhankelijkheid van leveranciers in de hand werken.
 
 ### Voorbeeld: verhuizing naar een andere gemeente
+
+[ *Liesbeth en Martin stellen dat dit geen passend voorbeeld is. Verwijderen? Wel zijn er meldingen dat sommige gemeenten tot wel 10 kopieën van de GBA/BRP bijhouden voor verschillende applicaties. Misschien kunnen we daar iets mee?* ]
+
 Als je gaat verhuizen van gemeente A naar gemeente B, dan moet je je inschrijven bij de gemeente B. Achter de schermen 
 komt er dan een ingewikkelde gegevensstroom op gang.
 
