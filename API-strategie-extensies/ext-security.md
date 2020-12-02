@@ -1,4 +1,4 @@
-## API Security
+## Security
 
 <p class='warning'>This extension is in development and may be modified at any time.</p>
 
@@ -13,7 +13,11 @@ Note: security controls for signing and encrypting of application level messages
 ### Transport security
 APIs can be accessed from any location on the internet. Information is only exchanged over TLS-based encrypted connections. No exceptions, so everywhere and always. One should follow [the latest NCSC guidelines for TLS](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls)
 
-> [API principle: Encrypt connections using TLS following the latest NCSC guidelines](#api-11)
+<div class="rule" id="api-11">
+  <p class="rulelab"><strong>API-11</strong>: Encrypt connections using TLS</p>
+  <p>Encrypt connections using TLS following the latest NCSC guidelines [[NCSC.TLS]].</p>
+  <p>Since the connection is always encrypted, the authentication method is straightforward. This allows the application of basic authentication tokens instead of encrypted authentication tokens.</p>
+</div>
 
 ### API usage patterns
 Because security is about compromises one should first be aware of what usage patterns need to be supported.
@@ -54,21 +58,21 @@ When using OAuth within the Dutch Government sector, you are required to use [th
 The flow described here is what is known as the Authorization Code Grant. This is currently the only Grant type supported by the Dutch OAuth 2.0 profile.
 
 #### JWT based API access pattern
-To the resource server, serving the API, this method appears identical to the OAuth 2.0 based API access pattern because we use JWT access tokens in the Dutch Government OAuth 2.0 profile. In this pattern the resource server MUST completely rely on the information provided in the JWT. It has no notion of an end user session, client grant. It performs te requested action based on the request an de provided token for as long as the token is valid. 
+To the resource server, serving the API, this method appears identical to the OAuth 2.0 based API access pattern because we use JWT access tokens in the Dutch Government OAuth 2.0 profile. In this pattern the resource server MUST completely rely on the information provided in the JWT. It has no notion of an end user session, client grant. It performs te requested action based on the request an de provided token for as long as the token is valid.
 
 ### Identification
 
 **End Users and Organizations**
-For Identification of individual users use a pseudonym when possible to avoid exposing sensitive information about a user. 
+For Identification of individual users use a pseudonym when possible to avoid exposing sensitive information about a user.
 This pseudonym can optionally be translatable to actual personal information in a separate service, but access to this service should be tightly controlled and limited only to cases where there is a legal need to use this information.
 
-Use of a Burger Service Number (BSN) is only allowed when the organization has permission to do so. Even when an organization has permission to use BSN's it is still recommended to use a pseudonym that is only translatable to a BSN for a limited number of services/users within the organization. 
+Use of a Burger Service Number (BSN) is only allowed when the organization has permission to do so. Even when an organization has permission to use BSN's it is still recommended to use a pseudonym that is only translatable to a BSN for a limited number of services/users within the organization.
 An example of this can be found in the [architecture of the "digitaalstelsel omgevingswet"](https://aandeslagmetdeomgevingswet.nl/publish/library/219/dso_-_gas_-_knooppunt_toegang_iam.pdf)
 
 For identifying government organizations use the "organisatie-identificatienummer" (OIN)
 For identifying non-government organizations (companies, associations, foundations etc...) use the Handelsregisternummer (HRN)
 These are used in the PKIOverheid and e-Herkenning context. See https://www.logius.nl/diensten/oin for more information on these identifiers.
-OINs can be queried using the COR API https://portaal.digikoppeling.nl/registers/corApi/index 
+OINs can be queried using the COR API https://portaal.digikoppeling.nl/registers/corApi/index
 HRNs are derived from the RSIN which can be queried in the "Handels register" https://developers.kvk.nl/documentation/search-v2
 
 In the EU context use the eIDAS legal identifier. for more information see https://ec.europa.eu/digital-single-market/en/trust-services-and-eid
@@ -106,7 +110,7 @@ For some Use Cases it may be appropriate to distribute Access Tokens using an Ou
 
 Depending on the technology used by the applications accessing the API the Access Token may technically be communicated using a secure cookie. This however limits the technologies used to create client applications.
 
-Using sessions and secure cookies is outside the scope of this document. For security considerations please refer to [the latest NCSC guidelines on the subject of web application security](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-webapplicaties). 
+Using sessions and secure cookies is outside the scope of this document. For security considerations please refer to [the latest NCSC guidelines on the subject of web application security](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-webapplicaties).
 
 #### Client authentication
 Authenticating the Client application that accesses API resources, being it on behalf of an End-User or in a system-to-system setting, is required when possible. Also, although listed separately, the aforementioned methods for End-User authentication require Client authentication.
@@ -171,27 +175,37 @@ The authorization server MAY support any suitable authentication scheme matching
 
 Some additional authentication methods are defined in the [OAuth Token Endpoint Authentication Methods](https://www.iana.org/assignments/oauth-parameters/oauth-parameters.xhtml#token-endpoint-auth-method) registry, and may be useful as generic client authentication methods beyond the specific use of protecting the token endpoint.
 
-### Authorisation
-It is RECOMMENDED to use Token bases access to API's. RESTful API should not maintain the state at the server. The authentication and authorization of a request should not depend on sessions. Instead, a token has to be sent for each request.
+### Authorization
 
-> [API principle: Accept tokens as HTTP headers only](#api-13)
+It is RECOMMENDED to use token-based access to APIs. REST APIs should not maintain session state on the server. The authentication and authorization of a request should not depend on sessions. Instead, a token has to be sent for each request.
 
-Using tokens a distinction is made between authorised and non-authorised services and related headers:
+<div class="rule" id="api-13">
+  <p class="rulelab"><strong>API-13</strong>: Accept tokens as HTTP headers only</p>
+  <p>There is an inherent security issue when passing tokens as a query parameter, because most Web servers store query parameters in the server logs.</p>
+</div>
+
+Using tokens, a distinction is made between authorized and non-authorized services and related headers:
 
 |||
 |-|-|
-|Authorised|`Authorization: Bearer <token>`|
-|Non-authorised|`X-Api-Key: <api-key>`|
+|Authorized|`Authorization: Bearer <token>`|
+|Non-authorized|`X-Api-Key: <api-key>`|
 
 In case the proper headers are not sent, then there are no authentication details available and the a status error code `403 Forbidden` is returned.
 
-> [API principle: Use OAuth 2.0 for authorisation with rights delegation](#api-52)
+<div class="rule" id="api-52">
+  <p class="rulelab"><strong>API-52</strong>: Use OAuth 2.0 for authorization with rights delegation</p>
+  <p>This is in line with the way the OAuth standard appears on the comply or explain list of Forum Standaardisatie.</p>
+</div>
 
 See also [The Dutch profile OAuth in the chapter Security](#api-security) for further explanation of the applicaton of OAuth.
 
-> [API principle: Use PKIoverheid certificates for access-restricted or purpose-limited API authentication](#api-15)
+<div class="rule" id="api-15">
+  <p class="rulelab"><strong>API-15</strong>: Use PKIoverheid certificates for access-restricted or purpose-limited API authentication</p>
+  <p>In the case of APIs that have access-restrictions or purpose-limitations, additional authentication based on PKIoverheid certificates and mutual TLS authentication should be provided.</p>
+</div>
 
-#### Authorisation errors
+#### Authorization errors
 
 In a production environment as little information as possible is to be disclosed. Apply the following rules for returning the status error code `401 Unauthorized`, `403 Forbidden`, and `404 Not Found`.
 
@@ -200,7 +214,7 @@ When authentication is implicit or when just the presense of an Authorization he
 
 ![](media/HTTP-FlowChart1.PNG)
 
-Figure 1: authentication is implicit 
+Figure 1: authentication is implicit
 
 Links from flow chart in figure 1:
 
@@ -209,7 +223,7 @@ https://tools.ietf.org/html/rfc6750#section-3.1
 https://tools.ietf.org/html/rfc7231#section-6.5.4
 
 **Explicit authentication**
-When authentication is explicit, that is the authentication credentials are actively verfied when present use the flow chart in figure 2 to determine the correct error codes. 
+When authentication is explicit, that is the authentication credentials are actively verfied when present use the flow chart in figure 2 to determine the correct error codes.
 
 ![](media/HTTP-FlowChart2.PNG)
 
@@ -274,6 +288,12 @@ The headers below are only intended to provide additional security when response
 | `Referrer-Policy: no-referrer`                | Non-HTML responses should not trigger additional requests.             |
 
 #### CORS-policy
+
+<div class="rule" id="api-50">
+  <p class="rulelab"><strong>API-50</strong>: Use CORS to control access</p>
+  <p>Use CORS to restrict access from other domains (if applicable).</p>
+</div>
+
 Modern web browsers use Cross-Origin Resource Sharing (CORS) to minimize the risk associated with cross-site HTTP-requests. By default browsers only allow 'same origin' access to resources. This means that responses on requests to another `[scheme]://[hostname]:[port]` than the `Origin` request header of the initial request will not be processed by the browser. To enable cross-site requests API's can return a `Access-Control-Allow-Origin` response header. It is recommended to use a whitelist to determine the validity of different cross-site request. To do this check the `Origin` header of the incoming request and check if the domain in this header is on the whitelist. If this is the case, set the incoming `Origin` header in the `Access-Control-Allow-Origin` response header.
 
 Using a wildcard `*` in the `Access-Control-Allow-Origin` response header is not recommended, because it disables CORS-security measures. Only for an open API which has to be accessed by numerous other websites this is appropriate.
@@ -295,7 +315,7 @@ Services including script code (e.g. JavaScript) in their responses must be espe
 - Ensure sending intended content type headers in your response matching your body content e.g. `application/json` and not `application/javascript`.
 
 #### HTTP Return Code
-HTTP defines status codes. When designing a REST API, don't just use `200` for success or `404` for error. Always use the semantically appropriate [status code](https://httpstatuses.com/) for the response. 
+HTTP defines status codes. When designing a REST API, don't just use `200` for success or `404` for error. Always use the semantically appropriate [status code](https://httpstatuses.com/) for the response.
 
 #### Error handling
 - Respond with generic error messages - avoid revealing details of the failure unnecessarily.

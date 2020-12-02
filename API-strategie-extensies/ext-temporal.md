@@ -1,4 +1,4 @@
-## Time travelling
+## Temporal
 
 <p class='warning'>This extension is in development and may be modified at any time.</p>
 

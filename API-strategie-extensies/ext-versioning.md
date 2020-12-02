@@ -1,4 +1,4 @@
-## Versionering
+## Versioning
 
 <p class='warning'>This extension is still in development and can be modified at any time.</p>
 
@@ -41,4 +41,7 @@ The `Warning` reponse header (see: RFC 7234) has the status code 299 ("Miscellan
 
 Users should have sufficient time to phase out the old API. A period of 6 to 12 months is recommended.
 
-> [API principle: Inform users of a deprecated API actively](#api-21)
+<div class="rule" id="api-21">
+  <p class="rulelab"><strong>API-21</strong>: Inform users of a deprecated API actively</p>
+  <p>Using the <code>Warning</code> response header in all responses of the deprecated APIs, users are informed of the deprecation and upcoming removal date.</p>
+</div>

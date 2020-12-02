@@ -9,29 +9,29 @@ APIs should always return useful HTTP status codes. HTTP status codes are divide
 - 400 range: content errors
 - 500 range: internal server errors
 
-A JSON representation of an error should contain a few details to assist developers, operators, and users:  
+A JSON representation of an error should contain a few details to assist developers, operators, and users:
 
 - A unique error type formulated as a URI pointing to further informtion in external (HTML) documentation;
 - A short, but useful error message;
 - A detailed description of the error (that assists in solving the issue);
-- A unique identifier formulated as a URI point to the specific occurence of the error (the error instance). Preferably, the URN should only allow authorized users to search the error logs.  
+- A unique identifier formulated as a URI point to the specific occurence of the error (the error instance). Preferably, the URN should only allow authorized users to search the error logs.
 
 The base for these default formats is [[rfc7807]]. A JSON-representation of an error is formulated like the following object:
 
-```json
+<pre>
 {
   "type": "URI: https://content.omgevingswet.overheid.nl/id/<c>[/{categorie}]/{fout}",
   "code": "Systeemcode die het type fout aangeeft",
   "title": "Hier staat wat er is misgegaan",
   "status": 401,
   "detail": "Meer details over de fout staan hier",
-  "instance": "urn:uuid:ebd2e7f0-1b27-11e8-accf-0ed5f89f718b" // The error instance  
+  "instance": "urn:uuid:ebd2e7f0-1b27-11e8-accf-0ed5f89f718b" // The error instance
 }
-```
+</pre>
 
 Validation errors for `POST`, `PUT`, and `PATCH` requests are specified per field. The full list of errors is returned concurrently. The response consists of a fixed top level and error code for validation error and additional error fields with detailed errors per field:
 
-```json
+<pre>
 {
   "type": "https://content.omgevingswet.overheid.nl/id/<c>/ValidatieFout",
   "title": "Hier staat wat er is misgegaan…",
@@ -47,15 +47,22 @@ Validation errors for `POST`, `PUT`, and `PATCH` requests are specified per fiel
   }],
   "instance": "urn:uuid:4017fabc-1b28-11e8-accf-0ed5f89f718b" // De fout-instantie
 }
-```
+</pre>
 
-> [API principle: Use default error handling](#api-46)
+<div class="rule" id="api-46">
+  <p class="rulelab"><strong>API-46</strong>: Use default error handling</p>
+  <p>API support the default error messages of the HTTP 400 and 500 status code ranges, including the parsable JSON representation
+[[rfc7807]].</p>
+</div>
 
 ### HTTP status codes
 
-HTTP defines a range of default status codes for APIs. These assist users to of the APIs to handle errors.  
+HTTP defines a range of default status codes for APIs. These assist users to of the APIs to handle errors.
 
-> [API principle: Use the required HTTP status codes](#api-47)
+<div class="rule" id="api-47">
+  <p class="rulelab"><strong>API-47</strong>: Use the required HTTP status codes</p>
+  <p>APIs should at least support the following HTTP status codes: 200, 201, 204, 304, 400, 401, 403, 404, 405, 406, 409, 410, 415, 422, 429, 500, and 503.</p>
+</div>
 
 Summary of HTTP operations and the primary HTTP status codes:
 
