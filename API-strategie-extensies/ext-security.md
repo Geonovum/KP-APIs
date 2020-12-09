@@ -315,7 +315,7 @@ Services including script code (e.g. JavaScript) in their responses must be espe
 - Ensure sending intended content type headers in your response matching your body content e.g. `application/json` and not `application/javascript`.
 
 #### HTTP Return Code
-HTTP defines status codes. When designing a REST API, don't just use `200` for success or `404` for error. Always use the semantically appropriate [status code](https://httpstatuses.com/) for the response.
+HTTP defines status codes. When designing a REST API, don't just use `200` for success or `404` for error. Always use the semantically appropriate [status code](https://tools.ietf.org/html/rfc7231#section-6) for the response.
 
 #### Error handling
 - Respond with generic error messages - avoid revealing details of the failure unnecessarily.
