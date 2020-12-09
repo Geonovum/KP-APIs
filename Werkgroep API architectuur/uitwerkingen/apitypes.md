@@ -30,7 +30,7 @@ Een API die toegang geeft tot de (basis)functionaliteit en data van een (specifi
 (eg JSON, Protobuf (binary))
 
 ### Aanvulling 3 : API Virtualisatie
-![](https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20architectuur/uitwerkingen/media/api-virt.png)
+![](https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20API%20architectuur/uitwerkingen/media/api-virt.png)
 
 ### Aanvulling 4 : API Language styles
 
