@@ -8,7 +8,7 @@ Extern:
 Intern:
 - Interne API's : voor ontsluiten van diensten binnen de organisatie
 
-![alt text](https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20Architectuur/uitwerkingen/media/govapi.png)
+![alt text](https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20API%20Architectuur/uitwerkingen/media/govapi.png)
 
 ### Afkortingen:
 - G2C : Government 2 Citizen
@@ -16,7 +16,7 @@ Intern:
 - G2G : Government 2 Government
 
 
-![alt text](https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20Architectuur/uitwerkingen/media/API-arch-v22.png)
+![alt text](https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20API%20Architectuur/uitwerkingen/media/API-arch-v22.png)
 
 - (A) : API Contactoppervlak Overheid naar Burgers en Bedrijven
 - (B) : API Contactoppervlak Overheid naar Overheid (bv onderdelen GDI)
