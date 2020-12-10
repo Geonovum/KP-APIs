@@ -177,7 +177,7 @@ Some additional authentication methods are defined in the [OAuth Token Endpoint 
 
 ### Authorization
 
-It is RECOMMENDED to use token-based access to APIs. REST APIs SHOULD NOT maintain session state on the server. The authentication and authorization of a request SHOULD NOT depend on sessions. Instead, a token has to be sent for each request.
+It is RECOMMENDED to use token-based access to APIs. REST APIs SHOULD NOT maintain session state on the server. The authentication and authorization of a request SHOULD NOT depend on sessions. Instead, a token has to be sent with each request.
 
 <div class="rule" id="api-13">
   <p class="rulelab"><strong>API-13</strong>: Accept tokens as HTTP headers only</p>
