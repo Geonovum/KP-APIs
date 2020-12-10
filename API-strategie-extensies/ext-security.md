@@ -11,7 +11,7 @@ In order to meet the complete security objectives, every implementer MUST also a
 Note: security controls for signing and encrypting of application level messages will be part of a separate extension, [Signing and Encryption](#signing-and-encryption).
 
 ### Transport security
-APIs can be accessed from any location on the internet. Information is only exchanged over TLS-based secured connections. No exceptions, so everywhere and always. One should follow [the latest NCSC guidelines for TLS](https://english.ncsc.nl/publications/publications/2019/juni/01/it-security-guidelines-for-transport-layer-security-tls)
+APIs can be accessed from any location on the internet. Information is only exchanged over TLS-based secured connections. No exceptions, so everywhere and always. One SHOULD follow [the latest NCSC guidelines for TLS](https://english.ncsc.nl/publications/publications/2019/juni/01/it-security-guidelines-for-transport-layer-security-tls)
 
 <div class="rule" id="api-11">
   <p class="rulelab"><strong>API-11</strong>: Secure connections using TLS</p>
@@ -66,7 +66,7 @@ To the resource server, serving the API, this method appears identical to the OA
 For Identification of individual users use a pseudonym when possible to avoid exposing sensitive information about a user.
 This pseudonym can optionally be translatable to actual personal information in a separate service, but access to this service should be tightly controlled and limited only to cases where there is a legal need to use this information.
 
-Use of a Burger Service Number (BSN) is only allowed when the organization has a legal ground to do so. Even when an organization is eligible to use BSN's it is still recommended to use a pseudonym that is only translatable to a BSN for a limited number of services/users within the organization.
+Use of a Burger Service Number (BSN) is only allowed when the organization has a legal ground to do so. Even when an organization is eligible to use BSN's it is still RECOMMENDED to use a pseudonym that is only translatable to a BSN for a limited number of services/users within the organization.
 An example of this can be found in the [architecture of the "digitaalstelsel omgevingswet"](https://aandeslagmetdeomgevingswet.nl/publish/library/219/dso_-_gas_-_knooppunt_toegang_iam.pdf)
 
 For identifying government organizations use the "organisatie-identificatienummer" (OIN).
@@ -127,7 +127,7 @@ The following methods can be used for Client authentication.
 
 <p class='warning'>De zin hieronder is een suggestie van Jaron, die conflicteerd mogelijk met de aanvulling van Martin</p>
 
-Note that Client authentication using HTTP Basic authentication or communicating client credentials in the request body are prone to credential theft and therefore not recommended and not listed as options below.
+Note that Client authentication using HTTP Basic authentication or communicating client credentials in the request body are prone to credential theft and therefore NOT RECOMMENDED and not listed as options below.
 
 
 
@@ -136,7 +136,7 @@ Mutual TLS authentication [RFC8705](https://www.rfc-editor.org/info/rfc8705), is
 
 In contexts where Dutch (semi) governmental organizations are involved, the X.509 certificate used for Client authentication MUST be a PKIOverheid certificate. These are x509 certificates derived from a root certificate owned by the Dutch Government. for more information on PKIOverheid see https://www.logius.nl/diensten/pkioverheid.
 
-In the API context, only Server or Services certificates should be used as these include an OIN/HRN for identification; Extended Validation certificates (as used for websites) do not include this identifier and are therefore not suitable to use with APIs.
+In the API context, only Server or Services certificates SHOULD be used as these include an OIN/HRN for identification; Extended Validation certificates (as used for websites) do not include this identifier and are therefore not suitable to use with APIs.
 
 **Private key JWT**
 With Private key JWT authentication [OpenID](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication), the Client registers a public key with the Server and accompanies every API request with a JWT signed using this key. This Client Authentication method is part of the OAuth 2.0 and OpenID Connect standards for Clients authenticating to the token endpoint, but the use of Private key JWT Client authentication is not limited to these Use Cases.
@@ -156,7 +156,7 @@ In Use Cases where the Client is solely accessing API resources on behalf of its
 **Client authentication and Public clients**
 In Use Cases that involve Native and User-Agent based Clients, strong Client authentication is generally not possible. Whereas it may be possible for individual Clients to implement a decent means of Client authentication (e.g. by using the Web Crypto API in User-Agent based Clients), the Server cannot make any assumptions about the confidentiality of credentials exchanged with such Clients.
 
-When dealing with Use Cases involving Native and User-Agent based Clients, the policies and standards described in [Section 4.4](#security-for-webbrowser-api-clients) should be followed, as well as best practices [[OAuth2.Browser-Based-Apps]] and [[RFC8252]], which are defined for use with OAuth but may be applicable for API communication in general.
+When dealing with Use Cases involving Native and User-Agent based Clients, the policies and standards described in [Section 4.4](#security-for-webbrowser-api-clients) SHOULD be followed, as well as best practices [[OAuth2.Browser-Based-Apps]] and [[RFC8252]], which are defined for use with OAuth but may be applicable for API communication in general.
 
 **Client Password**
 Clients in possession of a client password, also known as a client secret, MAY use the HTTP Basic authentication scheme as defined in [RFC2617](https://www.rfc-editor.org/info/rfc2617) to authenticate with the authorization server. The client identifier is encoded using the application/x-www-form-urlencoded encoding algorithm, and the encoded value is used as the username; the client secret is encoded using the same algorithm and used as the password. The authorization server MUST support the HTTP Basic authentication scheme for authenticating clients that were issued a client secret.
@@ -177,7 +177,7 @@ Some additional authentication methods are defined in the [OAuth Token Endpoint 
 
 ### Authorization
 
-It is RECOMMENDED to use token-based access to APIs. REST APIs should not maintain session state on the server. The authentication and authorization of a request should not depend on sessions. Instead, a token has to be sent for each request.
+It is RECOMMENDED to use token-based access to APIs. REST APIs SHOULD NOT maintain session state on the server. The authentication and authorization of a request SHOULD NOT depend on sessions. Instead, a token has to be sent for each request.
 
 <div class="rule" id="api-13">
   <p class="rulelab"><strong>API-13</strong>: Accept tokens as HTTP headers only</p>
@@ -202,7 +202,7 @@ See also [The NL GOV Assurance profile for OAuth 2.0](#api-security) for further
 
 <div class="rule" id="api-15">
   <p class="rulelab"><strong>API-15</strong>: Use PKIoverheid certificates for access-restricted or purpose-limited API authentication</p>
-  <p>In the case of APIs that have access-restrictions or purpose-limitations, additional authentication based on PKIoverheid certificates and mutual TLS authentication should be provided.</p>
+  <p>In the case of APIs that have access-restrictions or purpose-limitations, additional authentication based on PKIoverheid certificates and mutual TLS authentication SHOULD be provided.</p>
 </div>
 
 #### Authorization errors
@@ -263,29 +263,29 @@ An additional advantage of the stategy that establishes whether there is authori
 
 
 ### HTTP-level Security
-The guidelines and principles defined in this extensions are client agnostic. When implementing a client agnostic API, one should at least facilitate that multi-purpose generic HTTP-clients like browsers are able to securely interact with the API. When implementing an API for a specific client it is possible to limit measures as long as it ensures secure access for this specific client. Nevertheless it is adviced to review the following security measures, which are mostly inspired by the [OWASP REST Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html)
+The guidelines and principles defined in this extensions are client agnostic. When implementing a client agnostic API, one SHOULD at least facilitate that multi-purpose generic HTTP-clients like browsers are able to securely interact with the API. When implementing an API for a specific client it is possible to limit measures as long as it ensures secure access for this specific client. Nevertheless it is adviced to review the following security measures, which are mostly inspired by the [OWASP REST Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html)
 
 #### Security Headers
-There are a number of security related headers that can be returned in the HTTP responses to instruct browsers to act in specific ways. However, some of these headers are intended to be used with HTML responses, and as such may provide little or no security benefits on an API that does not return HTML. The following headers should be included in all API responses:
+There are a number of security related headers that can be returned in the HTTP responses to instruct browsers to act in specific ways. However, some of these headers are intended to be used with HTML responses, and as such may provide little or no security benefits on an API that does not return HTML. The following headers SHOULD be included in all API responses:
 
 | Header                                            | Rationale                                                                                              |
 |---------------------------------------------------|--------------------------------------------------------------------------------------------------------|
 | `Cache-Control: no-store`                         | Prevent sensitive information from being cached.                                                       |
 | `Content-Security-Policy: frame-ancestors 'none'` | To protect against drag-and-drop style clickjacking attacks.                                           |
-| `Content-Type`                                    | To specify the content type of the response. This should be `application/json` for JSON responses.     |
+| `Content-Type`                                    | To specify the content type of the response. This SHOULD be `application/json` for JSON responses.     |
 | `Strict-Transport-Security`                       | To require connections over HTTPS and to protect against spoofed certificates.                         |
 | `X-Content-Type-Options: nosniff`                 | To prevent browsers from performing MIME sniffing, and inappropriately interpreting responses as HTML. |
 | `X-Frame-Options: DENY`                           | To protect against drag-and-drop style clickjacking attacks.                                           |
 | `Access-Control-Allow-Origin`                     | To relax the 'same origin' policy and allow cross-origin access. See CORS-policy below                 |
 
 
-The headers below are only intended to provide additional security when responses are rendered as HTML. As such, if the API will never return HTML in responses, then these headers may not be necessary. However, if there is any uncertainty about the function of the headers, or the types of information that the API returns (or may return in future), then it is recommended to include them as part of a defence-in-depth approach.
+The headers below are only intended to provide additional security when responses are rendered as HTML. As such, if the API will never return HTML in responses, then these headers may not be necessary. However, if there is any uncertainty about the function of the headers, or the types of information that the API returns (or may return in future), then it is RECOMMENDED to include them as part of a defence-in-depth approach.
 
 | Header                                        | Rationale                                                              |
 |-----------------------------------------------|------------------------------------------------------------------------|
 | `Content-Security-Policy: default-src 'none'` | The majority of CSP functionality only affects pages rendered as HTML. |
 | `Feature-Policy: 'none'`                      | Feature policies only affect pages rendered as HTML.                   |
-| `Referrer-Policy: no-referrer`                | Non-HTML responses should not trigger additional requests.             |
+| `Referrer-Policy: no-referrer`                | Non-HTML responses SHOULD not trigger additional requests.             |
 
 #### CORS-policy
 
@@ -294,15 +294,15 @@ The headers below are only intended to provide additional security when response
   <p>Use CORS to restrict access from other domains (if applicable).</p>
 </div>
 
-Modern web browsers use Cross-Origin Resource Sharing (CORS) to minimize the risk associated with cross-site HTTP-requests. By default browsers only allow 'same origin' access to resources. This means that responses on requests to another `[scheme]://[hostname]:[port]` than the `Origin` request header of the initial request will not be processed by the browser. To enable cross-site requests API's can return a `Access-Control-Allow-Origin` response header. It is recommended to use a whitelist to determine the validity of different cross-site request. To do this check the `Origin` header of the incoming request and check if the domain in this header is on the whitelist. If this is the case, set the incoming `Origin` header in the `Access-Control-Allow-Origin` response header.
+Modern web browsers use Cross-Origin Resource Sharing (CORS) to minimize the risk associated with cross-site HTTP-requests. By default browsers only allow 'same origin' access to resources. This means that responses on requests to another `[scheme]://[hostname]:[port]` than the `Origin` request header of the initial request will not be processed by the browser. To enable cross-site requests API's can return a `Access-Control-Allow-Origin` response header. It is RECOMMENDED to use a whitelist to determine the validity of different cross-site request. To do this check the `Origin` header of the incoming request and check if the domain in this header is on the whitelist. If this is the case, set the incoming `Origin` header in the `Access-Control-Allow-Origin` response header.
 
-Using a wildcard `*` in the `Access-Control-Allow-Origin` response header is not recommended, because it disables CORS-security measures. Only for an open API which has to be accessed by numerous other websites this is appropriate.
+Using a wildcard `*` in the `Access-Control-Allow-Origin` response header is NOT RECOMMENDED, because it disables CORS-security measures. Only for an open API which has to be accessed by numerous other websites this is appropriate.
 
 #### Restrict HTTP methods
 Apply a whitelist of permitted HTTP Methods e.g. `GET`, `POST`, `PUT`. Reject all requests not matching the whitelist with HTTP response code `405 Method not allowed`.
 
 #### Validate content types
-A REST request or response body should match the intended content type in the header. Otherwise this could cause misinterpretation at the consumer/producer side and lead to code injection/execution.
+A REST request or response body SHOULD match the intended content type in the header. Otherwise this could cause misinterpretation at the consumer/producer side and lead to code injection/execution.
 
 - Reject requests containing unexpected or missing content type headers with HTTP response status `406 Unacceptable` or `415 Unsupported Media Type`.
 - Avoid accidentally exposing unintended content types by explicitly defining content types e.g. Jersey (Java) `@consumes("application/json"); @produces("application/json")`. This avoids XXE-attack vectors for example.
@@ -311,7 +311,7 @@ It is common for REST services to allow multiple response types (e.g. `applicati
 - Do NOT simply copy the `Accept` header to the `Content-type` header of the response.
 - Reject the request (ideally with a `406 Not Acceptable` response) if the Accept header does not specifically contain one of the allowable types.
 
-Services including script code (e.g. JavaScript) in their responses must be especially careful to defend against header injection attack.
+Services including script code (e.g. JavaScript) in their responses MUST be especially careful to defend against header injection attack.
 - Ensure sending intended content type headers in your response matching your body content e.g. `application/json` and not `application/javascript`.
 
 #### HTTP Return Code
