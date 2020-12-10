@@ -311,7 +311,7 @@ It is common for REST services to allow multiple response types (e.g. `applicati
 - Do NOT simply copy the `Accept` header to the `Content-type` header of the response.
 - Reject the request (ideally with a `406 Not Acceptable` response) if the Accept header does not specifically contain one of the allowable types.
 
-Services including script code (e.g. JavaScript) in their responses MUST be especially careful to defend against header injection attack.
+Services (potentially) including script code (e.g. JavaScript) in their responses MUST be especially careful to defend against header injection attack.
 - Ensure sending intended content type headers in your response matching your body content e.g. `application/json` and not `application/javascript`.
 
 #### HTTP Return Code
