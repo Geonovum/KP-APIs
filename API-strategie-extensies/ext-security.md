@@ -11,12 +11,12 @@ In order to meet the complete security objectives, every implementer MUST also a
 Note: security controls for signing and encrypting of application level messages will be part of a separate extension, [Signing and Encryption](#signing-and-encryption).
 
 ### Transport security
-APIs can be accessed from any location on the internet. Information is only exchanged over TLS-based encrypted connections. No exceptions, so everywhere and always. One should follow [the latest NCSC guidelines for TLS](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls)
+APIs can be accessed from any location on the internet. Information is only exchanged over TLS-based secured connections. No exceptions, so everywhere and always. One should follow [the latest NCSC guidelines for TLS](https://english.ncsc.nl/publications/publications/2019/juni/01/it-security-guidelines-for-transport-layer-security-tls)
 
 <div class="rule" id="api-11">
-  <p class="rulelab"><strong>API-11</strong>: Encrypt connections using TLS</p>
-  <p>Encrypt connections using TLS following the latest NCSC guidelines [[NCSC.TLS]].</p>
-  <p>Since the connection is always encrypted, the authentication method is straightforward. This allows the application of basic authentication tokens instead of encrypted authentication tokens.</p>
+  <p class="rulelab"><strong>API-11</strong>: Secure connections using TLS</p>
+  <p>Secure connections using TLS following the latest NCSC guidelines [[NCSC.TLS]].</p>
+  <p>Since the connection is always secured, the authentication method is straightforward. This allows the application of basic authentication tokens instead of encrypted authentication tokens.</p>
 </div>
 
 ### API usage patterns
