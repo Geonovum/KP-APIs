@@ -72,10 +72,10 @@ An example of this can be found in the [architecture of the "digitaalstelsel omg
 For identifying government organizations use the "organisatie-identificatienummer" (OIN).
 For identifying non-government organizations (companies, associations, foundations etc...) use the Handelsregisternummer (HRN) or its OIN equivalent.
 These are used in the PKIOverheid and e-Herkenning context. See https://www.logius.nl/diensten/oin for more information on these identifiers.
-OINs can be queried using the COR API https://portaal.digikoppeling.nl/registers/corApi/index .
-HRNs are derived from the RSIN which can be queried in the "Handels register" https://developers.kvk.nl/documentation/search-v2 .
+OINs can be queried using the COR API https://portaal.digikoppeling.nl/registers/corApi/index.
+HRNs are derived from the RSIN which can be queried in the "Handels register" https://developers.kvk.nl/documentation/search-v2.
 
-In the EU context use the eIDAS legal identifier. For more information see https://ec.europa.eu/digital-single-market/en/trust-services-and-eid .
+In the EU context use the eIDAS legal identifier. For more information see https://ec.europa.eu/digital-single-market/en/trust-services-and-eid.
 
 **Clients**
 The authorization server issues the registered client a client identifier - a unique string representing the registration information provided by the client. The client identifier is not a secret; it is exposed to the resource owner and MUST NOT be used alone for client authentication. The client identifier is unique to the authorization server.
