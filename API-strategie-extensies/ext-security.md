@@ -47,7 +47,7 @@ The problem here is that the identity identified by the certificate may have sig
 Another use case for the use of Client certificates is in the world of microservices where we want to control access to services. Terms used are zero trust, micro segmentation and service mesh. Proposed standards are [SPIFFE](https://spiffe.io). The proposed standard is not limited to the use of Client certificates but also describes the use of JWT's. This topic is outside the scope of this document.
 
 #### OAuth 2.0 token based API access pattern
-The important thing to remember about OAuth is its intended use. In OAuth the end user grants permissions to a client to access resources on its behalf. This grant is stored at the authorization server. After permissions are granted the client can perform its duties with or without the presence of an end user. To deny the client access to the end users resources, the end user MUST revoke the grant at the Authorization Server.
+The important thing to remember about OAuth is its intended use. In OAuth the end user grants permissions to a client to access resources on its behalf. This grant is stored at the authorization server. After permissions are granted the client can perform its duties with or without the presence of an end user. To deny the client access to the end users resources, the end user MUST revoke the grant at the authorization server.
 
 While both the end user and the client need to identify themselves OAuth typically does not use sessions or support logout. It's sole purpose is solving the problem of authorizing a client with the least amount of privileges required.
 
