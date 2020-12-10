@@ -22,5 +22,4 @@ Zie ook de presentatie van de Api Architectuur sessie op de bijeenkomst 4 maart 
 ## Event Driven processen & Notificaties
 ## Beveiligingsarchitectuur
 ## API Management
-Zie Concept : https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20API%20architectuur/uitwerkingen/Requirements%20specificatie%20API-Management%20(API%20Kennisplatform)%20versie%200.9.pdf
-
+Zie Concept : [API Management Requirements]( https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20API%20architectuur/uitwerkingen/Requirements%20specificatie%20API-Management%20(API%20Kennisplatform)%20versie%200.9.pdf)
