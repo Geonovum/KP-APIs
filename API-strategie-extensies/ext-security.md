@@ -16,7 +16,7 @@ APIs can be accessed from any location on the internet. Information is only exch
 <div class="rule" id="api-11">
   <p class="rulelab"><strong>API-11</strong>: Secure connections using TLS</p>
   <p>Secure connections using TLS following the latest NCSC guidelines [[NCSC.TLS]].</p>
-  <p>Since the connection is always secured, the authentication method is straightforward. This allows the application of basic authentication tokens instead of encrypted authentication tokens.</p>
+  <p>Since the connection is always secured, the access method can be straightforward. This allows the application of basic access tokens instead of encrypted access tokens.</p>
 </div>
 
 ### API usage patterns
