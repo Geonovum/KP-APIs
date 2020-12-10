@@ -58,7 +58,7 @@ When using OAuth within the Dutch Government sector, you are required to use [th
 The flow described here is what is known as the Authorization Code Grant. This is currently the only Grant type supported by the Dutch OAuth 2.0 profile.
 
 #### JWT based API access pattern
-To the resource server, serving the API, this method appears identical to the OAuth 2.0 based API access pattern because we use JWT access tokens in the Dutch Government OAuth 2.0 profile. In this pattern the resource server MUST completely rely on the information provided in the JWT. It has no notion of an end user session or client grant. It performs the requested action based on the request and the provided token for as long as the token is valid.
+To the resource server, serving the API, this method appears identical to the OAuth 2.0 based API access pattern because we use JWT access tokens in the Dutch Government OAuth 2.0 profile. In this pattern the resource server MUST completely rely on the information provided by the client in the JWT, with the JWT typically signed by the client. It has no notion of an end user session or client grant. It performs the requested action based on the request and the provided token for as long as the token is valid.
 
 ### Identification
 
