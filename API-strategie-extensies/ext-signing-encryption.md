@@ -5,8 +5,10 @@
 Signing and encryption are mechanisms that can provide additional security on top of the transport layer security that is provided by HTTP TLS in combination with some form of authentication and authorization.
 
 In this API strategy we concern ourselves with RESTful APIs. In RESTful APIs you request the current value of a resource. This is different from SOAP based protocols where content is transported using messages. Using SOAP part of or all of the content is signed and/or encrypted by the sender of the message. This has utitlity as there are no pre conceptions about resources and their behaviour. When using REST you have to ask yourself what is being signed or encrypted. The value of a resource at a certain date and time. Does this have utility above and beyond the transport layer security thats already there?
+[Opmerking: Je voert via een RESTful API een operatie uit op een resource, Het kan bv ook gaan om een update/delete/insert op een resource waarbij controle op integriteit van zowel operatie als resource URL wenselijk/zinvol is vanuit security perspectief]
+Because in RESTful API's you operate on a resource with read, insert, update, delete commands it can be necessary to especially protect against manipulation by signing the http header containing the operation (eg. command GET/POST/PATCH/DELETE) and the resource-URI along with additional header and payload data. 
 
-Be aware that signing and encryption are "expensive". There is a performance hit (especially for encryption), but most of all in the real world implementation of an API using these security methods will be more expensive. Knowledge among programmers is ussually not complete, leading to extra time learning new skills. The added complexity leads to all manner of extra possibilities to create incorrect code, meaning testing will take longer.
+Be aware that signing and encryption are "expensive". There is a performance hit (especially for encryption), but most of all in the real world implementation of an API using these security methods will be more expensive. Knowledge among programmers is usually not complete, leading to extra time learning new skills. The added complexity leads to all manner of extra possibilities to create incorrect code, meaning testing will take longer.
 
 Have a long hard look at alternatives to the technical solution of signing and encryption before commiting to using them.
 * can the same goals be achieved using different (better) software architecture?
@@ -46,3 +48,4 @@ JSON Web Token Best Current Practices: [RFC 8725](https://www.rfc-editor.org/rfc
 ##### Signing requests/response without knowledge of encoding format
 
 ### Encryption
+

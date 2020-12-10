@@ -32,24 +32,24 @@ While this method is sometimes considered legacy it is in common use. Typical ch
 
 In most cases the tokens used are a reference to session data. Retrieving session data can be expensive in particular when microservices are used. The obvious solution to this problem is caching and the choice you have to make is how and when you invalidate cache entries. You typically want the cash entry related to a session to be invalidated when the end user logs out of the application.
 
-One important thing to considder in this pattern is that the token represents the identity the end user. Anyone or anything in possession of this token has the same permissions as the end user within the same security domain. This is breaking the least privilege principle.
+One important thing to consider in this pattern is that the token represents the identity of the end user. Anyone or anything in possession of this token has the same permissions as the end user within the same security domain. This is breaking the least privilege principle.
 
 Because this pattern is more a standard web application pattern we refer to [the latest NCSC guidelines on the subject of web application security](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-webapplicaties) for security considerations.
 
-We considder this method to be outside the scope of this document and refer to the aforementioned NCSC document. for security considerations.
+We consider this method to be outside the scope of this document and refer to the aforementioned NCSC document. for security considerations.
 
 #### mTLS or Client Certificate based API access pattern
-As of this writing, this method is to be includes in an upcoming release of the Open API specification. It is however widely used for both end user, B2B and a2a patterns.
+As of this writing, this method is to be included in an upcoming release of the Open API specification. It is however widely used for both end user, B2B and a2a patterns.
 
-The important thing to remember when using certificates is that the certificate only identifies the requester. During authentication we typically do a lookup of some subject information in a identity store to retrieve the requesters permissions. In PKIOverheid certificates we typically use the subject.serialNumber for this purpose.
+The important thing to remember when using certificates is that the certificate only identifies the requester. During authentication we typically do a lookup of some subject information in an identity store to retrieve the requesters permissions. In PKIOverheid certificates we typically use the subject.serialNumber for this purpose.
 The problem here is that the identity identified by the certificate may have significantly more permissions than required by the client doing the request. This is breaking the least privilege principle.
 
 Another use case for the use of Client certificates is in the world of microservices where we want to control access to services. Terms used are zero trust, micro segmentation and service mesh. Proposed standards are [SPIFFE](https://spiffe.io). The proposed standard is not limited to the use of Client certificates but also describes the use of JWT's. This topic is outside the scope of this document.
 
 #### OAuth 2.0 token based API access pattern
-The important thing te remember about OAuth is its intended use. In Oauth the end user grants permissions to a client to access resources on its behalf. This grant is stored at the authorization server. After permissions are granted the client can perform is duties with or without the presence of an end user. To deny the client access to the end users resources, the end user MUST remove the grant at authorization Server.
+The important thing to remember about OAuth is its intended use. In Oauth the end user grants permissions to a client to access resources on its behalf. This grant is stored at the authorization server. After permissions are granted the client can perform its duties with or without the presence of an end user. To deny the client access to the end users resources, the end user MUST remove the grant at the authorization Server.
 
-While both the end user and the client need to identify themselves OAuth typically does not use sessions or support logout. It's sole purpose is solving the problem of authorizing a client with the least amount of privileges required.
+While both the end user and the client need to identify themselves OAuth typically does not use sessions or support logout. Its sole purpose is solving the problem of authorizing a client with the least amount of privileges required.
 
 OAuth is usually extended with OpenID Connect or OIDC. OIDC adds identity and identity federation.
 
@@ -58,7 +58,7 @@ When using OAuth within the Dutch Government sector, you are required to use [th
 The flow described here is what is known as the Authorization Code Grant. This is currently the only Grant type supported by the Dutch OAuth 2.0 profile.
 
 #### JWT based API access pattern
-To the resource server, serving the API, this method appears identical to the OAuth 2.0 based API access pattern because we use JWT access tokens in the Dutch Government OAuth 2.0 profile. In this pattern the resource server MUST completely rely on the information provided in the JWT. It has no notion of an end user session, client grant. It performs te requested action based on the request an de provided token for as long as the token is valid.
+To the resource server, serving the API, this method appears identical to the OAuth 2.0 based API access pattern because we use JWT access tokens in the Dutch Government OAuth 2.0 profile. In this pattern the resource server MUST completely rely on the information provided in the JWT. It has no notion of an end user session, client grant[??]. It performs the requested action based on the request and the provided token for as long as the token is valid.
 
 ### Identification
 
@@ -73,12 +73,12 @@ For identifying government organizations use the "organisatie-identificatienumme
 For identifying non-government organizations (companies, associations, foundations etc...) use the Handelsregisternummer (HRN)
 These are used in the PKIOverheid and e-Herkenning context. See https://www.logius.nl/diensten/oin for more information on these identifiers.
 OINs can be queried using the COR API https://portaal.digikoppeling.nl/registers/corApi/index
-HRNs are derived from the RSIN which can be queried in the "Handels register" https://developers.kvk.nl/documentation/search-v2
+HRNs are derived from the KvKNummer which can be queried in the "Handels register" https://developers.kvk.nl/documentation/search-v2
 
 In the EU context use the eIDAS legal identifier. for more information see https://ec.europa.eu/digital-single-market/en/trust-services-and-eid
 
 **Clients**
-The authorization server issues the registered client a client identifier - a unique string representing the registration information provided by the client. The client identifier is not a secret; it is exposed to the resource owner and MUST NOT be used alone for client authentication. The client identifier is unique to the authorization server.
+When using authorization servers, the authorization server issues the registered client a client identifier - a unique string representing the registration information provided by the client. The client identifier is not a secret; it is exposed to the resource owner and MUST NOT be used alone for client authentication. The client identifier is unique to the authorization server.
 
 Authorization servers SHOULD NOT allow clients to choose or influence their client_id value.
 
@@ -198,7 +198,7 @@ In case the proper headers are not sent, then there are no authentication detail
   <p>This is in line with the way the OAuth standard appears on the comply or explain list of Forum Standaardisatie.</p>
 </div>
 
-See also [The Dutch profile OAuth in the chapter Security](#api-security) for further explanation of the applicaton of OAuth.
+See also [The Dutch profile OAuth in the chapter Security](#api-security) for further explanation of the application of OAuth.
 
 <div class="rule" id="api-15">
   <p class="rulelab"><strong>API-15</strong>: Use PKIoverheid certificates for access-restricted or purpose-limited API authentication</p>
@@ -210,7 +210,7 @@ See also [The Dutch profile OAuth in the chapter Security](#api-security) for fu
 In a production environment as little information as possible is to be disclosed. Apply the following rules for returning the status error code `401 Unauthorized`, `403 Forbidden`, and `404 Not Found`.
 
 **Implicit authentication**
-When authentication is implicit or when just the presense of an Authorization header (API-Key) is enough for authentication: use the flow chart in figure 1 to determine the correct error code.
+When authentication is implicit or when just the presence of an Authorization header (API-Key) is enough for authentication: use the flow chart in figure 1 to determine the correct error code.
 
 ![](media/HTTP-FlowChart1.PNG)
 
@@ -223,7 +223,7 @@ https://tools.ietf.org/html/rfc6750#section-3.1
 https://tools.ietf.org/html/rfc7231#section-6.5.4
 
 **Explicit authentication**
-When authentication is explicit, that is the authentication credentials are actively verfied when present use the flow chart in figure 2 to determine the correct error codes.
+When authentication is explicit, that is the authentication credentials are actively verified when present use the flow chart in figure 2 to determine the correct error codes.
 
 ![](media/HTTP-FlowChart2.PNG)
 
@@ -239,7 +239,7 @@ https://tools.ietf.org/html/rfc7231#section-6.5.4
 
 **Explicit authentication while matching client authorization CNF**
 
-When authentication is explicit and there is a check wether the provided authorization confirmation claim (CNF) matches the credentials provided for authentication use the flow chart in figure 3 to esteblish the correct error codes.
+When authentication is explicit and there is a check whether the provided authorization confirmation claim (CNF) matches the credentials provided for authentication use the flow chart in figure 3 to establish the correct error codes.
 
 ![](media/HTTP-FlowChart3.PNG)
 
@@ -259,11 +259,11 @@ https://tools.ietf.org/html/rfc7231#section-6.5.4
 
 <!--First, it is established whether the requester (principal) has a valid authorisation(i.e. token is valid) then it is established whether this authorisation is valid for a requested resource. In case the requester is not authorised or the authorisation cannot be established, for example, the resource is required to establish authorisation and the resource does not exist, then a status error code `403 Forbidden` is returned. In this way, no information is returned about the existence of a resource to a non-authorised principal.
 
-An additional advantage of the stategy that establishes whether there is authorisation is the opportunity to separate access control logic from business logic.-->
+An additional advantage of the strategy that establishes whether there is authorisation is the opportunity to separate access control logic from business logic.-->
 
 
 ### HTTP-level Security
-The guidelines and principles defined in this extensions are client agnostic. When implementing a client agnostic API, one should at least facilitate that multi-purpose generic HTTP-clients like browsers are able to securely interact with the API. When implementing an API for a specific client it is possible to limit measures as long as it ensures secure access for this specific client. Nevertheless it is adviced to review the follwing security measures, which are mostly inspired by the [OWASP REST Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html)
+The guidelines and principles defined in this extensions are client agnostic. When implementing a client agnostic API, one should at least facilitate that multi-purpose generic HTTP-clients like browsers are able to securely interact with the API. When implementing an API for a specific client it is possible to limit measures as long as it ensures secure access for this specific client. Nevertheless it is advised to review the following security measures, which are mostly inspired by the [OWASP REST Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html)
 
 #### Security Headers
 There are a number of security related headers that can be returned in the HTTP responses to instruct browsers to act in specific ways. However, some of these headers are intended to be used with HTML responses, and as such may provide little or no security benefits on an API that does not return HTML. The following headers should be included in all API responses:
@@ -320,3 +320,5 @@ HTTP defines status codes. When designing a REST API, don't just use `200` for s
 #### Error handling
 - Respond with generic error messages - avoid revealing details of the failure unnecessarily.
 - Do not pass technical details (e.g. call stacks or other internal hints) to the client.
+
+
