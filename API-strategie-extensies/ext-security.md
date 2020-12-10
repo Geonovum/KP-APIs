@@ -47,7 +47,7 @@ The problem here is that the identity identified by the certificate may have sig
 Another use case for the use of Client certificates is in the world of microservices where we want to control access to services. Terms used are zero trust, micro segmentation and service mesh. Proposed standards are [SPIFFE](https://spiffe.io). The proposed standard is not limited to the use of Client certificates but also describes the use of JWT's. This topic is outside the scope of this document.
 
 #### OAuth 2.0 token based API access pattern
-The important thing to remember about OAuth is its intended use. In OAuth the end user grants permissions to a client to access resources on its behalf. This grant is stored at the authorization server. After permissions are granted the client can perform its duties with or without the presence of an end user. To deny the client access to the end users resources, the end user MUST revoke the grant at the authorization server.
+The important thing to remember about OAuth is its intended use. In OAuth the resource owner (often the end user) grants permissions to a client to access resources on its behalf. This grant is stored at the authorization server. After permissions are granted the client can perform its duties with or without the presence of an end user. To deny the client access to the end users resources, the resource owner MUST revoke the grant at the authorization server.
 
 While both the end user and the client need to identify themselves OAuth typically does not use sessions or support logout. It's sole purpose is solving the problem of authorizing a client with the least amount of privileges required.
 
@@ -96,9 +96,9 @@ SAML is a standard for securely communicating assertions about an authenticated 
 [SAML 2.0 is included on the list of required standards by Forum Standaardisatie](https://forumstandaardisatie.nl/open-standaarden/saml). It is expected, however, that the following standards will become preferred over SAML in Use Cases that involve access to API resources.
 
 **OAuth**
-Although technically an authorization method, OAuth [[OAuth2]] is used for End-Users authenticating themselves and providing the Client with an Access Token upon successful End-User (and Client) authentication. This Access Token can be used to make authorized API requests. Using OAuth is appropriate when the Client does not need to know the identity of the authenticated End-User.
+Although technically an authorization method, OAuth [[OAuth2]] is used as well for authenticating End-Users themselves and providing the Client with an Access Token upon successful End-User (and Client) authentication. This Access Token can be used to make authorized API requests. Using OAuth is appropriate when authorization is not dependent on an identifiable subject, the subject is different from the End-User or the Client does not require authentication of the End-User itself.
 
-A NL GOV Assurance profile for OAuth 2.0 is included on the list of required standards by Forum Standaardisatie. The latest version of the profile can be found at https://publicatie.centrumvoorstandaarden.nl/api/oauth/.
+The NL GOV Assurance profile for OAuth 2.0 is included on the list of required standards by Forum Standaardisatie. The latest version of the profile can be found at https://publicatie.centrumvoorstandaarden.nl/api/oauth/.
 
 **OpenID Connect**
 OpenID Connect [[OpenID.Core]] adds an identity layer on top of OAuth, making it into an actual authentication method. It enables API Clients to verify the identity of authenticated End-Users and to obtain profile information about the End-User.
