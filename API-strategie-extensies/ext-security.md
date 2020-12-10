@@ -85,6 +85,8 @@ Authorization servers SHOULD NOT allow clients to choose or influence their clie
 ### Authentication
 Authentication determines whether individuals and applications accessing APIs are really who they say they are. In the context of APIs, authentication is applicable to the *End-User*, i.e. the individual on behalf of whom API resources are being accessed, and to the *Client*, i.e. the application that accesses the API resources on behalf of the end-user.
 
+Note that an End-User can be both a natural person as well as a legal person (organization). In case Client Authentication includes information about its governing organization, this may fulfill and obviate the need for End-User authentication. See the section "Client Credentials using OAuth 2.0" below.
+
 #### End-User authentication
 In most Use Cases that involve API interaction, authenticating the End-User on behalf of whom the API resources are accessed is required. End-User authentication is not required in situations where the API Client is solely accessing API resources on behalf of itself, without requiring an End-User context, but may be used nevertheless.
 
@@ -106,74 +108,83 @@ OpenID Connect [[OpenID.Core]] adds an identity layer on top of OAuth, making it
 A Dutch Assurance profile for OpenID Connect is currently being drafted. It is expected to be added to the list of required standards by Forum Standaardisatie. The latest version of the draft profile can be found at https://logius.gitlab.io/oidc/.
 
 **Out of band**
-For some Use Cases it may be appropriate to distribute Access Tokens using an Out of band authentication method. Out of band authentication is generally appropriate when API resources are accessed via an application that already provides an authentication method. Based on an End-User authentication performed, the application subsequently requests an Access Token for API access from the Identity Provider via a secure channel.
+For some Use Cases it may be appropriate to distribute Access Tokens using an Out of band method. Out of band authentication is generally appropriate when API resources are accessed via an application that already supports a client authentication method and the End-User is rather static. Based on an End-User authentication performed, the application subsequently is provided with an Access Token for API access via a secure method.
 
 Depending on the technology used by the applications accessing the API the Access Token may technically be communicated using a secure cookie. This however limits the technologies used to create client applications.
 
 Using sessions and secure cookies is outside the scope of this document. For security considerations please refer to [the latest NCSC guidelines on the subject of web application security](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-webapplicaties).
 
 #### Client authentication
-Authenticating the Client application that accesses API resources, being it on behalf of an End-User or in a system-to-system setting, is required when possible. Also, although listed separately, the aforementioned methods for End-User authentication require Client authentication.
+Authenticating the Client application that accesses API resources, being it on behalf of an End-User or in a system-to-system setting, is required where possible. Also, although listed separately, the aforementioned methods for End-User authentication require Client authentication.
+
+Note: Client Authentication is applicable to the Client accessing the API, the Client making request to the Authorization Server when applying OAuth/OpenID, or both. It is RECOMMENDED to apply Client Authentication for both usages.
 
 It is RECOMMENDED to use asymmetric (public-key based) methods for client authentication such as mTLS [RFC8705](https://www.rfc-editor.org/info/rfc8705) or "private_key_jwt" [OpenID](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication).
 
-[The NL GOV Assurance profile for OAuth 2.0](https://publicatie.centrumvoorstandaarden.nl/api/oauth/) REQUIRES the use of private_key_jwt for full clients, native clients with dynamically registered keys, and direct access clients as mentioned in this profile.
-
-The authorization server MUST require the use of TLS when sending requests using password authentication.
-
-Since this client authentication method involves a password, the authorization server MUST protect any endpoint utilizing it against brute force attacks.
+[The NL GOV Assurance profile for OAuth 2.0](https://publicatie.centrumvoorstandaarden.nl/api/oauth/) REQUIRES the use of private_key_jwt for full clients, native clients with dynamically registered keys, and direct access clients as mentioned in the profile.
 
 The following methods can be used for Client authentication.
 
-<p class='warning'>De zin hieronder is een suggestie van Jaron, die conflicteerd mogelijk met de aanvulling van Martin</p>
-
-Note that Client authentication using HTTP Basic authentication or communicating client credentials in the request body are prone to credential theft and therefore NOT RECOMMENDED and not listed as options below.
-
-
-
-**Mutual TLS authentication (mTLS)**
+##### Mutual TLS authentication (mTLS)
 Mutual TLS authentication, is a feature of TLS with which the Client authenticates itself to the Server using its X.509 certificate. Mutual TLS (mTLS) provides strong Client authentication for server-based Clients and cannot be used with Native or User-Agent-based Clients that are not backed with a server. Support for mTLS in combination with OAuth2 is specified in [RFC8705](https://www.rfc-editor.org/info/rfc8705).
 
-In contexts where Dutch (semi) governmental organizations are involved, the X.509 certificate used for Client authentication MUST be a PKIOverheid certificate. These are x509 certificates derived from a root certificate owned by the Dutch Government. for more information on PKIOverheid see https://www.logius.nl/diensten/pkioverheid.
+In contexts where Dutch (semi) governmental organizations are involved, the X.509 certificate used for Client authentication MUST be a PKIOverheid certificate. These are x509 certificates derived from a root certificate owned by the Dutch Government. For more information on PKIOverheid see https://www.logius.nl/diensten/pkioverheid.
 
 In the API context, only Server or Services certificates SHOULD be used as these include an OIN/HRN for identification; Extended Validation certificates (as used for websites) do not include this identifier and are therefore not suitable to use with APIs.
 
-**Private key JWT**
-With Private key JWT authentication [OpenID](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication), the Client registers a public key with the Server and accompanies every API request with a JWT signed using this key. This Client Authentication method is part of the OAuth 2.0 and OpenID Connect standards for Clients authenticating to the token endpoint, but the use of Private key JWT Client authentication is not limited to these Use Cases.
+##### Private key JWT
+With Private key JWT authentication [OpenID](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication), the Client registers a public key with the Server and accompanies every API request with a JWT signed using this key. This Client Authentication method is part of the OpenID Connect standards for Clients authenticating to the OpenID Provider, but the use of Private key JWT Client authentication is not limited to this use case.
 
-This authentication method may be used with Clients that are able to securely store private keys and sign JWT's with this key.
+This authentication method may be used with Clients that are able to securely store asymmetric private keys and sign JWT's with this key.
 
-In contexts where Dutch (semi) governmental organizations are involved, the certificate used for signing the Private key JWT's MUST be a PKIOverheid certificate.
+In contexts where Dutch (semi) governmental organizations are involved, the certificate used for signing the Private key JWT's MUST be a PKIOverheid certificate. In case the certificate is included in the JWT header, it includes identification of the client and registration of the public key may not be necessary.
 
-[The NL GOV Assurance profile for OAuth 2.0](https://publicatie.centrumvoorstandaarden.nl/api/oauth/) REQUIRES the use of private_key_jwt for full clients, native clients with dynamically registered keys, and direct access clients as mentioned in this profile.
+[The NL GOV Assurance profile for OAuth 2.0](https://publicatie.centrumvoorstandaarden.nl/api/oauth/) REQUIRES the use of private_key_jwt for full clients, native clients with dynamically registered keys, and direct access clients as mentioned in the profile.
 
+##### Client secrets
+Various methods exists for authenticating clients using secrets.
 
-<p class='warning'>hieronder volgen eerst twee authenticatie methode toevoegingen van Jaron, daarna twee van Martin</p>
+Note that methods using asymmetric keys are RECOMMENDED instead of client secrets, as they are both more secure and key management is easier, in particular when deployed at scale.
 
-**Client Credentials using OAuth 2.0**
-In Use Cases where the Client is solely accessing API resources on behalf of itself or its governing organization, without requiring an End-User context, Client authentication using the OAuth 2.0 Client Credentials grant type can be appropriate. In such cases, the Server securely provides Client credentials to the Client upon registration (e.g. via an API Developer portal or out of bound process) and the Client uses these credentials to obtain an Access Token from the Authorization Server. Note that existing Client Credentials, such as a PKIoverheid X.509 certificate, MAY be used, preempting the need for providing credentials.
+Note that Client authentication using HTTP Basic authentication or communicating client credentials in the request body are prone to credential theft and therefore NOT RECOMMENDED.
 
-**Client authentication and Public clients**
+**Client_secret_jwt**
+The Client secret JWT method (see [OpenID](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication)) is similar to the private_key_jwt method, but uses a HMAC instead of a signature. This Client Authentication method is part of the OpenID Connect standards for Clients authenticating to the OpenID Provider, but the use of Private key JWT Client authentication is not limited to this use case.
+
+This method is not as a strong as the private_key_jwt method, but offers better options against replay attacks than password based methods.
+
+**Client Password**
+Clients in possession of a client password MAY use the HTTP Basic authentication scheme as defined in [RFC7617](https://tools.ietf.org/html/rfc7617) to authenticate to the Server. The client identifier is encoded using the application/x-www-form-urlencoded encoding algorithm, and the encoded value is used as the username; the client secret is encoded using the same algorithm and used as the password. The Server MUST support the HTTP Basic authentication scheme for authenticating clients that were issued a client secret as password.
+
+The Server MUST require the use of TLS when sending requests using client password authentication. Since this client authentication method involves a password, a Server MUST protect any endpoint utilizing it against brute force attacks.
+
+**Client secret**
+Alternatively, the authorization server MAY support including the client credentials in the request-body using the following parameters:
+
+|client_id:|REQUIRED|The client identifier issued to the client during the registration process|
+|client_secret:|REQUIRED|The client secret|
+
+The Server MUST require the use of TLS when sending requests using client secret authentication. Since this client authentication method involves a password, a Server MUST protect any endpoint utilizing it against brute force attacks.
+
+Including the client credentials in the request-body using the two parameters is NOT RECOMMENDED and SHOULD be limited to clients unable to utilize any other client authentication method. The parameters MUST only be transmitted in the request-body and MUST NOT be included in the request URI.
+
+##### Client authentication and Public clients
 In Use Cases that involve Native and User-Agent based Clients, strong Client authentication is generally not possible. Whereas it may be possible for individual Clients to implement a decent means of Client authentication (e.g. by using the Web Crypto API in User-Agent based Clients), the Server cannot make any assumptions about the confidentiality of credentials exchanged with such Clients.
 
 When dealing with Use Cases involving Native and User-Agent based Clients, the policies and standards described in [Section 4.4](#security-for-webbrowser-api-clients) SHOULD be followed, as well as best practices [[OAuth2.Browser-Based-Apps]] and [[RFC8252]], which are defined for use with OAuth but may be applicable for API communication in general.
 
-**Client Password**
-Clients in possession of a client password, also known as a client secret, MAY use the HTTP Basic authentication scheme as defined in [RFC7617](https://tools.ietf.org/html/rfc7617) to authenticate with the authorization server. The client identifier is encoded using the application/x-www-form-urlencoded encoding algorithm, and the encoded value is used as the username; the client secret is encoded using the same algorithm and used as the password. The authorization server MUST support the HTTP Basic authentication scheme for authenticating clients that were issued a client secret.
-
-Alternatively, the authorization server MAY support including the client credentials in the request-body using the following parameters:
-
-||||
-|-|-|-|
-|client_id:|REQUIRED|The client identifier issued to the client during the registration process|
-|client_secret:|REQUIRED|The client secret|
-
-Including the client credentials in the request-body using the two parameters is NOT RECOMMENDED and SHOULD be limited to clients unable to directly utilize the HTTP Basic authentication scheme (or other password-based HTTP authentication schemes). The parameters can only be transmitted in the request-body and MUST NOT be included in the request URI.
-
-**Other Authentication Methods**
-The authorization server MAY support any suitable authentication scheme matching its security requirements. When using other authentication methods, the authorization server MUST define a mapping between the client identifier (registration record) and authentication scheme.
+##### Other Authentication Methods
+A API Server (Resource Server) or Authorization Server MAY support any suitable authentication scheme matching their security requirements. When using other authentication methods, the authorization server MUST define a mapping between the client identifier (registration record) and authentication scheme.
 
 Some additional authentication methods are defined in the [OAuth Token Endpoint Authentication Methods](https://www.iana.org/assignments/oauth-parameters/oauth-parameters.xhtml#token-endpoint-auth-method) registry, and may be useful as generic client authentication methods beyond the specific use of protecting the token endpoint.
+
+#### Client Credentials using OAuth 2.0
+In Use Cases where the Client is solely accessing API resources on behalf of itself or its governing organization, without requiring an End-User context, Client authentication using the OAuth 2.0 Client Credentials grant type can be appropriate. In such cases, the Authorization Server securely provides Client credentials to the Client upon registration (e.g. via an API Developer portal or out of bound process) and the Client uses these credentials to obtain an Access Token from the Authorization Server. The Access token than is used to access the API (Resource Server) using the Access Token.
+
+Note that existing Client Credentials, such as a PKIoverheid X.509 certificate, MAY be used. This preempts the need for providing additional credentials. Any of the above mentioned Client Authentication methods can be applied with the Client Credential flow.
+
+Usage of the Client Credential method with OAuth is RECOMMENDED over direct authorization by the API Server (Resource Server), even if the authorization decision can be based directly on Client Authentication. This externalizes the authorization decision from the API implementation, allowing for easier modifications and management of both the decision logic as well as client authentication methods.
+
 
 ### Authorization
 
