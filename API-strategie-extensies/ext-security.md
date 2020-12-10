@@ -53,7 +53,7 @@ While both the end user and the client need to identify themselves OAuth typical
 
 OAuth is usually extended with OpenID Connect or OIDC. OIDC adds identity and identity federation.
 
-When using OAuth within the Dutch Government sector, you are required to use [the NL GOV Assurance profile for OAuth 2.0](https://publicatie.centrumvoorstandaarden.nl/api/oauth/). In the security section you will find security considerations using the NL GOV Assurance profile for OAuth 2.0.
+When using OAuth within the Dutch Government sector, you are REQUIRED to use [the NL GOV Assurance profile for OAuth 2.0](https://publicatie.centrumvoorstandaarden.nl/api/oauth/). In the security section you will find security considerations using the NL GOV Assurance profile for OAuth 2.0.
 
 The flow described here is what is known as the Authorization Code Grant. This is currently the only Grant type supported by the Dutch OAuth 2.0 profile.
 
