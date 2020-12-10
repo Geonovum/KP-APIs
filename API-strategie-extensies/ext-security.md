@@ -66,7 +66,7 @@ To the resource server, serving the API, this method appears identical to the OA
 For Identification of individual users use a pseudonym when possible to avoid exposing sensitive information about a user.
 This pseudonym can optionally be translatable to actual personal information in a separate service, but access to this service should be tightly controlled and limited only to cases where there is a legal need to use this information.
 
-Use of a Burger Service Number (BSN) is only allowed when the organization has permission to do so. Even when an organization has permission to use BSN's it is still recommended to use a pseudonym that is only translatable to a BSN for a limited number of services/users within the organization.
+Use of a Burger Service Number (BSN) is only allowed when the organization has a legal ground to do so. Even when an organization is eligible to use BSN's it is still recommended to use a pseudonym that is only translatable to a BSN for a limited number of services/users within the organization.
 An example of this can be found in the [architecture of the "digitaalstelsel omgevingswet"](https://aandeslagmetdeomgevingswet.nl/publish/library/219/dso_-_gas_-_knooppunt_toegang_iam.pdf)
 
 For identifying government organizations use the "organisatie-identificatienummer" (OIN).
