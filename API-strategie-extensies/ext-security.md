@@ -151,7 +151,7 @@ In contexts where Dutch (semi) governmental organizations are involved, the cert
 <p class='warning'>hieronder volgen eerst twee authenticatie methode toevoegingen van Jaron, daarna twee van Martin</p>
 
 **Client Credentials using OAuth 2.0**
-In Use Cases where the Client is solely accessing API resources on behalf of itself, without requiring an End-User context, Client authentication using the OAuth 2.0 Client Credentials grant type can be appropriate. In such cases, the Server securely communicates Client credentials to the Client upon registration (e.g. via an API Developer portal) and the Client uses these credentials to obtain an Access Token from the Identity provider.
+In Use Cases where the Client is solely accessing API resources on behalf of itself or its governing organization, without requiring an End-User context, Client authentication using the OAuth 2.0 Client Credentials grant type can be appropriate. In such cases, the Server securely communicates Client credentials to the Client upon registration (e.g. via an API Developer portal) and the Client uses these credentials to obtain an Access Token from the Identity provider.
 
 **Client authentication and Public clients**
 In Use Cases that involve Native and User-Agent based Clients, strong Client authentication is generally not possible. Whereas it may be possible for individual Clients to implement a decent means of Client authentication (e.g. by using the Web Crypto API in User-Agent based Clients), the Server cannot make any assumptions about the confidentiality of credentials exchanged with such Clients.
