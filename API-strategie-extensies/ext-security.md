@@ -39,7 +39,7 @@ Because this pattern is more a standard web application pattern we refer to [the
 We consider this method to be outside the scope of this document and refer to the aforementioned NCSC document for security considerations.
 
 #### mTLS or Client Certificate based API access pattern
-As of this writing, this method is to be includes in an upcoming release of the Open API specification. It is however widely used for both end user, B2B and a2a patterns.
+As of this writing, this method is to be included in an upcoming release of the Open API specification. It is however widely used for both end user, B2B and a2a patterns.
 
 The important thing to remember when using certificates is that the certificate only identifies the requester. During authentication we typically do a lookup of some subject information in a identity store to retrieve the requesters permissions. In PKIOverheid certificates we typically use the subject.serialNumber for this purpose.
 The problem here is that the identity identified by the certificate may have significantly more permissions than required by the client doing the request. This is breaking the least privilege principle.
