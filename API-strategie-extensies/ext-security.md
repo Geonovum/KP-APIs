@@ -53,12 +53,12 @@ While both the end user and the client need to identify themselves OAuth typical
 
 OAuth is usually extended with OpenID Connect or OIDC. OIDC adds identity and identity federation.
 
-When using OAuth within the Dutch Government sector, you are required to use [the OAuth 2.0 profile for the Dutch Government](https://docs.geostandaarden.nl/api/oauth/). In the security section you will find security considerations using the OAuth 2.0 profile for the Dutch Government.
+When using OAuth within the Dutch Government sector, you are required to use [the NL GOV Assurance profile for OAuth 2.0](https://publicatie.centrumvoorstandaarden.nl/api/oauth/). In the security section you will find security considerations using the NL GOV Assurance profile for OAuth 2.0.
 
 The flow described here is what is known as the Authorization Code Grant. This is currently the only Grant type supported by the Dutch OAuth 2.0 profile.
 
 #### JWT based API access pattern
-To the resource server, serving the API, this method appears identical to the OAuth 2.0 based API access pattern because we use JWT access tokens in the Dutch Government OAuth 2.0 profile. In this pattern the resource server MUST completely rely on the information provided by the client in the JWT, with the JWT typically signed by the client. It has no notion of an end user session or client grant. It performs the requested action based on the request and the provided token for as long as the token is valid.
+To the resource server, serving the API, this method appears identical to the OAuth 2.0 based API access pattern because we use JWT access tokens in the NL GOV Assurance profile for OAuth 2.0. In this pattern the resource server MUST completely rely on the information provided by the client in the JWT, with the JWT typically signed by the client. It has no notion of an end user session or client grant. It performs the requested action based on the request and the provided token for as long as the token is valid.
 
 ### Identification
 
@@ -98,12 +98,12 @@ SAML is a standard for securely communicating assertions about an authenticated 
 **OAuth**
 Although technically an authorization method, OAuth [[OAuth2]] is used for End-Users authenticating themselves and providing the Client with an Access Token upon successful End-User (and Client) authentication. This Access Token can be used to make authorized API requests. Using OAuth is appropriate when the Client does not need to know the identity of the authenticated End-User.
 
-A Dutch OAuth 2.0 Assurance profile is included on the list of required standards by Forum Standaardisatie. The latest version of the profile can be found at https://publicatie.centrumvoorstandaarden.nl/api/oauth/.
+A NL GOV Assurance profile for OAuth 2.0 is included on the list of required standards by Forum Standaardisatie. The latest version of the profile can be found at https://publicatie.centrumvoorstandaarden.nl/api/oauth/.
 
 **OpenID Connect**
 OpenID Connect [[OpenID.Core]] adds an identity layer on top of OAuth, making it into an actual authentication method. It enables API Clients to verify the identity of authenticated End-Users and to obtain profile information about the End-User.
 
-A Dutch OpenID Connect Assurance profile is currently being drafted. It is expected to be added to the list of required standards by Forum Standaardisatie. The latest version of the profile can be found at https://logius.gitlab.io/oidc/.
+A Dutch OpenID Connect Assurance profile is currently being drafted. It is expected to be added to the list of required standards by Forum Standaardisatie. The latest draft version of the profile can be found at https://logius.gitlab.io/oidc/.
 
 **Out of band**
 For some Use Cases it may be appropriate to distribute Access Tokens using an Out of band authentication method. Out of band authentication is generally appropriate when API resources are accessed via an application that already provides an authentication method. Based on an End-User authentication performed, the application subsequently requests an Access Token for API access from the Identity Provider via a secure channel.
@@ -117,7 +117,7 @@ Authenticating the Client application that accesses API resources, being it on b
 
 It is RECOMMENDED to use asymmetric (public-key based) methods for client authentication such as mTLS [RFC8705](https://www.rfc-editor.org/info/rfc8705) or "private_key_jwt" [OpenID](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication).
 
-[The OAuth 2.0 profile for the Dutch Government](https://docs.geostandaarden.nl/api/oauth/) REQUIRES the use of private_key_jwt for full clients, native clients with dynamically registered keys, and direct access clients as mentioned in this profile.
+[The NL GOV Assurance profile for OAuth 2.0](https://publicatie.centrumvoorstandaarden.nl/api/oauth/) REQUIRES the use of private_key_jwt for full clients, native clients with dynamically registered keys, and direct access clients as mentioned in this profile.
 
 The authorization server MUST require the use of TLS when sending requests using password authentication.
 
@@ -145,7 +145,7 @@ This authentication method may be used with Clients that are able to securely st
 
 In contexts where Dutch (semi) governmental organizations are involved, the certificate used for signing the Private key JWT's MUST be a PKIOverheid certificate.
 
-[The OAuth 2.0 profile for the Dutch Government](https://publicatie.centrumvoorstandaarden.nl/api/oauth/) REQUIRES the use of private_key_jwt for full clients, native clients with dynamically registered keys, and direct access clients as mentioned in this profile.
+[The NL GOV Assurance profile for OAuth 2.0](https://publicatie.centrumvoorstandaarden.nl/api/oauth/) REQUIRES the use of private_key_jwt for full clients, native clients with dynamically registered keys, and direct access clients as mentioned in this profile.
 
 
 <p class='warning'>hieronder volgen eerst twee authenticatie methode toevoegingen van Jaron, daarna twee van Martin</p>
@@ -198,7 +198,7 @@ In case the proper headers are not sent, then there are no authentication detail
   <p>This is in line with the way the OAuth standard appears on the comply or explain list of Forum Standaardisatie.</p>
 </div>
 
-See also [The Dutch profile OAuth in the chapter Security](#api-security) for further explanation of the applicaton of OAuth.
+See also [The NL GOV Assurance profile for OAuth 2.0](#api-security) for further explanation of the applicaton of OAuth.
 
 <div class="rule" id="api-15">
   <p class="rulelab"><strong>API-15</strong>: Use PKIoverheid certificates for access-restricted or purpose-limited API authentication</p>
