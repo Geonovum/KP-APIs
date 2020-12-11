@@ -1,5 +1,5 @@
 
-**Verslag: Werkgroep API Architectuur 2020-11-12**
+**Verslag: Werkgroep API Architectuur 2020-12-11**
 
 
 
@@ -15,7 +15,9 @@ https://github.com/Geonovum/KP-APIs/tree/master/Werkgroep%20Architectuur
 
 **3 Informatiearchitectuur : Relatie Informatiemodel & API**
 
-Besproken is de 1e opzet op : 
+(Bij dit onderwerp is het belangrijk om te komen tot een keuze voor de richting van de uitwerking/invulling en een goede afbakening van de scope vanuit perspectief van architectuur)
+
+Besproken is de voorzet van Peter Haasnoot op : 
 
 https://geonovum.github.io/KP-APIs/Werkgroep%20API%20architectuur/#informatiearchitectuur-relatiekoppeling-datamodel--api
 
