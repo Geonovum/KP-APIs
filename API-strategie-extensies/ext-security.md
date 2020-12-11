@@ -41,15 +41,16 @@ We consider this method to be outside the scope of this document and refer to th
 #### mTLS or Client Certificate based API access pattern
 As of this writing, this method is to be included in an upcoming release of the Open API specification. It is however widely used for both end user, B2B and a2a patterns.
 
-The important thing to remember when using certificates is that the certificate only identifies the requester. During authentication we typically do a lookup of some subject information in a identity store to retrieve the requesters permissions. In PKIOverheid certificates we typically use the subject.serialNumber for this purpose.
+The important thing to remember when using certificates is that the certificate only identifies the requester. During authentication we typically do a lookup of some subject information in an identity store to retrieve the requesters permissions. In PKIOverheid certificates we typically use the subject.serialNumber for this purpose.
 The problem here is that the identity identified by the certificate may have significantly more permissions than required by the client doing the request. This is breaking the least privilege principle.
 
 Another use case for the use of Client certificates is in the world of microservices where we want to control access to services. Terms used are zero trust, micro segmentation and service mesh. Proposed standards are [SPIFFE](https://spiffe.io). The proposed standard is not limited to the use of Client certificates but also describes the use of JWT's. This topic is outside the scope of this document.
 
 #### OAuth 2.0 token based API access pattern
+
 The important thing to remember about OAuth is its intended use. In OAuth the resource owner (often the end user) grants permissions to a client to access resources on its behalf. This grant is stored at the authorization server. After permissions are granted the client can perform its duties with or without the presence of an end user. To deny the client access to the end users resources, the resource owner MUST revoke the grant at the authorization server.
 
-While both the end user and the client need to identify themselves OAuth typically does not use sessions or support logout. It's sole purpose is solving the problem of authorizing a client with the least amount of privileges required.
+While both the end user and the client need to identify themselves OAuth typically does not use sessions or support logout. Its sole purpose is solving the problem of authorizing a client with the least amount of privileges required.
 
 OAuth is usually extended with OpenID Connect or OIDC. OIDC adds identity and identity federation.
 
@@ -58,7 +59,8 @@ When using OAuth within the Dutch Government sector, you are REQUIRED to use [th
 The flow described here is what is known as the Authorization Code Grant. This is currently the only Grant type supported by the Dutch OAuth 2.0 profile.
 
 #### JWT based API access pattern
-To the resource server, serving the API, this method appears identical to the OAuth 2.0 based API access pattern because we use JWT access tokens in the NL GOV Assurance profile for OAuth 2.0. In this pattern the resource server MUST completely rely on the information provided by the client in the JWT, with the JWT typically signed by the client. It has no notion of an end user session or client grant. It performs the requested action based on the request and the provided token for as long as the token is valid.
+
+To the resource server, serving the API, this method appears identical to the OAuth 2.0 based API access pattern because we use JWT access tokens in the NL GOV Assurance profile for OAuth 2.0. In this pattern the resource server MUST completely rely on the information provided by the client in the JWT, with the JWT typically signed by the client. It has no notion of an end user session or client grant[??]. It performs the requested action based on the request and the provided token for as long as the token is valid.
 
 ### Identification
 
@@ -72,13 +74,14 @@ An example of this can be found in the [architecture of the "digitaalstelsel omg
 For identifying government organizations use the "organisatie-identificatienummer" (OIN).
 For identifying non-government organizations (companies, associations, foundations etc...) use the Handelsregisternummer (HRN) or its OIN equivalent.
 These are used in the PKIOverheid and e-Herkenning context. See https://www.logius.nl/diensten/oin for more information on these identifiers.
-OINs can be queried using the COR API https://portaal.digikoppeling.nl/registers/corApi/index.
-HRNs are derived from the RSIN which can be queried in the "Handels register" https://developers.kvk.nl/documentation/search-v2.
+
+OINs can be queried using the COR API https://portaal.digikoppeling.nl/registers/corApi/index
+HRNs are derived from the KvKNummer which can be queried in the "Handels register" https://developers.kvk.nl/documentation/search-v2
 
 In the EU context use the eIDAS legal identifier. For more information see https://ec.europa.eu/digital-single-market/en/trust-services-and-eid.
 
 **Clients**
-The authorization server issues the registered client a client identifier - a unique string representing the registration information provided by the client. The client identifier is not a secret; it is exposed to the resource owner and MUST NOT be used alone for client authentication. The client identifier is unique to the authorization server.
+When using authorization servers, the authorization server issues the registered client a client identifier - a unique string representing the registration information provided by the client. The client identifier is not a secret; it is exposed to the resource owner and MUST NOT be used alone for client authentication. The client identifier is unique to the authorization server.
 
 Authorization servers SHOULD NOT allow clients to choose or influence their client_id value.
 
@@ -225,6 +228,7 @@ Note that authentication in the cases below is typically client authentication, 
 Note that usage of the Authorization header is part of the OAuth2 specifications.
 
 **Implicit authentication**
+
 When authentication is implicit or when just the presence of an Authorization header is enough for authentication and/or authorization: use the flow chart in figure 1 to determine the correct error code.
 
 ![](media/HTTP-FlowChart1.PNG)
@@ -238,6 +242,7 @@ https://tools.ietf.org/html/rfc6750#section-3.1
 https://tools.ietf.org/html/rfc7231#section-6.5.4
 
 **Explicit authentication**
+
 When authentication is explicit, that is the authentication credentials are actively verfied when present, use the flow chart in figure 2 to determine the correct error codes.
 
 ![](media/HTTP-FlowChart2.PNG)
@@ -254,7 +259,7 @@ https://tools.ietf.org/html/rfc7231#section-6.5.4
 
 **Explicit authentication while matching client authorization (`cnf`)**
 
-When authentication is explicit and there is a check wether the provided authorization confirmation claim (`cnf`, see [[rfc7800]]) matches the credentials provided for authentication use the flow chart in figure 3 to esteblish the correct error codes.
+When authentication is explicit and there is a check whether the provided authorization confirmation claim (`cnf`, see [[rfc7800]]) matches the credentials provided for authentication use the flow chart in figure 3 to esteblish the correct error codes.
 
 ![](media/HTTP-FlowChart3.PNG)
 
@@ -274,7 +279,7 @@ https://tools.ietf.org/html/rfc7231#section-6.5.4
 
 <!--First, it is established whether the requester (principal) has a valid authorisation(i.e. token is valid) then it is established whether this authorisation is valid for a requested resource. In case the requester is not authorised or the authorisation cannot be established, for example, the resource is required to establish authorisation and the resource does not exist, then a status error code `403 Forbidden` is returned. In this way, no information is returned about the existence of a resource to a non-authorised principal.
 
-An additional advantage of the stategy that establishes whether there is authorisation is the opportunity to separate access control logic from business logic.-->
+An additional advantage of the strategy that establishes whether there is authorisation is the opportunity to separate access control logic from business logic.-->
 
 
 ### HTTP-level Security
@@ -335,3 +340,5 @@ HTTP defines status codes. When designing a REST API, don't just use `200` for s
 #### Error handling
 - Respond with generic error messages - avoid revealing details of the failure unnecessarily.
 - Do not pass technical details (e.g. call stacks or other internal hints) to the client.
+
+
