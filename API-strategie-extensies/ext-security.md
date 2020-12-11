@@ -220,12 +220,16 @@ See also [The NL GOV Assurance profile for OAuth 2.0](#api-security) for further
 
 In a production environment as little information as possible is to be disclosed. Apply the following rules for returning the status error code `401 Unauthorized`, `403 Forbidden`, and `404 Not Found`.
 
+Note that authentication in the cases below is typically client authentication, and the Authorization header contains information on the End-User authorization and authentication, if applicable.
+
+Note that usage of the Authorization header is part of the OAuth2 specifications.
+
 **Implicit authentication**
-When authentication is implicit or when just the presence of an Authorization header is enough for authentication: use the flow chart in figure 1 to determine the correct error code.
+When authentication is implicit or when just the presence of an Authorization header is enough for authentication and/or authorization: use the flow chart in figure 1 to determine the correct error code.
 
 ![](media/HTTP-FlowChart1.PNG)
 
-Figure 1: authentication is implicit
+Figure 1: authentication is implicit.
 
 Links from flow chart in figure 1:
 
@@ -234,11 +238,11 @@ https://tools.ietf.org/html/rfc6750#section-3.1
 https://tools.ietf.org/html/rfc7231#section-6.5.4
 
 **Explicit authentication**
-When authentication is explicit, that is the authentication credentials are actively verfied when present use the flow chart in figure 2 to determine the correct error codes.
+When authentication is explicit, that is the authentication credentials are actively verfied when present, use the flow chart in figure 2 to determine the correct error codes.
 
 ![](media/HTTP-FlowChart2.PNG)
 
-Figure 2: authentication is explicit
+Figure 2: authentication is explicit.
 
 Links from flow chart in figure 2:
 
@@ -250,11 +254,11 @@ https://tools.ietf.org/html/rfc7231#section-6.5.4
 
 **Explicit authentication while matching client authorization CNF**
 
-When authentication is explicit and there is a check wether the provided authorization confirmation claim (CNF) matches the credentials provided for authentication use the flow chart in figure 3 to esteblish the correct error codes.
+When authentication is explicit and there is a check wether the provided authorization confirmation claim (`cnf`, see [[rfc7800]]) matches the credentials provided for authentication use the flow chart in figure 3 to esteblish the correct error codes.
 
 ![](media/HTTP-FlowChart3.PNG)
 
-Figure 3: authentication is explicit, and client authorization confirmation claim matches authentication
+Figure 3: authentication is explicit, and client authorization confirmation claim (`cnf`) matches authentication.
 
 Links from flow chart in figure 3:
 
