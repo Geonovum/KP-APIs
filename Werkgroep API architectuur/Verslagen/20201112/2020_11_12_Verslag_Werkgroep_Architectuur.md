@@ -39,7 +39,7 @@ Concept Hoofdstuk indeling
 - API Capability model
 
   + Kaders moeten nog worden geintegreerd met kader dat bij onderwerp 'api management' is opgesteld;
-  + Een eerste mapping hiervoo is gemaakt, resultaat& de vragen hierbij zullen nog met de gehele groep worden gedeeld
+  + Een eerste mapping hiervoor is gemaakt, resultaat& de vragen hierbij zullen nog met de gehele groep worden gedeeld
   + Uit de discussie kwam vooral de wens om begrippen gelijk te houden zoveel mogelijk, ook is er de mogelijkheid om de plaat aanklikbaar te maken en evt op basis van de plaat 
 verschillende specifieke vb invullingen in architectuur schema's 
 
