@@ -221,7 +221,7 @@ See also [The NL GOV Assurance profile for OAuth 2.0](#api-security) for further
 In a production environment as little information as possible is to be disclosed. Apply the following rules for returning the status error code `401 Unauthorized`, `403 Forbidden`, and `404 Not Found`.
 
 **Implicit authentication**
-When authentication is implicit or when just the presence of an Authorization header (API-Key) is enough for authentication: use the flow chart in figure 1 to determine the correct error code.
+When authentication is implicit or when just the presence of an Authorization header is enough for authentication: use the flow chart in figure 1 to determine the correct error code.
 
 ![](media/HTTP-FlowChart1.PNG)
 
