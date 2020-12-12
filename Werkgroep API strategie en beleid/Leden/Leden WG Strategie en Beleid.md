@@ -58,7 +58,7 @@ Omwille van privacy staan er geen contactgevens van de leden vermeld. Discussies
 
 **UWV**: Eric Nijenhuis, Nic van Spronsen
 
-**VNG**: Martin van der Plas
+**VNG**: Gershon Janssen, Martin van der Plas
 
 ## Private sector
 
