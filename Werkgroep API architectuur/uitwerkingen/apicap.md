@@ -66,8 +66,16 @@ Wanneer bij het API Ontwerp gebruik gemaakt wordt van de OAS 3 standaard, bieden
 #### API Analytics
 Naast onder andere productvisie en input van afnemers is API Analytics een belangrijke aandrijver bij het bepalen van de richting van API doorontwikkeling. Op basis van actueel API gebruik kan het resultaat van Key Performance Indicators (KPI's) worden vastgesteld. Dit kan leiden tot inzicht in welke API functionaliteiten succesvol zijn en welke minder succesvol, en zodoende kan leiden tot aanscherping of aanpassing van de productvisie.
 
-#### Werkstroom Management
+#### Ontwikkelaarsondersteuning
+Ontwikkelaarsondersteuning bestaat uit alle processen die benodigd zijn om API ontwikkeling te ondersteunen. Deze processen zijn niet specifiek voor API ontwikkeling, maar moeten wel in [...]
 
+- *Werkstroom management:* het beheren van de werkstroom van de doorontwikkeling van API's. In een Agile werkwijze kan hierbij worden gedacht aan het gebruik van Jira.
+- *Configuratiebeheer:* volgens good practices op het gebied van continuous delivery is het belangrijk zo veel mogelijk code en configuratie in een versiebeheers-applicatie onder te brengen.
+- *Team samenwerking:* communicatie, informatie uitwisseling, documentatie, etc. binnen en tussen teams.
+- *Continuous Integration:* het proces dat ervoor zorgt dat configuratie- en ontwikkel artefacten zo snel mogelijk worden samengevoegd, zodat conflicten op het gebied van samenvoegen vroegtijdig worden opgespoord en tot een minimum worden beperkt.
+- *Continuous Deployment:* het ervoor zorgen dat configuratie en code zich ten alle tijde in een staat bevinden dat deze naar de productie kunnen worden gedeployed. Een belangrijk onderdeel hiervan is het ontkoppelen van deployment en release, waardoor code snel naar productie kan worden gebracht, maar pas aan gebruikers wordt opgengesteld wanneer daarvoor wordt gekozen.
+- *Issue Tracking:* het kunnen registreren en opvolgen van gevonden defects.
+- *Release Management:* het proces rondom het releasen van API's naar de verschillende omgevingen, inclusief de productieomgeving.
 
 #### API Versionering
 Versionering van API's zorgt ervoor dat het voor afnemers van API's duidelijk is op welke API wordt aangesloten en welke eigenschappen daarbij horen. Voor aanbieders van API's zorgt het ervoor dat ze wendbaar kunnen zijn door nieuwe API versies te introduceren, zonder dat dit direct impact heeft op API clients.
@@ -105,12 +113,12 @@ Hieronder vallen alle werkzaamheden met betrekking tot het beheren van de API Ga
 Wanneer API's aan de buitenwereld worden opengesteld, moeten deze in de API Gateway worden geregistreerd. Hierbij worden zij voorzien van een URL welke kan worden gebruikt om de API aan te roepen en wordt de API opgenomen in het API portfolio, welke de basis vormt van de API documentatie in de Developer Portal.
 
 #### API Monitoring & Alerting
-
+API Monitoring & Alerting geeft inzicht in de technische staat van de API's en informeert betrokken groepen of personen in gevallen van onbeschikbaarheid.
 
 #### Fout afhandeling
 
 #### Logging & Audit trail
-
+Geeft inicht in de verkeersstromen tussen API Clients, API Gateway en het achterliggende applicatie landschap en zorgt ervoor dat alle handelingen herleidbaar zijn door inzicht te geven in historische verkeersstromen.
 
 #### Resource health status
 Zorgt ervoor dat eenvoudig kan worden vastgesteld of een API op het huidige moment beschikbaar is. Dit kan bijvoorbeeld door middel van een dashboard of door middel van een API.
