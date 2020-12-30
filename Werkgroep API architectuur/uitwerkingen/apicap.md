@@ -62,8 +62,9 @@ Een optie kan zijn dat API ontwikkeling in de API Gateway plaatsvindt; de meeste
 Alternatieven zijn API ontwikkeling in microservices, waarbij microservices API's aanbieden waarvan een deel via de API Gateway as-is wordt ontsloten, of het gebruik van een middleware oplossing. Hierbij moet rekening worden gehouden dat het gebruik van middleware dezelfde nadelen heeft met betrekking tot specifieke productkennis als het ontwikkelen van API's in de API Gateway, maar kan het zijn dat deze kennis reeds in de teams aanwezig is.
 
 Wanneer bij het API Ontwerp gebruik gemaakt wordt van de OAS 3 standaard, bieden zowel API Gateway oplossingen en programmeertalen vaak goede ondersteuning voor het automatisch genereren van code op basis van de API specificatie, wat de snelheid van ontwikkeling vergroot en de foutgevoeligheid verkleint.
+
 #### API Analytics
-Naast onder andere productvisie en input van afnemers is API Analytics een belangrijke aandrijver bij het bepalen van de richting van API doorontwikkeling. 
+Naast onder andere productvisie en input van afnemers is API Analytics een belangrijke aandrijver bij het bepalen van de richting van API doorontwikkeling. Op basis van actueel API gebruik kan het resultaat van Key Performance Indicators (KPI's) worden vastgesteld. Dit kan leiden tot inzicht in welke API functionaliteiten succesvol zijn en welke minder succesvol, en zodoende kan leiden tot aanscherping of aanpassing van de productvisie.
 
 #### Werkstroom Management
 
@@ -81,17 +82,27 @@ De tendens bij API's op het gebied van versionering is om zeer terughoudend te z
 API & Gateway beheer gaat over het beheren van functionaliteiten die generiek voor meerdere (of alle) API's gelden en het beheren van de API Gateway. Dit zijn zaken die niet horen bij de ontwikkeling van specifieke API's, maar wel invloed hebben op de werking daarvan.
 
 #### API Policy definitie
+Dit betreft het definieren van generieke API policies, welke worden toegepast op alle API's of door een aantal API's kunnen worden uitgevoerd. Voorbeelden van API policies zijn:
+- Validatie van API verzoeken tegen een API specificatie;
+- het vertalen van JSON berichten naar een ander berichtformaat op basis van content negotiation;
+- het filteren van headers in response berichten;
+- het 'throttlen' van inkomende API verzoeken om back-ends te ontlasten;
+- het afdwingen van gautoriseerde API verzoeken;
+- etc.
 
 #### Sleutel beheer
+Voor een veilige uitwisseling van gegevens tussen API Gateway en client (en eventuele externe Authorisatie Servers) spelen ondertekening en versleuteling van berichten een belangrijke rol. Hiervoor is het belangrijk dat de API aanbieder het sleutelmateriaal dat hiervoor wordt gebruikt op een veilige manier kan opslaan en waar nodig kan distribueren naar aansluitende API clients.
 
 #### Gebruiker & Rol beheer
+Het registreren en beheren van API endpoints gebeurt zo veel mogelijk op basis van self-service door teams die API's ontwikkelen. Daarnaast worden centrale policies en API Gateway configuratie vaak centraal uitgevoerd.
 
+Hiervoor is het belangrijk dat het API & Gateway beheer op basis van gebruikers en een autorisatie matrix verloopt.
 
 #### Gateway beheer
-
+Hieronder vallen alle werkzaamheden met betrekking tot het beheren van de API Gateway zelf. Hierbij kan worden gedacht aan de technische inrichting van het platform, het uitvoeren van upgrades, het beheren van gebruikers, rollen en autorisaties en het oplossen van problemen die volgen uit monitoring en alerting.
 
 #### API Resource Registratie
-
+Wanneer API's aan de buitenwereld worden opengesteld, moeten deze in de API Gateway worden geregistreerd. Hierbij worden zij voorzien van een URL welke kan worden gebruikt om de API aan te roepen en wordt de API opgenomen in het API portfolio, welke de basis vormt van de API documentatie in de Developer Portal.
 
 #### API Monitoring & Alerting
 
@@ -102,51 +113,20 @@ API & Gateway beheer gaat over het beheren van functionaliteiten die generiek vo
 
 
 #### Resource health status
-
-
-### API Architectuur
-
-
-
-- API Resource Registratie
-
-- API ResourceDiscovery
-
-- Versionering
-
-- Resource health status
-
-- API Typologieën (Intern, Partner, Open)
-
-- Registratie API
-
-### API Lifecycle Management
-
-- Versiebeheer
-
-- Teamsamenwerking
-
-- ContinuousDeployment
-
-- ReleaseManagement
-
-- Werkstroommanagement
-
-- ContinuousIntegration
-
-- Issue Tracking
-
-- API Ontwerp
-
-- API Ontwikkeling
+Zorgt ervoor dat eenvoudig kan worden vastgesteld of een API op het huidige moment beschikbaar is. Dit kan bijvoorbeeld door middel van een dashboard of door middel van een API.
 
 ### API Architectuur
+API Architectuur gaat over keuzen die te maken hebben met het inrichten van het complete API landschap. 
 
-- DataTransformaties
+#### Data Transformaties
 
-- Mediatie /Orkestratie
+#### SLA Management
+Bij elke API moeten Service Level Agreements (SLA) worden opgesteld, zodat afnemers weten waar zij aan toe zijn bij het gebruiken van API's. 
 
-- Caching
+#### Mediatie / Orkestratie
+
+#### Caching
+
 
 - API Beveiliging
 
