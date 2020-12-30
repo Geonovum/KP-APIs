@@ -115,7 +115,8 @@ Wanneer API's aan de buitenwereld worden opengesteld, moeten deze in de API Gate
 #### API Monitoring & Alerting
 API Monitoring & Alerting geeft inzicht in de technische staat van de API's en informeert betrokken groepen of personen in gevallen van onbeschikbaarheid.
 
-#### Fout afhandeling
+#### Foutafhandeling
+In het geval dat er fouten optreden in de API's, bijvoorbeeld door niet-functionerende back-end systemen, moeten API Clients worden voorzien van duidelijke foutmeldingen en moeten etrokkenen bij de API aanbieder voorzien worden van voldoende informatie om de oorzaak van de fouten op te kunnen lossen en te verhelpen, indien nodig.
 
 #### Logging & Audit trail
 Geeft inicht in de verkeersstromen tussen API Clients, API Gateway en het achterliggende applicatie landschap en zorgt ervoor dat alle handelingen herleidbaar zijn door inzicht te geven in historische verkeersstromen.
@@ -126,56 +127,40 @@ Zorgt ervoor dat eenvoudig kan worden vastgesteld of een API op het huidige mome
 ### API Architectuur
 API Architectuur gaat over keuzen die te maken hebben met het inrichten van het complete API landschap. 
 
-#### Data Transformaties
+#### API Mediatie
+In het geval back-end systemen niet de mogelijkheden hebben te communiceren volgens de gespecificeerde API contracten of als een API betrekking heeft op meerdere back-end systemen, kan het noodzakelijk zijn data transformaties toe te passen om toch de gebruiksvriendelijke API's aan afnemers te kunnen bieden. In dit geval wordt API Mediatie, ook wel data transformatie of orkestratie, toegepast met als doel de API's die aan API Clients geboden worden zo gebruiksvriendelijk mogelijk te laten zijn, zonder afhankelijk te zijn van implementatiedetails en technologische beperkingen van back-end systemen. API Mediatie kan plaatsvinden in microservices, een integratielaag in de back-end of in de API Gateway.
 
 #### SLA Management
-Bij elke API moeten Service Level Agreements (SLA) worden opgesteld, zodat afnemers weten waar zij aan toe zijn bij het gebruiken van API's. 
-
-#### Mediatie / Orkestratie
+Bij elke API moeten Service Level Agreements (SLA) worden opgesteld, zodat afnemers weten waar zij aan toe zijn bij het gebruiken van API's. Als onderdeel hiervan kunnen ook policies zoals doorbelasting en throttling worden ingesteld, om bijvoorbeeld verschilende gebruiks-tiers met bijbehorende service levels aan te kunnen bieden.
 
 #### Caching
+Een belangrijk onderdeel van developer experience bij API's is de performance ervan. Caching zorgt ervoor dat niet voor elke aanroep het achterlandschap geraadpleegd hoeft te worden. RESTful API's lenen zich zeer goed voor het toepassen van caching door toepassing van het Proxy architectuur patroon, echter dient zorg te worden gedragen dat gewijzigde broninformatie leidt tot invalidatie van de informatie in de cache, zodat API Clients geen achterhaalde informatie ophalen.
 
+#### Routing
+In het geval de back-end functionaliteit wordt ingevuld door meerdere back-end systemen of microservices, dienen inkomende API verzoeken te worden gerouteerd naar de juiste systemen. In het eenvoudigste geval kan dit betekenen dat verzoeken voor verschillende API endpoints naar verschillende back-end systemen worden gerouteerd, maar in ingewikkeldere situaties kan het ook noodzakelijk zijn te routeren op basis van informatie uit het verzoek.
 
-- API Beveiliging
+#### Protocol conversie
+Om operabiliteit te vergroten zodat meer API Clients aan kunnen sluiten, kan het nuttig zijn API's aan te bieden in andere protocollen en architectuurstijlen dan REST / JSON. Zonder specifieke code in back-end systemen kan bijvoorbeeld de API Gateway API's op basis van REST en JSON omvormen naar API's op basis van SOAP en XML. Hierdoor kunnen API Clients die geen JSON ondersteunen worden bediend, zonder dat dit leidt tot extra ontwikkel effort aan de back-end / microservices kant.
 
-- Analytics
+#### Doorbelasting
+In sommige gevallen kan er voor gekozen worden om API gebruik door te belasten. Er bestaan verschillende doorbelastingsmodellen, welke vallen onder de volgende hoofdcategorieën:
 
-- ProtocolConversies
+- *Vrij:* de API is vrij te gebruiken zonder kosten.
+- *Betaald:* gebruikers van de API moeten betalen voor het gebruik ervan. Onder deze categorie vallen verschillende subcategorieën, zoals Freemium, Tiered, Pay-as-you-go en doorbelasting op basis van een vaste prijs per tijdseenheid.
+- *Indirect:* gebruikers van de API betalen niet direct voor het gebruik ervan, maar dragen indirect bij aan het business model van de API aanbieder, waardoor API gebruik geld oplevert voor de API aanbieder.
+- *Affiliate:* vergelijkbaar met indirect, behalve dat de API aanbieder gebruikers van API's betaalt om het gebruik van de API's zoveel mogelijk te stimuleren.
 
-- Logging / Audit
+#### API Policy handhaving
+API Policy handhaving gaat over het toepassen van de ontwikkelde API policies op API endpoints. Hierbij kan onderscheid worden gemaakt tussen policies die altijd van toepassing zijn en policies die afhankelijk van de aangeroepen API of de afgesproken service levels worden toegepast.
 
-- Trail
+#### Authenticatie / Autorisatie
+Hieronder valt de identificatie van de API Client end eindgebruiker, authenticatie van de eindgebruiker bij de API aanbieder op basis hiervan en de autorisatie van API toegang op basis van de geidentificeerde API Client end eindgebruiker.
 
-- Policyenforcement
+#### Verbinding / sessie beheer
+RESTful API's zijn per definitie stateless, maar afhankelijk van bepaalde keuzen met betrekking tot bijvoorbeeld autorisatie kan het zijn dat de API aanbieder informatie over de sessie bijhoudt over API aanroepen heen. Hierbij kan bijvoorbeeld worden gedacht aan het ingelogd zijn van een gebruiker. Het bijhouden van sessies door de API aanbieder moet echter tot een minimum worden beperkt, om complexe situaties met sticky sessions in het geval van meervoudig uitgevoerde API Gateways te voorkomen.
 
-- Back-endAdapters
-
-- Authenticatie /Authorisatie
-
-- Verbinding /Sessie beheer
-
-- Rate Limiting /Throttling
-
-- SLA Management
-
-- Routing
-
-### API Management
-
-- API PolicyDefinitie
-
-- GatewayBeheer
-
-- SleutelManagement
-
-- API Monitoring& Alerting
-
-- Beheer API
-
-- Foutafhandeling
-
-- Gebruikers en Rol Beheer
-
+#### Rate limiting / throttling
+Om back-end systemen te beschermen tegen grote aantallen API aanroepen worden rate limiting en throttling toegepast met als doel het aantal toegestane API aanroepen per API Client te beperken. Rate limits kunnen worden ingesteld op verschillende tijdseenheden, bijvoorbeeld het aantal toegestane verzoeken per uur of per maand.
 
 >Opmerking: Zie ook huidige vulling op : https://geonovum.github.io/KP-APIs/API-strategie-algemeen/#diensten-toegang-api-management 
 (De capabilities kunnen mogelijk gebruikt worden om dit model uit te breiden)
