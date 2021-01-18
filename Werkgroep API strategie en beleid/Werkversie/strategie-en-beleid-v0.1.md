@@ -18,7 +18,7 @@ Het nieuwe systeem registreert en beheert alle publiekrechtelijke beperkingen in
 
 Het nieuwe systeem zorgt er tevens voor dat de BRK-BP beter aansluit bij de andere basisregistraties van het Kadaster zoals de BAG (bijvoorbeeld voor woningen) en de BGT (bijvoorbeeld voor monumentale infrastructuur).
 
-Het bij de bron registreren en beheren van gegevens heeft hier dus een zichtbare meerwaarde zowel voor de overheid als voor de private sector.
+Het bij de bron registreren en beheren van gegevens heeft hier dus zichtbare meerwaarde, zowel voor de overheid als voor de private sector.
 
 [*Is er een link naar de BRP-PB? Verder noemde Frans het portaal [ruimtelijkeplannen.nl](https://www.ruimtelijkeplannen.nl/) als mogelijk voorbeeld.*]
 
