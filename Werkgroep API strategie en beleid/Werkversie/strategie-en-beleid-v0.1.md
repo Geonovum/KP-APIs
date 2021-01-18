@@ -2,36 +2,33 @@
 [*Titel aangepast naar suggestie van Martin van der Plas. Suggesties nog welkom.*]
 
 ## Probleembeschrijving
-Bij de meeste ICT systemen van de overheid zitten de gegevens verweven in de applicatie. Veel systemen werken met kopieën van de 
+In veel ICT systemen bij de overheid zitten de gegevens verweven in de applicatie. Deze systemen werken met kopieën van de 
 basisregistraties en andere gegevensbronnen. De huidige situatie brengt een aantal problemen met zich mee:
 1. De kans op fouten en datalekken neemt toe bij het kopiëren en gedupliceerd opslaan van gegevens.
 2. Het kopiëren en synchroniseren van gegevens tussen systemen kost tijd en geld.
 3. Personen en bedrijven hebben geen regie over hun gegevens als deze overal verspreid staan.
 4. De huidige systemen en koppelingen kunnen afhankelijkheid van leveranciers in de hand werken.
 
-### Voorbeeld: verhuizing naar een andere gemeente
+### Voorbeeld: publiekrechtelijke beperkingen
+Sinds 2021 is de nieuwe [Wet kenbaarheid publiekrechtelijke beperkingen](https://wetten.overheid.nl/BWBR0016876/2021-01-01) (Wkpb) van kracht. Deze nieuwe wet schrijft wijzigingen voor in het systeem voor het kenbaar maken van [publiekrechtelijke beperkingen](https://www.kadaster.nl/publiekrechtelijke-beperkingen)).
 
-[ *Liesbeth en Martin stellen dat dit geen passend voorbeeld is. Verwijderen? Wel zijn er meldingen dat sommige gemeenten tot wel 10 kopieën van de GBA/BRP bijhouden voor verschillende applicaties. Misschien kunnen we daar iets mee?* ]
+In het oude systeem registreerden de gemeenten hun eigen gegevens terwijl andere overheden de basisregistratie van het Kadaster gebruikten. Deze twee langs elkaar werkende systemen brachten allerlei problemen met zich mee. Overheden, notarissen en makelaars moesten vaak beide registraties raadplegen. Het was niet mogelijk om gemeentelijke brondocumenten bij het Kadaster op te vragen. En soms bleek de gemeentelijke situatie van een pand of object niet overeen te komen met de kenmerken zoals die in de basisregisters van het Kadaster zijn vastgelegd.
 
-Als je gaat verhuizen van gemeente A naar gemeente B, dan moet je je inschrijven bij de gemeente B. Achter de schermen 
-komt er dan een ingewikkelde gegevensstroom op gang.
+Het nieuwe systeem registreert en beheert alle publiekrechtelijke beperkingen in de Basisregistratie Kadaster publiekrechtelijke beperkingen (BRK-PB). Overheden en organisaties uit de private sector hebben zo een unieke bron waar ze alle gegevens kunnen raadplegen.
 
-Beide gemeenten houden hun eigen registratie van personen bij. De ICT systemen van gemeente A moeten daarom je persoonsgegevens 
-opvragen bij de ICT systemen van gemeente B. Met de ontvangen gegevens kan gemeente B je als nieuwe bewoner registreren in z'n 
-basisregistratie personen. Maar gemeente A moet weten dat je nu staat ingeschreven in gemeente B. Dus stuurt gemeente B verwijsgegevens 
-naar gemeente A. Gemeente A verwerkt deze verwijsgegevens in z’n basisregistratie personen.
+Het nieuwe systeem zorgt er tevens voor dat de BRK-BP beter aansluit bij de andere basisregistraties van het Kadaster zoals de BAG (bijvoorbeeld voor woningen) en de BGT (bijvoorbeeld voor monumentale infrastructuur).
 
-Daarna moeten zowel gemeente A als gemeente B de mutaties van hun lokale basisregistratie personen nog doorgeven aan de 
-[centrale basisregistratie personen van de Autoriteit Persoonsgegevens](https://www.autoriteitpersoonsgegevens.nl/nl/onderwerpen/gemeente/basisregistratie-personen-brp?qa=brp). Zo kan het drie werkdagen kosten om een verhuizing volledig te registreren. En er komen drie registraties aan te pas die deels kopieën van elkaar zijn en met elkaar synchroon gehouden moeten worden.
+Het bij de bron registreren en beheren van gegevens heeft hier dus een zichtbare meerwaarde zowel voor de overheid als voor de private sector.
 
-Is het niet efficiënter en veiliger om één basisregistratie personen bij te houden, in plaats van gegevens heen en weer te 
-schuiven van de ene registratie naar de andere?
+[*Is er een link naar de BRP-PB? Verder noemde Frans het portaal [ruimtelijkeplannen.nl](https://www.ruimtelijkeplannen.nl/) als mogelijk voorbeeld.*]
 
 ### Voorbeeld: rijvaardigheid bewijzen
 
-[*Dit voorbeeld is van Martin. Is dit voldoende overtuigend? Wat is in dit voorbeeld precies het probleem van de overheid?*]
+[*Dit voorbeeld is van Martin. Deze beschrijving kan verder uitgewerkt worden. Wat is precies het probleem van de overheid?*]
 
-Als je met een auto de weg op wilt moet je je rijvaardigheid bewijzen bij de centrale overheid, bij het [CBR](https://www.cbr.nl/). Bij het CBR moet je je legitimeren met een identiteitsbewijs (paspoort of identiteitsbewijs) dat je gemeente uitgeeft. En als je de weg op gaat moet je het rijbewijs bij je hebben zodat de politie je rijvaardigheid kan controleren. Dit is geen toonbeeld van efficiëntie. Het rijbewijs zou een verwijzing moeten zijn naar een gegevensbron waarin je rijvaardigheid is vastgelegd. De politie kan dit direct controleren bij de bron, en je kan deze gegevens ook online delen. En het CBR zou het rijbewijs direct kunnen sturen naar het adres wat bekend is bij de gemeente.
+Als je met een auto de weg op wilt moet je je rijvaardigheid bewijzen bij de centrale overheid, bij het [CBR](https://www.cbr.nl/). Bij het CBR moet je je legitimeren met een identiteitsbewijs (paspoort of identiteitsbewijs) dat je gemeente uitgeeft.
+
+Als je de weg op gaat moet je het rijbewijs bij je hebben zodat de politie je rijvaardigheid kan controleren. Dit is geen toonbeeld van efficiëntie. Het rijbewijs zou een verwijzing moeten zijn naar een gegevensbron waarin je rijvaardigheid is vastgelegd. De politie kan dit direct controleren bij de bron, en je kan deze gegevens ook online delen. En het CBR zou het rijbewijs direct kunnen sturen naar het adres wat bekend is bij de gemeente.
 
 ### Voorbeeld: regie op gegevens
 
@@ -47,15 +44,8 @@ In de [beleidsbrief regie op gegevens](https://www.rijksoverheid.nl/documenten/b
 
 Als de overheid gegevens bij de bron gaat beheren en ontsluiten, wordt het gemakkelijker om bij de bron volledige inzage te geven. De overheid kan dan digitale inzage geven in een uniform gebruiksvriendelijk format, en ook de correctie van gegevens wordt eenvoudiger.
 
-### Voorbeeld: publiekrechtelijke beperkingen
-
-[*Frans suggereerde het voorbeeld van de* [Basisregistratie Kadaster publiekrechtelijke beperkingen](https://www.kadaster.nl/zakelijk/registraties/landelijke-voorzieningen/wkpb-wordt-brk-pb/beter-kenbaar-en-brk-pb) *die het oude systeem voor kenbaarheid publiekrechtelijke beperkingen vanaf 2021 gaat vervangen. Hiermee wordt onder andere voorkomen dat gegevens zowel door het Kadaster als door gemeenten worden bewaard, en tussen de verschillende systemen gekopieerd moeten worden.*
-
-*Verder noemde Frans het portaal [ruimtelijkeplannen.nl](https://www.ruimtelijkeplannen.nl/) als mogelijk voorbeeld.*]
-
 ## Visie en stappenplan
-Als digitale overheid maken we onze dienstverlening veiliger, efficiënter en beter beheersbaar door applicaties beter te 
-scheiden van gegevens en gegevens alleen bij de bron te beheren.
+Als digitale overheid maken we onze dienstverlening veiliger, efficiënter en beter beheersbaar door applicaties beter te scheiden van gegevens en gegevens alleen bij de bron te beheren.
 
 [*Martin stelt voor om een visie van de eindsituatie te geven, bijvoobreeld:*]
 
@@ -64,11 +54,10 @@ Alle basisregistraties zijn over 3 jaar realtime te bevragen en over 5 jaar gebr
 [*Martin stelt voor om een stappenplan te geven om naar deze eindsituatie toe te komen.*]
 
 ## Basisafspraken
-[*Hier kunnen we afspraken maken over waar/wanneer/hoe de overheid (REST) API's inzet om het bovenstaande doel uit het 
-manifest te bereiken. En verder bijvoorbeeld:*
+[*Hier kunnen we afspraken maken over waar/wanneer/hoe de overheid (REST) API's inzet om de bovenstaande visie te bereiken. Voorbeelden (nog te bespreken):*
  - *Als de overheid REST APIs inzet, doen we dat volgens de [REST API Design Rules](https://docs.geostandaarden.nl/api/API-Designrules/).*
   - *De beveiliging van REST APIs doet de overheid met het [NL GOV Assurance Profile for OAuth 2.0](https://docs.geostandaarden.nl/api/oauth/).*
-  ]
+  - *Voor het leggen van een veilige, snelle en robuuste verbinding met een API gebruikt de overheid [_NLX_](http://www.nlx.io). Deze open source implementeert de extensie behorende bij de API Design Rules standaard voor het [gebruik van TLS1.3](https://docs.geostandaarden.nl/api/API-Strategie-ext/#api-11-encrypt-connections-using-at-least-tls-v1-3)  met  [_tweezijdige PKIoverheid certificaten_](https://docs.geostandaarden.nl/api/API-Strategie-ext/#api-15-use-pkioverheid-certificates-for-access-restricted-or-purpose-limited-api-authentication).*]
 
 ## Praktijkvoorbeelden
 [*Hier zoeken we een aantal aansprekende succesvoorbeelden uit Haal Centraal, Common Ground, DSO, J4 en mogelijk andere.*]
