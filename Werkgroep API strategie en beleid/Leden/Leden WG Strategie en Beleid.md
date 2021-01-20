@@ -50,7 +50,7 @@ Omwille van privacy staan er geen contactgevens van de leden vermeld. Discussies
 
 **RIVM**: Rob Bastings, Pascal Thuis
 
-**RvIG**: naam op aanvraag
+**RvIG**: naam bekend bij de voorzitter
 
 **Servicepunt71**: Eelco Rouw
 
