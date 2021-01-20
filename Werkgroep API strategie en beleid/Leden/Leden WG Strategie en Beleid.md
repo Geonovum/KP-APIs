@@ -66,7 +66,7 @@ Omwille van privacy staan er geen contactgevens van de leden vermeld. Discussies
 
 **EDSN**: Jan de Jong, Laura Rutte
 
-**Enable-U**: Frank Arts, Jascha Gregorowitsch, Kees Neven
+**Enable-U**: Frank Arts, Jascha Gregorowitsch
 
 **MKidee**: Marcel Krassenburg (iRaad, CCoverheid)
 
