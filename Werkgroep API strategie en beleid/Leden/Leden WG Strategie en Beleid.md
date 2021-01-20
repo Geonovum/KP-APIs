@@ -62,7 +62,7 @@ Omwille van privacy staan er geen contactgevens van de leden vermeld. Discussies
 
 ## Private sector
 
-**Centric**: Jan de Blaaij, René Bliekendaal
+**Centric**: René Bliekendaal
 
 **EDSN**: Jan de Jong, Laura Rutte
 
