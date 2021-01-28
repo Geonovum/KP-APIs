@@ -13,8 +13,7 @@ GET /books
 	},
 	{
         "self": "/books/2",
-        "id": "2",
-		"title": "Title 2"
+		"title": "Title 2",
         "authors": ["/authors/2"]
 	}
 ]
