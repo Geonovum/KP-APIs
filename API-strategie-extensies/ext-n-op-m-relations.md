@@ -1,6 +1,6 @@
 ## Many-to-many relations ##
 
-Below we see a typical example of a many-to-many relation. Books can be written by one or more authors. 
+Below, we see a typical example of a many-to-many relation between resources in a REST API. Books can have more than one author and, vice versa, authors can have published more than one book. 
 
 ```json
 GET /books
@@ -18,7 +18,7 @@ GET /books
     }
 ]
 ```
-And, vice versa, authors can have written zero or more books. In this case author 3 has not yet published a book.
+In the respons given below, we see that author 3 has not yet published a book.
 
 ```json
 GET /authors
@@ -42,7 +42,7 @@ GET /authors
 ]
 ```
 
-If we want to include author 3 as a co-author of book 1, we have to perform two PATCH operations. 
+If we want to add author 3 as a co-author of book 1, we have to perform two PATCH operations. 
 
 ```json
 PATCH /books/1
@@ -83,7 +83,7 @@ GET /books-authors
     }
 ]
 ```
-With this new `/books-authors` resource it is easy to link author 3 to book 1 in one transaction.
+With this new `/books-authors` resource it is easy to link author 3 to book 1 in one transaction by using the `POST` operation.
 
 ```
 POST /books-authors
