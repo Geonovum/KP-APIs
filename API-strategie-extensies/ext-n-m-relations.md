@@ -10,7 +10,7 @@ GET /books
         "self": "/books/1",
         "title": "Title 1",
         "authors": ["/authors/1", "/authors/2"]
-        },
+    },
     {
         "self": "/books/2",
         "title": "Title 2",
@@ -96,10 +96,10 @@ POST /books-authors
 ```
 
 Another advantage is that the semantics directly relate to the CRUD-model of REST:
-- By using `POST` we `create` a new relation. 
-- By using `DELETE` we `delete` a relation.
+- By using `POST`, we _create_ a new relation.
+- By using `DELETE`, we _delete_ an existing relation.
 
-Otherwise, we would have used PATCH for both creating and deleting relations between books and authors which is less explicit and clean.
+Otherwise, we would have used `PATCH` for both creating and deleting relations between books and authors which is less explicit and clean.
 
 <div class="rule" id="api-99">
   <p class="rulelab"><strong>API-99</strong>: If there is a many-to-many relation between resources <code>/{R1}</code> and <code>/{R2}</code>, then use a cross resource <code>/{R1}-{R2}</code> for handling the relations between them.</p>
