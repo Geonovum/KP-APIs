@@ -1,6 +1,6 @@
 ## Many-to-many relations ##
 
-Below we see a typical example of a many-to-many relation. Books are written by one or more authors. 
+Below we see a typical example of a many-to-many relation. Books can be written by one or more authors. 
 
 ```json
 GET /books
@@ -101,6 +101,7 @@ Another advantage is that the semantics directly relate to the CRUD-model of RES
 
 Otherwise, we would have used `PATCH` for both creating and deleting relations between books and authors which is less explicit and clean.
 
+
 <div class="rule" id="api-99">
-  <p class="rulelab"><strong>API-99</strong>: If there is a many-to-many relation between resources <code>/{R1}</code> and <code>/{R2}</code>, then use a cross resource <code>/{R1}-{R2}</code> for handling the relations between them.</p>
+  <p class="rulelab"><span style="background-color:#00FF00"><strong>API-99</strong>: If there is a many-to-many relation between resources <code>/{R1}</code> and <code>/{R2}</code>, then use a cross resource <code>/{R1}-{R2}</code> for handling the relations between them.</p></span>
 </div>
