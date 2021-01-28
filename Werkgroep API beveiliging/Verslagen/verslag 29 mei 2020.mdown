@@ -1,0 +1,33 @@
+# Werkgroep Beveiliging
+
+**Datum:** 29-05-2020
+
+**Aanwezig:** 
+Marcel van den Brink(KvK), Leon van der Ree(Logius), Paul Dam(Lexdigitalis), Erwin Reinhout (kennisnet), Peter Haasnoot(Logius), Heiko Hudig(Politie), Joost Farla(Kadaster), Arnoud Quanjer(VNG-Realisatie), Martin Borgman(Kadaster), Roberto Polli(Team Digitale, Italië) 
+
+
+## Signing & encryptie
+Robberto Polli is te gast vanuit de italiaanse API strategie. Hij presenteerd over hun voorgestelde aanpak voor HTTP signatures:
+https://docs.google.com/presentation/d/1YNMI12-9uAhTgjPcR6zjaGEfQjkGnpSaoEKKpPZNT5I/edit?invite=CJ7iseIH&ts=5ed0c333#slide=id.p4
+
+## Nederlands profiel OAuth
+Het Nederlands profiel OAuth heeft een positief advies gekregen bij het forum standaardisatie. Het is daarmee vrijwel zeker dat het na het volgende OBDO van 9 juli 2020 het Nederlands profiel OAuth op de PTOLU lijst staat.
+Uit de forum vergadering kwamen twee aandachtspunten:
+* de relatie tussen de API Designrules en het Nederlands profile OAuth moet helder zijn op de PTOLU lijst
+* Er is een issue met het verplicht toepassen van PKIOverheid met OIN, niet alle partijen in de publieke sector hebben de mogelijkheid een dergelijk PKI certificaat aan te vragen.
+Voor het eerste issue zijn tekstsuggesties welkom die het forum helpen.
+Het tweede issue hebben we besproken en geverifieerd. Dit speelt inderdaad bij meer partijen bijvoorbeeld ook voor woningcooperaties die een verbinding met MijnOverheid willen. We hebben een issue aangemaakt in Github om dit in de volgende versie van het profiel aan te pakken. De concensus is dat het profiel hier minder strikt moet zijn en ook andere mogelijkheden moet gaan toelaten. https://github.com/Geonovum/KP-APIs-OAuthNL/issues/11
+Martin borgman merkt op dat OAuth 2.1 eraan komt. Hier moet de volgende versie van het profiel mogelijk ook op aangepast worden. We hebben hiervoor ook een issue aangemaakt: https://github.com/Geonovum/KP-APIs-OAuthNL/issues/12
+
+## Extensie API security
+We bespreken de flow diagrammen die zijn toegevoegd voor error afhandeling. Er komen een aantal vragen naar boven:
+* Wat is authentication scheme voor API keys?
+* Moet  authorization valid niet authentication valid zijn?
+Verder wordt er opgemerkt dat expliciet benoemt moet worden dat error codes niet restrictief zijn. Dit is een basisset die uitbreidbaar is voor applicatie specifieke gevallen.
+Business proces in het flow diagram suggereerd een implementatie keuze namelijk dat dit gedeelte van de error afhandeling ergens anders plaats vind. Zo is het flow diagram  niet bedoeld dit kan beter uitgelegd worden ook kan overwogen worden business proces weg te laten uit het diagram. Actiepunt: Frank zoekt contact met Remco schaar over de vragen.
+
+Naar aanleiding van de in het vorige overleg besproken opties voor het omgaan met gevoelige informatie in HTTP requests is er een nieuwe suggestie gedaan. Te weten het volgen van de OWASP aanbeveling hiervoor.
+Er lijkt redelijk brede steun dat dit de beste optie tot nu toe is. in dit issue gaat de discussie verder: https://github.com/Geonovum/KP-APIs/issues/219
+
+## volgende vergadering
+Wordt over 4 weken gepland op een vrijdag.

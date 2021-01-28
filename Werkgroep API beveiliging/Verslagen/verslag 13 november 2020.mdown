@@ -1,0 +1,61 @@
+# Werkgroep Beveiliging
+
+**Datum:** 13-11-2020
+
+**Aanwezig:** 
+Peter Haasnoot(Logius), Paul Dam(Lexdigitalis), Jaron Azaria(Logius), Martin Borgman(Kadaster), Erwin Reinhoud (kennisnet), Heiko Hudig(Politie), Frank Terpstra (Geonovum), Remco Schaar(logius), Jan-Jaap Zoutendijk(RWS/Enable-U), Bob te Riele(RvIG), Martin van der Plas(VNG), Andre van den Nouweland(Gemeente Den Haag)
+
+
+**Beheer Profiel OAuth en REST API Designrules naar Logius**
+* Frank en Peter lichten toe dat beheer van de standaarden over is gegaan naar logius. De Github repositories zijn verhuisd naar https://github.com/Logius-standaarden. 
+* Er blijft één werkgroep beveiliging waarin ook beheer issues op NL profiel OAuth komen.  Uiteindelijke formele vaststelling zal via governance structuur Logius gaan.
+* Hetzelfde geldt voor de REST API design rules, er blijft één werkgroep met daarin beheer en ontwikkelzaken
+* Issues voor NL profiel OAuth staan nu bij logius
+* Voor REST API design rules en extensies blijft de github repository van geonovum de centrale plek voor de online discussie.
+**Cookies Github issue 193**
+* Je wil client agnostisch zijn, wanneer je session cookies gebruikt ben je niet meer agnostisch. Voor native apps is dit geen goede oplossing. Dus geen universele optie. Wanneer je een token gebruikt kan je bij een browser een sessie gebruiken om je token te beschermen. Er zijn ook andere beschermingsmethoden zoals PKI certificaten. De API aanbieder moet agnostisch zijn dus flexibiliteit bieden om zowel tokens binnen sessies of binnen authorization headers te ondersteunen.
+* Deel discussie over kortlevende tokens en refresh tokens. Hier is een standaard voor. Token introspection is derde optie. Dat plaats wel een zware last op de authorization server. Het hangt af van de implementatie of dit performed.
+* Actiepunt Martin Borgman: sectie 4.3 in overleg met Joost Farla aanvullen om essentie discussie issue 193 te verwerken. In ieder geval motivatie voor token based authorization toevoegen (loosely coupled en client agnostisch).
+
+**Actiepunten:**
+* Voorstel voor herformulering authenticatie(Frank van Es) 
+
+	- is gedaan 
+
+	- review door werkgroep voor volgende bijeenkomst
+
+* review van de hele extensie(Martin Borgman) 
+
+	- wordt gedaan inclusief actiepunt sectie 4.3 voor eind november
+
+	- review door werkgroep voor volgende bijeenkomst
+	
+* Sectie 4.3.2 kan weggelaten worden (Actie redactie API strategie) 
+
+	- wordt nog gedaan door Frank
+	
+* Sectie 4.4 herschrijven met DSO API strategie als uitgangspunt (Jaron Azaria) 
+
+	- We nemen een aantal van de belangrijkste punten uit de OWASP cheatsheet over met bronvermelding
+
+	- We zijn in principe client agnostisch.  Wanneer je client agnostisch implementeert moet je in ieder geval faciliteren dat de lastigste client (web-browser) de juiste maatregelen kan nemen daarvoor gelden tenminste de onderstaande maatregelen. Wanneer je een client specifieke implementatie hebt kan je hier van afwijken zolang er waarborgen zijn die er voor zorgen dat alleen de beoogde specifieke client toegang heeft.
+* Referenties naar genoemde standaarden toevoegen(Actie redactie API strategie) 
+
+	- wordt meegenomen in redactie ochtend
+
+**extensie beveiliging wat is nog nodig voordat we publiek consulteren ?**
+* Over twee weken (eind november) zijn alle tekstaanpassingen klaar
+	- Scoping bij inleiding nodig (Remco doet pull request voor eind november)
+* In december volgende werkgroep waarin we allemaal de tekst gereviewed hebben.
+
+**NL profiel OAuth**
+* Status OAuth 2.1 en gevolgen NL profiel
+
+	- OAuth 2.1 maakt een vereenvoudigeing van het NL profiel mogelijk. https://tools.ietf.org/html/draft-ietf-oauth-v2-1-00
+
+	- Logius kijkt komende kwartaal naar impact op NL profiel
+
+* Heiko Hudig heeft aantal suggesties, maakt een Github issue hier voor aan op de Logius github van het NL profiel OAuth
+
+
+
