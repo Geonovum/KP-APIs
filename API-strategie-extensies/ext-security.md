@@ -272,7 +272,20 @@ An additional advantage of the strategy that establishes whether there is author
 
 
 ### HTTP-level Security
-The guidelines and principles defined in this extensions are client agnostic. When implementing a client agnostic API, one SHOULD at least facilitate that multi-purpose generic HTTP-clients like browsers are able to securely interact with the API. When implementing an API for a specific client it is possible to limit measures as long as it ensures secure access for this specific client. Nevertheless it is adviced to review the following security measures, which are mostly inspired by the [OWASP REST Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html)
+The guidelines and principles defined in this extension are client agnostic. When implementing a client agnostic API, one SHOULD at least facilitate that multi-purpose generic HTTP-clients like browsers are able to securely interact with the API. When implementing an API for a specific client it may be possible to limit measures as long as it ensures secure access for this specific client. Nevertheless it is advised to review the following security measures, which are mostly inspired by the [OWASP REST Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html)
+
+Even while remaining client agnostic, clients can be classified in four major groups. This is much in line with common practice in OAuth2. The groups are:
+1. Web applications.
+2. Native applications.
+3. Browser-based applications.
+4. System-to-system applications.
+
+This section contains elements that apply to the generic classes of clients listed above. Although not every client implementation has a need for all the specifications referenced below, a client agnostic API SHOULD provide these to facilitate any client to implement relevant security controls.
+
+Most specifications referenced in this section are applicable to the first three classes of clients listed above.
+Security considerations for native applications are provided in [OAUth2 for Native Apps]](https://tools.ietf.org/html/rfc8252), much of which can help non-OAuth2 based implementations as well.
+For browser-based applications a subsection is included with additional details and information.
+System-to-system (sometimes called machine-to-machine) may have a need for the listed specifications as well. Note that different usage patterns may be applicable in contexts with system-to-system clients, see above under Client Authentication.
 
 #### Security Headers
 There are a number of security related headers that can be returned in the HTTP responses to instruct browsers to act in specific ways. However, some of these headers are intended to be used with HTML responses, and as such may provide little or no security benefits on an API that does not return HTML. The following headers SHOULD be included in all API responses:
@@ -296,6 +309,8 @@ The headers below are only intended to provide additional security when response
 | `Feature-Policy: 'none'`                      | Feature policies only affect pages rendered as HTML.                   |
 | `Referrer-Policy: no-referrer`                | Non-HTML responses SHOULD not trigger additional requests.             |
 
+In addition to the above listed HTTP security headers, web- and browser-based applications SHOULD apply Subresource Integrity [SRI](https://www.w3.org/TR/SRI/). When using third-party hosted contents, e.g. using a Content Delivery Network, this is even more relevant. While this is primarily a client implementation concern, it may affect the API when it is not strictly segregated or for example when shared supporting libraries are offered.
+
 #### CORS-policy
 
 <div class="rule" id="api-50">
@@ -306,6 +321,15 @@ The headers below are only intended to provide additional security when response
 Modern web browsers use Cross-Origin Resource Sharing (CORS) to minimize the risk associated with cross-site HTTP-requests. By default browsers only allow 'same origin' access to resources. This means that responses on requests to another `[scheme]://[hostname]:[port]` than the `Origin` request header of the initial request will not be processed by the browser. To enable cross-site requests API's can return a `Access-Control-Allow-Origin` response header. It is RECOMMENDED to use a whitelist to determine the validity of different cross-site request. To do this check the `Origin` header of the incoming request and check if the domain in this header is on the whitelist. If this is the case, set the incoming `Origin` header in the `Access-Control-Allow-Origin` response header.
 
 Using a wildcard `*` in the `Access-Control-Allow-Origin` response header is NOT RECOMMENDED, because it disables CORS-security measures. Only for an open API which has to be accessed by numerous other websites this is appropriate.
+
+#### Browser-based applications
+A specific subclass of clients are browser-based applications, that require the presence of particular security controls to facilitate secure implementation. Clients in this class are also known as _user-agent-based_ or _single-page-applications_ (SPA).
+As with the (draft) [OAuth 2.0 for Browser-Based Apps](https://tools.ietf.org/html/draft-ietf-oauth-browser-based-apps-07), browser-based application can be split into three architectural patterns:
+- JavaScript applications with a Backend; with this class of applications, the Backend is the confidential client and should intermediate any interaction, with tokens never ending up in the browser. Effectively, these are not different from regular web-application for this security facet, even though they leverage JavaScript for implementation.
+- JavaScript applications that share a domain with the API (resource server); these can leverage cookies marked as HTTP-Only, Secure and SameSite.
+- JavaScript applications without a Backend; these clients are considered public clients, are potentially more suspect to several types of attacks, including Cross-Site Scripting (XSS), Cross Site Request Forgery (CSRF) and OAuth token theft. In order to support these clients, the Cross-Origin Resource Sharing (CORS) policy mentioned above is critical and MUST be supported.
+
+All browser-based application SHOULD follow the best practices specified in [OAuth 2.0 for Browser-Based Apps](https://tools.ietf.org/html/draft-ietf-oauth-browser-based-apps-07).
 
 #### Restrict HTTP methods
 Apply a whitelist of permitted HTTP Methods e.g. `GET`, `POST`, `PUT`. Reject all requests not matching the whitelist with HTTP response code `405 Method not allowed`.
@@ -325,6 +349,15 @@ Services (potentially) including script code (e.g. JavaScript) in their response
 
 #### HTTP Return Code
 HTTP defines status codes. When designing a REST API, don't just use `200` for success or `404` for error. Always use the semantically appropriate [status code](https://tools.ietf.org/html/rfc7231#section-6) for the response.
+
+#### HTTP header filtering
+Realizations may rely on internal usage of HTTP-Headers. Information for processing requests and responses can be passed between components, that can have security implications.
+For instance, this is commonly practices between a reverse proxy or TLS-offloader and an application server. Additional HTTP headers are used in such example to pass an original IP-address or client certificate.
+
+Implementations MUST consider filtering both inbound and outbound traffic for HTTP-headers used internally.
+Primary focus for inbound filtering is to prevent injection of malicious headers on requests.
+For outbound filtering, the main concern is leaking of information.
+
 
 #### Error handling
 - Respond with generic error messages - avoid revealing details of the failure unnecessarily.
