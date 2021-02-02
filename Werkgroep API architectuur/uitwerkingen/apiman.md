@@ -1,8 +1,6 @@
 1.0 API Management Architectuur
 ------------------------------
 
-====================
-
 1.1 Inleiding
 -------------
 
@@ -17,7 +15,7 @@ Een overheidsinstantie geeft hier het beste invulling aan door organisatiebreed 
 
 In figuur 2 is dit gevisualiseerd.
 
-![](file:Users/AppData/Local/Temp/msohtmlclip1/01/clip_image002.gif)
+![alt text](https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20API%20architectuur/uitwerkingen/media/apiman1.png)
 
 Figuur 1: Visualisatie 'Positionering API-Management binnen de integratielaag'
 
@@ -54,7 +52,7 @@ API-Management tooling omvat de referentiecomponenten API-Gateway, API-Manager e
 
 In de volgende paragrafen zijn per component de generieke functionaliteiten in detail beschreven.
 
-![](file:/AppData/Local/Temp/msohtmlclip1/01/clip_image004.gif)
+![alt text](https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20API%20architectuur/uitwerkingen/media/apiman2.png)
 
 Figuur 3: Functionaliteit binnen API-Management
 
