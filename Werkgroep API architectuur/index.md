@@ -23,8 +23,6 @@ Zie ook de presentatie van de Api Architectuur sessie op de bijeenkomst 4 maart 
 <!-- ## Beveiligingsarchitectuur -->
 {% include_relative uitwerkingen/apisec.md %}
 ## API Management
-
-   Concept uitwerking
-
+  
 {% include_relative uitwerkingen/apiman.md %}
 
