@@ -3,7 +3,7 @@
 <p class='warning'>This extension is in development and may be modified at any time.</p>
 
 ### Introduction
-This section describes security principles, concepts and technologies to apply when working with APIs. Controls need to be applied for the security objectives of integrity, confidentiality and availability of the API and services and data provided thereby.
+This section describes security principles, concepts and technologies to apply when working with APIs. Controls need to be applied for the security objectives of integrity, confidentiality and availability of the API and services and data provided thereby. The (new draft of the) [architecture section of the API strategy](https://geonovum.github.io/KP-APIs/Werkgroep%20API%20architectuur/) contains architecture patterns for implementing API security. This extension provides the details on the Authenication & authorization capability of the API capability model detailed in the (new draft of the) [architecture section of the API strategy](https://geonovum.github.io/KP-APIs/Werkgroep%20API%20architectuur/).
 
 The scope of this section is limited to generic security controls that directly influence the visible parts of an API. Effectively, only security standards directly applicable to interactions are discussed here.
 In order to meet the complete security objectives, every implementer MUST also apply a range of controls not mentioned in this section.
@@ -30,7 +30,7 @@ The problem here is that the identity identified by the certificate may have sig
 
 <p class='warning'>The current functional mandate (functioneel werkingsgebied) of Digikoppeling does not mention the need for access control. This would potentially mandate mTLS for open data</p>
 
-Within the Digikoppeling standard [[??]] a RESTful API profile is under development. This profile will specify how to use mTLS for APIs that fall within its formal mandate.
+Within the [Digikoppeling standard](https://www.logius.nl/diensten/digikoppeling) a [RESTful API profile](https://centrumvoorstandaarden.github.io/DigikoppelingRestfulApiProfiel/) is under development. This profile will specify how to use mTLS for APIs that fall within its formal mandate.
 
 
 #### OAuth 2.0 token based API access pattern
