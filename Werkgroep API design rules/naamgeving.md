@@ -71,7 +71,7 @@ Omdat resources dingen beschrijven (in plaats van acties), worden resource namen
 ### Niet doen:
 - Gebruik geen operaties zoals gebruikelijk is bij RPC-style API's (bv /getResource).
 - Refereer niet in de naam dat iets een API is (bv /resource_api).
-- Gebruik geen bestands extensies in de resource mamen (bv /resource.json).
+- Gebruik geen bestands extensies in de resource namen (bv /resource.json).
     - Het gebruik van Content Negotiation via de Accept header heeft de voorkeur, al zijn API aanbieders vrij om convenience endpoints aan te bieden op basis van extensies.
 - Voorkom waar mogelijk het gebruik van afkortingen voor concepten, zoals `/coords` ipv `/coordinaten`. Een uitzondering hierop is het gebruik van breed bekende afkortingen als kwalificatie in veldnamen zoals `bagNummeraanduiding`. 
 - Gebruik geen samengestelde namen voor geneste objecten (bv /adres_straat).
@@ -101,7 +101,13 @@ In beide gevallen is de query parameter `velden`, maar wordt deze in een andere 
 - Operaties `_zoeken`, `_sorteren`, `_expand`, `_uitbreiden`, `_velden` etc.
 - Hypermedia sectie: `_links`
  
- 
+## Onderhanden
+- Hoe om te gaan met enumeraties
+- Het voorbeeld `adres_straat` aanscherpen en verder nuanceren
+- Naamgeving van OAS components standaardiseren?
+- Underscore prefix voor query parameters heroverwegen. Is dit noodzakelijk?
+    - Evt alternatief: `/collectie?filter[status]=open`
+    - Is waarschijnlijk voor de werkgroep Filters & Sorteringen.
 ## Niet uitgewerkt:
 - Het filteren en zoeken op sub-objecten in een resource (bv adres.straat om te zoeken op het veld straat in het object adres) --> onderdeel van werkgroep Filters & Sorteringen.
 - Taalgebruik van metadata filters. De strategie schrijft nu Nederlands voor, maar het kan beter zijn qua compatibiliteit om Engels te gebruiken (`_sort`, `_expand`, `_search`) --> Nader te bespreken met werkgroep
