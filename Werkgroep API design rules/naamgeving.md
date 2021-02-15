@@ -9,7 +9,7 @@ Wij hebben het gehad over camelCase, snake_case en kebab-case. Deze hebben allen
         <th>Nadelen</th>
     </tr>
     <tr>
-        <td>camelCase</td>
+        <th>camelCase</th>
         <td>
             <ul>
                 <li>Meest gehanteerde casing conventie bij JSON objecten<li>
@@ -25,7 +25,7 @@ Wij hebben het gehad over camelCase, snake_case en kebab-case. Deze hebben allen
         </td>
     <tr>
     <tr>
-        <td>snake_case</td>
+        <th>snake_case</th>
         <td>
             <ul>
                 <li>Gebruikelijk in programmeertalen als Python en Ruby</li>
@@ -39,7 +39,7 @@ Wij hebben het gehad over camelCase, snake_case en kebab-case. Deze hebben allen
         </td>
     </tr>
     <tr>
-        <td>kebab-case (spinal-case)</td>
+        <th>kebab-case (spinal-case)</th>
         <td>
             <ul>
                 <li>Sluit het beste aan bij DSO API Strategie voor URLs</li>
@@ -98,11 +98,11 @@ Om te filteren op specifieke velden, doe je de volgende request:
 In beide gevallen is de query parameter `velden`, maar wordt deze in een andere context gebruikt.
  
 ### Voorbeelden in het toepassen van dit voorstel:
-•	Operaties _zoeken, _sorteren, _expand, _uitbreiden, _velden etc.
-•	Hypermedia sectie: _links
+- Operaties `_zoeken`, `_sorteren`, `_expand`, `_uitbreiden`, `_velden` etc.
+- Hypermedia sectie: `_links`
  
  
 ## Niet uitgewerkt:
-•	Het filteren en zoeken op sub-objecten in een resource (bv adres.straat om te zoeken op het veld straat in het object adres) --> onderdeel van werkgroep Filters & Sorteringen.
-•	Taalgebruik van metadata filters. De strategie schrijft nu Nederlands voor, maar het kan beter zijn qua compatibiliteit om Engels te gebruiken (_sort, _expand, _search) --> Nader te bespreken met werkgroep
-•	Identifiers voor relaties naar andere datasets, in het object of in HAL envelop (bijvoorbeeld nummeraanduiding van de BAG).
+- Het filteren en zoeken op sub-objecten in een resource (bv adres.straat om te zoeken op het veld straat in het object adres) --> onderdeel van werkgroep Filters & Sorteringen.
+- Taalgebruik van metadata filters. De strategie schrijft nu Nederlands voor, maar het kan beter zijn qua compatibiliteit om Engels te gebruiken (`_sort`, `_expand`, `_search`) --> Nader te bespreken met werkgroep
+- Identifiers voor relaties naar andere datasets, in het object of in HAL envelop (bijvoorbeeld nummeraanduiding van de BAG).
