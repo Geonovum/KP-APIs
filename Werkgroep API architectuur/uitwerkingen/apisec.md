@@ -1,7 +1,5 @@
 ## API Security Architectuur
 
-*Extract van samenwerkruimte dd 10-dec-2020*
-
 ICT beveiliging is over het algemeen gebaseerd op de aspecten *beschikbaarheid*, *integriteit* en *vertrouwelijkheid*. Dit hoofdstuk gaat allereerst in op deze drie aspecten, waarna een aantal generieke architectuurprincipes, architectuurpatronen en referentie architecturen gerelateerd aan API beveiliging zullen worden beschreven.
 
 
@@ -29,7 +27,7 @@ De API Capabilities die gemoeid zijn met integriteit zijn:
 - API Beveiliging
 - Logging / Audit Trail
 - Policy Enforcement
-- Authenticatie / Autorisatie
+- Identificatie / Authenticatie / Autorisatie
 - Verbinding / Sessie beheer
 - Sleutel Management
 
@@ -44,29 +42,39 @@ De API Capabilities die gemoeid zijn met vertrouwelijkheid zijn:
 - API Beveiliging
 - Analytics (?)
 - Logging / Audit Trail
-- Authenticatie / Autorisatie
+- Identificatie / Authenticatie / Autorisatie
 - Verbinding / Sessie beheer
 - Sleutel management
 - Gebruiker / Rol beheer
  
 
 ### Principes
+De volgende basisprincipes voor API beveiliging moeten worden toegepast bij het aanbieden van API dienstverlening:
 - Beschouw elke API alsof deze potentieel als externe API aangeboden wordt, zelfs als daar momenteel nog geen plannen voor zijn.
-- Zero-trust networking: elke node moet zich gedragen alsof hij aan het publieke netwerk zit https://www.hashicorp.com/resources/how-zero-trust-networking
+- Zero-trust networking: elk applicatie-component gedraagt zich alsof deze aan het publieke netwerk zit.
 - Gebruik generieke methoden voor authenticatie en authorisatie over alle API's, bij voorkeur op basis van bestaande componenten. Voorkom specifieke oplossingen voor individuele API's.
 - Versleutel alle data in opslag (at rest) en in uitwisseling (in transit).
-- Defense in depth?
+- Least privilege: API clients krijgen alleen de toegang die zij minimaal nodig hebben om hun functie uit te oefenen.
 
 ### Architectuurpatronen
 
+#### Gedelegeerde Identificatie en Authenticatie
+Authenticatie beschrijft het met een bepaalde zekerheid vaststellen of een persoon of systeem echt degene is die deze zegt te zijn. 
+
+In de context van API's is authenticatie van toepassing op de API Client, oftewel de applicatie die de API resources benadert, en de eindgebruiker, oftewel de persoon namens wie de API Client de API resources benadert.
+
+Waar authenticatie van de API Client bij de API resources plaats kan vinden, bijvoorbeeld door middel van asymmetrische versleuteling of gedeelde geheimen, wordt authenticatie van eindgebruikers over het algemeen gedelegeerd aan een externe Identity Provider, bijvoorbeeld door middel van OAuth2 of OpenID Connect.
+
+Bij gedelegeerde Authenticatie identificeren de API Client en eindgebruiker zichzelf en ontvangt de API Client, na succesvolle authenticatie, een token waarmee de API resources kunnen worden bevraagd.
+
+#### Token-based Autorisatie
+
+
+- role based autorisatie vs domein specifieke autorisaties
+- rol van API Gateways, Microgateways en Service Meshes
+
+
 #### Multi-level Authentication
 
-#### Etc
-
-### Referentie Architecturen
-
-#### API Gateway patroon
-
-#### Microgateways
-
-#### Service Mesh
+### Referenties
+- https://owasp.org/www-project-api-security/
