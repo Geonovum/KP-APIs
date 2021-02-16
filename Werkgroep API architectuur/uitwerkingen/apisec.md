@@ -68,6 +68,8 @@ Waar authenticatie van de API Client bij de API resources plaats kan vinden, bij
 Bij gedelegeerde Authenticatie identificeren de API Client en eindgebruiker zichzelf en ontvangt de API Client, na succesvolle authenticatie, een token waarmee de API resources kunnen worden bevraagd.
 
 #### Token-based Autorisatie
+Door de toepassing van gedelegeerde identificatie en authenticatie in combinatie met tokens wordt het ingewikkelder om applicatie-specifieke autorisatie toe te passen.
+
 
 
 - role based autorisatie vs domein specifieke autorisaties
