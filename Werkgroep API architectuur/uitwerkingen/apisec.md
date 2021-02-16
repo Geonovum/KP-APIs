@@ -1,6 +1,6 @@
 ## API Security Architectuur
 
-ICT beveiliging is over het algemeen gebaseerd op de aspecten *beschikbaarheid*, *integriteit* en *vertrouwelijkheid*. Dit hoofdstuk gaat allereerst in op deze drie aspecten, waarna een aantal generieke architectuurprincipes, architectuurpatronen en referentie architecturen gerelateerd aan API beveiliging zullen worden beschreven.
+ICT beveiliging is over het algemeen gebaseerd op de aspecten *beschikbaarheid*, *integriteit* en *vertrouwelijkheid*. Dit hoofdstuk gaat allereerst in op deze drie aspecten en hun relaties met API beveiliging, waarna een aantal generieke architectuurprincipes, architectuurpatronen en referentie architecturen gerelateerd aan API beveiliging zullen worden beschreven.
 
 
 ### Beschikbaarheid
@@ -8,7 +8,8 @@ Beschikbaarheid gaat erover om te allen tijde bij informatie en informatiebronne
 
 In de context van API's gaat beschikbaarheid erover dat consumenten van aangeboden API's juist worden geinformeerd over de afspraken omtrent (on)beschikbaarheid van de API's, dat de beschikbare capaciteit wordt verdeeld over de aangesloten API Clients en dat onvoorziene onbeschikbaarheid voor zowel aanbieders als consumenten van API's inzichtelijk wordt gemaakt, zodat daar juist op ingespeeld kan worden.
 
-De API Capabilities die gemoeid zijn met beschikbaarheid zijn:
+De volgende functionaliteiten zijn gerelateerd aan beschikbaarheid:
+
 - Resource health status
 - Versiebeheer
 - Continuous Deployment
@@ -68,15 +69,21 @@ Waar authenticatie van de API Client bij de API resources plaats kan vinden, bij
 Bij gedelegeerde Authenticatie identificeren de API Client en eindgebruiker zichzelf en ontvangt de API Client, na succesvolle authenticatie, een token waarmee de API resources kunnen worden bevraagd.
 
 #### Token-based Autorisatie
-Door de toepassing van gedelegeerde identificatie en authenticatie in combinatie met tokens wordt het ingewikkelder om applicatie-specifieke autorisatie toe te passen.
+Autorisatie beschrijft het vaststellen wat een geauthenticeerd persoon of systeem mag, of juist niet mag.
 
+Door de toepassing van gedelegeerde identificatie en authenticatie in combinatie met tokens, wordt het ingewikkelder om applicatie-specifieke autorisatie toe te passen. De API aanbieder moet bijvoorbeeld autorisatie beslissingen nemen op basis van de beperkte set aan data in het ontvangen token.
 
+Voor gevallen dat het token onvoldoende informatie biedt om een autorisatie beslissing op te baseren, kan het benodigd zijn om token introspection toe te passen. In dit geval vraagt de API aanbieder op basis van het ontvangen token meer informatie over de geauthenticeerde gebruiker bij de Identity Provider.
 
-- role based autorisatie vs domein specifieke autorisaties
+Bij het maken van autorisatie beslissingen is het goed onderscheid te maken tussen *role-based autorisaties* en *domein-specifieke autorisaties*.
+
 - rol van API Gateways, Microgateways en Service Meshes
 
 
 #### Multi-level Authentication
 
 ### Referenties
-- https://owasp.org/www-project-api-security/
+- https://owasp.org/www-project-api-security
+- https://www.noraonline.nl/wiki/Beschikbaarheid
+- https://www.noraonline.nl/wiki/Integriteit
+- https://www.noraonline.nl/wiki/Vertrouwelijkheid_%28principe%29
