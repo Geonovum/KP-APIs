@@ -11,6 +11,11 @@ Zie ook de presentatie van de Api Architectuur sessie op de bijeenkomst 4 maart 
 
 {% include_relative uitwerkingen/apiindex.md %} 
 # Onderwerpen 2020-2021
+
+> Document Status: Draft
+> 
+> Dit document is in ontwikkeling, de onderstaande uitwerkingen van onderwerpen zijn concepten en zijn bedoeld als input voor de volgende versie van het hoofdstuk Architectuur van de API Strategie van het Kennisplatform API's. 
+
 ## Ondersteuning API Strategie Algemeen
 {% include_relative uitwerkingen/apialg.md %} 
 <!-- ## API Capability model -->
