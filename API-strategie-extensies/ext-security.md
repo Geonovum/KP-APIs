@@ -22,37 +22,21 @@ One should secure all APIs assuming they can be accessed from any location on th
 ### API access patterns
 Because security is about compromises one should first be aware of what access patterns need to be supported.
 
-#### mTLS or Client Certificate based API access pattern
-As of this writing, this method is to be included in an upcoming release of the Open API specification. It is however widely used for both end user, B2B and system-to-system patterns.
+#### Machine to Machine
+Two different machines negatioate a secure point to point connection. One side acts as the client the other as the server. Both sides identify and authenticate the other party. The server authorises access to its resources by the client based on the esteblished identity of the client. The rights of a client are determined by doing a lookup to an identity store based on the established identity of the client. 
+In this pattern the server MUST completely rely on the information provided by the client, there is no third party involved at runtime. 
+Note that in Dutch government we often only identify organizations and not individual machines or their users. Therefor the access rights or permissions associated with a given identity might be far greater than needed. This is breaking the least privilige principle.
 
-The important thing to remember when using certificates is that the certificate only identifies the requester. During authentication we typically do a lookup of some subject information in an identity store to retrieve the requesters permissions. In PKIOverheid certificates we typically use the subject.serialNumber for this purpose.
-The problem here is that the identity identified by the certificate may have significantly more permissions than required by the client doing the request. This is breaking the least privilege principle.
+#### Rights delegation
 
-<p class='warning'>The current functional mandate (functioneel werkingsgebied) of Digikoppeling does not mention the need for access control. This would potentially mandate mTLS for open data</p>
-
-Within the [Digikoppeling standard](https://www.logius.nl/diensten/digikoppeling) a [RESTful API profile](https://centrumvoorstandaarden.github.io/DigikoppelingRestfulApiProfiel/) is under development. This profile will specify how to use mTLS for APIs that fall within its formal mandate.
-
-
-#### OAuth 2.0 token based API access pattern
-
-The important thing to remember about OAuth is its intended use. In OAuth the resource owner (often the end user) grants permissions to a client to access resources on its behalf. This grant is stored at the authorization server. After permissions are granted the client can perform its duties with or without the presence of an end user. To deny the client access to the end users resources, the resource owner MUST revoke the grant at the authorization server.
-
-While both the end user and the client need to identify themselves OAuth typically does not use sessions or support logout. Its sole purpose is solving the problem of authorizing a client with the least amount of privileges required.
-
-OAuth is usually extended with OpenID Connect or OIDC. OIDC adds identity and identity federation.
-
-When using OAuth within the Dutch Government sector, you are REQUIRED to use [the NL GOV Assurance profile for OAuth 2.0](https://publicatie.centrumvoorstandaarden.nl/api/oauth/). In the security section you will find security considerations using the NL GOV Assurance profile for OAuth 2.0.
-
-The flow described here is what is known as the Authorization Code Grant. This is currently the only Grant type supported by the Dutch OAuth 2.0 profile.
-
-#### JWT based API access pattern
-
-To the resource server, serving the API, this method appears identical to the OAuth 2.0 based API access pattern because we use JWT access tokens in the NL GOV Assurance profile for OAuth 2.0. In this pattern the resource server MUST completely rely on the information provided by the client in the JWT, with the JWT typically signed by the client. It has no notion of an end user session or client grant[??]. It performs the requested action based on the request and the provided token for as long as the token is valid.
+The rights delegation access pattern solves the problem of machines having greater permissions/priviliges/access rights than necessary for the task at hand. Retrieving a resource at runtime requires a resource owner, a client an authorization server and and a resource server.
+The resource owner (often the end user) grants permissions to a client to access resources on its behalf. This grant is stored at the authorization server. After permissions are granted the client access resources on the resource server with or without the presence of an end user. To deny the client access to these resources, the resource owner MUST revoke the grant at the authorization server.
+When a resource owner provides a grant to the client, this grant SHOULD only contain the permissions the client needs to perform its intended tasks.
 
 #### Session based API access pattern
 While this method is sometimes considered legacy it is in common use. Because this pattern is more a standard web application pattern we refer to [the latest NCSC guidelines on the subject of web application security](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-webapplicaties) for security considerations.
 
-We consider this method to be outside the scope of this document and refer to the aforementioned NCSC document for security considerations.
+We consider this method to be mostly outside the scope of this document and refer to the aforementioned NCSC document for security considerations. We do provide some additional considerations for web clients in the HTTP security section.
 
 ### Identification
 
@@ -169,7 +153,7 @@ In Use Cases that involve Native and User-Agent based Clients, strong Client aut
 When dealing with Use Cases involving Native and User-Agent based Clients, the policies and standards described in [Section HTTP level security](https://geonovum.github.io/KP-APIs/API-strategie-extensies/#http-level-security) SHOULD be followed, as well as best practices [[OAuth2.Browser-Based-Apps]] and [[RFC8252]], which are defined for use with OAuth but may be applicable for API communication in general.
 
 ##### Other Authentication Methods
-A API Server (Resource Server) or Authorization Server MAY support any suitable authentication scheme matching their security requirements. When using other authentication methods, the authorization server MUST define a mapping between the client identifier (registration record) and authentication scheme.
+An API Server (Resource Server) or Authorization Server MAY support any suitable authentication scheme matching their security requirements. When using other authentication methods, the authorization server MUST define a mapping between the client identifier (registration record) and authentication scheme.
 
 Some additional authentication methods are defined in the [OAuth Token Endpoint Authentication Methods](https://www.iana.org/assignments/oauth-parameters/oauth-parameters.xhtml#token-endpoint-auth-method) registry, and may be useful as generic client authentication methods beyond the specific use of protecting the token endpoint.
 
