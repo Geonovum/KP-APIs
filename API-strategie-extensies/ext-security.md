@@ -67,7 +67,7 @@ Authentication determines whether individuals and applications accessing APIs ar
 Note that an End-User can be both a natural person as well as a legal person (organization). In case Client Authentication includes information about its governing organization, this may fulfill and obviate the need for End-User authentication. See the section "Client Credentials using OAuth 2.0" below.
 
 #### End-User authentication
-In most Use Cases that involve API interaction, authenticating the End-User on behalf of whom the API resources are accessed is required. End-User authentication is not required in situations where the API Client is solely accessing API resources on behalf of itself, without requiring an End-User context, but may be used nevertheless.
+In most Use Cases that involve API interaction, authenticating the End-User on behalf of whom the API resources are accessed is required, the rights delegation API access pattern. End-User authentication is not required in situations where the API Client is solely accessing API resources on behalf of itself, without requiring an End-User context, but may be used nevertheless. This happens in the machine tot machine API access pattern.
 
 The following methods can be used for End-User authentication:
 
@@ -94,9 +94,9 @@ Depending on the technology used by the applications accessing the API the Acces
 Using sessions and secure cookies is outside the scope of this document. For security considerations please refer to [the latest NCSC guidelines on the subject of web application security](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-webapplicaties).
 
 #### Client authentication
-Authenticating the Client application that accesses API resources, being it on behalf of an End-User or in a system-to-system setting, is required where possible. Also, although listed separately, the aforementioned methods for End-User authentication require Client authentication.
+The Client application that accesses API resources SHOULD be authenticated, both in the machine to machine and in the rights delegation API access patterns. Also note that, although listed separately, the aforementioned methods for End-User authentication require Client authentication as well.
 
-Note: Client Authentication is applicable to the Client accessing the API, the Client making request to the Authorization Server when applying OAuth/OpenID, or both. It is RECOMMENDED to apply Client Authentication for both usages.
+Note: Client Authentication is applicable to the Client accessing the API, the Client making request to the Authorization Server when applying OAuth/OpenID, or both. Client Authentication SHOULD be applied for both uses.
 
 It is RECOMMENDED to use asymmetric (public-key based) methods for client authentication such as mTLS [RFC8705](https://www.rfc-editor.org/info/rfc8705) or "private_key_jwt" [OpenID](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication).
 
