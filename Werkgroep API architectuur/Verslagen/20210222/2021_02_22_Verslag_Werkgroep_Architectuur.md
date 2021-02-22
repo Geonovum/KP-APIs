@@ -22,6 +22,7 @@ Uit de discussie (bij de vragen uit de bijlage):
 
 - Het hoofdstuk/plaatje heeft een nadruk op M2M verkeer,  bv browser en mobile verkeer komen in de afbeelding niet duidelijk tot uitdrukking
 - Het heeft de voorkeur om het hoofdstuk algemeen te houden en niet specifieke implementaties te noemen
+- Relatie met IAM, suggestie is om bij NORA werkgroep IAM na te gaan wat daar al is uitgewerkt en welke relatie met API daar gezien wordt (aktie Peter)
 - GraphQL kan het beste bij toekomstige ontwikkelingen, wordt ook al door andere werkgroepen meegenomen
 
 API Capability model
