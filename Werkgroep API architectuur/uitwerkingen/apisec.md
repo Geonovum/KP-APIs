@@ -1,53 +1,51 @@
 ## API Security Architectuur
 
-ICT beveiliging is over het algemeen gebaseerd op de aspecten *beschikbaarheid*, *integriteit* en *vertrouwelijkheid*. Dit hoofdstuk gaat allereerst in op deze drie aspecten en hun relaties met API beveiliging, waarna een aantal generieke architectuurprincipes, architectuurpatronen en referentie architecturen gerelateerd aan API beveiliging zullen worden beschreven.
-
+ICT beveiliging is over het algemeen gebaseerd op de aspecten *beschikbaarheid*, *integriteit* en *vertrouwelijkheid*. Dit hoofdstuk gaat allereerst in op deze drie aspecten en hun relaties met API beveiliging, waarna een aantal aan API beveiliging gerelateerde architectuurprincipes en architectuurpatronen zullen worden beschreven.
 
 ### Beschikbaarheid
 Beschikbaarheid gaat erover om te allen tijde bij informatie en informatiebronnen te kunnen en dat de beschikbaarheid van diensten voldoen aan gemaakte continuïteitsafspraken. Beschikbaarheid van gegevens en systeemfuncties wordt over het algemeen gegarandeerd door vermeerdering van systeemfuncties, door herstelbaarheid en beheersing van verwerkingen, door voorspelling van discontinuïteit en handhaving van de functionaliteit. Binnen de NORA is beschikbaarheid opgenomen als afgeleid principe [AP41](https://www.noraonline.nl/wiki/Beschikbaarheid).
 
 In de context van API's gaat beschikbaarheid erover dat consumenten van aangeboden API's juist worden geinformeerd over de afspraken omtrent (on)beschikbaarheid van de API's, dat de beschikbare capaciteit wordt verdeeld over de aangesloten API Clients en dat onvoorziene onbeschikbaarheid voor zowel aanbieders als consumenten van API's inzichtelijk wordt gemaakt, zodat daar juist op ingespeeld kan worden.
 
-De volgende functionaliteiten zijn gerelateerd aan beschikbaarheid:
-
-- Resource health status
-- Versiebeheer
-- Continuous Deployment
-- Caching
-- Rate limiting / Throttling
-- SLA Management
-- API Monitoring / Alerting
-- Foutafhandeling
+Aan beschikbaarheid gerelateerde API capabilities zijn *Caching*, *Rate limiting / Throttling*, *SLA Management*, *API Monitoring / Alerting* en *Foutafhandeling*. De onderstaande sectie *Componenten* beschrijft deze in meer detail en geeft aan waar deze worden toegepast in een API architectuur.
 
 ### Integriteit
 Integriteit gaat over het waarborgen van de integriteit van gegevens en systeemfuncties. Dit wordt over het algemeen bereikt door validatie en beheersing van gegevensverwerking en geautoriseerde toegang tot gegevens en systeemfuncties, door scheiding van systeemfuncties, door controle op communicatiegedrag en gegevensuitwisseling en door beperking van functionaliteit. Binnen de NORA is integriteit opgenomen als afgeleid principe [AP42](https://www.noraonline.nl/wiki/Integriteit).
 
 In de context van API's gaat integriteit over het versleutelen en ondertekenen van berichten en gegevens, het valideren van API verzoeken en de vastlegging van de gegevensuitwisseling tussen API aanbieders en consumenten.
 
-De API Capabilities die gemoeid zijn met integriteit zijn:
-- API Beveiliging
-- Logging / Audit Trail
-- Policy Enforcement
-- Identificatie / Authenticatie / Autorisatie
-- Verbinding / Sessie beheer
-- Sleutel Management
+Aan integriteit gerelateerde API capabilities zijn *Logging / Audit Trail*, *Policy Enforcement*, *Identificatie / Authenticatie / Autorisatie* en *Sleutel Management*. De onderstaande sectie *Componenten* beschrijft deze in meer detail en geeft aan waar deze worden toegepast in een API architectuur.
 
 ### Vertrouwelijkheid
 Vertrouwelijkheid gaat over het geheimhouden van gegevens en gegevensbronnen. Dit wordt gegarandeerd door scheiding van systeemfuncties, door controle op communicatiegedrag en gegevensuitwisseling, door validatie op toegang tot gegevens en systeemfuncties en door versleuteling van gegevens. Binnen de NORA is vertrouwelijkheid opgenomen als afgeleid principe [AP43](https://www.noraonline.nl/wiki/Vertrouwelijkheid_%28principe%29).
 
 In de context van API's gaat vertrouwelijkheid over het ervoor te zorgen dat tussen API aanbieder en consument uitgewisselde gegevens niet door onbevoegden kunnen worden ingezien en misbruikt.
 
-De API Capabilities die gemoeid zijn met vertrouwelijkheid zijn:
-- API Typologieën
-- Caching
-- API Beveiliging
-- Analytics (?)
-- Logging / Audit Trail
-- Identificatie / Authenticatie / Autorisatie
-- Verbinding / Sessie beheer
-- Sleutel management
-- Gebruiker / Rol beheer
- 
+Aan vertrouwelijkheid gerelateerde API capabilities zijn *Caching*, *Analytics*, *Logging / Audit Trail*, *Identificatie / Authenticatie / Autorisatie*, *Sleutel management* en *Gebruiker / Rol beheer*. De onderstaande sectie *Componenten* beschrijft deze in meer detail en geeft aan waar deze worden toegepast in een API architectuur.
+
+### Componenten
+Onderstaande afbeelding geeft een overzicht van standaard componenten in een API architectuur. Deze sectie beschrijft de aan API beveiliging gerelateerde componenten in dit diagram.
+
+![API Security Architectuur diagram](media/api-security-architecture.png)
+
+#### Actors en Clients
+- **Eindgebruikers:** Eindgebruikers welke door middel van devices en client apps gebruik maken van API's.
+- **Client ontwikkelaars:** Ontwikkelaars van client API gebruikende client apps voor verschillende devices.
+- **Server Applicatie:** een API client die in een server draait. Dit kan een Web Applicatie zijn welke in een web server draait en via een web browser benaderd wordt, of een applicatie welke de API's via een System-to-System koppeling benadert.
+- **Native App:** een API client die als native applicatie op het device van de eindgebruiker draait en zelfstandig API's benadert.
+- **Browser-based App:** een API client die volledig in de browser draait en zelfstandig API's benadert, bijvoorbeeld op basis van JavaScript.
+
+#### Componenten
+In onderstaand overzicht worden de componenten welke een rol spelen bij API beveiliging uit bovenstaand diagram beschreven.
+
+- **Identity Provider:** Biedt de mogelijkheid aan eindgebruikers en Client applicaties om zichzelf te identificeren en Authentiseert deze. Geeft een authenticatie token af aan de Client applicatie waarmee deze API endpoints kan benaderen.
+- **API Gateway:** [...] Kan een verbinding met de Identity Provider hebben voor het geval door de Identity Provider afgegeven tokens onvoldoende informatie bevatten om autorisaties toe te passen.
+- **Traffic Policies:** [...] Over het algemeen bieden API Gateways de mogelijkheden om traffic policies direct in te bouwen.
+- **Gebruiker / client / rol beheer:** [...] Dit is *niet* de identity store welke credentials van eindgebruikers bevat; dat gedeelte is de verantwoordelijkheid van de Identity Provider.
+- **Sleutel beheer:** Beheert het sleutelmateriaal dat wordt gebruikt voor versleuteling en ondertekening van berichten welke worden uitgewisseld tussen API Gateway, Identity Provider en Client applicaties.
+- **Caching:** Een API stack leent zich goed om resource data te cachen. Met het oog op API beveiliging is het belangrijk cache invalidaties toe te passen zodat verouderde cache data niet kan worden teruggehaald en is het belangrijk dat er geen sessie gerelateerde data in de cache terechtkomt.
+- **Logging, Monitoring, Analytics:** 
+- **Back-end Services:** 
 
 ### Principes
 De volgende basisprincipes voor API beveiliging moeten worden toegepast bij het aanbieden van API dienstverlening:
@@ -56,6 +54,11 @@ De volgende basisprincipes voor API beveiliging moeten worden toegepast bij het 
 - Gebruik generieke methoden voor authenticatie en authorisatie over alle API's, bij voorkeur op basis van bestaande componenten. Voorkom specifieke oplossingen voor individuele API's.
 - Versleutel alle data in opslag (at rest) en in uitwisseling (in transit).
 - Least privilege: API clients krijgen alleen de toegang die zij minimaal nodig hebben om hun functie uit te oefenen.
+
+Verder moeten de aanbevelingen in de volgende externe documenten worden overwogen bij API ontwikkeling:
+- [OWASP Top Ten Cheat Sheet](https://www.owasp.org/index.php/OWASP_Top_Ten_Cheat_Sheet)
+- [OWASP REST Security Cheat Sheet](https://www.owasp.org/index.php/REST_Security_Cheat_Sheet)
+- [OWASP API Security Project](https://www.owasp.org/index.php/OWASP_API_Security_Project)
 
 ### Architectuurpatronen
 
@@ -75,15 +78,18 @@ Door de toepassing van gedelegeerde identificatie en authenticatie in combinatie
 
 Voor gevallen dat het token onvoldoende informatie biedt om een autorisatie beslissing op te baseren, kan het benodigd zijn om token introspection toe te passen. In dit geval vraagt de API aanbieder op basis van het ontvangen token meer informatie over de geauthenticeerde gebruiker bij de Identity Provider.
 
-Bij het maken van autorisatie beslissingen is het goed onderscheid te maken tussen *role-based autorisaties* en *domein-specifieke autorisaties*.
+Een belangrijk component bij autorisaties in de context van API's is de API Gateway. Op basis van een door de Identity Provider afgegeven access token kan de API Gateway beslissen of API aanroepen zijn toegestaan of niet. Hierbij kan de API Gateway *role-based access control (RBAC)* toepassen; *domein-specifieke autorisaties* worden over het algemeen toegepast door de back-ends om implementatie van business logica in de API Gateway te voorkomen.
 
-- rol van API Gateways, Microgateways en Service Meshes
-
+Voor de implementatie van *domein-specifieke autorisaties* in de back-ends kunnen tevens microgateways of een service mesh oplossing worden gekozen. Bijkomend voordeel van het gebruik van een service mesh is dat deze standaard werken op basis van zero-trust networking.
 
 #### Multi-level Authentication
 
+<!-- TBD: input van Eelco. -->
+
 ### Referenties
-- https://owasp.org/www-project-api-security
-- https://www.noraonline.nl/wiki/Beschikbaarheid
-- https://www.noraonline.nl/wiki/Integriteit
-- https://www.noraonline.nl/wiki/Vertrouwelijkheid_%28principe%29
+- [OWASP Top Ten Cheat Sheet](https://www.owasp.org/index.php/OWASP_Top_Ten_Cheat_Sheet)
+- [OWASP REST Security Cheat Sheet](https://www.owasp.org/index.php/REST_Security_Cheat_Sheet)
+- [OWASP - API Security Project](https://owasp.org/www-project-api-security)
+- [NORA - Beschikbaarheid principe](https://www.noraonline.nl/wiki/Beschikbaarheid)
+- [NORA - Integriteit principe](https://www.noraonline.nl/wiki/Integriteit)
+- [NORA - Vertrouwelijkheid principe](https://www.noraonline.nl/wiki/Vertrouwelijkheid_%28principe%29)
