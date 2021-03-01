@@ -23,20 +23,22 @@ One should secure all APIs assuming they can be accessed from any location on th
 Because security is about compromises one should first be aware of what access patterns need to be supported.
 
 #### Machine to Machine
-Two different machines negatioate a secure point to point connection. One side acts as the client the other as the server. Both sides identify and authenticate the other party. The server authorises access to its resources by the client based on the esteblished identity of the client. The rights of a client are determined by doing a lookup to an identity store based on the established identity of the client. 
-In this pattern the server MUST completely rely on the information provided by the client, there is no third party involved at runtime. 
-Note that in Dutch government we often only identify organizations and not individual machines or their users. Therefor the access rights or permissions associated with a given identity might be far greater than needed. This is breaking the least privilige principle.
+Two different machines negotiate a secure point to point connection. One side acts as the client the other as the server. Both sides identify and authenticate the other party.
+The server authorizes access to its resources by the client based on the established identity of the client. The authorizations for a client are determined by doing a lookup to an identity store based on the established identity of the client.
+Note that in Dutch government we often only identify organizations and not individual machines or their users. Therefor the access rights or permissions associated with a given identity might be far greater than needed. This is breaking the principle of least privilege.
 
 #### Rights delegation
+In the rights delegation pattern a system is granted access to a resource by and on behalf of the owner of that resource. The rights delegation access pattern can help solve the problem of machines having greater permissions/priviliges/access rights than necessary for the task at hand.
+Retrieving a resource at run-time requires a resource owner, a client, an authorization server and a resource server. The resource owner (often the end user) grants permissions to the client to access resources on its behalf.
+This grant is stored at the authorization server. After permissions are granted to the client to access resources on the resource server with or without the presence of an end user.
 
-The rights delegation access pattern solves the problem of machines having greater permissions/priviliges/access rights than necessary for the task at hand. Retrieving a resource at runtime requires a resource owner, a client an authorization server and and a resource server.
-The resource owner (often the end user) grants permissions to a client to access resources on its behalf. This grant is stored at the authorization server. After permissions are granted the client access resources on the resource server with or without the presence of an end user. To deny the client access to these resources, the resource owner MUST revoke the grant at the authorization server.
 When a resource owner provides a grant to the client, this grant SHOULD only contain the permissions the client needs to perform its intended tasks.
+To deny the client access to these resources, the resource owner MUST revoke the grant at the authorization server or a predefined expiration period is applied.
 
 #### Session based API access pattern
-While this method is sometimes considered legacy it is in common use. Because this pattern is more a standard web application pattern we refer to [the latest NCSC guidelines on the subject of web application security](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-webapplicaties) for security considerations.
+While this method is considered legacy it is in common use for handling access control to APIs, even though it conflicts with best practices for APIs. Because this pattern is more a standard web application pattern we refer to [the latest NCSC guidelines on the subject of web application security](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-webapplicaties) for security considerations.
 
-We consider this method to be mostly outside the scope of this document and refer to the aforementioned NCSC document for security considerations. We do provide some additional considerations for web clients in the HTTP security section.
+We consider this method to be mostly outside the scope of this document and refer to the aforementioned NCSC document for security considerations. We do provide some additional considerations for web clients in the section on [HTTP-level Security](#http-level-security).
 
 ### Identification
 
@@ -57,17 +59,18 @@ HRNs are derived from the KvKNummer which can be queried in the "Handels registe
 In the EU context use the eIDAS legal identifier. For more information see https://ec.europa.eu/digital-single-market/en/trust-services-and-eid.
 
 **Clients**
-When using authorization servers, the authorization server issues the registered client a client identifier - a unique string representing the registration information provided by the client. The client identifier is not a secret; it is exposed to the resource owner and MUST NOT be used alone for client authentication. The client identifier is unique to the authorization server.
+When using authorization servers, the authorization server issues the registered client a client identifier - a unique string representing the registration information provided by the client. The client identifier is not a secret; it is commonly public known and MUST NOT be relied upon for client authentication by itself. The client identifier is unique to the authorization server.
 
-Authorization servers MUST NOT allow clients to choose or influence their client_id value.
+Authorization servers MUST NOT allow clients to choose or influence their `client_id` value.
 
 ### Authentication
-Authentication determines whether individuals and applications accessing APIs are really who they say they are. In the context of APIs, authentication is applicable to the *End-User*, i.e. the individual on behalf of whom API resources are being accessed, and to the *Client*, i.e. the application that accesses the API resources on behalf of the end-user.
+Authentication determines whether individuals and applications accessing APIs are really who they say they are. In the context of APIs, authentication is applicable to the *End-User*, i.e. the individual on behalf of whom API resources are being accessed, _and_ to the *Client*, i.e. the application that accesses the API resources on behalf of the End-User.
 
 Note that an End-User can be both a natural person as well as a legal person (organization). In case Client Authentication includes information about its governing organization, this may fulfill and obviate the need for End-User authentication. See the section "Client Credentials using OAuth 2.0" below.
 
 #### End-User authentication
-In most Use Cases that involve API interaction, authenticating the End-User on behalf of whom the API resources are accessed is required, the rights delegation API access pattern. End-User authentication is not required in situations where the API Client is solely accessing API resources on behalf of itself, without requiring an End-User context, but may be used nevertheless. This happens in the machine tot machine API access pattern.
+In most Use Cases that involve API interaction, authenticating the End-User on behalf of whom the API resources are accessed is required. This is typically matches with the rights delegation API access pattern.
+End-User authentication is not required in situations where the API Client is solely accessing API resources on behalf of itself or its governing organization, without requiring an End-User context, but may be used nevertheless. This happens in the machine tot machine API access pattern.
 
 The following methods can be used for End-User authentication:
 
@@ -128,7 +131,7 @@ Note that methods using asymmetric keys are RECOMMENDED instead of client secret
 Note that Client authentication using HTTP Basic authentication or communicating client credentials in the request body are prone to credential theft and therefore NOT RECOMMENDED.
 
 **Client_secret_jwt**
-The Client secret JWT method (see [OpenID](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication)) is similar to the private_key_jwt method, but uses a HMAC instead of a signature. This Client Authentication method is part of the OpenID Connect standards for Clients authenticating to the OpenID Provider, but the use of Private key JWT Client authentication is not limited to this use case.
+The Client secret JWT method (see [OpenID](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication)) is similar to the private_key_jwt method, but uses a HMAC instead of a signature. This Client Authentication method is part of the OpenID Connect standards for Clients authenticating to the OpenID Provider, but the use of Client secret JWT Client authentication is not limited to this use case.
 
 This method is not as a strong as the private_key_jwt method, but offers better options against replay attacks than password based methods.
 
