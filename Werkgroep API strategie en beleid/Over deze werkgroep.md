@@ -4,10 +4,8 @@
 Het doel van de werkgroep Strategie en Beleid is:
 
 > 1. Initiatieven voor het bij de bron beheren en ontsluiten van gegevens, waaronder Common Ground, Haal Centraal, DSO, en de Juridische keten bij elkaar brengen. 
-> 2. UItgaand van deze initiatieven een eenduidige en uitvoerbare strategie formuleren voor het bij de bron beheren en ontsluiten van gegevens.
+> 2. UItgaand van deze initiatieven een eenduidige en uitvoerbare strategie formuleren voor het bij de bron ontsluiten van gegevens met APIs.
 > 3. Draagvlak voor deze strategie  tot stand brengen over de breedte van de overheid.
-
-Hierbij zien we APIs als belangrijke ondersteunende technologie, maar niet als doel op zich.
 
 ## Achtergrond
 
@@ -23,7 +21,7 @@ De huidige [API Strategie](https://docs.geostandaarden.nl/api/API-Strategie/) is
 De werkgroep gaat met deze punten aan de slag en heeft z'n naam geactualiseerd van 'Communicatie en Beleid' tot '**Strategie en Beleid**'. De werkgroep stelt zich tot doel om in 2020 te werken naar een bindende strategie die voldoende draagvlak heeft over de breedte van de overheid.
 
 ## Leden
-Een overzicht van de organisaties die in deze werkgroep deelnemen vind je in het mapje [Leden](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20Strategie%20en%20Beleid/Leden/leden-werkgroep-strategie-en-beleid-20200709.md) van deze repository.
+Een overzicht van de organisaties die in deze werkgroep deelnemen vind je in het mapje [Leden](https://github.com/Geonovum/KP-APIs/tree/master/Werkgroep%20API%20strategie%20en%20beleid/Leden) van deze repository.
 
 Omwille van privacy staan er geen contactgegevens van de leden vermeld.
 
@@ -32,11 +30,11 @@ Omwille van privacy staan er geen contactgegevens van de leden vermeld.
 ### Online samenwerken
 We werken samen via de Github repository van het Kennisplatform APIs. In deze repository vind je de volgende mappen:
 
-- [Leden](https://github.com/Geonovum/KP-APIs/tree/master/Werkgroep%20Strategie%20en%20Beleid/Leden) geeft een actueel overzicht van de organisaties die de werkgroep vormen.
-- [Presentaties](https://github.com/Geonovum/KP-APIs/tree/master/Werkgroep%20Strategie%20en%20Beleid/Presentaties) hier staan alle presentaties. Voor de leesbaarheid zijn sommige presentaties in Markdown format opgenomen.
-- [Verslagen](https://github.com/Geonovum/KP-APIs/tree/master/Werkgroep%20Strategie%20en%20Beleid/Verslagen) hier staan alle verslagen van (virtuele) bijeenkomsten. 
-- [Werkversie](https://github.com/Geonovum/KP-APIs/tree/master/Werkgroep%20Strategie%20en%20Beleid/Werkversie) is de map waarin  we samen aan concept teksten werken. 
-- [oud](https://github.com/Geonovum/KP-APIs/tree/master/Werkgroep%20Strategie%20en%20Beleid/oud) bevat voorgaande versies van de strategie
+- [Leden](https://github.com/Geonovum/KP-APIs/tree/master/Werkgroep%20API%20strategie%20en%20beleid/Leden) geeft een actueel overzicht van de organisaties die de werkgroep vormen.
+- [Presentaties](https://github.com/Geonovum/KP-APIs/tree/master/Werkgroep%20API%20strategie%20en%20beleid/Presentaties) hier staan alle presentaties. Voor de leesbaarheid zijn sommige presentaties in Markdown format opgenomen.
+- [Verslagen](https://github.com/Geonovum/KP-APIs/tree/master/Werkgroep%20API%20strategie%20en%20beleid/Verslagen) hier staan alle verslagen van (virtuele) bijeenkomsten. 
+- [Werkversie](https://github.com/Geonovum/KP-APIs/tree/master/Werkgroep%20API%20strategie%20en%20beleid/Werkversie) is de map waarin  we samen aan concept teksten werken. 
+- [oud](https://github.com/Geonovum/KP-APIs/tree/master/Werkgroep%20API%20strategie%20en%20beleid/oud) bevat voorgaande versies van de strategie
 
 We werken bij voorkeur in [Markdown](https://nl.wikipedia.org/wiki/Markdown) maar je kan documenten ook in andere formats plaatsen, bijvoorbeeld PDF, ODF, Word of Powerpoint.
 
