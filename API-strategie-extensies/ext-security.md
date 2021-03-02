@@ -3,7 +3,7 @@
 <p class='warning'>This extension is in development and may be modified at any time.</p>
 
 ### Introduction
-This section describes security principles, concepts and technologies to apply when working with APIs. Controls need to be applied for the security objectives of integrity, confidentiality and availability of the API and services and data provided thereby. The (new draft of the) [architecture section of the API strategy](https://geonovum.github.io/KP-APIs/Werkgroep%20API%20architectuur/) contains architecture patterns for implementing API security. This extension provides the details on the Authenication & authorization capability of the API capability model detailed in the (new draft of the) [architecture section of the API strategy](https://geonovum.github.io/KP-APIs/Werkgroep%20API%20architectuur/).
+This section describes security principles, concepts and technologies to apply when working with APIs. Controls need to be applied for the security objectives of integrity, confidentiality and availability of the API and services and data provided thereby. The (new draft of the) [architecture section of the API strategy](https://geonovum.github.io/KP-APIs/Werkgroep%20API%20architectuur/) contains architecture patterns for implementing API security. This extension provides the details on the authentication & authorization capability of the API capability model detailed in the (new draft of the) [architecture section of the API strategy](https://geonovum.github.io/KP-APIs/Werkgroep%20API%20architectuur/).
 
 The scope of this section is limited to generic security controls that directly influence the visible parts of an API. Effectively, only security standards directly applicable to interactions are discussed here.
 In order to meet the complete security objectives, every implementer MUST also apply a range of controls not mentioned in this section.
@@ -11,7 +11,7 @@ In order to meet the complete security objectives, every implementer MUST also a
 Note: security controls for signing and encrypting of application level messages will be part of a separate extension, [Signing and Encryption](#signing-and-encryption).
 
 ### Transport security
-One should secure all APIs assuming they can be accessed from any location on the internet. Information MUST be exchanged over TLS-based secured connections. No exceptions, so everywhere and always. One SHOULD follow [the latest NCSC guidelines for TLS](https://english.ncsc.nl/publications/publications/2019/juni/01/it-security-guidelines-for-transport-layer-security-tls)
+One should secure all APIs assuming they can be accessed from any location on the internet. Information MUST be exchanged over TLS-based secured connections. No exceptions, so everywhere and always. One SHOULD follow [the latest NCSC guidelines for TLS](https://english.ncsc.nl/publications/publications/2021/january/19/it-security-guidelines-for-transport-layer-security-2.1)
 
 <div class="rule" id="api-11">
   <p class="rulelab"><strong>API-11</strong>: Secure connections using TLS</p>
@@ -22,18 +22,18 @@ One should secure all APIs assuming they can be accessed from any location on th
 ### API access patterns
 Because security is about compromises one should first be aware of what access patterns need to be supported.
 
-#### Machine to Machine
-Two different machines negotiate a secure point to point connection. One side acts as the client the other as the server. Both sides identify and authenticate the other party.
+#### Machine to machine
+Two different machines negotiate a secure point to point connection. One side acts as the client, the other as the server. Both sides identify and authenticate the other party.
 The server authorizes access to its resources by the client based on the established identity of the client. The authorizations for a client are determined by doing a lookup to an identity store based on the established identity of the client.
 Note that in Dutch government we often only identify organizations and not individual machines or their users. Therefor the access rights or permissions associated with a given identity might be far greater than needed. This is breaking the principle of least privilege.
 
 #### Rights delegation
 In the rights delegation pattern a system is granted access to a resource by and on behalf of the owner of that resource. The rights delegation access pattern can help solve the problem of machines having greater permissions/priviliges/access rights than necessary for the task at hand.
 Retrieving a resource at run-time requires a resource owner, a client, an authorization server and a resource server. The resource owner (often the end user) grants permissions to the client to access resources on its behalf.
-This grant is stored at the authorization server. After permissions are granted to the client to access resources on the resource server with or without the presence of an end user.
+This grant is stored at the authorization server, after permissions are granted to the client to access resources on the resource server; with or without the presence of an end user.
 
 When a resource owner provides a grant to the client, this grant SHOULD only contain the permissions the client needs to perform its intended tasks.
-To deny the client access to these resources, the resource owner MUST revoke the grant at the authorization server or a predefined expiration period is applied.
+To deny the client access to these resources after initial permission is granted, the resource owner MUST revoke the grant at the authorization server or the grant might be revoked after a predefined expiration period.
 
 #### Session based API access pattern
 While this method is considered legacy it is in common use for handling access control to APIs, even though it conflicts with best practices for APIs. Because this pattern is more a standard web application pattern we refer to [the latest NCSC guidelines on the subject of web application security](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-webapplicaties) for security considerations.
@@ -44,16 +44,15 @@ We consider this method to be mostly outside the scope of this document and refe
 
 **End Users and Organizations**
 For Identification of individual users use a pseudonym when possible to avoid exposing sensitive information about a user.
-This pseudonym can optionally be translatable to actual personal information in a separate service, but access to this service should be tightly controlled and limited only to cases where there is a legal need to use this information.
+This pseudonym can optionally be translatable to actual personal information in a separate service, but access to this service should be tightly controlled and limited only to cases where there is a legal need to use this information. Furthermore using a seperate service for this provides a moment to audit when certain information about users is requested.
 
 Use of a Burger Service Number (BSN) is only allowed when the organization has a legal ground to do so. Even when an organization is eligible to use BSN's it is still RECOMMENDED to use a pseudonym that is only translatable to a BSN for a limited number of services/users within the organization.
-An example of this can be found in the [architecture of the "digitaalstelsel omgevingswet"](https://aandeslagmetdeomgevingswet.nl/publish/library/219/dso_-_gas_-_knooppunt_toegang_iam.pdf)
+An example of this can be found in the [architecture of the "digitaal stelsel omgevingswet (DSO)"](https://aandeslagmetdeomgevingswet.nl/publish/library/219/dso_-_gas_-_knooppunt_toegang_iam.pdf)
 
 For identifying government organizations use the "organisatie-identificatienummer" (OIN).
-For identifying non-government organizations (companies, associations, foundations etc...) use the Handelsregisternummer (HRN) or its OIN equivalent.
-These are used in the PKIOverheid and e-Herkenning context. See https://www.logius.nl/diensten/oin for more information on these identifiers.
+For identifying non-government organizations (companies, associations, foundations etc...) use the Handelsregisternummer (HRN - its OIN equivalent). These are used in the PKIOverheid and e-Herkenning context. See https://www.logius.nl/diensten/oin for more information on these identifiers.
 
-OINs can be queried using the COR API https://portaal.digikoppeling.nl/registers/corApi/index
+OINs can be queried using the COR API https://portaal.digikoppeling.nl/registers/corApi/index or its webpage https://portaal.digikoppeling.nl/registers/.
 HRNs are derived from the KvKNummer which can be queried in the "Handels register" https://developers.kvk.nl/documentation/search-v2
 
 In the EU context use the eIDAS legal identifier. For more information see https://ec.europa.eu/digital-single-market/en/trust-services-and-eid.
@@ -70,7 +69,7 @@ Note that an End-User can be both a natural person as well as a legal person (or
 
 #### End-User authentication
 In most Use Cases that involve API interaction, authenticating the End-User on behalf of whom the API resources are accessed is required. This is typically matches with the rights delegation API access pattern.
-End-User authentication is not required in situations where the API Client is solely accessing API resources on behalf of itself or its governing organization, without requiring an End-User context, but may be used nevertheless. This happens in the machine tot machine API access pattern.
+End-User authentication is not required in situations where the API Client is solely accessing API resources on behalf of itself or its governing organization, without requiring an End-User context, but may be used nevertheless. This happens in the machine to machine API access pattern.
 
 The following methods can be used for End-User authentication:
 
