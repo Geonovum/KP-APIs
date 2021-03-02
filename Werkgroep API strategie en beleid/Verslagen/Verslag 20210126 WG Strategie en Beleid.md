@@ -51,4 +51,4 @@ Dit leek de aanwezigen van de werkgroep een goed idee. Han gaat het werkdocument
 ## Overig
 Pieter en Han delen dat er gesprekken gaande zijn tussen Logius en Common Ground over de relatie tussen 
 [DigiKoppeling](https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/basisregistraties-en-stelselafspraken/stelselvoorzieningen/digikoppeling/) 
-en [NLX](https://www.nlx.io/). De groep geeft aan interesse te hebben in een presentatie en discussie van dit thema in een volgende bijeenkomst.
+en [NLX](https://www.nlx.io/). De werkgroep geeft aan interesse te hebben in een presentatie en discussie van dit thema in een volgende bijeenkomst.
