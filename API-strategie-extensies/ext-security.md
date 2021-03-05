@@ -190,9 +190,9 @@ In case the proper headers are not sent, then there are no authentication detail
   <p>This is in line with the way the OAuth standard appears on the comply or explain list of Forum Standaardisatie.</p>
 </div>
 
-See also [The NL GOV Assurance profile for OAuth 2.0](#api-security) for further explanation of the applicaton of OAuth.
+See also [The NL GOV Assurance profile for OAuth 2.0](https://publicatie.centrumvoorstandaarden.nl/api/oauth/) for further explanation of the applicaton of OAuth.
 
-The Digikoppeling standard [[??]] currently has a RESTful API profile in development that specifies how to use PKIOverheid x.509 certificates for authorization.
+The [Digikoppeling standard](https://publicatie.centrumvoorstandaarden.nl/dk/actueel/) currently has a [RESTful API profile in development](https://centrumvoorstandaarden.github.io/DigikoppelingRestfulApiProfiel/) that specifies how to use PKIOverheid x.509 certificates for authorization.
 
 #### Authorization errors
 
