@@ -1,50 +1,39 @@
 ## Pagination
 
-<p class='warning'>This extension is in development and may be modified at any time.</p>
-
 <div class="rule" id="api-42">
-  <p class="rulelab"><strong>API-42</strong>: Use JSON+HAL with media type <code>application/hal+json</code> for pagination</p>
-  <p>For content identified with the media type <code>application/hal+json</code>, Hypertext Application Language (HAL) is used for paging. Two reserved fields, <code>_links</code> (required) and <code>_embedded</code> (optional) are added to retrieved objects. These fields represent hyperlinks and embedded resources respectively:</p>
-  <pre>
-  {
-    "_links": {
-      "self": {
-        "href": "https://.../api/registratie/v1/aanvragen?pagina=3"
-      },
-      "first": {
-        "href": "https://.../api/registratie/v1/aanvragen"
-      },
-      "prev": {
-        "href": "https://.../api/registratie/v1/aanvragen?pagina=2"
-      },
-      "next": {
-        "href": "https://.../api/registratie/v1/aanvragen?pagina=4"
-      },
-      "last": {
-        "href": "https://.../api/registratie/v1/aanvragen?pagina=5"
-      }
-    },
-    "id": "https://.../api/registratie/v1/aanvragen/12",
-    "naam": "Mijn dakkapel",
-    "samenvatting": "Ik wil een dakkapel bouwen!",
-    "_embedded": {
-      "aanvrager": {
-        "naam": "Bob"
+  <p class="rulelab"><strong>API-42</strong>: Provide standard navigation controls for pagination</p>
+  <p>For collection resources, navigation controls must be provided to simplify pagination for client applications. The standard link relation types <code>next</code> and <code>prev</code> (see [[IANA-RELATIONS]]) must be used if relevant. When no next or previous page exists, the link must be fully omitted. By providing standard links, clients can build and re-use generic pagination components, regardless of the pagination strategy (e.g. offset or cursor-based).</p>
+  <div class="example">
+    <p>For example, a collection resource for books provides a <code>self</code> and <code>next</code> link. Since this is the first page, no <code>prev</code> link is provided.</p>
+    <pre>
+// GET /books
+{
+  "currentPage": 1,
+  "nextPage": 2,
+  "pageSize": 10,
+  "item": [
+    {
+      "identifier": "14d3030c-3b61-4070-b902-342f80e99364",
+      "title": "Da Vinci Code",
+      "isbn": "902455991X",
+      "_links": {
+        "self": {
+          "href": "https://api.example.org/v1/books/14d3030c-3b61-4070-b902-342f80e99364"
+        }
       }
     }
+  ],
+  "_links": {
+    "self": {
+      "href": "https://api.example.org/v1/books"
+    },
+    "next": {
+      "href": "https://api.example.org/v1/books?page=2"
+    }
   }
-  </pre>
+}
+    </pre>
+  </div>
 </div>
 
-In case of plain JSON, GeoJSON, or something different from HAL, the `_links` field is omitted. These may be added to the link response headers. Besides the representation the following metadata is returned using HTTP headers.
-
-|HTTP header|Explanation|
-|-|-|
-|`X-Total-Count` (optional)|Total number of results|
-|`X-Pagination-Count` (optional)|Total number of pages|
-|`X-Pagination-Page` (optional)|Current page|
-|`X-Pagination-Limit` (optional)|Number of results per page|
-
-For large collections, the generation of `X-Total-Count` and `X-Pagination-Count` may have a considerable impact on the performance, particularly if there is no or limited filtering.
-
-All links in HAL are absolute. This relieves clients from the burder to resolve URLs to external links (to other endpoints, linked-data resources, etc.) for navigation.
+<p class="note">Providing the total count and/or last page of a collection should be avoided, since this may have a considerable impact on performance when dealing with larger collections. Therefore, providing such information or links is generally discouraged. Most often, this is not a problem since this does not add significant value for end users. Most modern user interfaces provide next/prev links only (e.g. a <em>load more</em> control).</p>

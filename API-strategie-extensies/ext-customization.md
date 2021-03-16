@@ -7,7 +7,7 @@ The user of an API does not always require the complete representation (i.e. all
   <pre>GET /aanvragen?fields=id,onderwerp,aanvrager,wijzigDatum&status=open&sorteer=wijzigDatum`</pre>
 </div>
 
-In the case of HAL, linked resources are embedded in the default representation. By applying the aforementioned `fields` parameter, the contents of the body can be customized as required.
+By applying the aforementioned `fields` parameter, the contents of the body can be customized as required.
 
 <div class="rule" id="api-09">
   <p class="rulelab"><strong>API-09</strong>: Implement custom representation if supported</p>

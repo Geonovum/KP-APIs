@@ -34,7 +34,7 @@ Design rules have unique and permanent numbers. In the event of design rules bei
 * <a href="#api-39">API-39</a>: Use ETRS89 as the preferred coordinate reference system (CRS)
 * <a href="#api-40">API-40</a>: Pass the coordinate reference system (CRS) of the request and the response in the headers
 * <a href="#api-41">API-41</a>: Use content negotiation to serve different CRSs
-* <a href="#api-42">API-42</a>: Use JSON+HAL with media type `application/hal+json` for pagination
+* <a href="#api-42">API-42</a>: Provide standard navigation controls for pagination
 * <a href="#api-43">API-43</a>: Apply caching to improve performance
 * <a href="#api-44">API-44</a>: Apply rate limiting
 * <a href="#api-45">API-45</a>: Provide rate limiting information
