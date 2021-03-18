@@ -1,10 +1,4 @@
-# Strategie en beleid voor moderne gegevensuitwisseling bij de overheid
-[*Titel aangepast naar suggestie van Martin van der Plas. Suggesties nog welkom.*]
-
-## Probleembeschrijving
-In veel ICT systemen bij de overheid zitten de gegevens verweven in de applicatie. Deze systemen werken met kopieën van de 
-basisregistraties en andere gegevensbronnen. De huidige situatie brengt een aantal problemen met zich mee:
-1. De kans op fouten en datalekken neemt toe bij het kopiëren en gedupliceerd opslaan van gegevens.# API strategie voor de overheid
+# API strategie voor de overheid
 ## Visie
 
 In veel ICT systemen bij de overheid zijn de gegevens verweven met de applicatie. ICT systemen bij de overheid werken vaak met kopieën van de basisregistraties en andere gegevensbronnen. Dit heeft nadelen:
