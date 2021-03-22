@@ -17,7 +17,7 @@ https://www.noraonline.nl/wiki/API/Principes
 In werkgroep beveiliging is de vraag gesteld of in werkgroep Architectuur dit onderwerp aandacht kan krijgen.
 
 Uit de discussie:
-Toepassing,
+Toepassing:
 rate limiting, 
 quota theft,
 billing,
@@ -45,7 +45,7 @@ Uit de discussie:
 - Voordelen/nadelen mbt ontkoppeling via event-bus mbt robuustheid, schaalbaarheid kunnen besproken worden
 - Een aandachtspunt hierbij is mogelijk de relatie met REST API's, de huidige focus van de API strategie/API Design Rules is resource gericht.
 - Een architectuur visie die in deze context (mogelijk) geplaatst kan worden is het 'op maat' aanbieden van events/data door een aanbieder. 
-(De architectuur van de afnemer strekt zich uit tot aan/over de aanbieder is een manier om hiernaar te kijken), Dit hangt samen met de semantiek van events en data in verschillende domeinen.
+(De architectuur van de aanbieder sluit aan op de afnemer is een manier om hiernaar te kijken), Dit hangt samen met de semantiek van events en data in verschillende domeinen.
 
 Afspraak is dat er een sessie komt over 3/4 weken;
 
