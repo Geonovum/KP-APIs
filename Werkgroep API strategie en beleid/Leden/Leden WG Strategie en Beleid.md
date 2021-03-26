@@ -38,7 +38,7 @@ Omwille van privacy staan er geen contactgevens van de leden vermeld. Discussies
 
 **Kadaster**: Wlbert Kroon, Jasper Roes
 
-**Logius**: Peter Haasnoot, Pieter Hering
+**Logius**: Peter Haasnoot
 
 **Ministerie van Binnenlandse Zaken en Koninkrijksrelaties**: Gino Laan, Paul Zeef
 
