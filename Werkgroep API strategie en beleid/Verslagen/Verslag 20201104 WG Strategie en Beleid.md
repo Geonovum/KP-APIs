@@ -33,7 +33,7 @@ In de weken voor deze bijeenkomst hebben verschillende leden van de werkgroep vo
 - Het [voorbeeld van regie op gegevens](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20API%20strategie%20en%20beleid/Werkversie/strategie-en-beleid-v0.md#voorbeeld-regie-op-gegevens) van Paul.
 - Het [voorbeeld van de ontsluiting van identificatiecodes](https://github.com/Geonovum/KP-APIs/issues/242) van Tony.
 
-Liesbeth en Martin geven aan dat het voorbeeld van de BRP ([verhuizing naar een andere gemeente](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20API%20strategie%20en%20beleid/Werkversie/strategie-en-beleid-v0.md#voorbeeld-verhuizing-naar-een-andere-gemeente)) geen passende onderbouwing is voor de toegevoegde waarde van APIs. De BRP functioneert nu juist heel goed. 
+Liesbeth en Martin geven aan dat het voorbeeld van de BRP (verhuizing naar een andere gemeente) geen passende onderbouwing is voor de toegevoegde waarde van APIs. De BRP functioneert nu juist heel goed. 
 
 Liesbeth merkt op dat de redenen waarom gegevens nog niet bij de bron beheerd en ontsloten worden vaak niet technisch zijn maar juridisch. Zij stelt dat de openheid van de overheid een belangrijker knelpunt is.
 
