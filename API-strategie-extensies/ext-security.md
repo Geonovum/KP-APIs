@@ -19,8 +19,16 @@ One should secure all APIs assuming they can be accessed from any location on th
   <p>Since the connection is always secured, the access method can be straightforward. This allows the application of basic access tokens instead of encrypted access tokens.</p>
 </div>
 
+Even when using TLS-based secured connections information in URIs is not secured. URIs can be cached and logged outside of the servers controlled by clients and servers. Any information contained in them should therfor be considered readable by anyone with access to the netwerk being used (in case of the internet the whole world) and MUST NOT contain any sensitive information. Neither client secrets used for authentication, privacy sensitive informations suchs as BSNs nor any other information which should not be shared. Be aware that queries (anything after the '?' in a URI) are also part of an URI.
+
+<div class="rule" id="api-58">
+  <p class="rulelab"><strong>API-58</strong>: No sensitive information in URIs</p>
+  <p>Do not put any sensitive information in URIs when communicating over shared networks</p>
+  <p>Even when the connection is secure, URIs can be cached and logged in systems outside the control of client and server in an API context when communicating over shared networks.</p>
+</div>
+
 ### API access patterns
-Because security is about compromises one should first be aware of what access patterns need to be supported.
+Because security is about compromises one should first be aware of what access patterns need to be supported. More information on API access patterns can be found in Dutch in [the architecture chapter of the Dutch API strategy](https://geonovum.github.io/KP-APIs/Werkgroep%20API%20architectuur/)
 
 #### Machine to machine
 Two different machines negotiate a secure point to point connection. One side acts as the client, the other as the server. Both sides identify and authenticate the other party.
@@ -123,31 +131,8 @@ In contexts where Dutch (semi) governmental organizations are involved, the cert
 [The NL GOV Assurance profile for OAuth 2.0](https://publicatie.centrumvoorstandaarden.nl/api/oauth/) REQUIRES the use of private_key_jwt for full clients, native clients with dynamically registered keys, and direct access clients as mentioned in the profile.
 
 ##### Client secrets
-Various methods exists for authenticating clients using secrets.
-
-Note that methods using asymmetric keys are RECOMMENDED instead of client secrets, as they are both more secure and key management is easier, in particular when deployed at scale.
-
-Note that Client authentication using HTTP Basic authentication or communicating client credentials in the request body are prone to credential theft and therefore NOT RECOMMENDED.
-
-**Client_secret_jwt**
-The Client secret JWT method (see [OpenID](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication)) is similar to the private_key_jwt method, but uses a HMAC instead of a signature. This Client Authentication method is part of the OpenID Connect standards for Clients authenticating to the OpenID Provider, but the use of Client secret JWT Client authentication is not limited to this use case.
-
-This method is not as a strong as the private_key_jwt method, but offers better options against replay attacks than password based methods.
-
-**Client Password**
-Clients in possession of a client password MAY use the HTTP Basic authentication scheme as defined in [RFC7617](https://tools.ietf.org/html/rfc7617) to authenticate to the Server. The client identifier is encoded using the application/x-www-form-urlencoded encoding algorithm, and the encoded value is used as the username; the client secret is encoded using the same algorithm and used as the password. The Server MUST support the HTTP Basic authentication scheme for authenticating clients that were issued a client secret as password.
-
-The Server MUST require the use of TLS when sending requests using client password authentication. Since this client authentication method involves a password, a Server MUST protect any endpoint utilizing it against brute force attacks.
-
-**Client secret**
-Alternatively, the authorization server MAY support including the client credentials in the request-body using the following parameters:
-
-|client_id:|REQUIRED|The client identifier issued to the client during the registration process|
-|client_secret:|REQUIRED|The client secret|
-
-The Server MUST require the use of TLS when sending requests using client secret authentication. Since this client authentication method involves a password, a Server MUST protect any endpoint utilizing it against brute force attacks.
-
-Including the client credentials in the request-body using the two parameters is NOT RECOMMENDED and SHOULD be limited to clients unable to utilize any other client authentication method. The parameters MUST only be transmitted in the request-body and MUST NOT be included in the request URI.
+Clients SHOULD NOT be authenticated using client secrets. Various methods exists for authenticating clients using secrets. Methods including Client authentication using HTTP Basic authentication or communicating client credentials in the request body are prone to credential theft. 
+Methods using asymmetric keys are RECOMMENDED instead of client secrets, as they are both more secure and key management is easier, in particular when deployed at scale. 
 
 ##### Client authentication and Public clients
 In Use Cases that involve Native and User-Agent based Clients, strong Client authentication is generally not possible. Whereas it may be possible for individual Clients to implement a decent means of Client authentication (e.g. by using the Web Crypto API in User-Agent based Clients), the Server cannot make any assumptions about the confidentiality of credentials exchanged with such Clients.
