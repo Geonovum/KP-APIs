@@ -49,7 +49,6 @@ Het Resource Model als logische view op achterliggende datamodellen heeft ook al
 
 ![alt text](https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20API%20architectuur/uitwerkingen/media/API-Infomodel2.png)
 
-
 ### Aanbevelingen
 
 **Verbindt het Resource Model met een bestaand Informatiemodel**
