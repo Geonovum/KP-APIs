@@ -1,7 +1,7 @@
 # API strategie voor de overheid
 ## Visie
 
-In veel ICT systemen bij de overheid zijn de gegevens verweven met de applicatie. ICT systemen bij de overheid werken vaak met kopieën van de basisregistraties en andere gegevensbronnen. Soms is dit om politieke, juridische of organisatorische redenen onvermijdelijk, maar het kan ook nadelen hebben:
+In veel ICT systemen bij de overheid zijn de gegevens verweven met de applicatie. ICT systemen bij de overheid werken vaak met kopieën van de basisregistraties en andere gegevensbronnen. Soms is dit om juridische of organisatorische redenen onvermijdelijk, maar het kan ook nadelen hebben:
 1. De kans op fouten en datalekken neemt toe bij het kopiëren en verspreid opslaan van gegevens.
 2. Het kopiëren en synchroniseren van gegevens tussen systemen is vaak inefficiënt kost meer geld dan nodig.
 3. Personen en bedrijven hebben geen regie over hun gegevens als deze bij verschillende organisaties verspreid staan.
