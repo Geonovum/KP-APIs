@@ -1,13 +1,13 @@
 # API strategie voor de overheid
 ## Visie
 
-In veel ICT systemen bij de overheid zijn de gegevens verweven met de applicatie. ICT systemen bij de overheid werken vaak met kopieën van de basisregistraties en andere gegevensbronnen. Dit heeft nadelen:
+In veel ICT systemen bij de overheid zijn de gegevens verweven met de applicatie. ICT systemen bij de overheid werken vaak met kopieën van de basisregistraties en andere gegevensbronnen. Soms is dit om politieke, juridische of organisatorische redenen onvermijdelijk, maar het heeft ook nadelen:
 1. De kans op fouten en datalekken neemt toe bij het kopiëren en verspreid opslaan van gegevens.
 2. Het kopiëren en synchroniseren van gegevens tussen systemen is vaak inefficiënt kost meer geld dan nodig.
 3. Personen en bedrijven hebben geen regie over hun gegevens als deze bij verschillende organisaties verspreid staan.
 4. Systemen met maatwerkkoppelingen kunnen afhankelijkheid van leveranciers in de hand werken.
 
-De digitale overheid kan veiliger en efficiënter gegevens uitwisselen door applicaties beter te scheiden van gegevens, en gegevens waar mogelijk bij de bron te bewaren. Door de gegevens alleen door de bronhouder te laten beheren, hoeven ze niet meer op grote schaal gekopieerd, verspreid opgeslagen en gesynchroniseerd te worden. Dit principe zit achter initiatieven zoals [Haal Centraal](https://www.vngrealisatie.nl/nieuws/start-programma-haal-centraal), [Common Ground](https://commonground.nl/) en het [Digitaal Stelsel Omgevingswet](https://aandeslagmetdeomgevingswet.nl/digitaal-stelsel/).
+De digitale overheid kan veiliger en efficiënter gegevens uitwisselen door applicaties beter te scheiden van gegevens, en gegevens *waar juridisch en organisatorisch mogelijk* bij de bron te bewaren. Door de gegevens alleen door de bronhouder te laten beheren, hoeven ze niet meer op grote schaal gekopieerd, verspreid opgeslagen en gesynchroniseerd te worden. Dit principe zit achter initiatieven zoals [Haal Centraal](https://www.vngrealisatie.nl/nieuws/start-programma-haal-centraal), [Common Ground](https://commonground.nl/) en het [Digitaal Stelsel Omgevingswet](https://aandeslagmetdeomgevingswet.nl/digitaal-stelsel/).
 
 ## Manifest
 > **Als digitale overheid maken we onze dienstverlening veiliger, efficiënter en meer beheersbaar door gegevens beter te scheiden van applicaties, en gegevens - waar juridisch en organisatorisch mogelijk - bij de bron te beheren en ontsluiten.**
@@ -25,7 +25,7 @@ De digitale overheid kan veiliger en efficiënter gegevens uitwisselen door appl
 ## Basisafspraken
 Bij het realiseren van de visie volgt de overheid een aantal basisafspraken:
 1. Waar de overheid REST APIs inzet, gebeurt dat volgens de [REST API Design Rules](https://docs.geostandaarden.nl/api/API-Designrules/).
-2. De beveiliging van REST APIs realiseert de overheid met het [NL GOV Assurance Profile for OAuth 2.0](https://docs.geostandaarden.nl/api/oauth/).
+2. Veilige autorisatie van toegang tot REST APIs realiseert de overheid met het [NL GOV Assurance Profile for OAuth 2.0](https://docs.geostandaarden.nl/api/oauth/).
 3. Voor het leggen van een veilige verbinding met een gegevensbron gebruikt de overheid de standaard [DigiKoppeling](https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/basisregistraties-en-stelselafspraken/stelselvoorzieningen/digikoppeling/) en waar mogelijk de open-source implementatie [NLX](http://www.nlx.io) voor het [gebruik van TLS1.3](https://docs.geostandaarden.nl/api/API-Strategie-ext/#api-11-encrypt-connections-using-at-least-tls-v1-3)  met  [tweezijdige PKIoverheid certificaten](https://docs.geostandaarden.nl/api/API-Strategie-ext/#api-15-use-pkioverheid-certificates-for-access-restricted-or-purpose-limited-api-authentication).
 
 ## Voorbeelden uit de praktijk
@@ -71,12 +71,6 @@ In 2017 liet het ministerie van Binnenlandse Zaken en Koninkrijksrelaties op ver
 In de [beleidsbrief regie op gegevens](https://www.rijksoverheid.nl/documenten/brieven/2019/07/11/beleidsbrief-regie-op-gegevens-nadere-uitwerking) van 2019 onderstreept het kabinet nog eens het beleidsvoornemen om serieus werk te maken van regie op gegevens. Maar er zal iets moeten gebeuren in het gegevenslandschap om dit mogelijk te maken.
 
 Als de overheid gegevens bij de bron gaat beheren en ontsluiten met APIs, wordt het gemakkelijker om bij de bron volledige inzage te geven. De overheid kan dan digitale inzage geven in een uniform gebruiksvriendelijk format, en ook de correctie van gegevens wordt eenvoudiger.
-
-### Een API voor het bewijzen van rijvaardigheid
-
-Als je met een auto de weg op wilt moet je je rijvaardigheid bewijzen bij de centrale overheid, bij het [CBR](https://www.cbr.nl/). Bij het CBR moet je je legitimeren met een identiteitsbewijs (paspoort of identiteitsbewijs) dat je gemeente uitgeeft.
-
-Als je de weg op gaat moet je het rijbewijs bij je hebben zodat de politie je rijvaardigheid kan controleren. Dit is geen toonbeeld van efficiëntie. Het rijbewijs zou een verwijzing moeten zijn naar een gegevensbron waarin je rijvaardigheid is vastgelegd. De politie kan dit direct controleren bij de bron, en je kan deze gegevens ook online delen. En het CBR zou het rijbewijs direct kunnen sturen naar het adres wat bekend is bij de gemeente.
 
 ## Ondertekening
 De hieronder vermelde organisaties hebben bijgedragen aan deze API strategie voor de overheid en onderschrijven het manifest en de afspraken:
