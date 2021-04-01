@@ -14,20 +14,14 @@ Zie ook de presentatie van de Api Architectuur sessie op de bijeenkomst 4 maart 
 
 # Onderwerpen 2020-2021
 
-{% include_relative uitwerkingen/apiindex.md %} 
+- Ondersteuning API Strategie Algemeen
+- API Capability model 
+- Typologie van API's
+- Informatiearchitectuur (relatie/koppeling Datamodel & API)
+- Event Driven processen & Notificaties
+- Beveiligingsarchitectuur 
+- API Management
 
-## Ondersteuning API Strategie Algemeen
-{% include_relative uitwerkingen/apialg.md %} 
-<!-- ## API Capability model -->
-{% include_relative uitwerkingen/apicap.md %} 
-## Typologie van API's
-{% include_relative uitwerkingen/apitypes.md %} 
-## Informatiearchitectuur (relatie/koppeling Datamodel & API)
-{% include_relative uitwerkingen/apiinfomod.md %} 
-## Event Driven processen & Notificaties
-<!-- ## Beveiligingsarchitectuur -->
-{% include_relative uitwerkingen/apisec.md %}
-## API Management
-  
-{% include_relative uitwerkingen/apiman.md %}
+# Draft versie Hoofdstuk Architectuur
 
+[Draft versie van het hoofdstuk Architectuur](https://geonovum.github.io/KP-APIs/API-strategie-algemeen/#architectuur)
