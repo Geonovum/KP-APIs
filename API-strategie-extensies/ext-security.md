@@ -51,21 +51,22 @@ We consider this method to be mostly outside the scope of this document and refe
 ### Identification
 
 **End Users and Organizations**
-For Identification of individual users use a pseudonym when possible to avoid exposing sensitive information about a user.
-This pseudonym can optionally be translatable to actual personal information in a separate service, but access to this service should be tightly controlled and limited only to cases where there is a legal need to use this information. Furthermore using a seperate service for this provides a moment to audit when certain information about users is requested.
+For identification of individual end users a pseudonym SHOULD be used when possible, to avoid exposing sensitive information about a user.
+This pseudonym can optionally be translatable to actual personal information in a separate service, but access to this service should be tightly controlled and limited only to cases where there is a legal need to use this information. Furthermore using a seperate service for translation provides a moment to audit when certain information about users is requested.
 
 Use of a Burger Service Number (BSN) is only allowed when the organization has a legal ground to do so. Even when an organization is eligible to use BSN's it is still RECOMMENDED to use a pseudonym that is only translatable to a BSN for a limited number of services/users within the organization.
 An example of this can be found in the [architecture of the "digitaal stelsel omgevingswet (DSO)"](https://aandeslagmetdeomgevingswet.nl/publish/library/219/dso_-_gas_-_knooppunt_toegang_iam.pdf)
 
 For identifying government organizations use the "organisatie-identificatienummer" (OIN).
-For identifying non-government organizations (companies, associations, foundations etc...) use the Handelsregisternummer (HRN - its OIN equivalent). These are used in the PKIOverheid and e-Herkenning context. See https://publicatie.centrumvoorstandaarden.nl/dk/oin/ for more information on these identifiers.
 
-OINs can be queried using the COR API https://portaal.digikoppeling.nl/registers/corApi/index or its webpage https://portaal.digikoppeling.nl/registers/.
-HRNs are derived from the KvKNummer which can be queried in the "Handels register" https://developers.kvk.nl/documentation/search-v2
+For identifying non-government organizations (companies, associations, foundations etc...) use the KVK number. These numbers are used in the PKIOverheid and e-Herkenning context respectively. See https://publicatie.centrumvoorstandaarden.nl/dk/oin/ and https://www.kvk.nl/over-kvk/over-het-handelsregister/ for more information on these identifiers. 
 
-In the EU context use the eIDAS legal identifier. For more information see https://ec.europa.eu/digital-single-market/en/trust-services-and-eid.
+OIN's can be queried using the COR API https://portaal.digikoppeling.nl/registers/corApi/index or its webpage https://portaal.digikoppeling.nl/registers/. The API will also provide known mappings between OIN- and KVK numbers (some OIN's are not derived from the KVK number). KVK numbers are derived from the handelsregister, which can be queried see https://developers.kvk.nl/documentation/search-v2 for details.
+
+In the EU context use the eIDAS legal identifier. For more information see https://ec.europa.eu/digital-single-market/en/trust-services-and-eid and https://afsprakenstelsel.etoegang.nl/ for details. 
 
 **Clients**
+Identification of clients is different from identification of the end user or organisation using the service. 
 When using authorization servers, the authorization server issues the registered client a client identifier - a unique string representing the registration information provided by the client. The client identifier is not a secret; it is commonly public known and MUST NOT be relied upon for client authentication by itself. The client identifier is unique to the authorization server.
 
 Authorization servers MUST NOT allow clients to choose or influence their `client_id` value.
