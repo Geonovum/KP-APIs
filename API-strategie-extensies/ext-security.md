@@ -58,7 +58,7 @@ Use of a Burger Service Number (BSN) is only allowed when the organization has a
 An example of this can be found in the [architecture of the "digitaal stelsel omgevingswet (DSO)"](https://aandeslagmetdeomgevingswet.nl/publish/library/219/dso_-_gas_-_knooppunt_toegang_iam.pdf)
 
 For identifying government organizations use the "organisatie-identificatienummer" (OIN).
-For identifying non-government organizations (companies, associations, foundations etc...) use the Handelsregisternummer (HRN - its OIN equivalent). These are used in the PKIOverheid and e-Herkenning context. See https://www.logius.nl/diensten/oin for more information on these identifiers.
+For identifying non-government organizations (companies, associations, foundations etc...) use the Handelsregisternummer (HRN - its OIN equivalent). These are used in the PKIOverheid and e-Herkenning context. See https://publicatie.centrumvoorstandaarden.nl/dk/oin/ for more information on these identifiers.
 
 OINs can be queried using the COR API https://portaal.digikoppeling.nl/registers/corApi/index or its webpage https://portaal.digikoppeling.nl/registers/.
 HRNs are derived from the KvKNummer which can be queried in the "Handels register" https://developers.kvk.nl/documentation/search-v2
@@ -131,8 +131,8 @@ In contexts where Dutch (semi) governmental organizations are involved, the cert
 [The NL GOV Assurance profile for OAuth 2.0](https://publicatie.centrumvoorstandaarden.nl/api/oauth/) REQUIRES the use of private_key_jwt for full clients, native clients with dynamically registered keys, and direct access clients as mentioned in the profile.
 
 ##### Client secrets
-Clients SHOULD NOT be authenticated using client secrets. Various methods exists for authenticating clients using secrets. Methods including Client authentication using HTTP Basic authentication or communicating client credentials in the request body are prone to credential theft. 
-Methods using asymmetric keys are RECOMMENDED instead of client secrets, as they are both more secure and key management is easier, in particular when deployed at scale. 
+Clients SHOULD NOT be authenticated using client secrets. Methods using asymmetric keys are RECOMMENDED instead of client secrets, as they are both more secure and key management is easier, in particular when deployed at scale.  Various methods exists for authenticating clients using secrets. Methods including Client authentication using HTTP Basic authentication or communicating client credentials in the request body are prone to credential theft. 
+
 
 ##### Client authentication and Public clients
 In Use Cases that involve Native and User-Agent based Clients, strong Client authentication is generally not possible. Whereas it may be possible for individual Clients to implement a decent means of Client authentication (e.g. by using the Web Crypto API in User-Agent based Clients), the Server cannot make any assumptions about the confidentiality of credentials exchanged with such Clients.
