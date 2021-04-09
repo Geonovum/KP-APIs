@@ -14,7 +14,7 @@ De digitale overheid kan veiliger en efficiënter gegevens uitwisselen door appl
 
 > **Moderne gegevensuitwisseling vraagt om technologie waarmee je gegevens op een betrouwbare en schaalbare manier kan ontsluiten bij de bron. Dat kan met APIs.**
 
-> **De overheid streeft ernaar dat alle basisregistraties in 2025 real-time te bevragen zijn met een API en dat er in 2027 geen lokale kopieën van gegevensbronnen meer gebruikt worden.**
+> **De overheid streeft ernaar dat alle basisregistraties in 2026 real-time te bevragen zijn met een API en dat er in 2030 geen kopieën van gegevensbronnen meer gebruikt worden.**
 
 ## Stappenplan
 *Hier beschrijven we hoe we er willen komen. Zaken om hier te noemen kunnen zijn onder andere:*
