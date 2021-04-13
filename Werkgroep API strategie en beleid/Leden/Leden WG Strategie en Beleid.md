@@ -54,7 +54,7 @@ Omwille van privacy staan er geen contactgevens van de leden vermeld. Discussies
 
 **Servicepunt71**: Eelco Rouw
 
-**SVB**: Geer Haas
+**SVB**: Gerard Kreuk, Marc Tulen
 
 **UWV**: Eric Nijenhuis, Nic van Spronsen
 
