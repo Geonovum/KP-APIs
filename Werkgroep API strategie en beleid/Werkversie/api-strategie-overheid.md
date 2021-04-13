@@ -33,9 +33,9 @@ In dit deel laten we een aantal domeinen zien waar de overheid al met succes API
 
 
 ### De API op de Basisregistratie Personen (BRP) van Haal Centraal
-Binnen het programma [Haal Centraal](https://www.vngrealisatie.nl/producten/haal-centraal) bouwen de [Rijksdienst voor Identiteitsgegevens](https://www.rvig.nl/) (RvIG), de vijf grote gemeenten (Amsterdam, Den Haag, Eindhoven, Rotterdam en Utrecht) en [VNG Realisatie](https://www.vngrealisatie.nl/) een API waarmee gemeenten direct de [Basisregistratie Personen](https://www.rvig.nl/brp) (BRP) kunnen raadplegen. In 2021 gaan 10 gemeenten deze API gebruiken en beproeven in een pilot.
+Binnen het programma [Haal Centraal](https://www.vngrealisatie.nl/producten/haal-centraal) experimenteert de [Rijksdienst voor Identiteitsgegevens](https://www.rvig.nl/) (RvIG), de vijf grote gemeenten (Amsterdam, Den Haag, Eindhoven, Rotterdam en Utrecht) en [VNG Realisatie](https://www.vngrealisatie.nl/) met een API waarmee gemeenten direct de [Basisregistratie Personen](https://www.rvig.nl/brp) (BRP) kunnen raadplegen. In 2021 gaan 10 gemeenten deze API gebruiken en beproeven in een pilot.
 
-Over de voordelen van de BRP API heeft Haal Centraal een heldere [video](https://youtu.be/1xzijzjA15A) gemaakt. De specificatie van de API is al te vinden op [Github repository van VNG](https://github.com/VNG-Realisatie/Haal-Centraal-BRP-bevragen). De API komt later beschikbaar voor alle overheidsorganisaties die de BRP raadplegen.
+Over de voordelen van de BRP API heeft Haal Centraal een heldere [video](https://youtu.be/1xzijzjA15A) gemaakt. De specificatie van de API is al te vinden op [Github repository van VNG](https://github.com/VNG-Realisatie/Haal-Centraal-BRP-bevragen). Wanneer de pilot slaagt, komt de API mogelijk later beschikbaar voor alle gemeenten en overige overheidsorganisaties die de BRP raadplegen.
 
 ### De API voor Zaakgericht Werken van Common Ground
 De meeste gemeenten werken 'zaakgericht'. Deze manier van werken richt zich op het transparant afhandelen van *aanvragen* die een *samenhangende hoeveelheid werk* (een 'zaak') met zich meebrengen en een *duidelijk omschreven resultaat* hebben.  ICT systemen ondersteunen zaakgericht werken met als voordelen:
