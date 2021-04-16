@@ -33,7 +33,7 @@ Het afgelopen jaar richtte de werkgroep zich op de belangrijkste punten die uit 
 - Een strategie moet een **visie** (stip op de horizon) en een **stappenplan** (het pad er naartoe) bevatten.
 - Geef **duidelijkheid** over de positie van de overheid.
 
-Dit resulteert in de [werkversie](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20API%20strategie%20en%20beleid/Werkversie/api-strategie-overheid.md) van het hoofdstuk Strategie en Beleid voor de nieuwe API Strategie. Sommige organisaties zetten ook kritische kanttekeningen bij de huidige oriëntatie van het werkdocument. RvIG stelt:
+Dit resulteert in de [werkversie](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20API%20strategie%20en%20beleid/Werkversie/api-strategie-overheid.md) van het hoofdstuk Strategie en Beleid voor de nieuwe API Strategie. Sommige organisaties zetten ook kritische kanttekeningen bij de huidige oriëntatie van het werkdocument. RvIG vindt:
 - Deze groep zoekt nog steeds een probleem bij een oplossing.
 - Het werkdocument richt zich teveel op de technische voordelen van data bij de bron. Bestuurlijke en juridische aspecten geven een complexere realiteit.
 - We moeten ons niet met het gegevenslandschap van de overheid bemoeien. Blijf bij de kern, APIs, en maak duidelijk wat je met 'APIs' precies bedoeld.
