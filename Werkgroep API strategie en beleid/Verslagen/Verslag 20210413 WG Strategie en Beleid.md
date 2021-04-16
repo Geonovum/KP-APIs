@@ -7,6 +7,7 @@ Publieke sector, op alfabetische volgorde van organisatie:
 Tony Sloos (ArchitecIT/DSO/minBZK), Redouan Ahaloui en Han Zuidweg (Forum Standaardisatie), Jeroen Temme en Michel Trimpe (gemeente Amsterdam), Trudi Zegveld (gemeente Venlo), Frank Terpstra (Geonovum), Koos Boersma  (Informatiehuis Water), Frans Smit (Inspectie O&E), Richard Jansen (RDW), Gershon Janssen (VNG).
 
 Private sector, op alfabetische volgorde naar organisatie:
+
 Marcel Krassenburg (MKIdee)
 
 ## Afgemeld
