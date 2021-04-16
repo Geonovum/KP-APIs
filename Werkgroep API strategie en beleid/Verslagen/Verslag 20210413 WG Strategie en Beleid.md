@@ -29,7 +29,7 @@ Eerst schetst Han de tijdlijn sinds de publicatie van de eerste versie van de Ne
 - juli 2021: Kennisplatform APIs wil een nieuwe versie van de API Strategie publiceren.
 
 Het afgelopen jaar richtte de werkgroep zich op de belangrijkste punten die uit de [bijeenkomst van 3 maart 2020](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20API%20strategie%20en%20beleid/Verslagen/Verslag%2020200304%20WG%20Strategie%20en%20Beleid.md) naar voren kwamen:
-- Start vanuit het probleem, niet de oplossing (APIs)
+- Start vanuit het probleem, niet de oplossing (APIs).
 - Een strategie moet een **visie** (stip op de horizon) en een **stappenplan** (het pad er naartoe) bevatten.
 - Geef **duidelijkheid** over de positie van de overheid.
 
