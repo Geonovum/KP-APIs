@@ -66,9 +66,11 @@ Vooraf aan de bijeenkomst gaven enkele deelnemers al commentaar op het werkdocum
 
 - Richard waarschuwt dat platformen ook een risico met zich meebrengen en in de publieke opinie niet altijd in een positief daglicht staan. Zie de kritiek die Google, Facebook, Twitter en andere platformen krijgen op hun macht en privacy-beleid. Hij stelt voor om het niet abstract over platformen te hebben maar vooral de voordelen van platformen duidelijk te benoemen.
 
-- Gershon pleit ervoor om weg te blijven van programmering en tijdlijn. Ga het in een strategie niet over uitvoering hebben.
+- Tony suggereert om eens te kijken naar de tijdlijn van bestaande programma's zoals DSO, Common Ground en Haal Centraal, en daar het stappenplan van de API strategie op te baseren.
 
-- Frank suggereert om het inzetten op APIs te koppelen aan het inkoopmoment, zoals dat het geval is met open standaarden met een 'pas toe of leg uit' status.
+- Gershon pleit ervoor om weg te blijven van een programmering en tijdlijn. Ga het in een strategie niet over uitvoering hebben.
+
+- Frank stelt voor om het inzetten op APIs te koppelen aan het inkoopmoment, zoals dat het geval is met open standaarden met een 'pas toe of leg uit' status.
 
 Han zal proberen het werkdocument met het commentaar uit deze discussie te actualiseren, en vraagt daarvoor om tekstvoorstellen van de werkgroep leden.
 
