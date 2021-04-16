@@ -23,15 +23,15 @@ De aanwezigen hadden geen aanvullingen of opmerkingen op het [verslag van de vir
 Aan het begin van de bijeenkomst gaf Han een korte samenvatting van de voortgang in het afgelopen jaar en een beeld van waar we nu staan in de werkgroep.
 
 Eerst schetst Han de tijdlijn sinds de publicatie van de eerste versie van de Nederlandse API Strategie:
-- 4 februari 2020: Kennisplatform APIs publiceert de eerste [API Strategie](https://docs.geostandaarden.nl/api/API-Strategie/)
-- 3 maart 2020: Kennisplatform APIs organiseert de [kick-off API Strategie 2.0](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20API%20strategie%20en%20beleid/Verslagen/Verslag%2020200304%20WG%20Strategie%20en%20Beleid.md) in Amersfoort
-- maart 2020-april 2021: [5 bijeenkomsten](https://github.com/Geonovum/KP-APIs/tree/master/Werkgroep%20API%20strategie%20en%20beleid/Verslagen) van de werkgroep Strategie en Beleid
-- juli 2021: Kennisplatform APIs wil een nieuwe versie van de API Strategie publiceren
+- 4 februari 2020: Kennisplatform APIs publiceert de eerste [API Strategie](https://docs.geostandaarden.nl/api/API-Strategie/).
+- 3 maart 2020: Kennisplatform APIs organiseert de [kick-off API Strategie 2.0](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20API%20strategie%20en%20beleid/Verslagen/Verslag%2020200304%20WG%20Strategie%20en%20Beleid.md) in Amersfoort.
+- maart 2020-april 2021: [5 bijeenkomsten](https://github.com/Geonovum/KP-APIs/tree/master/Werkgroep%20API%20strategie%20en%20beleid/Verslagen) van de werkgroep Strategie en Beleid.
+- juli 2021: Kennisplatform APIs wil een nieuwe versie van de API Strategie publiceren.
 
 Het afgelopen jaar richtte de werkgroep zich op de belangrijkste punten die uit de [bijeenkomst van 3 maart 2020](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20API%20strategie%20en%20beleid/Verslagen/Verslag%2020200304%20WG%20Strategie%20en%20Beleid.md) naar voren kwamen:
-- Start vanuit het probleem (niet de oplossing: APIs)
-- Een strategie moet een **visie** (stip op de horizon) en een **stappenplan** (het pad er naartoe) bevatten
-- Geef **duidelijkheid** over de positie van de overheid
+- Start vanuit het probleem, niet de oplossing (APIs)
+- Een strategie moet een **visie** (stip op de horizon) en een **stappenplan** (het pad er naartoe) bevatten.
+- Geef **duidelijkheid** over de positie van de overheid.
 
 Dit resulteert in de [werkversie](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20API%20strategie%20en%20beleid/Werkversie/api-strategie-overheid.md) van het hoofdstuk Strategie en Beleid voor de nieuwe API Strategie. Sommige organisaties zetten ook kritische kanttekeningen bij de huidige oriëntatie van het werkdocument. RvIG stelt:
 - Deze groep zoekt nog steeds een probleem bij een oplossing.
