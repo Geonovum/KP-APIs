@@ -16,7 +16,7 @@ Omwille van privacy staan er geen contactgevens van de leden vermeld. Discussies
 
 **Forum Standaardisatie**: Han Zuidweg (voorzitter)
 
-**Gemeente Amsterdam**: Michiel Trimpe
+**Gemeente Amsterdam**: Jeroen  Temme, Michiel Trimpe
 
 **Gemeente Breda**: Nils Vissenberg
 
