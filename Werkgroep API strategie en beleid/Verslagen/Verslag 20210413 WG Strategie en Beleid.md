@@ -56,7 +56,7 @@ Vooraf aan de bijeenkomst gaven enkele deelnemers al commentaar op het werkdocum
 
 - Jeroen stelt dat microservices niet noodzakelijk (REST) APIs impliceren en vice versa. Hij vindt dat we ons teveel richten op het *halen* van gegevens (de 'GET' in REST) terwijl het vooral gaat om functionaliteit delen.
 
-- Frank merkt op dat de platformeconomie al meer dan 10 jaar een realiteit is. De burger verwacht uiteindelijk dat de digitale overheid op die manier functioneert. Onze eigenlijke boodschap is dat de digitale overheid de boot dreigt te missen, en dat is een boodschap die bestuurders liever niet benoemen.
+- Frank merkt op dat de platformeconomie al meer dan 10 jaar een realiteit is. De burger verwacht uiteindelijk dat de digitale overheid op die manier functioneert. Onze eigenlijke boodschap is dat de digitale overheid de boot dreigt te missen, en dat is een boodschap die bestuurders liever niet benoemd zien.
 
 - Richard ziet dat veel bestuurders pas in beweging komen als iets wettelijk verplicht wordt, dus we moeten niet verwachten dat bestuurders de API strategie gemakkelijk zullen omarmen.
 
