@@ -64,7 +64,7 @@ var respecConfig =
   issueBase: "https://github.com/geonovum/KP-APIs/issues/",
   localBiblio: {
     "NCSC.TLS": {
-      href: "https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-tls",
+      href: "https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1",
       title: "ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS)",
       authors: ["NCSC"],
       date: "April 2019"
