@@ -23,8 +23,8 @@ Even when using TLS-based secured connections information in URIs is not secured
 
 <div class="rule" id="api-58">
   <p class="rulelab"><strong>API-58</strong>: No sensitive information in URIs</p>
-  <p>Do not put any sensitive information in URIs when communicating over shared networks</p>
-  <p>Even when the connection is secure URIs can be cached and logged, in systems outside the control of client and/or server, when communicating over shared networks.</p>
+  <p>Do not put any sensitive information in URIs</p>
+  <p>Even when the connection is secure URIs can be cached and logged, in systems outside the control of client and/or server.</p>
 </div>
 
 ### API access patterns
