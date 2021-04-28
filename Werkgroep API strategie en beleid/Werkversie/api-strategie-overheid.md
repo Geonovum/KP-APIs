@@ -1,34 +1,40 @@
 # API strategie voor de overheid
+*Dit is een nieuwe versie van het werkdocument, gebaseerd op de feedback uit de bijeenkomst op 13 april en het commentaar op Github. De belangrijkste wijzigingen zijn:*
+- *De Visie start nu vanuit het concept van de platformeconomie, zoals besproken in de bijeenkomst.*
+- *Het Manifest en de Basisafspraken zijn samengevoegd in één hoofdstuk. De tijdlijn is hieruit verwijderd. Hierdoor komen de Basisafspraken nu overeen met hetgeen al verplicht is volgens het 'pas toe of leg uit' lijst van het Forum Standaardisatie. Dit zou de drempel voor organisaties moeten verlagen om deze API Strategie te ondertekenen.*
+- *Het Stappenplan is verwijderd omdat het geen inhoud had. Het kan eventueel terugkomen als er alsnog inhoud voor geleverd wordt.*
+
 ## Visie
 
-In veel ICT systemen bij de overheid zijn de gegevens verweven met de applicatie. ICT systemen bij de overheid werken vaak met kopieën van de basisregistraties en andere gegevensbronnen. Soms is dit om juridische of organisatorische redenen onvermijdelijk, maar het heeft ook nadelen:
+Wij leven in een maatschappij waarin ICT-platformen een steeds grotere rol spelen in het bij elkaar brengen van vraag en aanbod van producten en diensten. Denk aan AirBnB, Über, Funda en Thuisbezorgd. Maar ook aan publieke platformen zoals [OVChipkaart.nl](https://www.ov-chipkaart.nl/home.htm#/) en [Publieke Dienstverlening Op Kaart](https://www.pdok.nl/). Volgens de Kamer van Koophandel is er [geen weg meer terug](https://www.kvk.nl/advies-en-informatie/overheid/platformeconomie-er-is-geen-weg-terug/) uit deze platformeconomie.
+
+Een belangrijk kenmerk van deze platformen is het gemak en de flexibiliteit waarmee gebruikers diensten kunnen aanbieden en afnemen. Burgers en bedrijven verwachten dit ook van de overheid.
+
+Platformen hebben gestandaardiseerde  ICT koppelvlakken die applicaties en gegevensbronnen aan elkaar verbinden.  Hiervoor gebruiken zij APIs.
+Een  [application programming interface](https://www.ensie.nl/dimitri-van-hees/api)  (API) is een gestructureerd en gedocumenteerd koppelvlak voor communicatie tussen applicaties. Je kan een API zien als een digitale stekkerdoos die applicaties met elkaar verbindt.
+
+APIs bestaan al zo lang er computers zijn. De meeste platformen gebruiken APIs onder de motorkap zonder dat de eindgebruiker dat ziet. Als je bijvoorbeeld een app opent voor het weer, dan merk je niet dat deze app gegevens ophaalt bij het  [KNMI via een API](https://meteoserver.nl/real-time-KNMI-weer-API.php). Degene die het meest met een API te maken krijgt is de ontwikkelaar van de applicatie die de API gebruikt. Zij moet begrijpen hoe de API werkt en hoe je deze vanuit de applicatie moet bevragen.
+
+Ook de overheid gebruikt steeds vaker APIs om applicaties en gegevensbronnen te ontsluiten en met elkaar te koppelen. Bijvoorbeeld in initiatieven zoals [Haal Centraal](https://www.vngrealisatie.nl/nieuws/start-programma-haal-centraal), [Common Ground](https://commonground.nl/) en het [Digitaal Stelsel Omgevingswet](https://aandeslagmetdeomgevingswet.nl/digitaal-stelsel/).
+
+Toch heeft de overheid ook veel ICT systemen in gebruik die niet als platformen werken, maar als gesloten systemen waarin de gegevens helemaal met de applicatie verweven zijn. Vaak werken deze systemen met kopieën van cruciale gegevensbronnen zoals basisregistraties. Dat brengt een aantal nadelen met zich mee:
 1. De kans op fouten en datalekken neemt toe bij het kopiëren en verspreid opslaan van gegevens.
 2. Het kopiëren en synchroniseren van gegevens tussen systemen is vaak inefficiënt en kost meer geld dan nodig.
 3. Personen en bedrijven hebben geen regie over hun gegevens als deze bij verschillende organisaties verspreid staan.
 4. Systemen met maatwerkkoppelingen kunnen afhankelijkheid van leveranciers in de hand werken.
 
-De digitale overheid kan veiliger en efficiënter gegevens uitwisselen door applicaties beter te scheiden van gegevens, en gegevens (waar juridisch en organisatorisch mogelijk) bij de bron te bewaren. Door de gegevens alleen door de bronhouder te laten beheren, hoeven ze niet meer op grote schaal gekopieerd, verspreid opgeslagen en gesynchroniseerd te worden. De overheid realiseert dit met initiatieven zoals [Haal Centraal](https://www.vngrealisatie.nl/nieuws/start-programma-haal-centraal), [Common Ground](https://commonground.nl/) en het [Digitaal Stelsel Omgevingswet](https://aandeslagmetdeomgevingswet.nl/digitaal-stelsel/).
-
-## Manifest
-> **Als digitale overheid maken we onze dienstverlening veiliger, efficiënter en meer beheersbaar door gegevens beter te scheiden van applicaties, en gegevens - waar juridisch en organisatorisch mogelijk - bij de bron te beheren en ontsluiten.**
-
-> **Moderne gegevensuitwisseling vraagt om technologie waarmee je gegevens op een betrouwbare en schaalbare manier kan ontsluiten bij de bron. Dat kan met APIs.**
-
-> **De overheid streeft ernaar dat alle basisregistraties in 2026 real-time te bevragen zijn met een API en dat er in 2030 geen kopieën van gegevensbronnen meer gebruikt worden.**
-
-## Stappenplan
-*Hier beschrijven we hoe we er willen komen. Zaken om hier te noemen kunnen zijn onder andere:*
-- *De stappen om [basisregistraties](https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/basisregistraties-en-stelselafspraken/inhoud-basisregistraties/) te ontsluiten met APIs, inclusief de pilots die nu al plaatsvinden.*
-- *De uitbreiding van DigiKoppeling met APIs*
-- *De transitie van StUF naar APIs*
+De digitale overheid wisselt veilig en efficiënt gegevens uit door applicaties zo veel mogelijk te scheiden van gegevens, en gegevens (waar juridisch en organisatorisch mogelijk) bij de bron te bewaren. Hiermee sluit de overheid beter aan bij de platformeconomie die al realiteit is en niet meer zal verdwijnen.
 
 ## Basisafspraken
-Bij het realiseren van de visie volgt de overheid een aantal basisafspraken:
-1. Waar de overheid REST APIs inzet, gebeurt dat volgens de [REST API Design Rules](https://docs.geostandaarden.nl/api/API-Designrules/).
-2. Veilige autorisatie van toegang tot REST APIs realiseert de overheid met het [NL GOV Assurance Profile for OAuth 2.0](https://docs.geostandaarden.nl/api/oauth/).
-3. Voor het leggen van een veilige verbinding met een gegevensbron gebruikt de overheid de standaard [DigiKoppeling](https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/basisregistraties-en-stelselafspraken/stelselvoorzieningen/digikoppeling/) en waar mogelijk de open-source implementatie [NLX](http://www.nlx.io) voor het [gebruik van TLS1.3](https://docs.geostandaarden.nl/api/API-Strategie-ext/#api-11-encrypt-connections-using-at-least-tls-v1-3)  met  [tweezijdige PKIoverheid certificaten](https://docs.geostandaarden.nl/api/API-Strategie-ext/#api-15-use-pkioverheid-certificates-for-access-restricted-or-purpose-limited-api-authentication).
+Bij het realiseren van deze visie volgt de overheid een aantal basisafspraken:
+1. Waar de overheid REST APIs inzet, gebeurt dat volgens de [REST API Design Rules](https://docs.geostandaarden.nl/api/API-Designrules/). Zo biedt de overheid haar REST APIs op een standaard manier en goed gedocumenteerd aan.
+2. De overheid registreert haar REST APIs bij [developer.overheid.nl](https://developer.overheid.nl). Zo kunnen ontwikkelaars de APIs van de overheid altijd vinden.
+3. Veilige autorisatie van toegang tot REST APIs realiseert de overheid met het [NL GOV Assurance Profile for OAuth 2.0](https://docs.geostandaarden.nl/api/oauth/). Dit profiel op de authorisatie standaard OAuth is speciaal ontwikkeld voor de Nederlandse overheid.
+4. Voor het leggen van een veilige verbinding met een gegevensbron gebruikt de overheid de standaard [DigiKoppeling](https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/basisregistraties-en-stelselafspraken/stelselvoorzieningen/digikoppeling/). Deze standaard maakt het mogelijk om een een REST API aan te bieden op een veilige manier die voldoet aan punten 1 en 3 hierboven.
+5. Voor het [gebruik van TLS1.3](https://docs.geostandaarden.nl/api/API-Strategie-ext/#api-11-encrypt-connections-using-at-least-tls-v1-3)  met  [tweezijdige PKIoverheid certificaten](https://docs.geostandaarden.nl/api/API-Strategie-ext/#api-15-use-pkioverheid-certificates-for-access-restricted-or-purpose-limited-api-authentication) is de open-source implementatie [NLX](http://www.nlx.io) sterk aanbevolen.
 
-## Voorbeelden uit de praktijk
+
+## Praktijkvoorbeelden
 In dit deel laten we een aantal domeinen zien waar de overheid al met succes APIs toepast om gegevens bij de bron te beheren en ontsluiten.
 
 
@@ -73,6 +79,6 @@ In de [beleidsbrief regie op gegevens](https://www.rijksoverheid.nl/documenten/b
 Als de overheid gegevens bij de bron gaat beheren en ontsluiten met APIs, wordt het gemakkelijker om bij de bron volledige inzage te geven. De overheid kan dan digitale inzage geven in een uniform gebruiksvriendelijk format, en ook de correctie van gegevens wordt eenvoudiger.
 
 ## Ondertekening
-De hieronder vermelde organisaties hebben bijgedragen aan deze API strategie voor de overheid en onderschrijven het manifest en de afspraken:
+De hieronder vermelde organisaties hebben bijgedragen aan deze API strategie voor de overheid en onderschrijven de basisafspraken:
 ... | [Forum Standaardisatie](https://forumstandaardisatie.nl/) | [ICTU](https://www.ictu.nl/)  | [Logius](https://www.logius.nl/) | [Ministerie van Binnenlandse Zaken en Koninkrijksrelaties](https://www.rijksoverheid.nl/ministeries/ministerie-van-binnenlandse-zaken-en-koninkrijksrelaties) | [VNG Realisatie](https://www.vngrealisatie.nl/)  | ...
 *Dit is nog geen officiële lijst van ondertekenaars, en hier moeten natuurlijk alle organisaties komen te staan die achter de API strategie staan en het manifest willen ondertekenen.*
