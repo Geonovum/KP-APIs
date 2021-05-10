@@ -2,13 +2,13 @@ Verslag: Werkgroep API Architectuur 2021-05-04
 
 Agenda
 
-1 Welkom_
+_1 Welkom_
 
 Laatste versie van het hoofdstuk: https://github.com/Geonovum/KP-APIs/tree/master/Werkgroep%20API%20architectuur
 
 Tijdpad voor volgende versie API strategie : 1 juni 2021 versie gereed voor publieke consultatie, 
 
-2 Bespreken Review
+_2 Bespreken Review_
 
 Afspraken 
 
