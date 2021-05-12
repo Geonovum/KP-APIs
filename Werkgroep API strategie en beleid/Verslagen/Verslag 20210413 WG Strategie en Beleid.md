@@ -16,7 +16,7 @@ Gino Laan, Paul Zeef (minBZK)
 ## Wijzigingen
 Gerard Kreuk en Marc Tulen van de Sociale Verzekeringsbank (SVB) vervangen Geer Haas in deze groep. Geer blijft de voortgang van de groep wel volgen.
 
-## Verslag bijeenkomst van 26 januari 2021
+## Verslag vorige bijeenkomst van 26 januari 2021
 De aanwezigen hadden geen aanvullingen of opmerkingen op het [verslag van de virtuele bijeenkomst op 26 januari 2021](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20API%20strategie%20en%20beleid/Verslagen/Verslag%2020210126%20WG%20Strategie%20en%20Beleid.md).
 
 ## Waar staan we
