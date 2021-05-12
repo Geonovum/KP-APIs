@@ -1,5 +1,5 @@
 # Werkgroep API Strategie en Beleid
-Verslag van de virtuele bijeenkomst van **26 januari 2021**
+Verslag van de virtuele bijeenkomst van **13 april 2021**
 
 ## Aanwezig
 Publieke sector, op alfabetische volgorde van organisatie:
