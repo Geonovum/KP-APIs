@@ -48,7 +48,7 @@ Het voorstel voor enumeraties is:
         - in het geval van meertaligheid moeten API Clients verschillende logica hanteren om enum waarden uit te lezen of te wijzigen, afhankelijk van de geselecteerde taal.
     - Beter is om naast de presentatie-specifieke waarde ook een enum aan te bieden en de presentatie-specifieke waarde op basis van de (technische) enum waarde te laten berekenen door de API.
         - Als voorbeeld voor de BAG object statusen kan bijvoorbeeld worden gekozen voor een veld pand.status.naam, welke een string is met waarden als `Bouw gestart` en een veld pand.status.code, welke een enum is met waarden als `BOUW_GESTART`. Wanneer de enum door de Client wordt gewijzigd, berekent de API een nieuwe waarde voor de `pand.status.naam`. Dit maakt het tevens gemakkelijk om meertaligheid toe te passen, waarbij `pand.status.naam` afhankelijk van de geselecteerde taal wordt gepresenteerd.
-- (SHOULD) Gebruik waar mogelijk UPPER_CAMEL_CASE, URI's voor enumeraties.
+- (SHOULD) Gebruik waar mogelijk UPPER_CAMEL_CASE of URI's voor enumeraties.
 
 ## Niet uitgewerkt:
 - Het filteren en zoeken op sub-objecten in een resource (bv adres.straat om te zoeken op het veld straat in het object adres) --> onderdeel van werkgroep Filters & Sorteringen.
