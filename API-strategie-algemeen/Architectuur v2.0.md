@@ -366,7 +366,7 @@ Een informatiemodel beschrijft een werkelijkheid. We onderscheiden vier niveaus 
 
 **Niveau 3: - Logisch informatie- of gegevensmodel:** een logisch informatie- of gegevensmodel waarin de werkelijkheid wordt beschreven door middel van de representatie van de informatie in de systemen en de uitwisseling tussen systemen en gebruikers. Een logisch informatiemodel is implementatie onafhankelijk en kan in meerdere technische modellen worden geïmplementeerd.
 
-**Niveau 4: - Fysiek of technisch gegevens- of datamodel** een fysiek of technisch gegevens- of datamodel waarin de werkelijkheid wordt beschreven door middel van de structuur en eigenschappen van de technologie die wordt gebruikt bij de opslag of uitwisseling. Een fysiek of technisch datamodel is afhankelijk van de gekozen techniek of tooling die wordt gebruikt en kan daarvoor geoptimaliseerd zijn.
+**Niveau 4: - Fysiek of technisch gegevens- of datamodel:** een fysiek of technisch gegevens- of datamodel waarin de werkelijkheid wordt beschreven door middel van de structuur en eigenschappen van de technologie die wordt gebruikt bij de opslag of uitwisseling. Een fysiek of technisch datamodel is afhankelijk van de gekozen techniek of tooling die wordt gebruikt en kan daarvoor geoptimaliseerd zijn.
 
 (Zie ook [NORA Informatielaag](https://www.noraonline.nl/wiki/Vijflaagsmodel#Laag_3:_Informatielaag))
 
@@ -374,9 +374,9 @@ Een informatiemodel beschrijft een werkelijkheid. We onderscheiden vier niveaus 
 
 De volgende begrippen worden gehanteerd in dit hoofdstuk:
 
-* Informatiemodel : Niveau 3 - Logisch gegevensmodel / datamodel 
-* Resource model :  Niveau 4 - Fysiek / technisch datamodel (directe datamodel van een API)
-* Applicatie data model : Niveau 4 - Fysiek / technisch datamodel (datamodel van een achterliggend systeem)
+* *Informatiemodel* : Niveau 3 - Logisch gegevensmodel / datamodel 
+* *Resource model* :  Niveau 4 - Fysiek / technisch datamodel (directe datamodel van een API)
+* *Applicatie data model* : Niveau 4 - Fysiek / technisch datamodel (datamodel van een achterliggend systeem)
 
 
 ### API, Informatiemodel en Resource model.
@@ -695,7 +695,4 @@ Om back-end systemen te beschermen tegen grote aantallen API aanroepen worden ra
 
 
 ![](media/clip04.png)
-
-
-
 
