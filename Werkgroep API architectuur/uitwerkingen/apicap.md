@@ -18,11 +18,11 @@ Voordat een ontwikkelaar applicaties kan ontwikkelen die gebruik maken van aange
 Bij ontwikkelaar onboarding moet ook worden gedacht aan het zich kunnen afmelden van ontwikkelaars, of het afsluiten van ontwikkelaars in het geval gebruikersvoorwaarden worden overschreden.
 
 #### Applicatie registratie
-Clients/applicaties die gebruik maken van API's moeten over het algemeen worden geregistreerd bij de aanbieder van deze API's.
+Applicaties die als client gebruik willen maken van API's moeten eerst worden aangemeld bij de API aanbieder. Alleen aangemelde applicaties ontvangen credentials om de API's te bevragen.
 
-Applicatie registratie houdt zich bezig met het kunnen beheren van geregistreerde API Clients en daarbij behorende credentials en sleutels. 
+Applicatie registratie omvat de processen rondom het registreren van applicaties en het kunnen beheren van geregistreerde applicaties. Bij het kunnen beheren kan bijvoorbeeld worden gedacht aan het toekennen of anmenen van privileges door de API aanbieder of het kunnen inzien van informatie over de API Client.
 
-Hierbij kan worden gedacht aan het toekennen of afnemen van privileges door de API aanbieder en het kunnen inzien van informatie over de API Client, zoals bijvoorbeeld credentials of certificaten waarmee de API Client zich bij de API aanbieder kan authenticeren, door ontwikkelaars van de API Client.
+Ook de uitgifte van credentials voor applicaties is onderdeel van applicatie registratie.
 #### API Discovery
 Aangeboden API's moeten vindbaar zijn voor partijen die er gebruik van willen maken. API Discovery richt zich op deze vindbaarheid van API's.
 
