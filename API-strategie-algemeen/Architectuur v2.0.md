@@ -44,7 +44,7 @@ Figuur 2: API Diensten voor Burgers, Bedrijven en Overheden
 
 In de bovenstaande figuur wordt ook het belang van standaardisatie van API's zichtbaar:
 
-Burgers, Bedrijven (en ook Overheidsorganiaties zelf) gebruiken (doorgaans) de API's van meerdere Overheidsorganisaties. Wanneer de verschillende 'API contactoppervlakken' uniform zijn (ook over organisaties heen) kunnen dienstafnemers gemakkelijker (en dus sneller en met minder kosten) gebruik maken van 'Overheids API's'  
+Burgers, Bedrijven (en ook Overheidsorganisaties zelf) gebruiken (doorgaans) de API's van meerdere Overheidsorganisaties. Wanneer de verschillende 'API contactoppervlakken' uniform zijn (ook over organisaties heen) kunnen dienstafnemers gemakkelijker (en dus sneller en met minder kosten) gebruik maken van 'Overheids API's'  
 
 
 
