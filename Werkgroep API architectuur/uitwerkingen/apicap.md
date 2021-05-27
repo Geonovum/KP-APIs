@@ -7,8 +7,8 @@ Het onderstaande API Capability model geeft weer aan welke onderwerpen men aanda
 ### API Gebruik
 Deze categorie bevat capabilities voor het ondersteunen van ontwikkelaars die gebruik willen maken van de aangeboden API's. De capabilities binnen deze categorie zijn onderverdeeld in de volgende sub-categorieën:
 
-- *Aanmelden & Registratie*: functionaliteiten waarmee nieuwe gebruikers zichzelf en hun applicaties kunnen registreren om gebruik te maken van aangeboden API's;
-- *Ontdekken*: functionaliteiten waarmee gebruikers kennis over aangeboden API's op kunnen doen en delen.
+- *Aanmelden & Registratie*: functionaliteiten waarmee nieuwe ontwikkelaars zichzelf en hun applicaties kunnen registreren om gebruik te maken van aangeboden API's;
+- *Ontdekken*: functionaliteiten waarmee ontwikkelaars kennis over aangeboden API's op kunnen doen en delen.
 
 Over het algemeen biedt een API leverancier capabilities ten behoeve van API gebruik in een ontwikkelaarsportaal.
 
