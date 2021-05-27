@@ -1,4 +1,5 @@
 
+
 # Architectuur
 
 >   *Dit hoofdstuk gaat in op de vraag: Hoe kan je je applicatie landschap
@@ -14,7 +15,7 @@ Doel van dit hoofdstuk is om een hoog niveau overzicht te geven van relevante on
 (REST of RESTfull) API gebaseerde architectuur waarbij gebruik gemaakt wordt van REST API's als interface voor de aangeboden (gegevens)diensten. 
 Specifiek voor REST API's is dat deze 'Resource' gericht zijn en een uniforme manier bieden om resources te lezen, wijzigen, toevoegen
 of verwijderen.
-
+ 
 ![](media/clip02.png)
 
 Figuur 1: De plaats van API's bij aanbod en gebruik van (gegevens)diensten;
@@ -24,8 +25,35 @@ het gebruik van API's,  bij de Dienst aanbieder speelt het aanbieden van API's.
 
 In dit hoofdstuk wordt specifiek ingegaan op de 'aanbod kant': het onderdeel 'Diensten toegang' in het schema.
 
+### API's voor Burgers, Bedrijven en Overheden
+
+Overheidsorganisaties bieden diensten aan Burgers, Bedrijven en andere Overheidsorganisaties.
+Onderstaande figuur geeft de dienstverlening middels API's aan de verschillende partijen grafisch weer.
+
+![alt text](https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20API%20architectuur/uitwerkingen/media/API-arch-v22.png)
+Figuur 2: API Diensten voor Burgers, Bedrijven en Overheden
+
+*Toelichting*
+- (A) : API Contactoppervlak Overheid naar Burgers en Bedrijven
+- (B) : API Contactoppervlak Overheid naar Overheid (bv onderdelen GDI)
+
+- G2C : Government 2 Citizen (Overheid naar Burger)
+- G2B : Government 2 Business (Overheid naar Bedrijf)
+- G2G : Government 2 Government (Overheid naar Overheid)
+
+### Belang van API Standaardisatie
+
+In de bovenstaande figuur wordt ook het belang van standaardisatie van API's zichtbaar:
+
+Burgers, Bedrijven (en ook Overheidsorganiaties zelf) gebruiken (doorgaans) de API's van meerdere Overheidsorganisaties. Wanneer de verschillende 'API contactoppervlakken' uniform zijn (ook over organisaties heen) kunnen dienstafnemers gemakkelijker (en dus sneller en met minder kosten) gebruik maken van 'Overheids API's'  
+
+
 
 ## Typologie van API's
+
+In de volgende paragrafen worden verschillende indelingen voor API's behandeld. Deze indelingen helpen om in de API architectuur van een organisatie verschillende soorten API's te benoemen.
+
+### Intern / Extern, Open / Gesloten
 
 Een organisatie heeft verschillende soorten API's:
 
@@ -40,29 +68,15 @@ Een overheidsorganisatie ontsluit zijn diensten naar andere overheidsorganisatie
 
 In onderstaande figuur wordt dit visueel weergegeven.
 ![alt text](https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20API%20architectuur/uitwerkingen/media/govapi.png)
-Figuur 2 : Soorten API's
+Figuur 3 : Soorten API's
 
 
-***Afkortingen***:
+*Afkortingen*:
 - G2C : Government 2 Citizen (Overheid naar Burger)
 - G2B : Government 2 Business (Overheid naar Bedrijf)
 - G2G : Government 2 Government (Overheid naar Overheid)
 
-Onderstaande figuur geeft deze verschillende soorten dienstverlening middels API's grafisch weer
 
-![alt text](https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20API%20architectuur/uitwerkingen/media/API-arch-v22.png)
-Figuur 3: API Diensten voor Burgers, Bedrijven en Overheden
-
-- (A) : API Contactoppervlak Overheid naar Burgers en Bedrijven
-- (B) : API Contactoppervlak Overheid naar Overheid (bv onderdelen GDI)
-
-In deze figuur wordt ook het belang van standaardisatie van API's zichtbaar:
-
-Burgers, Bedrijven (en ook Overheidsorganiaties zelf) gebruiken (doorgaans) de API's van meerdere Overheidsorganisaties. Wanneer de verschillende 'API contactoppervlakken' uniform zijn (ook over organisaties heen) kunnen dienstafnemers gemakkelijker (en dus sneller en met minder kosten) gebruik maken van 'Overheids API's'  
-
-
-
-In de volgende paragrafen worden enkele andere indelingen voor API's behandeld. Deze indelingen helpen om in de API architectuur van een organisatie verschillende soorten API's te benoemen.
 
 ### Systeem, Proces, Convenience ###
 
@@ -620,7 +634,7 @@ Dit betreft het definieren van generieke API policies, welke worden toegepast op
 - het vertalen van JSON berichten naar een ander berichtformaat op basis van content negotiation;
 - het filteren van headers in response berichten;
 - het 'throttlen' van inkomende API verzoeken om back-ends te ontlasten;
-- het afdwingen van gautoriseerde API verzoeken;
+- het afdwingen van geautoriseerde API verzoeken;
 - etc.
 
 #### Sleutel beheer
