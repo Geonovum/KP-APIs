@@ -183,6 +183,3 @@ API Policy handhaving gaat over het toepassen van de ontwikkelde API policies op
 
 #### Anomalie detectie
 Het detecteren van verdacht gebruik van API endpoints, bijvoorbeeld ten behoeve van het opsporen van fraude of malware.
-
->Opmerking: Zie ook huidige vulling op : https://geonovum.github.io/KP-APIs/API-strategie-algemeen/#diensten-toegang-api-management 
-(De capabilities kunnen mogelijk gebruikt worden om dit model uit te breiden)
