@@ -84,7 +84,7 @@ It is not always possible to guarantee that the synchronization between the reso
 
 In the next section, we first dive into the case where safe synchronization can be assumed.
 
-## Related recourses that can be safely synchronized ##
+## Related resources that can be safely synchronized ##
 
 One can manipulate the relations in an elegant way by using sub-resources. For instance, the PUT operation given below would be the analog version of the first PATCH operation given above.
 
