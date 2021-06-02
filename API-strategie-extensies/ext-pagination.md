@@ -11,18 +11,20 @@
   "currentPage": 1,
   "nextPage": 2,
   "pageSize": 10,
-  "item": [
-    {
-      "identifier": "14d3030c-3b61-4070-b902-342f80e99364",
-      "title": "Da Vinci Code",
-      "isbn": "902455991X",
-      "_links": {
-        "self": {
-          "href": "https://api.example.org/v1/books/14d3030c-3b61-4070-b902-342f80e99364"
+  "_embedded": {
+    "item": [
+      {
+        "identifier": "14d3030c-3b61-4070-b902-342f80e99364",
+        "title": "Da Vinci Code",
+        "isbn": "902455991X",
+        "_links": {
+          "self": {
+            "href": "https://api.example.org/v1/books/14d3030c-3b61-4070-b902-342f80e99364"
+          }
         }
       }
-    }
-  ],
+    ],
+  },
   "_links": {
     "self": {
       "href": "https://api.example.org/v1/books"
