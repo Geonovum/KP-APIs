@@ -13,15 +13,27 @@ Hypermedia relates to the use of hyperlinks (from now on called _links_) as part
 
 Navigation controls are references to URIs within the scope of the originating API, i.e. these paths are specified in the same OpenAPI specification and thus residing on the same domain within the same base path. The main (and only) purpose is to increase discoverability by providing navigation links, which can be leveraged by client applications or by developers while building applications or evaluating APIs. Since internal links only serve a navigational purpose, they can only be provided as part of response messages.
 
-<p class="note">Navigation controls should not be intermixed with functional identification. Information resources represent real-world entities, which are functionally identified outside the context of an individual API. The same entities may be exposed via other channels or other (versions of) APIs, providing the same functional identifiers.</p>
+<p class="note">The only exception when navigation controls are allowed to point to other APIs is when they share governance. When doing so, the governing party must guarantee stability of inter-API links, which means the target operation of the link must never change within a major version of the originating API.</p>
+
+<div class="rule" id="api-xx">
+  <p class="rulelab"><strong>API-XX</strong>: Apply the HAL media type when providing navigation controls</p>
+  <p>The [[HAL]] standard is a universal and widely adopted standard for serializing hyperlinks in JSON responses. When providing navigation controls, response messages must be serialized using the HAL media type.</p>
+  <div class="example">
+    <p>Response messages containing navigation controls must specify the HAL media type:</p>
+    <pre>
+Content-Type: application/hal+json
+    </pre>
+  </div>
+</div>
+
+<p class="note">Navigation controls should not be intermixed with functional identification. Information resources represent real-world entities, which are functionally identified outside the context of an individual API. The same entities may be exchanged via other channels or other (versions of) APIs, providing the same functional identifiers.</p>
 
 <div class="rule" id="api-xx">
   <p class="rulelab"><strong>API-XX</strong>: Wrap navigation controls inside a separate <code>_links</code> object</p>
-  <p>Inspired by the [[HAL]] specification, navigation controls must be provided in a dedicated links-container, named <code>_links</code>. This introduces a clear separation between the data and the interface controls, preventing possible naming conflicts. Link objects can reside on any level in the JSON tree.</p>
+  <p>As standardized by the [[HAL]] specification, navigation controls must be provided in a dedicated links-container, named <code>_links</code>. This introduces a clear separation between the data and the interface controls, preventing possible naming conflicts. Link objects can reside on any level in the JSON tree.</p>
   <div class="example">
     <p>For example, a book resource may provide a self-referencing link.</p>
     <pre>
-// GET /books/14d3030c-3b61-4070-b902-342f80e99364
 {
   "identifier": "14d3030c-3b61-4070-b902-342f80e99364",
   "title": "Da Vinci Code",
@@ -38,7 +50,7 @@ Navigation controls are references to URIs within the scope of the originating A
 
 <div class="rule" id="api-xx">
   <p class="rulelab"><strong>API-XX</strong>: Provide at least an <code>href</code> attribute for every link object</p>
-  <p>A link object must at least contain an `href` attribute with an absolute URI as value. Additionally, a <code>title</code> attribute may be provided for providing a human-readable description of the link. Other attributes should not be used.</p>
+  <p>A link object must at least contain an <code>href</code> attribute with an absolute URI as value. Additionally, a <code>title</code> attribute may be provided for providing a human-readable description of the link. Other attributes should not be used.</p>
 </div>
 
 <div class="rule" id="api-xx">
@@ -47,7 +59,6 @@ Navigation controls are references to URIs within the scope of the originating A
   <div class="example">
     <p>For example, a book resource may provide a self-reference for itself and for its author (which resides in a nested object).</p>
     <pre>
-// GET /books/14d3030c-3b61-4070-b902-342f80e99364
 {
   "identifier": "14d3030c-3b61-4070-b902-342f80e99364",
   "title": "Da Vinci Code",
@@ -81,8 +92,6 @@ Navigation controls are references to URIs within the scope of the originating A
   <p>While it might be tempting to provide navigation controls for every possible client interaction, navigation links must be added sparingly. Only when there is a clear functional goal / added value, additional navigation controls should be provided.</p>
 </div>
 
-<p class="note">We intentionally chose not to implement other parts of the [[HAL]] specification, since many aspects (e.g.  <code>_embedded</code> objects, CURIEs, templating, etc.) would introduce needless complexity for both client and server. To avoid confusion and to prevent unpredictable or erronous behaviour when using standard client implementations, the <code>application/hal+json</code> media type should not be used. Thus, responses must always be provided in the plain JSON media type (<code>application/json</code>).</p>
-
 ### External links
 
 External links are references to URIs outside of the scope of the originating API. These links can point to literally any location on the web; they may even point to URIs which are not dereferencable at all (e.g. in case they are used as a universal identifier only). A few examples:
@@ -97,7 +106,6 @@ External links are references to URIs outside of the scope of the originating AP
   <div class="example">
     <p>For example, a book resource may provide a link to the cover image:</p>
     <pre>
-// GET /books/14d3030c-3b61-4070-b902-342f80e99364:
 {
   "identifier": "14d3030c-3b61-4070-b902-342f80e99364",
   "title": "Da Vinci Code",
