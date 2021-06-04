@@ -28,7 +28,7 @@ De [basisafspraken](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20
 In de bespreking van de basisafspraken werden de volgende opmerkingen gemaakt:
  - **Ian**: Het CJIB heeft vooral interne APIs. Ook daarvoor is het goed om de REST API Design Rules te gebruiken. Maar interne APIs zal je niet zo snel op developer.overheid.nl publiceren.  Moeten we de basisafspraken dus niet beperken tot openbare APIs?
  - **Frank**: Op developer.overheid.nl staan APIs die door andere organisaties gebruikt kunnen worden. Dit hoeven geen 'openbare' APIs te zijn, maar zijn ook geen APIs die intern door één organisatie gebruikt worden.
- - **Edward**: De Wet opem overheid (Woo) gaat vereisen dat je alles moet publiceren, ook APIs die toegang geven tot gegevens die onder de wet vallen.
+ - **Edward**: De Wet open overheid (Woo) gaat vereisen dat je alles moet publiceren, ook APIs die toegang geven tot gegevens die onder de wet vallen.
  - **Edward**: Geen van de houders van de basisregistraties gaat nu nog actief met de NLX aan de slag. Moet et gebruik van NLX wel een basisafspraak zijn?
  - **Han**: Het woord 'afspraken' zou bestuurders en managers kunnen afschrikken waarvan we willen dat zij de API strategie ondertekenen. Misschien moeten we nog zoeken naar een woord dat minder nervositeit opwekt. Hoe zien de organisaties in deze werkgroep dat? Welke bewoording is het meest effectief?
  
