@@ -14,7 +14,7 @@ Marcel Krassenburg (MKIdee)
 Gino Laan, Paul Zeef (minBZK)
 
 ## Wijzigingen
-Gerard Kreuk van de Sociale Verzekeringsbank (SVB) vervangt Geer Haas in deze groep. Redouan vervangt Han in deze groep en zal de werkgroep in het vervolg voorzitten.
+Gerard Kreuk van de Sociale Verzekeringsbank (SVB) vervangt Geer Haas in deze groep. Redouan van Forum Standaardisatie vervangt Han in deze groep en zal de werkgroep in het vervolg voorzitten.
 
 ## Verslag bijeenkomst van 13 april 2021
 De aanwezigen hadden geen aanvullingen of opmerkingen op het [verslag van de virtuele bijeenkomst op 13 april 2021](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20API%20strategie%20en%20beleid/Verslagen/Verslag%2020210413%20WG%20Strategie%20en%20Beleid.md).
