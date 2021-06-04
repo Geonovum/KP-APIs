@@ -3,8 +3,8 @@ Verslag van de virtuele bijeenkomst van **3 juni 2021**
 
 ## Aanwezig
 Publieke sector, op alfabetische volgorde van organisatie:
-Ian Duijff (CJIB), Redouan Ahaloui (Forum Standaardisatie), Han Zuidweg (Forum Standaardisatie),Frank Terpstra (Geonovum), 
-Jeroen Temme (gemeente Amsterdam), Michiel Trimpe (gemeente Amsterdam), Edward Nuiten (gemeente Rotterdam), 
+Ian Duijff (CJIB), Redouan Ahaloui en Han Zuidweg (Forum Standaardisatie), Frank Terpstra (Geonovum), 
+Jeroen Temme en Michiel Trimpe (gemeente Amsterdam), Edward Nuiten (gemeente Rotterdam), 
 Peter Haasnoot (Logius), Gerard Kreuk (SVB)
 
 Private sector, op alfabetische volgorde naar organisatie:
@@ -14,7 +14,7 @@ Marcel Krassenburg (MKIdee)
 Gino Laan, Paul Zeef (minBZK)
 
 ## Wijzigingen
-Gerard Kreuk van de Sociale Verzekeringsbank (SVB) vervangt Geer Haas in deze groep.
+Gerard Kreuk van de Sociale Verzekeringsbank (SVB) vervangt Geer Haas in deze groep. Redouan vervangt Han in deze groep en zal de werkgroep in het vervolg voorzitten.
 
 ## Verslag bijeenkomst van 13 april 2021
 De aanwezigen hadden geen aanvullingen of opmerkingen op het [verslag van de virtuele bijeenkomst op 13 april 2021](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20API%20strategie%20en%20beleid/Verslagen/Verslag%2020210413%20WG%20Strategie%20en%20Beleid.md).
