@@ -56,9 +56,7 @@ Response:
 ]
 ```
 
-Now the publisher wants to add author 3 as co-author of book 1. 
-
-This document outlines three possible solutions to achieve this. A first possible solution that may come to our mind is having the consumer application perform the following two PATCH operations. 
+Now the publisher wants to add author 3 as co-author of book 1. A first possible solution that may come to our mind is having the consumer application perform the following two PATCH operations. 
 
 <!-- In the next section, we first dive info the case where safe synchronization can be assumed; thereafter we will outline the case where safe synchronization is not available.  -->
 
@@ -86,13 +84,14 @@ _**Design Rule API-XX**: When two resources are in a many-to-many relation, make
 
 It is not always possible to guarantee that the synchronization between the resources is safe. For instance, the related resources could be part of different API's or could be running on different servers.  When both the books and the authors resource live in the same API and share the same database than the API can synchronize the resources internally in a save way. However, when the two resources are part of two different API's that may also run on different machines and do not share the same database, than synchronization becomes more difficult.
 
+This document outlines three possible solutions to achieve this.
 In the next section, we first dive into the case where safe synchronization can be assumed.
 
 ## Related resources that can be safely synchronized ##
 
 In this section we assume that the related resources can be safely synchronized. For instance the related resources are part of the same API and share the same database.
 
-### Solution 1: use the PATCH operation
+### Solution 1: use single PATCH operation with side-effects
 
 In this solution the consumer application sends the following PATCH operation for adding author 3 as co-author of book 1:
 
@@ -238,17 +237,20 @@ then use the one resource as a sub-resource of the other (related) resource, `/r
 ## Related resources that can not be safely synchronized ##
 
 In the previous section we assumed that the related resources can be safely synchronized. Automated synchronization may work well when the two related resources are part of the same API, but when they are part of different API's or are located on different servers than there can be a transaction problem. 
-
+<!--
 ### Solution 1: use multiple patch operations
 
 This solution is similar to the first solution of the previous section. In this case the synchronization with the author resource resource is done by a second PATCH operation that is sent from the API that hosts the books resource to the other API that hosts the authors resource. It is assumed that this second PATCH operation is sent in an reliable way, for instance with some kind of resend (and deduplication) mechanism.
 
-<!--
-This problem may be tackled by the use of a reliable protocol to synchronize the resources that are spread over the network. For instance, the second PATCH operation of the example in the Introduction section must then be sent in a reliable way. So if the call fails the API should support some resend (and deduplication)  mechanism to ensure save delivery of the request message. In this is the case, we can still assume that the resources can be safely synchronized and the reader is referred to the previous section. -->
+
+This problem may be tackled by the use of a reliable protocol to synchronize the resources that are spread over the network. For instance, the second PATCH operation of the example in the Introduction section must then be sent in a reliable way. So if the call fails the API should support some resend (and deduplication)  mechanism to ensure save delivery of the request message. In this is the case, we can still assume that the resources can be safely synchronized and the reader is referred to the previous section. 
 
 
 ### Solution 2: use cross resources
 However, what to do when there is no reliable messaging infrastructure at hand such that the resources can be  synchronized in a safe way? 
+-->
+
+### Use cross resources
 
 A possible solution is the introduction of an extra resource which handles the relationship between books and authors. We call it a cross-resource because it has similarities with the cross-table known from relational databases. However is not the intension to use the cross resource as a means to reveal the underlying database model. In this case the cross resource in merely used to manage the relationship in a central place for avoiding transaction problems.
 
