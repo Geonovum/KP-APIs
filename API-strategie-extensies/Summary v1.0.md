@@ -43,6 +43,7 @@ Design rules have unique and permanent numbers. In the event of design rules bei
 * <a href="#api-49">API-49</a>: Use *public* API-keys
 * <a href="#api-50">API-50</a>: Use CORS to control access
 * <a href="#api-52">API-52</a>: Use OAuth 2.0 for authorization with rights delegation
+* <a href="#api-58">API-58</a>: Do not put any sensitive information in URIs when communicating over shared networks
 
 <!-- ### <a name="api-12"></a>API-12: Allow access to an API only if an API key is provided
 

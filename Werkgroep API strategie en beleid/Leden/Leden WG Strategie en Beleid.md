@@ -16,7 +16,7 @@ Omwille van privacy staan er geen contactgevens van de leden vermeld. Discussies
 
 **Forum Standaardisatie**: Han Zuidweg (voorzitter)
 
-**Gemeente Amsterdam**: Michiel Trimpe
+**Gemeente Amsterdam**: Jeroen  Temme, Michiel Trimpe
 
 **Gemeente Breda**: Nils Vissenberg
 
@@ -38,7 +38,7 @@ Omwille van privacy staan er geen contactgevens van de leden vermeld. Discussies
 
 **Kadaster**: Wlbert Kroon, Jasper Roes
 
-**Logius**: Peter Haasnoot, Pieter Hering
+**Logius**: Peter Haasnoot
 
 **Ministerie van Binnenlandse Zaken en Koninkrijksrelaties**: Gino Laan, Paul Zeef
 
@@ -54,7 +54,7 @@ Omwille van privacy staan er geen contactgevens van de leden vermeld. Discussies
 
 **Servicepunt71**: Eelco Rouw
 
-**SVB**: Geer Haas
+**SVB**: Gerard Kreuk, Marc Tulen
 
 **UWV**: Eric Nijenhuis, Nic van Spronsen
 
