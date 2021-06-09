@@ -44,6 +44,14 @@ Design rules have unique and permanent numbers. In the event of design rules bei
 * <a href="#api-50">API-50</a>: Use CORS to control access
 * <a href="#api-52">API-52</a>: Use OAuth 2.0 for authorization with rights delegation
 * <a href="#api-58">API-58</a>: Do not put any sensitive information in URIs when communicating over shared networks
+* <a href="#api-59">API-59</a>: Use spinal-case for path segments
+* <a href="#api-60">API-60</a>: Normalize characters with diacritics to their base characters for path segments
+* <a href="#api-61">API-61</a>: Do not explicitly indicate that a resource is an API
+* <a href="#api-62">API-62</a>: Do not use file extensions in path segments
+* <a href="#api-63">API-63</a>: Do not use nonstandard abbreviations as resource names
+* <a href="#api-64">API-64</a>: Do not use compound words for nested objects
+* <a href="#api-65">API-65</a>: Use enumerations only for fixed sets of values that will not change
+* <a href="#api-66">API-66</a>: Use UPPER_SNAKE_CASE for enumeration values
 
 <!-- ### <a name="api-12"></a>API-12: Allow access to an API only if an API key is provided
 
