@@ -22,3 +22,8 @@ Although accoring to the URI specification [[rfc3986]] URI's are case sensitive,
   <p class="rulelab"><strong>API-62</strong>: Do not use file extensions in path segments</p>
   <p>Preferably use content negotiation using the `Accept` header</p>
 </div>
+
+<div class="rule" id="api-63">
+  <p class="rulelab"><strong>API-63</strong>: Do not use nonstandard abbreviations as resource names</p>
+  <p>Avoid using nonstandard abbreviations for naming resources (eg. `/coords` instead of `/coordinates`). This does not apply to standard or broadly used abbreviations (eg. `bagNummeraanduiding`).</p>
+</div>
