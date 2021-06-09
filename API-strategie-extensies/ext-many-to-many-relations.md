@@ -1,6 +1,14 @@
-# Many-to-many relations ##
+# Many-to-many relationships ##
 
 ## Introduction ##
+
+In REST API's resources can have relations with each other. Three types of relationships can be distinguished:
+
+- one-to-one,
+- one-to-many,
+- many-to-many.
+
+The first two relationship types are more or less treated in the existing design rule [API-06: Use nested URIs for child resources](https://publicatie.centrumvoorstandaarden.nl/api/adr/#api-06). For the last relationship type (many-to-many) there are no design rules or best practices yet. In this extension we will try to close the gap.
 
 Below, we see an example of a many-to-many relation between resources in a REST API. Books can have more than one author and authors can have published more than one book. 
 
@@ -58,7 +66,6 @@ Response:
 
 Now the publisher wants to add author 3 as co-author of book 1. A first possible solution that may come to our mind is having the consumer application perform the following two PATCH operations. 
 
-<!-- In the next section, we first dive info the case where safe synchronization can be assumed; thereafter we will outline the case where safe synchronization is not available.  -->
 
 ```json
 PATCH /books/1
@@ -84,16 +91,16 @@ _**Design Rule API-XX**: When two resources are in a many-to-many relation, make
 
 It is not always possible to guarantee that the synchronization between the resources is safe. For instance, the related resources could be part of different API's or could be running on different servers.  When both the books and the authors resource live in the same API and share the same database than the API can synchronize the resources internally in a save way. However, when the two resources are part of two different API's that may also run on different machines and do not share the same database, than synchronization becomes more difficult.
 
-This document outlines three possible solutions to achieve this.
-In the next section, we first dive into the case where safe synchronization can be assumed.
+In the next section, we first dive info the case where safe synchronization can be assumed. Thereafter we will look into the case where safe synchronization is not available. In the last section we will discuss the special situation when relations have properties of their own.
+
 
 ## Related resources that can be safely synchronized ##
 
 In this section we assume that the related resources can be safely synchronized. For instance the related resources are part of the same API and share the same database.
 
-### Solution 1: use single PATCH operation with side-effects
+### Solution 1: use a single PATCH operation with side-effects
 
-In this solution the consumer application sends the following PATCH operation for adding author 3 as co-author of book 1:
+In this solution the consumer application sends the following PATCH operation for adding author 3 as co-author of book 1, just as we did in the previous section:
 
 ```json
 PATCH /books/1
@@ -117,10 +124,21 @@ Response:
 }
 ```
 
+So the API Provider handles the synchronization of the resources by itself and unburdens the consumer application from this dutie. For instance, the API Provider may use an SQL command in case the resources are part of the same database. But the API Provider can also use a second PATCH operation when the other resource is hosted by another API provider. This PATCH message will be the same as the second PATCH operation given in the previous section, namely:
 
-### Solution 2: use sub-resources
+```json
+PATCH /authors/3
+{
+    "books": ["/books/1"]
+}
+```
 
-One can also manipulate the relations by using sub-resources. For instance, the PUT operation given below would be the analog version of the  PATCH operation given in solution 1 above.
+However, in this scenario the PATCH operation is sent by the API Provider hosting the authors resource and not by the consumer application. For the consumer application this second PATCH operation should be hidden; therefore we use the term 'single PATCH operation' in the title of this section. Moreover, it is assumed that this second PATCH operation is sent in an reliable way, for instance with some kind of resend (and deduplication) mechanism. When such a reliable messaging infrastructure is not available the reader is referred to section 'Related resources that can not be safely synchronized'.
+
+
+### Solution 2: use sub-resources with side-effects
+
+One can also manipulate relations by using sub-resources. For instance, the PUT operation given below would be the analog version of the first PATCH operation given in the previous section.
 
 Add an existing author to a book:
 
@@ -137,7 +155,7 @@ Response:
 }
 ```
 
-In this approach, the request body of the PUT operations is empty. This is a special way to express that path id `3` at the end of the URL refers to the existing author 3 resource which is to be linked to the books resource.
+In this approach, the request body of the PUT operations is empty. This may look strange, but it is a convenient way to express that path id `3` at the end of the URL refers to the existing author 3 resource which is to be linked to the books resource.
 
 Note that the PUT operation has a side-effect such that the authors resource is automatically synchronized:
 
@@ -172,7 +190,7 @@ Response:
 }
 ```
 
-The books resource should then be automatically synchronized:
+Then the books resource should be automatically synchronized:
 
 ```
 GET /books/1
@@ -202,8 +220,8 @@ Response:
 }
 ```
 
-The other way round, we can also add a book to an author. It is symmetric.
-For adding an existing book to an author, the following operation is performed:
+The other way round, we can also add a book to an author in a symmetric way. For adding an existing book to an author, the following operation is performed:
+
 ```
 PUT /authors/4/books/1
 ```
@@ -226,9 +244,23 @@ Response:
 }
 ```
 
-<i>**Best Practice BP-XX**: When two resources `/r1` and `/r2` are in a many-to-many relation, and both the following two cases are satisfied,
+### Comparing the two solutions ###
 
-- both resources can be safely synchronized without transaction problems (for instance when they are part of the same API running on the same machine), and 
+Advantages of the first solution (use a single PATCH operation with side-effects):
+
+- It is simple for the API Provider. For example, one does not have to implement extra sub-resources.
+- The application of the PATCH-operation conforms to the common semantics of the HTTP verbs. This is not the case in the second solution with sub-resources where the PUT operation does not fully obey to standard HTTP semantics.
+
+The second solution (use sub-resources with side-effects) has the following advantages:
+
+- A natural way to deal with relations. Relations are modelled in a similar same way as it is done in OO-programming languages. 
+- It is possible to add a new resource in combination with a relation in one HTTP call. For instance, adding a new book to an author as described in the previous section.
+
+In most of the cases the advantage of the one solution is the disadvantage of the other solution. The second solution is the preferred choice of the workgroup.
+
+<i>**Best Practice BP-XX**: When two resources `/r1` and `/r2` are in a many-to-many relation, and
+
+- both resources can be safely synchronized, and 
 - the relation does not have properties on its own, 
 
 then use the one resource as a sub-resource of the other (related) resource, `/r1/{id}/r2`, and vice versa `/r2/{id}/r1` to manage the relationship.</i>
@@ -237,22 +269,10 @@ then use the one resource as a sub-resource of the other (related) resource, `/r
 ## Related resources that can not be safely synchronized ##
 
 In the previous section we assumed that the related resources can be safely synchronized. Automated synchronization may work well when the two related resources are part of the same API, but when they are part of different API's or are located on different servers than there can be a transaction problem. 
-<!--
-### Solution 1: use multiple patch operations
 
-This solution is similar to the first solution of the previous section. In this case the synchronization with the author resource resource is done by a second PATCH operation that is sent from the API that hosts the books resource to the other API that hosts the authors resource. It is assumed that this second PATCH operation is sent in an reliable way, for instance with some kind of resend (and deduplication) mechanism.
+### Use cross-resources to avoid unsafe transactions
 
-
-This problem may be tackled by the use of a reliable protocol to synchronize the resources that are spread over the network. For instance, the second PATCH operation of the example in the Introduction section must then be sent in a reliable way. So if the call fails the API should support some resend (and deduplication)  mechanism to ensure save delivery of the request message. In this is the case, we can still assume that the resources can be safely synchronized and the reader is referred to the previous section. 
-
-
-### Solution 2: use cross resources
-However, what to do when there is no reliable messaging infrastructure at hand such that the resources can be  synchronized in a safe way? 
--->
-
-### Use cross resources
-
-A possible solution is the introduction of an extra resource which handles the relationship between books and authors. We call it a cross-resource because it has similarities with the cross-table known from relational databases. However is not the intension to use the cross resource as a means to reveal the underlying database model. In this case the cross resource in merely used to manage the relationship in a central place for avoiding transaction problems.
+To avoid unsafe transactions, one can introduce an extra resource which handles the relationship between books and authors. We call it a cross-resource because it has similarities with the cross-table known from relational databases. However is not the intension to use the cross resource as a means to reveal the underlying database model. In this case the cross resource in merely used to manage the relationship in a central place for preventing transaction problems.
 
 See the `/books-authors` resource below (in this example we go back to the situation before we added author 3 as co-author of book 1).
 
@@ -342,7 +362,6 @@ Response:
 ]
 ```
 
-
 We can also now remove a relation in one transaction by using the `DELETE` operation. For instance:
 
 ```json
@@ -371,7 +390,7 @@ Another advantage is that the semantics directly relate to the CRUD-model of RES
 
 ## Relations with properties
 
-Relations can have properties of their own. For instance authors can have certain royalties on their books. In the example given below we have added the property "royalties" that expresses the percentage of the book sails that is paid to the author.
+Relations can have properties of their own. For instance authors can have revenues on their books. In the example given below we have added the property "royalties" that expresses the percentage of the book sails that is paid to the author.
 
 ```
 GET /books-authors/2
@@ -402,8 +421,3 @@ PATCH /books-authors/2
 Often one does not know in advance whether or not a relation needs to be extended with properties in the future. In that case, it is wise to model the relation as a cross-resource right away. 
 
 <i>**Design Rule API-XX**: If there is a (many-to-many) relation between resources `/r1` and `/r2` and this relation has properties of its own, then use a cross-resource `/r1-r2` for handling the relations between them.</i>
-
-<!--
-To do:
-- Many-to-many relations distributed over multiple API's.
--->
