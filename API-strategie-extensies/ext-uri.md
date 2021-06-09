@@ -13,6 +13,16 @@ Although accoring to the URI specification [[rfc3986]] URI's are case sensitive,
   <p>In case path segments include diacritics (e.g. accents), these characters are normalized to their base characters. For example, a resource `scènes` results in path segment `scenes`.</p>
 </div>
 
+<div class="rule" id="api-67">
+  <p class="rulelab"><strong>API-67</strong>: Omit symbols and punctuation marks other than hyphens from path segments</p>
+  <p>Symbols and punctuation marks, other than hypens, must be omitted from path segments. For example:
+  <ul>
+    <li>`https://api.example.org/v1/schemas` (`'` of schema's is omitted)</li>
+    <li>`https://api.example.org/v1/hotel-restaurants` (`-` is preserved)</li>
+  </ul>
+  </p>
+</div>
+
 <div class="rule" id="api-61">
   <p class="rulelab"><strong>API-61</strong>: Do not explicitly indicate that a resource is an API</p>
   <p>Use resource names as path segments (eg. gebouwen) and do not explicitly mention that the resource is an API in the name (eg. gebouwen_api).</p>
