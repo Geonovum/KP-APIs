@@ -36,6 +36,11 @@ JavaScript Object Notation (JSON) [[rfc7159]] is a format, just like XML, to ser
   <p>Define field names in such a way that the first word starts with a lower case letter and subsequent words start with a capital letter, with no intervening spaces or punctiation.</p>
 </div>
 
+<div class="rule" id="api-64">
+  <p class="rulelab"><strong>API-64</strong>: Do not use compound words for nested objects</p>
+  <p>Use nested JSON objects (eg. `adres.straat`) instead of compound words (eg. `adres_straat`) to represent information that is hierarchically related.</p>
+</div>
+
 <div class="rule" id="api-27">
   <p class="rulelab"><strong>API-27</strong>: Disable pretty print</p>
   <p>Most REST clients and browsers (whether or not using extensions) can display JSON nicely formatted, even if the response does not include white-space.</p>
