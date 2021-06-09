@@ -37,3 +37,8 @@ Although accoring to the URI specification [[rfc3986]] URI's are case sensitive,
   <p class="rulelab"><strong>API-63</strong>: Do not use nonstandard abbreviations as resource names</p>
   <p>Avoid using nonstandard abbreviations for naming resources (e.g. <code>/coords</code> instead of <code>/coordinates</code>). This does not apply to standard or broadly used abbreviations (e.g. <code>bagNummeraanduiding</code>).</p>
 </div>
+
+<div class="rule" id="api-69">
+  <p class="rulelab"><strong>API-69</strong>: Use spinal-case for query parameters</p>
+  <p>Analogously to path segments, when query parameters include compound words, the individual words are written in lower case and may be separated with hyphens. This also means that query parameters must not be prefixed with an underscore (e.g. <code>_sort</code>).</p>
+</div>
