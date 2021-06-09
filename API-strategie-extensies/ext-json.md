@@ -57,7 +57,7 @@ JavaScript Object Notation (JSON) [[rfc7159]] is a format, just like XML, to ser
   
   This rule does not apply when using lists of values that are standardized outside of the scope of the API specification, such as:
   <ul>
-    <li>[ISO 639-1](https://www.iso.org/iso-639-language-codes.html) language codes;</li>
+    <li><a href="https://www.iso.org/iso-639-language-codes.html" target="_blank">[ISO 639-1]</a> language codes;</li>
     <li>eIDAS Level of Assurance URI's;r</li>
     <li>BAG object statuses;</li>
     <li>etc.</li>
