@@ -5,7 +5,7 @@ Although accoring to the URI specification [[rfc3986]] URI's are case sensitive,
 
 <div class="rule" id="api-59">
   <p class="rulelab"><strong>API-59</strong>: Use spinal-case for path segments</p>
-  <p>In case path segments include compound words, the individual words are written in lower case and separated with hyphens. For example, a resource representing a collection of organisatie codes, results in a path segment `organisatie-codes`.</p>
+  <p>In case path segments include compound words, the individual words are written in lower case and may be separated with hyphens. For example, a resource representing a collection of organisatie codes, results in either a path segment `organisatie-codes` or `organisatiecodes`.</p>
 </div>
 
 <div class="rule" id="api-60">
