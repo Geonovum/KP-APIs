@@ -12,3 +12,8 @@ Although accoring to the URI specification [[rfc3986]] URI's are case sensitive,
   <p class="rulelab"><strong>API-60</strong>: Normalize characters with diacritics to their base characters for path segments</p>
   <p>In case path segments include diacritics (e.g. accents), these characters are normalized to their base characters. For example, a resource `scènes` results in path segment `scenes`.</p>
 </div>
+
+<div class="rule" id="api-61">
+  <p class="rulelab"><strong>API-61</strong>: Do not explicitly indicate that a resource is an API</p>
+  <p>Use resource names as path segments (eg. gebouwen) and do not explicitly mention that the resource is an API in the name (eg. gebouwen_api).</p>
+</div>
