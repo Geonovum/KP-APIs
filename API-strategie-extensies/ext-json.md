@@ -38,7 +38,7 @@ JavaScript Object Notation (JSON) [[rfc7159]] is a format, just like XML, to ser
 
 <div class="rule" id="api-64">
   <p class="rulelab"><strong>API-64</strong>: Do not use compound words for nested objects</p>
-  <p>Use nested JSON objects (eg. <code>adres.straat</code>) instead of compound words (eg. <code>adres_straat</code>) to represent information that is hierarchically related.</p>
+  <p>Use nested JSON objects (e.g. <code>adres.straat</code>) instead of compound words (e.g. <code>adres_straat</code>) to represent information that is hierarchically related.</p>
 </div>
 
 <div class="rule" id="api-65">
