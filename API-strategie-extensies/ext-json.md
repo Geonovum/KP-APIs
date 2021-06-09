@@ -51,6 +51,11 @@ JavaScript Object Notation (JSON) [[rfc7159]] is a format, just like XML, to ser
   In all other cases, use strings instead of enumerations and mention the currently allowed values in the API documentation.</p>
 </div>
 
+<div class="rule" id="api-68">
+  <p class="rulelab"><strong>API-68</strong>: Use meaningful enumeration values</p>
+  <p>When using enumerations, ensure to use enumeration values that are meaningful to users of the API. For example, use values such as `FEMALE` to depict a gender, not `F` (a code), `1` (an ID), or `true` (a boolean).
+</div>
+
 <div class="rule" id="api-66">
   <p class="rulelab"><strong>API-66</strong>: Use UPPER_SNAKE_CASE for enumeration values</p>
   <p>When using enumerations, define its values using UPPER_SNAKE_CASE.

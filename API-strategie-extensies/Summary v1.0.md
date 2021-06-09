@@ -53,6 +53,7 @@ Design rules have unique and permanent numbers. In the event of design rules bei
 * <a href="#api-65">API-65</a>: Use enumerations only for fixed sets of values that will not change
 * <a href="#api-66">API-66</a>: Use UPPER_SNAKE_CASE for enumeration values
 * <a href="#api-67">API-67</a>: Omit symbols and punctuation marks other than hyphens from path segments
+* <a href="#api-68">API-68</a>: Use meaningful enumeration values
 
 <!-- ### <a name="api-12"></a>API-12: Allow access to an API only if an API key is provided
 
