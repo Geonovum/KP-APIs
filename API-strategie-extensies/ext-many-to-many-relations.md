@@ -124,7 +124,7 @@ Response:
 }
 ```
 
-So the API Provider handles the synchronization of the resources by itself and unburdens the consumer application from this dutie. For instance, the API Provider may use an SQL command in case the resources are part of the same database. But the API Provider can also use a second PATCH operation when the other resource is hosted by another API provider. This PATCH message will be the same as the second PATCH operation given in the previous section, namely:
+So the API Provider handles the synchronization of the resources by itself and unburdens the consumer application from this dutie. For instance, the API Provider may use an SQL command in case the resources are part of the same database. But the API Provider can also use a second PATCH operation when, for instance, the other resource is hosted by another API Provider. This PATCH message will be the same as the second PATCH operation given in the previous section, namely:
 
 ```json
 PATCH /authors/3
@@ -133,7 +133,7 @@ PATCH /authors/3
 }
 ```
 
-However, in this scenario the PATCH operation is sent by the API Provider hosting the authors resource and not by the consumer application. For the consumer application this second PATCH operation should be hidden; therefore we use the term 'single PATCH operation' in the title of this section. Moreover, it is assumed that this second PATCH operation is sent in an reliable way, for instance with some kind of resend (and deduplication) mechanism. When such a reliable messaging infrastructure is not available the reader is referred to section 'Related resources that can not be safely synchronized'.
+However, in this scenario the PATCH operation is sent by the API Provider hosting the `authors` resource and not by the consumer application. For the consumer application the second PATCH operation should be hidden; this is exactly the reason why we use the term 'single PATCH operation' in the title of this section. Moreover, it is assumed that the second PATCH operation is sent in an reliable way, for example with some kind of resend (and deduplication) mechanism. When such a reliable messaging infrastructure is not available, the reader is referred to section _Related resources that can not be safely synchronized_.
 
 
 ### Solution 2: use sub-resources with side-effects
