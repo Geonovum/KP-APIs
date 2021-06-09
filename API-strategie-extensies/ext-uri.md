@@ -17,3 +17,8 @@ Although accoring to the URI specification [[rfc3986]] URI's are case sensitive,
   <p class="rulelab"><strong>API-61</strong>: Do not explicitly indicate that a resource is an API</p>
   <p>Use resource names as path segments (eg. gebouwen) and do not explicitly mention that the resource is an API in the name (eg. gebouwen_api).</p>
 </div>
+
+<div class="rule" id="api-61">
+  <p class="rulelab"><strong>API-62</strong>: Do not use file extensions in path segments</p>
+  <p>Preferably use content negotiation using the `Accept` header</p>
+</div>
