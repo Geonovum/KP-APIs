@@ -32,7 +32,7 @@ JavaScript Object Notation (JSON) [[rfc7159]] is a format, just like XML, to ser
 </div>
 
 <div class="rule" id="api-26">
-  <p class="rulelab"><strong>API-26</strong>: Define field names in *camelCase*</p>
+  <p class="rulelab"><strong>API-26</strong>: Define field names in <i>camelCase</i></p>
   <p>Define field names in such a way that the first word starts with a lower case letter and subsequent words start with a capital letter, with no intervening spaces or punctiation.</p>
 </div>
 
