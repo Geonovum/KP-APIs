@@ -51,6 +51,20 @@ JavaScript Object Notation (JSON) [[rfc7159]] is a format, just like XML, to ser
   In all other cases, use strings instead of enumerations and mention the currently allowed values in the API documentation.</p>
 </div>
 
+<div class="rule" id="api-66">
+  <p class="rulelab"><strong>API-66</strong>: Use UPPER_SNAKE_CASE for enumeration values</p>
+  <p>When using enumerations, define its values using UPPER_SNAKE_CASE.
+  
+  This rule does not apply when using lists of values that are standardized outside of the scope of the API specification, such as:
+  <ul>
+    <li>[ISO 639-1](https://www.iso.org/iso-639-language-codes.html) language codes;</li>
+    <li>eIDAS Level of Assurance URI's;r</li>
+    <li>BAG object statuses;</li>
+    <li>etc.</li>
+  </ul>
+  </p>
+</div>
+
 <div class="rule" id="api-27">
   <p class="rulelab"><strong>API-27</strong>: Disable pretty print</p>
   <p>Most REST clients and browsers (whether or not using extensions) can display JSON nicely formatted, even if the response does not include white-space.</p>
