@@ -5,6 +5,8 @@ Although according to the URI specification [[rfc3986]] URI's are case sensitive
 
 Specifically, design rules related to the path segments and query strings of URI's that are used to specify API resource locations are described.
 
+### Path segments and resource names
+
 First, in order to avoid compatibility issues with web servers and frameworks that do not handle case sensitivity of URI's well, the use of spinal-case path segments is preferred over camelCase. Also, it is a more common implementation choice for path segments than snake_case.
 
 <div class="rule" id="api-59">
@@ -46,7 +48,9 @@ With regards to naming, resources must use clear, descriptive names that express
   <p>Avoid using nonstandard abbreviations for naming resources (e.g. <code>/coords</code> instead of <code>/coordinates</code>). This does not apply to standard or broadly used abbreviations (e.g. <code>bagNummeraanduiding</code>).</p>
 </div>
 
-For similar reasons as with path segments, the use of spinal-case is preferred over camelCase en snake_case.
+### Query parameters
+
+For similar reasons as with path segments, the use of spinal-case is preferred over camelCase en snake_case for query string parameters.
 
 <div class="rule" id="api-69">
   <p class="rulelab"><strong>API-69</strong>: Use spinal-case for query parameters</p>
