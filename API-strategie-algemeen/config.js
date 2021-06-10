@@ -38,12 +38,12 @@ function custGHPG(respecConfig)
 
 var respecConfig = 
 {
-  specStatus: "GN-DEF",
+  specStatus: "GN-CV",
   specType: "HR",
   pubDomain: "api",
-  publishDate: "2020-02-04",
-  previousPublishDate: "2020-01-17",
-  previousMaturity: "GN-VV",
+  publishDate: "2021-06-28",
+  previousPublishDate: "2020-02-04",
+  previousMaturity: "GN-DEF",
   editors: 
   [
     {
@@ -86,6 +86,11 @@ var respecConfig =
     },
     {
       name: "Peter Haasnoot",
+      company: "Logius",
+      companyURL: "www.logius.nl",
+    },
+    {
+      name: "Frank van Es",
       company: "Logius",
       companyURL: "www.logius.nl",
     },

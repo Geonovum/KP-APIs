@@ -36,12 +36,12 @@ function custGHPG(respecConfig)
 
 var respecConfig =
 {
-  specStatus: "GN-WV",
+  specStatus: "GN-CV",
   specType: "HR",
   pubDomain: "api",
-  publishDate: "2020-01-17",
-  previousPublishDate: "2019-07-15",
-  previousMaturity: "GN-VV",
+  publishDate: "2021-06-28",
+  previousPublishDate: "2020-01-17",
+  previousMaturity: "GN-CV",
   editors:
   [
     {
@@ -53,11 +53,40 @@ var respecConfig =
       name: "Linda van den Brink",
       company: "Geonovum",
       companyURL: "https://www.geonovum.nl",
+    },
+    {
+      name: "Frank Terpstra",
+      company: "Geonovum",
+      companyURL: "http://www.geonovum.nl/",
+    },
+    {
+      name: "Jan van Gelder",
+      company: "Geonovum",
+      companyURL: "http://www.Geonovum.nl/",
     }
   ],
   authors:
   [
-
+    {
+      name: "Jasper Roes",
+      company: "Het Kadaster",
+      companyURL: "https://www.kadaster.nl",
+    },
+    {
+      name: "Joost Farla",
+      company: "Het Kadaster",
+      companyURL: "https://www.kadaster.nl",
+    },
+    {
+      name: "Henri Korver",
+      company: "VNG Realisatie",
+      companyURL: "https://www.vng.nl",
+    },
+    {
+      name: "Frank van Es",
+      company: "Logius",
+      companyURL: "www.logius.nl",
+    },
   ],
   shortName: "API-Strategie-ext",
   github: "https://github.com/geonovum/KP-APIs/",
