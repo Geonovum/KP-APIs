@@ -1,7 +1,7 @@
 
 ## URI's & query strings
 
-Although accoring to the URI specification [[rfc3986]] URI's are case sensitive, except the scheme/protocol (e.g. `https://`) and domain (e.g. `api.example.org`) parts, this section describes design rules related to URI's to ensure interoperability.
+Although according to the URI specification [[rfc3986]] URI's are case sensitive, except the scheme/protocol (e.g. `https://`) and domain (e.g. `api.example.org`) parts, this section describes design rules related to URI's to ensure interoperability.
 
 <div class="rule" id="api-59">
   <p class="rulelab"><strong>API-59</strong>: Use spinal-case for path segments</p>
