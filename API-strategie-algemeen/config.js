@@ -93,6 +93,11 @@ var respecConfig =
       name: "Frank van Es",
       company: "Logius",
       companyURL: "www.logius.nl",
+    },  
+	{
+      name: "Dennis de Wit",
+      company: "Solventa",
+      companyURL: "www.solventa.nl",
     },
   ],
   shortName: "API-Strategie",
