@@ -23,8 +23,6 @@ Toch heeft de overheid ook veel ICT systemen in gebruik die niet als platformen 
 
 In onze visie zal de digitale overheid de komende jaren gegevens steeds meer veilig en efficiënt uitwisselen door applicaties zoveel mogelijk te scheiden van de data, en deze gegevens bij de bron te bewaren, en ze zoveel mogelijk actueel te gaan halen - in een veilige infrastructuur -zodra het gegeven voor een zaak nodig is. Hiermee biedt de overheid een gedemocratiseerde toegang tot evenwichtige en consistente informatie, onafhankelijk van de complexiteit van achterliggende systemen, voor burgers, bedrijven en ketenpartners van de overheid.
 
-In onze visie zal de digitale overheid de komende jaren gegevens steeds meer veilig en efficiënt uitwisselen door applicaties zoveel mogelijk te scheiden van de data, en deze gegevens bij de bron te bewaren, en ze zoveel mogelijk actueel te gaan halen - in een veilige infrastructuur -zodra het gegeven voor een zaak nodig is. Hiermee biedt de overheid een gedemocratiseerde toegang tot evenwichtige en consistente informatie, onafhankelijk van de complexiteit van achterliggende systemen, voor burgers, bedrijven en ketenpartners van de overheid.
-
 ## Intentieovereenkomst
 Bij het realiseren van deze visie volgt de overheid een aantal afspraken:
 1. Waar de overheid REST APIs inzet, gebeurt dat volgens de [REST API Design Rules](https://docs.geostandaarden.nl/api/API-Designrules/). Zo biedt de overheid haar REST APIs op een standaard manier en goed gedocumenteerd aan.
