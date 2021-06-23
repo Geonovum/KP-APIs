@@ -1,11 +1,11 @@
 # API strategie voor de overheid
 *Dit is een nieuwe versie van het werkdocument, gebaseerd op de feedback uit de bijeenkomst op **3 juni** en het commentaar op Github. De belangrijkste wijzigingen zijn:*
-- *De Visie start vanuit het concept van de platformeconomie, en is aangevuld en verder aangescherpt in de laatste alinea.*
-- *Basisafspraken is nu **intentieovereenkomst** en is nu minder hard. Ook nuances aangebracht in enkele afspraken. En afspraak verwijderd van het NLX afspraak.
-- *De tijdlijn ontbreekt nog (hebben we die wel nodig?) 
-- *Praktijkvoorbeeld 'Een API voor regie op gegevens is aangevuld en sluit ook aan op het VNG-R model API
-- *Praktijkvoorbeeld 'De API voor Zaakgericht Werken van Common Ground' is aangescherpt.
-- *Toevoeging HF 'Samenvattend' om een brug te vormen tussen de HF Praktijkvoorbeelden en HF Ondertekening. 
+- De Visie start vanuit het concept van de platformeconomie, en is aangevuld en verder aangescherpt in de laatste alinea.*
+- Basisafspraken is nu **intentieovereenkomst** en is nu minder hard. Ook nuances aangebracht in enkele afspraken. En afspraak verwijderd van het NLX afspraak.
+- De tijdlijn ontbreekt nog (hebben we die wel nodig?) 
+- Praktijkvoorbeeld 'Een API voor regie op gegevens is aangevuld en sluit ook aan op het VNG-R model API
+- Praktijkvoorbeeld 'De API voor Zaakgericht Werken van Common Ground' is aangescherpt.
+- Toevoeging HF 'Samenvattend' om een brug te vormen tussen de HF Praktijkvoorbeelden en HF Ondertekening. 
 
 ## Visie
 
