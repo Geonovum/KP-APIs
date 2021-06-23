@@ -1,11 +1,11 @@
 # API strategie voor de overheid
 *Dit is een nieuwe versie van het werkdocument, gebaseerd op de feedback uit de bijeenkomst op **3 juni** en het commentaar op Github. De belangrijkste wijzigingen zijn:*
-- De Visie start vanuit het concept van de platformeconomie, en is aangevuld en verder aangescherpt in de laatste alinea.*
-- Basisafspraken is nu **intentieovereenkomst** en is nu minder hard. Ook nuances aangebracht in enkele afspraken. En afspraak verwijderd van het NLX afspraak.
-- De tijdlijn ontbreekt nog (hebben we die wel nodig?) 
-- Praktijkvoorbeeld 'Een API voor regie op gegevens is aangevuld en sluit ook aan op het VNG-R model API
-- Praktijkvoorbeeld 'De API voor Zaakgericht Werken van Common Ground' is aangescherpt.
-- Toevoeging HF 'Samenvattend' om een brug te vormen tussen de HF Praktijkvoorbeelden en HF Ondertekening. 
+- *De Visie start vanuit het concept van de platformeconomie, en is aangevuld en verder aangescherpt in de laatste alinea.*
+- *Basisafspraken is nu **intentieovereenkomst** en is nu minder hard. Ook nuances aangebracht in enkele afspraken. En afspraak verwijderd van het NLX afspraak.*
+- *De tijdlijn ontbreekt nog (hebben we die wel nodig?)*
+- *Praktijkvoorbeeld 'Een API voor regie op gegevens is aangevuld en sluit ook aan op het VNG-R model API*
+- *Praktijkvoorbeeld 'De API voor Zaakgericht Werken van Common Ground' is aangescherpt.*
+- *Toevoeging HF 'Samenvattend' om een brug te vormen tussen de HF Praktijkvoorbeelden en HF Ondertekening.*
 
 ## Visie
 
@@ -13,9 +13,7 @@ Wij leven in een maatschappij waarin ICT-platformen een steeds grotere rol spele
 
 De platformeconomie is actueel en maatschappelijk relevant of het we het nu hebben over de Informatiehuishouding op orde (rapport ‘Ongekend onrecht’ de kinderopvangtoeslag problematiek en ‘Werk aan uitvoering’ de problemen bij uitvoeringsorganisaties), over de Interbestuurlijke Datastrategie, over de toekomstvisie op het stelsel van Basisregistraties, of de over doorontwikkeling van de GDI (meerjarig geprogrammeerd en onder architectuur): ze veronderstellen een modernisering van de binnenkant van de gegevensuitwisseling. Platformen, API’s en afgedwongen standaarden zijn daarin onmisbaar. Platformen hebben gestandaardiseerde  ICT koppelvlakken die applicaties en gegevensbronnen aan elkaar verbinden.  Hiervoor gebruiken zij APIs. Een  [application programming interface](https://www.ensie.nl/dimitri-van-hees/api)  (API) is een gestructureerd en gedocumenteerd koppelvlak voor communicatie tussen applicaties. Je kan een API zien als een digitale stekkerdoos die applicaties met elkaar verbindt.
 
-APIs bestaan al zo lang er computers zijn. De meeste platformen gebruiken APIs onder de motorkap zonder dat de eindgebruiker dat ziet. Als je bijvoorbeeld een app opent voor het weer, dan merk je niet dat deze app gegevens ophaalt bij het  [KNMI via een API](https://meteoserver.nl/real-time-KNMI-weer-API.php). Degene die het meest met een API te maken krijgt is de ontwikkelaar van de applicatie die de API gebruikt. Zij moet begrijpen hoe de API werkt en hoe je deze vanuit de applicatie moet bevragen.
-
-Ook de overheid gebruikt steeds vaker APIs om applicaties en gegevensbronnen te ontsluiten en met elkaar te koppelen. Bijvoorbeeld in initiatieven zoals [Haal Centraal](https://www.vngrealisatie.nl/nieuws/start-programma-haal-centraal), [Common Ground](https://commonground.nl/) en het [Digitaal Stelsel Omgevingswet](https://aandeslagmetdeomgevingswet.nl/digitaal-stelsel/).
+APIs bestaan al zo lang er computers zijn. De meeste platformen gebruiken APIs onder de motorkap zonder dat de eindgebruiker dat ziet. Als je bijvoorbeeld een app opent voor het weer, dan merk je niet dat deze app gegevens ophaalt bij het  [KNMI via een API](https://meteoserver.nl/real-time-KNMI-weer-API.php). Degene die het meest met een API te maken krijgt is de ontwikkelaar van de applicatie die de API gebruikt. Zij moet begrijpen hoe de API werkt en hoe je deze vanuit de applicatie moet bevragen. Ook de overheid gebruikt steeds vaker APIs om applicaties en gegevensbronnen te ontsluiten en met elkaar te koppelen. Bijvoorbeeld in initiatieven zoals [Haal Centraal](https://www.vngrealisatie.nl/nieuws/start-programma-haal-centraal), [Common Ground](https://commonground.nl/) en het [Digitaal Stelsel Omgevingswet](https://aandeslagmetdeomgevingswet.nl/digitaal-stelsel/).
 
 Toch heeft de overheid ook veel ICT systemen in gebruik die niet als platformen werken, maar als gesloten systemen waarin de gegevens helemaal met de applicatie verweven zijn. Vaak werken deze systemen met kopieën van cruciale gegevensbronnen zoals basisregistraties. Dat brengt een aantal nadelen met zich mee:
 1. De kans op fouten en datalekken neemt toe bij het kopiëren en verspreid opslaan van gegevens.
@@ -35,7 +33,7 @@ Bij het realiseren van deze visie volgt de overheid een aantal afspraken:
 
 
 ## Praktijkvoorbeelden
-In dit deel laten we een aantal domeinen zien waar de overheid al met succes APIs toepast om applicaties en gegevensbronnen te koppelen.
+*In dit deel laten we een aantal domeinen zien waar de overheid al met succes APIs toepast om applicaties en gegevensbronnen te koppelen.*
 
 
 ### De API op de Basisregistratie Personen (BRP) van Haal Centraal
