@@ -32,8 +32,42 @@ JavaScript Object Notation (JSON) [[rfc7159]] is a format, just like XML, to ser
 </div>
 
 <div class="rule" id="api-26">
-  <p class="rulelab"><strong>API-26</strong>: Define field names in *camelCase*</p>
+  <p class="rulelab"><strong>API-26</strong>: Define field names in <i>camelCase</i></p>
   <p>Define field names in such a way that the first word starts with a lower case letter and subsequent words start with a capital letter, with no intervening spaces or punctiation.</p>
+</div>
+
+<div class="rule" id="api-64">
+  <p class="rulelab"><strong>API-64</strong>: Do not use compound words for nested objects</p>
+  <p>Use nested JSON objects (e.g. <code>adres.straat</code>) instead of compound words (e.g. <code>adres_straat</code> or <code>adresStraat</code>) to represent information that is hierarchically nested.</p>
+</div>
+
+<div class="rule" id="api-65">
+  <p class="rulelab"><strong>API-65</strong>: Use enumerations only for fixed sets of values that will not change</p>
+  <p>Enumerations are assumed closed sets of values that are complete and not altered or extended. Changing or extending allowed values in an enum most likely imposes incompatibility issues. Therefore, enumerations must only be used when:
+  <ul>
+    <li>the list of allowed values is complete and does not ever change; and</li>
+    <li>the API provider has full control over the enumeration values or can guarantee that these will not change.</li>
+  </ul>
+  In all other cases, use strings instead of enumerations and mention the currently allowed values in the API documentation.</p>
+</div>
+
+<div class="rule" id="api-68">
+  <p class="rulelab"><strong>API-68</strong>: Use meaningful enumeration values</p>
+  <p>When using enumerations, ensure to use enumeration values that are meaningful to users of the API. For example, use values such as `FEMALE` to depict a gender, not `F` (a code), `1` (an ID), or `true` (a boolean).
+</div>
+
+<div class="rule" id="api-66">
+  <p class="rulelab"><strong>API-66</strong>: Use UPPER_SNAKE_CASE for enumeration values</p>
+  <p>When using enumerations, define its values using UPPER_SNAKE_CASE.
+  
+  This rule does not apply when using lists of values that are standardized outside of the scope of the API specification, such as:
+  <ul>
+    <li><a href="https://www.iso.org/iso-639-language-codes.html" target="_blank">ISO 639-1</a> language codes;</li>
+    <li>eIDAS Level of Assurance URI's;</li>
+    <li>BAG object statuses;</li>
+    <li>etc.</li>
+  </ul>
+  </p>
 </div>
 
 <div class="rule" id="api-27">
