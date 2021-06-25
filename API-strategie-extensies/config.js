@@ -63,6 +63,11 @@ var respecConfig =
       name: "Jan van Gelder",
       company: "Geonovum",
       companyURL: "http://www.Geonovum.nl/",
+    },
+	{
+      name: "Joost Farla",
+      company: "Het Kadaster",
+      companyURL: "https://www.kadaster.nl",
     }
   ],
   authors:
@@ -86,6 +91,56 @@ var respecConfig =
       name: "Frank van Es",
       company: "Logius",
       companyURL: "www.logius.nl",
+    },
+	{
+      name: "Frank Terpstra",
+      company: "Geonovum",
+      companyURL: "http://www.geonovum.nl/",
+    },
+	{
+      name: "Jaron Azaria",
+      company: "Logius",
+      companyURL: "http://www.logius.nl/",
+    },
+    {
+      name: "Martin Borgman",
+      company: "Kadaster",
+      companyURL: "http://www.kadaster.nl/",
+    },
+	{
+      name: "Peter Haasnoot",
+      company: "Logius",
+      companyURL: "http://www.logius.nl/",
+    },
+    {
+      name: "Leon van der Ree",
+      company: "Logius",
+      companyURL: "http://www.logius.nl/",
+    },
+    {
+      name: "Bob te Riele",
+      company: "RvIG",
+      companyURL: "http://www.rvig.nl/",
+    },
+    {
+      name: "Remco Schaar",
+      company: "Logius",
+      companyURL: "http://www.logius.nl/",
+    },
+	{
+      name: "Jan Jaap Zoutendijk",
+      company: "Rijkswaterstaat",
+      companyURL: "http://www.rws.nl/",
+    },
+	{
+      name: "Heiko Hudig",
+      company: "Politie",
+      companyURL: "http://www.politie.nl/",
+    },
+	{
+      name: "Erwin Reinhoud",
+      company: "Kennisnet",
+      companyURL: "http://www.kennisnet.nl/",
     },
   ],
   shortName: "API-Strategie-ext",
