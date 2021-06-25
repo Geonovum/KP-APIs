@@ -4,36 +4,24 @@ Hypermedia relates to the use of hyperlinks (from now on called _links_) as part
 
 <div class="rule" id="api-xx">
   <p class="rulelab"><strong>API-XX</strong>: Provide absolute URIs for hyperlinks</p>
-  <p>Only absolute URIs may be provided. This simplifies the traversal of links by client applications, since the client does not have to resolve relative URIs against the current resource path.</p>
+  <p>Only absolute URIs may be provided since this enables simple traversal of links by following URIs. While relative links are more compact and may be practical when having multi-environment deployments, they introduce extra complexity for the client and may potentially result in erroneous behaviour (e.g. when dealing with trailing slashes or dot segments).</p>
 </div>
 
-<p class="note">Providing hyperlinks is explicitly NOT meant as an implementation of the often debated HATEOAS constraint, as described in the well-known REST thesis (Roy Fielding) or the Richardson Maturity Model (Level 3). An API specification must offer a strict and stable contract between server and client, which should guarantee backwards compatiblity during the full lifetime of a given major version.</p>
+<p class="note">This design rule does explicitly NOT intend the use of hyperlinks as an implementation of the often debated HATEOAS constraint, as described in the well-known REST thesis (Roy Fielding) or the Richardson Maturity Model (Level 3). An API specification must offer a strict and stable contract between server and client, which should guarantee backwards compatiblity during the full lifetime of a given major version, whereas true HATEOAS advocates continually evolving interfaces requiring little to no prior knowledge about how to interact with the application.</p>
 
 ### Navigation controls
 
-Navigation controls are references to URIs within the scope of the originating API, i.e. these paths are specified in the same OpenAPI specification and thus residing on the same domain within the same base path. The main (and only) purpose is to increase discoverability by providing navigation links, which can be leveraged by client applications or by developers while building applications or evaluating APIs. Since internal links only serve a navigational purpose, they can only be provided as part of response messages.
+Navigation controls are references to URIs within the scope of the originating API, i.e. these paths are typically specified in the same OpenAPI specification and thus residing on the same domain within the same base path. The main (and only) purpose is to increase discoverability by providing navigation links, which can be leveraged by client applications or by developers while building applications or evaluating APIs. Since internal links only serve a navigational purpose, they can only be provided as part of response messages.
 
-<p class="note">The only exception when navigation controls are allowed to point to other APIs is when they share governance. When doing so, the governing party must guarantee stability of inter-API links, which means the target operation of the link must never change within a major version of the originating API.</p>
-
-<div class="rule" id="api-xx">
-  <p class="rulelab"><strong>API-XX</strong>: Apply the HAL media type when providing navigation controls</p>
-  <p>The [[HAL]] standard is a universal and widely adopted standard for serializing hyperlinks in JSON responses. When providing navigation controls, response messages must be serialized using the HAL media type.</p>
-  <div class="example">
-    <p>Response messages containing navigation controls must specify the HAL media type:</p>
-    <pre>
-Content-Type: application/hal+json
-    </pre>
-  </div>
-</div>
-
-<p class="note">Navigation controls should not be intermixed with functional identification. Information resources represent real-world entities, which are functionally identified outside the context of an individual API. The same entities may be exchanged via other channels or other (versions of) APIs, providing the same functional identifiers.</p>
+<p class="note">The only exception when navigation controls are allowed to point to other APIs is when they share governance and security context. When doing so, the governing party must guarantee stability of links between the APIs, which means the target operation of navigational links may never change during the lifetime of (a major version of) the originating API. They must also share the same security context, otherwise clients have to exchange mixed credentials for different endpoints.</p>
 
 <div class="rule" id="api-xx">
-  <p class="rulelab"><strong>API-XX</strong>: Wrap navigation controls inside a separate <code>_links</code> object</p>
-  <p>As standardized by the [[HAL]] specification, navigation controls must be provided in a dedicated links-container, named <code>_links</code>. This introduces a clear separation between the data and the interface controls, preventing possible naming conflicts. Link objects can reside on any level in the JSON tree.</p>
+  <p class="rulelab"><strong>API-XX</strong>: Support the HAL media type for every GET response</p>
+  <p>The [[HAL]] standard is a universal and widely adopted standard for serializing hyperlinks in JSON responses. As standardized by the HAL specification, navigation controls must be provided in a dedicated links-container, named <code>_links</code>. This introduces a clear separation between the data and the interface controls, preventing possible naming conflicts. Link objects can reside on any level in the JSON tree. HAL response messages must explictly specify the corresponding media type.</p>
   <div class="example">
     <p>For example, a book resource may provide a self-referencing link.</p>
     <pre>
+// Content-Type: application/hal+json
 {
   "identifier": "14d3030c-3b61-4070-b902-342f80e99364",
   "title": "Da Vinci Code",
@@ -47,6 +35,8 @@ Content-Type: application/hal+json
     </pre>
   </div>
 </div>
+
+<p class="note">Navigation controls should not be intermixed with functional identification. Information resources represent real-world entities, which are functionally identified outside the context of an individual API. The same entities may be exchanged via other channels or other (versions of) APIs, providing the same functional identifiers.</p>
 
 <div class="rule" id="api-xx">
   <p class="rulelab"><strong>API-XX</strong>: Provide at least an <code>href</code> attribute for every link object</p>
