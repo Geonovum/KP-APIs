@@ -4,7 +4,7 @@ Hypermedia relates to the use of hyperlinks (from now on called _links_) as part
 
 <div class="rule" id="api-xx">
   <p class="rulelab"><strong>API-XX</strong>: Provide absolute URIs for hyperlinks</p>
-  <p>Only absolute URIs may be provided since this enables simple traversal of links by following URIs. While relative links are more compact and may be practical when having multi-environment deployments, they introduce extra complexity for the client and may potentially result in erroneous behaviour (e.g. when dealing with trailing slashes or dot segments).</p>
+  <p>Only absolute URIs may be provided since this enables simple traversal of links by following URIs. While relative links are more compact and may be practical when having multi-environment deployments, they introduce extra complexity for the client and may potentially result in erroneous behaviour (e.g. when dealing with trailing slashes or dot segments). For the same reasons, absolute URIs may not be templated.</p>
 </div>
 
 <p class="note">This design rule does explicitly NOT intend the use of hyperlinks as an implementation of the often debated HATEOAS constraint, as described in the well-known REST thesis (Roy Fielding) or the Richardson Maturity Model (Level 3). An API specification must offer a strict and stable contract between server and client, which should guarantee backwards compatiblity during the full lifetime of a given major version, whereas true HATEOAS advocates continually evolving interfaces requiring little to no prior knowledge about how to interact with the application.</p>
