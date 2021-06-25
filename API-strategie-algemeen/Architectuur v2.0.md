@@ -63,7 +63,7 @@ Extern:
 Intern:
 - Interne API's : voor ontsluiten van diensten binnen de organisatie
 
-Een overheidsorganisatie ontsluit zijn diensten naar andere overheidsorganisaties, naar bedrijven/private organsaties en naar burgers.
+Een overheidsorganisatie ontsluit zijn diensten naar andere overheidsorganisaties, naar bedrijven/private organisaties en naar burgers.
 
 In onderstaande figuur wordt dit visueel weergegeven.
 ![alt text](https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20API%20architectuur/uitwerkingen/media/govapi.png)
@@ -135,6 +135,7 @@ Onderstaande indeling gaat uit van de bij de API toegepaste 'language' style.
 - Query Style: GraphQL, OData, SPARQL
 - Event-based Style: MQ, WebSub, MQTT, XMPP, AMQP, Kafka, AsyncAPI
 
+--nw
 ## API Capability Model
 Om als organisatie API's aan te bieden aan andere partijen op een gecontroleerde en beheersbare manier moet je bepaalde functionaliteit bieden, processen inregelen en ondersteuning aanbieden.
 
@@ -144,11 +145,13 @@ Het onderstaande API Capability model geeft weer aan welke onderwerpen men aanda
 
 Figuur 4 API Capability Model
 
+
+
 ### API Gebruik
 Deze categorie bevat capabilities voor het ondersteunen van ontwikkelaars die gebruik willen maken van de aangeboden API's. De capabilities binnen deze categorie zijn onderverdeeld in de volgende sub-categorieën:
 
-- *Aanmelden & Registratie*: functionaliteiten waarmee nieuwe gebruikers zichzelf en hun applicaties kunnen registreren om gebruik te maken van aangeboden API's;
-- *Ontdekken*: functionaliteiten waarmee gebruikers kennis over aangeboden API's op kunnen doen en delen.
+- *Aanmelden & Registratie*: functionaliteiten waarmee nieuwe ontwikkelaars zichzelf en hun applicaties kunnen registreren om gebruik te maken van aangeboden API's;
+- *Ontdekken*: functionaliteiten waarmee ontwikkelaars kennis over aangeboden API's op kunnen doen en delen.
 
 Over het algemeen biedt een API leverancier capabilities ten behoeve van API gebruik in een ontwikkelaarsportaal.
 
@@ -158,11 +161,11 @@ Voordat een ontwikkelaar applicaties kan ontwikkelen die gebruik maken van aange
 Bij ontwikkelaar onboarding moet ook worden gedacht aan het zich kunnen afmelden van ontwikkelaars, of het afsluiten van ontwikkelaars in het geval gebruikersvoorwaarden worden overschreden.
 
 #### Applicatie registratie
-Clients/applicaties die gebruik maken van API's moeten over het algemeen worden geregistreerd bij de aanbieder van deze API's.
+Applicaties die als client gebruik willen maken van API's moeten eerst worden aangemeld bij de API aanbieder. Alleen aangemelde applicaties ontvangen credentials om de API's te bevragen.
 
-Applicatie registratie houdt zich bezig met het kunnen beheren van geregistreerde API Clients en daarbij behorende credentials en sleutels. 
+Applicatie registratie omvat de processen rondom het registreren van applicaties en het kunnen beheren van geregistreerde applicaties. Bij het kunnen beheren kan bijvoorbeeld worden gedacht aan het toekennen of anmenen van privileges door de API aanbieder of het kunnen inzien van informatie over de API Client.
 
-Hierbij kan worden gedacht aan het toekennen of afnemen van privileges door de API aanbieder en het kunnen inzien van informatie over de API Client, zoals bijvoorbeeld credentials of certificaten waarmee de API Client zich bij de API aanbieder kan authenticeren, door ontwikkelaars van de API Client.
+Ook de uitgifte van credentials voor applicaties is onderdeel van applicatie registratie.
 #### API Discovery
 Aangeboden API's moeten vindbaar zijn voor partijen die er gebruik van willen maken. API Discovery richt zich op deze vindbaarheid van API's.
 
@@ -325,8 +328,6 @@ API Policy handhaving gaat over het toepassen van de ontwikkelde API policies op
 Het detecteren van verdacht gebruik van API endpoints, bijvoorbeeld ten behoeve van het opsporen van fraude of malware.
 
 
-
-
 ## API Management Functionaliteit
 
 
@@ -425,6 +426,8 @@ Het Resource Model is als het ware een logische view op het achterliggende Data 
 
 ![alt text](https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20API%20architectuur/uitwerkingen/media/API-Informatiemodel.png)
 
+Figuur 6: Resource Model
+
 Wanneer het Resource Model 1 op 1 gelijk is aan het achterliggende Data Model is de vertaling/mapping eenvoudig en kan dit ook geautomatiseerd worden : het Resource Model en de API kunnen bijvoorbeeld worden gegenereerd vanuit het Applicatie Data Model.
 
 **Ontkoppeling**
@@ -437,13 +440,15 @@ Liefst wil je voorkomen dat een aanpassing aan het Applicatie Data Model welke v
 
 *Verbergen complexiteit*
 
-Voor complexe Domeinen of gecombineerde Diensten waarbij meerdere bronnen worden gecombineeerd is het waardevol om het Resource Model zo eenvoudig en duidelijk mogelijk te houden. In het Resource Model kan de achterliggende complexiteit verborgen blijven en kan de interface gebruikersvriendelijk worden gemaakt. Het Resource mode is hier dan een abstraherende laag die alleen die zaken aanbiedt die de gebruiker nodig heeft en die aansluiten op de belevingswereld van de gebruiker.
+Voor complexe Domeinen of gecombineerde Diensten waarbij meerdere bronnen worden gecombineerd is het waardevol om het Resource Model zo eenvoudig en duidelijk mogelijk te houden. In het Resource Model kan de achterliggende complexiteit verborgen blijven en kan de interface gebruikersvriendelijk worden gemaakt. Het Resource mode is hier dan een abstraherende laag die alleen die zaken aanbiedt die de gebruiker nodig heeft en die aansluiten op de belevingswereld van de gebruiker.
 
 *Integreren & Innoveren*
 
 Het Resource Model als logische view op achterliggende datamodellen heeft ook als voordeel dat op de laag van het Resource Model al integratie van data modellen kan plaatsvinden nog voordat de achterliggende modellen zijn aangepast of volledig geïntegreerd. Een (nieuw) geïntegreerd Resource model over meerdere achterliggende datamodellen heen kan zo databronnen integreren en aanbieden. Met behulp van een geïntegreerd resourcemodel op het niveau van API's kan sneller gestandaardiseerd worden en kan men ook sneller innoveren.
 
 ![alt text](https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20API%20architectuur/uitwerkingen/media/API-Infomodel2.png)
+
+Figuur 7: Geïntegreerd Resource Model
 
 
 ### Aanbevelingen
@@ -457,10 +462,6 @@ Bij het aanbieden van data via een API is het van groot belang om de verbinding 
 
 Het Resource Model van een API is een (of mogelijk meerdere, afhankelijk van uitwisselformaat) Niveau 4 - Fysiek / technisch datamodel(len). Het is namelijk een model van de uitwisseling van gegevens in een concreet uitwisselformaat. Bijvoorbeeld gespecificeerd in een OAS document. [OAS](https://www.openapis.org/).
 Het is echter belangrijk om de verbinding met een Niveau 3: - Logisch informatie- of gegevensmodel uit te drukken, omdat dit een implementatie-onafhankelijk model is, wat begrip, maar ook interoperabiliteit, bevordert. Het bevordert interoperabiliteit met andere Niveau 3 informatiemodellen in een stelsel, maar biedt ook één overkoepelend informatiemodel wanneer er sprake is van gegevensuitwisseling conform verschillende Niveau 4 informatiemodellen gebaseerd op hetzelfde Niveau 3 informatiemodel.
-
-## Event Driven Processen & Notificaties
-
-__[In ontwikkeling]__
 
 ## API Security Architectuur
 
@@ -491,6 +492,8 @@ Aan vertrouwelijkheid gerelateerde API capabilities zijn *Caching*, *Analytics*,
 Onderstaande afbeelding geeft een overzicht van standaard componenten in een API architectuur. Deze sectie beschrijft de aan API beveiliging gerelateerde componenten in dit diagram.
 
 ![API Security Architectuur diagram](https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20API%20architectuur/uitwerkingen/media/api-security-architecture.png)
+
+Figuur 8: API Security
 
 #### Actors en Clients
 Onderstaand overzicht beschrijft de actoren en API Clients welke een rol spelen bij API beveiliging uit bovenstaand diagram. 
@@ -560,6 +563,5 @@ TBD: input van Eelco. -->
 - [NORA - Beschikbaarheid principe](https://www.noraonline.nl/wiki/Beschikbaarheid)
 - [NORA - Integriteit principe](https://www.noraonline.nl/wiki/Integriteit)
 - [NORA - Vertrouwelijkheid principe](https://www.noraonline.nl/wiki/Vertrouwelijkheid_%28principe%29)
-
 
 
