@@ -71,24 +71,28 @@ A spatial filter can be complex and large. It is best practice to supply complex
   <pre>
   // POST /api/v1/_zoek:
   {
+    "currentPage": 1,
+    "nextPage": 2,
+    "pageSize": 10,
     "_embedded": {
-      "results": [{
-        "type": "enkelbestemming",
-        "_links": {
-          "self": {
-            "title": "Enkelbestemming 1234",
-            "href": "/enkelbestemmingen/1234"
+      "item": [
+        {
+          "type": "enkelbestemming",
+          "_links": {
+            "self": {
+              "href": "https://api.example.org/v1/enkelbestemmingen/1234"
+            }
+          }
+        },
+        {
+          "type": "dubbelbestemming",
+          "_links": {
+            "self": {
+              "href": "https://api.example.org/v1/dubbelbestemmingen/8765"
+            }
           }
         }
-      }, {
-        "type": "dubbelbestemming",
-        "_links": {
-          "self": {
-            "title": "Dubbelbestemming 8765",
-            "href": "/dubbelbestemmingen/8765"
-          }
-        }
-      }]
+      ]
     }
   }
   </pre>
