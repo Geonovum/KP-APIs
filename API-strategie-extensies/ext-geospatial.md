@@ -75,7 +75,7 @@ A spatial filter can be complex and large. It is best practice to supply complex
     "nextPage": 2,
     "pageSize": 10,
     "_embedded": {
-      "item": [
+      "items": [
         {
           "type": "enkelbestemming",
           "_links": {

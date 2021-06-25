@@ -12,7 +12,7 @@
   "nextPage": 2,
   "pageSize": 10,
   "_embedded": {
-    "item": [
+    "items": [
       {
         "identifier": "14d3030c-3b61-4070-b902-342f80e99364",
         "title": "Da Vinci Code",

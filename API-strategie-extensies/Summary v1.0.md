@@ -55,7 +55,13 @@ Design rules have unique and permanent numbers. In the event of design rules bei
 * <a href="#api-67">API-67</a>: Omit symbols and punctuation marks other than hyphens from path segments
 * <a href="#api-68">API-68</a>: Use meaningful enumeration values
 * <a href="#api-69">API-69</a>: Use lowerCamelCase for query parameter keys
-
+* <a href="#api-70">API-70</a>: Provide absolute URIs for hyperlinks
+* <a href="#api-71">API-71</a>: Support the HAL media type for every GET response
+* <a href="#api-72">API-72</a>: Provide at least an <code>href</code> attribute for every link object
+* <a href="#api-73">API-73</a>: Provide self-referencing links for all resources
+* <a href="#api-74">API-74</a>: Provide navigational links pointing to GET operations only
+* <a href="#api-75">API-75</a>: Only provide navigational links when there is a clear functional goal
+* <a href="#api-76">API-76</a>: Treat external links as regular resource attributes
 
 <!-- ### <a name="api-12"></a>API-12: Allow access to an API only if an API key is provided
 
