@@ -38,4 +38,4 @@
   </div>
 </div>
 
-<p class="note">Providing the total count and/or last page of a collection should be avoided, since this may have a considerable impact on performance when dealing with larger collections. Therefore, providing such information or links is generally discouraged. Most often, this is not a problem since this does not add significant value for end users. Most modern user interfaces provide next/prev links only (e.g. a <em>load more</em> control).</p>
+<p class="note">Providing the total count and/or last page of a collection should be considered carefully, since this may have a considerable impact on performance when dealing with larger collections. Therefore, providing such information or links is generally discouraged. Most often, this is not a problem since this does not add significant value for end users. Most modern user interfaces provide next/prev links only (e.g. a <em>load more</em> control).</p>

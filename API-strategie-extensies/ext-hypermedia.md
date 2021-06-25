@@ -63,12 +63,14 @@ Content-Type: application/hal+json
   "identifier": "14d3030c-3b61-4070-b902-342f80e99364",
   "title": "Da Vinci Code",
   "isbn": "902455991X",
-  "author": {
-    "identifier": "8e1dbefc-452f-47f9-a104-3faa7eb217aa",
-    "name": "Dan Brown",
-    "_links": {
-      "self": {
-        "href": "https://api.example.org/v1/authors/8e1dbefc-452f-47f9-a104-3faa7eb217aa",
+  "_embedded": {
+    "author": {
+      "identifier": "8e1dbefc-452f-47f9-a104-3faa7eb217aa",
+      "name": "Dan Brown",
+      "_links": {
+        "self": {
+          "href": "https://api.example.org/v1/authors/8e1dbefc-452f-47f9-a104-3faa7eb217aa",
+        }
       }
     }
   },
