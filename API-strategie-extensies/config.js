@@ -104,7 +104,7 @@ var respecConfig =
     },
     {
       name: "Martin Borgman",
-      company: "Kadaster",
+      company: "Het Kadaster",
       companyURL: "http://www.kadaster.nl/",
     },
 	{
