@@ -5,7 +5,7 @@ Although according to the URI specification [[rfc3986]] URI's are case sensitive
 
 Specifically, design rules related to the path segments and query strings of URI's that are used to specify API resource locations are described.
 
-### Path segments and resource names
+### Path segments
 
 First, in order to avoid compatibility issues with web servers and frameworks that do not handle case sensitivity of URI's well, the use of spinal-case path segments is preferred over camelCase. Also, it is a more common implementation choice for path segments than snake_case.
 
