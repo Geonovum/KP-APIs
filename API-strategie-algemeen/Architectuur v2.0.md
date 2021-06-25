@@ -358,7 +358,7 @@ In cloud-native implementaties zie je steeds vaker een meer gedistribueerd model
 *Note*: Landelijke ontwikkelingen op dit vlak i.r.t. developer.overheid.nl kunnen er voor zorgen dat deze functionaliteit op termijn centraal landelijk beschikbaar is.
 
 In het API-Capability model zijn de functionaliteiten in detail beschreven.
-[API-Capability model](##API-Capability-Model)
+[API-Capability model](#api-capability-model)
 
 ![](media/API-Management.jpg)
 
