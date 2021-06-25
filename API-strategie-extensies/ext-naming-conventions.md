@@ -1,5 +1,5 @@
 
-## URI's & query strings
+## Naming conventions
 
 Although according to the URI specification [[rfc3986]] URI's are case sensitive, except the scheme/protocol (e.g. `https://`) and domain (e.g. `api.example.org`) parts, this section describes design rules related to URI's to ensure interoperability among implementations.
 
@@ -50,9 +50,7 @@ With regards to naming, resources must use clear, descriptive names that express
 
 ### Query parameters
 
-For similar reasons as with path segments, the use of spinal-case is preferred over camelCase en snake_case for query string parameters.
-
 <div class="rule" id="api-69">
-  <p class="rulelab"><strong>API-69</strong>: Use spinal-case for query parameters</p>
-  <p>Analogously to path segments, when query parameters include compound words, the individual words are written in lower case and may be separated with hyphens. This also means that query parameters must not be prefixed with an underscore (e.g. <code>_sort</code>).</p>
+  <p class="rulelab"><strong>API-69</strong>: Use lowerCamelCase for query parameter keys</p>
+  <p>Keys of query parameters must be written in lowerCamelCase. This naming convention aligns nicely with JSON property names and plays well with client side libraries such as JavaScript. This also means that query parameters must not be prefixed with an underscore (e.g. <code>_sort</code>).</p>
 </div>
