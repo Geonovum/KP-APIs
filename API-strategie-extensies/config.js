@@ -57,14 +57,14 @@ var respecConfig =
     {
       name: "Frank Terpstra",
       company: "Geonovum",
-      companyURL: "http://www.geonovum.nl/",
+      companyURL: "https://www.geonovum.nl",
     },
     {
       name: "Jan van Gelder",
       company: "Geonovum",
-      companyURL: "http://www.Geonovum.nl/",
+      companyURL: "https://www.geonovum.nl",
     },
-	  {
+    {
       name: "Joost Farla",
       company: "Het Kadaster",
       companyURL: "https://www.kadaster.nl",
@@ -90,32 +90,32 @@ var respecConfig =
     {
       name: "Frank van Es",
       company: "Logius",
-      companyURL: "www.logius.nl",
+      companyURL: "https://www.logius.nl",
     },
-	  {
+    {
       name: "Frank Terpstra",
       company: "Geonovum",
-      companyURL: "http://www.geonovum.nl/",
+      companyURL: "https://www.geonovum.nl",
     },
-  	{
+    {
       name: "Jaron Azaria",
       company: "Logius",
-      companyURL: "http://www.logius.nl/",
+      companyURL: "https://www.logius.nl",
     },
     {
       name: "Martin Borgman",
       company: "Het Kadaster",
-      companyURL: "http://www.kadaster.nl/",
+      companyURL: "https://www.kadaster.nl",
     },
-	  {
+    {
       name: "Peter Haasnoot",
       company: "Logius",
-      companyURL: "http://www.logius.nl/",
+      companyURL: "https://www.logius.nl",
     },
     {
       name: "Leon van der Ree",
       company: "Logius",
-      companyURL: "http://www.logius.nl/",
+      companyURL: "https://www.logius.nl",
     },
     {
       name: "Bob te Riele",
@@ -125,27 +125,27 @@ var respecConfig =
     {
       name: "Remco Schaar",
       company: "Logius",
-      companyURL: "http://www.logius.nl/",
+      companyURL: "https://www.logius.nl",
     },
-	  {
+    {
       name: "Jan Jaap Zoutendijk",
       company: "Rijkswaterstaat",
-      companyURL: "http://www.rws.nl/",
+      companyURL: "https://www.rws.nl",
     },
-	  {
+    {
       name: "Heiko Hudig",
       company: "Politie",
-      companyURL: "http://www.politie.nl/",
+      companyURL: "https://www.politie.nl",
     },
-	  {
+    {
       name: "Erwin Reinhoud",
       company: "Kennisnet",
-      companyURL: "http://www.kennisnet.nl/",
+      companyURL: "https://www.kennisnet.nl",
     },
     {
       name: "Michiel Trimpe",
       company: "Gemeente Amsterdam",
-      companyURL: "www.amsterdam.nl",
+      companyURL: "https://www.amsterdam.nl",
     },
     {
       name: "Tony Sloos",
