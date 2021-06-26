@@ -103,6 +103,7 @@ External links are references to URIs outside of the scope of the originating AP
   "title": "Da Vinci Code",
   "isbn": "902455991X",
   "cover": "https://cdn.example.org/covers/davincicode.png",
+  "website": "https://danbrown.com/the-davinci-code/",
   "_links": {
     "self": {
       "href": "https://api.example.org/v1/books/14d3030c-3b61-4070-b902-342f80e99364"
