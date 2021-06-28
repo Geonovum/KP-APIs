@@ -1,0 +1,1073 @@
+<!DOCTYPE html><html lang="nl"><!-- HTML-Header ============================================================================== --><head><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta content="text/html; charset=utf-8" http-equiv="content-type"><meta name="generator" content="ReSpec 24.5.2">
+    
+    
+    <!-- Invullen: de titel van de standaard of het document ==================================== -->
+    <title>API Strategie Algemeen (Nederlandse API Strategie I)</title>
+    <!-- Invullen: de naam van de lokale CSS file =============================================== -->
+    <link rel="stylesheet" type="text/css" href="./media/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="https://tools.geostandaarden.nl/respec/style/logos/Geonovum.ico">
+    
+    
+<!-- ============================================================================================ -->
+<!-- File. . . :  index.html                                                                      -->
+<!-- Bevat . . :  Template voor de index.html die verplicht is voor respec                        -->
+<!--              Gebaseerd op https://github.com/Geonovum/respec/wiki                            -->
+<!--              Deze file moet worden neergezet in de root-directory van de                     -->
+<!--              betreffende standaard.                                                          -->
+<!-- Door. . . :  Jan van Gelder                                                                  -->
+<!-- ============================================================================================ -->
+<!-- ============================================================================================ -->
+<!-- Log . . . :  20181015 - JvG - Initiele versie                                                -->
+<!-- 
+====================================================================================================
+0        1         2         3         4         5         6         7         8         9         0
+1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+================================================================================================= -->
+  
+  <style id="respec-mainstyle">/*****************************************************************
+ * ReSpec 3 CSS
+ * Robin Berjon - http://berjon.com/
+ *****************************************************************/
+
+/* Override code highlighter background */
+.hljs {
+  background: transparent !important;
+}
+
+/* --- INLINES --- */
+h1 abbr,
+h2 abbr,
+h3 abbr,
+h4 abbr,
+h5 abbr,
+h6 abbr,
+a abbr {
+  border: none;
+}
+
+dfn {
+  font-weight: bold;
+}
+
+a.internalDFN {
+  color: inherit;
+  border-bottom: 1px solid #99c;
+  text-decoration: none;
+}
+
+a.externalDFN {
+  color: inherit;
+  border-bottom: 1px dotted #ccc;
+  text-decoration: none;
+}
+
+a.bibref {
+  text-decoration: none;
+}
+
+#references :target {
+  background: #eaf3ff;
+}
+
+cite .bibref {
+  font-style: normal;
+}
+
+code {
+  color: #c83500;
+}
+
+th code {
+  color: inherit;
+}
+
+/* --- TOC --- */
+
+.toc a,
+.tof a {
+  text-decoration: none;
+}
+
+a .secno,
+a .figno {
+  color: #000;
+}
+
+ul.tof,
+ol.tof {
+  list-style: none outside none;
+}
+
+.caption {
+  margin-top: 0.5em;
+  font-style: italic;
+}
+
+/* --- TABLE --- */
+
+table.simple {
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-bottom: 3px solid #005a9c;
+}
+
+.simple th {
+  background: #005a9c;
+  color: #fff;
+  padding: 3px 5px;
+  text-align: left;
+}
+
+.simple th[scope="row"] {
+  background: inherit;
+  color: inherit;
+  border-top: 1px solid #ddd;
+}
+
+.simple td {
+  padding: 3px 10px;
+  border-top: 1px solid #ddd;
+}
+
+.simple tr:nth-child(even) {
+  background: #f0f6ff;
+}
+
+/* --- DL --- */
+
+.section dd>p:first-child {
+  margin-top: 0;
+}
+
+.section dd>p:last-child {
+  margin-bottom: 0;
+}
+
+.section dd {
+  margin-bottom: 1em;
+}
+
+.section dl.attrs dd,
+.section dl.eldef dd {
+  margin-bottom: 0;
+}
+
+#issue-summary>ul,
+.respec-dfn-list {
+  column-count: 2;
+}
+
+#issue-summary li,
+.respec-dfn-list li {
+  list-style: none;
+}
+
+details.respec-tests-details {
+  margin-left: 1em;
+  display: inline-block;
+  vertical-align: top;
+}
+
+details.respec-tests-details>* {
+  padding-right: 2em;
+}
+
+details.respec-tests-details[open] {
+  z-index: 999999;
+  position: absolute;
+  border: thin solid #cad3e2;
+  border-radius: 0.3em;
+  background-color: white;
+  padding-bottom: 0.5em;
+}
+
+details.respec-tests-details[open]>summary {
+  border-bottom: thin solid #cad3e2;
+  padding-left: 1em;
+  margin-bottom: 1em;
+  line-height: 2em;
+}
+
+details.respec-tests-details>ul {
+  width: 100%;
+  margin-top: -0.3em;
+}
+
+details.respec-tests-details>li {
+  padding-left: 1em;
+}
+
+a[href].self-link:hover {
+  opacity: 1;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
+}
+
+aside.example .marker > a.self-link {
+  color: inherit;
+}
+
+h2>a.self-link,
+h3>a.self-link,
+h4>a.self-link,
+h5>a.self-link,
+h6>a.self-link {
+  border: none;
+  color: inherit;
+  font-size: 83%;
+  height: 2em;
+  left: -1.6em;
+  opacity: .5;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  top: 0;
+  transition: opacity .2s;
+  width: 2em;
+}
+
+h2>a.self-link::before,
+h3>a.self-link::before,
+h4>a.self-link::before,
+h5>a.self-link::before,
+h6>a.self-link::before {
+  content: "§";
+  display: block;
+}
+
+@media (max-width: 767px) {
+  dd {
+    margin-left: 0;
+  }
+
+  /* Don't position self-link in headings off-screen */
+  h2>a.self-link,
+  h3>a.self-link,
+  h4>a.self-link,
+  h5>a.self-link,
+  h6>a.self-link {
+    left: auto;
+    top: auto;
+  }
+}
+
+@media print {
+  .removeOnSave {
+    display: none;
+  }
+}
+</style><link rel="stylesheet" href="https://tools.geostandaarden.nl/respec/style/GN-CV.css"><link rel="shortcut icon" type="image/x-icon" href="https://tools.geostandaarden.nl/respec/style/logos/Geonovum.ico"><script id="initialUserConfig" type="application/json">{
+  "specStatus": "GN-CV",
+  "specType": "HR",
+  "pubDomain": "api",
+  "publishDate": "2021-06-28",
+  "previousPublishDate": "2020-02-04",
+  "previousMaturity": "GN-DEF",
+  "editors": [
+    {
+      "name": "Frank Terpstra",
+      "company": "Geonovum",
+      "companyURL": "http://www.geonovum.nl/"
+    },
+    {
+      "name": "Jan van Gelder",
+      "company": "Geonovum",
+      "companyURL": "http://www.Geonovum.nl/"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Lancelot Schellevis",
+      "company": "Forum Standaardisatie",
+      "companyURL": "http://www.forumstandaardisatie.nl/"
+    },
+    {
+      "name": "Han Zuidweg",
+      "company": "Forum Standaardisatie",
+      "companyURL": "http://www.forumstandaardisatie.nl/"
+    },
+    {
+      "name": "Friso Penninga",
+      "company": "Geonovum",
+      "companyURL": "http://geonovum.nl/"
+    },
+    {
+      "name": "Matthias Snoei",
+      "company": "Swis",
+      "companyURL": "http://swis.nl/"
+    },
+    {
+      "name": "Jasper Roes",
+      "company": "Het Kadaster",
+      "companyURL": "http://www.kadaster.nl/"
+    },
+    {
+      "name": "Peter Haasnoot",
+      "company": "Logius",
+      "companyURL": "www.logius.nl"
+    },
+    {
+      "name": "Frank van Es",
+      "company": "Logius",
+      "companyURL": "www.logius.nl"
+    },
+    {
+      "name": "Dennis de Wit",
+      "company": "Solventa",
+      "companyURL": "www.solventa.nl"
+    }
+  ],
+  "shortName": "API-Strategie",
+  "github": "https://github.com/geonovum/KP-APIs/",
+  "issueBase": "https://github.com/geonovum/KP-APIs/issues/",
+  "localBiblio": {
+    "OAuth2": {
+      "href": "https://tools.ietf.org/html/rfc6749",
+      "title": "The OAuth 2.0 Authorization Framework",
+      "authors": [
+        "D. Hardt"
+      ],
+      "date": "October 2012",
+      "publisher": "The Internet Engineering Task Force"
+    },
+    "Expert": {
+      "href": "https://www.forumstandaardisatie.nl/sites/bfs/files/Expertadvies%20OAuth%202.0.pdf",
+      "title": "Expertadvies OAuth 2.0",
+      "authors": [
+        "P. Dam"
+      ],
+      "date": "24 februari 2017",
+      "publisher": "Forum Standaardisatie",
+      "id": "expert"
+    },
+    "JWT": {
+      "href": "https://tools.ietf.org/html/rfc7519",
+      "title": "JSON Web Token (JWT)",
+      "authors": [
+        "M. Jones, J. Bradley, N. Sakimura"
+      ],
+      "date": "may 2015",
+      "publisher": "IETF"
+    },
+    "JWS": {
+      "href": "https://tools.ietf.org/html/rfc7515",
+      "title": "JSON Web Signature (JWS)",
+      "authors": [
+        "M. Jones, J. Bradley, N. Sakimura"
+      ],
+      "date": "may 2015",
+      "publisher": "IETF"
+    },
+    "JWE": {
+      "href": "https://tools.ietf.org/html/rfc7516",
+      "title": "JSON Web Encryption (JWE)",
+      "authors": [
+        "M. Jones, J. Hildebrand"
+      ],
+      "date": "may 2015",
+      "publisher": "IETF"
+    },
+    "JWK": {
+      "href": "https://tools.ietf.org/html/rfc7517",
+      "title": "JSON Web Key (JWK))",
+      "authors": [
+        "M. Jones"
+      ],
+      "date": "may 2015",
+      "publisher": "IETF"
+    },
+    "JWA": {
+      "href": "https://tools.ietf.org/html/rfc7518",
+      "title": "JSON Web Algorithms (JWA)",
+      "authors": [
+        "M. Jones"
+      ],
+      "date": "may 2015",
+      "publisher": "IETF"
+    },
+    "PKCE": {
+      "href": "https://tools.ietf.org/html/rfc7636",
+      "title": "Proof Key for Code Exchange by OAuth Public Clients",
+      "authors": [
+        "N. Sakimura, J. Bradley, N. Agarwal"
+      ],
+      "date": "september 2015",
+      "publisher": "IETF"
+    },
+    "Introspection": {
+      "href": "https://tools.ietf.org/html/rfc7662",
+      "title": "OAuth 2.0 Token Introspection",
+      "authors": [
+        "J. Richer"
+      ],
+      "date": "October 2015",
+      "publisher": "IETF"
+    },
+    "OpenID.Core": {
+      "href": "https://openid.net/specs/openid-connect-core-1_0.html",
+      "title": "OpenID Connect Core 1.0",
+      "authors": [
+        "N. Sakimura, J. Bradley, M. Jones, B. de Medeiros, C. Mortimore"
+      ],
+      "date": "November 8 2014",
+      "publisher": "OpenID foundation"
+    },
+    "iGOV.OpenID": {
+      "href": "https://openid.net/specs/openid-igov-openid-connect-1_0.html",
+      "title": "International Government Assurance Profile (iGov) for OpenID Connect 1.0 - draft 3",
+      "authors": [
+        "M. Varley, P. Grassi"
+      ],
+      "date": "October 5 2018",
+      "publisher": "OpenID foundation",
+      "id": "igov.openid"
+    },
+    "iGOV.OAuth2": {
+      "href": "https://openid.net/specs/openid-igov-oauth2-1_0.html",
+      "title": "International Government Assurance Profile (iGov) for OAuth 2.0",
+      "authors": [
+        "J. Richer, M. Varley, P. Grassi"
+      ],
+      "date": "October 5 2018",
+      "publisher": "OpenID foundation",
+      "id": "igov.oauth2"
+    },
+    "OpenID.Discovery": {
+      "href": "https://openid.net/specs/openid-connect-discovery-1_0.html",
+      "title": "OpenID Connect Discovery 1.0",
+      "authors": [
+        "N. Sakimura, J. Bradley, M. Jones, E. Jay"
+      ],
+      "date": "November 8 2014",
+      "publisher": "OpenID foundation"
+    },
+    "I-D.ietf-oauth-pop-architecture": {
+      "href": "https://tools.ietf.org/html/draft-ietf-oauth-pop-architecture-08",
+      "title": "OAuth 2.0 Proof-of-Possession (PoP) Security Architecture",
+      "authors": [
+        "P. Hunt, J. Richer, W. Mills, P. Mishra, H. Tschofenig"
+      ],
+      "date": "July 8, 2016",
+      "publisher": "IETF"
+    },
+    "HEART.OAuth2": {
+      "href": "https://openid.net/specs/openid-heart-oauth2-1_0.html",
+      "title": "Health Relationship Trust Profile for OAuth 2.0",
+      "authors": [
+        "J. Richer"
+      ],
+      "date": "April 25, 2017",
+      "publisher": "OpenID foundation"
+    },
+    "JWS.JWE.Algs": {
+      "href": "https://www.iana.org/assignments/jose/jose.xhtml#web-signature-encryption-algorithms",
+      "title": "IANA JSON Web Signatures and Encryption Algorithms registry",
+      "authors": [
+        "Jim Schaad, Jeff Hodges, Joe Hildebrand, Sean Turner"
+      ],
+      "date": "",
+      "publisher": "IANA"
+    },
+    "BCP195": {
+      "href": "https://tools.ietf.org/html/bcp195",
+      "title": "Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)",
+      "authors": [
+        "Y. Sheffer, R. Holz, P. Saint-Andre"
+      ],
+      "date": "May 2015",
+      "publisher": "IETF"
+    },
+    "HAL": {
+      "href": "http://stateless.co/hal_specification.html",
+      "title": "HAL - Hypertext Application Language",
+      "authors": [
+        "Mike Kelly"
+      ],
+      "date": " 2013-09-18"
+    }
+  },
+  "postProcess": [
+    null
+  ],
+  "publishISODate": "2021-06-28T00:00:00.000Z",
+  "generatedSubtitle": "Consultatieversie 28 juni 2021"
+}</script><meta name="description" content="Dit document beschrijft een API strategie voor de Nederlandse overheid."><script type="application/ld+json">{
+  "@context": [
+    "http://schema.org",
+    {
+      "@vocab": "http://schema.org/",
+      "@language": "nl",
+      "foaf": "http://xmlns.com/foaf/0.1/",
+      "datePublished": {
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      },
+      "inLanguage": {
+        "@language": null
+      },
+      "isBasedOn": {
+        "@type": "@id"
+      },
+      "license": {
+        "@type": "@id"
+      }
+    }
+  ],
+  "id": "https://docs.geostandaarden.nl/api/cv-hr-API-Strategie-20210628/",
+  "type": [
+    "TechArticle"
+  ],
+  "name": "API Strategie Algemeen (Nederlandse API Strategie I)",
+  "inLanguage": "nl",
+  "license": "https://creativecommons.org/licenses/by/4.0/legalcode",
+  "datePublished": "2021-06-28",
+  "copyrightHolder": {
+    "name": "Geonovum",
+    "url": "https://www.geonovum.nl/"
+  },
+  "discussionUrl": "https://github.com/geonovum/KP-APIs/issues/",
+  "alternativeHeadline": "",
+  "isBasedOn": "https://docs.geostandaarden.nl/api/def-hr-API-Strategie-20200204/",
+  "description": "Dit document beschrijft een API strategie voor de Nederlandse overheid.",
+  "editor": [
+    {
+      "type": "Person",
+      "name": "Frank Terpstra",
+      "worksFor": {
+        "name": "Geonovum",
+        "url": "http://www.geonovum.nl/"
+      }
+    },
+    {
+      "type": "Person",
+      "name": "Jan van Gelder",
+      "worksFor": {
+        "name": "Geonovum",
+        "url": "http://www.Geonovum.nl/"
+      }
+    }
+  ],
+  "contributor": [
+    {
+      "type": "Person",
+      "name": "Lancelot Schellevis",
+      "worksFor": {
+        "name": "Forum Standaardisatie",
+        "url": "http://www.forumstandaardisatie.nl/"
+      }
+    },
+    {
+      "type": "Person",
+      "name": "Han Zuidweg",
+      "worksFor": {
+        "name": "Forum Standaardisatie",
+        "url": "http://www.forumstandaardisatie.nl/"
+      }
+    },
+    {
+      "type": "Person",
+      "name": "Friso Penninga",
+      "worksFor": {
+        "name": "Geonovum",
+        "url": "http://geonovum.nl/"
+      }
+    },
+    {
+      "type": "Person",
+      "name": "Matthias Snoei",
+      "worksFor": {
+        "name": "Swis",
+        "url": "http://swis.nl/"
+      }
+    },
+    {
+      "type": "Person",
+      "name": "Jasper Roes",
+      "worksFor": {
+        "name": "Het Kadaster",
+        "url": "http://www.kadaster.nl/"
+      }
+    },
+    {
+      "type": "Person",
+      "name": "Peter Haasnoot",
+      "worksFor": {
+        "name": "Logius",
+        "url": "www.logius.nl"
+      }
+    },
+    {
+      "type": "Person",
+      "name": "Frank van Es",
+      "worksFor": {
+        "name": "Logius",
+        "url": "www.logius.nl"
+      }
+    },
+    {
+      "type": "Person",
+      "name": "Dennis de Wit",
+      "worksFor": {
+        "name": "Solventa",
+        "url": "www.solventa.nl"
+      }
+    }
+  ],
+  "citation": [
+    {
+      "id": "https://www.forumstandaardisatie.nl/sites/bfs/files/Expertadvies%20OAuth%202.0.pdf",
+      "type": "TechArticle",
+      "name": "Expertadvies OAuth 2.0",
+      "url": "https://www.forumstandaardisatie.nl/sites/bfs/files/Expertadvies%20OAuth%202.0.pdf"
+    },
+    {
+      "id": "https://openid.net/specs/openid-igov-oauth2-1_0.html",
+      "type": "TechArticle",
+      "name": "International Government Assurance Profile (iGov) for OAuth 2.0",
+      "url": "https://openid.net/specs/openid-igov-oauth2-1_0.html"
+    },
+    {
+      "id": "https://openid.net/specs/openid-igov-openid-connect-1_0.html",
+      "type": "TechArticle",
+      "name": "International Government Assurance Profile (iGov) for OpenID Connect 1.0 - draft 3",
+      "url": "https://openid.net/specs/openid-igov-openid-connect-1_0.html"
+    }
+  ]
+}</script></head>  
+  <!-- HTML-Body ================================================================================ -->
+  <body class="h-entry toc-inline"><div class="head">
+  <a href="https://www.geonovum.nl/" class="logo"><img id="Geonovum" alt="Geonovum" width="132" height="67" src="https://tools.geostandaarden.nl/respec/style/logos/Geonovum.svg"></a>
+  <h1 class="title p-name" id="title">API Strategie Algemeen (Nederlandse API Strategie I)</h1>
+  
+  <h2>Geonovum Handreiking<br>
+  Consultatieversie <time class="dt-published" datetime="2021-06-28">28 juni 2021</time></h2>
+  <dl>
+    <dt>Deze versie:</dt><dd><a class="u-url" href="https://docs.geostandaarden.nl/api/cv-hr-API-Strategie-20210628/">https://docs.geostandaarden.nl/api/cv-hr-API-Strategie-20210628/</a></dd><dt>Laatst gepubliceerde versie:</dt><dd><a href="https://docs.geostandaarden.nl/api/API-Strategie/">https://docs.geostandaarden.nl/api/API-Strategie/</a></dd>
+    
+    <dt>Vorige versie:</dt><dd><a href="https://docs.geostandaarden.nl/api/def-hr-API-Strategie-20200204/">https://docs.geostandaarden.nl/api/def-hr-API-Strategie-20200204/</a></dd>
+    <dt>Laatste werkversie:</dt><dd><a href="https://geonovum.github.io/KP-APIs/">https://geonovum.github.io/KP-APIs/</a></dd>
+    <dt>Redacteurs:</dt>
+    <dd class="p-author h-card vcard"><span class="p-name fn">Frank Terpstra</span>, <a class="p-org org h-org h-card" href="http://www.geonovum.nl/">Geonovum</a></dd><dd class="p-author h-card vcard"><span class="p-name fn">Jan van Gelder</span>, <a class="p-org org h-org h-card" href="http://www.Geonovum.nl/">Geonovum</a></dd>
+    <dt>Auteurs:</dt><dd class="p-author h-card vcard"><span class="p-name fn">Lancelot Schellevis</span>, <a class="p-org org h-org h-card" href="http://www.forumstandaardisatie.nl/">Forum Standaardisatie</a></dd><dd class="p-author h-card vcard"><span class="p-name fn">Han Zuidweg</span>, <a class="p-org org h-org h-card" href="http://www.forumstandaardisatie.nl/">Forum Standaardisatie</a></dd><dd class="p-author h-card vcard"><span class="p-name fn">Friso Penninga</span>, <a class="p-org org h-org h-card" href="http://geonovum.nl/">Geonovum</a></dd><dd class="p-author h-card vcard"><span class="p-name fn">Matthias Snoei</span>, <a class="p-org org h-org h-card" href="http://swis.nl/">Swis</a></dd><dd class="p-author h-card vcard"><span class="p-name fn">Jasper Roes</span>, <a class="p-org org h-org h-card" href="http://www.kadaster.nl/">Het Kadaster</a></dd><dd class="p-author h-card vcard"><span class="p-name fn">Peter Haasnoot</span>, <a class="p-org org h-org h-card" href="www.logius.nl">Logius</a></dd><dd class="p-author h-card vcard"><span class="p-name fn">Frank van Es</span>, <a class="p-org org h-org h-card" href="www.logius.nl">Logius</a></dd><dd class="p-author h-card vcard"><span class="p-name fn">Dennis de Wit</span>, <a class="p-org org h-org h-card" href="www.solventa.nl">Solventa</a></dd>
+    <dt>Doe mee:</dt><dd>
+      <a href="https://github.com/geonovum/KP-APIs/">GitHub geonovum/KP-APIs</a>
+    </dd><dd>
+      <a href="https://github.com/geonovum/KP-APIs/issues/">Dien een melding in</a>
+    </dd><dd>
+      <a href="https://github.com/geonovum/KP-APIs/commits/">Revisiehistorie</a>
+    </dd><dd>
+      <a href="https://github.com/geonovum/KP-APIs/pulls/">Pull requests</a>
+    </dd>
+  </dl>
+  
+  
+    <dl>
+          <dt>Rechtenbeleid:</dt>
+          <dd>
+            <div class="copyright" style="margin: 0.25em 0;">
+              <abbr title="Creative Commons Attribution 4.0 International Public License">
+              <a href="https://creativecommons.org/licenses/by/4.0/legalcode"><img width="115" height="40" src="https://tools.geostandaarden.nl/respec/style/logos/cc-by.svg" alt="Creative Commons Attribution 4.0 International Public License"></a>
+            </abbr>
+              <div style="display:inline-block; vertical-align:top">
+                <p style="font-size: small;">Creative Commons Attribution 4.0 International Public License<br>(CC-BY)</p>
+              </div>
+            </div>
+          </dd>
+        </dl>
+  <hr title="Separator for header">
+</div>
+    <section id="abstract" data-format="markdown" aria-busy="false" class="introductory"><h2>Samenvatting</h2><p>Dit document beschrijft een API strategie voor de Nederlandse overheid.</p></section>        
+    <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>
+    <em>Deze paragraaf beschrijft de status van dit document ten tijde van publicatie. Het is mogelijk dat er actuelere versies van dit document bestaan. Een lijst van Geonovum publicaties en de laatste gepubliceerde versie van dit document zijn te vinden op <a href="https://www.geonovum.nl/geo-standaarden/alle-standaarden">https://www.geonovum.nl/geo-standaarden/alle-standaarden</a>.</em>
+  </p><p>
+
+
+
+    Dit is een door de werkgroep goedgekeurde consultatieversie. Commentaar over dit document kan gestuurd worden naar
+    <a href="mailto:geo-standaarden@geonovum.nl">
+        geo-standaarden@geonovum.nl</a>.
+
+
+
+
+
+
+</p><p>Ten opzichte van de vorige versie van de API strategie (04-02-2020) is het hoofdstuk Architectuur aangepast. Deze consultatie betreft alleen het <a href="#architectuur">aangepaste Architectuur</a> hoofdstuk.<br>Andere hoofdstukken zijn daarom 'uitgegrijsd'</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding"><span class="secno">1. </span>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#status-van-de-api-strategie"><span class="secno">1.1 </span>Status van de API strategie</a></li><li class="tocline"><a class="tocxref" href="#auteurs"><span class="secno">1.2 </span>Auteurs</a></li><li class="tocline"><a class="tocxref" href="#leeswijzer"><span class="secno">1.3 </span>Leeswijzer</a></li></ol></li><li class="tocline"><a class="tocxref" href="#communicatie-en-beleid"><span class="secno">2. </span>Communicatie en beleid</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#de-digitale-overheid-heeft-een-probleem"><span class="secno">2.1 </span>De digitale overheid heeft een probleem</a></li><li class="tocline"><a class="tocxref" href="#wat-is-een-api"><span class="secno">2.2 </span>Wat is een API?</a></li><li class="tocline"><a class="tocxref" href="#wat-betekenen-apis-voor-mijn-organisatie"><span class="secno">2.3 </span>Wat betekenen APIs voor mijn organisatie?</a></li><li class="tocline"><a class="tocxref" href="#nederland-heeft-al-schitterende-voorbeelden"><span class="secno">2.4 </span>Nederland heeft al schitterende voorbeelden</a></li></ol></li><li class="tocline"><a class="tocxref" href="#inspelen-op-gebruikerswensen-de-sleutel-tot-gebruik"><span class="secno">3. </span>Inspelen op gebruikerswensen: dé sleutel tot gebruik</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding-0"><span class="secno">3.1 </span>Inleiding</a></li><li class="tocline"><a class="tocxref" href="#overkoepelende-aanbeveling-biedt-een-goede-developer-experience-dx"><span class="secno">3.2 </span>Overkoepelende aanbeveling: biedt een goede ‘developer experience (DX)’</a></li><li class="tocline"><a class="tocxref" href="#gebruik-van-onboarding-tot-in-productie"><span class="secno">3.3 </span>Gebruik: van ‘onboarding’ tot ‘in productie’</a></li><li class="tocline"><a class="tocxref" href="#specifieke-aanbevelingen-voor-een-goede-dx"><span class="secno">3.4 </span>Specifieke aanbevelingen voor een goede DX</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#aanbeveling-1-werk-met-meerdere-persona-s"><span class="secno">3.4.1 </span>Aanbeveling 1: werk met (meerdere) persona’s</a></li><li class="tocline"><a class="tocxref" href="#aanbeveling-2-analyseer-welke-api-s-je-aan-moet-bieden-welke-informatievragen-wil-je-beantwoorden"><span class="secno">3.4.2 </span>Aanbeveling 2: analyseer welke API’s je aan moet bieden: welke informatievragen wil je beantwoorden?</a></li><li class="tocline"><a class="tocxref" href="#aanbeveling-3-documenteer-gericht-op-de-gebruiker-biedt-snel-inzicht-en-gebruik-oas-3"><span class="secno">3.4.3 </span>Aanbeveling 3: documenteer gericht op de gebruiker, biedt snel inzicht en gebruik OAS 3</a></li><li class="tocline"><a class="tocxref" href="#aanbeveling-4-minimaliseer-time-to-first-call-met-een-goede-sandbox"><span class="secno">3.4.4 </span>Aanbeveling 4: minimaliseer Time to First Call met een goede Sandbox</a></li><li class="tocline"><a class="tocxref" href="#aanbeveling-5-borg-ontwikkeling-en-beheer"><span class="secno">3.4.5 </span>Aanbeveling 5: borg ontwikkeling en beheer</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#aanbeveling-5-1-stel-een-sla-op"><span class="secno">3.4.5.1 </span>Aanbeveling 5.1 Stel een SLA op</a></li><li class="tocline"><a class="tocxref" href="#aanbeveling-5-2-biedt-een-roadmap-aan"><span class="secno">3.4.5.2 </span>Aanbeveling 5.2 Biedt een roadmap aan</a></li><li class="tocline"><a class="tocxref" href="#aanbeveling-5-3-doe-aan-versiebeheer"><span class="secno">3.4.5.3 </span>Aanbeveling 5.3 Doe aan versiebeheer</a></li><li class="tocline"><a class="tocxref" href="#aanbeveling-5-4-sluit-de-feedback-loop-betrek-de-community"><span class="secno">3.4.5.4 </span>Aanbeveling 5.4 Sluit de feedback-loop: betrek de community</a></li></ol></li><li class="tocline"><a class="tocxref" href="#aanbeveling-6-maak-duidelijk-wat-je-data-betekent"><span class="secno">3.4.6 </span>Aanbeveling 6: maak duidelijk wat je data betekent</a></li><li class="tocline"><a class="tocxref" href="#aanbeveling-7-wees-vindbaar-voor-developers"><span class="secno">3.4.7 </span>Aanbeveling 7: wees vindbaar voor developers</a></li><li class="tocline"><a class="tocxref" href="#aanbeveling-8-niet-alles-is-een-api"><span class="secno">3.4.8 </span>Aanbeveling 8: niet alles is een API!</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#standaarden"><span class="secno">4. </span>Standaarden</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#api-designrules-nederlandse-api-strategie-iia"><span class="secno">4.1 </span>API Designrules (Nederlandse API Strategie IIa)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#oorsprong-standaard"><span class="secno">4.1.1 </span>Oorsprong standaard</a></li><li class="tocline"><a class="tocxref" href="#status-bij-forum-standaardisatie"><span class="secno">4.1.2 </span>Status bij forum standaardisatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#werkingsgebied-standaard"><span class="secno">4.1.2.1 </span>Werkingsgebied standaard</a></li><li class="tocline"><a class="tocxref" href="#toepassingsgebied-standaard"><span class="secno">4.1.2.2 </span>Toepassingsgebied standaard</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#api-designrules-extensions-nederlandse-api-strategie-iib"><span class="secno">4.2 </span>API Designrules extensions (Nederlandse API Strategie IIb)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#oorsprong-standaard-0"><span class="secno">4.2.1 </span>Oorsprong standaard</a></li><li class="tocline"><a class="tocxref" href="#status"><span class="secno">4.2.2 </span>Status</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#werkingsgebied-standaard-0"><span class="secno">4.2.2.1 </span>Werkingsgebied standaard</a></li><li class="tocline"><a class="tocxref" href="#toepassingsgebied-standaard-0"><span class="secno">4.2.2.2 </span>Toepassingsgebied standaard</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#nederlands-profiel-oauth"><span class="secno">4.3 </span>Nederlands profiel OAuth</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#oorsprong-standaard-1"><span class="secno">4.3.1 </span>Oorsprong standaard</a></li><li class="tocline"><a class="tocxref" href="#status-bij-forum-standaardisatie-0"><span class="secno">4.3.2 </span>Status bij forum standaardisatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#werkingsgebied-standaard-1"><span class="secno">4.3.2.1 </span>Werkingsgebied standaard</a></li><li class="tocline"><a class="tocxref" href="#toepassingsgebied-standaard-1"><span class="secno">4.3.2.2 </span>Toepassingsgebied standaard</a></li><li class="tocline"><a class="tocxref" href="#bijzonderheden"><span class="secno">4.3.2.3 </span>Bijzonderheden</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#openid-connect-buiten-scope"><span class="secno">4.3.2.3.1 </span>OpenID connect buiten scope</a></li><li class="tocline"><a class="tocxref" href="#aansluiting-op-internationale-standaard-igov"><span class="secno">4.3.2.3.2 </span>Aansluiting op internationale standaard iGov</a></li></ol></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#architectuur"><span class="secno">5. </span>Architectuur</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding-1"><span class="secno">5.1 </span>Inleiding</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#api-s-voor-burgers-bedrijven-en-overheden"><span class="secno">5.1.1 </span>API's voor Burgers, Bedrijven en Overheden</a></li><li class="tocline"><a class="tocxref" href="#belang-van-api-standaardisatie"><span class="secno">5.1.2 </span>Belang van API Standaardisatie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#typologie-van-api-s"><span class="secno">5.2 </span>Typologie van API's</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#intern-extern-open-gesloten"><span class="secno">5.2.1 </span>Intern / Extern, Open / Gesloten</a></li><li class="tocline"><a class="tocxref" href="#systeem-proces-convenience"><span class="secno">5.2.2 </span>Systeem, Proces, Convenience</a></li><li class="tocline"><a class="tocxref" href="#business-exposure"><span class="secno">5.2.3 </span>Business / Exposure</a></li><li class="tocline"><a class="tocxref" href="#philosophy-protocol-encoding"><span class="secno">5.2.4 </span>Philosophy, Protocol, Encoding</a></li><li class="tocline"><a class="tocxref" href="#api-virtualisatie"><span class="secno">5.2.5 </span>API Virtualisatie</a></li><li class="tocline"><a class="tocxref" href="#api-language-styles"><span class="secno">5.2.6 </span>API Language styles</a></li></ol></li><li class="tocline"><a class="tocxref" href="#api-capability-model"><span class="secno">5.3 </span>API Capability Model</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#api-gebruik"><span class="secno">5.3.1 </span>API Gebruik</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ontwikkelaar-onboarding"><span class="secno">5.3.1.1 </span>Ontwikkelaar onboarding</a></li><li class="tocline"><a class="tocxref" href="#applicatie-registratie"><span class="secno">5.3.1.2 </span>Applicatie registratie</a></li><li class="tocline"><a class="tocxref" href="#api-discovery"><span class="secno">5.3.1.3 </span>API Discovery</a></li><li class="tocline"><a class="tocxref" href="#specificatie-documentatie"><span class="secno">5.3.1.4 </span>Specificatie &amp; Documentatie</a></li><li class="tocline"><a class="tocxref" href="#proeftuin"><span class="secno">5.3.1.5 </span>Proeftuin</a></li><li class="tocline"><a class="tocxref" href="#code-voorbeelden-sdk"><span class="secno">5.3.1.6 </span>Code voorbeelden &amp; SDK</a></li><li class="tocline"><a class="tocxref" href="#kennisdeling-ondersteuning"><span class="secno">5.3.1.7 </span>Kennisdeling &amp; Ondersteuning</a></li></ol></li><li class="tocline"><a class="tocxref" href="#realisatie-beheer"><span class="secno">5.3.2 </span>Realisatie &amp; Beheer</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ontwerp"><span class="secno">5.3.2.1 </span>Ontwerp</a></li><li class="tocline"><a class="tocxref" href="#ontwikkeling"><span class="secno">5.3.2.2 </span>Ontwikkeling</a></li><li class="tocline"><a class="tocxref" href="#test"><span class="secno">5.3.2.3 </span>Test</a></li><li class="tocline"><a class="tocxref" href="#policy-definitie"><span class="secno">5.3.2.4 </span>Policy Definitie</a></li><li class="tocline"><a class="tocxref" href="#afspraken-standaarden-en-richtlijnen"><span class="secno">5.3.2.5 </span>Afspraken, Standaarden en Richtlijnen</a></li><li class="tocline"><a class="tocxref" href="#api-lifecycle-beheer"><span class="secno">5.3.2.6 </span>API Lifecycle beheer</a></li><li class="tocline"><a class="tocxref" href="#versionering"><span class="secno">5.3.2.7 </span>Versionering</a></li><li class="tocline"><a class="tocxref" href="#toegangsbeheer"><span class="secno">5.3.2.8 </span>Toegangsbeheer</a></li><li class="tocline"><a class="tocxref" href="#gateway-beheer"><span class="secno">5.3.2.9 </span>Gateway beheer</a></li><li class="tocline"><a class="tocxref" href="#sleutelbeheer"><span class="secno">5.3.2.10 </span>Sleutelbeheer</a></li></ol></li><li class="tocline"><a class="tocxref" href="#verkeersstroom-beheer"><span class="secno">5.3.3 </span>Verkeersstroom beheer</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mediatie-orkestratie"><span class="secno">5.3.3.1 </span>Mediatie &amp; Orkestratie</a></li><li class="tocline"><a class="tocxref" href="#routering"><span class="secno">5.3.3.2 </span>Routering</a></li><li class="tocline"><a class="tocxref" href="#data-transformaties"><span class="secno">5.3.3.3 </span>Data Transformaties</a></li><li class="tocline"><a class="tocxref" href="#foutafhandeling"><span class="secno">5.3.3.4 </span>Foutafhandeling</a></li><li class="tocline"><a class="tocxref" href="#caching"><span class="secno">5.3.3.5 </span>Caching</a></li><li class="tocline"><a class="tocxref" href="#protocol-conversie"><span class="secno">5.3.3.6 </span>Protocol conversie</a></li><li class="tocline"><a class="tocxref" href="#logging-audit-trail"><span class="secno">5.3.3.7 </span>Logging &amp; Audit trail</a></li><li class="tocline"><a class="tocxref" href="#monitoring-alerting"><span class="secno">5.3.3.8 </span>Monitoring &amp; Alerting</a></li><li class="tocline"><a class="tocxref" href="#analytics-dashboarding"><span class="secno">5.3.3.9 </span>Analytics &amp; Dashboarding</a></li><li class="tocline"><a class="tocxref" href="#rate-limiting-throttling"><span class="secno">5.3.3.10 </span>Rate limiting / throttling</a></li><li class="tocline"><a class="tocxref" href="#doorbelasting"><span class="secno">5.3.3.11 </span>Doorbelasting</a></li><li class="tocline"><a class="tocxref" href="#identificatie-authenticatie"><span class="secno">5.3.3.12 </span>Identificatie &amp; Authenticatie</a></li><li class="tocline"><a class="tocxref" href="#autorisatie"><span class="secno">5.3.3.13 </span>Autorisatie</a></li><li class="tocline"><a class="tocxref" href="#policy-handhaving"><span class="secno">5.3.3.14 </span>Policy handhaving</a></li><li class="tocline"><a class="tocxref" href="#anomalie-detectie"><span class="secno">5.3.3.15 </span>Anomalie detectie</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#api-management-functionaliteit"><span class="secno">5.4 </span>API Management Functionaliteit</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding-2"><span class="secno">5.4.1 </span>Inleiding</a></li><li class="tocline"><a class="tocxref" href="#informatie-architectuur"><span class="secno">5.4.2 </span>Informatie architectuur</a></li></ol></li><li class="tocline"><a class="tocxref" href="#informatiemodel-api"><span class="secno">5.5 </span>Informatiemodel &amp; API</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatiemodellen"><span class="secno">5.5.1 </span>Informatiemodellen</a></li><li class="tocline"><a class="tocxref" href="#definities"><span class="secno">5.5.2 </span>Definities</a></li><li class="tocline"><a class="tocxref" href="#api-informatiemodel-en-resource-model"><span class="secno">5.5.3 </span>API, Informatiemodel en Resource model.</a></li><li class="tocline"><a class="tocxref" href="#aanbevelingen"><span class="secno">5.5.4 </span>Aanbevelingen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#api-security-architectuur"><span class="secno">5.6 </span>API Security Architectuur</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#beschikbaarheid"><span class="secno">5.6.1 </span>Beschikbaarheid</a></li><li class="tocline"><a class="tocxref" href="#integriteit"><span class="secno">5.6.2 </span>Integriteit</a></li><li class="tocline"><a class="tocxref" href="#vertrouwelijkheid"><span class="secno">5.6.3 </span>Vertrouwelijkheid</a></li><li class="tocline"><a class="tocxref" href="#componenten"><span class="secno">5.6.4 </span>Componenten</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#actors-en-clients"><span class="secno">5.6.4.1 </span>Actors en Clients</a></li><li class="tocline"><a class="tocxref" href="#componenten-0"><span class="secno">5.6.4.2 </span>Componenten</a></li></ol></li><li class="tocline"><a class="tocxref" href="#principes"><span class="secno">5.6.5 </span>Principes</a></li><li class="tocline"><a class="tocxref" href="#architectuurpatronen"><span class="secno">5.6.6 </span>Architectuurpatronen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#gedelegeerde-identificatie-en-authenticatie"><span class="secno">5.6.6.1 </span>Gedelegeerde Identificatie en Authenticatie</a></li><li class="tocline"><a class="tocxref" href="#token-based-autorisatie"><span class="secno">5.6.6.2 </span>Token-based Autorisatie</a></li></ol></li><li class="tocline"><a class="tocxref" href="#referenties"><span class="secno">5.6.7 </span>Referenties</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><span class="secno">A. </span>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><span class="secno">A.1 </span>Informatieve referenties</a></li></ol></li></ol></nav>
+    <!-- vanaf hier per hoofdstuk een sectie of een div in het document ======================== -->
+    <!-- Secties komen in de inhoudsopgave div's niet ========================================== -->
+    <!-- Secties hebben verplicht <h2> tags, div's niet ======================================== -->
+    <section data-format="markdown" class="informative" aria-busy="false" id="inleiding"><!--OddPage--><h2 id="x1-inleiding"><span class="secno">1. </span>Inleiding</h2><p><em>Dit onderdeel is niet normatief.</em></p><p>Dit hoofdstuk geeft een inleiding op de Nederlandse API strategie</p><section id="status-van-de-api-strategie"><h3 id="x1-1-status-van-de-api-strategie"><span class="secno">1.1 </span>Status van de API strategie</h3><p>In deze versie van de API strategie zijn de op en aanmerkingen uit de consultatie verwerkt. 
+Op <a href="https://github.com/geonovum/KP-APIs/issues">GitHub</a> kan bekeken worden wat er precies is 
+gedaan met de op en aanmerkingen. </p></section><section id="auteurs"><h3 id="x1-2-auteurs"><span class="secno">1.2 </span>Auteurs</h3><p>Er worden slechts 6 auteurs genoemd, echter aan deze strategie is door veel meer mensen gewerkt.
+De genoemde auteurs zijn de 6 trekkers van de 5 werkgroepen API Strategie, 
+Architectuur, Authenticatie en Autorisatie, Communicatie en Beleid, en Gebruikerswensen</p></section><section id="leeswijzer"><h3 id="x1-3-leeswijzer"><span class="secno">1.3 </span>Leeswijzer</h3><p>De API strategie bestaat uit een <a href="https://www.geonovum.nl/themas/kennisplatform-apis#APIStrategie">drietal verschillende documenten</a>.</p><p>Dit document bevat twee delen, waarbij het eerste deel "niet-technisch" en het tweede deel "technisch" van aard is.
+In het eerste deel zitten de hoofdstukken <a href="#communicatie-en-beleid">Communicatie en Beleid</a> 
+en <a href="#inspelen-op-gebruikerswensen-de-sleutel-tot-gebruik">Gebruikerswensen</a>.</p><p>Het tweede deel bevat de hoofdstukken <a href="#standaarden">Standaarden</a> en <a href="#architectuur">Architectuur</a>,
+waarin een technische uitwerking  van de eerste twee hoofdstukken staat.  </p></section></section>
+    <section data-format="markdown" class="informative" aria-busy="false" id="communicatie-en-beleid"><!--OddPage--><h2 id="x2-communicatie-en-beleid"><span class="secno">2. </span>Communicatie en beleid</h2><p><em>Dit onderdeel is niet normatief.</em></p><blockquote>
+<p><em>Dit hoofdstuk geeft een niet-technische inleiding voor bestuurders en managers. In dit hoofdstuk bekijken we:</em><br><em>- welk probleem willen we oplossen?</em><br><em>- wat zijn APIs en hoe helpen ze bij dit probleem?</em><br><em>- wanneer zijn APIs relevant voor mijn organisatie?</em><br><em>- voorbeelden van het gebruik van APIs in Nederland</em></p>
+</blockquote><p>Larissa gaat verhuizen van Den Haag naar Amsterdam. Ze gaat naar het gemeentehuis in Amsterdam om zich in te schrijven. Achter de schermen komt er een ingewikkelde gegevensstroom op gang.</p><p>Amsterdam en Den Haag houden elk hun eigen registratie van personen bij. De ICT systemen van Amsterdam moeten daarom de persoonsgegevens van Larissa opvragen bij de ICT systemen van Den Haag. Daarna kan Amsterdam Larissa in z’n eigen basisregistratie personen registreren. De gemeente Den Haag moet weten dat Larissa nu in Amsterdam staat ingeschreven. Dus stuurt  Amsterdam verwijsgegevens voor Larissa naar Den Haag. Den Haag verwerkt de verwijsgegevens voor Larissa in z’n lokale basisregistratie personen. Zowel Amsterdam als Den Haag moeten de mutaties van hun lokale basisregistratie personen ook nog doorgeven aan de <a href="https://www.autoriteitpersoonsgegevens.nl/nl/onderwerpen/gemeente/basisregistratie-personen-brp?qa=brp">centrale basisregistratie personen van de Autoriteit Persoonsgegevens</a> (BRP). Zo kan het drie werkdagen kosten om een eenvoudige verhuizing volledig te registreren.</p><p>Is het niet efficiënter om één basisregistratie personen bij te houden, in plaats van gegevens heen en weer te schuiven van de ene lokale registratie naar de andere?</p><img src="media/visualisatie-data-bij-de-bron.png" alt="Visualisatie van de voordelen van het bij de bron houden van data met APIs" width="700"><section id="de-digitale-overheid-heeft-een-probleem"><h3 id="x2-1-de-digitale-overheid-heeft-een-probleem"><span class="secno">2.1 </span>De digitale overheid heeft een probleem</h3><p>Bij veel ICT systemen van de overheid zitten de gegevens (de data) helemaal verweven in de applicatie. Ieder systeem heeft z'n eigen database en kopieert data van en naar andere systemen. Zo werken veel systemen bij gemeenten met kopieën van de landelijke basisregistraties. Met de jaren ontstaat daardoor een wirwar aan koppelingen tussen systemen.</p><p><img src="media/visualisatie-probleem.jpg" alt="Visualisatie van de ongestructureerde datakoppelingen tussen ICT systemen van de overheid. Bron: VNG Realisatie." width="700"> Bron: VNG Realisatie.</p><p>De huidige situatie brengt een aantal problemen met zich mee:</p><ol>
+<li>De kans op fouten en datalekken neemt toe bij het veelvuldig kopiëren en gedupliceerd opslaan van gegevens.</li>
+<li>Het kopiëren en synchroniseren van gegevens tussen systemen kost tijd, resources en geld.</li>
+<li>Personen of bedrijven hebben geen regie over hun gegevens als deze overal verspreid staan.</li>
+<li>Veel van de systemen en koppelingen werken afhankelijkheid van leveranciers in de hand.</li>
+</ol><p>We kunnen de digitale overheid veiliger, efficiënter en beter beheersbaar maken door applicaties beter te scheiden van de gegevens en de gegevens alleen bij de bron te bewaren. Door de gegevens alleen door de bronhouder te laten beheren, hoeven ze niet meer op grote schaal gekopieerd, gedupliceerd en gesynchroniseerd te worden. Dit idee zit achter het <a href="https://www.gemmaonline.nl/images/gemmaonline/8/8b/Gemeentelijk_Gegevenslandschap_-_Beschrijving_informatiearchitectuur_v0_6.pdf">nieuwe gegevenslandschap</a> met als onderdelen <a href="https://www.vngrealisatie.nl/nieuws/start-programma-haal-centraal">Haal Centraal</a> en <a href="https://commonground.nl/">Common Ground</a>.</p><p>Dit vraagt om technologie waarmee je gegevens op een betrouwbare en schaalbare manier kan ontsluiten bij de bron. Dat kan met APIs.</p></section><section id="wat-is-een-api"><h3 id="x2-2-wat-is-een-api"><span class="secno">2.2 </span>Wat is een API?</h3><p>Een <a href="https://www.ensie.nl/dimitri-van-hees/api"><em>application programming interface</em> (API)</a> is een gestructureerd en gedocumenteerd koppelvlak voor communicatie tussen applicaties. Je kan een API zien als een digitale stekkerdoos die applicaties met elkaar verbindt. APIs bestaan al zo lang er computers zijn.</p><p>Hier hebben wij het in het bijzonder over APIs waarmee je applicaties over het Internet kan koppelen. Zogenaamde <a href="../Werkgroep%20API%20strategie/Designrules.md#restful-principes">REST</a> APIs doen voor applicaties wat websites voor mensen doen. Websites presenteren informatie aan mensen, REST APIs maken applicaties en gegevens over het Internet beschikbaar voor andere applicaties. De technologie achter websites en REST APIs heeft daarom veel gemeen.</p><p>De meeste applicaties gebruiken APIs onder de motorkap zonder dat de eindgebruiker dat ziet. Als je een app opent voor het weer, dan merk je niet dat deze app gegevens ophaalt bij het <a href="https://meteoserver.nl/real-time-KNMI-weer-API.php">KNMI via een API</a>. Degene die het meest direct met een API te maken krijgt is de ontwikkelaar van de applicatie die de API gebruikt. Zij moet begrijpen hoe de API werkt en hoe je deze vanuit de applicatie moet bevragen.</p><p>Hier verschillen APIs dus van websites. Een website bouw je voor de eindgebruiker die hem bezoekt. Een API maak je voor programmeurs die er applicaties mee bouwen. Daarom is het gewoonte om APIs aan te bieden op het <em>developer</em> subdomein van een website, zoals <a href="https://developer.overheid.nl/">developer.overheid.nl</a> voor APIs van de overheid.</p></section><section id="wat-betekenen-apis-voor-mijn-organisatie"><h3 id="x2-3-wat-betekenen-apis-voor-mijn-organisatie"><span class="secno">2.3 </span>Wat betekenen APIs voor mijn organisatie?</h3><p>APIs zijn een middel, geen doel. De missie van een organisatie bepaalt of APIs toegevoegde waarde hebben in de ICT processen. Dat kan het geval zijn als de organisatie een dienstverlenende taak heeft en gegevens beheert die andere organisaties gebruiken. Of als de organisatie deel uit maakt van een of meer ketens.</p><p>Een aantal zaken om te overwegen:</p><ol>
+<li><strong>Gegevens bij de bron beheren.</strong> Voorkom het dupliceren en lokaal bewerken van centrale gegevensverzamelingen. Dit maakt processen efficiënter en voorkomt dat kopieën van gegevensverzamelingen uit de pas lopen.</li>
+<li><strong>Processen en gegevens losser koppelen.</strong> Vaste ketens maken steeds vaker plaats voor lossere koppelingen met een kortere levensduur, zoals in de visie van <a href="https://vng.nl/samen-organiseren/common-ground">Common Ground</a>. Of in <a href="https://ec.europa.eu/digital-single-market/en/smart-cities"><em>smart cities</em></a> als  <a href="https://amsterdamsmartcity.com/projects/dataamsterdamnl">Amsterdam</a> waar een wisselende groep publieke en private organisaties dynamisch gegevens uitwisselt.</li>
+<li><strong>Specifieke vragen bedienen.</strong> Afnemers hebben meestal niet alle gegevens uit je gegevensverzameling nodig. Voorbeeld: een applicatie die in de <a href="https://bag.basisregistraties.overheid.nl/">Basisregistratie Adressen en Gebouwen</a> het adres opzoekt dat hoort bij een postcode en huisnummer hoeft niet het bouwjaar, oppervlakte en gebruiksdoel van het pand te krijgen.</li>
+<li><strong>ICT projecten 'Agile' uitvoeren.</strong> Steeds meer organisaties zoals <a href="https://logius.nl/onze-organisatie/safe-bij-logius">Logius</a> ontwikkelen systemen volgens <a href="https://www.agilealliance.org/agile101/">Agile principes</a>. Dit betekent dat je snel in moet kunnen spelen op veranderende vragen van de gebruikers aan je gegevensbronnen. </li>
+<li><strong>Afhankelijkheid van leveranciers verminderen.</strong> Voorkom dat koppelingen maatwerk vereisen of afhankelijk zijn van producten of kennis van een specifieke leverancier. Gebruik waar mogelijk <a href="https://www.forumstandaardisatie.nl/thema/open-standaarden">open standaarden</a>.</li>
+<li><strong>Innovatie stimuleren.</strong> Door gegevens openbaar aan te bieden kunnen zowel publieke als private ondernemingen ermee aan de slag. Zij gebruiken de gegevens soms op verrassende manieren die nieuwe kansen creëren.</li>
+<li><strong>Wettelijke verplichting.</strong> Er komt steeds meer wettelijke verplichting om herbruikbare overheidsdata te publiceren. In de recentere wetgeving wordt het gebruik van APIs expliciet verplicht voor bepaalde data. Bijvoorbeeld in de <a href="https://ec.europa.eu/digital-single-market/en/proposal-revision-public-sector-information-psi-directive">Europese richtlijn</a> die in 2021 zal leiden tot een herziening van de <a href="https://wetten.overheid.nl/BWBR0036795/2016-10-01">Wet Hergebruik van Overheidsinformatie</a>.</li>
+</ol><p>Inventariseer welke gegevens je organisatie voortbrengt en welke gegevens je gebruikt van andere organisaties. Bekijk hoe de bestaande ICT koppelingen ingericht zijn. Is je organisatie daarbij afhankelijk van bepaalde producten of leveranciers? Kan het  efficiënter, flexibeler, veiliger en meer open met APIs?</p><p>Deze <a href="https://docs.geostandaarden.nl/api/API-Strategie/">API strategie</a>  beschrijft de standaarden, ontwerpprincipes en veiligheidsmaatregelen die ervoor zorgen dat alle overheden hun APIs op een inzichtelijke, gebruikersvriendelijke, veilige en geharmoniseerde manier aanbieden. Door deel te nemen in het <a href="https://www.geonovum.nl/themas/kennisplatform-apis">Kennisplatform APIs</a> krijgt je organisatie meer inzicht in de toegevoegde waarde die APIs voor jouw toepassing al dan niet kunnen bieden.</p></section><section id="nederland-heeft-al-schitterende-voorbeelden"><h3 id="x2-4-nederland-heeft-al-schitterende-voorbeelden"><span class="secno">2.4 </span>Nederland heeft al schitterende voorbeelden</h3><p>Veel publieke organisaties in Nederland bieden hun gegevens met APIs aan. De <a href="https://www.ns.nl/reisinformatie/ns-api">Nederlandse Spoorwegen</a> bijvoorbeeld, die met APIs actuele vertrektijden, prijzen, storingen en reisadviezen publiceren om in apps te gebruiken. En de Rijksdienst voor het Wegverkeer die de <a href="https://opendata.rdw.nl/resource/m9d7-ebf2.json">kentekenregistratie voor voertuigen</a> met een API aanbiedt.</p><p>In februari 2019 won de <a href="https://zakelijk.kadaster.nl/-/bag-api">Basisregistratie Adressen en Gebouwen (BAG) API</a> van Kadaster de <a href="https://www.geonovum.nl/over-geonovum/actueel/kadaster-wint-prijs-beste-api-van-de-overheid">Gouden API</a> die het <a href="https://www.geonovum.nl/themas/kennisplatform-apis">Kennisplatform APIs</a> uitloofde voor de beste API van de overheid. De <a href="https://zakelijk.kadaster.nl/bag">BAG</a> registreert voor elk adres in Nederland gegevens als de geografische coördinaten, het bouwjaar van het pand, de oppervlakte en het vergunde gebruiksdoel. Verzekeraars, hypotheekverstrekkers, hulpdiensten, milieudiensten en vele anderen gebruiken informatie uit de BAG. Dat de BAG API voldoet aan een behoefte blijkt wel uit de 300 miljoen consultaties die de BAG API in 2018 verwerkte.</p><p>De APIs van <a href="https://api-docs.luchtmeetnet.nl/">Luchtmeetnet</a> en van de <a href="https://www.kvk.nl/producten-bestellen/koppeling-handelsregister/kvk-api/?msclkid=ec7b5b3fe30a10cb537907f53d6cd07f&amp;utm_source=bing&amp;utm_medium=cpc&amp;utm_campaign=0.%20Brand%20-%20Combinaties&amp;utm_term=%2bkvk%20%2bapi&amp;utm_content=KVK%20-%20API%20%28bmm%29">Kamer van Koophandel</a> kregen bij de <a href="https://www.geonovum.nl/over-geonovum/actueel/kadaster-wint-prijs-beste-api-van-de-overheid">Gouden API</a> eervolle vermeldingen vanwege hun relevantie en gebruiksgemak. De API van de Kamer van Koophandel geeft applicaties  toegang tot de gegevens van het handelsregister. Hiermee kunnen bijvoorbeeld bedrijven en gemeenten CRM systemen, zaaksystemen en factureringssystemen aan het handelsregister koppelen. De API van Luchtmeetnet geeft bijvoorbeeld <a href="https://www.buienradar.nl/nederland/gezondheid/luchtkwaliteit/index">weer-apps</a> de mogelijkheid om ook informatie over luchtkwaliteit voor astmatici te geven.</p><p>Het portal <a href="https://developer.overheid.nl/">developer.overheid.nl</a> geeft een overzicht van APIs die Nederlandse overheidsorganisaties aanbieden. Heeft jouw organisatie gegevens waar bedrijven, burgers of andere overheden iets mee kunnen?</p></section></section>
+    <section data-format="markdown" class="informative" aria-busy="false" id="inspelen-op-gebruikerswensen-de-sleutel-tot-gebruik"><!--OddPage--><h2 id="x3-inspelen-op-gebruikerswensen-de-sleutel-tot-gebruik"><span class="secno">3. </span>Inspelen op gebruikerswensen: dé sleutel tot gebruik</h2><p><em>Dit onderdeel is niet normatief.</em></p><section id="inleiding-0"><h3 id="x3-1-inleiding"><span class="secno">3.1 </span>Inleiding</h3><p>Overheden bezitten kwalitatief hoogwaardige data en bieden deze aan via API’s.
+Vanuit het open data-perspectief maken overheden het hiermee mogelijk dat
+anderen -binnen én buiten de overheid- zinvolle toepassingen kunnen ontwikkelen,
+die maatschappelijke meerwaarde bieden. Maar de overheid gaat nog verder: bij
+initiatieven als Common Ground is het gebruik van API’s zelfs randvoorwaardelijk
+om werkprocessen zodanig in te richten, dat data altijd bij de bron bevraagd en
+gewijzigd kan worden. Een belangrijke succesfactor in deze ontwikkelingen is de
+mate waarin overheden erin slagen om drempels voor het gebruik van hun API’s weg
+te nemen. Om het gebruik zo laagdrempelig mogelijk te maken, is het essentieel
+dat er aandacht is voor de wensen van gebruikers. En om te begrijpen welke wensen ze hebben, is het essentieel om te begrijpen wie die gebruikers zijn. In generieke zin zijn de gebruikers van API's developers: mensen die toepassingen ontwikkelen. Deze developers fungeren als intermediair tussen de data- of dienstaanbieder enerzijds en de eindgebruiker anderzijds. Neem bijvoorbeeld een gemeente die het mogelijk wil maken dat burgers makkelijk melding kunnen maken van een defecte lantarenpaal, losliggende stoeptegel of zwerfvuil, De burger is dan de eindgebruiker, maar de ontwikkelaar van de Melding Openbare Ruimte app is de gebruiker van de API's die de gemeente aanbiedt om bijvoorbeeld een kaartondergrond op te halen of een melding aan te bieden aan de gemeente.
+De gebruikerswensen liggen niet alleen op het “wat” (wat voor data krijg ik?), maar zeker ook op het “hoe” (hoe
+makkelijk kan ik aan de slag met deze API?). Bij de eerste kennismaking met de
+API moet de gebruiker verleidt worden om de API te gaan gebruiken en in alle
+volgende fases van gebruik (implementeren, in productie nemen en in productie
+houden) moet de gebruikerservaring zodanig zijn, dat de gebruiker geen enkele
+reden heeft om af te haken. Sterker nog: idealiter wordt de gebruiker zó
+enthousiast over de API en de bijbehorende ondersteuning, dat de gebruiker
+onderdeel wordt van de gebruikerscommunity en actief gaat bijdragen aan verdere
+ontwikkeling en promotie van die API. Merk op dat dit effect alleen bereikt kan
+worden, wanneer de totaalbeleving klopt: ook al is het product (de data) zelf
+nog zo goed, als de gebruikservaring belabberd is, dan zul je niet veel
+potentiële gebruikers verleiden om met je data zinvolle toepassingen te gaan
+ontwikkelen. En nog erger: gebruikers die tóch met de API aan de slag gaan,
+zullen de helpdesk van de aanbieder zwaar gaan belasten, de data mogelijk
+verkeerd gaan interpreteren en de ICT-infrastructuur onnodig zwaar belasten,
+wanneer zij slechts omslachtig (met veel API-calls) de gewenste gegevens kunnen
+krijgen.</p></section><section id="overkoepelende-aanbeveling-biedt-een-goede-developer-experience-dx"><h3 id="x3-2-overkoepelende-aanbeveling-biedt-een-goede-developer-experience-dx"><span class="secno">3.2 </span>Overkoepelende aanbeveling: biedt een goede ‘developer experience (DX)’</h3><p>De belangrijkste aanbeveling aan aanbieders van API’s is om zich te richten op
+die gebruikservaring; op een goede ‘developer experience (DX)’. Goede DX komt
+voort uit stapeling van aandacht voor <em>functionality</em> (functionaliteit - wat
+moet de API doen?), voor <em>usability</em> (hoe bruikbaar is de API voor de
+developer?) en daar bovenop voor de <em>experience</em> (hoe voelt de developer zich
+als die de API gebruikt?). Dat laatste aspect -hoe voelt de developer zich-
+klinkt wellicht wat vaag, maar het is in essentie de optelsom van ervaringen in
+de interactie tussen een developer en een API aanbieder. Stel: een developer,
+Johan (26 jaar – ZZP-er), heeft moeite om een bepaalde API te vinden, vervolgens
+blijkt het registratieproces lastig en krijgt hij de API key pas een week later,
+daarna blijkt de documentatie in voor Johan deels onbegrijpelijk jargon
+geschreven (én is het ook nog eens een PDF van 352 pagina’s), dan heeft Johan
+meerdere calls nodig om de gewenste data te krijgen en uiteindelijk is data
+helemaal niet in het door Johan gewenst formaat. Elke kleine irritatie is op
+zichzelf niet onoverkomelijk, maar de optelsom maakt dat Johan concludeert: “Dit
+is niet te doen, ik zoek wel wat anders!”.</p></section><section id="gebruik-van-onboarding-tot-in-productie"><h3 id="x3-3-gebruik-van-onboarding-tot-in-productie"><span class="secno">3.3 </span>Gebruik: van ‘onboarding’ tot ‘in productie’</h3><p>De zwakte van veel teksten over ‘developer experience’ is dat men zich vaak
+alleen richt op de use case van een technische developer die een API wil
+implementeren - denk aan Johan in de vorige paragraaf. Gebruik begint echter
+niet bij de poging tot implementatie; hier gaan nog stappen aan vooraf. Johan
+heeft zich al een aantal vragen gesteld, voordat hij besloot om die poging te
+wagen. Die vragen -en daarmee de stappen die hij doorloopt- zijn beter te
+introduceren aan de hand van het voorbeeld van een grotere softwareleverancier.
+Stel: Anne (43 jaar) werkt als product manager bij een commerciële
+softwareleverancier en heeft een aantal applicaties voor de gemeentelijke markt
+in haar portfolio. Ze ziet een API op een ontwikkelaarsportaal en beoordeelt aan
+de hand van de functionele specificaties of implementatie van de API meerwaarde
+biedt voor één van haar applicaties. Eén API trekt haar aandacht en Anne vraagt
+Steven (56 jaar, architect bij hetzelfde bedrijf) om te beoordelen of de API
+past binnen de software stack van het bedrijf en kritisch te kijken naar eventuele security en privacy issues. Steven ziet mogelijkheden en
+vervolgens krijgt Jeffrey (37 jaar, software engineer bij hetzelfde bedrijf) de
+opdracht om binnen een dag te beoordelen of hij de API succesvol kan integreren
+in de nieuwe versie van het product uit Anne’s portfolio. Na Jeffrey’s positieve
+oordeel besluit Gea, de manager, om tijd en geld vrij te maken voor
+implementatie. Zo komt de API uiteindelijk in de productieversie terecht: *"developer tries, business buys"*.</p><p>Dit eindresultaat is bereikt, doordat in alle fases de ‘onboarding’ -het proces
+dat Anne, Steven en Jeffrey doorliepen toen zij voor de eerste keer gebruik
+maakten van een digitale service (het aanbieden van de API)- prettig verliep.
+Uit marketingonderzoeken blijkt een prettige eerste gebruikerservaring van een
+online platform (bijvoorbeeld het ontwikkelaarsportaal waarop Anne de API
+ontdekte en zij vervolgens samen met Steven en Jeffrey de API beoordeelde) veel
+invloed heeft op het verdere gebruik ervan. Oftewel: de kans is groot dat dit
+bedrijf vervolgens ook andere API’s op dit ontwikkelaarsportaal gaat gebruiken.</p><p>De kern van dit verhaal is dat een API technisch gezien weliswaar een machine tot machine koppeling is, maar strategisch juist gezien moet worden als een product. En dat product moet gebruikers (zie ze als potentiële klanten!) verleiden tot gebruik. Dan zijn aspecten als de winkelervaring (in een API store of ontwikkelaarsportaal), de geboden service en de kwaliteit van het product de doorslaggevende factoren in de beslissing om tot gebruik over te gaan.</p></section><section id="specifieke-aanbevelingen-voor-een-goede-dx"><h3 id="x3-4-specifieke-aanbevelingen-voor-een-goede-dx"><span class="secno">3.4 </span>Specifieke aanbevelingen voor een goede DX</h3><section id="aanbeveling-1-werk-met-meerdere-persona-s"><h4 id="x3-4-1-aanbeveling-1-werk-met-meerdere-persona-s"><span class="secno">3.4.1 </span>Aanbeveling 1: werk met (meerdere) persona’s</h4><p>Een API is weliswaar een machine tot machine koppeling, maar onthoud: API's ontwerp en bouw je niet voor een machine, maar voor een gebruiker: een
+mens! Om een goede DX te bieden, moet je dus eerst weten voor wie je ontwerpt en
+bouwt, voordat je dat goed kunt doen. Persona’s zijn dan belangrijk, er is niet
+maar één type developer! Redeneer van buiten naar binnen: wie zijn mijn
+gebruikers, wat willen zij kunnen doen en wat moet ik doen om dat zo goed
+mogelijk te faciliteren. Het typeren van gebruikers en analyseren welke
+behoeften zij hebben, doe je op basis van persona’s.</p><p>Belangrijk hierbij is om te onderkennen dat er verschillende niveaus of typen
+gebruik zijn. Onderscheid daarom -met de fases van ‘onboarding’ tot ‘in
+productie’ in het achterhoofd- minimaal de volgende persona’s:</p><ul>
+<li><p>een product manager / business developer: focus op het kunnen beoordelen van
+functionaliteit (“Is dit relevant voor mijn product / mijn doel?”)</p>
+</li>
+<li><p>een architect: focus op het beoordelen van het informatiemodel (“Hoe
+integreert dit met de rest van onze software?”) en security- en privacy-aspecten.</p>
+</li>
+<li><p>een technische developer: focus op het daadwerkelijk kunnen gebruiken (“Hoe
+krijg ik dit werkend?”).</p>
+</li>
+</ul></section><section id="aanbeveling-2-analyseer-welke-api-s-je-aan-moet-bieden-welke-informatievragen-wil-je-beantwoorden"><h4 id="x3-4-2-aanbeveling-2-analyseer-welke-api-s-je-aan-moet-bieden-welke-informatievragen-wil-je-beantwoorden"><span class="secno">3.4.2 </span>Aanbeveling 2: analyseer welke API’s je aan moet bieden: welke informatievragen wil je beantwoorden?</h4><p>De ene API is de andere niet. In veel modellen worden API’s in drie categorieën
+onderverdeeld: de System API (die werkt op het niveau van de databron), de
+Process API (die doet aan <em>orchestration</em> door één of meerdere System API’s aan
+te roepen) en de Convenience of Experience API (die één specifieke
+gebruikersvraag beantwoord). Vraag je altijd af welke informatievragen de
+gebruiker heeft – in veel gevallen hangen deze vragen niet 1:1 samen met het
+datamodel.</p><p>Stel dat je de Basisregistratie Adressen en Gebouwen wil ontsluiten. De
+informatievraag “Geef me het volledige adres bij deze postcode” is alleen te
+beantwoorden door intern bij een Verblijfsobject de Openbare Ruimte naam,
+Nummeraanduiding en Woonplaats op te vragen en te combineren tot één
+adressering. Bij een System API moet je meerdere calls doen om dit adres op te
+bouwen, terwijl een Convenience API deze gangbare (maar complexe) vraag in één
+call kan beantwoorden. Het aanbieden van Convenience API’s naast System API’s is
+dus erg gebruiksvriendelijk: de 80% gebruikers die hiermee geholpen zijn,
+confronteer je met slechts 20% van de complexiteit. Vergelijk dit met de
+Toptaken-aanpak bij de websites van veel gemeenten: de meest aangevraagde
+producten (bijv. nieuw paspoort en rijbewijs) staan pontificaal op de homepage,
+terwijl de minder vaak gevraagde diensten op vervolgpagina’s staan. Zo reduceer
+je de complexiteit voor een zo groot mogelijk deel van je gebruikers.</p></section><section id="aanbeveling-3-documenteer-gericht-op-de-gebruiker-biedt-snel-inzicht-en-gebruik-oas-3"><h4 id="x3-4-3-aanbeveling-3-documenteer-gericht-op-de-gebruiker-biedt-snel-inzicht-en-gebruik-oas-3"><span class="secno">3.4.3 </span>Aanbeveling 3: documenteer gericht op de gebruiker, biedt snel inzicht en gebruik OAS 3</h4><p>Elk type gebruiker dat in aanbeveling 1 wordt genoemd (business developer,
+architect, technische developer) verdient zijn eigen ‘Getting started’
+documentatie, gericht op het snel kunnen beoordelen en/of toepassen.
+Documentatie is nooit een lijvig document (wanneer veel documentatie nodig
+lijkt, is de functionaliteit vermoedelijk te complex) én nooit een PDF: laat je
+gebruikers makkelijk klikken naar relevante onderdelen binnen én buiten de
+documentatie! Referentie-implementaties kunnen ook zinvol zijn om snel een
+indruk te bieden van functionaliteit. Voor de technische developer is de
+documentatie conform de Open API Specifiction 3.0 (OAS 3); deze staat in
+Nederland op de ‘Pas toe of leg uit-lijst’ van het Forum Standaardisatie.</p></section><section id="aanbeveling-4-minimaliseer-time-to-first-call-met-een-goede-sandbox"><h4 id="x3-4-4-aanbeveling-4-minimaliseer-time-to-first-call-met-een-goede-sandbox"><span class="secno">3.4.4 </span>Aanbeveling 4: minimaliseer Time to First Call met een goede Sandbox</h4><p>Zorg dat een developer snel een werkend voorbeeld heeft. Dit vraagt om een goed
+gedocumenteerde, realistische Sandbox: een experimenteeromgeving met testdata. Deze Sandbox dient alle aspecten van de
+API te ondersteunen en identiek gedrag aan de productieversie van de API te
+vertonen, bijvoorbeeld rond authenticatie. Daar waar mogelijk is het zeer
+wenselijk dat meerdere API’s dezelfde dataset bieden als Sandbox, zodat ook het
+samenspel tussen verschillende API’s getest kan worden.</p></section><section id="aanbeveling-5-borg-ontwikkeling-en-beheer"><h4 id="x3-4-5-aanbeveling-5-borg-ontwikkeling-en-beheer"><span class="secno">3.4.5 </span>Aanbeveling 5: borg ontwikkeling en beheer</h4><p>Ook al is een API nog zo goed ontwikkeld, wanneer doorontwikkeling en beheer
+niet goed geregeld is, zal die API niet succesvol zijn. Essentieel hierin is dat
+je gebruikers duidelijkheid biedt:</p><section id="aanbeveling-5-1-stel-een-sla-op"><h5 id="x3-4-5-1-aanbeveling-5-1-stel-een-sla-op"><span class="secno">3.4.5.1 </span>Aanbeveling 5.1 Stel een SLA op</h5><blockquote>
+<p>  Maak duidelijk welke verwachtingen een gebruiker mag hebben qua uptime,
+  service window, beprijzing etc.</p>
+</blockquote></section><section id="aanbeveling-5-2-biedt-een-roadmap-aan"><h5 id="x3-4-5-2-aanbeveling-5-2-biedt-een-roadmap-aan"><span class="secno">3.4.5.2 </span>Aanbeveling 5.2 Biedt een roadmap aan</h5><blockquote>
+<p>  Maak duidelijk of en zo ja, wanneer er eventuele wijzigingen te verwachten
+  zijn en hoe lang de API minimaal beschikbaar blijft.</p>
+</blockquote></section><section id="aanbeveling-5-3-doe-aan-versiebeheer"><h5 id="x3-4-5-3-aanbeveling-5-3-doe-aan-versiebeheer"><span class="secno">3.4.5.3 </span>Aanbeveling 5.3 Doe aan versiebeheer</h5><blockquote>
+<p>  Borg dat de toepassing van de gebruiker blijft werken, door te zorgen voor
+  backward compatability. Grotere updates kunnen als nieuwe versie worden
+  uitgebracht, waarbij oudere versies nog een gegarandeerde periode
+  beschikbaar blijven. Het versienummer kan in elke call staan, bijv. GET
+  /api/v1.0/... En versiebeheer slaat niet alleen op de API zelf, maar ook op de bijbehorende documentatie, Sandbox, etc.</p>
+</blockquote></section><section id="aanbeveling-5-4-sluit-de-feedback-loop-betrek-de-community"><h5 id="x3-4-5-4-aanbeveling-5-4-sluit-de-feedback-loop-betrek-de-community"><span class="secno">3.4.5.4 </span>Aanbeveling 5.4 Sluit de feedback-loop: betrek de community</h5><blockquote>
+<p>  Om echt van buiten naar binnen te kunnen werken, is het betrekken van de
+  community van gebruikers onmisbaar. De community kan vertellen hoe de
+  developer experience tot nu toe is, welke verbeteringen wenselijk zijn,
+  welke gebruikersvragen er sterk leven, maar nog onvoldoende ondersteund
+  worden, etc., etc. Daarnaast wil je de community ook actief informeren over
+  voorgenomen wijzigingen e.d. Het gebruik van API keys is een manier om je
+  gebruikers te kennen.</p>
+</blockquote></section></section><section id="aanbeveling-6-maak-duidelijk-wat-je-data-betekent"><h4 id="x3-4-6-aanbeveling-6-maak-duidelijk-wat-je-data-betekent"><span class="secno">3.4.6 </span>Aanbeveling 6: maak duidelijk wat je data betekent</h4><p>Wanneer je data openstelt voor derden, inclusief niet-specialisten, is het
+essentieel om eenduidig vast te leggen wat de data betekent, waarbij deze
+betekenis ook voor niet-specialisten begrijpelijk is. Het vastleggen van
+semantiek kan o.a. door definities en informatiemodellen goed online te ontsluiten (zoals bijvoorbeeld in de Stelselcatalogus Omgevingswet),
+maar ook door praktischere zaken als heldere naamgeving van variabelen etc.</p></section><section id="aanbeveling-7-wees-vindbaar-voor-developers"><h4 id="x3-4-7-aanbeveling-7-wees-vindbaar-voor-developers"><span class="secno">3.4.7 </span>Aanbeveling 7: wees vindbaar voor developers</h4><p>Een goede, gebruiksgerichte API, die bovendien actief wordt beheerd en
+doorontwikkeld, kan nog steeds weinig gebruikt worden wanneer deze API niet goed
+vindbaar is. Zorg daarom dat je een goed developersportaal hebt, nationaal idealiter bij developer.overheid.nl.
+Als een API een product is, hoort dat product ook in een goede winkel te staan. En in een succesvolle winkel is altijd goed nagedacht over productpresentatie: presenteer breed toepasbare API’s en
+datasets prominenter dan specifiekere API’s en obscure datasets, wederom te
+vergelijken met de toptaken-aanpak bij gemeentelijke websites. Een goed
+developersportaal informeert niet alleen over beschikbare API’s, maar inspireert
+en verleidt zelfs developers om bepaalde API’s te gebruiken. Het vullen van het
+developersportaal mag daarom nooit sluitpost van een project zijn.
+Formuleer hierbij ook goed het ambitieniveau:</p><ul>
+<li><p>API store: de one-stop-shop, waarin je niet alleen (het bestaan van) de API ontdekt, maar ook de documentatie vindt, de API kunt uitproberen, etc. Het runnen van een API store
+kan zelfs zover gaan, dat er centraal proxy's worden ontwikkeld op API's van andere aanbieders en documentatie geredigeerd, om zo voor de eigen gebruikers een zo uniform mogelijke gebruikerservaring te garanderen.</p>
+</li>
+<li><p>API catalogus: uitsluitend gericht op het ontdekken van API's, waarna doorverwezen wordt naar de API store van de desbetreffende aanbieder.</p>
+</li>
+<li><p>hybride oplossing: een combinatie van een catalogus en een store. Alle API's staan in de catalogus, een kleine subset (de high-value API's) wordt volledig aangeboden. Deze hybride oplossing zou
+een mooi ambitieniveau voor developer.overheid.nl kunnen zijn: alle overheids-API's zijn vindbaar en voor de meest generieke en populaire API's ben je direct op de juiste plaats.</p>
+</li>
+</ul><p>Een bijzondere categorie die de overheid ook nodig gaat hebben, o.a. door de ontwikkelingen in Common Ground, is de API spec store: een plaats waarin API specificaties gepubliceerd kunnen worden. Leveranciers kunnen op basis van die specificaties zelf hun specificatie-conforme API's ontwikkelen, waarmee de interoperabiliteit van gegevens binnen het gemeentelijke applicatielandschap wordt vergroot.</p><p>In de context van API stores en API catalogi is het belangrijk om te realiseren dat developer experience niet alleen een externe focus heeft (gericht op laten ontdekken, evalueren, testen en gebruiken van API's), maar ook een interne focus, gericht op het activeren van potentiële API-aanbieders. Zij moeten getriggerd worden om API's te ontwikkelen, te ontsluiten in je API store of catalogus, te beschrijven conform bepaalde kwaliteitseisen, etc.</p></section><section id="aanbeveling-8-niet-alles-is-een-api"><h4 id="x3-4-8-aanbeveling-8-niet-alles-is-een-api"><span class="secno">3.4.8 </span>Aanbeveling 8: niet alles is een API!</h4><p>Bedenkt altijd goed of een API de juiste oplossing is. In sommige gevallen is
+een bulk download nog steeds praktischer voor een gebruiker. Wanneer een API
+zinvol is? Hoe hoger de mutatiefrequentie van de data, hoe zinvoller een API
+wordt. En bij hoge mutatiefrequenties, is een API die was-wordt leveringen kan
+bieden zinvol. Denk hierbij weer aan 'API als een product': ga niet blind data ontsluiten, maar begin bij de vraag welke propositie je neer wil zetten.</p></section></section></section>
+    <section data-format="markdown" class="informative" aria-busy="false" id="standaarden"><!--OddPage--><h2 id="x4-standaarden"><span class="secno">4. </span>Standaarden</h2><p><em>Dit onderdeel is niet normatief.</em></p><p>Binnen de Nederlandse publieke sector zijn meerdere standaarden die betrekking hebben op APIs. In dit hoofdstuk geven we verwijzingen naar de standaarden die zijn voortgekomen uit het Kennisplatform APIs. In een volgende versie van dit document zal hier een compleet overzicht met relevante standaarden komen.</p><section id="api-designrules-nederlandse-api-strategie-iia"><h3 id="x4-1-api-designrules-nederlandse-api-strategie-iia"><span class="secno">4.1 </span>API Designrules (Nederlandse API Strategie IIa)</h3><p>Deze sectie beschrijft de status en uitgangspunten voor de standaard "API Designrules". De standaard is een op zichzelfstaand document en is hier te vinden:</p><p><a href="https://logius-standaarden.github.io/API-Design-Rules/">https://logius-standaarden.github.io/API-Design-Rules/</a> (werkversie)</p><p><a href="https://publicatie.centrumvoorstandaarden.nl/api/adr/">https://publicatie.centrumvoorstandaarden.nl/api/adr/</a> (stabiele versie)</p><section id="oorsprong-standaard"><h4 id="x4-1-1-oorsprong-standaard"><span class="secno">4.1.1 </span>Oorsprong standaard</h4><p>De API designrules vinden hun oorsprong in de <a href="https://aandeslagmetdeomgevingswet.nl/digitaal-stelsel/aansluiten/standaarden/api-en-uri-strategie/">"API strategie" van het digitaal stelsel omgevingswet (DSO)</a>. Bij het opstellen van de API Designrules is de DSO API strategie het startpunt geweest en heeft de werkgroep API strategie (onder leiding van Jasper Roes) gekeken hoe deze toepasbaar gemaakt kunnen worden voor de hele Nederlandse publieke sector.</p></section><section id="status-bij-forum-standaardisatie"><h4 id="x4-1-2-status-bij-forum-standaardisatie"><span class="secno">4.1.2 </span>Status bij forum standaardisatie</h4><p>De API designrules standaard is op 9 juli 2020 goedgekeurd door het OBDO voor opname op de "pas toe of leg uit lijst" van het <a href="https://www.forumstandaardisatie.nl/lijst-open-standaarden/in_lijst/verplicht-pas-toe-leg-uit">forum standaardisatie</a>. </p><section id="werkingsgebied-standaard"><h5 id="x4-1-2-1-werkingsgebied-standaard"><span class="secno">4.1.2.1 </span>Werkingsgebied standaard</h5><p>Bij aanmelding was het beoogd organisatorisch werkingsgebied:
+Overheden, semi-overheden en instellingen uit de publieke sector</p></section><section id="toepassingsgebied-standaard"><h5 id="x4-1-2-2-toepassingsgebied-standaard"><span class="secno">4.1.2.2 </span>Toepassingsgebied standaard</h5><p>Bij aanmelding was het beoogd functioneel toepassingsgebied:
+Het aanbieden van RESTful APIs ten behoeve van het ontsluiten van overheids informatie/functionaliteit en enkelvoudige datasets aan eenieder waarvoor deze bedoeld is(burger, bedrijf, andere overheid, etc…). Het ontsluiten van meervoudige en/of statistische datasets via één API valt buiten het functioneel werkingsgebied hiervoor staat de standaard ODATA reeds op de lijst met aanbevolen standaarden. </p></section></section></section><section id="api-designrules-extensions-nederlandse-api-strategie-iib"><h3 id="x4-2-api-designrules-extensions-nederlandse-api-strategie-iib"><span class="secno">4.2 </span>API Designrules extensions (Nederlandse API Strategie IIb)</h3><p>Deze sectie beschrijft de status en uitgangspunten voor de standaard "API Designrules extensions". De (concept) standaard is een op zichzelfstaand document en is hier te vinden:</p><p><a href="https://geonovum.github.io/KP-APIs/API-strategie-extensies/">https://geonovum.github.io/KP-APIs/API-strategie-extensies/</a> (werkversie)</p><p><a href="https://docs.geostandaarden.nl/api/vv-hr-API-Strategie-ext-20190715/">https://docs.geostandaarden.nl/api/vv-hr-API-Strategie-ext-20190715/</a> (stabiele versie)</p><section id="oorsprong-standaard-0"><h4 id="x4-2-1-oorsprong-standaard"><span class="secno">4.2.1 </span>Oorsprong standaard</h4><p>De API designrules extensions bevatten onderwerpen die bij het opstellen van de eerste versie van de API designrules nog niet als stabiel werden beschouwd. Er wordt nog actief gewerkt om deze extensies tot een stabiele versie te maken. Uiteindelijk zal een deel van de extensies mogelijk direct onderdeel worden van de API design rules. Een ander deel zal een optionele extensie zijn die gebruikt kan worden wanneer specifieke extra functionaliteit nodig is.</p></section><section id="status"><h4 id="x4-2-2-status"><span class="secno">4.2.2 </span>Status</h4><p>De API designrules extensions zijn nog in ontwikkeling en hebben geen enkele status.</p><section id="werkingsgebied-standaard-0"><h5 id="x4-2-2-1-werkingsgebied-standaard"><span class="secno">4.2.2.1 </span>Werkingsgebied standaard</h5><p>Een werkingsgebied is (nog) niet van toepassing.</p></section><section id="toepassingsgebied-standaard-0"><h5 id="x4-2-2-2-toepassingsgebied-standaard"><span class="secno">4.2.2.2 </span>Toepassingsgebied standaard</h5><p>Een toepassingsgebied (nog) niet van toepassing.</p></section></section></section><section id="nederlands-profiel-oauth"><h3 id="x4-3-nederlands-profiel-oauth"><span class="secno">4.3 </span>Nederlands profiel OAuth</h3><p>Deze sectie beschrijft de status en uitgangspunten voor het Nederlands profiel OAuth. het profiel zelf is een op zichzelfstaand document.
+Het Nederlands profiel OAuth is hier te vinden:</p><p><a href="https://publicatie.centrumvoorstandaarden.nl/api/oauth/static.html">https://publicatie.centrumvoorstandaarden.nl/api/oauth/static.html</a></p><p>In aanvulling hierop is er een document dat de verschillen met iGOV kort samenvat en voorziet van rationales.</p><p><a href="https://github.com/Logius-standaarden/OAuth-NL-profiel/blob/master/Additional%20specification%20and%20constraints%20of%20iGov-NL%20to%20the%20iGov%20profile.md">https://github.com/Logius-standaarden/OAuth-NL-profiel/blob/master/Additional%20specification%20and%20constraints%20of%20iGov-NL%20to%20the%20iGov%20profile.md</a></p><section id="oorsprong-standaard-1"><h4 id="x4-3-1-oorsprong-standaard"><span class="secno">4.3.1 </span>Oorsprong standaard</h4><p>Het opstellen van deze standaard is voortgekomen uit het Expert advies OAuth [<cite><a class="bibref" href="#bib-expert">Expert</a></cite>]. Daarin wordt aangeraden eerst een nederlands profiel op stellen alvorens OAuth op de pas toe of leg uit lijst van het forum standaardisatie te plaatsen. Het maken van dit Nederlandse profiel is opgepakt door de werkgroep Authenticatie/Autorisatie van het Kennisplatform API's.</p></section><section id="status-bij-forum-standaardisatie-0"><h4 id="x4-3-2-status-bij-forum-standaardisatie"><span class="secno">4.3.2 </span>Status bij forum standaardisatie</h4><p>Het Nederlands OAuth profiel is op 9 juli 2020 goedgekeurd door het OBDO voor opname op de "pas toe of leg uit lijst" van het <a href="https://www.forumstandaardisatie.nl/lijst-open-standaarden/in_lijst/verplicht-pas-toe-leg-uit">forum standaardisatie</a>. 
+De internationale standaard OAuth is opgenomen op <a href="https://www.forumstandaardisatie.nl/open-standaarden/lijst/aanbevolen">de lijst met aanbevolen standaarden</a>.</p><section id="werkingsgebied-standaard-1"><h5 id="x4-3-2-1-werkingsgebied-standaard"><span class="secno">4.3.2.1 </span>Werkingsgebied standaard</h5><p>Als organisatorisch werkingsgebied wordt in het expert advies geadviseerd:
+Nederlandse overheden (Rijk, provincies, gemeenten en waterschappen)
+en instellingen uit de (semi-) publieke sector</p></section><section id="toepassingsgebied-standaard-1"><h5 id="x4-3-2-2-toepassingsgebied-standaard"><span class="secno">4.3.2.2 </span>Toepassingsgebied standaard</h5><p>Als functioneel toepassingsgebied wordt in het expert advies voorgesteld:
+Het gebruik van OAuth 2.0 is verplicht voor applicaties waarbij gebruikers
+(resource owner) toestemming geven (impliciet of expliciet) aan een
+dienst (van een derde) om namens hem toegang te krijgen tot specifieke
+gegevens via een RESTful API.
+Het gaat dan om een RESTful API waar de resource owner recht tot
+toegang heeft.</p></section><section id="bijzonderheden"><h5 id="x4-3-2-3-bijzonderheden"><span class="secno">4.3.2.3 </span>Bijzonderheden</h5><section id="openid-connect-buiten-scope"><h6 id="x4-3-2-3-1-openid-connect-buiten-scope"><span class="secno">4.3.2.3.1 </span>OpenID connect buiten scope</h6><p>de expertgroep van het forum standaardisatie is op 7 juli en op 22 september 2016 bijeengekomen
+om de standaarden, de aandachtspunten en openstaande vragen uit
+het voorbereidingsdossier te bespreken. Daarbij is vastgesteld dat
+OpenID Connect niet voor opneming op de lijst open standaarden in
+aanmerking komt. Inmiddels is OpenID connect apart voorgedragen voor opname op de "pas toe of leg uit" lijst van het forum standaardisatie. Voor deze standaard komt ook een Nederlands profiel. Dit zal ook gebaseerd zijn op iGOV zoals in de volgende sectie uitgelegd wordt.</p></section><section id="aansluiting-op-internationale-standaard-igov"><h6 id="x4-3-2-3-2-aansluiting-op-internationale-standaard-igov"><span class="secno">4.3.2.3.2 </span>Aansluiting op internationale standaard iGov</h6><p>Het Nederlands profiel OAuth baseerd zich op het internationale iGOV OAuth 2.0 profiel [<cite><a class="bibref" href="#bib-igov.oauth2">iGOV.OAuth2</a></cite>]. Niet alle keuzes van dit internationale profiel worden overgenomen aangezien dit een aantal keuzes bevat die sterk leunen op de amerikaanse situatie. Het kan het best beschouwd worden als een fork waarbij in het profiel aangeven wordt waar afwijkingen zijn.
+iGov heeft naast het OAuth profiel ook een OpenID connect profiel [<cite><a class="bibref" href="#bib-igov.openid">iGOV.OpenID</a></cite>]. Wanneer mogelijk ook OpenID connect op de pas toe of leg uit lijst van het Forum standaardisatie komt kan het Nederlandse profiel OAuth uitgebreid worden met een Nederlandse variant van het iGov OpenID Connect profiel. De usecase die wordt beschreven aan het begin van het Nederlands profiel OAuth sorteert daar al op voor.</p></section></section></section></section></section>
+    <section data-format="markdown" class="terconsultatie" aria-busy="false" id="architectuur"><!--OddPage--><h2 id="x5-architectuur"><span class="secno">5. </span>Architectuur</h2><blockquote>
+<p>  <em>Dit hoofdstuk gaat in op de vraag: Hoe kan je je applicatie landschap
+  inrichten zodat je APIs kan aanbieden. Welke componenten zijn hiervoor
+  nodig. Hoe ga je om met opschalen, beschikbaarheid. Wat zijn afwegingen om
+  beveiliging al dan niet toe te passen.</em></p>
+</blockquote><section id="inleiding-1"><h3 id="x5-1-inleiding"><span class="secno">5.1 </span>Inleiding</h3><p>Doel van dit hoofdstuk is om een hoog niveau overzicht te geven van relevante onderdelen en concepten en hun samenhang in een op
+(REST of RESTfull) API gebaseerde architectuur waarbij gebruik gemaakt wordt van REST API's als interface voor de aangeboden (gegevens)diensten. 
+Specifiek voor REST API's is dat deze 'Resource' gericht zijn en een uniforme manier bieden om resources te lezen, wijzigen, toevoegen
+of verwijderen.</p><p><img src="media/clip02.png" alt=""></p><p>Figuur 1: De plaats van API's bij aanbod en gebruik van (gegevens)diensten;</p><p>Figuur 1 toont de plaats van API's in de gegevensuitwisseling en relevante onderwerpen in deze context. Bij de Dienst afnemer speelt 
+het gebruik van API's,  bij de Dienst aanbieder speelt het aanbieden van API's.</p><p>In dit hoofdstuk wordt specifiek ingegaan op de 'aanbod kant': het onderdeel 'Diensten toegang' in het schema.</p><section id="api-s-voor-burgers-bedrijven-en-overheden"><h4 id="x5-1-1-api-s-voor-burgers-bedrijven-en-overheden"><span class="secno">5.1.1 </span>API's voor Burgers, Bedrijven en Overheden</h4><p>Overheidsorganisaties bieden diensten aan Burgers, Bedrijven en andere Overheidsorganisaties.
+Onderstaande figuur geeft de dienstverlening middels API's aan de verschillende partijen grafisch weer.</p><p><img src="https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20API%20architectuur/uitwerkingen/media/API-arch-v22.png" alt="alt text">
+Figuur 2: API Diensten voor Burgers, Bedrijven en Overheden</p><p><em>Toelichting</em></p><ul>
+<li><p>(A) : API Contactoppervlak Overheid naar Burgers en Bedrijven</p>
+</li>
+<li><p>(B) : API Contactoppervlak Overheid naar Overheid (bv onderdelen GDI)</p>
+</li>
+<li><p>G2C : Government 2 Citizen (Overheid naar Burger)</p>
+</li>
+<li><p>G2B : Government 2 Business (Overheid naar Bedrijf)</p>
+</li>
+<li><p>G2G : Government 2 Government (Overheid naar Overheid)</p>
+</li>
+</ul></section><section id="belang-van-api-standaardisatie"><h4 id="x5-1-2-belang-van-api-standaardisatie"><span class="secno">5.1.2 </span>Belang van API Standaardisatie</h4><p>In de bovenstaande figuur wordt ook het belang van standaardisatie van API's zichtbaar:</p><p>Burgers, Bedrijven (en ook Overheidsorganisaties zelf) gebruiken (doorgaans) de API's van meerdere Overheidsorganisaties. Wanneer de verschillende 'API contactoppervlakken' uniform zijn (ook over organisaties heen) kunnen dienstafnemers gemakkelijker (en dus sneller en met minder kosten) gebruik maken van 'Overheids API's'  </p></section></section><section id="typologie-van-api-s"><h3 id="x5-2-typologie-van-api-s"><span class="secno">5.2 </span>Typologie van API's</h3><p>In de volgende paragrafen worden verschillende indelingen voor API's behandeld. Deze indelingen helpen om in de API architectuur van een organisatie verschillende soorten API's te benoemen.</p><section id="intern-extern-open-gesloten"><h4 id="x5-2-1-intern-extern-open-gesloten"><span class="secno">5.2.1 </span>Intern / Extern, Open / Gesloten</h4><p>Een organisatie heeft verschillende soorten API's:</p><p>Extern:</p><ul>
+<li>Open API's: voor ontsluiten van diensten zonder toegangsbeperking bv open data.</li>
+<li>Gesloten API's: voor ontsluiten van diensten met toegangsbeperking bv persoonsgegevens en vertrouwelijke gegevens of diensten voor specifieke partijen.</li>
+</ul><p>Intern:</p><ul>
+<li>Interne API's : voor ontsluiten van diensten binnen de organisatie</li>
+</ul><p>Een overheidsorganisatie ontsluit zijn diensten naar andere overheidsorganisaties, naar bedrijven/private organisaties en naar burgers.</p><p>In onderstaande figuur wordt dit visueel weergegeven.
+<img src="https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20API%20architectuur/uitwerkingen/media/govapi.png" alt="alt text">
+Figuur 3 : Soorten API's</p><p><em>Afkortingen</em>:</p><ul>
+<li>G2C : Government 2 Citizen (Overheid naar Burger)</li>
+<li>G2B : Government 2 Business (Overheid naar Bedrijf)</li>
+<li>G2G : Government 2 Government (Overheid naar Overheid)</li>
+</ul></section><section id="systeem-proces-convenience"><h4 id="x5-2-2-systeem-proces-convenience"><span class="secno">5.2.2 </span>Systeem, Proces, Convenience</h4><p>Deze indeling maakt onderscheid in Systeem, Proces, Convenience API's:</p><ul>
+<li><p>System API (werkt op het niveau van de databron);</p>
+</li>
+<li><p>Process  API (doet aan orchestration door één of meerdere System API's aan te roepen);</p>
+</li>
+<li><p>Convenience of Experience API (beantwoord één specifieke gebruikersvraag);</p>
+</li>
+</ul></section><section id="business-exposure"><h4 id="x5-2-3-business-exposure"><span class="secno">5.2.3 </span>Business / Exposure</h4><p>Deze indeling maakt onderscheid in Business en Exposure API's:</p><p><strong>Business API definitie:</strong></p><p>Een API die beschreven is in business termen , gebruik maakt van generieke modellen en welke bedrijfsprocessen ondersteund. (Hierbij wordt vermeden om terminology en payloads te gebruiken die specifiek zijn voor 3rd party software om afhankelijkheid van specifieke infrastructuur te voorkomen en te focussen op bedrijfsdoelstellingen;</p><p>(Bijvoorbeeld API’s gebaseerd op de Generieke Functies (capabilities) van de Nederlandse Overheid, zie <a href="https://www.noraonline.nl/wiki/Generieke_functies">https://www.noraonline.nl/wiki/Generieke_functies</a>, en op de capabilities van de eigen organisatie). </p><p><strong>Exposure API</strong></p><p>Een API die toegang geeft tot de (basis)functionaliteit en data van een (specifiek) systeem</p></section><section id="philosophy-protocol-encoding"><h4 id="x5-2-4-philosophy-protocol-encoding"><span class="secno">5.2.4 </span>Philosophy, Protocol, Encoding</h4><p>Deze indeling gaat uit van de technische aspecten van de API:</p><ul>
+<li>Design Philosophy 
+(eg RESTful, GraphQL)</li>
+<li>Communications Protocol
+(eg HTTP, Websockets)</li>
+<li>Encoding
+(eg JSON, Protobuf (binary))</li>
+</ul></section><section id="api-virtualisatie"><h4 id="x5-2-5-api-virtualisatie"><span class="secno">5.2.5 </span>API Virtualisatie</h4><p>Een andere mogelijke indeling is op basis van de 'virtuele' varianten van een API:
+Een en dezelfde API kan in verschillende smaken worden aangeboden.
+In onderstaand voorbeeld is dit:</p><ul>
+<li>Open zonder garantie</li>
+<li>Open met garanties</li>
+<li>Met toegangsbeperking</li>
+<li>Met doelbinding</li>
+</ul><p><img src="https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20API%20architectuur/uitwerkingen/media/api-virt.png" alt=""></p></section><section id="api-language-styles"><h4 id="x5-2-6-api-language-styles"><span class="secno">5.2.6 </span>API Language styles</h4><p>Onderstaande indeling gaat uit van de bij de API toegepaste 'language' style.</p><ul>
+<li>Tunnel Style: XML-RPC, SOAP, gRPC, Avro</li>
+<li>Resource Style: OpenAPI/Swagger, RAML, API Blueprint</li>
+<li>Hypermedia Style: HAL, Siren, Atom, HATEOAS</li>
+<li>Query Style: GraphQL, OData, SPARQL</li>
+<li>Event-based Style: MQ, WebSub, MQTT, XMPP, AMQP, Kafka, AsyncAPI</li>
+</ul><p>--nw</p></section></section><section id="api-capability-model"><h3 id="x5-3-api-capability-model"><span class="secno">5.3 </span>API Capability Model</h3><p>Om als organisatie API's aan te bieden aan andere partijen op een gecontroleerde en beheersbare manier moet je bepaalde functionaliteit bieden, processen inregelen en ondersteuning aanbieden.</p><p>Het onderstaande API Capability model geeft weer aan welke onderwerpen men aandacht moet schenken bij het inrichten van API gedreven dienstverlening. De onderwerpen zijn gegroepeerd in de categorieën <em>Registratie &amp; gebruik</em>, <em>Realisatie &amp; beheer</em> en <em>Verkeersstroom beheer</em>.</p><p><img src="https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20API%20architectuur/uitwerkingen/media/API-Capability.png" alt="API Capability Model"></p><p>Figuur 4 API Capability Model</p><section id="api-gebruik"><h4 id="x5-3-1-api-gebruik"><span class="secno">5.3.1 </span>API Gebruik</h4><p>Deze categorie bevat capabilities voor het ondersteunen van ontwikkelaars die gebruik willen maken van de aangeboden API's. De capabilities binnen deze categorie zijn onderverdeeld in de volgende sub-categorieën:</p><ul>
+<li><em>Aanmelden &amp; Registratie</em>: functionaliteiten waarmee nieuwe ontwikkelaars zichzelf en hun applicaties kunnen registreren om gebruik te maken van aangeboden API's;</li>
+<li><em>Ontdekken</em>: functionaliteiten waarmee ontwikkelaars kennis over aangeboden API's op kunnen doen en delen.</li>
+</ul><p>Over het algemeen biedt een API leverancier capabilities ten behoeve van API gebruik in een ontwikkelaarsportaal.</p><section id="ontwikkelaar-onboarding"><h5 id="x5-3-1-1-ontwikkelaar-onboarding"><span class="secno">5.3.1.1 </span>Ontwikkelaar onboarding</h5><p>Voordat een ontwikkelaar applicaties kan ontwikkelen die gebruik maken van aangeboden API's, moet deze ontwikkelaar zich registreren bij de API aanbieder. Hierbij is het belangrijk dat een goede balans wordt gezocht tussen het bieden van een zo eenvoudig en snel mogelijk onboarding proces (bij voorkeur self-service) en het borgen van afspraken voor het gebruik van de API's door de ontwikkelaar, bijvoorbeeld door het ondertekenen van gebruikersvoorwaarden en het valideren van de rechtmatigheid van de ontwikkelaar.</p><p>Bij ontwikkelaar onboarding moet ook worden gedacht aan het zich kunnen afmelden van ontwikkelaars, of het afsluiten van ontwikkelaars in het geval gebruikersvoorwaarden worden overschreden.</p></section><section id="applicatie-registratie"><h5 id="x5-3-1-2-applicatie-registratie"><span class="secno">5.3.1.2 </span>Applicatie registratie</h5><p>Applicaties die als client gebruik willen maken van API's moeten eerst worden aangemeld bij de API aanbieder. Alleen aangemelde applicaties ontvangen credentials om de API's te bevragen.</p><p>Applicatie registratie omvat de processen rondom het registreren van applicaties en het kunnen beheren van geregistreerde applicaties. Bij het kunnen beheren kan bijvoorbeeld worden gedacht aan het toekennen of anmenen van privileges door de API aanbieder of het kunnen inzien van informatie over de API Client.</p><p>Ook de uitgifte van credentials voor applicaties is onderdeel van applicatie registratie.</p></section><section id="api-discovery"><h5 id="x5-3-1-3-api-discovery"><span class="secno">5.3.1.3 </span>API Discovery</h5><p>Aangeboden API's moeten vindbaar zijn voor partijen die er gebruik van willen maken. API Discovery richt zich op deze vindbaarheid van API's.</p><p>API Discovery kan op verschillende manieren toegepast worden. Allereerst kan API Discovery worden toegepast door een API aan te bieden welke referenties biedt naar de verschillende API's of kan de lijst met aangeboden API's in developer documentatie worden opgenomen. De op de ‘Pas toe of leg uit-lijst’ van het Forum Standaardisatie opgenomen OpenAPI 3 (OAS 3) specificatie voorziet in deze beide manieren.</p><p>Ook bestaan er zoekmachines die aangeboden API's op een centrale locatie toegankelijk maken, waardoor de vindbaarheid van API's nog meer wordt vergroot. Een voorbeeld van een dergelijke zoekmachine die wordt gebruikt binnen de overheid is <a href="https://developer.overheid.nl">developer.overheid.nl</a>.</p></section><section id="specificatie-documentatie"><h5 id="x5-3-1-4-specificatie-documentatie"><span class="secno">5.3.1.4 </span>Specificatie &amp; Documentatie</h5><p>Traditioneel worden webservice endpoints beschreven middels statische documentatie welke (bijvoorbeeld als PDF document) beschikbaar wordt gesteld aan aansluitende partijen. Door de dynamische aard van API's en de mogelijkheden die door tools worden geboden, is het bij API's gebruikelijk documentatie dynamisch aan te bieden. Hierbij is het mogelijk om direct vanuit de documentatie API verzoeken op te stellen en uit te voeren.</p><p>API specificaties op basis van OpenAPI 3 bieden de mogelijkheid om dynamische documentatie te genereren. Hierbij moet wel de kanttekening worden gemaakt dat OpenAPI 3 specificaties zich primair richten op documentatie van API endpoints en de structuur daarvan. Mogelijke combinaties van inputs en outputs, use cases en overige documentatie die niet direct over de structuur van de API endpoints gaat wordt slechts beperkt ondersteund en dient buiten de OpenAPI specificatie te worden toegevoegd.</p></section><section id="proeftuin"><h5 id="x5-3-1-5-proeftuin"><span class="secno">5.3.1.5 </span>Proeftuin</h5><p>Traditioneel worden webservice client implementaties op basis van documentatie en wsdl definities ontwikkeld, waarbij een volledig ontwikkelde client applicatie toegang krijgt tot een preproductie omgeving om de implementatie te toetsen.</p><p>Bij API Client ontwikkeling is het gebruikerlijk om, naast het gebruik van dynamische documentatie, een proeftuin aan te bieden in de vorm van sandbox API's. Dit zijn API's welke al vanaf de start van de app ontwikkeling (of zelfs daarvoor, vanuit de dynamische documentatie) natuurgetrouwe API verzoeken kunnen worden uitgevoerd. Hierdoor krijgen app ontwikkelaars direct feedback over hoe hun applicaties aansluiten op de geboden API's.</p><p>Bij het aanbieden van een proeftuin is het goed om na te gaan hoe natuurgetrouw deze moet zijn. Uitersten zijn enerzijds een stub met daarin een aantal basis Use Cases uitgewerkt en anderzijds een proefomgeving met een kleine subset aan productie-like geanonimiseerde data welke al dan niet per client gescheiden is en regelmatig wordt ververst indien data vanuit de sandbox aanpasbaar is.</p></section><section id="code-voorbeelden-sdk"><h5 id="x5-3-1-6-code-voorbeelden-sdk"><span class="secno">5.3.1.6 </span>Code voorbeelden &amp; SDK</h5><p>Naast het aanbieden van dynamische documentatie en een proeftuin, kunnen ontwikkelaars erg geholpen zijn wanneer de API aanbieder code voorbeelden, referentie implementaties of SDK's aanbiedt in verschillende programmeertalen. Het gebruik van de OpenAPI 3 specificatie voor API documentatie heeft als voordeel dat er al veel tooling bestaat om SDK's te genereren op basis van de API specificatie.</p></section><section id="kennisdeling-ondersteuning"><h5 id="x5-3-1-7-kennisdeling-ondersteuning"><span class="secno">5.3.1.7 </span>Kennisdeling &amp; Ondersteuning</h5><p>Naast het kunnen inzien van documentatie en het gebruik maken van sandbox API's, is het belangrijk dat ontwikkelaars van API Clients terecht kunnen met vragen of opmerkingen. Hierbij kan in het meest rudimentaire geval bijvoorbeeld worden gedacht aan een feedback formulier en een veelgestelde vragen pagina, maar ook aan een forum waarbij gebruikers elkaar kunnen helpen en de aanwezigheid van de API aanbieder op publieke fora (bijvoorbeeld Stack Overflow of Super User), social media (bijvoorbeeld Twitter) of invite-only discussie platformen (bijvoorbeeld Discord of Slack).</p></section></section><section id="realisatie-beheer"><h4 id="x5-3-2-realisatie-beheer"><span class="secno">5.3.2 </span>Realisatie &amp; Beheer</h4><p>Realisatie &amp; Beheer gaat over het (door)ontwikkelen van API's, het beheren van de API lifecycle van ideatie tot uitfasering en het beheren van het API ecosysteem. De capabilities binnen deze categorie zijn onderverdeeld in de volgende sub-categorieën:</p><ul>
+<li><em>Realisatie</em>: capabilities met betrekking tot het aanbieden van nieuwe API endpoints en de doorontwikkeling van bestaande;</li>
+<li><em>API Governance</em>: standaarden, afspraken en richtlijnen rondom het aanbieden van API's en de processen om hieraan te voldoen;</li>
+<li><em>API Lifecycle beheer</em>: capabilities met betrekking tot de sturing op een uniform API portfolio en lifecycle management van de API's;</li>
+<li><em>Platform beheer</em>: functionaliteiten met betrekking tot het kunnen beheren van het platform of ecosysteem waarin de API's opereren.</li>
+</ul><section id="ontwerp"><h5 id="x5-3-2-1-ontwerp"><span class="secno">5.3.2.1 </span>Ontwerp</h5><p>Waar traditioneel webservices technisch werden ingestoken en veelal werden gebaseerd op de technische inrichting van het achterliggende IT landschap, is het bieden van een uitmuntende developer experience (DX) één van de belangrijkste doelen bij het aanbieden van API's.</p><p>Goed API ontwerp ligt daarbij aan de grondslag. Net als User Experience (UX) ontwerp zich richt op het bieden van de ultieme gebruikerservaring bij websites, worden API's ontworpen met de gebruikers (ontwikkelaars) centraal, in plaats van gebaseerd op de inrichting van back-ends. De API's fungeren daarbij als façade en maskeren de complexiteit van het achterlandschap voor gebruikers van de API's, zonder in te hoeven boeten op functionaliteit.</p><p>Aangezien het ontwerp van API's net als bij web-ontwerp een creatief proces is en er veel mogelijkheden zijn om dezelfde uitdagingen het hoofd te bieden, is er een lijst met API Design Rules opgenomen op de ‘Pas toe of leg uit-lijst’ van het Forum Standaardisatie opgenomen, welke API ontwerpers helpt goede ontwerpbeslissingen te maken op basis van best-practices in API ontwerp.</p></section><section id="ontwikkeling"><h5 id="x5-3-2-2-ontwikkeling"><span class="secno">5.3.2.2 </span>Ontwikkeling</h5><p>API ontwikkeling betreft het ontwikkelen van API endpoints op basis van API ontwerpen. Bij het inrichten van API ontwikkeling moeten een aantal keuzen worden gemaakt, waaronder waar API ontwikkeling plaatsvindt.</p><p>Een optie kan zijn dat API ontwikkeling in de API Gateway plaatsvindt; de meeste API Gateway producten bieden connectors om verschillende back-end systemen te ontsluiten, policies om protocollen te vertalen (bv SOAP &lt;-&gt; REST) en de mogelijkheid om API endpoints op basis van OAS 3 specificaties te genereren. Een nadeel van API ontwikkeling in de API Gateway is dat het vaak specifieke productkennis vergt en daardoor de afhankelijkheid van experts van de gekozen API Gateway vergroot.</p><p>Alternatieven zijn API ontwikkeling in microservices, waarbij microservices API's aanbieden waarvan een deel via de API Gateway as-is wordt ontsloten, of het gebruik van een middleware oplossing. Hierbij moet rekening worden gehouden dat het gebruik van middleware dezelfde nadelen heeft met betrekking tot specifieke productkennis als het ontwikkelen van API's in de API Gateway, maar kan het zijn dat deze kennis reeds in de teams aanwezig is.</p><p>Wanneer bij het API Ontwerp gebruik gemaakt wordt van de OAS 3 standaard, bieden zowel API Gateway oplossingen en programmeertalen vaak goede ondersteuning voor het automatisch genereren van code op basis van de API specificatie, wat de snelheid van ontwikkeling vergroot en de foutgevoeligheid verkleint.</p></section><section id="test"><h5 id="x5-3-2-3-test"><span class="secno">5.3.2.3 </span>Test</h5><p>Dit betreft het testen van API endpoints tegen de specificatie. Waar mogelijk gebeurt dit geautomatiseerd. Op het gebied van <em>syntactische</em> tests biedt veel test tooling ondersteuning voor het importeren van OpenAPI 3 specificaties; voor het uitvoeren van <em>semantische</em> tests is het vaak noodzakelijk dat testdata wordt geprepareerd en use cases worden uitgewerkt in test cases.</p></section><section id="policy-definitie"><h5 id="x5-3-2-4-policy-definitie"><span class="secno">5.3.2.4 </span>Policy Definitie</h5><p>Dit betreft het definieren van generieke API policies, welke worden toegepast op alle API's of door een aantal API's kunnen worden uitgevoerd. Voorbeelden van API policies zijn:</p><ul>
+<li>Validatie van API verzoeken tegen een API specificatie;</li>
+<li>het vertalen van JSON berichten naar een ander berichtformaat op basis van content negotiation;</li>
+<li>het filteren van headers in response berichten;</li>
+<li>het 'throttlen' van inkomende API verzoeken om back-ends te ontlasten;</li>
+<li>het afdwingen van gautoriseerde API verzoeken;</li>
+<li>etc.</li>
+</ul></section><section id="afspraken-standaarden-en-richtlijnen"><h5 id="x5-3-2-5-afspraken-standaarden-en-richtlijnen"><span class="secno">5.3.2.5 </span>Afspraken, Standaarden en Richtlijnen</h5><p>Een set van afspraken, standaarden en richtlijnen om ervoor te zorgen dat een uniforme set van API's wordt aangeboden, dat aansluit bij de API strategie van de API aanbiedende organisatie. Hieronder vallen ook processen om ervoor te zorgen dat aan deze afspraken, standaarden en richtlijnen wordt voldaan.</p></section><section id="api-lifecycle-beheer"><h5 id="x5-3-2-6-api-lifecycle-beheer"><span class="secno">5.3.2.6 </span>API Lifecycle beheer</h5><p>Dit omvat functionaliteiten rondom het beschikbaar maken van nieuwe API endpoints, bijvoorbeeld door ze in een API Gateway te registreren, het maken van non-breaking changes en het uiteindelijk uitfaseren van API endpoints omdat deze niet meer nodig zijn of door een nieuwere API versie worden vervangen.</p><p>Het is belangrijk gebruikers van API's duidelijk inzicht te geven in de processen en tijdslijnen rondom lifecycle management, zodat zij zich goed op eventuele wijzigingen voor kunnen bereiden. Voorbeelden van transparante communicatie hierover zijn het al bij beschikbaarstelling van API endpoints definieren en communiceren van deprecation en sunset datums. Deze kunnen bijvoorbeeld in de API documentatie en/of API headers worden gecommuniceerd. In de periode tussen deprecation van een API worden veelal alleen essentiele updates doorgevoerd en worden nieuwe functionaliteiten alleen toegevoegd op nieuwe API versies.</p></section><section id="versionering"><h5 id="x5-3-2-7-versionering"><span class="secno">5.3.2.7 </span>Versionering</h5><p>Versionering van API's zorgt ervoor dat het voor afnemers van API's duidelijk is op welke API wordt aangesloten en welke eigenschappen daarbij horen. Voor aanbieders van API's zorgt het ervoor dat ze wendbaar kunnen zijn door nieuwe API versies te introduceren, zonder dat dit direct impact heeft op API clients.</p><p>Bij het toepassen van API versionering hoort ook het duidelijk inzichtelijk maken van hoe lang een specifieke API versie ondersteund wordt, wanneer een nieuwe versie wordt geintroduceerd en hoe de overgangsfase eruit ziet.</p><p>De tendens bij API's op het gebied van versionering is om zeer terughoudend te zijn met het introduceren van nieuwe major versies door, welke nodig zijn bij het maken van braking changes. Om toch wendbaar te kunnen zijn, wordt veelal semantic versioning (semver) toegepast en worden API's aangepast middels niet-breaking minor changes en patches, totdat er een noodzaak is om breaking changes, en daarmee een major versie upgrade, uit te voeren.</p></section><section id="toegangsbeheer"><h5 id="x5-3-2-8-toegangsbeheer"><span class="secno">5.3.2.8 </span>Toegangsbeheer</h5><p>Het registreren en beheren van API endpoints gebeurt zo veel mogelijk op basis van self-service door teams die API's ontwikkelen. Daarnaast worden centrale policies en API Gateway configuratie vaak centraal uitgevoerd.</p><p>Hiervoor is het belangrijk dat het API &amp; Gateway beheer op basis van gebruikers en een autorisatie matrix verloopt.</p></section><section id="gateway-beheer"><h5 id="x5-3-2-9-gateway-beheer"><span class="secno">5.3.2.9 </span>Gateway beheer</h5><p>Hieronder vallen alle werkzaamheden met betrekking tot het beheren van de API Gateway zelf. Hierbij kan worden gedacht aan de technische inrichting van het platform, het uitvoeren van upgrades, het beheren van gebruikers, rollen en autorisaties en het oplossen van problemen die volgen uit monitoring en alerting.</p></section><section id="sleutelbeheer"><h5 id="x5-3-2-10-sleutelbeheer"><span class="secno">5.3.2.10 </span>Sleutelbeheer</h5><p>Voor een veilige uitwisseling van gegevens tussen API Gateway en client (en eventuele externe Authorisatie Servers) spelen ondertekening en versleuteling van berichten een belangrijke rol. Hiervoor is het belangrijk dat de API aanbieder het sleutelmateriaal dat hiervoor wordt gebruikt op een veilige manier kan opslaan en waar nodig kan distribueren naar aansluitende API clients.</p></section></section><section id="verkeersstroom-beheer"><h4 id="x5-3-3-verkeersstroom-beheer"><span class="secno">5.3.3 </span>Verkeersstroom beheer</h4><p>Verkeersstroom beheer gaat over de functionaliteiten die te maken hebben met verwerken van daadwerkelijk verkeer tussen de API client en aanbieder en het verwerken daarvan binnen het API landschap.</p><p>De capabilities binnen deze categorie zijn onderverdeeld in de volgende sub-categorieën:</p><ul>
+<li><em>Mediatie &amp; Orkestratie</em>: het verwerken, valideren, routeren en  bewerken van API verzoeken en antwoorden om een gebruiksvriendelijke en uniforme beleving aan API clients te kunnen bieden;</li>
+<li><em>Telemetrie &amp; Inzicht</em>: het meten en inzichtelijk maken van API verzoeken en antwoorden om inzicht te krijgen in het gebruik van API's en de gezondheid van het platform;</li>
+<li><em>Servicelevel Beheer</em>: het definieren en afdwingen van afspraken rondom beschikbaarheid en de toegestane hoeveelheid API verzoeken dat een API client mag doen, eventueel gebaseerd op staffels voor doorbelasting;</li>
+<li><em>Beveiliging</em>: functionaliteiten rondom de beveiliging van API endpoints en de data en processen die hiermee ontsloten worden.</li>
+</ul><section id="mediatie-orkestratie"><h5 id="x5-3-3-1-mediatie-orkestratie"><span class="secno">5.3.3.1 </span>Mediatie &amp; Orkestratie</h5><p>In het geval back-end systemen niet de mogelijkheden hebben te communiceren volgens de gespecificeerde API contracten of als een API betrekking heeft op meerdere back-end systemen, kan het noodzakelijk zijn data transformaties toe te passen om toch de gebruiksvriendelijke API's aan afnemers te kunnen bieden. In dit geval wordt API Mediatie, ook wel data transformatie of orkestratie, toegepast met als doel de API's die aan API Clients geboden worden zo gebruiksvriendelijk mogelijk te laten zijn, zonder afhankelijk te zijn van implementatiedetails en technologische beperkingen van back-end systemen. API Mediatie kan plaatsvinden in microservices, een integratielaag in de back-end of in de API Gateway.</p></section><section id="routering"><h5 id="x5-3-3-2-routering"><span class="secno">5.3.3.2 </span>Routering</h5><p>In het geval de back-end functionaliteit wordt ingevuld door meerdere back-end systemen of microservices, dienen inkomende API verzoeken te worden gerouteerd naar de juiste systemen. In het eenvoudigste geval kan dit betekenen dat verzoeken voor verschillende API endpoints naar verschillende back-end systemen worden gerouteerd, maar in ingewikkeldere situaties kan het ook noodzakelijk zijn te routeren op basis van informatie uit het verzoek, zoals bijvoorbeeld afzender of inhoud.</p></section><section id="data-transformaties"><h5 id="x5-3-3-3-data-transformaties"><span class="secno">5.3.3.3 </span>Data Transformaties</h5><p>Dit betreft functionaliteiten rondom het vertalen van API endpoints naar het achterliggende datamodel. Dit kan plaatsvinden in de API Gateway, integratietoepassingen in de back-end of in back-end (micro)services, waarabij de laatste optie over het algemeen de voorkeur heeft.</p></section><section id="foutafhandeling"><h5 id="x5-3-3-4-foutafhandeling"><span class="secno">5.3.3.4 </span>Foutafhandeling</h5><p>In het geval dat er fouten optreden in de API's, bijvoorbeeld door niet-functionerende back-end systemen, moeten API Clients worden voorzien van duidelijke foutmeldingen en moeten etrokkenen bij de API aanbieder voorzien worden van voldoende informatie om de oorzaak van de fouten op te kunnen lossen en te verhelpen, indien nodig.</p></section><section id="caching"><h5 id="x5-3-3-5-caching"><span class="secno">5.3.3.5 </span>Caching</h5><p>Een belangrijk onderdeel van developer experience bij API's is de performance ervan. Caching zorgt ervoor dat niet voor elke aanroep het achterlandschap geraadpleegd hoeft te worden. RESTful API's lenen zich zeer goed voor het toepassen van caching door toepassing van het Proxy architectuur patroon, echter dient zorg te worden gedragen dat gewijzigde broninformatie leidt tot invalidatie van de informatie in de cache, zodat API Clients geen achterhaalde informatie ophalen.</p></section><section id="protocol-conversie"><h5 id="x5-3-3-6-protocol-conversie"><span class="secno">5.3.3.6 </span>Protocol conversie</h5><p>Om operabiliteit te vergroten zodat meer API Clients aan kunnen sluiten, kan het nuttig zijn API's aan te bieden in andere protocollen en architectuurstijlen dan REST / JSON. Zonder specifieke code in back-end systemen kan bijvoorbeeld de API Gateway API's op basis van REST en JSON omvormen naar API's op basis van SOAP en XML. Hierdoor kunnen API Clients die geen JSON ondersteunen worden bediend, zonder dat dit leidt tot extra ontwikkel effort aan de back-end / microservices kant.</p><p>Ook kan protocol conversie nodig zijn om back-end systemen die gebruik maken van verouderde protocollen toch via API's aan te bieden.</p></section><section id="logging-audit-trail"><h5 id="x5-3-3-7-logging-audit-trail"><span class="secno">5.3.3.7 </span>Logging &amp; Audit trail</h5><p>Geeft inicht in de verkeersstromen tussen API Clients, API Gateway en het achterliggende applicatie landschap en zorgt ervoor dat alle handelingen herleidbaar zijn door inzicht te geven in historische verkeersstromen, ten behoeve van audit doeleinden (i.h.k.v. privacy, beveiliging en transparantie). </p><p>Onder andere de volgende informatie kan inzichtelijk worden gemaakt:</p><ul>
+<li>Wie heeft data geraadpleegd?</li>
+<li>Welke data is geraadpleegd?</li>
+<li>Waarom de data is geraadpleegd? Doelbinding wordt vastgelegd.</li>
+<li>Wanneer de data is geraadpleegd</li>
+<li>Hoe de data is geraadpleegd?</li>
+</ul></section><section id="monitoring-alerting"><h5 id="x5-3-3-8-monitoring-alerting"><span class="secno">5.3.3.8 </span>Monitoring &amp; Alerting</h5><p>API Monitoring &amp; Alerting geeft inzicht in de technische staat van de API's en informeert (via RCS, SMS en/of e-mail) betrokken groepen of personen indien bepaalde gebeurtenissen optreden. Voorbeelden van gebeurtenissen zijn onbeschikbaarheid van bepaalde gegevensverbindingen of certificaten die op korte termijn zullen verlopen.</p></section><section id="analytics-dashboarding"><h5 id="x5-3-3-9-analytics-dashboarding"><span class="secno">5.3.3.9 </span>Analytics &amp; Dashboarding</h5><p>Naast onder andere productvisie en input van afnemers is API Analytics een belangrijke aandrijver bij het bepalen van de richting van API doorontwikkeling. Op basis van actueel API gebruik kan het resultaat van Key Performance Indicators (KPI's) worden vastgesteld. Dit kan leiden tot inzicht in welke API functionaliteiten succesvol zijn en welke minder succesvol, en zodoende kan leiden tot aanscherping of aanpassing van de productvisie.</p></section><section id="rate-limiting-throttling"><h5 id="x5-3-3-10-rate-limiting-throttling"><span class="secno">5.3.3.10 </span>Rate limiting / throttling</h5><p>Rate limiting (throttling) biedt bescherming tegen een bovenmatig aantal verzoeken die worden afgevuurd op de omgeving van de API aanbieder, waardoor er storingen op de backend systemen kunnen optreden. Dit kan bij reguliere bedrijfsuren het 'spitsuur' zijn waardoor deze beveiliging moet worden ingeschakeld. Rate limiting is ook een manier om een SLA af te dwingen op basis van een contract.</p><p>Rate limiting kan worden ingesteld op verschillende tijdseenheden, bijvoorbeeld het aantal toegestane verzoeken per uur of per maand, en er kunnen verschillende profielen of plannen worden aangemaakt waarin deze quota worden geconfigureerd. Of het toekennen van voorrang op de afhandeling van bepaalde verzoeken (requests) is mogelijk, bijvoorbeeld door bulk-processen voor een korte periode voorrang te verlenen boven andere verzoeken. Hierdoor is gecontroleerd traffic management mogelijk, waardoor eventuele verstoringen op een later moment door piekbelasting juist kunnen worden voorkomen. Een profiel of plan is te koppelen aan een specifieke API.</p></section><section id="doorbelasting"><h5 id="x5-3-3-11-doorbelasting"><span class="secno">5.3.3.11 </span>Doorbelasting</h5><p>In sommige gevallen kan er voor gekozen worden om API gebruik door te belasten. Dit is voor overheden interessant om zo eventuele kosten door te belasten op de afzonderlijke organisaties, maar ook richting ketenpartners.</p><p>Er bestaan verschillende doorbelastingsmodellen, welke vallen onder de volgende hoofdcategorieën:</p><ul>
+<li><em>Vrij:</em> de API is vrij te gebruiken zonder kosten.</li>
+<li><em>Betaald:</em> gebruikers van de API moeten betalen voor het gebruik ervan. Onder deze categorie vallen verschillende subcategorieën, zoals Freemium, Tiered, Pay-as-you-go en doorbelasting op basis van een vaste prijs per tijdseenheid.</li>
+<li><em>Indirect:</em> gebruikers van de API betalen niet direct voor het gebruik ervan, maar dragen indirect bij aan het business model van de API aanbieder, waardoor API gebruik geld oplevert voor de API aanbieder.</li>
+<li><em>Affiliate:</em> vergelijkbaar met indirect, behalve dat de API aanbieder gebruikers van API's betaalt om het gebruik van de API's zoveel mogelijk te stimuleren.</li>
+</ul></section><section id="identificatie-authenticatie"><h5 id="x5-3-3-12-identificatie-authenticatie"><span class="secno">5.3.3.12 </span>Identificatie &amp; Authenticatie</h5><p>Hieronder valt de identificatie van de API Client end eindgebruiker, authenticatie van de eindgebruiker bij de API aanbieder op basis hiervan.</p></section><section id="autorisatie"><h5 id="x5-3-3-13-autorisatie"><span class="secno">5.3.3.13 </span>Autorisatie</h5><p>Dit betreft de autorisatie van API toegang op basis van de geauthentiseerde API Client end eindgebruiker.</p><p>Bij autorisaties op basis van API's wordt vaak onderscheid gemaakt tussen grofmazige, role based, en fijnazig, domein-specifieke autorisatie. Hierbij worden grofmazige, role based, autorisaties vaak centraal ingeregeld, bijvoorbeeld middels de API Gateway. Dit geeft mede invulling aan de eisen die worden gesteld vanuit wet- en regelgeving, namelijk dat autorisatie is ingericht conform doelbinding.</p><p>Fijnmazige, domein specifieke, autorisatie wordt idealiter afgehandeld door de domein applicatie. Echter ondersteunen verschillende gebruikers niet de correcte manier van API's aanroepen en doelbindingsregisters ontbreken veelal nog (en soms bieden de bronhouders nog niet de benodigde API's). Ook is IAM in veel overheidsorganisaties niet in die mate op orde dat hierin volledig sturing aan gegeven kan worden. Fijnmazige autorisatie kan hierdoor eventueel nog niet door de backend worden afgehandeld. Een alternatief hiervoor is dat er per doelbinding een andere API wordt aangeboden vanuit de API Gateway of dat de integratielaag functionaliteit biedt om aan de fijnmazige autorisatie invulling te geven.</p></section><section id="policy-handhaving"><h5 id="x5-3-3-14-policy-handhaving"><span class="secno">5.3.3.14 </span>Policy handhaving</h5><p>API Policy handhaving gaat over het toepassen van de ontwikkelde API policies op API endpoints. Hierbij kan onderscheid worden gemaakt tussen policies die altijd van toepassing zijn en policies die afhankelijk van de aangeroepen API of de afgesproken service levels worden toegepast. Voorbeelden van policies zijn syntactische en semantische validaties van inkomende en uitgaande API aanroepen, maar ook autorisatie en throttling worden veelal geïmplementeerd als verkeersstroom policies.</p></section><section id="anomalie-detectie"><h5 id="x5-3-3-15-anomalie-detectie"><span class="secno">5.3.3.15 </span>Anomalie detectie</h5><p>Het detecteren van verdacht gebruik van API endpoints, bijvoorbeeld ten behoeve van het opsporen van fraude of malware.</p></section></section></section><section id="api-management-functionaliteit"><h3 id="x5-4-api-management-functionaliteit"><span class="secno">5.4 </span>API Management Functionaliteit</h3><section id="inleiding-2"><h4 id="x5-4-1-inleiding"><span class="secno">5.4.1 </span>Inleiding</h4><p>In dit hoofdstuk wordt aandacht besteed aan de positionering van API-Management binnen de informatie architectuur van een overheidsorganisatie. Daarbij wordt stilgestaan bij de functies die verschillende tools moeten invullen om API-Management goed op te kunnen zetten. De kaders en richtlijnen die in dit hoofdstuk worden benoemd zijn in lijn met landelijke geldende architectuurrichtlijnen (zoals NORA, GEMMA en Common Ground), hiermee kan dit document worden gezien als een referentiearchitectuur op het gebied van API-Management.</p></section><section id="informatie-architectuur"><h4 id="x5-4-2-informatie-architectuur"><span class="secno">5.4.2 </span>Informatie architectuur</h4><p>Alle overheden hebben een uitdaging op het gebied van data integratie<a href="#_ftn1">[1]</a>. Hoe faciliteer je gegevensuitwisseling tussen bronnen en afnemers op een efficiënte en beheersbare manier die voldoet aan de eisen van wet- en regelgeving?</p><p>Een overheidsinstantie geeft hier het beste invulling aan door organisatiebreed een zogenaamde 'integratielaag' binnen de infrastructuur te positioneren. Dit kan je beschouwen als de gereedschapskist waarbinnen verschillende tools beschikbaar zijn voor data-integratie. Gezien de wereldwijde ontwikkelingen in het gebruik van API's, kan API-Management tooling hierbinnen niet ontbreken. Het is voor overheden essentiële functionaliteit om in lijn met de NORA te kunnen opereren (of specifieker in lijn met Common Ground).</p><p><strong>Referentiecomponenten</strong></p><p>API-Management tooling omvat de referentiecomponenten API-Gateway, API-Manager en een API-Portaal. Hieronder is beknopt beschreven wat overheidsorganisaties hieronder kunnen verstaan:</p><ul>
+<li>API-Gateway: hiermee worden gegevensverbindingen technisch gefaciliteerd, beveiligd en gemonitord. Alleen de applicaties (afnemers en aanbieders van API's) gebruiken de gateway.</li>
+</ul><p>Een API-Gateway wordt ingezet als poort tot het achterliggende datalandschap.</p><p>In cloud-native implementaties zie je steeds vaker een meer gedistribueerd model met behulp van micro gateways (als ingang voor iedere Cloud-omgeving) in plaats van een corporate API-Gateway die alles regelt, eventueel in combinatie met een service mesh<a href="#_ftn2">[2]</a>. Een hybride opstelling is ook mogelijk.</p><ul>
+<li><p>API-Manager: zorgt voor de configuratie van de gateway en het beheer van de API's, op basis van patronen en zogenaamde policies.</p>
+</li>
+<li><p>API-Portaal: een portaal waarin de aangeboden API's aan het brede publiek worden gepresenteerd. Via de specificaties kunnen ze een proeftuin creëren. Gebruikers zijn medewerkers geïnteresseerd in de ontwikkeling en het gebruik van API's. Dit kunnen zowel medewerkers van de overheid zijn, als ook externen (bijvoorbeeld van software leveranciers of ketenpartners).</p>
+</li>
+</ul><p><em>Note</em>: Landelijke ontwikkelingen op dit vlak i.r.t. developer.overheid.nl kunnen er voor zorgen dat deze functionaliteit op termijn centraal landelijk beschikbaar is.</p><p>In het API-Capability model zijn de functionaliteiten in detail beschreven.
+<a href="#api-capability-model">API-Capability model</a></p><p><img src="media/API-Management.jpg" alt=""></p><p>Figuur 5: Functionaliteit binnen API-Management</p><p><strong>Rol van servicebus</strong></p><p>Binnen de integratielaag opereert veelal ook een organisatiebrede servicebus, vaak is er veel energie gestoken in het faciliteren van gegevensstromen via de servicebus (met name op basis van StUF<a href="#_ftn3">[3]</a>). De API-Management tooling komt naast de servicebus te staan en kan zo aanvullende functionaliteit bieden binnen de integratielaag. Het is voor overheden geen doel om bestaande verbindingen via de servicebus te elimineren of de servicebus uit te faseren.</p><p>Wel lijkt gezien de wereldwijde ontwikkelingen de aandacht van integratievraagstukken te gaan verschuiven van de inzet van een organisatiebrede servicebus naar een landschap waarin lightweight API-Management tooling een belangrijke rol speelt. Nieuwe verbindingen (met name voor het ophalen van data) zullen vaker gelegd gaan worden via enkel een API Gateway en de inzet van de servicebus wordt teruggedrongen. Enkel op het gebied waar de huidige servicebus specifieke toegevoegde waarde levert, wordt deze voor overheden nog ingezet voor nieuwe verbindingen (eventueel in combinatie met een API Gateway. Dit zal naar verwachting voor overheden de meest voor de hand liggende oplossing zijn, gezien het huidige applicatielandschap. </p><p>Toegevoegde waarde servicebus i.r.t. API-Gateway:</p><ul>
+<li><p>StUF-koppelvlakken</p>
+</li>
+<li><p>Complexe transformaties</p>
+</li>
+<li><p>Orkestratie/logica</p>
+</li>
+<li><p>Gegevensautorisatie op doelbinding (bij gemeentelijke servicebussen vaak geïntegreerd)</p>
+</li>
+</ul><p>[Beschrijf welke product(hoofd)groepen worden veranderd, toegevoegd of verwijderd. Wat is de impact van het project op de geleverde producten en diensten?]</p><hr><p><a href="#_ftnref1">[1]</a> Verder aangeduid als 'integratie', van ook bijvoorbeeld informatie.</p><p><a href="#_ftnref2">[2]</a> <a href="https://en.wikipedia.org/wiki/Service_mesh">Service mesh - Wikipedia</a></p><p><a href="#_ftnref3">[3]</a> Zie <a href="https://www.gemmaonline.nl/index.php/StUF_Berichtenstandaard">StUF Berichtenstandaard - GEMMA Online</a></p><hr></section></section><section id="informatiemodel-api"><h3 id="x5-5-informatiemodel-api"><span class="secno">5.5 </span>Informatiemodel &amp; API</h3><p>In dit hoofdstuk wordt ingegaan op de relatie tussen informatiemodel en API</p><section id="informatiemodellen"><h4 id="x5-5-1-informatiemodellen"><span class="secno">5.5.1 </span>Informatiemodellen</h4><p>Een informatiemodel beschrijft een werkelijkheid. We onderscheiden vier niveaus in variërend van een zo getrouw mogelijke beschrijving van die werkelijkheid tot een specificatie van de wijze van vastlegging van die werkelijkheid in een database of uitwisselformaat <a href="https://www.geonovum.nl/geo-standaarden/metamodel-informatiemodellering-mim">MIM</a> <a href="https://www.geonovum.nl/geo-standaarden/nen-3610-basismodel-voor-informatiemodellen">NEN3610</a> :</p><p><strong>Niveau 1 - Model van begrippen:</strong> een model van begrippen waarin de werkelijkheid wordt beschreven door middel van de daarin gehanteerde begrippen en de relaties tot elkaar.</p><p><strong>Niveau 2 - Conceptueel informatiemodel:</strong> een conceptueel informatiemodel waarin de werkelijkheid wordt beschreven door middel van de informatie die voor dit domein relevant is, onafhankelijk van het ontwerp en de implementatie in systemen. Het geeft een zo getrouw mogelijke beschrijving van die werkelijkheid en is in natuurlijke taal geformuleerd.</p><p><strong>Niveau 3: - Logisch informatie- of gegevensmodel:</strong> een logisch informatie- of gegevensmodel waarin de werkelijkheid wordt beschreven door middel van de representatie van de informatie in de systemen en de uitwisseling tussen systemen en gebruikers. Een logisch informatiemodel is implementatie onafhankelijk en kan in meerdere technische modellen worden geïmplementeerd.</p><p><strong>Niveau 4: - Fysiek of technisch gegevens- of datamodel:</strong> een fysiek of technisch gegevens- of datamodel waarin de werkelijkheid wordt beschreven door middel van de structuur en eigenschappen van de technologie die wordt gebruikt bij de opslag of uitwisseling. Een fysiek of technisch datamodel is afhankelijk van de gekozen techniek of tooling die wordt gebruikt en kan daarvoor geoptimaliseerd zijn.</p><p>(Zie ook <a href="https://www.noraonline.nl/wiki/Vijflaagsmodel#Laag_3:_Informatielaag">NORA Informatielaag</a>)</p></section><section id="definities"><h4 id="x5-5-2-definities"><span class="secno">5.5.2 </span>Definities</h4><p>De volgende begrippen worden gehanteerd in dit hoofdstuk:</p><ul>
+<li><em>Informatiemodel</em> : Niveau 3 - Logisch gegevensmodel / datamodel </li>
+<li><em>Resource model</em> :  Niveau 4 - Fysiek / technisch datamodel (directe datamodel van een API)</li>
+<li><em>Applicatie data model</em> : Niveau 4 - Fysiek / technisch datamodel (datamodel van een achterliggend systeem)</li>
+</ul></section><section id="api-informatiemodel-en-resource-model"><h4 id="x5-5-3-api-informatiemodel-en-resource-model"><span class="secno">5.5.3 </span>API, Informatiemodel en Resource model.</h4><p>Via een API ontsluit een applicatie data en functionaliteit. Hierbij helpt het om onderscheid te maken tussen het 'interne' Applicatie Data Model en het Resource Model dat via de API wordt aangeboden.</p><p>Het Resource Model is als het ware een logische view op het achterliggende Data Model.</p><p><img src="https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20API%20architectuur/uitwerkingen/media/API-Informatiemodel.png" alt="alt text"></p><p>Figuur 6: Resource Model</p><p>Wanneer het Resource Model 1 op 1 gelijk is aan het achterliggende Data Model is de vertaling/mapping eenvoudig en kan dit ook geautomatiseerd worden : het Resource Model en de API kunnen bijvoorbeeld worden gegenereerd vanuit het Applicatie Data Model.</p><p><strong>Ontkoppeling</strong></p><p>Door Applicatie Data Model en Resource Model te ontkoppelen kunnen deze apart van elkaar evolueren. Dit heeft een aantal voordelen:</p><p><em>Breaking changes</em></p><p>Liefst wil je voorkomen dat een aanpassing aan het Applicatie Data Model welke verder geen waarde heeft voor de afnemers / clients van de data leidt tot verplichte aanpassingen/updates. Door te ontkoppelen kunnen breaking changes worden voorkomen voor bestaande clients;</p><p><em>Verbergen complexiteit</em></p><p>Voor complexe Domeinen of gecombineerde Diensten waarbij meerdere bronnen worden gecombineerd is het waardevol om het Resource Model zo eenvoudig en duidelijk mogelijk te houden. In het Resource Model kan de achterliggende complexiteit verborgen blijven en kan de interface gebruikersvriendelijk worden gemaakt. Het Resource mode is hier dan een abstraherende laag die alleen die zaken aanbiedt die de gebruiker nodig heeft en die aansluiten op de belevingswereld van de gebruiker.</p><p><em>Integreren &amp; Innoveren</em></p><p>Het Resource Model als logische view op achterliggende datamodellen heeft ook als voordeel dat op de laag van het Resource Model al integratie van data modellen kan plaatsvinden nog voordat de achterliggende modellen zijn aangepast of volledig geïntegreerd. Een (nieuw) geïntegreerd Resource model over meerdere achterliggende datamodellen heen kan zo databronnen integreren en aanbieden. Met behulp van een geïntegreerd resourcemodel op het niveau van API's kan sneller gestandaardiseerd worden en kan men ook sneller innoveren.</p><p><img src="https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20API%20architectuur/uitwerkingen/media/API-Infomodel2.png" alt="alt text"></p><p>Figuur 7: Geïntegreerd Resource Model</p></section><section id="aanbevelingen"><h4 id="x5-5-4-aanbevelingen"><span class="secno">5.5.4 </span>Aanbevelingen</h4><p><strong>Verbindt het Resource Model met een  Informatiemodel</strong></p><p>Bij het aanbieden van data via een API is het van groot belang om de verbinding met een informatiemodel te hebben en deze verbinding ook te beschrijven en te publiceren bij de API documentatie.</p><ul>
+<li>Dit bevordert begrip bij afnemers, zodat zij de ruwe data goed kunnen interpreteren.</li>
+<li>Dit houdt de API beheersbaar en zorgt dat de API gemakkelijker kan mee-evolueren met het informatielandschap (immers wijzigingen in het informatiemodel kunnen dan gerelateerd worden aan wijzigingen in de API).</li>
+<li>Wanneer een API informatie uit een stelsel van gegevensbronnen ontsluit bevordert dit interoperabiliteit in het stelsel.</li>
+</ul><p>Het Resource Model van een API is een (of mogelijk meerdere, afhankelijk van uitwisselformaat) Niveau 4 - Fysiek / technisch datamodel(len). Het is namelijk een model van de uitwisseling van gegevens in een concreet uitwisselformaat. Bijvoorbeeld gespecificeerd in een OAS document. <a href="https://www.openapis.org/">OAS</a>.
+Het is echter belangrijk om de verbinding met een Niveau 3: - Logisch informatie- of gegevensmodel uit te drukken, omdat dit een implementatie-onafhankelijk model is, wat begrip, maar ook interoperabiliteit, bevordert. Het bevordert interoperabiliteit met andere Niveau 3 informatiemodellen in een stelsel, maar biedt ook één overkoepelend informatiemodel wanneer er sprake is van gegevensuitwisseling conform verschillende Niveau 4 informatiemodellen gebaseerd op hetzelfde Niveau 3 informatiemodel.</p></section></section><section id="api-security-architectuur"><h3 id="x5-6-api-security-architectuur"><span class="secno">5.6 </span>API Security Architectuur</h3><p>ICT beveiliging is over het algemeen gebaseerd op de aspecten <em>beschikbaarheid</em>, <em>integriteit</em> en <em>vertrouwelijkheid</em>. Dit hoofdstuk gaat allereerst in op deze drie aspecten en hun relaties met API beveiliging, waarna een aantal aan API beveiliging gerelateerde architectuurprincipes en architectuurpatronen zullen worden beschreven.</p><section id="beschikbaarheid"><h4 id="x5-6-1-beschikbaarheid"><span class="secno">5.6.1 </span>Beschikbaarheid</h4><p>Beschikbaarheid gaat erover om te allen tijde bij informatie en informatiebronnen te kunnen en dat de beschikbaarheid van diensten voldoen aan gemaakte continuïteitsafspraken. Beschikbaarheid van gegevens en systeemfuncties wordt over het algemeen gegarandeerd door vermeerdering van systeemfuncties, door herstelbaarheid en beheersing van verwerkingen, door voorspelling van discontinuïteit en handhaving van de functionaliteit. Binnen de NORA is beschikbaarheid opgenomen als afgeleid principe <a href="https://www.noraonline.nl/wiki/Beschikbaarheid">AP41</a>.</p><p>In de context van API's gaat beschikbaarheid erover dat consumenten van aangeboden API's juist worden geinformeerd over de afspraken omtrent (on)beschikbaarheid van de API's, dat de beschikbare capaciteit wordt verdeeld over de aangesloten API Clients en dat onvoorziene onbeschikbaarheid voor zowel aanbieders als consumenten van API's inzichtelijk wordt gemaakt, zodat daar juist op ingespeeld kan worden.</p><p>Aan beschikbaarheid gerelateerde API capabilities zijn <em>Caching</em>, <em>Rate limiting / Throttling</em>, <em>SLA Management</em>, <em>API Monitoring / Alerting</em> en <em>Foutafhandeling</em>. De onderstaande sectie <em>Componenten</em> beschrijft deze in meer detail en geeft aan waar deze worden toegepast in een API architectuur.</p></section><section id="integriteit"><h4 id="x5-6-2-integriteit"><span class="secno">5.6.2 </span>Integriteit</h4><p>Integriteit gaat over het waarborgen van de integriteit van gegevens en systeemfuncties. Dit wordt over het algemeen bereikt door validatie en beheersing van gegevensverwerking en geautoriseerde toegang tot gegevens en systeemfuncties, door scheiding van systeemfuncties, door controle op communicatiegedrag en gegevensuitwisseling en door beperking van functionaliteit. Binnen de NORA is integriteit opgenomen als afgeleid principe <a href="https://www.noraonline.nl/wiki/Integriteit">AP42</a>.</p><p>In de context van API's gaat integriteit over het versleutelen en ondertekenen van berichten en gegevens, het valideren van API verzoeken en de vastlegging van de gegevensuitwisseling tussen API aanbieders en consumenten.</p><p>Aan integriteit gerelateerde API capabilities zijn <em>Logging / Audit Trail</em>, <em>Policy Enforcement</em>, <em>Identificatie / Authenticatie / Autorisatie</em> en <em>Sleutelbeheer</em>. De onderstaande sectie <em>Componenten</em> beschrijft deze in meer detail en geeft aan waar deze worden toegepast in een API architectuur.</p></section><section id="vertrouwelijkheid"><h4 id="x5-6-3-vertrouwelijkheid"><span class="secno">5.6.3 </span>Vertrouwelijkheid</h4><p>Vertrouwelijkheid gaat over het geheimhouden van gegevens en gegevensbronnen. Dit wordt gegarandeerd door scheiding van systeemfuncties, door controle op communicatiegedrag en gegevensuitwisseling, door validatie op toegang tot gegevens en systeemfuncties en door versleuteling van gegevens. Binnen de NORA is vertrouwelijkheid opgenomen als afgeleid principe <a href="https://www.noraonline.nl/wiki/Vertrouwelijkheid_%28principe%29">AP43</a>.</p><p>In de context van API's gaat vertrouwelijkheid over het ervoor te zorgen dat tussen API aanbieder en consument uitgewisselde gegevens niet door onbevoegden kunnen worden ingezien en misbruikt.</p><p>Aan vertrouwelijkheid gerelateerde API capabilities zijn <em>Caching</em>, <em>Analytics</em>, <em>Logging / Audit Trail</em>, <em>Identificatie / Authenticatie / Autorisatie</em>, <em>Sleutelbeheer</em> en <em>Gebruiker / Rol beheer</em>. De onderstaande sectie <em>Componenten</em> beschrijft deze in meer detail en geeft aan waar deze worden toegepast in een API architectuur.</p></section><section id="componenten"><h4 id="x5-6-4-componenten"><span class="secno">5.6.4 </span>Componenten</h4><p>Onderstaande afbeelding geeft een overzicht van standaard componenten in een API architectuur. Deze sectie beschrijft de aan API beveiliging gerelateerde componenten in dit diagram.</p><p><img src="https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20API%20architectuur/uitwerkingen/media/api-security-architecture.png" alt="API Security Architectuur diagram"></p><p>Figuur 8: API Security</p><section id="actors-en-clients"><h5 id="x5-6-4-1-actors-en-clients"><span class="secno">5.6.4.1 </span>Actors en Clients</h5><p>Onderstaand overzicht beschrijft de actoren en API Clients welke een rol spelen bij API beveiliging uit bovenstaand diagram. </p><ul>
+<li><strong>Eindgebruikers:</strong> Eindgebruikers welke door middel van devices en client apps gebruik maken van API's.</li>
+<li><strong>Client ontwikkelaars:</strong> Ontwikkelaars van client API gebruikende client apps voor verschillende devices.</li>
+<li><strong>Web Applicatie:</strong> een API client die op een server draait, welke door eindgebruikers wordt gebruikt middels een web interface.</li>
+<li><strong>System-to-System (S2S) Applicatie:</strong> een API client die op een server draait, welke namens zichzelf (in plaats van namens een eindgebruiker) API's benadert middels een system-to-system koppeling, in plaats van namens een eindgebruiker.</li>
+<li><strong>Native App:</strong> een API client die als native applicatie op het device van de eindgebruiker draait en zelfstandig API's benadert.</li>
+<li><strong>Browser-based App:</strong> een API client die volledig in de browser draait en zelfstandig API's benadert, bijvoorbeeld op basis van JavaScript.</li>
+</ul></section><section id="componenten-0"><h5 id="x5-6-4-2-componenten"><span class="secno">5.6.4.2 </span>Componenten</h5><p>Onderstaand overzicht beschrijft de componenten welke een rol spelen bij API beveiliging uit bovenstaand diagram.</p><ul>
+<li><strong>Identity Provider:</strong> Biedt de mogelijkheid aan eindgebruikers en Client applicaties om zichzelf te identificeren en Authentiseert deze. Geeft een authenticatie token af aan de Client applicatie waarmee deze API endpoints kan benaderen.</li>
+<li><strong>API Gateway:</strong> De toegangspoort tot het achterliggende applicatie landschap. Alle API interactie verloopt via de API Gateway, waardoor de API Gateway een centrale rol heeft in de API beveiliging. Over het algemeen bevat de API Gateway een aantal traffic policies (zie volgend punt) welke bij elk API verzoek worden gevalideerd en voert de API Gateway initiële autorisatie van API verzoeken uit. Deze autorisatie omvat minimaal een controle of de ontvangen verzoeken van correcte Access Tokens zijn voorzien en kan eventueel role-based autorisaties toepassen. De API Gateway kan een verbinding met de Identity Provider hebben voor het geval door de Identity Provider afgegeven tokens onvoldoende informatie bevatten om autorisaties toe te passen.</li>
+<li><strong>Traffic Policies:</strong> Een verzameling policies welke worden toegepast op al het API verkeer, of een specifiek deel daarvan. Voorbeelden zijn <em>Rate Limiting / Throttling</em>, <em>SLA Management</em> en <em>Input validatie</em>. Over het algemeen bieden API Gateways de mogelijkheden om traffic policies direct in te bouwen.</li>
+<li><strong>Gebruiker / client / rol beheer:</strong> Het beheren van gebruikers van de API tooling, zoals beheerders, API developers en client developers, geregistreerde Client applicaties en een mapping van eindgebruikers identiteiten en rollen naar specifieke autorisaties. Dit is <em>niet</em> de identity store welke credentials van eindgebruikers bevat; dat gedeelte is de verantwoordelijkheid van de Identity Provider.</li>
+<li><strong>Sleutel beheer:</strong> Beheert het sleutelmateriaal dat wordt gebruikt voor versleuteling en ondertekening van berichten welke worden uitgewisseld tussen API Gateway, Identity Provider en Client applicaties.</li>
+<li><strong>Logging, Monitoring, Analytics, Caching:</strong> Cross-cutting functionaliteiten welke op verschillende en/of meerdere plekken in het landschap geïmplementeerd kunnen worden. Voor al deze functionaliteiten is het van belang dat deze in lijn met AVG richtlijnen worden opgezet. Bij caching is het daarnaast belangrijk cache invalidaties te implementeren om te voorkomen dat verouderde cache data kan worden teruggehaald, zeker als daar privacy gevoelige informatie in kan staan.</li>
+<li><strong>Back-end Services:</strong> Applicaties die de daadwerkelijke resources implementeren. </li>
+</ul></section></section><section id="principes"><h4 id="x5-6-5-principes"><span class="secno">5.6.5 </span>Principes</h4><p>De volgende basisprincipes voor API beveiliging moeten worden toegepast bij het aanbieden van API dienstverlening:</p><ul>
+<li>Beschouw elke API alsof deze potentieel als externe API aangeboden wordt, zelfs als daar momenteel nog geen plannen voor zijn.</li>
+<li>Zero-trust networking: elk applicatie-component gedraagt zich alsof deze aan het publieke netwerk zit.</li>
+<li>Gebruik generieke methoden voor authenticatie en authorisatie over alle API's, bij voorkeur op basis van bestaande componenten. Voorkom specifieke oplossingen voor individuele API's.</li>
+<li>Versleutel alle data in opslag (at rest) en in uitwisseling (in transit).</li>
+<li>Least privilege: API clients krijgen alleen de toegang die zij minimaal nodig hebben om hun functie uit te oefenen.</li>
+</ul><p>Verder moeten de aanbevelingen in de volgende externe documenten worden overwogen bij API ontwikkeling:</p><ul>
+<li><a href="https://www.owasp.org/index.php/OWASP_Top_Ten_Cheat_Sheet">OWASP Top Ten Cheat Sheet</a></li>
+<li><a href="https://www.owasp.org/index.php/REST_Security_Cheat_Sheet">OWASP REST Security Cheat Sheet</a></li>
+<li><a href="https://www.owasp.org/index.php/OWASP_API_Security_Project">OWASP API Security Project</a></li>
+</ul></section><section id="architectuurpatronen"><h4 id="x5-6-6-architectuurpatronen"><span class="secno">5.6.6 </span>Architectuurpatronen</h4><section id="gedelegeerde-identificatie-en-authenticatie"><h5 id="x5-6-6-1-gedelegeerde-identificatie-en-authenticatie"><span class="secno">5.6.6.1 </span>Gedelegeerde Identificatie en Authenticatie</h5><p>Authenticatie beschrijft het met een bepaalde zekerheid vaststellen of een persoon of systeem echt degene is die deze zegt te zijn. </p><p>In de context van API's is authenticatie van toepassing op de API Client, oftewel de applicatie die de API resources benadert, en de eindgebruiker, oftewel de persoon namens wie de API Client de API resources benadert.</p><p>Waar authenticatie van de API Client bij de API resources plaats kan vinden, bijvoorbeeld door middel van asymmetrische versleuteling of gedeelde geheimen, wordt authenticatie van eindgebruikers over het algemeen gedelegeerd aan een externe Identity Provider, bijvoorbeeld door middel van OAuth2 of OpenID Connect.</p><p>Bij gedelegeerde Authenticatie identificeren de API Client en eindgebruiker zichzelf en ontvangt de API Client, na succesvolle authenticatie, een token waarmee de API resources kunnen worden bevraagd.</p></section><section id="token-based-autorisatie"><h5 id="x5-6-6-2-token-based-autorisatie"><span class="secno">5.6.6.2 </span>Token-based Autorisatie</h5><p>Autorisatie beschrijft het vaststellen wat een geauthenticeerd persoon of systeem mag, of juist niet mag.</p><p>Door de toepassing van gedelegeerde identificatie en authenticatie in combinatie met tokens, wordt het ingewikkelder om applicatie-specifieke autorisatie toe te passen. De API aanbieder moet bijvoorbeeld autorisatie beslissingen nemen op basis van de beperkte set aan data in het ontvangen token.</p><p>Voor gevallen dat het token onvoldoende informatie biedt om een autorisatie beslissing op te baseren, kan het benodigd zijn om token introspection toe te passen. In dit geval vraagt de API aanbieder op basis van het ontvangen token meer informatie over de geauthenticeerde gebruiker bij de Identity Provider.</p><p>Een belangrijk component bij autorisaties in de context van API's is de API Gateway. Op basis van een door de Identity Provider afgegeven access token kan de API Gateway beslissen of API aanroepen zijn toegestaan of niet. Hierbij kan de API Gateway <em>role-based access control (RBAC)</em> toepassen; <em>domein-specifieke autorisaties</em> worden over het algemeen toegepast door de back-ends om implementatie van business logica in de API Gateway te voorkomen.</p><p>Voor de implementatie van <em>domein-specifieke autorisaties</em> in de back-ends kunnen tevens microgateways of een service mesh oplossing worden gekozen. Bijkomend voordeel van het gebruik van een service mesh is dat deze standaard werken op basis van zero-trust networking.</p></section></section><section id="referenties"><h4 id="x5-6-7-referenties"><span class="secno">5.6.7 </span>Referenties</h4><ul>
+<li><a href="https://www.owasp.org/index.php/OWASP_Top_Ten_Cheat_Sheet">OWASP Top Ten Cheat Sheet</a></li>
+<li><a href="https://www.owasp.org/index.php/REST_Security_Cheat_Sheet">OWASP REST Security Cheat Sheet</a></li>
+<li><a href="https://owasp.org/www-project-api-security">OWASP - API Security Project</a></li>
+<li><a href="https://www.noraonline.nl/wiki/Beschikbaarheid">NORA - Beschikbaarheid principe</a></li>
+<li><a href="https://www.noraonline.nl/wiki/Integriteit">NORA - Integriteit principe</a></li>
+<li><a href="https://www.noraonline.nl/wiki/Vertrouwelijkheid_%28principe%29">NORA - Vertrouwelijkheid principe</a></li>
+</ul></section></section></section>
+  
+
+<section id="references" class="appendix">
+      <!--OddPage--><h2 id="a-referenties"><span class="secno">A. </span>Referenties</h2>
+      
+    <section id="informatieve-referenties">
+        <h3 id="a-1-informatieve-referenties"><span class="secno">A.1 </span>Informatieve referenties</h3>
+      <dl class="bibliography">
+        <dt id="bib-expert">[Expert]</dt><dd><a href="https://www.forumstandaardisatie.nl/sites/bfs/files/Expertadvies%20OAuth%202.0.pdf"><cite>Expertadvies OAuth 2.0</cite></a>. P. Dam. Forum Standaardisatie. 24 februari 2017. URL: <a href="https://www.forumstandaardisatie.nl/sites/bfs/files/Expertadvies%20OAuth%202.0.pdf">https://www.forumstandaardisatie.nl/sites/bfs/files/Expertadvies%20OAuth%202.0.pdf</a></dd><dt id="bib-igov.oauth2">[iGOV.OAuth2]</dt><dd><a href="https://openid.net/specs/openid-igov-oauth2-1_0.html"><cite>International Government Assurance Profile (iGov) for OAuth 2.0</cite></a>. J. Richer, M. Varley, P. Grassi. OpenID foundation. October 5 2018. URL: <a href="https://openid.net/specs/openid-igov-oauth2-1_0.html">https://openid.net/specs/openid-igov-oauth2-1_0.html</a></dd><dt id="bib-igov.openid">[iGOV.OpenID]</dt><dd><a href="https://openid.net/specs/openid-igov-openid-connect-1_0.html"><cite>International Government Assurance Profile (iGov) for OpenID Connect 1.0 - draft 3</cite></a>. M. Varley, P. Grassi. OpenID foundation. October 5 2018. URL: <a href="https://openid.net/specs/openid-igov-openid-connect-1_0.html">https://openid.net/specs/openid-igov-openid-connect-1_0.html</a></dd>
+      </dl></section></section><p role="navigation" id="back-to-top"><a href="#title">
+  <abbr title="Naar begin">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
