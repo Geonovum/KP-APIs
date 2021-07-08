@@ -140,7 +140,7 @@ redactie
 /*-- Aangepaste definite van de informative style ----------------------------------*/
 .informative
 {
-  background-color: darkgrey;
-  color: grey;
+  background-color: lightgrey;
+  color: darkslategrey;
 }
 
