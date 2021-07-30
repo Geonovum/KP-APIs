@@ -27,7 +27,7 @@ In onze visie zal de digitale overheid de komende jaren gegevens steeds meer vei
 ## Intentieovereenkomst
 Bij het realiseren van deze visie volgt de overheid een aantal afspraken:
 1. Waar de overheid REST APIs inzet, gebeurt dat volgens de [REST API Design Rules](https://docs.geostandaarden.nl/api/API-Designrules/). Zo biedt de overheid haar REST APIs op een standaard manier en goed gedocumenteerd aan.
-2. De overheid registreert haar publieke toegankelijke REST APIs bij [developer.overheid.nl](https://developer.overheid.nl). Zo kunnen ontwikkelaars de APIs van de overheid altijd vinden.
+2. De overheid registreert haar extern toegankelijke REST APIs bij [developer.overheid.nl](https://developer.overheid.nl). Zo kunnen ontwikkelaars de APIs van de overheid altijd vinden.
 3. Veilige autorisatie van toegang tot REST APIs realiseert de overheid met het [NL GOV Assurance Profile for OAuth 2.0](https://docs.geostandaarden.nl/api/oauth/). Dit profiel op de authorisatie standaard OAuth is speciaal ontwikkeld voor de Nederlandse overheid.
 4. Voor het leggen van een veilige verbinding met een gegevensbron gebruikt de overheid de standaard [DigiKoppeling](https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/basisregistraties-en-stelselafspraken/stelselvoorzieningen/digikoppeling/). Deze standaard maakt het ook mogelijk om een een REST API aan te bieden op een veilige manier die voldoet aan punten 1 en 3 hierboven.
 
