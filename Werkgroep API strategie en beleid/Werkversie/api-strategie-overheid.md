@@ -1,11 +1,16 @@
 # API strategie voor de overheid
-*Dit is een nieuwe versie van het werkdocument, gebaseerd op de feedback uit de bijeenkomst op **3 juni** en het commentaar op Github. De belangrijkste wijzigingen zijn:*
-- *De Visie start vanuit het concept van de platformeconomie, en is aangevuld en verder aangescherpt in de laatste alinea.*
-- *Basisafspraken is nu **intentieovereenkomst** en is nu minder hard. Ook nuances aangebracht in enkele afspraken. En afspraak verwijderd van het NLX afspraak.*
-- *De tijdlijn ontbreekt nog (hebben we die wel nodig?)*
-- *Praktijkvoorbeeld 'Een API voor regie op gegevens is aangevuld en sluit ook aan op het VNG-R model API*
-- *Praktijkvoorbeeld 'De API voor Zaakgericht Werken van Common Ground' is aangescherpt.*
-- *Toevoeging HF 'Samenvattend' om een brug te vormen tussen de HF Praktijkvoorbeelden en HF Ondertekening.*
+*Dit is een nieuwe versie van het werkdocument, gebaseerd op de feedback uit de bijeenkomst op **29 juni** en het commentaar op Github. De belangrijkste wijzigingen zijn:*
+
+Verwerkt:
+- *Termen als 'publiek' vs. 'open' vs. 'extern'. worden consistent gebruikt, conform de API strategie: https://docs.geostandaarden.nl/api/API-Strategie/#intern-extern-open-gesloten*
+- *Voorbeeld, De API op de Basisregistratie Personen (BRP) van Haal Centraal is aangepast en in lijn met de andere voorbeelden.*
+- *Voorbeeld, De API voor Zaakgericht Werken van Common Ground is aangescherpt.*
+
+Nog todo (wacht op input):
+
+- Voorbeeld waarin ook de relatie met de bestaande wetgeving wordt gelegd.
+- Tekstvoorstel waarin de link wordt gelegd met Government as a Platform
+- Verkorte versie van voorbeeld: "een API voor regie op gegevens"
 
 ## Visie
 
@@ -43,14 +48,16 @@ Over de voordelen van de BRP API heeft Haal Centraal een heldere [video](https:/
 
 
 ### De API voor Zaakgericht Werken van Common Ground
+Veel gemeenten werken zaakgericht. Dit betekent dat informatie over dienstverlening aan inwoners in zaken is geordend in een zaaksysteem. 
 Deze manier van werken richt zich op het transparant afhandelen van een samenhangende hoeveelheid werk (een 'zaak'), welke een duidelijk omschreven aanleiding kent (bijvoorbeeld een aanvraag) en leidt tot een duidelijk omschreven resultaat. ICT systemen ondersteunen zaakgericht werken met als voordelen:
+
 - Automatische termijnbewaking.
 - Automatisch routeren van taken naar betrokken medewerkers of systemen.
 - Het parallel kunnen uitvoeren van samenhangende taken.
 - Geautomatiseerd toekennen van metadata.
 - Duurzaam toegankelijk bewaren van het zaakdossier.
 
-*Moet nog verder worden uitgewerkt.*
+De API-standaarden voor zaakgericht werken helpen bij het (ont)koppelen van zaaksystemen en de registers waar documenten en overige informatie in zijn opgeslagen. Als alle gemeenten de API-standaarden voor zaakgericht werken gebruiken, wordt de uitwisseling van gegevens voor deze systemen efficiënter. Het is bovendien een belangrijke stap in het realiseren van Common Ground, iets waar alle gemeenten naar streven.
 
 ### De BRK Publiekrechtelijke Beperkingen
 Sinds 2021 is de nieuwe [Wet kenbaarheid publiekrechtelijke beperkingen](https://wetten.overheid.nl/BWBR0016876/2021-01-01) (Wkpb) van kracht. Deze nieuwe wet schrijft wijzigingen voor in het systeem voor het kenbaar maken van [publiekrechtelijke beperkingen](https://www.kadaster.nl/publiekrechtelijke-beperkingen).
