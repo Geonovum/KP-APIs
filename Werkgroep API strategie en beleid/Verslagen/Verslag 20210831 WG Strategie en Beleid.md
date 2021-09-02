@@ -26,7 +26,7 @@ Redouan vraagt of de tekst nu op goedkeuring van de groep kan rekenen:
 
 - **Edward** geeft aan dat het stuk over "Government as a platform" toegezonden wordt.
 - **Marcel** is het mee eens dat het stuk over "Government as a Platform" goed als slotstuk kan dienen voor Visie.
-- **Frank** het zou ook goed zijn dat we in het stuk ergens opnemen dat het voordeel dat de kennis in de markt is waardoor het eenvoudig en goedkoop is APIs in te zetten. Het staat er nu niet expliciet in. Bv. door aan te geven dat bij Common Ground dit goedkoop gerealiseerd kon doordat de kennis al aanwezig was.
+- **Frank** het zou ook goed zijn dat we in het stuk ergens opnemen dat het voordeel dat de kennis in de markt is waardoor het eenvoudig en goedkoop is APIs in te zetten. Het staat er nu niet expliciet in. Bv. door aan te geven dat bij Common Ground dit goedkoop gerealiseerd worden kon doordat de kennis al aanwezig was.
 - **Arjen** reageert op het punt van Frank, dit is niet een hoofdargument maar een bijzaak. 
 - **Redouan** we moeten daar wel scherp blijven. Het kan geen kwaad om ergens in een bijzaak aan te geven, hoewel het impliciet het er al staat. 
 - **Martin** Cloud native computing is er ook alleen vanwege het toepassen APIs
@@ -70,7 +70,7 @@ De [technische onderdelen van de API Strategie](https://docs.geostandaarden.nl/a
 
 Redouan plant na afloop van de publieke consultatie nog een meeting in, we kunnen dan ook de resultaten bespreken. 
 
-Tijdens het [iBestuur congres](https://ibestuur.nl/nieuws/wat-een-moderne-bestuurder-met-api-s-moet) (aanmelden kan nog), wordt er aandacht gegeven aan start van de consultatie. We hopen dan het document dus klaar te hebben om in consultatie te gaan. De sessie zelf gaat over wat de bestuurder met API's aan moet. Het wordt verzorgt door Cathy Dingemans (Haal Centraal), Koen Adolfs (ABN AMRO), Theo Peterse (VNG) en Larissa Zegveld als gespreksleider. 
+Tijdens het [iBestuur congres](https://ibestuur.nl/nieuws/wat-een-moderne-bestuurder-met-api-s-moet) (aanmelden kan nog), wordt er aandacht gegeven aan start van de consultatie. We hopen dan het document dus klaar te hebben om in consultatie te gaan. De sessie zelf gaat over wat de bestuurder met API's aan moeten. Het wordt verzorgt door Cathy Dingemans (Haal Centraal), Koen Adolfs (ABN AMRO), Theo Peterse (VNG) en Larissa Zegveld als gespreksleider. 
 
 In het najaar zullen er nog voldoende evenementen volgen waarin we een tekening van de intentieverklaring kunnen organiseren.
 
