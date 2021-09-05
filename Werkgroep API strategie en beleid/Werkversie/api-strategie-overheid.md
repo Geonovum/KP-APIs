@@ -41,14 +41,14 @@ Bij het realiseren van deze visie volgt de overheid een aantal bestaande afsprak
 1. Waar de overheid REST APIs inzet, gebeurt dat volgens de [REST API Design Rules](https://docs.geostandaarden.nl/api/API-Designrules/). Zo biedt de overheid haar REST APIs op een standaard manier en goed gedocumenteerd aan.
 2. Veilige autorisatie van toegang tot REST APIs realiseert de overheid met het [NL GOV Assurance Profile for OAuth 2.0](https://docs.geostandaarden.nl/api/oauth/). Dit profiel op de authorisatie standaard OAuth is speciaal ontwikkeld voor de Nederlandse overheid.
 3. Voor het leggen van een veilige verbinding met een gegevensbron gebruikt de overheid de standaard [DigiKoppeling](https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/basisregistraties-en-stelselafspraken/stelselvoorzieningen/digikoppeling/). Deze standaard maakt het ook mogelijk om een een REST API aan te bieden op een veilige manier die voldoet aan punten 1 en 3 hierboven.
-4. De overheid haar extern toegankelijke REST APIs bij [developer.overheid.nl](https://developer.overheid.nl). Zo kunnen ontwikkelaars de APIs van de overheid altijd vinden.
+4. De overheid registreert haar extern toegankelijke REST APIs bij [developer.overheid.nl](https://developer.overheid.nl). Zo kunnen ontwikkelaars de APIs van de overheid altijd vinden.
 
-[comment]: <> (het expliciet onderschrijven van deze visie moet ook ergens in het document staan, wat is de beste plek ?)
+[comment]: <> (het expliciet onderschrijven van deze visie moet ook ergens in het document staan, wat is de beste plek ? )
 
 
 ## Praktijkvoorbeelden
-*In dit deel laten we een aantal domeinen zien waar de overheid al met succes APIs toepast om applicaties en gegevensbronnen te koppelen.*
 
+[comment]: <> (In dit deel laten we een aantal domeinen zien waar de overheid al met succes APIs toepast om applicaties en gegevensbronnen te koppelen. )
 
 ### De API op de Basisregistratie Personen (BRP) van Haal Centraal
 Persoonsgegevens uit de Basisregistratie Personen (BRP) worden nu vaak gesynchroniseerd met een lokale kopiedatabase bij een gemeente. In de processen van de gemeente wordt dan die kopiedatabase bevraagd in processen waar persoonsgegevens nodig zijn. Binnen het programma [Haal Centraal](https://www.vngrealisatie.nl/producten/haal-centraal) experimenteert de [Rijksdienst voor Identiteitsgegevens](https://www.rvig.nl/) (RvIG), de vijf grote gemeenten (Amsterdam, Den Haag, Eindhoven, Rotterdam en Utrecht) en [VNG Realisatie](https://www.vngrealisatie.nl/) met een API waarmee gemeenten in hun werkprocessen direct de Basisregistratie Personen (BRP) kunnen bevragen. In totaal 10 gemeenten gaan deze API gebruiken en beproeven in een pilot.
@@ -58,18 +58,15 @@ Over de voordelen van de BRP API heeft Haal Centraal een heldere [video](https:/
 
 ### De API voor Zaakgericht Werken van Common Ground
 Veel gemeenten werken zaakgericht. Dit betekent dat informatie over dienstverlening aan inwoners in zaken is geordend in een zaaksysteem. 
-Deze manier van werken richt zich op het transparant afhandelen van een samenhangende hoeveelheid werk (een 'zaak'), welke een duidelijk omschreven aanleiding kent (bijvoorbeeld een aanvraag) en leidt tot een duidelijk omschreven resultaat. ICT systemen ondersteunen zaakgericht werken met als voordelen:
+Deze manier van werken richt zich op het transparant afhandelen van een samenhangende hoeveelheid werk (een 'zaak'), welke een duidelijk omschreven aanleiding kent (bijvoorbeeld een aanvraag) en leidt tot een duidelijk omschreven resultaat. 
 
-- Automatische termijnbewaking.
-- Automatisch routeren van taken naar betrokken medewerkers of systemen.
-- Het parallel kunnen uitvoeren van samenhangende taken.
-- Geautomatiseerd toekennen van metadata.
-- Duurzaam toegankelijk bewaren van het zaakdossier.
+ICT systemen ondersteunen zaakgericht werken met als voordelen het automatische termijnbewaking en routeren van taken naar betrokken medewerkers of systemen.
+Met daarbij ook het parallel kunnen uitvoeren van samenhangende taken, geautomatiseerd toekennen van metadata en het duurzaam toegankelijk bewaren van het zaakdossier.
 
 De API-standaarden voor zaakgericht werken helpen bij het (ont)koppelen van zaaksystemen en de registers waar documenten en overige informatie in zijn opgeslagen. Als alle gemeenten de API-standaarden voor zaakgericht werken gebruiken, wordt de uitwisseling van gegevens voor deze systemen efficiënter. Het is bovendien een belangrijke stap in het realiseren van Common Ground, iets waar alle gemeenten naar streven.
 
-### De BRK Publiekrechtelijke Beperkingen
-Sinds 2021 is de nieuwe [Wet kenbaarheid publiekrechtelijke beperkingen](https://wetten.overheid.nl/BWBR0016876/2021-01-01) (Wkpb) van kracht. Deze nieuwe wet schrijft wijzigingen voor in het systeem voor het kenbaar maken van [publiekrechtelijke beperkingen](https://www.kadaster.nl/publiekrechtelijke-beperkingen).
+### De API voor Basisregistratie Kadaster (BRK) - Publiekrechtelijke Beperkingen
+De Wet kenbaarheid publiekrechtelijke beperkingen onroerende zaken (Wkpb) geeft inzicht in door de overheid opgelegde beperkingen op een stuk grond of een daarop staand gebouw. Sinds 2021 is de nieuwe [Wet kenbaarheid publiekrechtelijke beperkingen](https://wetten.overheid.nl/BWBR0016876/2021-01-01) (Wkpb) van kracht. Deze nieuwe wet schrijft wijzigingen voor in het systeem voor het kenbaar maken van [publiekrechtelijke beperkingen](https://www.kadaster.nl/publiekrechtelijke-beperkingen). Inwoners, ondernemers en overige partijen kunnen alle informatie over beperkingen en bijbehorende brondocumenten bij één partij kunnen vinden: het Kadaster.
 
 In het oude systeem registreerden de gemeenten hun eigen gegevens terwijl andere overheden de basisregistratie van het Kadaster gebruikten. Deze twee langs elkaar werkende systemen brachten allerlei problemen met zich mee. Overheden, notarissen en makelaars moesten vaak beide registraties raadplegen. Het was niet mogelijk om gemeentelijke brondocumenten bij het Kadaster op te vragen. En soms bleek de gemeentelijke situatie van een pand of object niet overeen te komen met de kenmerken zoals die in de basisregisters van het Kadaster zijn vastgelegd.
 
@@ -79,9 +76,9 @@ De [Basisregistratie Kadaster](https://www.kadaster.nl/zakelijk/registraties/bas
 
 Het bij de bron registreren en beheren van gegevens heeft hier dus zichtbare meerwaarde, zowel voor de overheid als voor de private sector , zie ook dit [artikel in Binnenlands Bestuur](https://www.binnenlandsbestuur.nl/digitaal/nieuws/notarissen-niet-gelukkig-met-lakse-gemeenten.15795830.lynkx).
 
-[comment]: <> (Is er een link naar de BRP-PB? Verder noemde Frans het portaal [ruimtelijkeplannen.nl](https://www.ruimtelijkeplannen.nl/) als mogelijk voorbeeld. )
+[comment]: <> (Is er een link naar de BRK-PB? Verder noemde Frans het portaal https://www.ruimtelijkeplannen.nl/ als mogelijk voorbeeld. )
 
-### Een API voor regie op gegevens
+### De API voor regie op gegevens
 
 De [Wet bescherming persoonsgegevens](https://wetten.overheid.nl/BWBR0011468/2018-05-01) (Wrp) en z'n opvolger, de [Algemene verordening gegevensbescherming](https://eur-lex.europa.eu/legal-content/NL/TXT/HTML/?uri=CELEX:32016R0679&from=NL) (AVG) geven ons al bijna twintig jaar recht op inzage en correctie van de gegevens die de overheid over ons verzamelt en beheert. Dit betekent dat je als burger het recht hebt om te weten welke persoonsgegevens de overheid over je heeft vastgelegd en welke gegevens de overheid heeft gebruikt en uitgewisseld voor welk doel.
 
