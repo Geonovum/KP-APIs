@@ -5,16 +5,17 @@ Verwerkt:
 - *Termen als 'publiek' vs. 'open' vs. 'extern'. worden consistent gebruikt, conform de API strategie: https://docs.geostandaarden.nl/api/API-Strategie/#intern-extern-open-gesloten*
 - *Voorbeeld, De API op de Basisregistratie Personen (BRP) van Haal Centraal is aangepast en in lijn met de andere voorbeelden.*
 - *Voorbeeld, De API voor Zaakgericht Werken van Common Ground is aangescherpt.*
+- *- Tekstvoorstel waarin de link wordt gelegd met Government as a Platform*
 
 Nog todo (wacht op input):
 
 - Voorbeeld waarin ook de relatie met de bestaande wetgeving wordt gelegd.
-- Tekstvoorstel waarin de link wordt gelegd met Government as a Platform
+
 - Verkorte versie van voorbeeld: "een API voor regie op gegevens"
 
 ## Visie
 
-Wij leven in een maatschappij waarin ICT-platformen een steeds grotere rol spelen in het bij elkaar brengen van vraag en aanbod van producten en diensten. Denk aan AirBnB, Über, Funda en Thuisbezorgd. Maar ook aan publieke platformen zoals [OVChipkaart.nl](https://www.ov-chipkaart.nl/home.htm#/) en [Publieke Dienstverlening Op Kaart](https://www.pdok.nl/). Een belangrijk kenmerk van deze platformen is het gemak en de flexibiliteit waarmee gebruikers diensten kunnen aanbieden en afnemen. Zo kan Funda een applicatie als Google Maps gebruiken om op een kaart te laten zien waar in Nederland huizen te koop staan. Burgers en bedrijven verwachten dit ook van de overheid. Daarbij mogen zij verwachten dat iedereen binnen de overheid gebruik maakt van dezelfde gelijke data. Volgens de Kamer van Koophandel is er [geen weg meer terug](https://www.kvk.nl/advies-en-informatie/overheid/platformeconomie-er-is-geen-weg-terug/) uit deze platformeconomie. 
+In onze visie zal de digitale overheid de komende jaren gegevens steeds meer veilig en efficiënt uitwisselen door applicaties zoveel mogelijk te scheiden van de data, en deze gegevens bij de bron te bewaren, en ze zoveel mogelijk actueel te gaan halen - in een veilige infrastructuur -zodra het gegeven voor een zaak nodig is. Hiermee biedt de overheid een gedemocratiseerde toegang tot evenwichtige en consistente informatie, onafhankelijk van de complexiteit van achterliggende systemen, voor burgers, bedrijven en ketenpartners van de overheid. Wij leven bovendien in een maatschappij waarin ICT-platformen een steeds grotere rol spelen in het bij elkaar brengen van vraag en aanbod van producten en diensten. Denk aan AirBnB, Über, Funda en Thuisbezorgd. Maar ook aan publieke platformen zoals [OVChipkaart.nl](https://www.ov-chipkaart.nl/home.htm#/) en [Publieke Dienstverlening Op Kaart](https://www.pdok.nl/). Een belangrijk kenmerk van deze platformen is het gemak en de flexibiliteit waarmee gebruikers diensten kunnen aanbieden en afnemen. Zo kan Funda een applicatie als Google Maps gebruiken om op een kaart te laten zien waar in Nederland huizen te koop staan. Burgers en bedrijven verwachten dit ook van de overheid. Daarbij mogen zij verwachten dat iedereen binnen de overheid gebruik maakt van dezelfde gelijke data. Volgens de Kamer van Koophandel is er [geen weg meer terug](https://www.kvk.nl/advies-en-informatie/overheid/platformeconomie-er-is-geen-weg-terug/) uit deze platformeconomie. 
 
 De platformeconomie is actueel en maatschappelijk relevant of het we het nu hebben over de Informatiehuishouding op orde (rapport ‘Ongekend onrecht’ de kinderopvangtoeslag problematiek en ‘Werk aan uitvoering’ de problemen bij uitvoeringsorganisaties), over de Interbestuurlijke Datastrategie, over de toekomstvisie op het stelsel van Basisregistraties, of de over doorontwikkeling van de GDI (meerjarig geprogrammeerd en onder architectuur): ze veronderstellen een modernisering van de binnenkant van de gegevensuitwisseling. Platformen, API’s en afgedwongen standaarden zijn daarin onmisbaar. 
 
@@ -27,12 +28,10 @@ Toch heeft de overheid ook veel ICT systemen in gebruik die niet als platformen 
 4. Personen en bedrijven hebben geen regie over hun gegevens als deze bij verschillende organisaties verspreid staan.
 5. Systemen met maatwerkkoppelingen kunnen afhankelijkheid van leveranciers in de hand werken.
 
-In onze visie zal de digitale overheid de komende jaren gegevens steeds meer veilig en efficiënt uitwisselen door applicaties zoveel mogelijk te scheiden van de data, en deze gegevens bij de bron te bewaren, en ze zoveel mogelijk actueel te gaan halen - in een veilige infrastructuur -zodra het gegeven voor een zaak nodig is. Hiermee biedt de overheid een gedemocratiseerde toegang tot evenwichtige en consistente informatie, onafhankelijk van de complexiteit van achterliggende systemen, voor burgers, bedrijven en ketenpartners van de overheid.
-
+Door standaardisatie van berichtuitwisseling, het ontsluiten van brondata en het hergebruik van de data en informatieproducten, neemt de operabiliteit van de overheid enorm toe en is de overheid in staat om sneller dienstverlening aan het publiek te leveren. De overheid gaat zich meer als een platform gedragen, [Government as a platform](https://martijndewaal.nl/?p=1766). Daar waar de overheid traditioneel is georganiseerd als silo’s, worden grenzen doorbroken door het hergebruik van services over de silo’s heen te faciliteren. Diensten kunnen op deze manier meer rond de burger en ondernemer worden georganiseerd, in plaats van volgens de structuur van de organisaties binnen de overheid.
 
 [comment]: <> (hier moet nog het stuk rondom government as a platform )
 [comment]: <> (laatste alinea is eigenlijk de visie, mogelijk naar boven verhuizen ? )
-
 
 
 ## Intentieovereenkomst
