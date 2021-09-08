@@ -22,7 +22,8 @@ Binnen de werkgroep wordt er door verschillende subgroepen gewerkt aan de extens
 > - [Hypermedia/HAL](hypermedia.md) (trekker Michiel Trimpe)
 > - Naamgeving Conventies (trekker Frank van Es)
 > - Tijdreizen (trekker Tony Sloos) - uitwerking combineren met DIS Geo / SOR sessies en daarna extensie updaten
-> - Post/Put/Patch/Delete (trekker Henri Korver)
+> - Omgaan met relaties (voormalig put/patch/post/delete) (trekker Henri Korver)
+> - Geo (trekker Linda van den Brink)
 
 Wil je bijdragen aan de uitwerking van deze onderwerpen dan kun je je melden bij de trekker van het onderwerp of contact opnemen met Jasper Roes (jasper.roes@kadaster.nl).
 
@@ -37,7 +38,8 @@ De subgroepen zullen (de samenvatting van) hun discussies over het onderwerp waa
 De werkgroep komt vier keer per jaar bijeen. Zolang de maatregelen tegen de COVID-19 pandemie van kracht zijn, vinden de bijeenkomsten online plaats.
 
 De geplande bijeenkomsten in 2021 zijn:
-- woensdag 8 september van 10.00u tot 11.30u
 - woensdag 15 december van 10.00u tot 11.30u
+
+De bijeenkomsten in 2022 moeten nog gepland worden.
 
 ### Wil je aanhaken bij de werkgroep neem dan contact op met Jasper Roes (jasper.roes@kadaster.nl)
