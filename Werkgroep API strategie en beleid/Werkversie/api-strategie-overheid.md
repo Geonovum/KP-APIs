@@ -1,5 +1,5 @@
 # API strategie voor de overheid
-*Dit is een nieuwe versie van het werkdocument, gebaseerd op de feedback uit de bijeenkomst op **29 juni** en het commentaar op Github. De belangrijkste wijzigingen zijn:*
+<!-- [comment]: <> ( *Dit is een nieuwe versie van het werkdocument, gebaseerd op de feedback uit de bijeenkomst op **29 juni** en het commentaar op Github. De belangrijkste wijzigingen zijn:* )
 
 Verwerkt:
 - *Termen als 'publiek' vs. 'open' vs. 'extern'. worden consistent gebruikt, conform de API strategie: https://docs.geostandaarden.nl/api/API-Strategie/#intern-extern-open-gesloten*
@@ -11,7 +11,7 @@ Nog todo (wacht op input):
 
 - Voorbeeld waarin ook de relatie met de bestaande wetgeving wordt gelegd.
 
-- Verkorte versie van voorbeeld: "een API voor regie op gegevens"
+- Verkorte versie van voorbeeld: "een API voor regie op gegevens") -->
 
 ## Visie
 
@@ -72,16 +72,11 @@ De [BRK-PB](https://www.kadaster.nl/zakelijk/registraties/basisregistraties/brk)
 [comment]: <> (Is er een link naar de BRK-PB? Verder noemde Frans het portaal https://www.ruimtelijkeplannen.nl/ als mogelijk voorbeeld. )
 
 ### De API voor regie op gegevens
+De [Wet bescherming persoonsgegevens](https://wetten.overheid.nl/BWBR0011468/2018-05-01) (Wrp) en z'n opvolger, de [Algemene verordening gegevensbescherming](https://eur-lex.europa.eu/legal-content/NL/TXT/HTML/?uri=CELEX:32016R0679&from=NL) (AVG) geven ons al bijna twintig jaar recht op inzage en correctie van de gegevens die de overheid over ons verzamelt en beheert. Dit betekent dat je als burger het recht hebt om te weten welke persoonsgegevens de overheid over je heeft vastgelegd en welke gegevens de overheid heeft gebruikt en uitgewisseld voor welk doel. Uit dit [onderzoek](https://zoek.officielebekendmakingen.nl/blg-817465.pdf) uit 2017 van Berenschot (uitgevoerd in opdracht van BZK) blijkt dat volledig digitale inzage in alle relevante persoonsgegevens die onder de AVG vallen, in het huidige gegevenslandschap niet haalbaar is.
 
-De [Wet bescherming persoonsgegevens](https://wetten.overheid.nl/BWBR0011468/2018-05-01) (Wrp) en z'n opvolger, de [Algemene verordening gegevensbescherming](https://eur-lex.europa.eu/legal-content/NL/TXT/HTML/?uri=CELEX:32016R0679&from=NL) (AVG) geven ons al bijna twintig jaar recht op inzage en correctie van de gegevens die de overheid over ons verzamelt en beheert. Dit betekent dat je als burger het recht hebt om te weten welke persoonsgegevens de overheid over je heeft vastgelegd en welke gegevens de overheid heeft gebruikt en uitgewisseld voor welk doel.
+In de [beleidsbrief regie op gegevens](https://www.rijksoverheid.nl/documenten/brieven/2019/07/11/beleidsbrief-regie-op-gegevens-nadere-uitwerking) regie op gegevens van 2019 onderstreept het kabinet nog eens het beleidsvoornemen om serieus werk te maken van regie op gegevens. Maar dan er zal er dus iets moeten gebeuren in het gegevenslandschap om dit mogelijk te maken.
 
-In de praktijk kan de overheid vaak niet eenvoudig voldoen aan dit recht. Als je aan je gemeente vraagt welke instanties je persoonsgegevens uit de BRP hebben geraadpleegd, kan je meestal op niet meer rekenen dan een uitdraai van het logbestand uit het lokale ICT systeem. Zo'n logbestand is een lange lijst termen en codes waar je weinig aan hebt als je het ICT systeem niet kent. En dan weet je nog niet wie er in het centrale BRP bij je gegevens geweest is. Daarvoor moet je dan weer bij de RvIG zijn. Om het inzicht in de verstrekking van persoonsgegevens veel eenvoudiger te maken, is er door [VNG-Realisatie een model API opgesteld](https://commonground.nl/cms/view/c99f1789-adba-4fa7-bc2d-e1f8a96618c5/api-standaarden-voor-logging-en-verwerking), die overheden in staat kan stellen de logging op verwerking van persoonsgegevens op een toegankelijke manier te tonen. Tonen aan de eigen FG (functionaris gegevensbescherming), of aan toezichthouders, en op aanvraag dus ook de betrokkene zelf. Deze API haakt aan bij wat conform de AVG al tot stand komt: de organisatie-brede registers van verwerkingen van persoonsgegevens. De model API is opgesteld met de veelheid van gemeentelijk taken en systemen in het achterhoofd, maar is nadrukkelijk organisatie-neutraal in zijn modellering. Implementatie van API’s volgens dit model is een belangrijke uitdaging voor de komende jaren.
-
-In 2017 liet het ministerie van Binnenlandse Zaken en Koninkrijksrelaties op verzoek van de Tweede Kamer door Berenschot een [onderzoek](https://zoek.officielebekendmakingen.nl/blg-817465.pdf) doen om inzicht te krijgen hoe, wanneer en met welk budget de overheid werkelijk kan voldoen aan het recht van inzage en correctie. Berenschot concludeerde in het onderzoek dat volledig digitale inzage in alle relevante persoonsgegevens die onder de AVG vallen, in het huidige gegevenslandschap niet haalbaar is.
-
-In de [beleidsbrief regie op gegevens](https://www.rijksoverheid.nl/documenten/brieven/2019/07/11/beleidsbrief-regie-op-gegevens-nadere-uitwerking) van 2019 onderstreept het kabinet nog eens het beleidsvoornemen om serieus werk te maken van regie op gegevens. Zowel voor het digitaal delen van gegevens met derden onder regie van de betrokkene, als voor het inzicht krijgen in de verstrekking van je persoonsgegevens aan andere overheidsinstanties. Maar dan er zal er dus iets moeten gebeuren in het gegevenslandschap om dit mogelijk te maken. En de model API van VNG-R is daarin een heel waardevol ingrediënt.
-
-Als de overheid gegevens bij de bron gaat beheren en ontsluiten met APIs, wordt het gemakkelijker om bij de bron volledige inzage te geven. De overheid kan dan digitale inzage geven in een uniform gebruiksvriendelijk format, en ook de correctie van gegevens wordt eenvoudiger.
+Om het inzicht in de verstrekking van persoonsgegevens veel eenvoudiger te maken, is er door [VNG-Realisatie een model API opgesteld](https://commonground.nl/cms/view/c99f1789-adba-4fa7-bc2d-e1f8a96618c5/api-standaarden-voor-logging-en-verwerking), die overheden in staat kan stellen de verwerking van persoonsgegevens op een toegankelijke manier te tonen. Deze API haakt aan bij wat conform de AVG al tot stand komt: de organisatie-brede registers van verwerkingen van persoonsgegevens. Als de overheid gegevens bij de bron gaat beheren en ontsluiten met APIs, wordt het gemakkelijker om bij de bron volledige inzage te geven. De overheid kan dan digitale inzage geven in een uniform gebruiksvriendelijk format, en ook de correctie van gegevens wordt eenvoudiger.
 
 ## Samenvattend
 De platformeconomie biedt nieuwe kansen voor de digitale overheid. Om deze kansen te benutten en tegelijkertijd de dienstverlening van de digitale overheid te verbeteren vindt er transitie plaats in het gegevenslandschap. Initiatieven zoals Common Ground, Haal Centraal en het Digitaal Stelsel Omgevingswet (DSO) willen de digitale overheid efficiënter, slimmer, veiliger en beter beheersbaar maken door applicaties beter te scheiden van de gegevens en de gegevens alleen bij de bron te beheren. Hierdoor hoeven gegevens niet meer op grote schaal gedupliceerd en gesynchroniseerd te worden. In deze ambitie spelen API’s als ondersteunende technologie een belangrijke rol. Nagenoeg alle organisaties binnen de overheid zijn de omslag van traditionele IT naar een API-ecosysteem aan het maken. Dit hoofdstuk biedt een kader aan waarbinnen de overheid zich kan committeren bij ontwikkeling en te realiseren beleid rondom API’s. Om die reden krijgen organisaties die aan deze API Strategie hebben bijgedragen het verzoek om de intentieovereenkomst te ondertekenen.
@@ -89,4 +84,7 @@ De platformeconomie biedt nieuwe kansen voor de digitale overheid. Om deze kanse
 ## Ondertekening
 De hieronder vermelde organisaties hebben bijgedragen aan deze API strategie voor de overheid en onderschrijven de basisafspraken:
 ... | [Forum Standaardisatie](https://forumstandaardisatie.nl/) | [ICTU](https://www.ictu.nl/)  | [Logius](https://www.logius.nl/) | [Ministerie van Binnenlandse Zaken en Koninkrijksrelaties](https://www.rijksoverheid.nl/ministeries/ministerie-van-binnenlandse-zaken-en-koninkrijksrelaties) | [VNG Realisatie](https://www.vngrealisatie.nl/)  | ...
-*Dit is nog geen officiële lijst van ondertekenaars, en hier moeten natuurlijk alle organisaties komen te staan die achter de API strategie staan en het manifest willen ondertekenen.*
+
+*Dit is nog geen officiële lijst van ondertekenaars*
+
+<!--*Dit is nog geen officiële lijst van ondertekenaars, en hier moeten natuurlijk alle organisaties komen te staan die achter de API strategie staan en het manifest willen ondertekenen.*  -->
