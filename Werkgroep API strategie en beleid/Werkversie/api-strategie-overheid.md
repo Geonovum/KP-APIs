@@ -83,7 +83,7 @@ De platformeconomie biedt nieuwe kansen voor de digitale overheid. Om deze kanse
 
 ## Ondertekening
 De hieronder vermelde organisaties hebben bijgedragen aan deze API strategie voor de overheid en onderschrijven de basisafspraken:
-... | [Forum Standaardisatie](https://forumstandaardisatie.nl/) | [ICTU](https://www.ictu.nl/)  | [Logius](https://www.logius.nl/) | [Ministerie van Binnenlandse Zaken en Koninkrijksrelaties](https://www.rijksoverheid.nl/ministeries/ministerie-van-binnenlandse-zaken-en-koninkrijksrelaties) | [VNG Realisatie](https://www.vngrealisatie.nl/)  | ...
+... | [Forum Standaardisatie](https://forumstandaardisatie.nl/) | [Geonovum](https://www.geonovum.nl) | [ICTU](https://www.ictu.nl/)  | [Logius](https://www.logius.nl/) | [Ministerie van Binnenlandse Zaken en Koninkrijksrelaties](https://www.rijksoverheid.nl/ministeries/ministerie-van-binnenlandse-zaken-en-koninkrijksrelaties) | [VNG Realisatie](https://www.vngrealisatie.nl/)  | ...
 
 *Dit is nog geen officiële lijst van ondertekenaars*
 
