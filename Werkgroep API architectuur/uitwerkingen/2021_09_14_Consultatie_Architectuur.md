@@ -18,16 +18,16 @@
 |5.3.3|Ik meen een mismatch te zien tussen de genoemde subcategorieën en de paragrafen waarin ze worden uitgewerkt. Alleen de eerste ("Mediatie & Orkestratie") komt overeen.|  |  |
 |5.3.3.6|Content negotiation is inmiddels een standaard practice om consumers op maat te kunnen bedienen. De API Gateway kan inderdaad de transformatie uitvoeren, maar dat vereist meestal wel een specificatie (b.v. XSLT) die als onderdeel van de API onderhouden moet worden.|  |  |
 |5.2.1|Kan een interne API niet ook gesloten zijn? Niet alle medewerkers van een organisatie mogen immers mogelijk gebrfuik maken van alle diensten. Dit is natuurlijk afhankelijk van wat je onder een organisatie verstaat. Een afdeling die als geheel bij gegevens mag of een overkoepelende organisatie waar die afdeling inderdeel van uitmaakt. |  |  |
-|5.3.1.2|anmenen' --> 'afnemen'|  |  |
-|5.3.2.1|In de laatste alinea staat er 1 keer 'opgenomen' te veel.|  |  |
+|5.3.1.2|anmenen' --> 'afnemen'|  | verwerkt |
+|5.3.2.1|In de laatste alinea staat er 1 keer 'opgenomen' te veel.|  | verwerkt |
 |5.3.2.2|Hierbij moet rekening gehouden worden dat ...' --> 'Hierbij moet er rekening mee gehouden worden dat ...'Wellicht kun je aan het einde van deze paragraaf nog als nadeel van code generatie vermelden dat daarmee enkele OAS3 constructies (nog) niet gebruikt kunnen worden aangezien die fouten geven bij code generatie.|  |  |
 |5.3.2.4|Kan het bij het vertalen van JSON berichten niet ook gaan om delen van die berichten? Bijv. het vertalen van alleen de geometrie gegevens.|  |  |
 |5.3.2.5|Hieronder vallen denk ik ook processen om de voor de API (standaarden) aanbiedende/creerende organisatie geldende afspraken en richtlijnen (Design Rules) te verheffen naar landelijk niveau.\N.m.m. belangrijk omdat daarmee API (standaarden) aanbiedende/creerende organisatie van elkaar kunnen leren en elkaar helpen met het steeds verder verhogen van de kwaliteit van de API (standaarden).|  |  |
-|5.3.2.7|braking' --> 'breaking'|  |  |
-|5.3.3.3|waarabij' --> 'waarbij'|  |  |
-|5.3.3.4|etrokkenen' --> 'betrokkenen'|  |  |
-|5.3.3.7|inicht' --> 'inzicht'|  |  |
-|5.3.3.13|fijnazig' --> 'fijnmazig'|  |  |
-|5.5.1 |We onderscheiden vier niveaus in variërend van een ...' --> 'We onderscheiden vier niveaus variërend van een ...'|  |  |
-|5.5.3 (Ontkoppeling)|Het Resource mode is hier dan een abstraherende laag ...' --> 'Het Resource model is hier dan een abstraherende laag ...'|  |  |
+|5.3.2.7|braking' --> 'breaking'|  | verwerkt |
+|5.3.3.3|waarabij' --> 'waarbij'|  | verwerkt |
+|5.3.3.4|etrokkenen' --> 'betrokkenen'|  | verwerkt |
+|5.3.3.7|inicht' --> 'inzicht'|  |verwerkt  |
+|5.3.3.13|fijnazig' --> 'fijnmazig'|  | verwerkt |
+|5.5.1 |We onderscheiden vier niveaus in variërend van een ...' --> 'We onderscheiden vier niveaus variërend van een ...'|  | verwerkt |
+|5.5.3 (Ontkoppeling)|Het Resource mode is hier dan een abstraherende laag ...' --> 'Het Resource model is hier dan een abstraherende laag ...'|  | verwerkt |
 
