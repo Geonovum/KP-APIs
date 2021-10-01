@@ -60,7 +60,7 @@ Wat betreft huidige onderwerpen zal Event Driven processen & Notificaties een ve
 
 _4 NORA_
 
-Er wordt gewerkt aan een informatiearchitectuur, als deze gereed voor delen zal deze ook binnen de werkgroep gedeld worden
+Er wordt gewerkt aan een informatiearchitectuur, als deze gereed is voor delen zal deze ook binnen de werkgroep gedeld worden
 
 _5 Afsluiten / Afspraken_
 
