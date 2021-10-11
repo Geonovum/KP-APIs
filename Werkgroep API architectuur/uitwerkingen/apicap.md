@@ -87,6 +87,14 @@ Dit betreft het definieren van generieke API policies, welke worden toegepast op
 #### Afspraken, Standaarden en Richtlijnen
 Een set van afspraken, standaarden en richtlijnen om ervoor te zorgen dat een uniforme set van API's wordt aangeboden, dat aansluit bij de API strategie van de API aanbiedende organisatie. Hieronder vallen ook processen om ervoor te zorgen dat aan deze afspraken, standaarden en richtlijnen wordt voldaan en om organisaties de mogelijkheid te bieden gecreëerde afspraken en richtlijnen te verheffen naar landelijk niveau.
 
+#### Governance policy handhaving
+Dit betreffen policies die waarborgen dat de juiste stakeholders bij business transacties betrokken worden. Voorbeelden van business transacties zijn:
+
+Het wijzigen van een policy voor een bestaande API-versie;
+Het updaten van documentatie van een API;
+Het veranderen van de status in de levenscyclus van een API-versie;
+Het abonneren op een API.
+
 #### API Lifecycle beheer
 Dit omvat functionaliteiten rondom het beschikbaar maken van nieuwe API endpoints, bijvoorbeeld door ze in een API Gateway te registreren, het maken van non-breaking changes en het uiteindelijk uitfaseren van API endpoints omdat deze niet meer nodig zijn of door een nieuwere API versie worden vervangen.
 
