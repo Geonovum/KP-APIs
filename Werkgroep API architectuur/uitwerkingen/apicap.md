@@ -134,7 +134,9 @@ In het geval back-end systemen niet de mogelijkheden hebben te communiceren volg
 In het geval de back-end functionaliteit wordt ingevuld door meerdere back-end systemen of microservices, dienen inkomende API verzoeken te worden gerouteerd naar de juiste systemen. In het eenvoudigste geval kan dit betekenen dat verzoeken voor verschillende API endpoints naar verschillende back-end systemen worden gerouteerd, maar in ingewikkeldere situaties kan het ook noodzakelijk zijn te routeren op basis van informatie uit het verzoek, zoals bijvoorbeeld afzender of inhoud.
 
 #### Data Transformaties
-Dit betreft functionaliteiten rondom het vertalen van API endpoints naar het achterliggende datamodel. Dit kan plaatsvinden in de API Gateway, integratietoepassingen in de back-end of in back-end (micro)services, waarabij de laatste optie over het algemeen de voorkeur heeft.
+Dit betreft functionaliteiten rondom het vertalen van API endpoints naar het achterliggende datamodel. Dit kan plaatsvinden in de API Gateway, integratietoepassingen in de back-end of in back-end (micro)services. 
+
+Data transformaties worden, wanneer benodigd, bij voorkeur lokaal in back-end (micro)services toegepast. Niet-domein-specifieke transformaties (bijvoorbeeld voor het vertalen tussen interne en externe representaties of het digitaal ondertekenen van berichten) kunnen ook eventueel centraal in de API Gateway plaatsvinden.
 
 #### Foutafhandeling
 In het geval dat er fouten optreden in de API's, bijvoorbeeld door niet-functionerende back-end systemen, moeten API Clients worden voorzien van duidelijke foutmeldingen en moeten etrokkenen bij de API aanbieder voorzien worden van voldoende informatie om de oorzaak van de fouten op te kunnen lossen en te verhelpen, indien nodig.
