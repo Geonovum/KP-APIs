@@ -78,6 +78,7 @@ Dit betreft het testen van API endpoints tegen de specificatie. Waar mogelijk ge
 Dit betreft het definieren van generieke API policies, welke worden toegepast op alle API's of door een aantal API's kunnen worden uitgevoerd. Voorbeelden van API policies zijn:
 - Validatie van API verzoeken tegen een API specificatie;
 - het vertalen van JSON berichten naar een ander berichtformaat op basis van content negotiation;
+- het vertalen van (delen van) berichten;
 - het filteren van headers in response berichten;
 - het 'throttlen' van inkomende API verzoeken om back-ends te ontlasten;
 - het afdwingen van gautoriseerde API verzoeken;
