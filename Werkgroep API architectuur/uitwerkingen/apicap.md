@@ -179,7 +179,8 @@ Er bestaan verschillende doorbelastingsmodellen, welke vallen onder de volgende 
 - *Affiliate:* vergelijkbaar met indirect, behalve dat de API aanbieder gebruikers van API's betaalt om het gebruik van de API's zoveel mogelijk te stimuleren.
 
 #### Identificatie & Authenticatie
-Hieronder valt de identificatie van de API Client end eindgebruiker, authenticatie van de eindgebruiker bij de API aanbieder op basis hiervan.
+Hieronder vallen de identificatie en authenticatie van API Clients, eindgebruikers en organisaties. Identificatie en authenticatie van eindgebruikers is overigens niet altijd nodig, bijvoorbeeld bij back-office en batchprocessen die niet in de context van een eindgebruiker werken.
+
 #### Autorisatie
 Dit betreft de autorisatie van API toegang op basis van de geauthentiseerde API Client end eindgebruiker.
 
