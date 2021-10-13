@@ -12,7 +12,7 @@ Aan beschikbaarheid gerelateerde API capabilities zijn *Caching*, *Rate limiting
 ### Integriteit
 Integriteit gaat over het waarborgen van de integriteit van gegevens en systeemfuncties. Dit wordt over het algemeen bereikt door validatie en beheersing van gegevensverwerking en geautoriseerde toegang tot gegevens en systeemfuncties, door scheiding van systeemfuncties, door controle op communicatiegedrag en gegevensuitwisseling en door beperking van functionaliteit. Binnen de NORA is integriteit opgenomen als afgeleid principe [AP42](https://www.noraonline.nl/wiki/Integriteit).
 
-In de context van API's gaat integriteit over het versleutelen en ondertekenen van berichten en gegevens, het valideren van API verzoeken en de vastlegging van de gegevensuitwisseling tussen API aanbieders en consumenten.
+In de context van API's gaat integriteit over het versleutelen en ondertekenen van berichten en gegevens, het "tamper-proof" maken van API's (API Hardening) middels validatie van API verzoeken en de vastlegging van de gegevensuitwisseling tussen API aanbieders en consumenten.
 
 Aan integriteit gerelateerde API capabilities zijn *Logging / Audit Trail*, *Policy Enforcement*, *Identificatie / Authenticatie / Autorisatie* en *Sleutelbeheer*. De onderstaande sectie *Componenten* beschrijft deze in meer detail en geeft aan waar deze worden toegepast in een API architectuur.
 
