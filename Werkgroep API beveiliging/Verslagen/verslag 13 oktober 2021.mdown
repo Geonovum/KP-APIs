@@ -1,0 +1,56 @@
+# Werkgroep Beveiliging
+
+**Datum:** 13-10-2021
+
+**Aanwezig:** 
+Peter Haasnoot(Logius), Paul Dam(Lexdigitalis), Martin Borgman(Kadaster), Erwin Reinhoud (kennisnet), Heiko Hudig(Politie), Frank Terpstra (Geonovum), Remco Schaar(logius), Bob te Riele(RvIG), Martin van der Plas(Logius), Andre van den Nouweland(Gemeente Den Haag), Henri Korver(VNG), Eelco Hotting(VNG), Frank van Es(Logius), Arnoud Quanjer(VNG), Ronald Koster(VNG)
+
+
+
+**Samenvatting usecases scopes en claims politie door Heiko**
+Scheiding tussen scopes en claims en machines en personen
+Beperk scopes
+Gebruik scopes als convienence method om claims uit geven.
+**Vaststellen Extensie API security**
+We stellen extensie vast. Peter haasnoot voegt nog een zin toe en verwijzing naar factsheet of PKI certificaten https://www.ncsc.nl/documenten/factsheets/2021/september/29/factsheet-pkioverheid-stopt-met-webcertificaten
+We gaan de waarschuwing over veranderlijkheid bij de extensie weghalen. Na vaststelling door stuurgroep van deze extensie en de extensies Naming conventions en Hypermedia wordt een nieuwe vastgestelde versie gepubliceerd op docs.geostandaarden.nl
+Suggestie om deel normatief te maken of extensie op te nemen in API strategie omdat het niet zijn weerslag heeft op de API specificatie (OAS) zoals andere extensies dat wel hebben. Deze discussie voeren we verder in een volgend overleg.
+
+**Eelco Hotting presenteert usecases VNG voor scopes en claims**
+(zie bijgevoegde presentatie NLX Why How What werkgroep Beveiliging kennisplatform APIs .pdf)
+Uitleg over common ground
+Nu veel silos (200 in gemeente haarlem) die gegevens met elkaar in sync houden. Leid tot spaghetti en veel onnodig rondpompen van data.
+Vertrouwensmodel, dienstaanbieder kijkt alleen of organisatie geautoriseerd is, gebruiker autorisatie zit bij dienstafnemer.
+Saas leveranciers
+Situatie nu SaaS leveranciers hebben verzameling certificaten van verwerkingsverantwoordelijke
+
+NLX verwerker haalt claim op gesigned met PKI certificaat van verwerkingsverantwoordelijke dat hij geautoriseerd is om namens de verantwoordelijke te handelen. Claim is nu 2 uur geldig, kan evt. ook langer. Wanneer je het voor elke transactie opnieuw doet voegt het teveel performance overhead toe.
+Claim op basis van JWT tokens. Heiko suggereert RFC https://datatracker.ietf.org/doc/html/rfc8693
+
+Remco algemeen past delegated authorization volgens OAuth2 hier al prima
+Je kan Hiermee levensduur refresh tokens etc.. ophalen, je kan binden aan TLS certificaat van verwerker (proof of posession RFC7800). Token exchange kan je inzetten om gebruiker token om te zetten in organisatie token.
+Eelco dat laatste vraagt uitbreiding van de huidige NLX software, kan als er vraag naar is van gebruikers.
+
+
+Frank van Es zou je niet OAuth 2 moeten gebruiken ipv PKI? 
+Eelco: beheer met PKIOverheid is simpeler. Als je recht hebt om PKI certificaten aan te vragen mag je op het “netwerk”.
+Frank van Es: Je vertrouwd er dan wel op dat certificaten niet ontvreemd worden.
+Eelco gebruik alleen scopes waar het echt nodig is. Gebruik bijvoorbeeld field delimiters om toegang te beperken. 
+
+**Signing & Encryptie**
+
+Peter roept op voor deelname aan sbwerkgroep voor encryptie met name om te kijken naar https://www.ietf.org/archive/id/draft-ietf-httpbis-message-signatures-06.html en https://www.openbankingeurope.eu/media/2095/obe-json-web-signature-profile-for-open-banking.pdf
+Use cases heel belangrijk om aan te geven in een extensie. Transportlaag of applicatielaag
+Martin van der plas, vergeet de back channel niet(de directeur die met fotomoment zijn handtekening wil zetten)
+
+Andre en Heiko leveren deelnemers voor subwerkgroep, Frank Terpstra Sluit graag aan.
+
+**sluiting, rondvraag**
+
+24 november volgend overleg. Fysieke bijeenkomst van het hele kennisplatform waarbij alle werkgroepen ook fysiek bijeenkomen.
+
+Remco: frank van Es Martin van der Plas en Martin Borgman waren bij expertbijeenkomst Openidconnect profiel. Vooruitgang met behandeling opname op PTOLU. Ziet tot nu toe positief uit dat opname gaat volgen.
+
+ 
+
+
