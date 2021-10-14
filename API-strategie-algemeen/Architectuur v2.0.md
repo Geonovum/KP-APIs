@@ -227,10 +227,10 @@ Een set van afspraken, standaarden en richtlijnen om ervoor te zorgen dat een un
 #### Governance policy handhaving
 Dit betreffen policies die waarborgen dat de juiste stakeholders bij business transacties betrokken worden. Voorbeelden van business transacties zijn:
 
-Het wijzigen van een policy voor een bestaande API-versie;
-Het updaten van documentatie van een API;
-Het veranderen van de status in de levenscyclus van een API-versie;
-Het abonneren op een API.
+- Het wijzigen van een policy voor een bestaande API-versie;
+- Het updaten van documentatie van een API;
+- Het veranderen van de status in de levenscyclus van een API-versie;
+- Het abonneren op een API.
 
 #### API Lifecycle beheer
 Dit omvat functionaliteiten rondom het beschikbaar maken van nieuwe API endpoints, bijvoorbeeld door ze in een API Gateway te registreren, het maken van non-breaking changes en het uiteindelijk uitfaseren van API endpoints omdat deze niet meer nodig zijn of door een nieuwere API versie worden vervangen.
