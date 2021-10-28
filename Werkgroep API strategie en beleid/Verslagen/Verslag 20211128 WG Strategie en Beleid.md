@@ -5,8 +5,6 @@ Verslag van de virtuele bijeenkomst van **28 oktober 2021**
 Publieke sector, op alfabetische volgorde van organisatie:
 Redouan Ahaloui (Forum Standaardisatie), Tjitske Helmich (Inspectie Erfgoed en Overheid), Frank Terpstra (Geonovum), Frans Smit (Inspectie Erfgoed en Overheid), Marcel Tulen (SVB), Martin van der Plas (Logius) , Gerard Kreuk (SVB), Jeroen Temme en Michiel Trimpe (gemeente Amsterdam), Paul Zeef (minBZK), Trudi Zegveld (gemeente Venlo)
 
-Jeroen Prins (Politie)
-
 ## Afgemeld
 Edward Nuiten (gemeente Rotterdam), Gershon Janssen (VNG), Roelien Drent (KvK)
 
@@ -22,7 +20,7 @@ Aan het begin van de bijeenkomst gaf Redouan een korte samenvatting van de bijee
 ## Waar staan we
 Redouan geeft toelichting over de binnengekomen reacties tijdens de consultatieperiode. De consultatieperiode liep van 15 september tot 13 oktober. Er zijn geen directe schriftelijke reacties gekomen. Wel zijn er op verzoek Kamer van Koophandel (KvK) en VNG gesprekken gevoerd. 
 
-- KvK
+**KvK**
 Frank, Jan van Gelderen en Redouan hebben in oktober gesproken met de KvK. Het gesprek ging met name over het onderdeel visie en het onderdeel dat er gecentraliseerde partijen worden genoemd. Het belangrijkste punt is dat er een link ontbreekt met de Europese data- en cyberstrategie. De [datastrategie](https://ec.europa.eu/info/strategy/priorities-2019-2024/europe-fit-digital-age/european-data-strategy_en) is vorig jaar vastgelegd en de [Cyberstrategie](https://digital-strategy.ec.europa.eu/en/policies/cybersecurity-strategy) wordt dit jaar nog vastgelegd. De wens is om hier een koppeling mee te maken. Verder kwamen er nog onderwerpen langst over het gebruik van open data en de betekenis hiervan (zie ook high value data sets). Aanvullend kwam er ook een vraag om veiligheid en privacy expliciet te maken in het stuk. Er is met de KvK afgesproken om er ook formele reactie van te maken en dit ook te incorporeren in het HF2. 
 
 - **Paul**: geeft aan dat de termen wel bekend zijn bij BZK en EZK, maar niet direct in dit verband. Het is wel goed om dit koppelen maar kan ook lastig zijn om alle onderdelen bij te houden.
@@ -31,7 +29,7 @@ Frank, Jan van Gelderen en Redouan hebben in oktober gesproken met de KvK. Het g
 - **Martin**: geeft aan dat die link in de bestaande tekst nu ook best te leggen is. Zo wordt in de tekst "data" genoemd, hier kun best die link dan ook leggen en zou het voldoende moeten zijn. Hij geeft aan hier best een aantal zinnen voor te willen leveren. 
 - **Marcel T**: geeft aan dat we wel zeker moeten naar wat / wel niet verplicht is, als het verplicht is dan moeten we het zeker opnemen en is het geen kwestie van keus.
 
-- VNG
+**VNG**
 Frank en Redouan hebben afzonderlijk ook met de VNG gesproken. VNG gaf aan zich goed te herkennen in het HF. Echter zou er vanuit de visie ook wat context geschetst moeten worden, ook vanuit een internationaal (EU) perspectief. Dit ontbreekt nog en zou nog toegevoegd moeten worden. VNG wil hier graag een kort stuk voor willen aanleveren. Inmiddels is er ook voor volgende week een afspraak gemaakt met o.a. Eelco Hoting om het stuk aan te scherpen met de opmerkingen.
 
 - **Frank en Redouan**: geven aan dat de opmerking goed aansluit op de opmerkingen van de KvK. Hiermee kunnen we het commentaar dan ook goed combineren. 
@@ -56,5 +54,5 @@ Redouan zal als actie een mail naar alle personen die zijn aangehaakt bij de wer
 
 
 ## Wat verder ter tafel komt
-- **Paul**: geeft aan dat BZK ook bezig met een opdracht om developer.overheid een nieuwe impuls te geven, zoals een verrijking van open source o.a.
+- **Paul**: geeft aan dat BZK ook bezig met een opdracht om developer.overheid een nieuwe impuls te geven, zoals een verrijking van open source
 - **Redouan**: geeft aan dat Forum Standaardisatie ook een opdracht heeft uitstaan en dat de opdracht van BZK is afgestemd.
