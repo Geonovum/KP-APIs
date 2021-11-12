@@ -38,7 +38,7 @@ De subgroepen zullen (de samenvatting van) hun discussies over het onderwerp waa
 De werkgroep komt vier keer per jaar bijeen. Zolang de maatregelen tegen de COVID-19 pandemie van kracht zijn, vinden de bijeenkomsten online plaats.
 
 De geplande bijeenkomsten in 2021 zijn:
-- woensdag 15 december van 10.00u tot 11.30u
+- woensdag 24 november van 10.00u tot 12.30u
 
 De bijeenkomsten in 2022 moeten nog gepland worden.
 
