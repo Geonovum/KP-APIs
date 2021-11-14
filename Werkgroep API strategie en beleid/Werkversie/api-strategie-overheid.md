@@ -1,17 +1,4 @@
 # API strategie voor de overheid
-<!-- [comment]: <> ( *Dit is een nieuwe versie van het werkdocument, gebaseerd op de feedback uit de bijeenkomst op **29 juni** en het commentaar op Github. De belangrijkste wijzigingen zijn:* )
-
-Verwerkt:
-- *Termen als 'publiek' vs. 'open' vs. 'extern'. worden consistent gebruikt, conform de API strategie: https://docs.geostandaarden.nl/api/API-Strategie/#intern-extern-open-gesloten*
-- *Voorbeeld, De API op de Basisregistratie Personen (BRP) van Haal Centraal is aangepast en in lijn met de andere voorbeelden.*
-- *Voorbeeld, De API voor Zaakgericht Werken van Common Ground is aangescherpt.*
-- *- Tekstvoorstel waarin de link wordt gelegd met Government as a Platform*
-
-Nog todo (wacht op input):
-
-- Voorbeeld waarin ook de relatie met de bestaande wetgeving wordt gelegd.
-
-- Verkorte versie van voorbeeld: "een API voor regie op gegevens") -->
 
 ## Visie
 
@@ -30,10 +17,6 @@ Toch heeft de overheid ook veel ICT applicaties in gebruik die niet als platform
 
 De platformeconomie is actueel en maatschappelijk relevant of het we het nu hebben over de Informatiehuishouding op orde (rapport ‘Ongekend onrecht’ de kinderopvangtoeslag problematiek en ‘Werk aan uitvoering’ de problemen bij uitvoeringsorganisaties), over de Interbestuurlijke Datastrategie, over de toekomstvisie op het stelsel van Basisregistraties, of de over doorontwikkeling van de GDI (meerjarig geprogrammeerd en onder architectuur): ze veronderstellen een modernisering van de binnenkant van de gegevensuitwisseling. Platformen, API’s en afgedwongen standaarden zijn daarin onmisbaar. 
 
-[comment]: <> (hier moet nog het stuk rondom government as a platform, done 7-9-2021)
-[comment]: <> (laatste alinea is eigenlijk de visie, mogelijk naar boven verhuizen ? )
-
-
 ## Intentieovereenkomst
 Bij het realiseren van deze visie volgt de overheid een aantal bestaande afspraken (1 /tm 3) van het [Forum Standaardisatie](https://www.forumstandaardisatie.nl/open-standaarden/verplicht?domein=126) deze zijn al bekrachtigd in het Overheidsbreed Beleidsoverleg Digitale Overheid (OBDO) :
 
@@ -42,12 +25,7 @@ Bij het realiseren van deze visie volgt de overheid een aantal bestaande afsprak
 3. Voor het realiseren van veilige koppelvlakken gebruikt de overheid de standaard [DigiKoppeling](https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/basisregistraties-en-stelselafspraken/stelselvoorzieningen/digikoppeling/). Deze standaard maakt het ook mogelijk om een een REST API aan te bieden op een veilige manier die voldoet aan punten 1 en 2 hierboven.
 4. De overheid registreert haar extern toegankelijke REST APIs bij [developer.overheid.nl](https://developer.overheid.nl). Zo kunnen ontwikkelaars de APIs van de overheid altijd vinden.
 
-[comment]: <> (het expliciet onderschrijven van deze visie moet ook ergens in het document staan, wat is de beste plek ? )
-
-
 ## Praktijkvoorbeelden
-
-[comment]: <> (In dit deel laten we een aantal domeinen zien waar de overheid al met succes APIs toepast om applicaties en gegevensbronnen te koppelen. )
 
 ### De API op de Basisregistratie Personen (BRP) van Haal Centraal
 Persoonsgegevens uit de Basisregistratie Personen (BRP) worden nu vaak gesynchroniseerd met een lokale kopiedatabase bij een gemeente. In de processen van de gemeente wordt dan die kopiedatabase bevraagd in processen waar persoonsgegevens nodig zijn. Binnen het programma [Haal Centraal](https://www.vngrealisatie.nl/producten/haal-centraal) experimenteert de [Rijksdienst voor Identiteitsgegevens](https://www.rvig.nl/) (RvIG), de vijf grote gemeenten (Amsterdam, Den Haag, Eindhoven, Rotterdam en Utrecht) en [VNG Realisatie](https://www.vngrealisatie.nl/) met een API waarmee gemeenten in hun werkprocessen direct de Basisregistratie Personen (BRP) kunnen bevragen. In totaal 10 gemeenten gaan deze API gebruiken en beproeven in een pilot.
@@ -68,8 +46,6 @@ De Wet kenbaarheid publiekrechtelijke beperkingen onroerende zaken (Wkpb) geeft 
 In het oude systeem registreerden de gemeenten hun eigen gegevens terwijl andere overheden de basisregistratie van het Kadaster gebruikten. Deze twee langs elkaar werkende systemen brachten allerlei problemen met zich mee. Het was niet mogelijk om gemeentelijke brondocumenten bij het Kadaster op te vragen. En soms bleek de gemeentelijke situatie van een pand of object niet overeen te komen met de kenmerken zoals die in de basisregisters van het Kadaster zijn vastgelegd. Voorts konden overheden in het oude systeem alleen beperkingen opleggen op een kadastraal perceel, wat in veel gevallen niet aansloot op de praktijk. De vernieuwde Wkpb registreert en beheert alle publiekrechtelijke beperkingen in de Basisregistratie Kadaster publiekrechtelijke beperkingen (BRK-PB). Overheden en organisaties uit de private sector hebben zo een unieke bron waar ze alle gegevens kunnen raadplegen. En omdat beperkingen nu, behalve op een perceel, ook gelegd kunnen worden op objecten uit de de basisregistraties Adressen en Gebouwen (BAG) en Grootschalige Topografie (BGT), of via een zelf vervaardigde contour, sluit de registratie veel beter aan op de uitvoeringspraktijk.
 
 De [BRK-PB](https://www.kadaster.nl/zakelijk/registraties/basisregistraties/brk) kan al benaderd worden met de [BRK-API](https://www.kadaster.nl/zakelijk/producten/eigendom/brk-bevragen). Het bij de bron registreren en beheren van gegevens heeft hier dus zichtbare meerwaarde, zowel voor de overheid als voor de private sector , zie ook dit [artikel in Binnenlands Bestuur](https://www.binnenlandsbestuur.nl/digitaal/nieuws/notarissen-niet-gelukkig-met-lakse-gemeenten.15795830.lynkx).
-
-[comment]: <> (Is er een link naar de BRK-PB? Verder noemde Frans het portaal https://www.ruimtelijkeplannen.nl/ als mogelijk voorbeeld. )
 
 ### De API voor regie op gegevens
 De [Wet bescherming persoonsgegevens](https://wetten.overheid.nl/BWBR0011468/2018-05-01) (Wrp) en z'n opvolger, de [Algemene verordening gegevensbescherming](https://eur-lex.europa.eu/legal-content/NL/TXT/HTML/?uri=CELEX:32016R0679&from=NL) (AVG) geven ons al bijna twintig jaar recht op inzage en correctie van de gegevens die de overheid over ons verzamelt en beheert. Dit betekent dat je als burger het recht hebt om te weten welke persoonsgegevens de overheid over je heeft vastgelegd en welke gegevens de overheid heeft gebruikt en uitgewisseld voor welk doel. Uit dit [onderzoek](https://zoek.officielebekendmakingen.nl/blg-817465.pdf) uit 2017 van Berenschot (uitgevoerd in opdracht van BZK) blijkt dat volledig digitale inzage in alle relevante persoonsgegevens die onder de AVG vallen, in het huidige gegevenslandschap niet haalbaar is.
