@@ -19,13 +19,15 @@ De werkgroep draagt bij aan de API Design Rules en de Extensions.
 
 Binnen de werkgroep wordt er door verschillende subgroepen gewerkt aan de extensies, op dit moment zijn de volgende subgroepen actief:
 > - Profielen en capabilities (trekker Jasper Roes)
-> - [Hypermedia/HAL](hypermedia.md) (trekker Michiel Trimpe)
-> - Naamgeving Conventies (trekker Frank van Es)
 > - Tijdreizen (trekker Tony Sloos) - uitwerking combineren met DIS Geo / SOR sessies en daarna extensie updaten
 > - Omgaan met relaties (voormalig put/patch/post/delete) (trekker Henri Korver)
 > - Geo (trekker Linda van den Brink)
 
 Wil je bijdragen aan de uitwerking van deze onderwerpen dan kun je je melden bij de trekker van het onderwerp of contact opnemen met Jasper Roes (jasper.roes@kadaster.nl).
+
+Eerder subgroepen waren:
+> - [Hypermedia/HAL](hypermedia.md) (trekker Michiel Trimpe)
+> - Naamgeving Conventies (trekker Frank van Es)
 
 ### Discussies
 
