@@ -52,5 +52,5 @@ With regards to naming, resources must use clear, descriptive names that express
 
 <div class="rule" id="api-69">
   <p class="rulelab"><strong>API-69</strong>: Use lowerCamelCase for query parameter keys</p>
-  <p>Keys of query parameters must be written in lowerCamelCase. This naming convention aligns nicely with JSON property names and plays well with client side libraries such as JavaScript. This also means that query parameters must not be prefixed with an underscore (e.g. <code>_sort</code>).</p>
+  <p>Keys of query parameters must be written in lowerCamelCase. This naming convention aligns nicely with JSON property names and plays well with client side libraries such as JavaScript. Query parameters should not be prefixed with an underscore (e.g. <code>_sort</code>), but in case prefixing elements with underscores is required (e.g. for data API's where field names are dynamically defined by clients or to align with HAL conventions), an underscore prefix must only be used to denote meta-parameters such as `_sort`, `_expand` and `_filter`.</p>
 </div>

@@ -42,10 +42,10 @@ JavaScript Object Notation (JSON) [[rfc7159]] is a format, just like XML, to ser
 </div>
 
 <div class="rule" id="api-65">
-  <p class="rulelab"><strong>API-65</strong>: Use enumerations only for fixed sets of values that will not change</p>
-  <p>Enumerations are assumed closed sets of values that are complete and not altered or extended. Changing or extending allowed values in an enum most likely imposes incompatibility issues. Therefore, enumerations must only be used when:
+  <p class="rulelab"><strong>API-65</strong>: Use enumerations only for fixed sets of values that are unlikely to change</p>
+  <p>Enumerations are assumed closed sets of values that are complete and not altered or extended. Changing or extending allowed values in an enum most likely imposes incompatibility issues and must be treated as a breaking change. Therefore, enumerations must only be used when:
   <ul>
-    <li>the list of allowed values is complete and does not ever change; and</li>
+    <li>the list of allowed values is complete and does not change (within a single API version); and</li>
     <li>the API provider has full control over the enumeration values or can guarantee that these will not change.</li>
   </ul>
   In all other cases, use strings instead of enumerations and mention the currently allowed values in the API documentation.</p>

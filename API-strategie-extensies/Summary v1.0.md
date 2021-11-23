@@ -50,7 +50,7 @@ Design rules have unique and permanent numbers. In the event of design rules bei
 * <a href="#api-62">API-62</a>: Do not use file extensions in path segments
 * <a href="#api-63">API-63</a>: Do not use nonstandard abbreviations as resource names
 * <a href="#api-64">API-64</a>: Do not use compound words for nested objects
-* <a href="#api-65">API-65</a>: Use enumerations only for fixed sets of values that will not change
+* <a href="#api-65">API-65</a>: Use enumerations only for fixed sets of values that are unlikely to change
 * <a href="#api-66">API-66</a>: Use UPPER_SNAKE_CASE for enumeration values
 * <a href="#api-67">API-67</a>: Omit symbols and punctuation marks other than hyphens from path segments
 * <a href="#api-68">API-68</a>: Use meaningful enumeration values
