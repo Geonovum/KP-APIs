@@ -25,6 +25,8 @@ Bij het realiseren van deze visie volgt de overheid een aantal bestaande afsprak
 3. Voor het realiseren van veilige koppelvlakken gebruikt de overheid de standaard [DigiKoppeling](https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/basisregistraties-en-stelselafspraken/stelselvoorzieningen/digikoppeling/). Deze standaard maakt het ook mogelijk om een een REST API aan te bieden op een veilige manier die voldoet aan punten 1 en 2 hierboven.
 4. De overheid registreert haar extern toegankelijke REST APIs bij [developer.overheid.nl](https://developer.overheid.nl). Zo kunnen ontwikkelaars de APIs van de overheid altijd vinden.
 
+Het aantal samenwerkende partijen binnen het Kennisplatform API's wordt verder uitgebreid. Gezamelijk wordt een concrete strategie opgesteld om de visie te realiseren.
+
 ## Praktijkvoorbeelden
 
 ### De API op de Basisregistratie Personen (BRP) van Haal Centraal
