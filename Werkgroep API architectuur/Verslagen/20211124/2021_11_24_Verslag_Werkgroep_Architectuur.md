@@ -36,7 +36,7 @@ het is nuttig om aansluiting te zoeken met de projectgroep notificaties
 
 - interne opzet api's
 - domein modellen en cqrs :
-Rob Bastings biedt aan om aan deze 2 onderwerpen in komende sessie te behandelen
+Rob Bastings biedt aan om aan deze 2 onderwerpen bij te dragen en bv een presentatie in komende sessies te geven
 
 
 ## 4 NORA
