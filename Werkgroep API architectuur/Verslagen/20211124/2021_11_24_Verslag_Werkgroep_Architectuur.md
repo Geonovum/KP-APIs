@@ -18,9 +18,9 @@ Mogelijke onderwerpen/onderdelen die hieruit voortkomen:
 - 2 informatie structuur bv wel of geen transformatie
 
 Bij jusititie denkt met aan binnen sector centraal punt voor API
-met docs & sandbox
+met docs & sandbox,
 toegang is dan aandachtspunt en
-bv het verschil binnen en buiten domein
+bv het verschil "binnen en buiten domein"
 
 bij een centraal punt is API routering en regie op toegang en centraal/decentraal een relevant onderwerp
 
