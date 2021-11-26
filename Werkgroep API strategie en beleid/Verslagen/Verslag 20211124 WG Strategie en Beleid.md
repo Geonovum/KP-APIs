@@ -6,7 +6,7 @@ Publieke sector, op alfabetische volgorde van organisatie:
 Redouan Ahaloui (Forum Standaardisatie), Rob Bastings (RIVM), Raymond Kers (Justid), Eelco Hotting (VNG),  Merijn Koster (Belastingdienst) Theo Peters (VNG), Frans Smit (Inspectie Erfgoed en Overheid), Marcel Tulen (SVB),  Jeroen Temme (gemeente Amsterdam), Gieneke van Veenen-Kiel (minVWS), Edwin Wisse (Logius), Paul Zeef (minBZK).
 
 ## Afgemeld
-Marcel Krassenburg (mkidee), Arjen Monster (gemeente Den Haag), Edward Nuiten (gemeente Rotterdam), Frank Terpstra (Geonovum)
+Gershon Janssen (VNG), Marcel Krassenburg (mkidee), Arjen Monster (gemeente Den Haag), Edward Nuiten (gemeente Rotterdam), Frank Terpstra (Geonovum)
 
 ## Mededelingen
 Paul Zeef geeft aan dat er een vervanger voor Gino Laan is en zal per 1 december aan de werkgroep deelnemen. Gieneke van Veenen-Kiel neemt voor het eerst deel aan de werkgroep namens ministerie van VWS, Genieke geeft aan de links naar de verslagen en werkdocument op Github te willen ontvangen. Theo Peters haakt aan en zal een toelichting geven over de verdere invulling van de API strategie. 
