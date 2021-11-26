@@ -136,11 +136,3 @@ redactie
   font-weight: normal;
   text-decoration: underline;
 }
-
-/*-- Aangepaste definite van de informative style ----------------------------------*/
-.informative
-{
-  background-color: lightgrey;
-  color: darkslategrey;
-}
-

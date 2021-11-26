@@ -1,6 +1,6 @@
 ## Security
 
-<p class='warning'>This extension is in development and may be modified at any time.</p>
+<p class="note">The working group has indicated this extension to be stable.</p>
 
 ### Introduction
 This section describes security principles, concepts and technologies to apply when working with APIs. Controls need to be applied for the security objectives of integrity, confidentiality and availability of the API and services and data provided thereby. The (new draft of the) [architecture section of the API strategy](https://docs.geostandaarden.nl/api/cv-hr-API-Strategie-20210628/#architectuur) contains architecture patterns for implementing API security. This extension provides the details on the authentication & authorization capability of the API capability model detailed in the (new draft of the) [architecture section of the API strategy](https://docs.geostandaarden.nl/api/cv-hr-API-Strategie-20210628/#architectuur).
@@ -59,14 +59,14 @@ An example of this can be found in the [architecture of the "digitaal stelsel om
 
 For identifying government organizations use the "organisatie-identificatienummer" (OIN).
 
-For identifying non-government organizations (companies, associations, foundations etc...) use the KVK number. These numbers are used in the PKIOverheid and e-Herkenning context respectively. See https://publicatie.centrumvoorstandaarden.nl/dk/oin/ and https://www.kvk.nl/over-kvk/over-het-handelsregister/ for more information on these identifiers. 
+For identifying non-government organizations (companies, associations, foundations etc...) use the KVK number. These numbers are used in the PKIOverheid and e-Herkenning context respectively. See https://publicatie.centrumvoorstandaarden.nl/dk/oin/ and https://www.kvk.nl/over-kvk/over-het-handelsregister/ for more information on these identifiers.
 
 OIN's can be queried using the COR API https://portaal.digikoppeling.nl/registers/corApi/index or its webpage https://portaal.digikoppeling.nl/registers/. The API will also provide known mappings between OIN- and KVK numbers (some OIN's are not derived from the KVK number). KVK numbers are derived from the handelsregister, which can be queried see https://developers.kvk.nl/documentation/search-v2 for details.
 
-In the EU context use the eIDAS legal identifier. For more information see https://ec.europa.eu/digital-single-market/en/trust-services-and-eid and https://afsprakenstelsel.etoegang.nl/ for details. 
+In the EU context use the eIDAS legal identifier. For more information see https://ec.europa.eu/digital-single-market/en/trust-services-and-eid and https://afsprakenstelsel.etoegang.nl/ for details.
 
 **Clients**
-Identification of clients is different from identification of the end user or organisation using the service. 
+Identification of clients is different from identification of the end user or organisation using the service.
 When using authorization servers, the authorization server issues the registered client a client identifier - a unique string representing the registration information provided by the client. The client identifier is not a secret; it is commonly public known and MUST NOT be relied upon for client authentication by itself. The client identifier is unique to the authorization server.
 
 Authorization servers MUST NOT allow clients to choose or influence their `client_id` value.
@@ -120,7 +120,7 @@ Mutual TLS authentication, is a feature of TLS with which the Client authenticat
 
 In contexts where Dutch (semi) governmental organizations are involved, the X.509 certificate used for Client authentication MUST be a PKIOverheid certificate. These are x509 certificates derived from a root certificate owned by the Dutch Government. For more information on PKIOverheid see https://www.logius.nl/diensten/pkioverheid.
 
-In the API context, only Server, Services certificates or extended Validation certificates (as used for websites) SHOULD be used. Please note that in the current standard of PKIO the TSPs are not obligated to fill the OIN / HRN in the Subject.Serialnumber field for the private services chain, as it is optional. See the [Programme of Requirements part 3h: CP Server certificaten – domein Private Services](https://www.logius.nl/sites/default/files/bestanden/website/PvE%20deel3h%20v4.8%20V1.0.pdf) for details. For the extended Validation certificates, the chamber of commerce number is given in the Serial.Subject field see [Programme of Requirements part 3f: Certificate Policy for Extended Validation certificates in EV (G1) Domain](https://www.logius.nl/sites/default/files/public/bestanden/diensten/PKIoverheid/PvE%20EN%20part3f%20v4.8%20DEF.pdf) or the [website of Logius](https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen) for details. 
+In the API context, only Server, Services certificates or extended Validation certificates (as used for websites) SHOULD be used. Please note that in the current standard of PKIO the TSPs are not obligated to fill the OIN / HRN in the Subject.Serialnumber field for the private services chain, as it is optional. See the [Programme of Requirements part 3h: CP Server certificaten – domein Private Services](https://www.logius.nl/sites/default/files/bestanden/website/PvE%20deel3h%20v4.8%20V1.0.pdf) for details. For the extended Validation certificates, the chamber of commerce number is given in the Serial.Subject field see [Programme of Requirements part 3f: Certificate Policy for Extended Validation certificates in EV (G1) Domain](https://www.logius.nl/sites/default/files/public/bestanden/diensten/PKIoverheid/PvE%20EN%20part3f%20v4.8%20DEF.pdf) or the [website of Logius](https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen) for details.
 See also the NCSC factsheet regarding the phasing out of publicly trusted web server (SSL/TLS) certificates by PKIOverheid :
 [Factsheet PKIoverheid stopt met webcertificaten](https://www.logius.nl/actueel/ncsc-maakt-factsheet-over-uitfasing-webcertificaten-van-pkioverheid).
 
@@ -134,7 +134,7 @@ In contexts where Dutch (semi) governmental organizations are involved, the cert
 [The NL GOV Assurance profile for OAuth 2.0](https://publicatie.centrumvoorstandaarden.nl/api/oauth/) REQUIRES the use of private_key_jwt for full clients, native clients with dynamically registered keys, and direct access clients as mentioned in the profile.
 
 ##### Client secrets
-Clients SHOULD NOT be authenticated using client secrets. Methods using asymmetric keys are RECOMMENDED instead of client secrets, as they are both more secure and key management is easier, in particular when deployed at scale.  Various methods exists for authenticating clients using secrets. Methods including Client authentication using HTTP Basic authentication or communicating client credentials in the request body are prone to credential theft. 
+Clients SHOULD NOT be authenticated using client secrets. Methods using asymmetric keys are RECOMMENDED instead of client secrets, as they are both more secure and key management is easier, in particular when deployed at scale.  Various methods exists for authenticating clients using secrets. Methods including Client authentication using HTTP Basic authentication or communicating client credentials in the request body are prone to credential theft.
 
 
 ##### Client authentication and Public clients
@@ -336,5 +336,3 @@ For outbound filtering, the main concern is leaking of information.
 #### Error handling
 - Respond with generic error messages - avoid revealing details of the failure unnecessarily.
 - Do not pass technical details (e.g. call stacks or other internal hints) to the client.
-
-

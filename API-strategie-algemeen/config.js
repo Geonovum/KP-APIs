@@ -1,9 +1,9 @@
 //-------------------------------------------------------------------------------------
 //-- File. . . :  config.js
-//-- Bevat . . :  Template voor de  configuratie voor respec  
+//-- Bevat . . :  Template voor de  configuratie voor respec
 //--              Gebaseerd op https://github.com/Geonovum/respec/wiki
-//--              Deze file moet worden neergezet in de root-directory van de 
-//--              betreffende standaard. 
+//--              Deze file moet worden neergezet in de root-directory van de
+//--              betreffende standaard.
 //-- Door. . . :  Frank Terpstra/Jan van Gelder
 //-------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------
@@ -17,14 +17,14 @@
 //-- haalt gh-pages weg aan het eind van een URL
 //-- Stopt zodra de eerste is gevonden (want komt maar 1x voor)
 //-- JvG 2019-11-12
-function custGHPG(respecConfig)  
+function custGHPG(respecConfig)
 {
   var tags = document.getElementsByTagName("a");
   var srch = "gh-pages";
   var slen = srch.length;
   var i;
 
-  for (i = 0; i < tags.length; i++) 
+  for (i = 0; i < tags.length; i++)
   {
     if(tags[i].href.indexOf(srch) > -1)
     {
@@ -33,18 +33,18 @@ function custGHPG(respecConfig)
       console.log(tags[i].href + " is aangepast");
       break;
     }
-  } 
+  }
 }
 
-var respecConfig = 
+var respecConfig =
 {
   specStatus: "GN-WV",
   specType: "HR",
   pubDomain: "api",
-  //publishDate: "2021-09-15",
-  previousPublishDate: "2021-09-15",
+  //publishDate: "2021-11-26",
+  previousPublishDate: "2021-06-28",
   previousMaturity: "GN-CV",
-  editors: 
+  editors:
   [
     {
       name: "Frank Terpstra",
@@ -57,7 +57,7 @@ var respecConfig =
       companyURL: "http://www.Geonovum.nl/",
     }
   ],
-  authors: 
+  authors:
   [
     {
       name: "Lancelot Schellevis",
@@ -93,7 +93,7 @@ var respecConfig =
       name: "Frank van Es",
       company: "Logius",
       companyURL: "www.logius.nl",
-    },  
+    },
 	{
       name: "Dennis de Wit",
       company: "Solventa",
@@ -231,7 +231,7 @@ var respecConfig =
       authors: ["Jim Schaad, Jeff Hodges, Joe Hildebrand, Sean Turner"],
       date: "",
       publisher: "IANA",
-    },	
+    },
     "BCP195": {
       href: "https://tools.ietf.org/html/bcp195",
       title: "Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)",
@@ -244,7 +244,7 @@ var respecConfig =
       title: "HAL - Hypertext Application Language",
       authors: ["Mike Kelly"],
       date: " 2013-09-18",
-    }  
+    }
   },
   postProcess:[custGHPG],
 };

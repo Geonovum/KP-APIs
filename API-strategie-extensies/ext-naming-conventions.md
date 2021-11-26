@@ -1,5 +1,6 @@
-
 ## Naming conventions
+
+<p class="note">The working group has indicated this extension to be stable.</p>
 
 Although according to the URI specification [[rfc3986]] URI's are case sensitive, except the scheme/protocol (e.g. `https://`) and domain (e.g. `api.example.org`) parts, this section describes design rules related to URI's to ensure interoperability among implementations.
 

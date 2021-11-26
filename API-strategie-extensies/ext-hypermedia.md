@@ -1,5 +1,7 @@
 ## Hypermedia
 
+<p class="note">The working group has indicated this extension to be stable.</p>
+
 Hypermedia relates to the use of hyperlinks (from now on called _links_) as part of a document's payload, which are essentially URIs pointing to other resources. Typically, but not necessarily, these links are retrievable (also called _dereferencable_) from the web over the HTTP protocol. We intentionally make a clear separation between navigation controls and external links. Both kinds can easily be combined as part of a single API.
 
 <div class="rule" id="api-70">
