@@ -18,10 +18,10 @@ De werkgroep draagt bij aan de API Design Rules en de Extensions.
 > Voor de Extensions geldt een andere proces, hiervoor kan iedereen binnen de werkgroep toevoegingen of wijzigingen voorstellen voor de verschillende extensies. Toevoegingen of wijzigingen op de "Main" versie (nu nog Master) kan door middel van een pull request worden aangeboden aan Jasper. Jasper zal alle werkgroepleden uitnodigen om te reviewen binnen een nader te bepalen tijdsperiode. Komen er uit de review geen opmerkingen dan zal het pull request verwerkt worden. Op de eerstvolgende werkgroepbijeenkomst wordt het groepje dat de wijziging heeft uitgevoerd gevraagd een korte toelichting te geven en zullen we als gemeenschappelijke werkgroep bepalen of de extensie het label 'stable' krijgt.
 
 Binnen de werkgroep wordt er door verschillende subgroepen gewerkt aan de extensies, op dit moment zijn de volgende subgroepen actief:
-> - Profielen en capabilities (trekker Jasper Roes)
-> - Tijdreizen (trekker Tony Sloos) - uitwerking combineren met DIS Geo / SOR sessies en daarna extensie updaten
-> - Omgaan met relaties (voormalig put/patch/post/delete) (trekker Henri Korver)
-> - Geo (trekker Linda van den Brink)
+> - [Profielen en capabilities](profielen.md) (trekker Jasper Roes)
+> - [Tijdreizen](tijdreizen.md) (trekker Tony Sloos) - uitwerking combineren met DIS Geo / SOR sessies en daarna extensie updaten
+> - [Omgaan met relaties](relaties.md) (voormalig put/patch/post/delete) (trekker Henri Korver)
+> - [Geo](geo.md) (trekker Linda van den Brink)
 
 Wil je bijdragen aan de uitwerking van deze onderwerpen dan kun je je melden bij de trekker van het onderwerp of contact opnemen met Jasper Roes (jasper.roes@kadaster.nl).
 
