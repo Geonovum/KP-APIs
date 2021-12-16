@@ -3,6 +3,13 @@
  
  De werkgroep houdt regelmatig online meetings. Neem voor deelname aan deze werkgroep contact op met Linda van den Brink (Geonovum).
 
+## verslag online meeting 15 december 2021
+Aanwezig: Linda van den Brink (Geonovum), Mark Strijker (Kadaster), Diederik van der Boor, Jeroen Temme, Robert Yashar,Michiel Trimpe (gemeente Amsterdam), Paul van Genuchten (ISRIC.org), George Mathijssen (SWECO).
+
+- Bespreking van de te volgen werkwijze: discussie in github issues, indien nodig verdere discussie tijdens online meetings, voorgestelde wijzigingen in pull requests die we gezamenlijk reviewen en na goedkeuring mergen. Suggestie was ook om te werken in fasen en deze te scopen. 
+- Presentatie door Mark Strijker [slides todo] over de bij het Kadaster in verschillende projecten opgedane ervaringen met geo-functionaliteit in APIs, en de daaruit voortkokmende bevindingen op de huidige geo-extensie van de NL API Design Rules (ADR). 
+- Korte bespreking van de huidige [open issues](https://github.com/Geonovum/KP-APIs/issues?q=is%3Aissue+is%3Aopen+label%3AGeo-extensie)
+- Volgende online meeting 12 januari 10:30 - 11:30
 
  ## verslag kickoff 24 november 2021
 
@@ -10,4 +17,4 @@ Tijdens de sessie van het Kennisplatform APIs op 24 november kwam de geo-extensi
 
 Tijdens de sessie hebben we na een korte kennismaking de huidige inhoud van de [API Design Rules geo-extensie](https://docs.geostandaarden.nl/api/API-Strategie-ext/#geospatial) kort besproken. Omdat geen enkel onderdeel van de geo-extensie zonder commentaar bleef, gaan we in de subwerkgroep alle delen ervan opnieuw aan de orde stellen, waarbij aanpassingen verwacht worden. 
 
-Ook was er een presentatie van de [OGC API standaarden](https://ogcapi.org) door Just van den Broecke. Deze standaarden willen we op een of andere manier ook gaan ondersteunen in de geo-extensie. 
+Ook was er een [presentatie](presentaties/20211124-OGCAPIFeatures.pdf) van de [OGC API standaarden](https://ogcapi.org) door Just van den Broecke. Deze standaarden willen we op een of andere manier ook gaan ondersteunen in de geo-extensie. 
