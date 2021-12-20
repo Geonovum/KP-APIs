@@ -38,11 +38,11 @@ function custGHPG(respecConfig)
 
 var respecConfig =
 {
-  specStatus: "GN-CV",
+  specStatus: "GN-WV",
   specType: "HR",
   pubDomain: "api",
   //publishDate: "2021-10-13",
-  previousPublishDate: "2021-09-15",
+  previousPublishDate: "2021-12-20",
   previousMaturity: "GN-CV",
   editors:
   [
