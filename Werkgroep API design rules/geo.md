@@ -7,6 +7,17 @@ github repository; zie issues met tag
 De werkgroep houdt regelmatig online meetings. Neem voor deelname aan deze
 werkgroep contact op met Linda van den Brink (Geonovum).
 
+## verslag online meeting 12 januari 2022
+Aanwezig: Linda van den Brink (Geonovum), Paul van Genuchten (ISRIC.org), George Mathijssen (SWECO), Pieter Bresters (Geonovum)
+
+Met een klein groepje aanwezigen hebben we gekeken naar pull request [#46](https://github.com/Geonovum/KP-APIs/pull/426). Besloten is om deze PR in 2 op te splitsen. Het deel over het beter bruikbaar maken van APIs voor GIS clients wordt apart gezet en de documentconventies voor het doen van aanbevelingen en het geven van voorbeelden worden toegepast.
+
+George maakt een issue aan over het feit dat bogen (naast andere dingen zoals volumes en andere CRS dan WGS84) niet toegestaan zijn in GeoJSON en het hebben van een regel die GeoJSON voorschrijft, betekent dat je bepaalde data (bv BGT) niet conform de API strategie (i.e. de huidige geo-extensie) kunt aanbieden. 
+
+Linda en Pieter gaan alvast input verzamelen voor issue [#425 Is het mogelijk om met een OGC-API Features service te voldoen aan nl-api strategie](https://github.com/Geonovum/KP-APIs/issues/425)
+
+Volgende online meeting: donderdag 3 februari van 1 tot 2. 
+
 ## verslag online meeting 15 december 2021
 
 Aanwezig: Linda van den Brink (Geonovum), Mark Strijker (Kadaster), Diederik van
