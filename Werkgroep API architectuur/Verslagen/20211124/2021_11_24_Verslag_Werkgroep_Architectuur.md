@@ -5,7 +5,7 @@ Agenda
 ## 1 Welkom
 
 
-## 2 API Ketenarchtirectuur / API referentie architectuur
+## 2 API Ketenarchitectuur / API referentie architectuur
 
 John Zwart (RvdK / Justitiedomein) heeft een casus toegelicht mbt de keten:
 
