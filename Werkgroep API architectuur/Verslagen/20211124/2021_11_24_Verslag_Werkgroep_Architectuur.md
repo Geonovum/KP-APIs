@@ -1,4 +1,4 @@
-Verslag: Werkgroep API Architectuur 2021-10-01
+Verslag: Werkgroep API Architectuur 2021-11-24
 
 Agenda
 
