@@ -17,7 +17,7 @@ Mogelijke onderwerpen/onderdelen die hieruit voortkomen:
 - 1 connectie / vertrouwen in de keten
 - 2 informatie structuur bv wel of geen transformatie
 
-Bij jusititie denkt met aan binnen sector centraal punt voor API
+Bij jusititie denkt men aan binnen sector centraal punt voor API
 met docs & sandbox,
 toegang is dan aandachtspunt en
 bv het verschil "binnen en buiten domein"
