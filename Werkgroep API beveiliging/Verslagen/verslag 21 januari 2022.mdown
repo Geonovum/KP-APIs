@@ -1,0 +1,53 @@
+# Werkgroep Beveiliging
+
+**Datum:** 21-1-2022
+
+**Aanwezig:** 
+Peter Haasnoot(Logius), Paul Dam(Lexdigitalis), Martin Borgman(Kadaster), Heiko Hudig(Politie), Frank Terpstra (Geonovum), Remco Schaar(logius), Martin van der Plas(Logius), Henri Korver(VNG), Hans Oostrom(Waternet)
+
+**Toevoegen client credentials flow aan NL profiel OAuth**
+Usecases:
+* Autonome systemen die anders alleen username password zouden gebruiken
+* Clients Systemen die nu PKIOverheid gebruiken. Die worden geautoriseerd op basis van de rechten van het certificaat. Met OAuth kan je fijnmaziger autoriseren.
+* Bij niet overheid overheid, maar burger/bedrijf -> overheid kan je als overheid meer fijnmazige autorisaties vereisen.
+* NLX case met intermediar autonoom system, daar past mogelijk https://datatracker.ietf.org/doc/html/rfc7521#section-4.1
+* Mijnoverheid, gebruiker logt in op portaal, vraagt gegevens op bij andere overheid namens de burger. Vergelijkbare vraag in de zorg Medmij: verschillende portalen die dezelfde bronsystemen bevragen. Je wil als bronsysteem niet blind de portalen vertrouwen maar een verzekering dat gebruiker toestemming heeft gegegeven. Deze usecase types zijn buiten scope past meer bij openidconnect.
+
+Samenvatting, we hebben 4 soorten usecases besproken. Autonome systemen binnen de organisatie (Politie), Autonome systemen van andere organisaties( kadaster), Autonome systemen van intermediar die namens een overheid handelen (NLX) en portalen en andere knooppunten waar de vastgestelde identiteit naar de backend van een andere organisatie moet worden doorgezet.
+De eerste twee lijken direct van toepassing voor de client credentials flow
+Heiko maakt usecase politie
+Martin voor kadaster usecase
+Deze moeten in de draft van de nieuwe standaard dit bestaande hoofdstuk aanvullen:
+https://publicatie.centrumvoorstandaarden.nl/api/oauth/#usecases
+
+**Scopes en claims**
+Wat zijn best practices? Interessante input:
+•	https://www.rfc-editor.org/rfc/rfc9068#name-authorization-claims
+•	https://datatracker.ietf.org/doc/html/draft-ietf-oauth-rar-08
+•	https://github.com/kadaster/klic-win/blob/master/API%20management/Authenticatie_via_oauth.md
+•	https://hl7.org/fhir/smart-app-launch/scopes-and-launch-context.html#scopes-for-requesting-clinical-data
+•	Gartner: treat scopes as a convenient method to get claims (Heiko stuurt link/document door)
+
+Drie categoriën van best practices:
+* Van autorisatie matrix naar scopes en claims (architectuur)
+* Naamgeving
+* Hoe om te gaan met vertouwelijkheid scopes zelf
+
+Martin van der plas zorgt voor draft versie standaard en rechten daarop om te editen.
+Martin maakt samenvatting van gartner eerste aanzet voor onderwerp autorisatie matrix.
+
+**Terugkoppeling signing**
+Gekeken naar signing draft voorste IETF en PSD2 vastgestelde standaard
+Heeft verwijzing naar certificaat eisen en heeft payment specifieke verwijzingen. Er zijn nog geen implementaties van te vinden. 
+Het is copyrighted, we kunnen niet zomaar hergebruiken
+Italiaans API strategie experts meest gecharmeerd van IETF, vond PSD2 te complex. Vond algoritme voor coronaQR codes interessant. Dit heeft echter heel andere usecases.
+Voor volgende keer:
+
+* Signing en encryptie usecases
+* Terugkoppeling subwerkgroep over signing payload
+
+
+
+
+
+

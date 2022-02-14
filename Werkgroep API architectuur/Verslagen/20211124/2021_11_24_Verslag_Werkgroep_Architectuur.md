@@ -1,11 +1,11 @@
-Verslag: Werkgroep API Architectuur 2021-10-01
+Verslag: Werkgroep API Architectuur 2021-11-24
 
 Agenda
 
 ## 1 Welkom
 
 
-## 2 API Ketenarchtirectuur / API referentie architectuur
+## 2 API Ketenarchitectuur / API referentie architectuur
 
 John Zwart (RvdK / Justitiedomein) heeft een casus toegelicht mbt de keten:
 
@@ -17,7 +17,7 @@ Mogelijke onderwerpen/onderdelen die hieruit voortkomen:
 - 1 connectie / vertrouwen in de keten
 - 2 informatie structuur bv wel of geen transformatie
 
-Bij jusititie denkt met aan binnen sector centraal punt voor API
+Bij jusititie denkt men aan binnen sector centraal punt voor API
 met docs & sandbox,
 toegang is dan aandachtspunt en
 bv het verschil "binnen en buiten domein"

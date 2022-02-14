@@ -41,8 +41,8 @@ var respecConfig =
   specStatus: "GN-WV",
   specType: "HR",
   pubDomain: "api",
-  //publishDate: "2021-10-13",
-  previousPublishDate: "2021-12-20",
+  //publishDate: "2022-01-13",
+  previousPublishDate: "2022-01-13",
   previousMaturity: "GN-CV",
   editors:
   [
