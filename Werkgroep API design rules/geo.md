@@ -7,6 +7,14 @@ github repository; zie issues met tag
 De werkgroep houdt regelmatig online meetings. Neem voor deelname aan deze
 werkgroep contact op met Linda van den Brink (Geonovum).
 
+## verslag online meeting 3 februari 2022
+Aanwezig: Linda van den Brink (Geonovum), Paul van Genuchten (ISRIC.org), George Mathijssen, Egbert van Milgen (Cadac), Mark Strijker (Kadaster)
+
+Gekeken naar verschillende issues:
+- [Is het mogelijk om met een OGC-API Features service te voldoen aan nl-api strategie #425](https://github.com/Geonovum/KP-APIs/issues/425): Besloten om wijziging omtrent CRS content negotiation door te voeren zoals voorgesteld in het issue. Om deze wijziging te tracken,  een nieuw issue [#432](https://github.com/Geonovum/KP-APIs/issues/432) aangemaakt.
+- [GeoJSON is niet geschikt voor BGT data #429](https://github.com/Geonovum/KP-APIs/issues/429) besproken. Vanuit de OGC werkgroep voor JSON-FG is verzocht om informatie over operationeel gebruik in NL + databases en bibliotheken met ondersteuning voor cirkelbogen. @sweco-nlgemo gaat dit aanleveren. 
+- [geojson als formaat of als ontologie #424](https://github.com/Geonovum/KP-APIs/issues/424): besproken en besloten een aantal vragen hierover te stellen aan de OGC JSON-FG werkgroep. @lvdbrink gaat dit doen (want zit in de desbetreffende werkgroep).
+
 ## verslag online meeting 12 januari 2022
 Aanwezig: Linda van den Brink (Geonovum), Paul van Genuchten (ISRIC.org), George Mathijssen (SWECO), Pieter Bresters (Geonovum)
 
