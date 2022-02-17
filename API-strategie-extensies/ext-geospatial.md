@@ -109,9 +109,9 @@ Since most client-side mapping libraries use WGS84, the W3C/OGC working group *S
   <p>General usage of the European ETRS89 coordinate reference system (CRS) is preferable, but is not necessarily the default CRS. Hence, the CRS has to be explicitly included in each request.</p>
 </div>
 
-The CRS can be specified for request and response individually using custom headers: RD/Amersfoort, ETRS89, WGS84, and Web Mercator.
+The CRS can be specified for request and response individually using parameters: RD/Amersfoort, ETRS89, WGS84, and Web Mercator.
 
-The guiding priciples for CRS support:
+The guiding principles for CRS support:
 
 - Source systems record coordinates as they enter the system (legal context);
 - Define a default CRS in the API, if the consumer does not specify the CRS it is assumed it uses the default.
@@ -123,18 +123,46 @@ The guiding priciples for CRS support:
 - Exchange format (notation) RD and Web Mercator X Y in meters: `195427.5200 311611.8400`
 
 <div class="rule" id="api-40">
-  <p class="rulelab"><strong>API-40</strong>: Pass the coordinate reference system (CRS) of the request and the response in the headers</p>
-  <p>The coordinate reference system (CRS) for both the request and the response are passed as part of the request headers and reponse headers. In case this header is missing, send the HTTP status code <code>412 Precondition Failed</code>.</p>
+  <p class="rulelab"><strong>API-40</strong>: Pass the coordinate reference system (CRS) of the request and the desired CRS of the response as parameters</p>
+  <p>The coordinate reference system (CRS) for both the request and the response are passed as parameters. The CRS of the geometry in the response is specified using a header.</p>
 </div>
 
-The following headers are purely meant for negotiation between the client and the server. Depending on the application, the request not only contains geometries but also specific meta data, e.g. the original realistion including the collection date.
+This method conforms to the standard OGC API Features part 2: Coordinate Reference Systems by Reference. 
+
+Use the following parameters: 
+- A parameter `crs` to specify the CRS used in a request. The value of the parameter is a URI identifier of the CRS. If the `crs` parameter is specified, then the coordinates of all geometry-valued properties in the response document must be presented in the requested CRS. If the requested CRS is not available, respond with HTTP status code 400.
+- A parameter `bbox-crs` to assert the CRS used for the coordinate values, in case the `bbox` parameter is used in the request. 
+<!-- Deze is nieuw, extra toelichting nodig als we die opnemen. -->
+
+The CRS of the geometry in the response is specified using the header `Content-Crs`. This mechanism allows a server to clearly and unambiguously assert the CRS and axis order being used in a response document independent of the requested output format, which is important because of the inconsistent provision of CRS metadata in geospatial encodings and the continued confusion caused by the axis order of coordinates.
+
+Use the following URIs to specify the CRS:
+
+|CRS|URI|
+|-|-|
+|ETRS89, European|http://www.opengis.net/def/crs/EPSG/9.9.1/4258|
+|WGS84, global|http://www.opengis.net/def/crs/OGC/1.3/CRS84|
+|Web Mercator, global|http://www.opengis.net/def/crs/EPSG/9.9.1/3857|
+|RD/Amersfoort, Dutch|http://www.opengis.net/def/crs/EPSG/9.9.1/28992|
+
+<!-- Deze URIs moeten gecheckt worden -->
+
+For backwards compatibility, an older method of specifying CRS in the headers of requests is retained as a deprecated method. APIs that already support the (deprecated) header method can add support for the parameter method while still supporting the header method for a certain period.  Supporting both the new method (using parameters) and the old (using headers) is trivial. 
+
+<div class="rule" id="api-40-dep">
+  <p class="rulelab"><strong>API-40-dep</strong>: Pass the coordinate reference system (CRS) of the request and the response in the headers</p>
+  <p><strong>Deprecated</strong></p>
+  <p>The coordinate reference system (CRS) for both the request and the response are passed as part of the request headers and response headers. In case this header is missing, send the HTTP status code <code>412 Precondition Failed</code>.</p>
+</div>
+
+The following headers are purely meant for negotiation between the client and the server. Depending on the application, the request not only contains geometries but also specific meta data, e.g. the original realization including the collection date.
 
 Request and response may be based on another coordinate reference system. This applies the HTTP-mechanism for content negotiation. The CRS of the geometry in the request (request body) is specified using the header `Content-Crs`.
 
 |HTTP header|Value|Explanation|
 |-|-|-|
 |`Content-Crs`|EPSG:4326|WGS84, global|
-|`Content-Crs`|EPSG:3857|Web Mecator, global|
+|`Content-Crs`|EPSG:3857|Web Mercator, global|
 |`Content-Crs`|EPSG:4258|ETRS89, European|
 |`Content-Crs`|EPSG:28992|RD/Amersfoort, Dutch|
 
