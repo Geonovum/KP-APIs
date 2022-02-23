@@ -140,10 +140,12 @@ Use the following URIs to specify the CRS:
 
 |CRS|URI|
 |-|-|
-|ETRS89, European|http://www.opengis.net/def/crs/EPSG/9.9.1/4258|
+|ETRS89, 2D, European|http://www.opengis.net/def/crs/EPSG/9.9.1/4258|
+|ETRS89, 3D, European|http://www.opengis.net/def/crs/EPSG/9.9.1/4937|
 |WGS84, global|http://www.opengis.net/def/crs/OGC/1.3/CRS84|
 |Web Mercator, global|http://www.opengis.net/def/crs/EPSG/9.9.1/3857|
-|RD/Amersfoort, Dutch|http://www.opengis.net/def/crs/EPSG/9.9.1/28992|
+|RD/Amersfoort, 2D, Dutch|http://www.opengis.net/def/crs/EPSG/9.9.1/28992|
+|RD/Amersfoort + NAP, 3D, Dutch|http://www.opengis.net/def/crs/EPSG/9.9.1/7415|
 
 <!-- Deze URIs moeten gecheckt worden -->
 
