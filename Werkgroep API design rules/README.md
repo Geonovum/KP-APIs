@@ -6,7 +6,7 @@ de werkgroep API Design Rules & Extensions werkt binnen het Kennis Platform API'
 Omdat er veel verschillende toepassingen zijn voor API's en niet alle extensies voor ieder doel noodzakelijk zijn, of er soms ook verschillende opties zijn afhankelijk van de context werkt de werkgroep ook aan profielen die duidelijk maken welke extensies voor een bepaald doel of bepaalde context als 'verplicht' moeten worden gezien.
 
 ## Auteurs
-> - Jasper Roes (Voorzitter werkgroep, Kadaster)
+> - Pieter Dijkstra (Voorzitter werkgroep, Kadaster)
 > - Joost Farla (Kadaster)
 > - Alle werkgroepleden
 
@@ -39,9 +39,7 @@ De subgroepen zullen (de samenvatting van) hun discussies over het onderwerp waa
 
 De werkgroep komt vier keer per jaar bijeen. Zolang de maatregelen tegen de COVID-19 pandemie van kracht zijn, vinden de bijeenkomsten online plaats.
 
-De geplande bijeenkomsten in 2021 zijn:
-- woensdag 24 november van 10.00u tot 12.30u
+De geplande bijeenkomsten in 2022 zijn:
+- donderdag 17 maart van 10.00u tot 12.00u
 
-De bijeenkomsten in 2022 moeten nog gepland worden.
-
-### Wil je aanhaken bij de werkgroep neem dan contact op met Jasper Roes (jasper.roes@kadaster.nl)
+### Wil je aanhaken bij de werkgroep neem dan contact op met Pieter Dijkstra (pieter.dijkstra@kadaster.nl)
