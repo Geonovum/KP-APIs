@@ -22,6 +22,7 @@ Binnen de werkgroep wordt er door verschillende subgroepen gewerkt aan de extens
 > - [Tijdreizen](tijdreizen.md) (trekker Tony Sloos) - uitwerking combineren met DIS Geo / SOR sessies en daarna extensie updaten
 > - [Omgaan met relaties](relaties.md) (voormalig put/patch/post/delete) (trekker Henri Korver)
 > - [Geo](geo.md) (trekker Linda van den Brink)
+> - [Normatieve rules](https://github.com/Logius-standaarden/API-Design-Rules#readme) (trekker Martin van der Plas)
 
 Wil je bijdragen aan de uitwerking van deze onderwerpen dan kun je je melden bij de trekker van het onderwerp of contact opnemen met Pieter Dijkstra (pieter.dijkstra@kadaster.nl).
 
