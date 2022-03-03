@@ -23,7 +23,7 @@ Binnen de werkgroep wordt er door verschillende subgroepen gewerkt aan de extens
 > - [Omgaan met relaties](relaties.md) (voormalig put/patch/post/delete) (trekker Henri Korver)
 > - [Geo](geo.md) (trekker Linda van den Brink)
 
-Wil je bijdragen aan de uitwerking van deze onderwerpen dan kun je je melden bij de trekker van het onderwerp of contact opnemen met Jasper Roes (jasper.roes@kadaster.nl).
+Wil je bijdragen aan de uitwerking van deze onderwerpen dan kun je je melden bij de trekker van het onderwerp of contact opnemen met Pieter Dijkstra (pieter.dijkstra@kadaster.nl).
 
 Eerder subgroepen waren:
 > - [Hypermedia/HAL](hypermedia.md) (trekker Michiel Trimpe)
