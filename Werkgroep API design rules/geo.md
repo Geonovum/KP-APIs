@@ -16,8 +16,8 @@ Aanwezig Linda van den Brink (Geonovum), Paul van Genuchten (ISRIC.org), Mark St
     - bbox-crs is niet erg toekomstbestendig ie je moet dan voor elke geometriesoort een parameter introduceren.
     - Zie verder de reviewopmerkingen in de PR.
  - N.a.v. het vorige punt ook even gesproken over naming conventions voor parameters. Zijn die er in de ADR? En zo ja, botsen die met naming conventies in OGC APIs? Gemeente A'dam gebruikt altijd underscore om clash met datavelden te vermijden.Uitzoekpunt.
- - issue #429 bespreken voortgang niet aan toegekomen.
- - issue #184 breder binnen API strategie groep bespreken. Het speelt niet alleen bij de geo extensie. Voorstel Mark is om de reden van het 'misbruiken' van POST uit te leggen. Dus het oorspronkelijke detailissue parkeren.
+ - [issue #429](https://github.com/Geonovum/KP-APIs/issues/429) bespreken voortgang niet aan toegekomen.
+ - [issue #184](https://github.com/Geonovum/KP-APIs/issues/184) breder binnen API strategie groep bespreken. Het speelt niet alleen bij de geo extensie. Voorstel Mark is om de reden van het 'misbruiken' van POST uit te leggen. Dus het oorspronkelijke detailissue parkeren.
 Robert geeft aan dat er een methode in ontwikkeling is waarmee dit netjes kan.
 
 ## verslag online meeting 3 februari 2022
