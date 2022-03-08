@@ -29,6 +29,17 @@ In a JSON API the geometry is returned as GeoJSON, wrapped in a separate GeoJSON
 
 ### Call (requests)
 
+A simple spatial filter can be supplied as a bounding box. This is a common way of filtering spatial data and can be supplied as a parameter: 
+
+<div class="rule" id="api-36">
+  <p class="rulelab"><strong>API-36</strong>: Supply a simple spatial filter as a bounding box parameter</p>
+  <p>Support the <a href="http://docs.opengeospatial.org/is/18-058/18-058.html#_parameter_bbox">OGC API Features part 1 <code>bbox</code> parameter</a> in conformance to the standard.
+  <pre>
+   GET /api/v1/panden?bbox=160.6,-55.95,-170,-25.89
+  </pre>
+  </p>
+</div>
+
 A spatial filter can be complex and large. It is best practice to supply complex queries in the body, not in the request URI. Since `GET` may not have a payload (although supported by some clients) use a `POST` request to a separate endpoint. For example, a GEO query to all *panden* where the geometry in the field `_geo` (there may be multiple geometry fields) contains a GeoJSON object (in this case a `Point`, so one coordinate pair):
 
 <div class="rule" id="api-36">
@@ -47,6 +58,8 @@ A spatial filter can be complex and large. It is best practice to supply complex
   </pre>
   <p>Other geospatial operators like <code>intersects</code> or <code>within</code> can be used as well.</p>
 </div>
+
+<aside class="issue" data-number="281">Er is discussie over het gebruik van POST. <code>bbox</code> filter is toegevoegd. Wellicht POST endpoint laten vervallen.</aside>
 
 <div class="rule" id="api-37">
   <p class="rulelab"><strong>API-37</strong>: Support mixed queries at <code>POST</code> endpoints</p>
@@ -123,18 +136,22 @@ The guiding principles for CRS support:
 - Exchange format (notation) RD and Web Mercator X Y in meters: `195427.5200 311611.8400`
 
 <div class="rule" id="api-40">
-  <p class="rulelab"><strong>API-40</strong>: Pass the coordinate reference system (CRS) of the request and the desired CRS of the response as parameters</p>
-  <p>The coordinate reference system (CRS) for both the request and the response are passed as parameters. The CRS of the geometry in the response is specified using a header.</p>
+  <p class="rulelab"><strong>API-40</strong>: Pass the coordinate reference system (CRS) of the request as a parameter</p>
+  <p>Support the <a href="http://docs.opengeospatial.org/is/18-058/18-058.html#_parameter_bbox_crs">OGC API Features part 2 <code>bbox_crs</code> parameter</a> in conformance to the standard.
+  </p>
 </div>
 
-This method conforms to the standard OGC API Features part 2: Coordinate Reference Systems by Reference. 
+<div class="rule" id="api-41">
+  <p class="rulelab"><strong>API-41</strong>: Pass the desired CRS of the response as a parameter</p>
+  <p>Support the <a href="http://docs.opengeospatial.org/is/18-058/18-058.html#_parameter_crs">OGC API Features part 2 <code>crs</code> parameter</a> in conformance to the standard.
+  </p>
+</div>
 
-Use the following parameters: 
-- A parameter `crs` to specify the CRS used in a request. The value of the parameter is a URI identifier of the CRS. If the `crs` parameter is specified, then the coordinates of all geometry-valued properties in the response document must be presented in the requested CRS. If the requested CRS is not available, respond with HTTP status code 400.
-- A parameter `bbox-crs` to assert the CRS used for the coordinate values, in case the `bbox` parameter is used in the request. 
-<!-- Deze is nieuw, extra toelichting nodig als we die opnemen. -->
-
-The CRS of the geometry in the response is specified using the header `Content-Crs`. This mechanism allows a server to clearly and unambiguously assert the CRS and axis order being used in a response document independent of the requested output format, which is important because of the inconsistent provision of CRS metadata in geospatial encodings and the continued confusion caused by the axis order of coordinates.
+<div class="rule" id="api-42">
+  <p class="rulelab"><strong>API-42</strong>: Assert the CRS used in the response using a header</p>
+  <p>Support the <a href="http://docs.opengeospatial.org/is/18-058/18-058.html#_coordinate_reference_system_information_independent_of_the_feature_encoding">OGC API Features part 2 <code>Content-Crs</code> header</a> in conformance to the standard.
+  </p>
+</div>
 
 Use the following URIs to specify the CRS:
 
@@ -150,6 +167,10 @@ Use the following URIs to specify the CRS:
 <!-- Deze URIs moeten gecheckt worden -->
 
 For backwards compatibility, an older method of specifying CRS in the headers of requests is retained as a deprecated method. APIs that already support the (deprecated) header method can add support for the parameter method while still supporting the header method for a certain period.  Supporting both the new method (using parameters) and the old (using headers) is trivial. 
+
+<aside class="note">
+If a client specifies CRS using a parameter AND in the header, the parameter takes precedence and the CRS in the header is ignored.
+</aside>
 
 <div class="rule" id="api-40-dep">
   <p class="rulelab"><strong>API-40-dep</strong>: Pass the coordinate reference system (CRS) of the request and the response in the headers</p>
