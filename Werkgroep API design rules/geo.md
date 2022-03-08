@@ -7,6 +7,19 @@ github repository; zie issues met tag
 De werkgroep houdt regelmatig online meetings. Neem voor deelname aan deze
 werkgroep contact op met Linda van den Brink (Geonovum).
 
+## verslag online meeting 24 februari 2022
+Aanwezig Linda van den Brink (Geonovum), Paul van Genuchten (ISRIC.org), Mark Strijker (Kadaster), Robert Yashar (gemeente Amsterdam)
+
+ - Gesproken over [PR over CRS](https://github.com/Geonovum/KP-APIs/pull/434): er is review geweest van een paar mensen. Afgesproken dat Linda nog wat verbeteringen doorvoert. 
+    - Lennart huisman vragen crs uris te reviewen.
+    - verwijzen naar ogc bouwblokjes ipv zelf herschrijven
+    - bbox-crs is niet erg toekomstbestendig ie je moet dan voor elke geometriesoort een parameter introduceren.
+    - Zie verder de reviewopmerkingen in de PR.
+ - N.a.v. het vorige punt ook even gesproken over naming conventions voor parameters. Zijn die er in de ADR? En zo ja, botsen die met naming conventies in OGC APIs? Gemeente A'dam gebruikt altijd underscore om clash met datavelden te vermijden.Uitzoekpunt.
+ - issue #429 bespreken voortgang niet aan toegekomen.
+ - issue #184 breder binnen API strategie groep bespreken. Het speelt niet alleen bij de geo extensie. Voorstel Mark is om de reden van het 'misbruiken' van POST uit te leggen. Dus het oorspronkelijke detailissue parkeren.
+Robert geeft aan dat er een methode in ontwikkeling is waarmee dit netjes kan.
+
 ## verslag online meeting 3 februari 2022
 Aanwezig: Linda van den Brink (Geonovum), Paul van Genuchten (ISRIC.org), George Mathijssen, Egbert van Milgen (Cadac), Mark Strijker (Kadaster)
 
@@ -29,7 +42,7 @@ Volgende online meeting: donderdag 3 februari van 1 tot 2.
 ## verslag online meeting 15 december 2021
 
 Aanwezig: Linda van den Brink (Geonovum), Mark Strijker (Kadaster), Diederik van
-der Boor, Jeroen Temme, Robert Yashar,Michiel Trimpe (gemeente Amsterdam), Paul
+der Boor, Jeroen Temme, Robert Yashar, Michiel Trimpe (gemeente Amsterdam), Paul
 van Genuchten (ISRIC.org), George Mathijssen (SWECO).
 
 -   Bespreking van de te volgen werkwijze: discussie in github issues, indien
