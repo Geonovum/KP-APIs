@@ -168,15 +168,13 @@ Use the following URIs to specify the CRS:
 
 For backwards compatibility, an older method of specifying CRS in the headers of requests is retained as a deprecated method. APIs that already support the (deprecated) header method can add support for the parameter method while still supporting the header method for a certain period.  Supporting both the new method (using parameters) and the old (using headers) is trivial. 
 
-<aside class="note">
 If a client specifies CRS using a parameter AND in the header, the parameter takes precedence and the CRS in the header is ignored.
-</aside>
 
-<div class="rule" id="api-40-dep">
-  <p class="rulelab"><strong>API-40-dep</strong>: Pass the coordinate reference system (CRS) of the request and the response in the headers</p>
+<div class="note" id="api-40-dep">
+  <p><strong>API-40-dep</strong>: Pass the coordinate reference system (CRS) of the request and the response in the headers</p>
   <p><strong>Deprecated</strong></p>
   <p>The coordinate reference system (CRS) for both the request and the response are passed as part of the request headers and response headers. In case this header is missing, send the HTTP status code <code>412 Precondition Failed</code>.</p>
-</div>
+
 
 The following headers are purely meant for negotiation between the client and the server. Depending on the application, the request not only contains geometries but also specific meta data, e.g. the original realization including the collection date.
 
@@ -197,6 +195,10 @@ The preferred CRS for the geometry in the response (response body) is specified 
 |`Accept-Crs`|EPSG:3857|Web Mercator, global|
 |`Accept-Crs`|EPSG:4258|ETRS89, European|
 |`Accept-Crs`|EPSG:28992|RD/Amersfoort, Dutch|
+
+<p>&nbsp;</p>
+
+</div>
 
 ### CRS transformation
 
