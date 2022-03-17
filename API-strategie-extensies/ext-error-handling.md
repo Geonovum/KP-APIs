@@ -4,6 +4,8 @@
 
 Like a Web page displays useful error messages to visitors in case of an error, an API should return useful error message in a known and manageable format. The representation of an error is no different from the representation of a random resource, but with a particular set of fields.
 
+A content error can be a request for a parameter with an invalid argument or a request to an API with a non-existing parameter. In case a non-existing parameter is requested the user will assume a response is filtered for the requested parameter. For example, if a request for a list of citizens includes a parameter for hair colour a user will wrongly  assume that a request using _hair_color=black_ returns only black haired persons. So all request for non-existing parameters are considered content errors. The HTTP specification [[rfc7231]] specifies that a code 400 (bad request) must be sent as response to *something that is perceived to be a client error*. Furthermore, the [[OGC API-Features specification]](http://www.opengis.net/doc/IS/ogcapi-features-1/1.0) states that *the server shall respond with a status code 400 if the request URI includes a query parameter that is not specified in the definition* (Requirement 8)
+
 APIs should always return useful HTTP status codes. HTTP status codes are divided in two categories:
 
 - 400 range: content errors
