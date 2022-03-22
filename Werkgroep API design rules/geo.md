@@ -7,12 +7,6 @@ github repository; zie issues met tag
 De werkgroep houdt regelmatig online meetings. Neem voor deelname aan deze
 werkgroep contact op met Linda van den Brink (Geonovum).
 
-## verslag online meeting 16 maart 2022
-- Gesproken over [PR 434](https://github.com/Geonovum/KP-APIs/pull/434): Afgesproken hier `filter-crs` aan toe te voegen uit OGC API Features part 3. Daarnaast 
-uitleg toevoegen wanneer je `bbox-crs`, `crs` en `filter-crs` gebruikt. Hierbij het lijstje met verschillende scenario's van Mark gebruiken, dat in het PR als comment staat.
-- issue aanmaken voor een fix mbt de titel van design rule API-38: "Put results of a global spatial query in the relevant geometric context". Het woord 'put' is hier verwarrend. 'Place' van maken.
-- Github issues opruimen en labels maken om prioriteiten aan te geven, zodat het voor werkgroepdeelnemers duidelijker is wat ze op kunnen pakken.
-
 ## verslag online meeting 24 februari 2022
 Aanwezig Linda van den Brink (Geonovum), Paul van Genuchten (ISRIC.org), Mark Strijker (Kadaster), Robert Yashar (gemeente Amsterdam)
 
@@ -37,7 +31,7 @@ Gekeken naar verschillende issues:
 ## verslag online meeting 12 januari 2022
 Aanwezig: Linda van den Brink (Geonovum), Paul van Genuchten (ISRIC.org), George Mathijssen (SWECO), Pieter Bresters (Geonovum)
 
-Met een klein groepje aanwezigen hebben we gekeken naar pull request [#426](https://github.com/Geonovum/KP-APIs/pull/426). Besloten is om deze PR in 2 op te splitsen. Het deel over het beter bruikbaar maken van APIs voor GIS clients wordt apart gezet en de documentconventies voor het doen van aanbevelingen en het geven van voorbeelden worden toegepast.
+Met een klein groepje aanwezigen hebben we gekeken naar pull request [#46](https://github.com/Geonovum/KP-APIs/pull/426). Besloten is om deze PR in 2 op te splitsen. Het deel over het beter bruikbaar maken van APIs voor GIS clients wordt apart gezet en de documentconventies voor het doen van aanbevelingen en het geven van voorbeelden worden toegepast.
 
 George maakt een issue aan over het feit dat bogen (naast andere dingen zoals volumes en andere CRS dan WGS84) niet toegestaan zijn in GeoJSON en het hebben van een regel die GeoJSON voorschrijft, betekent dat je bepaalde data (bv BGT) niet conform de API strategie (i.e. de huidige geo-extensie) kunt aanbieden. 
 
