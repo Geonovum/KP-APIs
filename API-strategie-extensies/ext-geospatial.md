@@ -139,6 +139,9 @@ The guiding principles for CRS support:
   <p class="rulelab"><strong>API-40</strong>: Pass the coordinate reference system (CRS) of the request as a parameter</p>
   <p>Support the <a href="http://docs.opengeospatial.org/is/18-058/18-058.html#_parameter_bbox_crs">OGC API Features part 2 <code>bbox_crs</code> parameter</a> in conformance to the standard.
   </p>
+  <p>Additionally, if other types of geospatial filters are supported in the API besides <code>bbox</code>: </p>
+  <p>Support the <a href="http://docs.ogc.org/DRAFTS/19-079r1.html#filter-filter-crs">OGC API Features part 3 <code>filter_crs</code> parameter</a> in conformance to the standard.
+  </p>
 </div>
 
 <div class="rule" id="api-41">
@@ -152,6 +155,15 @@ The guiding principles for CRS support:
   <p>Support the <a href="http://docs.opengeospatial.org/is/18-058/18-058.html#_coordinate_reference_system_information_independent_of_the_feature_encoding">OGC API Features part 2 <code>Content-Crs</code> header</a> in conformance to the standard.
   </p>
 </div>
+
+The API should be able to handle the following scenarios based on the rules stated above: 
+
+| Scenario                                        | Explanation |
+| ----------------------------------------------- | ----------- |
+| No geometry in request, no geometry in response | No CRS negotiation necessary |
+| No geometry in request, geometry in response    | The client can request a specific CRS for the geometries in the response using the `crs` parameter. The server indicates the geometry CRS in the response using the `content-crs` header. | 
+| Geometry in request, no geometry in response    | The client indicates the CRS of the request geometry using the `bbox-crs` parameter if a bounding box is used to filter geospatially, or the `filter-crs` parameter if another way of geospatial filtering is used.|
+| Geometry in request, geometry in response       | The client indicates the CRS of the request geometry using `bbox-crs` or `filter-crs` as in the previous scenario, and requests a specific CRS for the geometries in the response using the `crs` parameter. The server indicates the geometry CRS in response using the `content-crs` header.|
 
 Use the following URIs to specify the CRS:
 
