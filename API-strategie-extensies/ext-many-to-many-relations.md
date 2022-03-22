@@ -421,3 +421,6 @@ PATCH /books-authors/2
 Often one does not know in advance whether or not a relation needs to be extended with properties in the future. In that case, it is wise to model the relation as a cross-resource right away. 
 
 <i>**Design Rule API-XX**: If there is a (many-to-many) relation between resources `/r1` and `/r2` and this relation has properties of its own, then use a cross-resource `/r1-r2` for handling the relations between them.</i>
+
+> Further reading:
+> Chris Richardson also describes this (Saga) pattern on https://microservices.io/patterns/data/saga.html. His prefferred solution is using events to process distributed transactions over multiple API's.
