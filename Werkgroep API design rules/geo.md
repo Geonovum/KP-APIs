@@ -4,8 +4,17 @@ De werkgroep Geo is opgestart in november 2021 en het werk vindt plaats in deze
 github repository; zie issues met tag
 [Geo-extensie](https://github.com/Geonovum/KP-APIs/issues?q=is%3Aissue+is%3Aopen+label%3AGeo-extensie).
 
-De werkgroep houdt regelmatig online meetings. Neem voor deelname aan deze
-werkgroep contact op met Linda van den Brink (Geonovum).
+De werkgroep houdt 1x per 2 weken een korte online meeting (half uur). Neem voor deelname aan deze werkgroep contact op met Linda van den Brink (Geonovum).
+
+## verslag online meeting 29 maart 2022
+- Nieuwe issue labels `prio 1`, `prio 2` en `proposal` toegelicht. 
+- Eind juni [milestone](https://github.com/Geonovum/KP-APIs/milestone/2) afgesproken: dan willen we alle 1 en 2 issues af hebben en de nieuwe geo-extensie ter review aan de bredere ADR werkgroep voorleggen. Het is een harde deadline, dus wat er dan niet af is, blijft liggen voor een volgende versie. NB er kunnen momenteel nog wel issues aan de milestone toegevoegd worden.
+- [PR 434](https://github.com/Geonovum/KP-APIs/pull/434) merged!
+- Issue openen over gebruik van andere formaten dan GeoJSON in API's. Inmiddels gedaan: #438
+- Mark pakt #433 op
+- George pakt #436 op
+- Linda pakt #435 op
+- Issues #432 en #424 gesloten
 
 ## verslag online meeting 16 maart 2022
 - Gesproken over [PR 434](https://github.com/Geonovum/KP-APIs/pull/434): Afgesproken hier `filter-crs` aan toe te voegen uit OGC API Features part 3. Daarnaast 
