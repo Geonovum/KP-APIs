@@ -79,7 +79,7 @@ A spatial filter can be complex and large. It is best practice to supply complex
 </div>
 
 <div class="rule" id="api-38">
-  <p class="rulelab"><strong>API-38</strong>: Put results of a global spatial query in the relevant geometric context</p>
+  <p class="rulelab"><strong>API-38</strong>: Place results of a global spatial query in the relevant geometric context</p>
   <p>In case of a global query <code>/api/v1/_zoek</code>, results should be placed in the relevant geometric context, because results from different collections are retrieved. Express the name of the collection to which the results belongs in the singular form using the property <code>type</code>. For example:</p>
   <pre>
   // POST /api/v1/_zoek:
