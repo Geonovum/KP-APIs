@@ -11,6 +11,7 @@ De werkgroep houdt 1x per 2 weken een korte online meeting (half uur). Neem voor
 - Eind juni [milestone](https://github.com/Geonovum/KP-APIs/milestone/2) afgesproken: dan willen we alle 1 en 2 issues af hebben en de nieuwe geo-extensie ter review aan de bredere ADR werkgroep voorleggen. Het is een harde deadline, dus wat er dan niet af is, blijft liggen voor een volgende versie. NB er kunnen momenteel nog wel issues aan de milestone toegevoegd worden.
 - [PR 434](https://github.com/Geonovum/KP-APIs/pull/434) merged!
 - Issue openen over gebruik van andere formaten dan GeoJSON in API's. Inmiddels gedaan: #438
+- Paul rondt #424 af
 - Mark pakt #433 op
 - George pakt #436 op
 - Linda pakt #435 op
