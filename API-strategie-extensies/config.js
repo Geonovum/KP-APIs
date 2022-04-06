@@ -42,6 +42,7 @@ var respecConfig =
   // publishDate: "2021-10-13",
   previousPublishDate: "2021-06-28",
   previousMaturity: "GN-CV",
+  edDraftURI: "https://geonovum.github.io/KP-APIs/API-strategie-extensies/",
   editors:
   [
     {
