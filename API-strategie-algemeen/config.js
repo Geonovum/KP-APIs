@@ -10,6 +10,7 @@
 //-- Log . . . :  20180615 - FT  - Initiele versie
 //-- . . . . . :  20181106 - JvG - verplaatst naar root KP-APIs
 //-- . . . . . :  20200417 - JvG - Definitieve versie van 04-02-2020 gemaakt
+//-- . . . . . :  20220412 - EJR - Vastgestelde versie van 09-03-2022 gemaakt
 //-------------------------------------------------------------------------------------
 
 //-- Postprocessors -------------------------------------------------------------------
@@ -38,10 +39,10 @@ function custGHPG(respecConfig)
 
 var respecConfig =
 {
-  specStatus: "GN-WV",
+  specStatus: "GN-DEF",
   specType: "HR",
   pubDomain: "api",
-  //publishDate: "2022-01-13",
+  publishDate: "2022-03-09",
   previousPublishDate: "2022-01-13",
   previousMaturity: "GN-CV",
   edDraftURI: "https://geonovum.github.io/KP-APIs/API-strategie-algemeen/",
