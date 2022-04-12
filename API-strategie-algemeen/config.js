@@ -43,8 +43,8 @@ var respecConfig =
   specType: "HR",
   pubDomain: "api",
   //publishDate: "2022-01-13",
-  previousPublishDate: "2022-01-13",
-  previousMaturity: "GN-CV",
+  previousPublishDate: "2022-03-09",
+  previousMaturity: "GN-DEF",
   edDraftURI: "https://geonovum.github.io/KP-APIs/API-strategie-algemeen/",
   editors:
   [
