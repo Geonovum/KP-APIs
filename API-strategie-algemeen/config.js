@@ -244,6 +244,12 @@ var respecConfig =
       title: "HAL - Hypertext Application Language",
       authors: ["Mike Kelly"],
       date: " 2013-09-18",
+    },
+    "rfc7946": {
+      href: "https://datatracker.ietf.org/doc/html/rfc7946",
+      title: "The GeoJSON Format",
+      authors: ["H. Butler, M. Daly, A. Doyle, S. Gillies, T. Schaub, S. Hagen"],
+      date: "2016-08-01",
     }
   },
   postProcess:[custGHPG],

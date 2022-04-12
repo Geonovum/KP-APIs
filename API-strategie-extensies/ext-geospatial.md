@@ -4,7 +4,7 @@
 
 REST APIs for handling geospatial features may provide spatial filtering. There is a distinction between retrieving geometries in the result (response) and supplying a spatial filter in the call (request). When requesting parcel information, users do not necessarily require the geometry. A name or parcel ID may be sufficient.
 
-[[rfc7946]] describes the GeoJSON format, including a convention for describing 2D geometric objects in WGS84 (EPSG:4326). In this extension we adopt this conventions on describing geometry elements. The convention is extended by allowing any projection. 
+[[rfc7946]] describes the GeoJSON format, including a convention for describing 2D geometric objects in WGS84 (EPSG:4326). In this extension we adopt the conventions for describing geometry objects. The convention is extended to allow alternative projections.  
 
 <div class="rule" id="api-34">
   <p class="rulelab"><strong>API-34</strong>: Support GeoJSON for geospatial APIs</p>
@@ -13,11 +13,11 @@ REST APIs for handling geospatial features may provide spatial filtering. There 
 
 ### Result (response)
 
-In a JSON API the geometry is returned similar to GeoJSON, wrapped in a separate GeoJSON object.
+In a JSON API the geometry is returned as a GeoJSON Geometry object.
 
 <div class="rule" id="api-35">
-  <p class="rulelab"><strong>API-35</strong>: Embed GeoJSON geometry object as part of the JSON resource</p>
-  <p>When a JSON (<code>application/json</code>) response contains a geometry, represent it in the same way as the <code>geometry</code> object of GeoJSON.</p>
+  <p class="rulelab"><strong>API-35</strong>: Embed GeoJSON Geometry object as part of the JSON resource</p>
+  <p>When a JSON (<code>application/json</code>) response contains a geometry, represent it in the same way as the <code>Geometry</code> object of GeoJSON.</p>
   <pre>
   {
     "naam": "Paleis Soestdijk",
@@ -157,15 +157,3 @@ Certified software is available to the national government to transform between 
   <p class="rulelab"><strong>API-41</strong>: Use content negotiation to serve different CRSs</p>
   <p>The CRS for the geometry in the response body is defined using the <code>Accept-Crs</code> header. In case the API does not support the requested CRS, send the HTTP status code <code>406 Not Acceptable</code>.</p>
 </div>
-
-### Alternative api output formats
-
-You can make your api better usable for GIS clients, like QGIS and ArcGIS, by offering alternative output formats. 
-
-Common alternative output formats are represented as: 
-
-|HTTP header|Value|Explanation|
-|-|-|-|
-|Accept|application/geo+json|GeoJSON|
-|Accept|application/geopackage+sqlite3|GeoPackage| 
-|Accept|application/gml+xml|Geography Markup Language (GML)| 
