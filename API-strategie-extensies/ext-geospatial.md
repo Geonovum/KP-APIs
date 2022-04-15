@@ -205,8 +205,6 @@ If a client specifies CRS using a parameter AND in the header, the parameter tak
   <p><strong>API-40-dep</strong>: Pass the coordinate reference system (CRS) of the request and the response in the headers</p>
   <p><strong>Deprecated</strong></p>
   <p>The coordinate reference system (CRS) for both the request and the response are passed as part of the request headers and response headers. In case this header is missing, send the HTTP status code <code>412 Precondition Failed</code>.</p>
-  <p>&nbsp;</p>
-</div>
 
 
 The following headers are purely meant for negotiation between the client and the server. Depending on the application, the request not only contains geometries but also specific meta data, e.g. the original realization including the collection date.
@@ -229,6 +227,9 @@ The preferred CRS for the geometry in the response (response body) is specified 
 |`Accept-Crs`|EPSG:4258|ETRS89, European|
 |`Accept-Crs`|EPSG:28992|RD/Amersfoort, Dutch|
 
+<p>&nbsp;</p>
+
+</div>
 
 ### CRS transformation
 
@@ -238,4 +239,3 @@ Certified software is available to the national government to transform between 
   <p class="rulelab"><strong>API-41</strong>: Use content negotiation to serve different CRSs</p>
   <p>The CRS for the geometry in the response body is defined using the <code>Accept-Crs</code> header. In case the API does not support the requested CRS, send the HTTP status code <code>406 Not Acceptable</code>.</p>
 </div>
-
