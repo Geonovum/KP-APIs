@@ -122,7 +122,7 @@ Since most client-side mapping libraries use WGS84, the W3C/OGC working group *S
   <p>General usage of the European ETRS89 coordinate reference system (CRS) is preferable, but is not necessarily the default CRS. Hence, the CRS has to be explicitly included in each request.</p>
 </div>
 
-The CRS can be specified for request and response individually using parameters and headers.
+The CRS can be specified for request and response individually using parameters or headers.
 
 The guiding principles for CRS support:
 
@@ -136,7 +136,7 @@ The guiding principles for CRS support:
 - Exchange format (notation) RD and Web Mercator X Y in meters: `195427.5200 311611.8400`
 
 <div class="rule" id="api-41">
-  <p class="rulelab"><strong>API-41</strong>: Pass the coordinate reference system (CRS) of a request parameter as a parameter</p>
+  <p class="rulelab"><strong>API-41</strong>: Pass the coordinate reference system (CRS) of the geometry in a request parameter as a parameter</p>
   <p>Support the <a href="http://docs.opengeospatial.org/is/18-058/18-058.html#_parameter_bbox_crs">OGC API Features part 2 <code>bbox_crs</code> parameter</a> in conformance to the standard.
   </p>
   <p>Additionally, if other types of geospatial filters are supported in the API besides <code>bbox</code>: </p>
