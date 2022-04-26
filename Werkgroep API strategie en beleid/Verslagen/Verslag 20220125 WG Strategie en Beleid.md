@@ -10,7 +10,7 @@ Tijdens deze bijeenkomst werd de intentieovereenkomst van de API Strategie gepre
 
 Bovendien hebben de bestuurders van deze organisaties een [online video statement gemaakt](https://www.geonovum.nl/themas/kennisplatform-apis/intentie-overeenkomst). Het online event was met circa 80 bezoekers zeer goed bezocht en zorgde achteraf op sociale media voor veel aandacht. Tevens is er een blog ‘API’s zijn de toekomst, ook voor bestuurders!’ van Larissa Zegveld in iBestuur gepubliceerd en hebben diverse nieuwssites over de ondertekening bericht.
 
-Terugkijken van event kan [hier](https://www.geonovum.nl/over-geonovum/actueel/een-stap-naar-een-efficientere-en-uniforme-digitale-overheid-met-rest-api)
+Terugkijken van het event kan [hier](https://www.youtube.com/watch?v=B98638Aa27Q&ab_channel=StichtingGeonovum)
 
 
 ## Afsluiting
