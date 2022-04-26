@@ -12,4 +12,4 @@ Bovendien hebben de bestuurders van deze organisaties een [online video statemen
 
 
 ## Afsluiting
-Redouan geeft aan dat de ondertekening een belangrijk stap is. Zo moet er een gezamelijk een concrete strategie opgesteld worden om de visie te realiseren. In het voorjaar hopen we meer zicht hierop te hebben. 
+Redouan geeft aan dat de ondertekening een belangrijk stap is. Maar we zijn er nog niet, zo moet er een gezamelijk een concrete strategie opgesteld worden om de visie te realiseren. In het voorjaar hopen we meer zicht hierop te hebben. 
