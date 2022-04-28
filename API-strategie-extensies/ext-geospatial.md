@@ -122,13 +122,16 @@ A client shall be able to determine a list of CRSs supported by an API.
   </pre>
 </div>
 
-According to [OGC API Features - part 1 - Feature collections](https://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_collections_) an OGC API Features API shall provide a GET operation on the `/collections` endpoint which returns a collections object.
+According to [OGC API Features - part 1 - 7.13. Feature collections](https://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_collections_) an OGC API Features API shall provide a GET operation on the `/collections` endpoint which returns a collections object.
 
-According to [OGC API Features - part 2 - Discovery](https://docs.ogc.org/is/18-058/18-058.html#crs-discovery) and in particular [Global list of CRS identifiers](https://docs.ogc.org/is/18-058/18-058.html#_global_list_of_crs_identifiers), a collections object provided by the API's `/collections` endpoint may contain a global list of supported CRSs by means of the `crs` property. This global CRS list applies to all feature collections delivered by the API, unless otherwise stated at a feature collection.
+According to [OGC API Features - part 2 - 6.2 Discovery](https://docs.ogc.org/is/18-058/18-058.html#crs-discovery) and in particular [Global list of CRS identifiers](https://docs.ogc.org/is/18-058/18-058.html#_global_list_of_crs_identifiers), a collections object provided by the API's `/collections` endpoint may contain a global list of supported CRSs by means of the `crs` property. This global CRS list applies to all feature collections delivered by the API, unless otherwise stated at a feature collection.
+
 Each feature collection mentioned within the `collections` list may also contain a `crs` property if the set of supported CRSs differs from the global CRS list.
-If a feature collection supports exactly the same CRSs as mentioned in the global CRS list, than the `crs` property may be omitted.
-If a feature collection supports additional CRSs compared to the global CRS list in the collections object, than a reference to the global CRS list `#/crs` may be added in the feature collection object and the URIs of the additional CRSs are added to the CRS list in the `crs` property of the feature collection.
-If a feature collection supports a different set of CRSs than the set defined in the global CRS list, than a reference to the global CRS list is omitted and only the URIs of the supported CRSs are added to the CRS list in the `crs` property of the feature collection.
+If a feature collection supports exactly the same CRSs as mentioned in the global CRS list, then the `crs` property may be omitted.
+
+If a feature collection supports additional CRSs compared to the global CRS list in the collections object, then a reference to the global CRS list `#/crs` may be added in the feature collection object and the URIs of the additional CRSs are added to the CRS list in the `crs` property of the feature collection.
+
+If a feature collection supports a different set of CRSs than the set defined in the global CRS list, then a reference to the global CRS list is omitted and only the URIs of the supported CRSs are added to the CRS list in the `crs` property of the feature collection.
 
 ### CRS negotiation
 
