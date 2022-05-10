@@ -4,18 +4,20 @@
 
 REST APIs for handling geospatial features may provide spatial filtering. There is a distinction between retrieving geometries in the result (response) and supplying a spatial filter in the call (request). When requesting parcel information, users do not necessarily require the geometry. A name or parcel ID may be sufficient.
 
+[[rfc7946]] describes the GeoJSON format, including a convention for describing 2D geometric objects in WGS84 (EPSG:4326). In this extension we adopt the conventions for describing geometry objects. The convention is extended to allow alternative projections.  
+
 <div class="rule" id="api-34">
   <p class="rulelab"><strong>API-34</strong>: Support GeoJSON for geospatial APIs</p>
-  <p>For geospatial APIs, preferably use the GeoJSON format [[rfc7946]].</p>
+  <p>For representing 2D geometric information in an API, preferably use the convention for describing geometry as defined in the GeoJSON format [[rfc7946]].</p>
 </div>
 
 ### Result (response)
 
-In a JSON API the geometry is returned as GeoJSON, wrapped in a separate GeoJSON object.
+In a JSON API the geometry is returned as a GeoJSON Geometry object.
 
 <div class="rule" id="api-35">
-  <p class="rulelab"><strong>API-35</strong>: Embed GeoJSON as part of the JSON resource</p>
-  <p>When a JSON (<code>application/json</code>) response contains a geometry, represent it in the same way as the <code>geometry</code> object of GeoJSON.</p>
+  <p class="rulelab"><strong>API-35</strong>: Embed GeoJSON Geometry object as part of the JSON resource</p>
+  <p>When a JSON (<code>application/json</code>) response contains a geometry, represent it in the same way as the <code>Geometry</code> object of GeoJSON.</p>
   <pre>
   {
     "naam": "Paleis Soestdijk",
