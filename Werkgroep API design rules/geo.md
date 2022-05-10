@@ -6,6 +6,21 @@ github repository; zie issues met tag
 
 De werkgroep houdt 1x per 2 weken een korte online meeting (half uur). Neem voor deelname aan deze werkgroep contact op met Linda van den Brink (Geonovum).
 
+## verslag online meeting 10 mei 2022
+Linda koppelt terug over de API Design Rules bijeenkomst in Den Haag op 9 mei: 
+- De extensies worden modules. De geo module wordt de eerste (het is de enige waar nu actief aan gewerkt wordt). In een module mag je keuzes hebben tussen varianten van Rules. De Rules moeten testbaar zijn. Een module is niet normatief, maar er is wel de mogelijkheid een module op de PTOLU te zetten. Dit overweegt Geonovum wel te doen. We krijgen hulp bij het goed opstellen van de module zodat dit als een voorbeeld kan dienen. 
+- Er komt waarschijnlijk een aparte module Filtering. We kunnen wel (net als OGC API Features) wat simpele filters in de geo extensie zetten, maar uitgebreid filteren komt apart.
+- Correct nummeren van Rules hoeft niet. Dit wordt opgelost in de nieuwe modulestructuur.
+
+We houden op 7 juni van 1 tot 2 een fysieke /hybride meeting. Deze duurt iets langer dan gewoonlijk, zodat we wat langer kunnen doorpraten. 
+
+- PR #443 en #445 zijn goedgekeurd en gemergd. Een aantal hieraan gerelateerde issues is gesloten. 
+- Issue #439 besproken: hieruit bleek dat er nog steeds iets niet klopt in de tekst. Een regel is op de verkeerde plek terecht gekomen en andere tekst ontbreekt. Linda zoekt uit wat er precies moet gebeuren en beschrijft dit in het issue zodat het opgepakt kan worden. 
+- We pakken issue #425 op: het inventariseren van OGC API Features part 1 en 2 op verschillen tussen API strategie / geo-extensie en de OGC standaard. Uit deze inventarisatie halen we de verschillen die we nog in de geo-extensie willen en kunnen oplossen en verschillen die andere delen van de API strategie raken. Dit bespreken we op de hybride bijeenkomst.
+
+## verslag online meetings april 2022
+- Issues besproken, doorgewerkt aan PRs
+
 ## verslag online meeting 29 maart 2022
 - Nieuwe issue labels `prio 1`, `prio 2` en `proposal` toegelicht. 
 - Eind juni [milestone](https://github.com/Geonovum/KP-APIs/milestone/2) afgesproken: dan willen we alle 1 en 2 issues af hebben en de nieuwe geo-extensie ter review aan de bredere ADR werkgroep voorleggen. Het is een harde deadline, dus wat er dan niet af is, blijft liggen voor een volgende versie. NB er kunnen momenteel nog wel issues aan de milestone toegevoegd worden.
