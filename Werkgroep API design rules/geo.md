@@ -6,6 +6,23 @@ github repository; zie issues met tag
 
 De werkgroep houdt 1x per 2 weken een korte online meeting (half uur). Neem voor deelname aan deze werkgroep contact op met Linda van den Brink (Geonovum).
 
+## hybride meeting 7 juni
+Van 1 tot 2 bij Geonovum 
+
+## verslag online meeting 24 mei 2022
+[Issue 425](https://github.com/Geonovum/KP-APIs/issues/425) over ADR vs OGC API Features besproken:
+- Linda zal issues maken over punten die naar voren komen om te verwerken in de geo-extensie
+- Discussie: kunnen we in NL een andere default CRS afspreken dan de OGC standaard doet? In NL gebruiken we vooral ETRS-89 en RD. De OGC standaard schrijft CRS84 voor, maar lijkt zichzelf tegen te spreken. Indien nodig een issue maken bij OGC om dit volledig helder te krijgen. Linda pakt dit op. Voor dit onderwerp [issue 448](https://github.com/Geonovum/KP-APIs/issues/448) aangemaakt.
+
+[Issue 281](https://github.com/Geonovum/KP-APIs/issues/281) over ruimtelijke filters via POST besproken. Afgesproken dat de werkgroepleden het voorstel in het issue nog even lezen en aangeven of ze het ermee eens zijn. 
+
+Onderhanden issues: 
+- 442 - gaat Mark oppakken zodra hij tijd heeft
+- 439 - gedaan door Mark, maar nog geen PR gedaan, komt eraan
+- 425 - gaan Linda en/of Mark mee verder
+
+Korte discussie gehad over [issue 446](https://github.com/Geonovum/KP-APIs/issues/446), zie commentaar aldaar.
+
 ## verslag online meeting 10 mei 2022
 Linda koppelt terug over de API Design Rules bijeenkomst in Den Haag op 9 mei: 
 - De extensies worden modules. De geo module wordt de eerste (het is de enige waar nu actief aan gewerkt wordt). In een module mag je keuzes hebben tussen varianten van Rules. De Rules moeten testbaar zijn. Een module is niet normatief, maar er is wel de mogelijkheid een module op de PTOLU te zetten. Dit overweegt Geonovum wel te doen. We krijgen hulp bij het goed opstellen van de module zodat dit als een voorbeeld kan dienen. 
