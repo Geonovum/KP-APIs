@@ -218,7 +218,6 @@ If a client specifies CRS using a parameter AND in the header, the parameter tak
   <p><strong>Deprecated</strong></p>
   <p>The coordinate reference system (CRS) for both the request and the response are passed as part of the request headers and response headers. In case this header is missing, send the HTTP status code <code>412 Precondition Failed</code>.</p>
 
-
 The following headers are purely meant for negotiation between the client and the server. Depending on the application, the request not only contains geometries but also specific meta data, e.g. the original realization including the collection date.
 
 Request and response may be based on another coordinate reference system. This applies the HTTP-mechanism for content negotiation. The CRS of the geometry in the request (request body) is specified using the header `Content-Crs`.
@@ -239,15 +238,22 @@ The preferred CRS for the geometry in the response (response body) is specified 
 |`Accept-Crs`|EPSG:4258|ETRS89, European|
 |`Accept-Crs`|EPSG:28992|RD/Amersfoort, Dutch|
 
-<p>&nbsp;</p>
-
-</div>
-
-### CRS transformation
-
 Certified software is available to the national government to transform between coordinate reference systems.
 
 <div class="rule" id="api-45">
   <p class="rulelab"><strong>API-45</strong>: Use content negotiation to serve different CRSs</p>
   <p>The CRS for the geometry in the response body is defined using the <code>Accept-Crs</code> header. In case the API does not support the requested CRS, send the HTTP status code <code>406 Not Acceptable</code>.</p>
 </div>
+
+<p>&nbsp;</p>
+
+</div>
+
+### CRS transformation
+
+<div class="rule" id="api-43">
+  <p class="rulelab"><strong>API-43</strong>: Pass the desired coordinate reference system (CRS) of geometry in the response as a parameter</p>
+  <p>Support the <a href="http://docs.opengeospatial.org/is/18-058/18-058.html#_parameter_crs">OGC API Features part 2 <code>crs</code> parameter</a> in conformance to the standard.
+  </p>
+</div>
+
