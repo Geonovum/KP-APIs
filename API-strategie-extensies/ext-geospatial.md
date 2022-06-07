@@ -42,26 +42,11 @@ A simple spatial filter can be supplied as a bounding box. This is a common way 
   </p>
 </div>
 
-A spatial filter can be complex and large. It is best practice to supply complex queries in the body, not in the request URI. Since `GET` may not have a payload (although supported by some clients) use a `POST` request to a separate endpoint. For example, a GEO query to all *panden* where the geometry in the field `_geo` (there may be multiple geometry fields) contains a GeoJSON object (in this case a `Point`, so one coordinate pair):
+<aside class="note">
+Spatial filtering is an extensive topic. There are use cases for geospatial operators like <code>intersects</code> or <code>within</code>. Geospatial filters can be large and complex, which sometimes causes problems since `GET` may not have a payload (although supported by some clients). 
 
-<div class="rule" id="api-37">
-  <p class="rulelab"><strong>API-37</strong>: Provide a <code>POST</code> endpoint for geo queries</p>
-  <p>Spatial queries are sent in a <code>POST</code> to a dedicated endpoint.</p>
-  <pre>
-  // POST /api/v1/panden/_zoek with request body:
-  {
-    "_geo": {
-      "contains": {
-        "type": "Point",
-        "coordinates": [5.9623762, 52.2118093]
-      }
-    }
-  }
-  </pre>
-  <p>Other geospatial operators like <code>intersects</code> or <code>within</code> can be used as well.</p>
-</div>
-
-<aside class="issue" data-number="281">Er is discussie over het gebruik van POST. <code>bbox</code> filter is toegevoegd. Wellicht POST endpoint laten vervallen.</aside>
+A new API Design Rules extension on filtering will address spatial as well as non-spatial filtering.
+</aside>
 
 <div class="rule" id="api-38">
   <p class="rulelab"><strong>API-38</strong>: Support mixed queries at <code>POST</code> endpoints</p>
