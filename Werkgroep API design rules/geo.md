@@ -6,8 +6,16 @@ github repository; zie issues met tag
 
 De werkgroep houdt 1x per 2 weken een korte online meeting (half uur). Neem voor deelname aan deze werkgroep contact op met Linda van den Brink (Geonovum).
 
-## hybride meeting 7 juni
-Van 1 tot 2 bij Geonovum 
+## verslag hybride meeting 7 juni
+Van 1 tot 2 bij Geonovum. Aanwezig: Mark, Pieter, Linda.
+
+[PR #449](https://github.com/Geonovum/KP-APIs/pull/449) besproken, vooral wat betreft het al dan niet verwijderen of deprecated maken van de oude CRS negotiation methode. Overwegingen zijn in het issue toegevoegd. Na de vergadering heeft Mark de gevraagde wijziging doorgevoerd en het PR gemerged.
+
+[Issue #425](https://github.com/Geonovum/KP-APIs/issues/425) besproken. Dit vinden we een belangrijk issue. We zijn nog bezig met de vergelijking geo-extensie - OGC API Features part 1 en 2; de geo-gerelateerde requirements uit deze standaarden willen we in ieder geval nog opnemen in de geo-extensie zodat je met een geo-extensie conforme API ook aan OGC API Features kunt voldoen. 
+
+Overige openstaande issues kort besproken. Bij elk issue is met een kort commentaar aangegeven wat we ermee doen, voor zover dit nog niet besloten was. Elk issue is aan iemand toegewezen. 
+
+We streven ernaar om alle toegewezen issues, met prio 1 of 2 (dit zijn: #448, #446, #442, #438, #429, #425, en #281) per eind juni af te ronden. Daarna kan de geo-extensie naar de grotere ADR werkgroep voor review.
 
 ## verslag online meeting 24 mei 2022
 [Issue 425](https://github.com/Geonovum/KP-APIs/issues/425) over ADR vs OGC API Features besproken:
