@@ -35,7 +35,7 @@ A simple spatial filter can be supplied as a bounding box. This is a common way 
 
 <div class="rule" id="api-36">
   <p class="rulelab"><strong>API-36</strong>: Supply a simple spatial filter as a bounding box parameter</p>
-  <p>Support the <a href="http://docs.opengeospatial.org/is/18-058/18-058.html#_parameter_bbox">OGC API Features part 1 <code>bbox</code> parameter</a> in conformance to the standard.
+  <p>Support the <a href="https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_bbox">OGC API Features part 1 <code>bbox</code> parameter</a> in conformance to the standard.
   <pre>
    GET /api/v1/panden?bbox=160.6,-55.95,-170,-25.89
   </pre>
