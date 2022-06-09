@@ -179,6 +179,8 @@ The guiding principles for CRS support:
 
 If a bounding box or geospatial filter is sent to the server without these parameters, the default CRS, CRS84, is assumed.
 
+If an invalid value, i.e. a CRS which is not in the list of supported CRSs, is given for one of these parameters, the server responds with an HTTP status code `400`.
+
 <div class="rule" id="api-42">
   <p class="rulelab"><strong>API-42</strong>: Pass the coordinate reference system (CRS) of geometry in the request body as a header</p>
   <p>Support the <a href="http://docs.ogc.org/DRAFTS/20-002.html#feature-crs">OGC API Features part 4 <code>Content-Crs</code> header</a> in conformance to the standard.</p>
