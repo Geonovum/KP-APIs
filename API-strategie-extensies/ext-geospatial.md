@@ -11,6 +11,15 @@ REST APIs for handling geospatial features may provide spatial filtering. There 
   <p>For representing 2D geometric information in an API, preferably use the convention for describing geometry as defined in the GeoJSON format [[rfc7946]]. Support GeoJSON as described in OGC API Features Requirements class 8.3](https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geojson) [[ogcapi-features-1]]. </p>
 </div>
 
+<aside class="note">
+GeoJSON does not cover all use cases. For example, it is not possible to store circular arc geometries or solids in GeoJSON. In such cases, there are two valid options: 
+
+- Use alternative standardized formats for geospatial data, such as [WKT](https://www.w3.org/TR/sdw-bp/#dfn-well-known-text-(wkt))or its binary equivalent WKB; GML [iso-19136-2007]; or in future [OGC JSON-FG](https://docs.ogc.org/DRAFTS/21-045.html) (currently a draft standard). 
+- When supporting GML, do this according to OGC API Features [Requirements class 8.4](https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geography_markup_language_gml_simple_features_profile_level_0) for GML Simple Features level 0, or [Requirements class 8.4](https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geography_markup_language_gml_simple_features_profile_level_2) for GML Simple Features level 2. 
+- Use a workaround, e.g. convert circular lines / arcs to regular linestrings. 
+
+</aside>
+
 ### Result (response)
 
 In a JSON API the geometry is returned as a GeoJSON Geometry object.
@@ -134,6 +143,16 @@ If a feature collection supports exactly the same CRSs as mentioned in the globa
 If a feature collection supports additional CRSs compared to the global CRS list in the collections object, then a reference to the global CRS list `#/crs` may be added in the feature collection object and the URIs of the additional CRSs are added to the CRS list in the `crs` property of the feature collection.
 
 If a feature collection supports a different set of CRSs than the set defined in the global CRS list, then a reference to the global CRS list is omitted and only the URIs of the supported CRSs are added to the CRS list in the `crs` property of the feature collection.
+
+For clients, it may be helpful to know the CRS identifier that may be used to retrieve features from that collection without the need to apply a CRS transformation.
+
+<div class="note" id="api-xx">
+  <p class="rulelab"><strong>API-xx</strong>: Make known in which CRS the geospatial data is stored.</p>    
+</div>
+
+If all features in a feature collection are stored using a particular CRS, the property `storageCRS` shall be used to specify this CRS, in accordance with [OGC API Features - part 2 - 6.2.2 Storage CRS](https://docs.ogc.org/is/18-058/18-058.html#_storage_crs). The value of this property shall be one of the CRSs supported by the API and advertised in the CRS list. If relevant, the epoch should also be specified, using the `storageCRSCoordinateEpoch` property. For an explanation of the use of epochs with CRS, see the CRS Guidelines [[hr-crs]]. 
+
+</p>
 
 ### CRS negotiation
 
