@@ -48,23 +48,6 @@ Spatial filtering is an extensive topic. There are use cases for geospatial oper
 A new API Design Rules extension on filtering will address spatial as well as non-spatial filtering.
 </aside>
 
-<div class="rule" id="api-38">
-  <p class="rulelab"><strong>API-38</strong>: Support mixed queries at <code>POST</code> endpoints</p>
-  <p>The <code>POST</code> endpoint is preferably set up as a generic query endpoint to support combined queries:</p>
-  <pre>
-  // POST /api/v1/panden/_zoek with request body:
-  {
-    "_geo": {
-      "contains": {
-        "type": "Point",
-        "coordinates": [5.9623762, 52.2118093]
-      }
-    },
-    "status": "Actief"
-  }
-  </pre>
-</div>
-
 <div class="rule" id="api-39">
   <p class="rulelab"><strong>API-39</strong>: Place results of a global spatial query in the relevant geometric context</p>
   <p>In case of a global query <code>/api/v1/_zoek</code>, results should be placed in the relevant geometric context, because results from different collections are retrieved. Express the name of the collection to which the results belongs in the singular form using the property <code>type</code>. For example:</p>
