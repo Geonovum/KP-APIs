@@ -137,13 +137,22 @@ If a feature collection supports a different set of CRSs than the set defined in
 
 ### CRS negotiation
 
-The default CRS (Coordinate Reference System) for GeoJSON is WGS84. This is the global coordinate reference system that can be applied world-wide. Due the datum and the tectonic displacements it is not accurate enough for local coordinate reference systems like ETRS89 (EPSG:4258, European), or RD/Amersfoort (EPSG:28992, Dutch).
+The default CRS (Coordinate Reference System) for GeoJSON and for OGC API Features is WGS84 with coordinate order lat-long, also referred to as "CRS84". This is the global coordinate reference system that can be applied world-wide. Due the datum and the tectonic displacements it is not accurate enough for local coordinate reference systems like ETRS89 (EPSG:4258, European), or RD/Amersfoort (EPSG:28992, Dutch). For more information about coordinate reference systems, read the Geonovum guidelines on CRS [[hr-crs]].
 
 Since most client-side mapping libraries use WGS84, the W3C/OGC working group *Spatial Data on the Web* recommends to use this as the default coordinate reference system. Thus, spatial data can be mapped without any complex transformations. The API strategy caters for this supporting not only ETRS89 and RD/Amersfoort, but also WGS84 and Web Mercator (EPSG:3857).
 
+The *default* CRS, i.e. the CRS which is assumed when not specified by either the API or the client, is CRS84, in line with GeoJSON and OGC API Features. 
+
+<div class="rule" id="api-xx">
+  <p class="rulelab"><strong>API-xx</strong>: Use <a href="http://www.opengis.net/def/crs/OGC/1.3/CRS84">CRS84</a> as the default coordinate reference system (CRS). Support CRS84 in line with OGC API Features <a href="http://docs.ogc.org/is/17-069r3/17-069r3.html#_coordinate_reference_systems">Requirement 10</a>. </p>
+  <p>If no CRS is explicitly included in the request, CRS84 is assumed.</p>
+</div>
+
+In addition, support for ETRS89 is required. 
+
 <div class="rule" id="api-40">
-  <p class="rulelab"><strong>API-40</strong>: Use ETRS89 as the preferred coordinate reference system (CRS)</p>
-  <p>General usage of the European ETRS89 coordinate reference system (CRS) is preferable, but is not necessarily the default CRS. Hence, the CRS has to be explicitly included in each request.</p>
+  <p class="rulelab"><strong>API-40</strong>: Provide ETRS89 when requested, as this is the preferred coordinate reference system (CRS) for Dutch geospatial data.</p>
+  <p>General usage of the European ETRS89 coordinate reference system (CRS) is preferable, but is not the default CRS. Hence, this CRS has to be explicitly included in each request.</p>
 </div>
 
 The CRS can be specified for request and response individually using parameters or headers.
@@ -151,9 +160,9 @@ The CRS can be specified for request and response individually using parameters 
 The guiding principles for CRS support:
 
 - Source systems record coordinates as they enter the system (legal context);
-- Define a default CRS in the API, if the consumer does not specify the CRS it is assumed it uses the default.
-- Coordinate reference systems API strategy: request/response in RD; ETRS89; WGS84; Web Mercator;
-- Consider no-regret: record both in ETRS89 and RD/Amersfoort instead of on-the-fly transformation;
+- The default CRS, CRS84, is listed first in the list of supported CRSs in the API; if the consumer does not specify the CRS it is assumed it uses the default.
+- Coordinate reference systems API strategy: request/response in RD; ETRS89; CRS84; Web Mercator;
+- Consider no-regret: record in multiple much-requested CRSs instead of on-the-fly transformation;
 - Use RDNAPTRANS™ 2018 to transform RD/Amersfoort to ETRS89 (correction grid);
 - Presentation depending on context (e.g. user requirements);
 - Exchange format (notation) ETRS89 and WGS84 X Y in decimal degrees: DD.ddddddddd (for example: `5.962376256, 52.255023450`)

@@ -312,6 +312,14 @@ var respecConfig =
       authors: ["A. Parecki", "D. Waite"],
       status: "Internet-Draft",
       publisher: "IETF OAuth Working Group",
+    },
+    "hr-crs": {
+      href: "https://docs.geostandaarden.nl/crs/crs/",
+      title:
+        "Handreiking Gebruik coördinaatreferentiesystemen bij uitwisseling en visualisatie van geo-informatie",
+      authors: ["Lennard Huisman", "Friso Penninga"],
+      status: "Vastgesteld",
+      publisher: "Geonovum",
     }
   },
   postProcess:[custGHPG],
