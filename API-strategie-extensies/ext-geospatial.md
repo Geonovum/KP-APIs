@@ -8,7 +8,7 @@ REST APIs for handling geospatial features may provide spatial filtering. There 
 
 <div class="rule" id="api-34">
   <p class="rulelab"><strong>API-34</strong>: Support GeoJSON for geospatial APIs</p>
-  <p>For representing 2D geometric information in an API, preferably use the convention for describing geometry as defined in the GeoJSON format [[rfc7946]].</p>
+  <p>For representing 2D geometric information in an API, preferably use the convention for describing geometry as defined in the GeoJSON format [[rfc7946]]. Support GeoJSON as described in OGC API Features Requirements class 8.3](https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geojson) [[ogcapi-features-1]]. </p>
 </div>
 
 ### Result (response)
