@@ -201,6 +201,11 @@ For backwards compatibility, an older method of specifying CRS in the headers of
 
 If a client specifies CRS using a parameter AND in the header, the parameter takes precedence and the CRS in the header is ignored.
 
+### CRS transformation
+
+Certified software is available to the national government to transform between coordinate reference systems.
+
+
 <div class="note" id="api-40-dep">
   <p><strong>API-40-dep</strong>: Pass the coordinate reference system (CRS) of the request and the response in the headers</p>
   <p><strong>Deprecated</strong></p>
@@ -229,13 +234,4 @@ The preferred CRS for the geometry in the response (response body) is specified 
 
 <p>&nbsp;</p>
 
-</div>
-
-### CRS transformation
-
-Certified software is available to the national government to transform between coordinate reference systems.
-
-<div class="rule" id="api-41">
-  <p class="rulelab"><strong>API-41</strong>: Use content negotiation to serve different CRSs</p>
-  <p>The CRS for the geometry in the response body is defined using the <code>Accept-Crs</code> header. In case the API does not support the requested CRS, send the HTTP status code <code>406 Not Acceptable</code>.</p>
 </div>
