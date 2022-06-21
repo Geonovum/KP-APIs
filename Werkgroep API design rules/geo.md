@@ -6,6 +6,46 @@ github repository; zie issues met tag
 
 De werkgroep houdt 1x per 2 weken een korte online meeting (half uur). Neem voor deelname aan deze werkgroep contact op met Linda van den Brink (Geonovum).
 
+## verslag hybride meeting 7 juni
+Van 1 tot 2 bij Geonovum. Aanwezig: Mark, Pieter, Linda.
+
+[PR #449](https://github.com/Geonovum/KP-APIs/pull/449) besproken, vooral wat betreft het al dan niet verwijderen of deprecated maken van de oude CRS negotiation methode. Overwegingen zijn in het issue toegevoegd. Na de vergadering heeft Mark de gevraagde wijziging doorgevoerd en het PR gemerged.
+
+[Issue #425](https://github.com/Geonovum/KP-APIs/issues/425) besproken. Dit vinden we een belangrijk issue. We zijn nog bezig met de vergelijking geo-extensie - OGC API Features part 1 en 2; de geo-gerelateerde requirements uit deze standaarden willen we in ieder geval nog opnemen in de geo-extensie zodat je met een geo-extensie conforme API ook aan OGC API Features kunt voldoen. 
+
+Overige openstaande issues kort besproken. Bij elk issue is met een kort commentaar aangegeven wat we ermee doen, voor zover dit nog niet besloten was. Elk issue is aan iemand toegewezen. 
+
+We streven ernaar om alle toegewezen issues, met prio 1 of 2 (dit zijn: #448, #446, #442, #438, #429, #425, en #281) per eind juni af te ronden. Daarna kan de geo-extensie naar de grotere ADR werkgroep voor review.
+
+## verslag online meeting 24 mei 2022
+[Issue 425](https://github.com/Geonovum/KP-APIs/issues/425) over ADR vs OGC API Features besproken:
+- Linda zal issues maken over punten die naar voren komen om te verwerken in de geo-extensie
+- Discussie: kunnen we in NL een andere default CRS afspreken dan de OGC standaard doet? In NL gebruiken we vooral ETRS-89 en RD. De OGC standaard schrijft CRS84 voor, maar lijkt zichzelf tegen te spreken. Indien nodig een issue maken bij OGC om dit volledig helder te krijgen. Linda pakt dit op. Voor dit onderwerp [issue 448](https://github.com/Geonovum/KP-APIs/issues/448) aangemaakt.
+
+[Issue 281](https://github.com/Geonovum/KP-APIs/issues/281) over ruimtelijke filters via POST besproken. Afgesproken dat de werkgroepleden het voorstel in het issue nog even lezen en aangeven of ze het ermee eens zijn. 
+
+Onderhanden issues: 
+- 442 - gaat Mark oppakken zodra hij tijd heeft
+- 439 - gedaan door Mark, maar nog geen PR gedaan, komt eraan
+- 425 - gaan Linda en/of Mark mee verder
+
+Korte discussie gehad over [issue 446](https://github.com/Geonovum/KP-APIs/issues/446), zie commentaar aldaar.
+
+## verslag online meeting 10 mei 2022
+Linda koppelt terug over de API Design Rules bijeenkomst in Den Haag op 9 mei: 
+- De extensies worden modules. De geo module wordt de eerste (het is de enige waar nu actief aan gewerkt wordt). In een module mag je keuzes hebben tussen varianten van Rules. De Rules moeten testbaar zijn. Een module is niet normatief, maar er is wel de mogelijkheid een module op de PTOLU te zetten. Dit overweegt Geonovum wel te doen. We krijgen hulp bij het goed opstellen van de module zodat dit als een voorbeeld kan dienen. 
+- Er komt waarschijnlijk een aparte module Filtering. We kunnen wel (net als OGC API Features) wat simpele filters in de geo extensie zetten, maar uitgebreid filteren komt apart.
+- Correct nummeren van Rules hoeft niet. Dit wordt opgelost in de nieuwe modulestructuur.
+
+We houden op 7 juni van 1 tot 2 een fysieke /hybride meeting. Deze duurt iets langer dan gewoonlijk, zodat we wat langer kunnen doorpraten. 
+
+- PR #443 en #445 zijn goedgekeurd en gemergd. Een aantal hieraan gerelateerde issues is gesloten. 
+- Issue #439 besproken: hieruit bleek dat er nog steeds iets niet klopt in de tekst. Een regel is op de verkeerde plek terecht gekomen en andere tekst ontbreekt. Linda zoekt uit wat er precies moet gebeuren en beschrijft dit in het issue zodat het opgepakt kan worden. 
+- We pakken issue #425 op: het inventariseren van OGC API Features part 1 en 2 op verschillen tussen API strategie / geo-extensie en de OGC standaard. Uit deze inventarisatie halen we de verschillen die we nog in de geo-extensie willen en kunnen oplossen en verschillen die andere delen van de API strategie raken. Dit bespreken we op de hybride bijeenkomst.
+
+## verslag online meetings april 2022
+- Issues besproken, doorgewerkt aan PRs
+
 ## verslag online meeting 29 maart 2022
 - Nieuwe issue labels `prio 1`, `prio 2` en `proposal` toegelicht. 
 - Eind juni [milestone](https://github.com/Geonovum/KP-APIs/milestone/2) afgesproken: dan willen we alle 1 en 2 issues af hebben en de nieuwe geo-extensie ter review aan de bredere ADR werkgroep voorleggen. Het is een harde deadline, dus wat er dan niet af is, blijft liggen voor een volgende versie. NB er kunnen momenteel nog wel issues aan de milestone toegevoegd worden.

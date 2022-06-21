@@ -10,6 +10,7 @@
 //-- Log . . . :  20180615 - FT  - Initiele versie
 //-- . . . . . :  20181106 - JvG - verplaatst naar root KP-APIs
 //-- . . . . . :  20200417 - JvG - Definitieve versie van 04-02-2020 gemaakt
+//-- . . . . . :  20220412 - EJR - Vastgestelde versie van 09-03-2022 gemaakt
 //-------------------------------------------------------------------------------------
 
 //-- Postprocessors -------------------------------------------------------------------
@@ -42,8 +43,8 @@ var respecConfig =
   specType: "HR",
   pubDomain: "api",
   //publishDate: "2022-01-13",
-  previousPublishDate: "2022-01-13",
-  previousMaturity: "GN-CV",
+  previousPublishDate: "2022-03-09",
+  previousMaturity: "GN-DEF",
   edDraftURI: "https://geonovum.github.io/KP-APIs/API-strategie-algemeen/",
   editors:
   [
@@ -245,6 +246,12 @@ var respecConfig =
       title: "HAL - Hypertext Application Language",
       authors: ["Mike Kelly"],
       date: " 2013-09-18",
+    },
+    "rfc7946": {
+      href: "https://datatracker.ietf.org/doc/html/rfc7946",
+      title: "The GeoJSON Format",
+      authors: ["H. Butler, M. Daly, A. Doyle, S. Gillies, T. Schaub, S. Hagen"],
+      date: "2016-08-01",
     }
   },
   postProcess:[custGHPG],

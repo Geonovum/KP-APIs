@@ -4,18 +4,20 @@
 
 REST APIs for handling geospatial features may provide spatial filtering. There is a distinction between retrieving geometries in the result (response) and supplying a spatial filter in the call (request). When requesting parcel information, users do not necessarily require the geometry. A name or parcel ID may be sufficient.
 
+[[rfc7946]] describes the GeoJSON format, including a convention for describing 2D geometric objects in WGS84 (EPSG:4326). In this extension we adopt the conventions for describing geometry objects. The convention is extended to allow alternative projections.  
+
 <div class="rule" id="api-34">
   <p class="rulelab"><strong>API-34</strong>: Support GeoJSON for geospatial APIs</p>
-  <p>For geospatial APIs, preferably use the GeoJSON format [[rfc7946]].</p>
+  <p>For representing 2D geometric information in an API, preferably use the convention for describing geometry as defined in the GeoJSON format [[rfc7946]].</p>
 </div>
 
 ### Result (response)
 
-In a JSON API the geometry is returned as GeoJSON, wrapped in a separate GeoJSON object.
+In a JSON API the geometry is returned as a GeoJSON Geometry object.
 
 <div class="rule" id="api-35">
-  <p class="rulelab"><strong>API-35</strong>: Embed GeoJSON as part of the JSON resource</p>
-  <p>When a JSON (<code>application/json</code>) response contains a geometry, represent it in the same way as the <code>geometry</code> object of GeoJSON.</p>
+  <p class="rulelab"><strong>API-35</strong>: Embed GeoJSON Geometry object as part of the JSON resource</p>
+  <p>When a JSON (<code>application/json</code>) response contains a geometry, represent it in the same way as the <code>Geometry</code> object of GeoJSON.</p>
   <pre>
   {
     "naam": "Paleis Soestdijk",
@@ -33,7 +35,7 @@ A simple spatial filter can be supplied as a bounding box. This is a common way 
 
 <div class="rule" id="api-36">
   <p class="rulelab"><strong>API-36</strong>: Supply a simple spatial filter as a bounding box parameter</p>
-  <p>Support the <a href="http://docs.opengeospatial.org/is/18-058/18-058.html#_parameter_bbox">OGC API Features part 1 <code>bbox</code> parameter</a> in conformance to the standard.
+  <p>Support the <a href="https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_bbox">OGC API Features part 1 <code>bbox</code> parameter</a> in conformance to the standard.
   <pre>
    GET /api/v1/panden?bbox=160.6,-55.95,-170,-25.89
   </pre>
@@ -42,8 +44,8 @@ A simple spatial filter can be supplied as a bounding box. This is a common way 
 
 A spatial filter can be complex and large. It is best practice to supply complex queries in the body, not in the request URI. Since `GET` may not have a payload (although supported by some clients) use a `POST` request to a separate endpoint. For example, a GEO query to all *panden* where the geometry in the field `_geo` (there may be multiple geometry fields) contains a GeoJSON object (in this case a `Point`, so one coordinate pair):
 
-<div class="rule" id="api-36">
-  <p class="rulelab"><strong>API-36</strong>: Provide a <code>POST</code> endpoint for geo queries</p>
+<div class="rule" id="api-37">
+  <p class="rulelab"><strong>API-37</strong>: Provide a <code>POST</code> endpoint for geo queries</p>
   <p>Spatial queries are sent in a <code>POST</code> to a dedicated endpoint.</p>
   <pre>
   // POST /api/v1/panden/_zoek with request body:
@@ -61,8 +63,8 @@ A spatial filter can be complex and large. It is best practice to supply complex
 
 <aside class="issue" data-number="281">Er is discussie over het gebruik van POST. <code>bbox</code> filter is toegevoegd. Wellicht POST endpoint laten vervallen.</aside>
 
-<div class="rule" id="api-37">
-  <p class="rulelab"><strong>API-37</strong>: Support mixed queries at <code>POST</code> endpoints</p>
+<div class="rule" id="api-38">
+  <p class="rulelab"><strong>API-38</strong>: Support mixed queries at <code>POST</code> endpoints</p>
   <p>The <code>POST</code> endpoint is preferably set up as a generic query endpoint to support combined queries:</p>
   <pre>
   // POST /api/v1/panden/_zoek with request body:
@@ -78,8 +80,8 @@ A spatial filter can be complex and large. It is best practice to supply complex
   </pre>
 </div>
 
-<div class="rule" id="api-38">
-  <p class="rulelab"><strong>API-38</strong>: Place results of a global spatial query in the relevant geometric context</p>
+<div class="rule" id="api-39">
+  <p class="rulelab"><strong>API-39</strong>: Place results of a global spatial query in the relevant geometric context</p>
   <p>In case of a global query <code>/api/v1/_zoek</code>, results should be placed in the relevant geometric context, because results from different collections are retrieved. Express the name of the collection to which the results belongs in the singular form using the property <code>type</code>. For example:</p>
   <pre>
   // POST /api/v1/_zoek:
@@ -139,12 +141,12 @@ The default CRS (Coordinate Reference System) for GeoJSON is WGS84. This is the 
 
 Since most client-side mapping libraries use WGS84, the W3C/OGC working group *Spatial Data on the Web* recommends to use this as the default coordinate reference system. Thus, spatial data can be mapped without any complex transformations. The API strategy caters for this supporting not only ETRS89 and RD/Amersfoort, but also WGS84 and Web Mercator (EPSG:3857).
 
-<div class="rule" id="api-39">
-  <p class="rulelab"><strong>API-39</strong>: Use ETRS89 as the preferred coordinate reference system (CRS)</p>
+<div class="rule" id="api-40">
+  <p class="rulelab"><strong>API-40</strong>: Use ETRS89 as the preferred coordinate reference system (CRS)</p>
   <p>General usage of the European ETRS89 coordinate reference system (CRS) is preferable, but is not necessarily the default CRS. Hence, the CRS has to be explicitly included in each request.</p>
 </div>
 
-The CRS can be specified for request and response individually using parameters: RD/Amersfoort, ETRS89, WGS84, and Web Mercator.
+The CRS can be specified for request and response individually using parameters or headers.
 
 The guiding principles for CRS support:
 
@@ -157,8 +159,8 @@ The guiding principles for CRS support:
 - Exchange format (notation) ETRS89 and WGS84 X Y in decimal degrees: DD.ddddddddd (for example: `5.962376256, 52.255023450`)
 - Exchange format (notation) RD and Web Mercator X Y in meters: `195427.5200 311611.8400`
 
-<div class="rule" id="api-40">
-  <p class="rulelab"><strong>API-40</strong>: Pass the coordinate reference system (CRS) of the request as a parameter</p>
+<div class="rule" id="api-41">
+  <p class="rulelab"><strong>API-41</strong>: Pass the coordinate reference system (CRS) of the geometry in a request parameter as a parameter</p>
   <p>Support the <a href="http://docs.opengeospatial.org/is/18-058/18-058.html#_parameter_bbox_crs">OGC API Features part 2 <code>bbox_crs</code> parameter</a> in conformance to the standard.
   </p>
   <p>Additionally, if other types of geospatial filters are supported in the API besides <code>bbox</code>: </p>
@@ -166,14 +168,20 @@ The guiding principles for CRS support:
   </p>
 </div>
 
-<div class="rule" id="api-41">
-  <p class="rulelab"><strong>API-41</strong>: Pass the desired CRS of the response as a parameter</p>
+<div class="rule" id="api-42">
+  <p class="rulelab"><strong>API-42</strong>: Pass the coordinate reference system (CRS) of geometry in the request body as a header</p>
+  <p>Support the <a href="http://docs.ogc.org/DRAFTS/20-002.html#feature-crs">OGC API Features part 4 <code>Content-Crs</code> header</a> in conformance to the standard.</p>
+  <p>Alternatively, if the feature representation supports expressing CRS information for each feature / geometry, the information can also be included in the feature representation.<p>
+</div>
+
+<div class="rule" id="api-43">
+  <p class="rulelab"><strong>API-43</strong>: Pass the desired coordinate reference system (CRS) of geometry in the response as a parameter</p>
   <p>Support the <a href="http://docs.opengeospatial.org/is/18-058/18-058.html#_parameter_crs">OGC API Features part 2 <code>crs</code> parameter</a> in conformance to the standard.
   </p>
 </div>
 
-<div class="rule" id="api-42">
-  <p class="rulelab"><strong>API-42</strong>: Assert the CRS used in the response using a header</p>
+<div class="rule" id="api-44">
+  <p class="rulelab"><strong>API-44</strong>: Assert the coordinate reference system (CRS) used in the response using a header</p>
   <p>Support the <a href="http://docs.opengeospatial.org/is/18-058/18-058.html#_coordinate_reference_system_information_independent_of_the_feature_encoding">OGC API Features part 2 <code>Content-Crs</code> header</a> in conformance to the standard.
   </p>
 </div>
@@ -183,9 +191,10 @@ The API should be able to handle the following scenarios based on the rules stat
 | Scenario                                        | Explanation |
 | ----------------------------------------------- | ----------- |
 | No geometry in request, no geometry in response | No CRS negotiation necessary |
-| No geometry in request, geometry in response    | The client can request a specific CRS for the geometries in the response using the `crs` parameter. The server indicates the geometry CRS in the response using the `content-crs` header. | 
-| Geometry in request, no geometry in response    | The client indicates the CRS of the request geometry using the `bbox-crs` parameter if a bounding box is used to filter geospatially, or the `filter-crs` parameter if another way of geospatial filtering is used.|
-| Geometry in request, geometry in response       | The client indicates the CRS of the request geometry using `bbox-crs` or `filter-crs` as in the previous scenario, and requests a specific CRS for the geometries in the response using the `crs` parameter. The server indicates the geometry CRS in response using the `content-crs` header.|
+| No geometry in request, geometry in response    | The client can request a specific CRS for the geometries in the response using the `crs` parameter. The server indicates the geometry CRS in the response using the `Content-Crs` header. |
+| Geometry in request body, no geometry in response | The client indicates the CRS of the geometry in the request body using the `Content-Crs` header. |
+| Geometry filter in request, no geometry in response    | The client indicates the CRS of the geometry filter in the request using the `bbox-crs` parameter if a bounding box is used to filter geospatially, or the `filter-crs` parameter if another way of geospatial filtering is used.|
+| Geometry filter in request, geometry in response       | The client indicates the CRS of the geometry filter in the request using `bbox-crs` or `filter-crs` as in the previous scenario, and requests a specific CRS for the geometries in the response using the `crs` parameter. The server indicates the geometry CRS in response using the `Content-Crs` header.|
 
 Use the following URIs to specify the CRS:
 
@@ -209,11 +218,17 @@ If a client specifies CRS using a parameter AND in the header, the parameter tak
 Certified software is available to the national government to transform between coordinate reference systems.
 
 
-<div class="note" id="api-40-dep">
-  <p><strong>API-40-dep</strong>: Pass the coordinate reference system (CRS) of the request and the response in the headers</p>
+<div class="rule" id="api-43">
+  <p class="rulelab"><strong>API-43</strong>: Pass the desired coordinate reference system (CRS) of geometry in the response as a parameter</p>
+  <p>Support the <a href="http://docs.opengeospatial.org/is/18-058/18-058.html#_parameter_crs">OGC API Features part 2 <code>crs</code> parameter</a> in conformance to the standard.
+  </p>
+</div>
+
+<div class="note" id="api-41-dep">
+  <p><strong>API-41-dep</strong>: Pass the coordinate reference system (CRS) of the request and the response in the headers</p>
+
   <p><strong>Deprecated</strong></p>
   <p>The coordinate reference system (CRS) for both the request and the response are passed as part of the request headers and response headers. In case this header is missing, send the HTTP status code <code>412 Precondition Failed</code>.</p>
-
 
 The following headers are purely meant for negotiation between the client and the server. Depending on the application, the request not only contains geometries but also specific meta data, e.g. the original realization including the collection date.
 
@@ -234,6 +249,11 @@ The preferred CRS for the geometry in the response (response body) is specified 
 |`Accept-Crs`|EPSG:3857|Web Mercator, global|
 |`Accept-Crs`|EPSG:4258|ETRS89, European|
 |`Accept-Crs`|EPSG:28992|RD/Amersfoort, Dutch|
+
+<div class="rule" id="api-45">
+  <p class="rulelab"><strong>API-45</strong>: Use content negotiation to serve different CRSs</p>
+  <p>The CRS for the geometry in the response body is defined using the <code>Accept-Crs</code> header. In case the API does not support the requested CRS, send the HTTP status code <code>406 Not Acceptable</code>.</p>
+</div>
 
 <p>&nbsp;</p>
 
