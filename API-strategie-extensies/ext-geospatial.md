@@ -11,6 +11,15 @@ REST APIs for handling geospatial features may provide spatial filtering. There 
   <p>For representing 2D geometric information in an API, preferably use the convention for describing geometry as defined in the GeoJSON format [[rfc7946]].</p>
 </div>
 
+<aside class="note">
+GeoJSON does not cover all use cases. For example, it is not possible to store circular arc geometries or solids in GeoJSON. In such cases, there are two valid options: 
+
+- Use alternative standardized formats for geospatial data, such as [WKT](https://www.w3.org/TR/sdw-bp/#dfn-well-known-text-(wkt))or its binary equivalent WKB; GML [iso-19136-2007]; or in future [OGC JSON-FG](https://docs.ogc.org/DRAFTS/21-045.html) (currently a draft standard). 
+- When supporting GML, do this according to OGC API Features [Requirements class 8.4](https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geography_markup_language_gml_simple_features_profile_level_0) for GML Simple Features level 0, or [Requirements class 8.4](https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geography_markup_language_gml_simple_features_profile_level_2) for GML Simple Features level 2. 
+- Use a workaround, e.g. convert circular lines / arcs to regular linestrings. 
+
+</aside>
+
 ### Result (response)
 
 In a JSON API the geometry is returned as a GeoJSON Geometry object.
