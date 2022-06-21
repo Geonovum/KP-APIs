@@ -6,6 +6,23 @@ github repository; zie issues met tag
 
 De werkgroep houdt 1x per 2 weken een korte online meeting (half uur). Neem voor deelname aan deze werkgroep contact op met Linda van den Brink (Geonovum).
 
+## verslag online meeting 21 juni
+Aanwezig: Pieter, George, Linda
+
+4 ingediende PRs besproken. PR #452 wordt nog gereviewd door Pieter; de andere drie, #450, #451, en #453 zijn gemerged. 
+
+De nog openstaande issues kort besproken. Een aantal issues is gesloten vanwege gemergede PRs. Nog open:
+- #425 heeft te maken met PR #452, die nog gereviewd wordt.
+- #442 is vermoedelijk al opgelost door PR #452. Pieter gaat dit na omdat hij #452 toch nog moet reviewen.
+- #444 hebben we besloten te parkeren, deze heeft nu het label `on hold`.
+- #446 wordt doorgevoerd door Linda
+
+Er is één nieuw issue toegevoegd: #454. Voorstel van George om voorin de geo-extensie tekst op te nemen dat waar we het hebben over een coordinaatreferentiesysteem, we ook de 3D variant daarvan bedoelen. Wordt doorgevoerd door Linda.
+
+Hiermee zijn alle issues toegewezen en zijn er geen grote taken meer. Als de laatste taken zijn afgerond en PRs gemerged, doet Linda een consistentiecheck van de hele tekst. Hopelijk kan dit nog voor de volgende meeting van de geo-extensie werkgroep. We kunnen dan de extensie gaan aanbieden aan de bredere API Design Rules werkgroep.
+
+Met andere woorden, het einde is in zicht!
+
 ## verslag hybride meeting 7 juni
 Van 1 tot 2 bij Geonovum. Aanwezig: Mark, Pieter, Linda.
 
