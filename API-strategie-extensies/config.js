@@ -312,6 +312,21 @@ var respecConfig =
       authors: ["A. Parecki", "D. Waite"],
       status: "Internet-Draft",
       publisher: "IETF OAuth Working Group",
+    },
+    "hr-crs": {
+      href: "https://docs.geostandaarden.nl/crs/crs/",
+      title:
+        "Handreiking Gebruik coördinaatreferentiesystemen bij uitwisseling en visualisatie van geo-informatie",
+      authors: ["Lennard Huisman", "Friso Penninga"],
+      status: "Vastgesteld",
+      publisher: "Geonovum",
+    },
+    "ogcapi-features-1": {
+      href: "http://docs.ogc.org/is/17-069r3/17-069r3.html",
+      title: "OGC API - Features - Part 1: Core",
+      editors: ["Clemens Portele", "Panagiotis (Peter) A. Vretanos", "Charles Heazel"],
+      status: "Approved",
+      publisher: "Open Geospatial Consortium",
     }
   },
   postProcess:[custGHPG],

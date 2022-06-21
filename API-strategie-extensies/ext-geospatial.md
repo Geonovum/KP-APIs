@@ -8,7 +8,7 @@ REST APIs for handling geospatial features may provide spatial filtering. There 
 
 <div class="rule" id="api-34">
   <p class="rulelab"><strong>API-34</strong>: Support GeoJSON for geospatial APIs</p>
-  <p>For representing 2D geometric information in an API, preferably use the convention for describing geometry as defined in the GeoJSON format [[rfc7946]].</p>
+  <p>For representing 2D geometric information in an API, preferably use the convention for describing geometry as defined in the GeoJSON format [[rfc7946]]. Support GeoJSON as described in OGC API Features Requirements class 8.3](https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geojson) [[ogcapi-features-1]]. </p>
 </div>
 
 <aside class="note">
@@ -112,15 +112,32 @@ If a feature collection supports additional CRSs compared to the global CRS list
 
 If a feature collection supports a different set of CRSs than the set defined in the global CRS list, then a reference to the global CRS list is omitted and only the URIs of the supported CRSs are added to the CRS list in the `crs` property of the feature collection.
 
+For clients, it may be helpful to know the CRS identifier that may be used to retrieve features from that collection without the need to apply a CRS transformation.
+
+<div class="note" id="api-xx">
+  <p class="rulelab"><strong>API-xx</strong>: Make known in which CRS the geospatial data is stored.</p>    
+</div>
+
+If all features in a feature collection are stored using a particular CRS, the property `storageCRS` shall be used to specify this CRS, in accordance with [OGC API Features - part 2 - 6.2.2 Storage CRS](https://docs.ogc.org/is/18-058/18-058.html#_storage_crs). The value of this property shall be one of the CRSs supported by the API and advertised in the CRS list. If relevant, the epoch should also be specified, using the `storageCRSCoordinateEpoch` property. For an explanation of the use of epochs with CRS, see the CRS Guidelines [[hr-crs]]. 
+
 ### CRS negotiation
 
-The default CRS (Coordinate Reference System) for GeoJSON is WGS84. This is the global coordinate reference system that can be applied world-wide. Due the datum and the tectonic displacements it is not accurate enough for local coordinate reference systems like ETRS89 (EPSG:4258, European), or RD/Amersfoort (EPSG:28992, Dutch).
+The default CRS (Coordinate Reference System) for GeoJSON and for OGC API Features is WGS84 with coordinate order lat-long, also referred to as "CRS84". This is the global coordinate reference system that can be applied world-wide. Due the datum and the tectonic displacements it is not accurate enough for local coordinate reference systems like ETRS89 (EPSG:4258, European), or RD/Amersfoort (EPSG:28992, Dutch). For more information about coordinate reference systems, read the Geonovum guidelines on CRS [[hr-crs]].
 
 Since most client-side mapping libraries use WGS84, the W3C/OGC working group *Spatial Data on the Web* recommends to use this as the default coordinate reference system. Thus, spatial data can be mapped without any complex transformations. The API strategy caters for this supporting not only ETRS89 and RD/Amersfoort, but also WGS84 and Web Mercator (EPSG:3857).
 
+The *default* CRS, i.e. the CRS which is assumed when not specified by either the API or the client, is CRS84, in line with GeoJSON and OGC API Features. 
+
+<div class="rule" id="api-xx">
+  <p class="rulelab"><strong>API-xx</strong>: Use <a href="http://www.opengis.net/def/crs/OGC/1.3/CRS84">CRS84</a> as the default coordinate reference system (CRS). Support CRS84 in line with OGC API Features <a href="http://docs.ogc.org/is/17-069r3/17-069r3.html#_coordinate_reference_systems">Requirement 10</a>. </p>
+  <p>If no CRS is explicitly included in the request, CRS84 is assumed.</p>
+</div>
+
+In addition, support for ETRS89 is required. 
+
 <div class="rule" id="api-40">
-  <p class="rulelab"><strong>API-40</strong>: Use ETRS89 as the preferred coordinate reference system (CRS)</p>
-  <p>General usage of the European ETRS89 coordinate reference system (CRS) is preferable, but is not necessarily the default CRS. Hence, the CRS has to be explicitly included in each request.</p>
+  <p class="rulelab"><strong>API-40</strong>: Use ETRS89 when required, as this is the preferred coordinate reference system (CRS) for Dutch geospatial data.</p>
+  <p>General usage of the European ETRS89 coordinate reference system (CRS) is preferable, but is not the default CRS. Hence, this CRS has to be explicitly included in each request.</p>
 </div>
 
 The CRS can be specified for request and response individually using parameters or headers.
@@ -128,9 +145,9 @@ The CRS can be specified for request and response individually using parameters 
 The guiding principles for CRS support:
 
 - Source systems record coordinates as they enter the system (legal context);
-- Define a default CRS in the API, if the consumer does not specify the CRS it is assumed it uses the default.
-- Coordinate reference systems API strategy: request/response in RD; ETRS89; WGS84; Web Mercator;
-- Consider no-regret: record both in ETRS89 and RD/Amersfoort instead of on-the-fly transformation;
+- The default CRS, CRS84, is listed first in the list of supported CRSs in the API; if the consumer does not specify the CRS it is assumed it uses the default.
+- Coordinate reference systems API strategy: request/response in RD; ETRS89; CRS84; Web Mercator;
+- Consider no-regret: record in multiple much-requested CRSs instead of on-the-fly transformation;
 - Use RDNAPTRANS™ 2018 to transform RD/Amersfoort to ETRS89 (correction grid);
 - Presentation depending on context (e.g. user requirements);
 - Exchange format (notation) ETRS89 and WGS84 X Y in decimal degrees: DD.ddddddddd (for example: `5.962376256, 52.255023450`)
@@ -138,12 +155,16 @@ The guiding principles for CRS support:
 
 <div class="rule" id="api-41">
   <p class="rulelab"><strong>API-41</strong>: Pass the coordinate reference system (CRS) of the geometry in a request parameter as a parameter</p>
-  <p>Support the <a href="http://docs.opengeospatial.org/is/18-058/18-058.html#_parameter_bbox_crs">OGC API Features part 2 <code>bbox_crs</code> parameter</a> in conformance to the standard.
+  <p>Support the <a href="http://docs.opengeospatial.org/is/18-058/18-058.html#_parameter_bbox_crs">OGC API Features part 2 <code>bbox-crs</code> parameter</a> in conformance to the standard.
   </p>
   <p>Additionally, if other types of geospatial filters are supported in the API besides <code>bbox</code>: </p>
-  <p>Support the <a href="http://docs.ogc.org/DRAFTS/19-079r1.html#filter-filter-crs">OGC API Features part 3 <code>filter_crs</code> parameter</a> in conformance to the standard.
+  <p>Support the <a href="http://docs.ogc.org/DRAFTS/19-079r1.html#filter-filter-crs">OGC API Features part 3 <code>filter-crs</code> parameter</a> in conformance to the standard.
   </p>
 </div>
+
+If a bounding box or geospatial filter is sent to the server without these parameters, the default CRS, CRS84, is assumed.
+
+If an invalid value, i.e. a CRS which is not in the list of supported CRSs, is given for one of these parameters, the server responds with an HTTP status code `400`.
 
 <div class="rule" id="api-42">
   <p class="rulelab"><strong>API-42</strong>: Pass the coordinate reference system (CRS) of geometry in the request body as a header</p>
