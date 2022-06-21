@@ -168,7 +168,7 @@ The *default* CRS, i.e. the CRS which is assumed when not specified by either th
 In addition, support for ETRS89 is required. 
 
 <div class="rule" id="api-40">
-  <p class="rulelab"><strong>API-40</strong>: Provide ETRS89 when requested, as this is the preferred coordinate reference system (CRS) for Dutch geospatial data.</p>
+  <p class="rulelab"><strong>API-40</strong>: Use ETRS89 when required, as this is the preferred coordinate reference system (CRS) for Dutch geospatial data.</p>
   <p>General usage of the European ETRS89 coordinate reference system (CRS) is preferable, but is not the default CRS. Hence, this CRS has to be explicitly included in each request.</p>
 </div>
 
@@ -187,10 +187,10 @@ The guiding principles for CRS support:
 
 <div class="rule" id="api-41">
   <p class="rulelab"><strong>API-41</strong>: Pass the coordinate reference system (CRS) of the geometry in a request parameter as a parameter</p>
-  <p>Support the <a href="http://docs.opengeospatial.org/is/18-058/18-058.html#_parameter_bbox_crs">OGC API Features part 2 <code>bbox_crs</code> parameter</a> in conformance to the standard.
+  <p>Support the <a href="http://docs.opengeospatial.org/is/18-058/18-058.html#_parameter_bbox_crs">OGC API Features part 2 <code>bbox-crs</code> parameter</a> in conformance to the standard.
   </p>
   <p>Additionally, if other types of geospatial filters are supported in the API besides <code>bbox</code>: </p>
-  <p>Support the <a href="http://docs.ogc.org/DRAFTS/19-079r1.html#filter-filter-crs">OGC API Features part 3 <code>filter_crs</code> parameter</a> in conformance to the standard.
+  <p>Support the <a href="http://docs.ogc.org/DRAFTS/19-079r1.html#filter-filter-crs">OGC API Features part 3 <code>filter-crs</code> parameter</a> in conformance to the standard.
   </p>
 </div>
 
