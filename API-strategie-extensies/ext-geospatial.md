@@ -140,8 +140,8 @@ The *default* CRS, i.e. the CRS which is assumed when not specified by either th
 In addition, support for ETRS89 is required. 
 
 <div class="rule" id="api-40">
-  <p class="rulelab"><strong>API-40</strong>: Use ETRS89 when required, as this is the preferred coordinate reference system (CRS) for Dutch geospatial data.</p>
-  <p>General usage of the European ETRS89 coordinate reference system (CRS) is preferable, but is not the default CRS. Hence, this CRS has to be explicitly included in each request.</p>
+  <p class="rulelab"><strong>API-40</strong>: Use ETRS89 and/or RD when required, as these are the preferred coordinate reference systems (CRS) for Dutch geospatial data. Follow the Dutch Guideline for the use of CRSs [[hr-crs]].</p>
+  <p>General usage of the European ETRS89 coordinate reference system (CRS) or RD/NAP is preferred, but is not the default CRS. Hence, one of these CRSs has to be explicitly included in each request when one of these CRSs is desired in the response or used in a request.</p>
 </div>
 
 The CRS can be specified for request and response individually using parameters or headers.
