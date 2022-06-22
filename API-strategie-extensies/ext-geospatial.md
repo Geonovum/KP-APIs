@@ -8,13 +8,13 @@ REST APIs for handling geospatial features may provide spatial filtering. There 
 
 <div class="rule" id="api-34">
   <p class="rulelab"><strong>API-34</strong>: Support GeoJSON for geospatial APIs</p>
-  <p>For representing 2D geometric information in an API, preferably use the convention for describing geometry as defined in the GeoJSON format [[rfc7946]]. Support GeoJSON as described in OGC API Features Requirements class 8.3](https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geojson) [[ogcapi-features-1]]. </p>
+  <p>For representing 2D geometric information in an API, preferably use the convention for describing geometry as defined in the GeoJSON format [[rfc7946]]. Support GeoJSON as described in OGC API Features [Requirements class 8.3](https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geojson) [[ogcapi-features-1]]. </p>
 </div>
 
 <aside class="note">
 GeoJSON does not cover all use cases. For example, it is not possible to store circular arc geometries or solids in GeoJSON. In such cases, there are two valid options: 
 
-- Use alternative standardized formats for geospatial data, such as [WKT](https://www.w3.org/TR/sdw-bp/#dfn-well-known-text-(wkt))or its binary equivalent WKB; GML [iso-19136-2007]; or in future [OGC JSON-FG](https://docs.ogc.org/DRAFTS/21-045.html) (currently a draft standard). 
+- Use alternative standardized formats for geospatial data, such as [WKT](https://www.w3.org/TR/sdw-bp/#dfn-well-known-text-(wkt)) or its binary equivalent WKB; GML [iso-19136-2007]; or in future [OGC JSON-FG](https://docs.ogc.org/DRAFTS/21-045.html) (currently a draft standard). 
 - When supporting GML, do this according to OGC API Features [Requirements class 8.4](https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geography_markup_language_gml_simple_features_profile_level_0) for GML Simple Features level 0, or [Requirements class 8.4](https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geography_markup_language_gml_simple_features_profile_level_2) for GML Simple Features level 2. 
 - Use a workaround, e.g. convert circular lines / arcs to regular linestrings. 
 
@@ -210,6 +210,14 @@ Use the following URIs to specify the CRS:
 For backwards compatibility, an older method of specifying CRS in the headers of requests is retained as a deprecated method. APIs that already support the (deprecated) header method can add support for the parameter method while still supporting the header method for a certain period.  Supporting both the new method (using parameters) and the old (using headers) is trivial. 
 
 If a client specifies CRS using a parameter AND in the header, the parameter takes precedence and the CRS in the header is ignored.
+
+<aside class="note" title="CRS support and GeoJSON">
+Officially, WGS84 lat-long (CRS84) is the only CRS allowed in GeoJSON. However, GeoJSON does state that using another CRS is allowed, if this is agreed between provider and consumer of the data. The API functionality described above, to negotiate the CRS between client and server, can be viewed as such an agreement. Many GIS clients can deal with GeoJSON in other CRS than CRS84.
+
+In addition, the Geonovum CRS guidelines [[hr-crs]] describe [how ETRS89 can be treated as equal to WGS84 under certain circumstances](https://docs.geostandaarden.nl/crs/cv-hr-crs-20211125/#wgs-84-gelijkstellen-aan-etrs89) - but note that GeoJSON requires coordinates to be in latitude-longitude order, while ETRS89 uses longitude-latitude. 
+
+[[JSON-FG]] is a proposed standard extension of GeoJSON that adds CRS support.
+</aside>
 
 ### CRS transformation
 
