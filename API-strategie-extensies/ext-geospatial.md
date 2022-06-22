@@ -225,14 +225,7 @@ In addition, the Geonovum CRS guidelines [[hr-crs]] describe [how ETRS89 can be 
 
 ### CRS transformation
 
-Certified software is available to the national government to transform between coordinate reference systems.
-
-
-<div class="rule" id="api-43">
-  <p class="rulelab"><strong>API-43</strong>: Pass the desired coordinate reference system (CRS) of geometry in the response as a parameter</p>
-  <p>Support the <a href="http://docs.opengeospatial.org/is/18-058/18-058.html#_parameter_crs">OGC API Features part 2 <code>crs</code> parameter</a> in conformance to the standard.
-  </p>
-</div>
+If the requested CRS is not the same as the storage CRS, a coordinate transformation is needed. Performance is increased when the dataset is transformed in multiple CRSs and stored in advance, and not transformed at the moment the request has arrived. In case of a transformation between RD and ETRS89, it is highly recommended that this transformation uses the latest version of the procedure of [RDNAPTRANS™](https://docs.geostandaarden.nl/crs/cv-hr-crs-20211125/#transformatie-en-conversie-tussen-rd-nap-en-etrs89). This is certified software to transform between these coordinate reference systems.
 
 <div class="note" id="api-41-dep">
   <p><strong>API-41-dep</strong>: Pass the coordinate reference system (CRS) of the request and the response in the headers</p>
