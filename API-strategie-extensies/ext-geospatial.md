@@ -207,8 +207,7 @@ Use the following URIs to specify the CRS:
 |-|-|-|-|
 |ETRS89 | 2D | European | http://www.opengis.net/def/crs/EPSG/9.9.1/4258|
 |ETRS89 | 3D | European | http://www.opengis.net/def/crs/EPSG/9.9.1/4937|
-|WGS 84 longitude-latitude | 2D | Global | http://www.opengis.net/def/crs/EPSG/9.9.1/4326
-http://www.opengis.net/def/crs/OGC/1.3/CRS84|
+|WGS 84 longitude-latitude | 2D | Global | http://www.opengis.net/def/crs/OGC/1.3/CRS84|
 |WGS 84 / Pseudo-Mercator | 2D | Global | http://www.opengis.net/def/crs/EPSG/9.9.1/3857|
 |Amersfoort / RD New | 2D | Dutch | http://www.opengis.net/def/crs/EPSG/9.9.1/28992|
 |Amersfoort / RD New + NAP height | 3D | Dutch | http://www.opengis.net/def/crs/EPSG/9.9.1/7415|
