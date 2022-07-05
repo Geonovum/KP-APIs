@@ -28,7 +28,7 @@ A simple spatial filter can be supplied as a bounding box. This is a common way 
   <p class="rulelab"><strong>API-36</strong>: Supply a simple spatial filter as a bounding box parameter</p>
   <p>Support the <a href="https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_bbox">OGC API Features part 1 <code>bbox</code> parameter</a> in conformance to the standard.
   <pre>
-   GET /api/v1/panden?bbox=160.6,-55.95,170,-25.89
+   GET /api/v1/panden?bbox=5.4,52.1,5.5,53.2
   </pre>
   </p>
 </div>
@@ -84,7 +84,7 @@ In a JSON API the geometry is returned as a GeoJSON Geometry object.
     "naam": "Paleis Soestdijk",
     "locatie":  {
       "type": "Point",
-      "coordinates": [125.6, 10.1]
+      "coordinates": [5.2795,52.1933]
     }
   }
   </pre>
@@ -129,7 +129,7 @@ If all features in a feature collection are stored using a particular CRS, the p
 
 ### CRS negotiation
 
-The default CRS for GeoJSON and for OGC API Features is WGS84 with coordinate order lat-long, also referred to as "CRS84". This is the global CRS that can be applied world-wide. Due the datum and the tectonic displacements it is not accurate enough for local coordinate reference systems like ETRS89 (EPSG:4258, European), or RD/Amersfoort (EPSG:28992, Dutch). For more information about coordinate reference systems, read the Geonovum guidelines on CRS [[hr-crs]].
+The default CRS for GeoJSON and for OGC API Features is WGS84 with coordinate order longitude-latitude, also referred to as "CRS84". This is the global CRS that can be applied world-wide. Due the datum and the tectonic displacements it is not accurate enough for local coordinate reference systems like ETRS89 (EPSG:4258, European), or RD/Amersfoort (EPSG:28992, Dutch). For more information about coordinate reference systems, read the Geonovum guidelines on CRS [[hr-crs]].
 
 Since most client-side mapping libraries use WGS84, the W3C/OGC working group *Spatial Data on the Web* recommends to use this as the default coordinate reference system. Thus, spatial data can be mapped without any complex transformations. The API strategy caters for this supporting not only ETRS89 and RD/Amersfoort, but also WGS84 and Web Mercator (EPSG:3857).
 
@@ -157,7 +157,7 @@ The guiding principles for CRS support:
 - Consider no-regret: record in multiple much-requested CRSs instead of on-the-fly transformation;
 - Use RDNAPTRANS™ 2018 to transform RD/Amersfoort to ETRS89 (correction grid);
 - Presentation depending on context (e.g. user requirements);
-- Exchange format (notation) ETRS89 and WGS84 X Y in decimal degrees: DD.ddddddddd (for example: `5.962376256, 52.255023450`)
+- Exchange format (notation) ETRS89 and WGS84 longitude latitude in decimal degrees: DD.ddddddddd (for example: `5.962376256, 52.255023450`)
 - Exchange format (notation) RD and Web Mercator X Y in meters: `195427.5200 311611.8400`
 
 <div class="rule" id="api-41">
