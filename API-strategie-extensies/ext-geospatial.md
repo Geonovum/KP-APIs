@@ -97,6 +97,8 @@ A Coordinate Reference System (CRS) or Spatial Reference System (SRS) is a frame
 CRSs are uniquely identified by means of a Spatial Reference System Identifier (SRID).
 SRIDs may refer to different standards, for example European Petroleum Survey Group (EPSG) or Open Geospatial Consortium (OGC).
 
+For a detailed description of CRSs see [[hr-crs]].
+
 ### CRS discovery
 
 A client shall be able to determine a list of CRSs supported by an API.
