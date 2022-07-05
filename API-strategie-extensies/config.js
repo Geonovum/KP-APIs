@@ -327,7 +327,24 @@ var respecConfig =
       editors: ["Clemens Portele", "Panagiotis (Peter) A. Vretanos", "Charles Heazel"],
       status: "Approved",
       publisher: "Open Geospatial Consortium",
-    }
+      version: "1.0"
+    },
+    "ogcapi-features-2": {
+      href: "https://docs.ogc.org/is/18-058/18-058.html",
+      title: "OGC API - Features - Part 2: Coordinate Reference Systems by Reference",
+      editors: ["Clemens Portele", "Panagiotis (Peter) A. Vretanos"],
+      status: "Approved",
+      publisher: "Open Geospatial Consortium",
+      version: "1.0"
+    },
+     "JSON-FG": {
+      href: "https://docs.ogc.org/DRAFTS/21-045.html",
+      title: "OGC Features and Geometries JSON - Part 1: Core",
+      editors: ["Clemens Portele", "Panagiotis (Peter) A. Vretanos"],
+      status: "Editor's Draft",
+      publisher: "Open Geospatial Consortium",
+      version: "0.1"
+     },
   },
   postProcess:[custGHPG],
 };
