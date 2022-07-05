@@ -137,7 +137,7 @@ The *default* CRS, i.e. the CRS which is assumed when not specified by either th
   <p>If no CRS is explicitly included in the request, CRS84 is assumed.</p>
 </div>
 
-In addition, support for ETRS89 is required. 
+In addition, support for ETRS89 and/or RD is required. 
 
 <div class="rule" id="api-40">
   <p class="rulelab"><strong>API-40</strong>: Use ETRS89 and/or RD when required, as these are the preferred coordinate reference systems (CRS) for Dutch geospatial data. Follow the Dutch Guideline for the use of CRSs [[hr-crs]].</p>
