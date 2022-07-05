@@ -6,6 +6,23 @@ github repository; zie issues met tag
 
 De werkgroep houdt 1x per 2 weken een korte online meeting (half uur). Neem voor deelname aan deze werkgroep contact op met Linda van den Brink (Geonovum).
 
+## verslag online meeting 5 juli
+Aanwezig: Pieter, Mark, George, Linda
+
+2 ingediende PRs besproken. 
+- PR #456 is gereviewd en na een kleine aanpassing van Linda gemerged. Hiermee zijn ook een aantal issues gesloten. 
+- PR #459 is ter plekke toegelicht door Mark en deels ter plekke verbeterd naar aanleiding van opmerkingen van Pieter. Verwijzing naar de CRS handreiking van Lennart Huisman moet nog worden toegevoegd; en de omschrijving van het begrip CRS moet nog worden nagekeken zodat deze klopt met de CRS handreiking. 
+
+Issue #425 hebben we on hold gezet, wat betekent dat we deze niet meer verder oppakken in de nu op te leveren geo extensie. Dit issue over in hoeverre het mogelijk is om met een OGC-API Features service te voldoen aan nl-api strategie, is te breed om nu op te pakken omdat je ook de API design rules buiten de geo-extensie gaat raken. We hebben het issue deels ingevuld door geo-specifieke functionaliteit uit de OGC API Feature standaard op te nemen in de geo-extensie, maar zaken uit OGC API Features die buiten de geo-extensie vallen nog niet. De inschatting van Pieter, op basis van een voor INSPIRE uitgevoerd onderzoek, is dat dit wel mee valt, maar we vonden het toch te veel en te onzeker om nu nog mee te nemen. Er moet nog nagedacht worden over hoe we dit issue wel volledig gaan adresseren; wellicht door een OGC Features API te implementeren en te proberen die ook te laten voldoen aan de NL API strategie.
+
+Pieter voert nog één issue op over het toevoegen van een paragraaf over voldoen aan de geo-extensie als je een INSPIRE dataset hebt. Hiervoor is een kort tekstje nodig.
+
+Procesafspraken:
+- We handelen alle nog openstaande issues die niet on hold zijn, deze week af. 
+- Linda doet daarna nog één check van de tekst en stuurt deze dan naar de grotere API Design Rules werkgroep, vergezeld van de vraag wanneer ze het gereviewd denken te hebben en wat de volgende stappen zijn. 
+- Linda koppelt antwoord en feedback terug naar de groep. 
+- Voorlopig was dit de laatste werkgroep bijeenkomst; indien nodig wordt er een overleg gepland als er feedback is van de API Design Rules werkgroep. 
+
 ## verslag online meeting 21 juni
 Aanwezig: Pieter, George, Linda
 
