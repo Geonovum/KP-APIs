@@ -211,12 +211,13 @@ Use the following URIs to specify the CRS:
 
 |Name|Dimension|Scope|URI|
 |-|-|-|-|
+|Amersfoort / RD New | 2D | Dutch | http://www.opengis.net/def/crs/EPSG/9.9.1/28992|
+|Amersfoort / RD New + NAP height | 3D | Dutch | http://www.opengis.net/def/crs/EPSG/9.9.1/7415|
 |ETRS89 | 2D | European | http://www.opengis.net/def/crs/EPSG/9.9.1/4258|
 |ETRS89 | 3D | European | http://www.opengis.net/def/crs/EPSG/9.9.1/4937|
 |WGS 84 longitude-latitude | 2D | Global | http://www.opengis.net/def/crs/OGC/1.3/CRS84|
+|WGS 84 longitude-latitude-height | 3D | Global | http://www.opengis.net/def/crs/OGC/0/CRS84h |
 |WGS 84 / Pseudo-Mercator | 2D | Global | http://www.opengis.net/def/crs/EPSG/9.9.1/3857|
-|Amersfoort / RD New | 2D | Dutch | http://www.opengis.net/def/crs/EPSG/9.9.1/28992|
-|Amersfoort / RD New + NAP height | 3D | Dutch | http://www.opengis.net/def/crs/EPSG/9.9.1/7415|
 
 For backwards compatibility, an older method of specifying CRS in the headers of requests is retained as a deprecated method. APIs that already support the (deprecated) header method can add support for the parameter method while still supporting the header method for a certain period.  Supporting both the new method (using parameters) and the old (using headers) is trivial. 
 
