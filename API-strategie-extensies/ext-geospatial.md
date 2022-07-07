@@ -12,31 +12,13 @@ REST APIs for handling geospatial features may provide spatial filtering. There 
 </div>
 
 <aside class="note">
-GeoJSON does not cover all use cases. For example, it is not possible to store circular arc geometries or solids in GeoJSON. In such cases, there are two valid options: 
+GeoJSON does not cover all use cases. For example, it is not possible to store circular arc geometries or solids in GeoJSON. In such cases, there are several valid options: 
 
 - Use alternative standardized formats for geospatial data, such as [WKT](https://www.w3.org/TR/sdw-bp/#dfn-well-known-text-(wkt)) or its binary equivalent WKB; GML [iso-19136-2007]; or in future [OGC JSON-FG](https://docs.ogc.org/DRAFTS/21-045.html) (currently a draft standard). 
 - When supporting GML, do this according to OGC API Features [Requirements class 8.4](https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geography_markup_language_gml_simple_features_profile_level_0) for GML Simple Features level 0, or [Requirements class 8.4](https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geography_markup_language_gml_simple_features_profile_level_2) for GML Simple Features level 2. 
 - Use a workaround, e.g. convert circular lines / arcs to regular linestrings. 
 
 </aside>
-
-### Result (response)
-
-In a JSON API the geometry is returned as a GeoJSON Geometry object.
-
-<div class="rule" id="api-35">
-  <p class="rulelab"><strong>API-35</strong>: Embed GeoJSON Geometry object as part of the JSON resource</p>
-  <p>When a JSON (<code>application/json</code>) response contains a geometry, represent it in the same way as the <code>Geometry</code> object of GeoJSON.</p>
-  <pre>
-  {
-    "naam": "Paleis Soestdijk",
-    "locatie":  {
-      "type": "Point",
-      "coordinates": [125.6, 10.1]
-    }
-  }
-  </pre>
-</div>
 
 ### Call (requests)
 
@@ -46,7 +28,7 @@ A simple spatial filter can be supplied as a bounding box. This is a common way 
   <p class="rulelab"><strong>API-36</strong>: Supply a simple spatial filter as a bounding box parameter</p>
   <p>Support the <a href="https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_bbox">OGC API Features part 1 <code>bbox</code> parameter</a> in conformance to the standard.
   <pre>
-   GET /api/v1/panden?bbox=160.6,-55.95,-170,-25.89
+   GET /api/v1/panden?bbox=5.4,52.1,5.5,53.2
   </pre>
   </p>
 </div>
@@ -90,6 +72,33 @@ A new API Design Rules extension on filtering will address spatial as well as no
   </pre>
 </div>
 
+### Result (response)
+
+In a JSON API the geometry is returned as a GeoJSON Geometry object.
+
+<div class="rule" id="api-35">
+  <p class="rulelab"><strong>API-35</strong>: Embed GeoJSON Geometry object as part of the JSON resource</p>
+  <p>When a JSON (<code>application/json</code>) response contains a geometry, represent it in the same way as the <code>Geometry</code> object of GeoJSON.</p>
+  <pre>
+  {
+    "naam": "Paleis Soestdijk",
+    "locatie":  {
+      "type": "Point",
+      "coordinates": [5.2795,52.1933]
+    }
+  }
+  </pre>
+</div>
+
+### Coordinate Reference System (CRS)
+
+A Coordinate Reference System (CRS) or Spatial Reference System (SRS) is a framework to measure locations on the earth surface as coordinates. Geometries consist of coordinates. To be able to measure the geometry's coordinates on the earth surface a CRS is required in conjunction with the coordinates.
+
+CRSs are uniquely identified by means of a Spatial Reference System Identifier (SRID).
+SRIDs may refer to different standards, for example European Petroleum Survey Group (EPSG) or Open Geospatial Consortium (OGC).
+
+For a detailed description of CRSs see [[hr-crs]].
+
 ### CRS discovery
 
 A client shall be able to determine a list of CRSs supported by an API.
@@ -122,13 +131,13 @@ If all features in a feature collection are stored using a particular CRS, the p
 
 ### CRS negotiation
 
-The default CRS (Coordinate Reference System) for GeoJSON and for OGC API Features is WGS84 with coordinate order lat-long, also referred to as "CRS84". This is the global coordinate reference system that can be applied world-wide. Due the datum and the tectonic displacements it is not accurate enough for local coordinate reference systems like ETRS89 (EPSG:4258, European), or RD/Amersfoort (EPSG:28992, Dutch). For more information about coordinate reference systems, read the Geonovum guidelines on CRS [[hr-crs]].
+The default CRS for GeoJSON and for OGC API Features is WGS84 with coordinate order longitude-latitude, also referred to as "CRS84". This is the global CRS that can be applied world-wide. Due the datum and the tectonic displacements it is not accurate enough for local coordinate reference systems like ETRS89 (EPSG:4258, European), or RD/Amersfoort (EPSG:28992, Dutch). For more information about coordinate reference systems, read the Geonovum guidelines on CRS [[hr-crs]].
 
 <aside class="note" title="Convention">
 When referring to a coordinate reference system using its code in the rest of this chapter, this is meant to refer to both the 2D and 3D variant of the system in question. E.g. when "RD" is mentioned, this should be taken to mean "RD or RD-NAP"; when WGS84 is mentioned, this should be taken to mean "WGS84 or WGS84h". 
 </aside>
 
-Since most client-side mapping libraries use WGS84, the W3C/OGC working group *Spatial Data on the Web* recommends to use this as the default coordinate reference system. Thus, spatial data can be mapped without any complex transformations. The API strategy caters for this supporting not only ETRS89 and RD/Amersfoort, but also WGS84 and Web Mercator (EPSG:3857).
+Since most client-side mapping libraries use WGS84, the W3C/OGC working group *Spatial Data on the Web* recommends to use this as the default coordinate reference system. Thus, spatial data can be mapped without any complex transformations. The API strategy caters for this supporting not only ETRS89 and RD/Amersfoort, but also WGS84 and Pseudo Mercator (EPSG:3857).
 
 The *default* CRS, i.e. the CRS which is assumed when not specified by either the API or the client, is CRS84, in line with GeoJSON and OGC API Features. 
 
@@ -150,12 +159,12 @@ The guiding principles for CRS support:
 
 - Source systems record coordinates as they enter the system (legal context);
 - The default CRS, CRS84, is listed first in the list of supported CRSs in the API; if the consumer does not specify the CRS it is assumed it uses the default.
-- Coordinate reference systems API strategy: request/response in RD; ETRS89; CRS84; Web Mercator;
+- Coordinate reference systems API strategy: request/response in RD; ETRS89; CRS84; Pseudo  Mercator;
 - Consider no-regret: record in multiple much-requested CRSs instead of on-the-fly transformation;
 - Use RDNAPTRANS™ 2018 to transform RD/Amersfoort to ETRS89 (correction grid);
 - Presentation depending on context (e.g. user requirements);
-- Exchange format (notation) ETRS89 and WGS84 X Y in decimal degrees: DD.ddddddddd (for example: `5.962376256, 52.255023450`)
-- Exchange format (notation) RD and Web Mercator X Y in meters: `195427.5200 311611.8400`
+- Exchange format (notation) ETRS89 and WGS84 longitude latitude in decimal degrees: DD.ddddddddd (for example: `5.962376256, 52.255023450`)
+- Exchange format (notation) RD and Pseudo Mercator X Y in meters: `195427.5200 311611.8400`
 
 <div class="rule" id="api-41">
   <p class="rulelab"><strong>API-41</strong>: Pass the coordinate reference system (CRS) of the geometry in a request parameter as a parameter</p>
@@ -200,16 +209,15 @@ The API should be able to handle the following scenarios based on the rules stat
 
 Use the following URIs to specify the CRS:
 
-|CRS|URI|
-|-|-|
-|ETRS89, 2D, European|http://www.opengis.net/def/crs/EPSG/9.9.1/4258|
-|ETRS89, 3D, European|http://www.opengis.net/def/crs/EPSG/9.9.1/4937|
-|WGS84, global|http://www.opengis.net/def/crs/OGC/1.3/CRS84|
-|Web Mercator, global|http://www.opengis.net/def/crs/EPSG/9.9.1/3857|
-|RD/Amersfoort, 2D, Dutch|http://www.opengis.net/def/crs/EPSG/9.9.1/28992|
-|RD/Amersfoort + NAP, 3D, Dutch|http://www.opengis.net/def/crs/EPSG/9.9.1/7415|
-
-<!-- Deze URIs moeten gecheckt worden -->
+|Name|Dimension|Scope|URI|
+|-|-|-|-|
+|Amersfoort / RD New | 2D | Dutch | http://www.opengis.net/def/crs/EPSG/9.9.1/28992|
+|Amersfoort / RD New + NAP height | 3D | Dutch | http://www.opengis.net/def/crs/EPSG/9.9.1/7415|
+|ETRS89 | 2D | European | http://www.opengis.net/def/crs/EPSG/9.9.1/4258|
+|ETRS89 | 3D | European | http://www.opengis.net/def/crs/EPSG/9.9.1/4937|
+|WGS 84 longitude-latitude | 2D | Global | http://www.opengis.net/def/crs/OGC/1.3/CRS84|
+|WGS 84 longitude-latitude-height | 3D | Global | http://www.opengis.net/def/crs/OGC/0/CRS84h |
+|WGS 84 / Pseudo-Mercator | 2D | Global | http://www.opengis.net/def/crs/EPSG/9.9.1/3857|
 
 For backwards compatibility, an older method of specifying CRS in the headers of requests is retained as a deprecated method. APIs that already support the (deprecated) header method can add support for the parameter method while still supporting the header method for a certain period.  Supporting both the new method (using parameters) and the old (using headers) is trivial. 
 
@@ -240,7 +248,7 @@ Request and response may be based on another coordinate reference system. This a
 |HTTP header|Value|Explanation|
 |-|-|-|
 |`Content-Crs`|EPSG:4326|WGS84, global|
-|`Content-Crs`|EPSG:3857|Web Mercator, global|
+|`Content-Crs`|EPSG:3857|Pseudo Mercator, global|
 |`Content-Crs`|EPSG:4258|ETRS89, European|
 |`Content-Crs`|EPSG:28992|RD/Amersfoort, Dutch|
 
@@ -249,7 +257,7 @@ The preferred CRS for the geometry in the response (response body) is specified 
 |HTTP header|Value|Explanation|
 |-|-|-|
 |`Accept-Crs`|EPSG:4326|WGS84, global|
-|`Accept-Crs`|EPSG:3857|Web Mercator, global|
+|`Accept-Crs`|EPSG:3857|Pseudo Mercator, global|
 |`Accept-Crs`|EPSG:4258|ETRS89, European|
 |`Accept-Crs`|EPSG:28992|RD/Amersfoort, Dutch|
 
