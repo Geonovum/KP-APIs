@@ -2,13 +2,13 @@
 
 <p class='warning'>This extension is in development and may be modified at any time.</p>
 
-REST APIs for handling geospatial features may provide spatial filtering. There is a distinction between retrieving geometries in the result (response) and supplying a spatial filter in the call (request). When requesting parcel information, users do not necessarily require the geometry. A name or parcel ID may be sufficient.
+REST APIs for handling geospatial features may provide spatial filtering. There is a distinction between retrieving geometries in the result (response) and supplying a spatial filter in the call (request). When requesting information, for example about cadastral parcels, users do not necessarily require the geometry. A name or parcel ID may be sufficient.
 
-[[rfc7946]] describes the GeoJSON format, including a convention for describing 2D geometric objects in WGS84 (EPSG:4326). In this extension we adopt the conventions for describing geometry objects. The convention is extended to allow alternative projections.  
+[[rfc7946]] describes the GeoJSON format, including a convention for describing 2D geometric objects in WGS84 (EPSG:4326). In this extension we adopt the GeoJSON conventions for describing geometry objects. The convention is extended to allow alternative projections.  
 
 <div class="rule" id="api-34">
   <p class="rulelab"><strong>API-34</strong>: Support GeoJSON for geospatial APIs</p>
-  <p>For representing 2D geometric information in an API, preferably use the convention for describing geometry as defined in the GeoJSON format [[rfc7946]]. Support GeoJSON as described in OGC API Features [Requirements class 8.3](https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geojson) [[ogcapi-features-1]]. </p>
+  <p>For representing 2D geometric information in an API, preferably use the convention for describing geometry as defined in the GeoJSON format [[rfc7946]]. Support GeoJSON as described in OGC API Features <a href="https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geojson">Requirements class 8.3</a> [[ogcapi-features-1]]. </p>
 </div>
 
 <aside class="note">
@@ -22,7 +22,7 @@ GeoJSON does not cover all use cases. For example, it is not possible to store c
 
 ### Call (requests)
 
-A simple spatial filter can be supplied as a bounding box. This is a common way of filtering spatial data and can be supplied as a parameter: 
+A simple spatial filter can be supplied as a bounding box. This is a common way of filtering spatial data and can be supplied as a parameter. We adopt the OGC API Features [[ogcapi-features-1]] bounding box parameter:
 
 <div class="rule" id="api-36">
   <p class="rulelab"><strong>API-36</strong>: Supply a simple spatial filter as a bounding box parameter</p>
@@ -34,9 +34,9 @@ A simple spatial filter can be supplied as a bounding box. This is a common way 
 </div>
 
 <aside class="note">
-Spatial filtering is an extensive topic. There are use cases for geospatial operators like <code>intersects</code> or <code>within</code>. Geospatial filters can be large and complex, which sometimes causes problems since `GET` may not have a payload (although supported by some clients). 
+Spatial filtering is an extensive topic. There are use cases for geospatial operators like <code>intersects</code> or <code>within</code>. Geospatial filters can be large and complex, which sometimes causes problems since <code>GET</code> may not have a payload (although supported by some clients). 
 
-A new API Design Rules extension on filtering will address spatial as well as non-spatial filtering.
+More complex spatial filtering is not addressed in this extension. A new API Design Rules extension on filtering will address spatial as well as non-spatial filtering. [[ogcapi-features-3]] will provide input for this.
 </aside>
 
 <div class="rule" id="api-39">
@@ -103,7 +103,7 @@ For a detailed description of CRSs see [[hr-crs]].
 
 A client shall be able to determine a list of CRSs supported by an API.
 
-<div class="note" id="api-xx">
+<div class="rule" id="api-xx">
   <p class="rulelab"><strong>API-xx</strong>: Provide a list of all CRSs that are supported by the API</p>
   <pre>
   // GET /api/v1/collections:
@@ -123,7 +123,7 @@ If a feature collection supports a different set of CRSs than the set defined in
 
 For clients, it may be helpful to know the CRS identifier that may be used to retrieve features from that collection without the need to apply a CRS transformation.
 
-<div class="note" id="api-xx">
+<div class="rule" id="api-xx">
   <p class="rulelab"><strong>API-xx</strong>: Make known in which CRS the geospatial data is stored.</p>    
 </div>
 
@@ -131,13 +131,13 @@ If all features in a feature collection are stored using a particular CRS, the p
 
 ### CRS negotiation
 
-The default CRS for GeoJSON and for OGC API Features is WGS84 with coordinate order longitude-latitude, also referred to as "CRS84". This is the global CRS that can be applied world-wide. Due the datum and the tectonic displacements it is not accurate enough for local coordinate reference systems like ETRS89 (EPSG:4258, European), or RD/Amersfoort (EPSG:28992, Dutch). For more information about coordinate reference systems, read the Geonovum guidelines on CRS [[hr-crs]].
+The default CRS for GeoJSON and for OGC API Features is WGS84 with coordinate order longitude-latitude, also referred to as "CRS84". This is the global CRS that can be applied world-wide. Due to the datum and the tectonic displacements it is not accurate enough for local coordinate reference systems like ETRS89 (EPSG:4258, European), or RD/Amersfoort (EPSG:28992, Dutch). For more information about coordinate reference systems, read the Geonovum guidelines on CRS [[hr-crs]].
 
 <aside class="note" title="Convention">
 When referring to a coordinate reference system using its code in the rest of this chapter, this is meant to refer to both the 2D and 3D variant of the system in question. E.g. when "RD" is mentioned, this should be taken to mean "RD or RD-NAP"; when WGS84 is mentioned, this should be taken to mean "WGS84 or WGS84h". 
 </aside>
 
-Since most client-side mapping libraries use WGS84, the W3C/OGC working group *Spatial Data on the Web* recommends to use this as the default coordinate reference system. Thus, spatial data can be mapped without any complex transformations. The API strategy caters for this supporting not only ETRS89 and RD/Amersfoort, but also WGS84 and Pseudo Mercator (EPSG:3857).
+Since most client-side mapping libraries use WGS84, the W3C/OGC [Spatial Data on the Web](https://www.w3.org/2021/sdw/) working group recommends to use this as the default coordinate reference system. Thus, spatial data can be mapped without any complex transformations. The API strategy caters for this supporting not only ETRS89 and RD/Amersfoort, but also WGS84 and Pseudo Mercator (EPSG:3857).
 
 The *default* CRS, i.e. the CRS which is assumed when not specified by either the API or the client, is CRS84, in line with GeoJSON and OGC API Features. 
 
@@ -153,8 +153,6 @@ In addition, support for ETRS89 and/or RD is required.
   <p>General usage of the European ETRS89 coordinate reference system (CRS) or RD/NAP is preferred, but is not the default CRS. Hence, one of these CRSs has to be explicitly included in each request when one of these CRSs is desired in the response or used in a request.</p>
 </div>
 
-The CRS can be specified for request and response individually using parameters or headers.
-
 The guiding principles for CRS support:
 
 - Source systems record coordinates as they enter the system (legal context);
@@ -165,6 +163,8 @@ The guiding principles for CRS support:
 - Presentation depending on context (e.g. user requirements);
 - Exchange format (notation) ETRS89 and WGS84 longitude latitude in decimal degrees: DD.ddddddddd (for example: `5.962376256, 52.255023450`)
 - Exchange format (notation) RD and Pseudo Mercator X Y in meters: `195427.5200 311611.8400`
+
+The CRS can be specified for request and response individually using parameters or headers.
 
 <div class="rule" id="api-41">
   <p class="rulelab"><strong>API-41</strong>: Pass the coordinate reference system (CRS) of the geometry in a request parameter as a parameter</p>
@@ -219,10 +219,6 @@ Use the following URIs to specify the CRS:
 |WGS 84 longitude-latitude-height | 3D | Global | http://www.opengis.net/def/crs/OGC/0/CRS84h |
 |WGS 84 / Pseudo-Mercator | 2D | Global | http://www.opengis.net/def/crs/EPSG/9.9.1/3857|
 
-For backwards compatibility, an older method of specifying CRS in the headers of requests is retained as a deprecated method. APIs that already support the (deprecated) header method can add support for the parameter method while still supporting the header method for a certain period.  Supporting both the new method (using parameters) and the old (using headers) is trivial. 
-
-If a client specifies CRS using a parameter AND in the header, the parameter takes precedence and the CRS in the header is ignored.
-
 <aside class="note" title="CRS support and GeoJSON">
 Officially, WGS84 lat-long (CRS84) is the only CRS allowed in GeoJSON. However, GeoJSON does state that using another CRS is allowed, if this is agreed between provider and consumer of the data. The API functionality described above, to negotiate the CRS between client and server, can be viewed as such an agreement. Many GIS clients can deal with GeoJSON in other CRS than CRS84.
 
@@ -235,7 +231,31 @@ In addition, the Geonovum CRS guidelines [[hr-crs]] describe [how ETRS89 can be 
 
 If the requested CRS is not the same as the storage CRS, a coordinate transformation is needed. Performance is increased when the dataset is transformed in multiple CRSs and stored in advance, and not transformed at the moment the request has arrived. In case of a transformation between RD and ETRS89, it is highly recommended that this transformation uses the latest version of the procedure of [RDNAPTRANS™](https://docs.geostandaarden.nl/crs/cv-hr-crs-20211125/#transformatie-en-conversie-tussen-rd-nap-en-etrs89). This is certified software to transform between these coordinate reference systems.
 
+### INSPIRE requirements
+[INSPIRE](https://inspire.ec.europa.eu/) is a European directive that forces data providers of geospatial datasets that belong to one of the 34 INSPIRE themes to publish the metadata, a viewservice and a download service. These services can also be APIs.
+
+For the OGC-API Features, a special working group has worked on a [document](https://github.com/INSPIRE-MIF/gp-ogc-api-features/blob/master/spec/oapif-inspire-download.md) that proposes a technical approach for implementing the requirements set out in the INSPIRE Implementing Rules for Network Services [[IRs for NS](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02009R0976-20141231&from=EN)] based on the newly adopted [OGC API - Features standard](http://docs.opengeospatial.org/is/17-069r3/17-069r3.html).
+
+The extra requirements stated in this document concern:
+
+- [links to predefined data set download](https://github.com/INSPIRE-MIF/gp-ogc-api-features/blob/master/spec/oapif-inspire-download.md#81-requirements-class-inspire-pre-defined-data-set-download-oapif--)
+- [multilinguality](https://github.com/INSPIRE-MIF/gp-ogc-api-features/blob/master/spec/oapif-inspire-download.md#82-requirements-class-inspire-multilinguality-)
+- [GeoJSON](https://github.com/INSPIRE-MIF/gp-ogc-api-features/blob/master/spec/oapif-inspire-download.md#83-requirements-class-inspire-oapif-geojson-)
+- [link to bulk download](https://github.com/INSPIRE-MIF/gp-ogc-api-features/blob/master/spec/oapif-inspire-download.md#84-requirements-class-inspire-bulk-download-)
+- [INSPIRE-CRS](https://github.com/INSPIRE-MIF/gp-ogc-api-features/blob/master/spec/oapif-inspire-download.md#85-requirements-class-inspire-crs-)
+- [describing encoding](https://github.com/INSPIRE-MIF/2017.2/blob/master/GeoJSON/geojson-encoding-rule.md#inspire-requirements-for-encoding-rules)
+- [metadata links](https://github.com/INSPIRE-MIF/gp-ogc-api-features/blob/master/spec/oapif-inspire-download.md#metadata-elements-of-the-data-set)
+
+These requirements should be met when an API serves features for an INSPIRE dataset.
+
+### Deprecated CRS negotiation method
+
 <div class="note" id="api-41-dep">
+
+For backwards compatibility, an older method of specifying CRS in the headers of requests is retained as a deprecated method. APIs that already support the (deprecated) header method can add support for the parameter method while still supporting the header method for a certain period.  Supporting both the new method (using parameters) and the old (using headers) is trivial. 
+
+If a client specifies CRS using a parameter AND in the header, the parameter takes precedence and the CRS in the header is ignored.
+
   <p><strong>API-41-dep</strong>: Pass the coordinate reference system (CRS) of the request and the response in the headers</p>
 
   <p><strong>Deprecated</strong></p>
@@ -269,20 +289,3 @@ The preferred CRS for the geometry in the response (response body) is specified 
 <p>&nbsp;</p>
 
 </div>
-
-### INSPIRE requirements
-[INSPIRE](https://inspire.ec.europa.eu/) is a European directive that forces data providers of geospatial datasets that belong to one of the 34 INSPIRE themes to publish the metadata, a viewservice and a download service. These services can also be APIs.
-
-For the OGC-API Features, a special working group has worked on a [document](https://github.com/INSPIRE-MIF/gp-ogc-api-features/blob/master/spec/oapif-inspire-download.md) that proposes a technical approach for implementing the requirements set out in the INSPIRE Implementing Rules for Network Services [[IRs for NS](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02009R0976-20141231&from=EN)] based on the newly adopted [OGC API - Features standard](http://docs.opengeospatial.org/is/17-069r3/17-069r3.html).
-
-The extra requirements stated in this document concern:
-
-- [links to predefined data set download](https://github.com/INSPIRE-MIF/gp-ogc-api-features/blob/master/spec/oapif-inspire-download.md#81-requirements-class-inspire-pre-defined-data-set-download-oapif--)
-- [multilinguality](https://github.com/INSPIRE-MIF/gp-ogc-api-features/blob/master/spec/oapif-inspire-download.md#82-requirements-class-inspire-multilinguality-)
-- [GeoJSON](https://github.com/INSPIRE-MIF/gp-ogc-api-features/blob/master/spec/oapif-inspire-download.md#83-requirements-class-inspire-oapif-geojson-)
-- [link to bulk download](https://github.com/INSPIRE-MIF/gp-ogc-api-features/blob/master/spec/oapif-inspire-download.md#84-requirements-class-inspire-bulk-download-)
-- [INSPIRE-CRS](https://github.com/INSPIRE-MIF/gp-ogc-api-features/blob/master/spec/oapif-inspire-download.md#85-requirements-class-inspire-crs-)
-- [describing encoding](https://github.com/INSPIRE-MIF/2017.2/blob/master/GeoJSON/geojson-encoding-rule.md#inspire-requirements-for-encoding-rules)
-- [metadata links](https://github.com/INSPIRE-MIF/gp-ogc-api-features/blob/master/spec/oapif-inspire-download.md#metadata-elements-of-the-data-set)
-
-These requirements should be met when an API serves features for an INSPIRE dataset.

@@ -337,6 +337,14 @@ var respecConfig =
       publisher: "Open Geospatial Consortium",
       version: "1.0"
     },
+    "ogcapi-features-3": {
+      href: "http://docs.ogc.org/DRAFTS/19-079r1.html",
+      title: "OGC API - Features - Part 3: Filtering",
+      editors: ["Panagiotis (Peter) A. Vretanos", "Clemens Portele"],
+      status: "Draft",
+      publisher: "Open Geospatial Consortium",
+      version: "1.0.0-rc.1"
+    },
      "JSON-FG": {
       href: "https://docs.ogc.org/DRAFTS/21-045.html",
       title: "OGC Features and Geometries JSON - Part 1: Core",
