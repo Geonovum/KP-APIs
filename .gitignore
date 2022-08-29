@@ -2,3 +2,7 @@ __pycache__
 *.sqlite3
 *.code-workspace
 .DS_Store
+access_log
+agent_log
+error_log
+referer_log
