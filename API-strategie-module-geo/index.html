@@ -30,17 +30,17 @@
   </head>
   <!-- HTML-Body ================================================================================ -->
   <body>
-    <section id="abstract">
-      <p>The API strategy consists of a <em>core</em> &mdash; a generic set of rules for all government APIs &mdash; and various <em>modules</em> that only pertain to a specific application.</p>
-      <p>The Geospatial module is described in this document. This module describes rules for geospatial content and functions in APIs.</p>
-    </section>
+    <section id="abstract" data-format="markdown" data-include="abstract.md"></section>
     <section id="sotd">
-      <p>The Geospatial module is stable as of August 2022, but not yet reviewed or approved.</p>
+      <p>The Geospatial module is considered stable by the authors as of August 2022, but not yet externally reviewed or approved.</p>
     </section>
     <!-- vanaf hier per hoofdstuk een sectie of een div in het document ======================== -->
     <!-- Secties komen in de inhoudsopgave div's niet ========================================== -->
     <!-- Secties hebben verplicht <h2> tags, div's niet ======================================== -->
-    <section class="informative" data-format="markdown" data-include="introduction.md"></section>
-    <section class="informative" data-format="markdown" data-include="mod-geospatial.md"></section>
+    <section data-format="markdown" data-include="introduction.md"></section>
+    <section data-format="markdown" data-include="request-response.md"></section>
+    <section data-format="markdown" data-include="crs.md"></section>
+    <section data-format="markdown" data-include="inspire.md"></section>
+    <section class="appendix" data-format="markdown" data-include="appendix.md"></section>
   </body>
 </html>

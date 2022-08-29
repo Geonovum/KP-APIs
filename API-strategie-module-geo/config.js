@@ -42,7 +42,7 @@ var respecConfig =
   // publishDate: "2021-10-13",
   //previousPublishDate: "2021-06-28",
   //previousMaturity: "GN-CV",
-  edDraftURI: "https://geonovum.github.io/KP-APIs/API-strategie-module-geo/",
+  edDraftURI: "https://geonovum.github.io/KP-APIs/API-strategie-mod-geo/",
   editors:
   [
     {
@@ -79,7 +79,7 @@ var respecConfig =
       companyURL: "https://www.kadaster.nl",
     },
   ],
-  shortName: "API-Strategie-module-geo",
+  shortName: "API-Strategie-mod-geo",
   github: "https://github.com/geonovum/KP-APIs/",
   issueBase: "https://github.com/geonovum/KP-APIs/issues/",
   localBiblio: {
