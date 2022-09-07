@@ -15,16 +15,21 @@ One should secure all APIs assuming they can be accessed from any location on th
 
 <div class="rule" id="api-11">
   <p class="rulelab"><strong>API-11</strong>: Secure connections using TLS</p>
+  <p>Statement:</p>
   <p>Secure connections using TLS following the latest NCSC guidelines [[NCSC.TLS]].</p>
+  <p>Implications:</p>
   <p>Since the connection is always secured, the access method can be straightforward. This allows the application of basic access tokens instead of encrypted access tokens.</p>
 </div>
 
-Even when using TLS-based secured connections information in URIs is not secured. URIs can be cached and logged outside of the servers controlled by clients and servers. Any information contained in them should therfor be considered readable by anyone with access to the netwerk being used (in case of the internet the whole world) and MUST NOT contain any sensitive information. Neither client secrets used for authentication, privacy sensitive informations suchs as BSNs nor any other information which should not be shared. Be aware that queries (anything after the '?' in a URI) are also part of an URI.
-
 <div class="rule" id="api-58">
   <p class="rulelab"><strong>API-58</strong>: No sensitive information in URIs</p>
-  <p>Do not put any sensitive information in URIs</p>
-  <p>Even when the connection is secure URIs can be cached and logged, in systems outside the control of client and/or server.</p>
+  <p>Statement:</p>
+  <p>Do not put any sensitive information in URIs - Use the POST or QUERY HTTP operation instead.</p>
+  <p>Rationale:</p>
+  <p>Even when using TLS-based secured connections information in URIs is not secured. URIs can be cached and logged outside of the servers controlled by clients and servers. Any information contained in them should therefore be considered readable by anyone with access to the network being used (in case of the internet the whole world) and MUST NOT contain any sensitive information. Neither client secrets used for authentication, privacy sensitive information such as BSNs nor any other information which should not be shared. Be aware that queries (anything after the '?' in a URI) are also part of an URI.</p>
+  <p>Implications:</p>
+  <p>The implication of this statement is that simple APIs that use the GET operation in combination with query parameters are not allowed in combination with sensitive information. Instead of this pattern we recommend the use of the POST operation as described in [Haal Centraal issue #910](https://github.com/VNG-Realisatie/Haal-Centraal-BRP-bevragen/issues/910). The use of POST instead of GET should mitigate the issue's regarding logging, caching and proxying. However the POST operation is not safe or idempotent.
+Other options are the use of the QUERY operation, however this RFC is still a draft at this moment. Use of the POST and or QUERY operations will also mitigate the problem regarding complex / large queries that don't fit in the URI.</p>
 </div>
 
 ### API access patterns
