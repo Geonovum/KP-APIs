@@ -1,4 +1,96 @@
-# Coordinate Reference System (CRS)
+## Geospatial
+
+<p class='warning'>This extension is in development and may be modified at any time.</p>
+
+REST APIs for handling geospatial features may provide spatial filtering. There is a distinction between retrieving geometries in the result (response) and supplying a spatial filter in the call (request). When requesting information, for example about cadastral parcels, users do not necessarily require the geometry. A name or parcel ID may be sufficient.
+
+[[rfc7946]] describes the GeoJSON format, including a convention for describing 2D geometric objects in WGS84 (EPSG:4326). In this extension we adopt the GeoJSON conventions for describing geometry objects. The convention is extended to allow alternative projections.  
+
+<div class="rule" id="api-34">
+  <p class="rulelab"><strong>API-34</strong>: Support GeoJSON for geospatial APIs</p>
+  <p>For representing 2D geometric information in an API, preferably use the convention for describing geometry as defined in the GeoJSON format [[rfc7946]]. Support GeoJSON as described in OGC API Features <a href="https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geojson">Requirements class 8.3</a> [[ogcapi-features-1]]. </p>
+</div>
+
+<aside class="note">
+GeoJSON does not cover all use cases. For example, it is not possible to store circular arc geometries or solids in GeoJSON. In such cases, there are several valid options: 
+
+- Use alternative standardized formats for geospatial data, such as [WKT](https://www.w3.org/TR/sdw-bp/#dfn-well-known-text-(wkt)) or its binary equivalent WKB; GML [iso-19136-2007]; or in future [OGC JSON-FG](https://docs.ogc.org/DRAFTS/21-045.html) (currently a draft standard). 
+- When supporting GML, do this according to OGC API Features [Requirements class 8.4](https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geography_markup_language_gml_simple_features_profile_level_0) for GML Simple Features level 0, or [Requirements class 8.4](https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geography_markup_language_gml_simple_features_profile_level_2) for GML Simple Features level 2. 
+- Use a workaround, e.g. convert circular lines / arcs to regular linestrings. 
+
+</aside>
+
+### Call (requests)
+
+A simple spatial filter can be supplied as a bounding box. This is a common way of filtering spatial data and can be supplied as a parameter. We adopt the OGC API Features [[ogcapi-features-1]] bounding box parameter:
+
+<div class="rule" id="api-36">
+  <p class="rulelab"><strong>API-36</strong>: Supply a simple spatial filter as a bounding box parameter</p>
+  <p>Support the <a href="https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_bbox">OGC API Features part 1 <code>bbox</code> parameter</a> in conformance to the standard.
+  <pre>
+   GET /api/v1/panden?bbox=5.4,52.1,5.5,53.2
+  </pre>
+  </p>
+</div>
+
+<aside class="note">
+Spatial filtering is an extensive topic. There are use cases for geospatial operators like <code>intersects</code> or <code>within</code>. Geospatial filters can be large and complex, which sometimes causes problems since <code>GET</code> may not have a payload (although supported by some clients). 
+
+More complex spatial filtering is not addressed in this extension. A new API Design Rules extension on filtering will address spatial as well as non-spatial filtering. [[ogcapi-features-3]] will provide input for this.
+</aside>
+
+<div class="rule" id="api-39">
+  <p class="rulelab"><strong>API-39</strong>: Place results of a global spatial query in the relevant geometric context</p>
+  <p>In case of a global query <code>/api/v1/_zoek</code>, results should be placed in the relevant geometric context, because results from different collections are retrieved. Express the name of the collection to which the results belongs in the singular form using the property <code>type</code>. For example:</p>
+  <pre>
+  // POST /api/v1/_zoek:
+  {
+    "currentPage": 1,
+    "nextPage": 2,
+    "pageSize": 10,
+    "_embedded": {
+      "items": [
+        {
+          "type": "enkelbestemming",
+          "_links": {
+            "self": {
+              "href": "https://api.example.org/v1/enkelbestemmingen/1234"
+            }
+          }
+        },
+        {
+          "type": "dubbelbestemming",
+          "_links": {
+            "self": {
+              "href": "https://api.example.org/v1/dubbelbestemmingen/8765"
+            }
+          }
+        }
+      ]
+    }
+  }
+  </pre>
+</div>
+
+### Result (response)
+
+In a JSON API the geometry is returned as a GeoJSON Geometry object.
+
+<div class="rule" id="api-35">
+  <p class="rulelab"><strong>API-35</strong>: Embed GeoJSON Geometry object as part of the JSON resource</p>
+  <p>When a JSON (<code>application/json</code>) response contains a geometry, represent it in the same way as the <code>Geometry</code> object of GeoJSON.</p>
+  <pre>
+  {
+    "naam": "Paleis Soestdijk",
+    "locatie":  {
+      "type": "Point",
+      "coordinates": [5.2795,52.1933]
+    }
+  }
+  </pre>
+</div>
+
+### Coordinate Reference System (CRS)
 
 A Coordinate Reference System (CRS) or Spatial Reference System (SRS) is a framework to measure locations on the earth surface as coordinates. Geometries consist of coordinates. To be able to measure the geometry's coordinates on the earth surface a CRS is required in conjunction with the coordinates.
 
@@ -7,7 +99,7 @@ SRIDs may refer to different standards, for example European Petroleum Survey Gr
 
 For a detailed description of CRSs see [[hr-crs]].
 
-## CRS discovery
+### CRS discovery
 
 A client shall be able to determine a list of CRSs supported by an API.
 
@@ -37,7 +129,7 @@ For clients, it may be helpful to know the CRS identifier that may be used to re
 
 If all features in a feature collection are stored using a particular CRS, the property `storageCRS` shall be used to specify this CRS, in accordance with [OGC API Features - part 2 - 6.2.2 Storage CRS](https://docs.ogc.org/is/18-058/18-058.html#_storage_crs). The value of this property shall be one of the CRSs supported by the API and advertised in the CRS list. If relevant, the epoch should also be specified, using the `storageCRSCoordinateEpoch` property. For an explanation of the use of epochs with CRS, see the CRS Guidelines [[hr-crs]]. 
 
-## CRS negotiation
+### CRS negotiation
 
 The default CRS for GeoJSON and for OGC API Features is WGS84 with coordinate order longitude-latitude, also referred to as "CRS84". This is the global CRS that can be applied world-wide. Due to the datum and the tectonic displacements it is not accurate enough for local coordinate reference systems like ETRS89 (EPSG:4258, European), or RD/Amersfoort (EPSG:28992, Dutch). For more information about coordinate reference systems, read the Geonovum guidelines on CRS [[hr-crs]].
 
@@ -135,6 +227,65 @@ In addition, the Geonovum CRS guidelines [[hr-crs]] describe [how ETRS89 can be 
 [[JSON-FG]] is a proposed standard extension of GeoJSON that adds CRS support.
 </aside>
 
-## CRS transformation
+### CRS transformation
 
 If the requested CRS is not the same as the storage CRS, a coordinate transformation is needed. Performance is increased when the dataset is transformed in multiple CRSs and stored in advance, and not transformed at the moment the request has arrived. In case of a transformation between RD and ETRS89, it is highly recommended that this transformation uses the latest version of the procedure of [RDNAPTRANS™](https://docs.geostandaarden.nl/crs/cv-hr-crs-20211125/#transformatie-en-conversie-tussen-rd-nap-en-etrs89). This is certified software to transform between these coordinate reference systems.
+
+### INSPIRE requirements
+[INSPIRE](https://inspire.ec.europa.eu/) is a European directive that forces data providers of geospatial datasets that belong to one of the 34 INSPIRE themes to publish the metadata, a viewservice and a download service. These services can also be APIs.
+
+For the OGC-API Features, a special working group has worked on a [document](https://github.com/INSPIRE-MIF/gp-ogc-api-features/blob/master/spec/oapif-inspire-download.md) that proposes a technical approach for implementing the requirements set out in the INSPIRE Implementing Rules for Network Services [[IRs for NS](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02009R0976-20141231&from=EN)] based on the newly adopted [OGC API - Features standard](http://docs.opengeospatial.org/is/17-069r3/17-069r3.html).
+
+The extra requirements stated in this document concern:
+
+- [links to predefined data set download](https://github.com/INSPIRE-MIF/gp-ogc-api-features/blob/master/spec/oapif-inspire-download.md#81-requirements-class-inspire-pre-defined-data-set-download-oapif--)
+- [multilinguality](https://github.com/INSPIRE-MIF/gp-ogc-api-features/blob/master/spec/oapif-inspire-download.md#82-requirements-class-inspire-multilinguality-)
+- [GeoJSON](https://github.com/INSPIRE-MIF/gp-ogc-api-features/blob/master/spec/oapif-inspire-download.md#83-requirements-class-inspire-oapif-geojson-)
+- [link to bulk download](https://github.com/INSPIRE-MIF/gp-ogc-api-features/blob/master/spec/oapif-inspire-download.md#84-requirements-class-inspire-bulk-download-)
+- [INSPIRE-CRS](https://github.com/INSPIRE-MIF/gp-ogc-api-features/blob/master/spec/oapif-inspire-download.md#85-requirements-class-inspire-crs-)
+- [describing encoding](https://github.com/INSPIRE-MIF/2017.2/blob/master/GeoJSON/geojson-encoding-rule.md#inspire-requirements-for-encoding-rules)
+- [metadata links](https://github.com/INSPIRE-MIF/gp-ogc-api-features/blob/master/spec/oapif-inspire-download.md#metadata-elements-of-the-data-set)
+
+These requirements should be met when an API serves features for an INSPIRE dataset.
+
+### Deprecated CRS negotiation method
+
+<div class="note" id="api-41-dep">
+
+For backwards compatibility, an older method of specifying CRS in the headers of requests is retained as a deprecated method. APIs that already support the (deprecated) header method can add support for the parameter method while still supporting the header method for a certain period.  Supporting both the new method (using parameters) and the old (using headers) is trivial. 
+
+If a client specifies CRS using a parameter AND in the header, the parameter takes precedence and the CRS in the header is ignored.
+
+  <p><strong>API-41-dep</strong>: Pass the coordinate reference system (CRS) of the request and the response in the headers</p>
+
+  <p><strong>Deprecated</strong></p>
+  <p>The coordinate reference system (CRS) for both the request and the response are passed as part of the request headers and response headers. In case this header is missing, send the HTTP status code <code>412 Precondition Failed</code>.</p>
+
+The following headers are purely meant for negotiation between the client and the server. Depending on the application, the request not only contains geometries but also specific meta data, e.g. the original realization including the collection date.
+
+Request and response may be based on another coordinate reference system. This applies the HTTP-mechanism for content negotiation. The CRS of the geometry in the request (request body) is specified using the header `Content-Crs`.
+
+|HTTP header|Value|Explanation|
+|-|-|-|
+|`Content-Crs`|EPSG:4326|WGS84, global|
+|`Content-Crs`|EPSG:3857|Pseudo Mercator, global|
+|`Content-Crs`|EPSG:4258|ETRS89, European|
+|`Content-Crs`|EPSG:28992|RD/Amersfoort, Dutch|
+
+The preferred CRS for the geometry in the response (response body) is specified using the header `Accept-Crs`.
+
+|HTTP header|Value|Explanation|
+|-|-|-|
+|`Accept-Crs`|EPSG:4326|WGS84, global|
+|`Accept-Crs`|EPSG:3857|Pseudo Mercator, global|
+|`Accept-Crs`|EPSG:4258|ETRS89, European|
+|`Accept-Crs`|EPSG:28992|RD/Amersfoort, Dutch|
+
+<div class="rule" id="api-45">
+  <p class="rulelab"><strong>API-45</strong>: Use content negotiation to serve different CRSs</p>
+  <p>The CRS for the geometry in the response body is defined using the <code>Accept-Crs</code> header. In case the API does not support the requested CRS, send the HTTP status code <code>406 Not Acceptable</code>.</p>
+</div>
+
+<p>&nbsp;</p>
+
+</div>
