@@ -70,7 +70,7 @@ var respecConfig =
     },
     {
       name: "George Mathijssen",
-      company: "Sweco Nederland B.V.",
+      company: "Sweco",
       companyURL: "https://www.sweco.nl",
     },
     {
