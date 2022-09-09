@@ -18,30 +18,29 @@ KP-APIs, en is ingedeeld volgens onderstaande tabel:
 In onderstaande tabel de hoofdinrichting van de mappenstructuur in de GitHub
 Repository
 
-| Repository | SubMap                                  | Bestand    | Opmerking                          |
-|------------|-----------------------------------------|------------|------------------------------------|
-| KP-APIs    |                                         |            | De Hoofdmap                        |
-| ""         |                                         | index.html | index.html, eigenaar Redacteur     |
-| ""         |                                         | config.js  | config.js, eigendaar Redacteur     |
-| ""         |                                         | README.md  | Standaard readme bestand           |
-| ""         |                                         | HowTo.md   | Dit bestand                        |
-| ""         | media                                   |            | De Submap voor styling en plaatjes |
-| ""         | ""                                      | style.css  | style.css, eigendaar Redacteur     |
-| ""         | Stuurgroep                              |            | Submap voor Stuurgroep             |
-| ""         | Werkgroep API Strategie                 |            | Submap voor Werkgroep              |
-| ""         | Werkgroep API Architectuur              |            | Submap voor Werkgroep              |
-| ""         | Werkgroep API Authenticatie Autorisatie |            | Submap voor Werkgroep              |
-| ""         | Werkgroep API Communicatie en Beleid    |            | Submap voor Werkgroep              |
-| ""         | Werkgroep API Gebruikwerswensen         |            | Submap voor Werkgroep              |
+| Repository | SubMap                            | Bestand    | Opmerking                          |
+| ---------- | --------------------------------- | ---------- | ---------------------------------- |
+| KP-APIs    |                                   |            | De Hoofdmap                        |
+| ""         |                                   | index.html | index.html, eigenaar Redacteur     |
+| ""         |                                   | config.js  | config.js, eigendaar Redacteur     |
+| ""         |                                   | README.md  | Standaard readme bestand           |
+| ""         |                                   | HowTo.md   | Dit bestand                        |
+| ""         | media                             |            | De Submap voor styling en plaatjes |
+| ""         | ""                                | style.css  | style.css, eigendaar Redacteur     |
+| ""         | Stuurgroep                        |            | Submap voor Stuurgroep             |
+| ""         | Werkgroep API strategie en beleid |            | Submap voor Werkgroep              |
+| ""         | Werkgroep API architectuur        |            | Submap voor Werkgroep              |
+| ""         | Werkgroep API beveiliging         |            | Submap voor Werkgroep              |
+| ""         | Werkgroep API design visie        |            | Submap voor Werkgroep              |
+| ""         | Werkgroep API design rules        |            | Submap voor Werkgroep              |
 
 In de Werkgroepmappen is de structuur redelijk vrij, maar omdat het op te
 leveren product (één of meer Markdown bestanden) wordt opgehangen in de centrale
 kapstok, moet we wel een paar afspraken maken.
 
-Elke werkgroep werkt aan een hoofdstuk in het hoofddocument. De bestandsnaam
-staat al in de Werkgroepmap, en mag niet zo maar gewijzigd worden. Mocht het wel
-gewijzigd moeten worden, dan in overleg met de Redacteur. Afbeeldigen worden
-neergezet in de submap *media*, die in elke werkgroep map is aangemaakt.
+Elke werkgroep werkt aan één of meerdere modulen/documenten. 
+
+De bestandsnamen van de document en modulen staat al in de Werkgroepmappen, en kunnen niet zo maar gewijzigd worden. Mocht het wel gewijzigd moeten worden, dan in overleg met de Redacteur. Afbeeldigen worden neergezet in de submap *media*, die in elke werkgroep map is aangemaakt.
 
 Verplichte bestanden en mappen in de werkgroepmap:
 
