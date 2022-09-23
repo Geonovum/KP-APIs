@@ -11,11 +11,16 @@ For a detailed description of CRSs see [[hr-crs]].
 
 A client shall be able to determine a list of CRSs supported by an API.
 
-<div class="rule" id="api-xx">
-  <p class="rulelab"><strong>API-xx</strong>: Provide a list of all CRSs that are supported by the API</p>
+<div class="rule" id="api-geo-5">
+  <p class="rulelab"><strong>API-GEO-5</strong>: Provide a list of all CRSs that are supported by the API</p>
   <pre>
-  // GET /api/v1/collections:
-  </pre>
+  // GET /api/v1/collections:</pre>
+  <h4 class="rulelab">How to test</h4>
+<ul>
+  <li>Send a request to the <code>/collections</code> endpoint.</li>
+  <li>Validate that the returned document contains a <code>collections</code> object with the <code>crs</code> property.</li>
+  <li>Validate that the <code>crs</code> property contains an array with CRS references in the form of URIs.</li>
+</ul>
 </div>
 
 According to [OGC API Features - part 1 - 7.13. Feature collections](https://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_collections_) an OGC API Features API shall provide a GET operation on the `/collections` endpoint which returns a collections object.
@@ -31,8 +36,13 @@ If a feature collection supports a different set of CRSs than the set defined in
 
 For clients, it may be helpful to know the CRS identifier that may be used to retrieve features from that collection without the need to apply a CRS transformation.
 
-<div class="rule" id="api-xx">
-  <p class="rulelab"><strong>API-xx</strong>: Make known in which CRS the geospatial data is stored.</p>    
+<div class="rule" id="api-geo-6">
+  <p class="rulelab"><strong>API-GEO-6</strong>: Make known in which CRS the geospatial data is stored.</p>
+  <h4 class="rulelab">How to test</h4>
+  <ul>
+    <li>Request each collection in the <code>/collections</code> endpoint.</li>
+    <li>Validate that each returned collection contains the <code>storageCRS</code> property.</li>
+  </ul>
 </div>
 
 If all features in a feature collection are stored using a particular CRS, the property `storageCRS` shall be used to specify this CRS, in accordance with [OGC API Features - part 2 - 6.2.2 Storage CRS](https://docs.ogc.org/is/18-058/18-058.html#_storage_crs). The value of this property shall be one of the CRSs supported by the API and advertised in the CRS list. If relevant, the epoch should also be specified, using the `storageCRSCoordinateEpoch` property. For an explanation of the use of epochs with CRS, see the CRS Guidelines [[hr-crs]]. 
