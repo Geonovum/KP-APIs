@@ -5,9 +5,14 @@ REST APIs for handling geospatial features may provide spatial filtering. There 
 
 [[rfc7946]] describes the GeoJSON format, including a convention for describing 2D geometric objects in WGS84 (EPSG:4326). In this extension we adopt the GeoJSON conventions for describing geometry objects. The convention is extended to allow alternative projections.  
 
-<div class="rule" id="api-34">
-  <p class="rulelab"><strong>API-34</strong>: Support GeoJSON for geospatial APIs</p>
+<div class="rule" id="api-geo-1">
+  <p class="rulelab"><strong>API-GEO-1</strong>: Support GeoJSON for geospatial APIs</p>
   <p>For representing 2D geometric information in an API, preferably use the convention for describing geometry as defined in the GeoJSON format [[rfc7946]]. Support GeoJSON as described in OGC API Features <a href="https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geojson">Requirements class 8.3</a> [[ogcapi-features-1]]. </p>
+  <h4 class="rulelab">How to test</h4>
+  <ul>
+    <li>Request a resource that include feature content (i.e., coordinates) with response media type of <code>application/geo+json</code>. This must be answered with a 200-response.</li>
+    <li>Validate that the returned document is a GeoJSON document.</li>  
+  </ul>
 </div>
 
 <aside class="note">
