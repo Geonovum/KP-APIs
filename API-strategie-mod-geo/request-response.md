@@ -28,13 +28,18 @@ GeoJSON does not cover all use cases. For example, it is not possible to store c
 
 A simple spatial filter can be supplied as a bounding box. This is a common way of filtering spatial data and can be supplied as a parameter. We adopt the OGC API Features [[ogcapi-features-1]] bounding box parameter:
 
-<div class="rule" id="api-36">
-  <p class="rulelab"><strong>API-36</strong>: Supply a simple spatial filter as a bounding box parameter</p>
+<div class="rule" id="api-geo-2">
+  <p class="rulelab"><strong>API-GEO-2</strong>: Supply a simple spatial filter as a bounding box parameter</p>
   <p>Support the <a href="https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_bbox">OGC API Features part 1 <code>bbox</code> parameter</a> in conformance to the standard.
   <pre>
-   GET /api/v1/panden?bbox=5.4,52.1,5.5,53.2
-  </pre>
+   GET /api/v1/panden?bbox=5.4,52.1,5.5,53.2</pre>
   </p>
+  <h4 class="rulelab">How to test</h4>
+  <ul>
+    <li>Issue an HTTP GET request to the API, including the <code>bbox</code> parameter.</li>
+    <li>Validate that a document was returned with a status code 200.</li>
+    <li>Verify that only features that have a spatial geometry that intersects the bounding box are returned as part of the result set.</li>
+  </ul>
 </div>
 
 <aside class="note">
@@ -43,8 +48,8 @@ Spatial filtering is an extensive topic. There are use cases for geospatial oper
 More complex spatial filtering is not addressed in this extension. A new API Design Rules extension on filtering will address spatial as well as non-spatial filtering. [[ogcapi-features-3]] will provide input for this.
 </aside>
 
-<div class="rule" id="api-39">
-  <p class="rulelab"><strong>API-39</strong>: Place results of a global spatial query in the relevant geometric context</p>
+<div class="rule" id="api-geo-3">
+  <p class="rulelab"><strong>API--GEO-3</strong>: Place results of a global spatial query in the relevant geometric context</p>
   <p>In case of a global query <code>/api/v1/_zoek</code>, results should be placed in the relevant geometric context, because results from different collections are retrieved. Express the name of the collection to which the results belongs in the singular form using the property <code>type</code>. For example:</p>
   <pre>
   // POST /api/v1/_zoek:
@@ -72,16 +77,17 @@ More complex spatial filtering is not addressed in this extension. A new API Des
         }
       ]
     }
-  }
-  </pre>
+  }</pre>
+  <h4 class="rulelab">How to test</h4>
+  <p>Validate that the returned document contains the expected <code>type</code> property for each member.</p>
 </div>
 
 ## Result (response)
 
 In a JSON API the geometry is returned as a GeoJSON Geometry object.
 
-<div class="rule" id="api-35">
-  <p class="rulelab"><strong>API-35</strong>: Embed GeoJSON Geometry object as part of the JSON resource</p>
+<div class="rule" id="api-geo-4">
+  <p class="rulelab"><strong>API-GEO-4</strong>: Embed GeoJSON Geometry object as part of the JSON resource</p>
   <p>When a JSON (<code>application/json</code>) response contains a geometry, represent it in the same way as the <code>Geometry</code> object of GeoJSON.</p>
   <pre>
   {
@@ -90,6 +96,11 @@ In a JSON API the geometry is returned as a GeoJSON Geometry object.
       "type": "Point",
       "coordinates": [5.2795,52.1933]
     }
-  }
-  </pre>
+  }</pre>
+  <h4 class="rulelab">How to test</h4>
+  <p>Validate that the returned document represents coordinates using: </p>
+  <ul>
+    <li>a property <code>type</code> containing the name of one of the GeoJSON geometry types, and</li>
+    <li>a property <code>coordinates</code> containing an array with a minimum of 2 numbers.</li>
+  </ul>
 </div>
