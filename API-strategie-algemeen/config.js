@@ -11,6 +11,8 @@
 //-- . . . . . :  20181106 - JvG - verplaatst naar root KP-APIs
 //-- . . . . . :  20200417 - JvG - Definitieve versie van 04-02-2020 gemaakt
 //-- . . . . . :  20220412 - EJR - Vastgestelde versie van 09-03-2022 gemaakt
+//-- . . . . . :  20220909 - MvdP - Concept versie opzet voor Modulaire opbouw
+//--
 //-------------------------------------------------------------------------------------
 
 //-- Postprocessors -------------------------------------------------------------------
@@ -39,7 +41,7 @@ function custGHPG(respecConfig)
 
 var respecConfig =
 {
-  specStatus: "GN-WV",
+  specStatus: "WV",
   specType: "HR",
   pubDomain: "api",
   //publishDate: "2022-01-13",
@@ -51,12 +53,12 @@ var respecConfig =
     {
       name: "Frank Terpstra",
       company: "Geonovum",
-      companyURL: "http://www.geonovum.nl/",
+      companyURL: "https://www.geonovum.nl/",
     },
     {
       name: "Jan van Gelder",
       company: "Geonovum",
-      companyURL: "http://www.Geonovum.nl/",
+      companyURL: "https://www.Geonovum.nl/",
     }
   ],
   authors:
@@ -64,42 +66,47 @@ var respecConfig =
     {
       name: "Lancelot Schellevis",
       company: "Forum Standaardisatie",
-      companyURL: "http://www.forumstandaardisatie.nl/",
+      companyURL: "https://www.forumstandaardisatie.nl/",
     },
     {
       name: "Han Zuidweg",
       company: "Forum Standaardisatie",
-      companyURL: "http://www.forumstandaardisatie.nl/",
+      companyURL: "https://www.forumstandaardisatie.nl/",
     },
     {
       name: "Friso Penninga",
       company: "Geonovum",
-      companyURL: "http://geonovum.nl/",
+      companyURL: "https://geonovum.nl/",
     },
     {
       name: "Matthias Snoei",
       company: "Swis",
-      companyURL: "http://swis.nl/",
+      companyURL: "https://swis.nl/",
     },
     {
       name: "Jasper Roes",
       company: "Het Kadaster",
-      companyURL: "http://www.kadaster.nl/",
+      companyURL: "https://www.kadaster.nl/",
     },
     {
       name: "Peter Haasnoot",
       company: "Logius",
-      companyURL: "www.logius.nl",
+      companyURL: "https://logius.nl/",
     },
     {
       name: "Frank van Es",
       company: "Logius",
-      companyURL: "www.logius.nl",
+      companyURL: "https://logius.nl/",
     },
-	{
+    {
+      name: "Martin van der Plas",
+      company: "Logius",
+      companyURL: "https://logius.nl/",
+    },
+	  {
       name: "Dennis de Wit",
       company: "Solventa",
-      companyURL: "www.solventa.nl",
+      companyURL: "https://www.solventa.nl",
     },
   ],
   shortName: "API-Strategie",
@@ -234,20 +241,20 @@ var respecConfig =
       date: "",
       publisher: "IANA",
     },
-    "BCP195": {
+  "BCP195": {
       href: "https://tools.ietf.org/html/bcp195",
       title: "Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)",
       authors: ["Y. Sheffer, R. Holz, P. Saint-Andre"],
       date: "May 2015",
       publisher: "IETF",
     },
-    "HAL": {
+  "HAL": {
       href: "http://stateless.co/hal_specification.html",
       title: "HAL - Hypertext Application Language",
       authors: ["Mike Kelly"],
       date: " 2013-09-18",
     },
-    "rfc7946": {
+  "rfc7946": {
       href: "https://datatracker.ietf.org/doc/html/rfc7946",
       title: "The GeoJSON Format",
       authors: ["H. Butler, M. Daly, A. Doyle, S. Gillies, T. Schaub, S. Hagen"],
