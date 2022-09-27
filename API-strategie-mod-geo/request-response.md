@@ -10,7 +10,7 @@ REST APIs for handling geospatial features may provide spatial filtering. There 
   <p>For representing 2D geometric information in an API, preferably use the convention for describing geometry as defined in the GeoJSON format [[rfc7946]]. Support GeoJSON as described in OGC API Features <a href="https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geojson">Requirements class 8.3</a> [[ogcapi-features-1]]. </p>
   <h4 class="rulelab">How to test</h4>
   <ul>
-    <li>Request a resource that include feature content (i.e., coordinates) with response media type of <code>application/geo+json</code>. This must be answered with a 200-response.</li>
+    <li>Request a resource that includes feature content (i.e., coordinates) with response media type of <code>application/geo+json</code>. This must be answered with a 200-response.</li>
     <li>Validate that the returned document is a GeoJSON document.</li>  
   </ul>
 </div>
@@ -49,8 +49,8 @@ More complex spatial filtering is not addressed in this extension. A new API Des
 </aside>
 
 <div class="rule" id="api-geo-3">
-  <p class="rulelab"><strong>API--GEO-3</strong>: Place results of a global spatial query in the relevant geometric context</p>
-  <p>In case of a global query <code>/api/v1/_zoek</code>, results should be placed in the relevant geometric context, because results from different collections are retrieved. Express the name of the collection to which the results belongs in the singular form using the property <code>type</code>. For example:</p>
+  <p class="rulelab"><strong>API-GEO-3</strong>: Place results of a global spatial query in the relevant geometric context</p>
+  <p>In case of a global query <code>/api/v1/_zoek</code>, results should be placed in the relevant geometric context, because results from different collections are retrieved. Express the name of the collection to which the results belong in the singular form using the property <code>type</code>. For example:</p>
   <pre>
   // POST /api/v1/_zoek:
   {
