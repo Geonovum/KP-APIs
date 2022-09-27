@@ -1,6 +1,6 @@
 # Introduction
 
-<p class='warning'>This extension is in development and may be modified at any time.</p>
+<p class='warning'>This module is in development and may be modified at any time.</p>
 
 This document provides rules for publishing geospatial data using Web APIs. Spatial data is 
 
