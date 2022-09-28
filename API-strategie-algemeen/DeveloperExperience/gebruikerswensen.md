@@ -1,7 +1,6 @@
 ## Inspelen op gebruikerswensen: dé sleutel tot gebruik
 
- Inleiding
-----------
+### Inleiding
 
 Overheden bezitten kwalitatief hoogwaardige data en bieden deze aan via API’s.
 Vanuit het open data-perspectief maken overheden het hiermee mogelijk dat
@@ -31,8 +30,7 @@ verkeerd gaan interpreteren en de ICT-infrastructuur onnodig zwaar belasten,
 wanneer zij slechts omslachtig (met veel API-calls) de gewenste gegevens kunnen
 krijgen.
 
- Overkoepelende aanbeveling: biedt een goede ‘developer experience (DX)’
-------------------------------------------------------------------------
+### Overkoepelende aanbeveling: biedt een goede ‘developer experience (DX)’
 
 De belangrijkste aanbeveling aan aanbieders van API’s is om zich te richten op
 die gebruikservaring; op een goede ‘developer experience (DX)’. Goede DX komt
@@ -51,8 +49,7 @@ helemaal niet in het door Johan gewenst formaat. Elke kleine irritatie is op
 zichzelf niet onoverkomelijk, maar de optelsom maakt dat Johan concludeert: “Dit
 is niet te doen, ik zoek wel wat anders!”.
 
- Gebruik: van ‘onboarding’ tot ‘in productie’
----------------------------------------------
+### Gebruik: van ‘onboarding’ tot ‘in productie’
 
 De zwakte van veel teksten over ‘developer experience’ is dat men zich vaak
 alleen richt op de use case van een technische developer die een API wil
@@ -85,10 +82,9 @@ bedrijf vervolgens ook andere API’s op dit ontwikkelaarsportaal gaat gebruiken
 
 De kern van dit verhaal is dat een API technisch gezien weliswaar een machine tot machine koppeling is, maar strategisch juist gezien moet worden als een product. En dat product moet gebruikers (zie ze als potentiële klanten!) verleiden tot gebruik. Dan zijn aspecten als de winkelervaring (in een API store of ontwikkelaarsportaal), de geboden service en de kwaliteit van het product de doorslaggevende factoren in de beslissing om tot gebruik over te gaan.
 
- Specifieke aanbevelingen voor een goede DX
--------------------------------------------
+### Specifieke aanbevelingen voor een goede DX
 
-### Aanbeveling 1: werk met (meerdere) persona’s
+#### Aanbeveling 1: werk met (meerdere) persona’s
 
 Een API is weliswaar een machine tot machine koppeling, maar onthoud: API's ontwerp en bouw je niet voor een machine, maar voor een gebruiker: een
 mens! Om een goede DX te bieden, moet je dus eerst weten voor wie je ontwerpt en
@@ -102,16 +98,14 @@ Belangrijk hierbij is om te onderkennen dat er verschillende niveaus of typen
 gebruik zijn. Onderscheid daarom -met de fases van ‘onboarding’ tot ‘in
 productie’ in het achterhoofd- minimaal de volgende persona’s:
 
--   een product manager / business developer: focus op het kunnen beoordelen van
+- een product manager / business developer: focus op het kunnen beoordelen van
     functionaliteit (“Is dit relevant voor mijn product / mijn doel?”)
-
--   een architect: focus op het beoordelen van het informatiemodel (“Hoe
+- een architect: focus op het beoordelen van het informatiemodel (“Hoe
     integreert dit met de rest van onze software?”) en security- en privacy-aspecten.
-
--   een technische developer: focus op het daadwerkelijk kunnen gebruiken (“Hoe
+- een technische developer: focus op het daadwerkelijk kunnen gebruiken (“Hoe
     krijg ik dit werkend?”).
 
-### Aanbeveling 2: analyseer welke API’s je aan moet bieden: welke informatievragen wil je beantwoorden?
+#### Aanbeveling 2: analyseer welke API’s je aan moet bieden: welke informatievragen wil je beantwoorden?
 
 De ene API is de andere niet. In veel modellen worden API’s in drie categorieën
 onderverdeeld: de System API (die werkt op het niveau van de databron), de
@@ -135,7 +129,7 @@ producten (bijv. nieuw paspoort en rijbewijs) staan pontificaal op de homepage,
 terwijl de minder vaak gevraagde diensten op vervolgpagina’s staan. Zo reduceer
 je de complexiteit voor een zo groot mogelijk deel van je gebruikers.
 
-### Aanbeveling 3: documenteer gericht op de gebruiker, biedt snel inzicht en gebruik OAS 3
+#### Aanbeveling 3: documenteer gericht op de gebruiker, biedt snel inzicht en gebruik OAS 3
 
 Elk type gebruiker dat in aanbeveling 1 wordt genoemd (business developer,
 architect, technische developer) verdient zijn eigen ‘Getting started’
@@ -148,7 +142,7 @@ indruk te bieden van functionaliteit. Voor de technische developer is de
 documentatie conform de Open API Specifiction 3.0 (OAS 3); deze staat in
 Nederland op de ‘Pas toe of leg uit-lijst’ van het Forum Standaardisatie.
 
-### Aanbeveling 4: minimaliseer Time to First Call met een goede Sandbox
+#### Aanbeveling 4: minimaliseer Time to First Call met een goede Sandbox
 
 Zorg dat een developer snel een werkend voorbeeld heeft. Dit vraagt om een goed
 gedocumenteerde, realistische Sandbox: een experimenteeromgeving met testdata. Deze Sandbox dient alle aspecten van de
@@ -157,41 +151,41 @@ vertonen, bijvoorbeeld rond authenticatie. Daar waar mogelijk is het zeer
 wenselijk dat meerdere API’s dezelfde dataset bieden als Sandbox, zodat ook het
 samenspel tussen verschillende API’s getest kan worden.
 
-### Aanbeveling 5: borg ontwikkeling en beheer
+#### Aanbeveling 5: borg ontwikkeling en beheer
 
 Ook al is een API nog zo goed ontwikkeld, wanneer doorontwikkeling en beheer
 niet goed geregeld is, zal die API niet succesvol zijn. Essentieel hierin is dat
 je gebruikers duidelijkheid biedt:
 
-#### Aanbeveling 5.1 Stel een SLA op
+##### Aanbeveling 5.1 Stel een SLA op
 
->   Maak duidelijk welke verwachtingen een gebruiker mag hebben qua uptime,
->   service window, beprijzing etc.
+> Maak duidelijk welke verwachtingen een gebruiker mag hebben qua uptime,
+> service window, beprijzing etc.
 
-#### Aanbeveling 5.2 Biedt een roadmap aan
+##### Aanbeveling 5.2 Biedt een roadmap aan
 
->   Maak duidelijk of en zo ja, wanneer er eventuele wijzigingen te verwachten
->   zijn en hoe lang de API minimaal beschikbaar blijft.
+> Maak duidelijk of en zo ja, wanneer er eventuele wijzigingen te verwachten
+> zijn en hoe lang de API minimaal beschikbaar blijft.
 
-#### Aanbeveling 5.3 Doe aan versiebeheer
+##### Aanbeveling 5.3 Doe aan versiebeheer
 
->   Borg dat de toepassing van de gebruiker blijft werken, door te zorgen voor
->   backward compatability. Grotere updates kunnen als nieuwe versie worden
->   uitgebracht, waarbij oudere versies nog een gegarandeerde periode
->   beschikbaar blijven. Het versienummer kan in elke call staan, bijv. GET
->   /api/v1.0/... En versiebeheer slaat niet alleen op de API zelf, maar ook op de bijbehorende documentatie, Sandbox, etc.
+> Borg dat de toepassing van de gebruiker blijft werken, door te zorgen voor
+> backward compatability. Grotere updates kunnen als nieuwe versie worden
+> uitgebracht, waarbij oudere versies nog een gegarandeerde periode
+> beschikbaar blijven. Het versienummer kan in elke call staan, bijv. GET
+> /api/v1.0/... En versiebeheer slaat niet alleen op de API zelf, maar ook op de bijbehorende documentatie, Sandbox, etc.
 
-#### Aanbeveling 5.4 Sluit de feedback-loop: betrek de community
+##### Aanbeveling 5.4 Sluit de feedback-loop: betrek de community
 
->   Om echt van buiten naar binnen te kunnen werken, is het betrekken van de
->   community van gebruikers onmisbaar. De community kan vertellen hoe de
->   developer experience tot nu toe is, welke verbeteringen wenselijk zijn,
->   welke gebruikersvragen er sterk leven, maar nog onvoldoende ondersteund
->   worden, etc., etc. Daarnaast wil je de community ook actief informeren over
->   voorgenomen wijzigingen e.d. Het gebruik van API keys is een manier om je
->   gebruikers te kennen.
+> Om echt van buiten naar binnen te kunnen werken, is het betrekken van de
+> community van gebruikers onmisbaar. De community kan vertellen hoe de
+> developer experience tot nu toe is, welke verbeteringen wenselijk zijn,
+> welke gebruikersvragen er sterk leven, maar nog onvoldoende ondersteund
+> worden, etc., etc. Daarnaast wil je de community ook actief informeren over
+> voorgenomen wijzigingen e.d. Het gebruik van API keys is een manier om je
+> gebruikers te kennen.
 
-### Aanbeveling 6: maak duidelijk wat je data betekent
+#### Aanbeveling 6: maak duidelijk wat je data betekent
 
 Wanneer je data openstelt voor derden, inclusief niet-specialisten, is het
 essentieel om eenduidig vast te leggen wat de data betekent, waarbij deze
@@ -199,7 +193,7 @@ betekenis ook voor niet-specialisten begrijpelijk is. Het vastleggen van
 semantiek kan o.a. door definities en informatiemodellen goed online te ontsluiten (zoals bijvoorbeeld in de Stelselcatalogus Omgevingswet),
 maar ook door praktischere zaken als heldere naamgeving van variabelen etc.
 
-### Aanbeveling 7: wees vindbaar voor developers
+#### Aanbeveling 7: wees vindbaar voor developers
 
 Een goede, gebruiksgerichte API, die bovendien actief wordt beheerd en
 doorontwikkeld, kan nog steeds weinig gebruikt worden wanneer deze API niet goed
@@ -212,20 +206,17 @@ en verleidt zelfs developers om bepaalde API’s te gebruiken. Het vullen van he
 developersportaal mag daarom nooit sluitpost van een project zijn.
 Formuleer hierbij ook goed het ambitieniveau:
 
--   API store: de one-stop-shop, waarin je niet alleen (het bestaan van) de API ontdekt, maar ook de documentatie vindt, de API kunt uitproberen, etc. Het runnen van een API store
+- API store: de one-stop-shop, waarin je niet alleen (het bestaan van) de API ontdekt, maar ook de documentatie vindt, de API kunt uitproberen, etc. Het runnen van een API store
     kan zelfs zover gaan, dat er centraal proxy's worden ontwikkeld op API's van andere aanbieders en documentatie geredigeerd, om zo voor de eigen gebruikers een zo uniform mogelijke gebruikerservaring te garanderen.
-
--   API catalogus: uitsluitend gericht op het ontdekken van API's, waarna doorverwezen wordt naar de API store van de desbetreffende aanbieder.
-
--   hybride oplossing: een combinatie van een catalogus en een store. Alle API's staan in de catalogus, een kleine subset (de high-value API's) wordt volledig aangeboden. Deze hybride oplossing zou
+- API catalogus: uitsluitend gericht op het ontdekken van API's, waarna doorverwezen wordt naar de API store van de desbetreffende aanbieder.
+- hybride oplossing: een combinatie van een catalogus en een store. Alle API's staan in de catalogus, een kleine subset (de high-value API's) wordt volledig aangeboden. Deze hybride oplossing zou
     een mooi ambitieniveau voor developer.overheid.nl kunnen zijn: alle overheids-API's zijn vindbaar en voor de meest generieke en populaire API's ben je direct op de juiste plaats.
-
 
 Een bijzondere categorie die de overheid ook nodig gaat hebben, o.a. door de ontwikkelingen in Common Ground, is de API spec store: een plaats waarin API specificaties gepubliceerd kunnen worden. Leveranciers kunnen op basis van die specificaties zelf hun specificatie-conforme API's ontwikkelen, waarmee de interoperabiliteit van gegevens binnen het gemeentelijke applicatielandschap wordt vergroot.
 
 In de context van API stores en API catalogi is het belangrijk om te realiseren dat developer experience niet alleen een externe focus heeft (gericht op laten ontdekken, evalueren, testen en gebruiken van API's), maar ook een interne focus, gericht op het activeren van potentiële API-aanbieders. Zij moeten getriggerd worden om API's te ontwikkelen, te ontsluiten in je API store of catalogus, te beschrijven conform bepaalde kwaliteitseisen, etc.
 
-### Aanbeveling 8: niet alles is een API!
+#### Aanbeveling 8: niet alles is een API!
 
 Bedenkt altijd goed of een API de juiste oplossing is. In sommige gevallen is
 een bulk download nog steeds praktischer voor een gebruiker. Wanneer een API

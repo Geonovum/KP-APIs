@@ -99,6 +99,11 @@ var respecConfig =
       companyURL: "https://logius.nl/",
     },
     {
+      name: "Alexander Green",
+      company: "Logius",
+      companyURL: "https://logius.nl/",
+    },
+    {
       name: "Martin van der Plas",
       company: "Logius",
       companyURL: "https://logius.nl/",
