@@ -1,7 +1,7 @@
 # Standaarden
-Binnen de Nederlandse publieke sector zijn meerdere standaarden die betrekking hebben op APIs. In dit hoofdstuk geven we verwijzingen naar de standaarden die zijn voortgekomen uit het Kennisplatform APIs. In een volgende versie van dit document zal hier een compleet overzicht met relevante standaarden komen.
+Binnen de Nederlandse publieke sector zijn meerdere standaarden die betrekking hebben op APIs. In dit hoofdstuk geven we verwijzingen naar de standaarden die zijn voortgekomen uit het Kennisplatform APIs. Hieronder zijn de meest relevante standaarden opgenomen. Kijk voor een actueel en volledig overzicht van alle standaarden altijd op [forum standaardisatie](https://www.forumstandaardisatie.nl/lijst-open-standaarden/in_lijst/verplicht-pas-toe-leg-uit). 
 
-## API Designrules (Nederlandse API Strategie IIa)
+## API Designrules (Nederlandse API Strategie)
 Deze sectie beschrijft de status en uitgangspunten voor de standaard "API Designrules". De standaard is een op zichzelfstaand document en is hier te vinden:
 
 <!-- https://geonovum.github.io/API-Designrules/ (werkversie) -->
@@ -11,7 +11,7 @@ https://logius-standaarden.github.io/API-Design-Rules/ (werkversie)
 https://publicatie.centrumvoorstandaarden.nl/api/adr/ (stabiele versie)
 
 ### Oorsprong standaard
-De API designrules vinden hun oorsprong in de ["API strategie" van het digitaal stelsel omgevingswet (DSO)](https://aandeslagmetdeomgevingswet.nl/digitaal-stelsel/aansluiten/standaarden/api-en-uri-strategie/). Bij het opstellen van de API Designrules is de DSO API strategie het startpunt geweest en heeft de werkgroep API strategie (onder leiding van Jasper Roes) gekeken hoe deze toepasbaar gemaakt kunnen worden voor de hele Nederlandse publieke sector.
+De API designrules vinden hun oorsprong in de ["API strategie" van het digitaal stelsel omgevingswet (DSO)](https://aandeslagmetdeomgevingswet.nl/digitaal-stelsel/aansluiten/standaarden/api-en-uri-strategie/). Bij het opstellen van de API Designrules is de DSO API strategie het startpunt geweest en heeft de werkgroep API strategie gekeken hoe deze toepasbaar gemaakt kunnen worden voor de hele Nederlandse publieke sector.
 ### Status bij forum standaardisatie
 De API designrules standaard is op 9 juli 2020 goedgekeurd door het OBDO voor opname op de "pas toe of leg uit lijst" van het [forum standaardisatie](https://www.forumstandaardisatie.nl/lijst-open-standaarden/in_lijst/verplicht-pas-toe-leg-uit). 
 #### Werkingsgebied standaard
@@ -21,17 +21,17 @@ Overheden, semi-overheden en instellingen uit de publieke sector
 Bij aanmelding was het beoogd functioneel toepassingsgebied:
 Het aanbieden van RESTful APIs ten behoeve van het ontsluiten van overheids informatie/functionaliteit en enkelvoudige datasets aan eenieder waarvoor deze bedoeld is(burger, bedrijf, andere overheid, etc…). Het ontsluiten van meervoudige en/of statistische datasets via één API valt buiten het functioneel werkingsgebied hiervoor staat de standaard ODATA reeds op de lijst met aanbevolen standaarden. 
 
-## API Designrules extensions (Nederlandse API Strategie IIb)
-Deze sectie beschrijft de status en uitgangspunten voor de standaard "API Designrules extensions". De (concept) standaard is een op zichzelfstaand document en is hier te vinden:
+## API Designrules modulen 
+Deze sectie beschrijft de status en uitgangspunten voor de standaard "API Designrules modulen". De (concept) modulen zijn  op zichzelfstaand document en te vinden op github & docs.geostandaarden.nl:
 
 https://geonovum.github.io/KP-APIs/API-strategie-extensies/ (werkversie)
 
 https://docs.geostandaarden.nl/api/vv-hr-API-Strategie-ext-20190715/ (stabiele versie)
 
 ### Oorsprong standaard
-De API designrules extensions bevatten onderwerpen die bij het opstellen van de eerste versie van de API designrules nog niet als stabiel werden beschouwd. Er wordt nog actief gewerkt om deze extensies tot een stabiele versie te maken. Uiteindelijk zal een deel van de extensies mogelijk direct onderdeel worden van de API design rules. Een ander deel zal een optionele extensie zijn die gebruikt kan worden wanneer specifieke extra functionaliteit nodig is.
+De API designrules modulen bevatten onderwerpen die bij het opstellen van de eerste versie van de API designrules nog niet als stabiel werden beschouwd. Er wordt nog actief gewerkt om deze modulen tot een stabiele versie te maken. Uiteindelijk zal een deel van de modulen mogelijk direct onderdeel worden van de normatieve API design rules. Een ander deel zal een set van optionele modulen blijven die gebruikt kunnen worden wanneer specifieke extra techniek of functionaliteit nodig is.
 ### Status 
-De API designrules extensions zijn nog in ontwikkeling en hebben geen enkele status.
+De API designrules modulen zijn nog in ontwikkeling en hebben geen formele status.
 #### Werkingsgebied standaard
 Een werkingsgebied is (nog) niet van toepassing.
 #### Toepassingsgebied standaard

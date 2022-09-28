@@ -16,7 +16,7 @@ De genoemde auteurs zijn de trekkers van de werkgroepen zoals API Strategie, Arc
 
 De API strategie bestaat uit een een inleidend document, verschillende normatieve documenten (NL GOV standaarden) en meerdere modulen die voor verschillende functionele of technische situaties kunnen worden ingezet. Een actueel overzicht van alle documenten is weergegeven in de onderstaande infographic:
 
-![NL API STrategie Infographic](../media/API_infographic.svg)
+![NL API STrategie Infographic](../../media/API_infographic.svg)
 
 
 
