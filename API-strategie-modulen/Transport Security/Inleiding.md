@@ -1,6 +1,6 @@
 # Inleiding
 
-Dit document geeft een uitwerking van module __security__. De algehele NL API stategie is opgebouwd uit meerdere documenten, standaarden en modulen.
+Dit document geeft een uitwerking van module __Transport & HTTP security__. De algehele NL API stategie is opgebouwd uit meerdere documenten, standaarden en modulen.
 
 ## Status
 Deze module is een:
