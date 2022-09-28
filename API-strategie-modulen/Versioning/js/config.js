@@ -4,7 +4,7 @@ const documentConfig = {
     //voor specType mogelijkheden zie https://github.com/Logius-standaarden/respec/wiki/specType
     specType: "HR",
     pubDomain: "api",
-    shortName: "security",
+    shortName: "versioning",
     publishDate: "2022-06-24",
     publishVersion: "0.0.1",
     // previousPublishVersion: "(none)",
