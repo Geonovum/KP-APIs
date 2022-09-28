@@ -114,10 +114,12 @@ If a bounding box or geospatial filter is sent to the server without these param
 
 If an invalid value, i.e. a CRS which is not in the list of supported CRSs, is given for one of these parameters, the server responds with an HTTP status code `400`.
 
+In an API that supports transactions, POST requests with geospatial content in the body may be sent by a client to the server. In that case, it is necessary to indicate the CRS used, unless CRS84, the default CRS, is used.
+
 <div class="rule" id="api-geo-10">
-  <p class="rulelab"><strong>API-GEO-10</strong>: Pass the coordinate reference system (CRS) of geometry in the request body as a header</p>
+  <p class="rulelab"><strong>API-GEO-10</strong>: When HTTP POST requests are supported, pass the coordinate reference system (CRS) of geometry in the request body as a header</p>
   <p>Support the <a href="http://docs.ogc.org/DRAFTS/20-002.html#feature-crs">OGC API Features part 4 <code>Content-Crs</code> header</a> in conformance to the standard.</p>
-  <p>Alternatively, if the feature representation supports expressing CRS information for each feature / geometry, the information can also be included in the feature representation.<p>
+  <p>Alternatively, if the feature representation supports expressing CRS information for each feature / geometry, the information can also be included in the feature representation. If no CRS is asserted, the default CRS, CRS84, is assumed.<p>
   <h4 class="rulelab">How to test</h4>
   <p>In a request (i.e. when creating an item on the server):</p>
   <uL>
