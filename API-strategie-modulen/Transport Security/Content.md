@@ -1,6 +1,6 @@
 # Inhoudelijk deel van de Module
 
-Bijvoorbeeld 
+Bijvoorbeeld
 
 - een introductie.
 - context
@@ -172,9 +172,7 @@ Although the REST architectural style does not impose a specific protocol, REST 
 </div>
 
 
-## 
-
-
+##
 
 <p class="note" title="index">
 Dit hoofdstuk is toegevoegd met `class="informative"` in `index.html`.

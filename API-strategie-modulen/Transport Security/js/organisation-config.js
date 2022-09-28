@@ -1,6 +1,6 @@
 const organisationConfig = {
     // nl_organisationName is used in the header (and Sotd)
-    nl_organisationName: "Logius",
+    nl_organisationName: "Kennisplatofrm API's",
 
     // this url points to the folder where organsation specific css files are stored
     // defaults to https://tools.geostandaarden.nl/respec/style/ if not set
@@ -12,7 +12,7 @@ const organisationConfig = {
 
     // nl_organisationPublishURL points to organisation specifica publication page, used in header
     // defaults to  https://docs.geostandaarden.nl/"
-    nl_organisationPublishURL: "https://publicatie.centrumvoorstandaarden.nl/",
+    nl_organisationPublishURL: "https://github.com/Geonovum/KP-APIs",
 
     // nl_logo refers to company logo
     // defaults to https://tools.geostandaarden.nl/respec/style/logos/Geonovum.svg
@@ -24,7 +24,7 @@ const organisationConfig = {
         width: 44,
         url: "https://www.logius.nl/standaarden",
     },
-	
+
 	localBiblio: {
 	"SemVer": {
             href: "https://semver.org",

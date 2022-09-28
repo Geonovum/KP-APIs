@@ -3,8 +3,8 @@ const documentConfig = {
     specStatus: "WV",
     //voor specType mogelijkheden zie https://github.com/Logius-standaarden/respec/wiki/specType
     specType: "HR",
-    pubDomain: "dk",
-    shortName: "template",
+    pubDomain: "api",
+    shortName: "security",
     publishDate: "2022-06-24",
     publishVersion: "0.0.1",
     // previousPublishVersion: "(none)",
@@ -13,17 +13,17 @@ const documentConfig = {
     editors:
         [
             {
-                name: "Logius Standaarden",
-                company: "Logius",
-                companyURL: "https://github.com/Logius-standaarden",
+                name: "Kennisplatofrm API's",
+                company: "Kennisplatofrm API's",
+                companyURL: "https://github.com/Geonovum/KP-APIs",
             }
         ],
     authors:
         [
             {
-                name: "Logius Standaarden",
-                company: "Logius",
-                companyURL: "https://github.com/Logius-standaarden",
+                name: "Kennisplatofrm API's",
+                company: "Kennisplatofrm API's",
+                companyURL: "https://github.com/Geonovum/KP-APIs",
             }
         ],
     github: "https://github.com/Logius-standaarden/API-Design-Rules",
