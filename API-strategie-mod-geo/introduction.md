@@ -1,7 +1,5 @@
 # Introduction
 
-<p class='warning'>This module is in development and may be modified at any time.</p>
-
 This document provides rules for publishing geospatial data using Web APIs. Spatial data is 
 
 > data that describes anything with spatial extent (i.e. size, shape or position). Spatial data is also known as location information. [[sdw-bp]]
