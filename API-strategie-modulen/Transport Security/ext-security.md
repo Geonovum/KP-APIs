@@ -193,7 +193,7 @@ Note that usage of the Authorization header is part of the OAuth2 specifications
 
 When authentication is implicit or when just the presence of an Authorization header is enough for authentication and/or authorization: use the flow chart in figure 1 to determine the correct error code.
 
-![](media/HTTP-FlowChart1.PNG)
+![](../../media/HTTP-FlowChart1.PNG)
 
 Figure 1: authentication is implicit.
 
@@ -207,7 +207,7 @@ https://tools.ietf.org/html/rfc7231#section-6.5.4
 
 When authentication is explicit, that is the authentication credentials are actively verfied when present, use the flow chart in figure 2 to determine the correct error codes.
 
-![](media/HTTP-FlowChart2.PNG)
+![](../../media/HTTP-FlowChart2.PNG)
 
 Figure 2: authentication is explicit.
 
@@ -223,7 +223,7 @@ https://tools.ietf.org/html/rfc7231#section-6.5.4
 
 When authentication is explicit and there is a check whether the provided authorization confirmation claim (`cnf`, see [[rfc7800]]) matches the credentials provided for authentication use the flow chart in figure 3 to esteblish the correct error codes.
 
-![](media/HTTP-FlowChart3.PNG)
+![](../../media/HTTP-FlowChart3.PNG)
 
 Figure 3: authentication is explicit, and client authorization confirmation claim (`cnf`) matches authentication.
 
