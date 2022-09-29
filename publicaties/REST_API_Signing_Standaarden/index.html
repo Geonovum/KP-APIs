@@ -1,0 +1,692 @@
+<!DOCTYPE html><html lang="nl"><head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+<meta name="generator" content="ReSpec 32.1.10 Logius profile 20220628">
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;margin-top:.25em}
+.dfn-panel ul a[href]{color:#333}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a[href]:hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+</style>
+  
+  
+  
+<title>Vergelijking REST API Signing Standaarden</title>
+  
+  
+<link rel="shortcut icon" type="image/x-icon" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/logius.ico">
+  
+
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+:is(h1,h2,h3,h4,h5,h6,a) abbr{border:none}
+dfn{font-weight:700}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+cite .bibref{font-style:normal}
+code{color:#c63501}
+th code{color:inherit}
+a[href].orcid{padding-left:4px;padding-right:4px}
+a[href].orcid>svg{margin-bottom:-2px}
+.toc a,.tof a{text-decoration:none}
+a .figno,a .secno{color:#000}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
+.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
+.simple th a{color:#fff;padding:3px 5px;text-align:left}
+.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}
+.simple td{padding:3px 10px;border-top:1px solid #ddd}
+.simple tr:nth-child(even){background:#f0f6ff}
+.section dd>p:first-child{margin-top:0}
+.section dd>p:last-child{margin-bottom:0}
+.section dd{margin-bottom:1em}
+.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none;display:inline-block}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+.self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+aside.example .marker>a.self-link{color:inherit}
+.header-wrapper{display:flex;align-items:baseline}
+:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2){position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-1.1em;font-size:1rem;opacity:.5}
+:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
+:is(h2,h3)+a.self-link{top:-.2em}
+:is(h4,h5,h6)+a.self-link::before{color:#000}
+@media (max-width:767px){
+dd{margin-left:0}
+}
+@media print{
+.removeOnSave{display:none}
+}
+</style>
+<meta name="description" content="In dit document worden de volgende standaarden beschreven en met elkaar vergeleken:">
+<style>
+.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}
+.hljs-comment,.hljs-quote{color:#717277;font-style:italic}
+.hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4}
+.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;font-weight:700}
+.hljs-literal{color:#0b76c5}
+.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c}
+.hljs-built_in,.hljs-class .hljs-title{color:#9a6a01}
+.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801}
+.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3}
+.hljs-emphasis{font-style:italic}
+.hljs-strong{font-weight:700}
+.hljs-link{text-decoration:underline}
+</style>
+<style>
+var{position:relative;cursor:pointer}
+var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
+var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
+var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
+var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
+</style>
+<script id="initialUserConfig" type="application/json">{
+  "specStatus": "WV",
+  "specType": "HR",
+  "pubDomain": "dk",
+  "shortName": "template",
+  "publishDate": "2022-06-24",
+  "publishVersion": "0.0.1",
+  "editors": [
+    {
+      "name": "Carmen Visinescu",
+      "company": "Kadaster",
+      "companyURL": "https://kadaster.nl"
+    },
+    {
+      "name": "Peter Haasnoot",
+      "company": "Logius",
+      "companyURL": "https://logius.nl"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Carmen Visinescu",
+      "company": "Kadaster",
+      "companyURL": "https://kadaster.nl"
+    },
+    {
+      "name": "Peter Haasnoot",
+      "company": "Logius",
+      "companyURL": "https://logius.nl"
+    }
+  ],
+  "github": "https://github.com/PHaasnoot/REST_API_Signing_Standaarden",
+  "addSectionLinks": true,
+  "nl_addReleaseTagTitle": true,
+  "nl_organisationName": "KPAPI",
+  "nl_organisationStylesURL": "https://publicatie.centrumvoorstandaarden.nl/respec/style/",
+  "nl_organisationPrefix": "XS-",
+  "nl_markdownEmbedImageInFigure": true,
+  "nl_organisationPublishURL": "https://publicatie.centrumvoorstandaarden.nl/",
+  "nl_logo": {
+    "src": "xhttps://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg",
+    "alt": "KPAPI",
+    "id": "KPAPI",
+    "height": 77,
+    "width": 44,
+    "url": ""
+  },
+  "localBiblio": {
+    "SemVer": {
+      "href": "https://semver.org",
+      "title": "Semantic Versioning 2.0.0",
+      "authors": [
+        "T. Preston-Werner"
+      ],
+      "date": "June 2013"
+    },
+    "JAdES": {
+      "href": "https://www.etsi.org/deliver/etsi_ts/119100_119199/11918201/01.01.01_60/ts_11918201v010101p.pdf",
+      "title": "JAdES digital signatures",
+      "id": "jades"
+    },
+    "HTTP-MessageSig": {
+      "href": "https://www.ietf.org/archive/id/draft-ietf-httpbis-message-signatures-11.html",
+      "title": "HTTP Message Signatures",
+      "id": "http-messagesig"
+    }
+  },
+  "publishISODate": "2022-06-24T00:00:00.000Z",
+  "generatedSubtitle": "Werkversie 20 september 2022"
+}</script>
+<link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/XS-WV.css"></head>
+
+<body class="h-entry informative"><div class="head">
+    <a class="logo"><img alt="KPAPI" height="77" id="KPAPI" src="xhttps://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg" width="44">
+  </a> <h1 id="title" class="title">Vergelijking REST API Signing Standaarden</h1>
+    
+    <h2>
+      KPAPI Handreiking<br>
+      Werkversie
+      <time class="dt-published" datetime="2022-06-24">20 september 2022</time>
+    </h2>
+    <dl>
+      <dt>Deze versie:</dt><dd class="status">
+              <a class="u-url status" href="https://phaasnoot.github.io/REST_API_Signing_Standaarden/">https://phaasnoot.github.io/REST_API_Signing_Standaarden/</a>
+            </dd><dt>Laatst gepubliceerde versie:</dt><dd>
+              <a href="https://publicatie.centrumvoorstandaarden.nl/dk/template/">https://publicatie.centrumvoorstandaarden.nl/dk/template/</a>
+            </dd>
+      <dt>Laatste werkversie:</dt><dd><a href="https://phaasnoot.github.io/REST_API_Signing_Standaarden/">https://phaasnoot.github.io/REST_API_Signing_Standaarden/</a></dd>
+      
+      
+      
+      
+      
+      <dt>Redacteurs:</dt>
+      <dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Carmen Visinescu</span> (<a class="p-org org h-org" href="https://kadaster.nl">Kadaster</a>)
+  </dd><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Peter Haasnoot</span> (<a class="p-org org h-org" href="https://logius.nl">Logius</a>)
+  </dd>
+      
+      <dt>Auteurs:</dt><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Carmen Visinescu</span> (<a class="p-org org h-org" href="https://kadaster.nl">Kadaster</a>)
+  </dd><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Peter Haasnoot</span> (<a class="p-org org h-org" href="https://logius.nl">Logius</a>)
+  </dd>
+      <dt>Doe mee:</dt><dd>
+    <a href="https://github.com/PHaasnoot/REST_API_Signing_Standaarden/">GitHub PHaasnoot/REST_API_Signing_Standaarden</a>
+  </dd><dd>
+    <a href="https://github.com/PHaasnoot/REST_API_Signing_Standaarden/issues/">Dien een melding in</a>
+  </dd><dd>
+    <a href="https://github.com/PHaasnoot/REST_API_Signing_Standaarden/commits/">Revisiehistorie</a>
+  </dd><dd>
+    <a href="https://github.com/PHaasnoot/REST_API_Signing_Standaarden/pulls/">Pull requests</a>
+  </dd>
+    </dl>
+    
+    
+    
+    <p class="copyright" lang="en">
+          This document is licensed under a
+          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" class="subfoot">Creative Commons Attribution 4.0 License</a>.
+        </p>
+    <hr title="Separator for header">
+  </div>
+  <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>In dit document worden de volgende standaarden beschreven en met elkaar vergeleken:</p>
+<ul>
+<li>JAdES [<cite><a class="bibref" data-link-type="biblio" href="#bib-jades" title="JAdES digital signatures">JAdES</a></cite>]</li>
+<li>HTTP Message Signatures (httpbis-message-signatures)  [<cite><a class="bibref" data-link-type="biblio" href="#bib-http-messagesig" title="HTTP Message Signatures">HTTP-MessageSig</a></cite>]</li>
+</ul>
+</section>
+  <section id="sotd" class="introductory"><h2>Status van dit document</h2>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door de werkgroep goedgekeurde consultatieversie.<p></p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#vergelijking-jades-vs-httpbis-message-signatures"><bdi class="secno">1. </bdi>Vergelijking JAdES vs httpbis-message-signatures</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1.1 </bdi>Inleiding</a></li><li class="tocline"><a class="tocxref" href="#digital-signature-algemeen"><bdi class="secno">1.2 </bdi>Digital Signature algemeen</a></li><li class="tocline"><a class="tocxref" href="#http-message-signatures"><bdi class="secno">1.3 </bdi>Http Message Signatures</a></li><li class="tocline"><a class="tocxref" href="#jades"><bdi class="secno">1.4 </bdi>JAdES</a></li><li class="tocline"><a class="tocxref" href="#vergelijking-en-use-cases"><bdi class="secno">1.5 </bdi>Vergelijking en Use Cases</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#http-message-signatures-httpbis-message-signatures-use-cases"><bdi class="secno">1.5.1 </bdi>HTTP Message Signatures (Httpbis-message-signatures) use-cases:</a></li><li class="tocline"><a class="tocxref" href="#jades-use-cases"><bdi class="secno">1.5.2 </bdi>JAdES use-cases:</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-a-httpbis-message-signatures"><bdi class="secno">1.6 </bdi>BIJLAGE A : HTTPBIS-Message-Signatures</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#signing-components"><bdi class="secno">1.6.1 </bdi>Signing components</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-b-jades"><bdi class="secno">1.7 </bdi>BIJLAGE B : JAdES</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">A.1 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
+  <section class="informative" id="vergelijking-jades-vs-httpbis-message-signatures"><div class="header-wrapper"><h2 id="x1-vergelijking-jades-vs-httpbis-message-signatures"><bdi class="secno">1. </bdi>Vergelijking JAdES vs httpbis-message-signatures</h2><a class="self-link" href="#vergelijking-jades-vs-httpbis-message-signatures" aria-label="Permalink for Section 1."></a></div><p><em>Dit onderdeel is niet normatief.</em></p>
+<section id="inleiding"><div class="header-wrapper"><h3 id="x1-1-inleiding"><bdi class="secno">1.1 </bdi>Inleiding</h3><a class="self-link" href="#inleiding" aria-label="Permalink for Section 1.1"></a></div>
+<p>In deze handreiking wordt eerst ingegaan op de algemene aspecten van signing, daarna worden de signing standaarden JAdES en http-message-signatures in hoofdlijnen beschreven en wordt aangeven wat de voornaamste eigenschappen en functionele aspecten zijn van beide standaarden.</p>
+</section><section id="digital-signature-algemeen"><div class="header-wrapper"><h3 id="x1-2-digital-signature-algemeen"><bdi class="secno">1.2 </bdi>Digital Signature algemeen</h3><a class="self-link" href="#digital-signature-algemeen" aria-label="Permalink for Section 1.2"></a></div>
+<p>Digitale handtekeningen zijn ontworpen om de integriteit van de inhoud en authenticatie van de oorsprong en onweerlegbaarheid van de oorsprong te bieden aan gegevensobjecten die door netwerken van hun oorsprong naar hun bestemming worden getransporteerd.
+Digitale handtekeningen zijn gebaseerd op asymmetrische (of openbare sleutel) cryptografie. Het digitaal ondertekenen van een gegevensobject bestaat uit twee stappen :</p>
+<ol>
+<li>het berekenen van de samenvatting van de binaire representatie van het te ondertekenen data-object – de digest-data</li>
+<li>het resultaat van deze operatie versleutelen (encrypten) met de privésleutel van de ondertekenaar.
+(ETSI (European Standards Institute TR 119 001)  gebruikt het term  "digital signature value" voor het resultaat van de laatste stap)</li>
+</ol>
+<p>De proces-verificatie bevat de volgende stappen: </p>
+<ol>
+<li>Voorbereiden van de "to-be-signed-data" met de canonicalisatie- geaccepteerde transformaties en het berekenen van het digest-data (bv. met behulp van een hash algorithme) </li>
+<li>Decrypt de ondertekende digital signature waarde met de public-key   </li>
+<li>Vergelijk beide waarden van het oorspronkelijke bericht met het resultaat van stap 2. Als de waarden gelijk zijn, dan is de verificatie succesvol.</li>
+</ol>
+<p>De digitale ondertekening maakt gebruik van een Public Key Infrastructure (welke verder gebruik maakt van entiteiten zoals certificaten, CRLs, OCSP antwoorden, time-stamp tokens (die bewijzen dat een bepaald data-object bestond op een bepaald moment), Trust services, zoals services uitgevers certificaten (CAs), services uitgevers time-stamp tokens, etc.</p>
+<p><strong>Alle standaard formaten bevatten de volgende componenten:</strong>  </p>
+<ul>
+<li>het "signed data object"</li>
+<li>het "digital signature" veld</li>
+<li>het "signing certificaat" (of het certificaat pad)</li>
+<li>de objecten genoemd ‘signed attributen’ optionele of verplichte velden</li>
+<li>de objecten genoemd : ‘unsigned attributen’  toegevoegd  op een gegeven moment ook, nadat de "digital signature" is gerealiseerd</li>
+</ul>
+<p>Een ‘signed’ attribuut is een object, toegevoegd in de "digitaal signature" structuur. Het is een binair deel van het berekenen van het  digitale signature veld.  </p>
+<p>Afhankelijk van het business/juridische-scenario worden bepaalde velden in het ’signed-attributen’  en/of unsigned attributen structuur wel/niet toegevoegd.  </p>
+</section><section id="http-message-signatures"><div class="header-wrapper"><h3 id="x1-3-http-message-signatures"><bdi class="secno">1.3 </bdi>Http Message Signatures</h3><a class="self-link" href="#http-message-signatures" aria-label="Permalink for Section 1.3"></a></div>
+<p>Op moment van schrijven is dit de laatste versie van de standaard: draft-ietf-httpbis-message-signatures-11 [<cite><a class="bibref" data-link-type="biblio" href="#bib-http-messagesig" title="HTTP Message Signatures">HTTP-MessageSig</a></cite>].</p>
+<p>HTTP Message Signatures ondersteunt gebruiksscenario's waar het volledige HTTP-bericht mogelijk niet bekend is bij de ondertekenaar, en waar het bericht onderweg kan worden getransformeerd (bijvoorbeeld door tussenpersonen) voordat deze de ontvanger bereikt.
+De standaard beschrijft ook een middel voor de verzender van een ‘request’ om te verzoeken om een handtekening van de ontvanger toe te passen op de ‘response’ in een lopende HTTP-uitwisseling.</p>
+<p>De standaard geeft specifiek invulling aan:</p>
+<ul>
+<li><p>Een algemene nomenclatuur en canonieke regels voor de verschillende protocolelementen en andere componenten van HTTP-berichten die gebruikt worden om de handtekeningbasis te maken.</p>
+</li>
+<li><p>Algoritmen voor het genereren en verifiëren van handtekeningen via HTTP berichtcomponenten die deze handtekeningbasis gebruiken door toepassing van cryptografische primitieven.</p>
+</li>
+<li><p>Een mechanisme voor het toevoegen van een handtekening en gerelateerde metadata aan een HTTP-bericht en voor het ontleden van bijgevoegde handtekeningen en metagegeven van HTTP-berichten. Om dit te vergemakkelijken, definieert de standaard de "Signing-Input" en "Signature" velden.</p>
+</li>
+</ul>
+<p>Specifieke features van de standaard:</p>
+<ul>
+<li>Transformation resistant: Er wordt rekening mee gehouden dat de HTTP standaard toestaat dat de volgorde van HTTP elementen in een bericht kan veranderen.</li>
+<li>Canonicalization: Regels geven aan hoe elementen naar een standaard representatie worden vertaald (geschikt voor ondertekening)</li>
+<li>Components: Er worden componenten van een HTTP bericht gedefinieerd om fijnmazig onderdelen te kunnen benoemen/ondertekenen (bv: query, uri etc) </li>
+<li>Multiple Signatures: Er is ondersteuning voor meerdere signatures, bv ondertekening door een proxy onderweg;</li>
+<li>Requesting Signatures: Een partij in de communicatie kan expliciet aangeven dat hij/zij een ondertekend bericht verwacht van de andere partij;</li>
+<li>Request-Response Signature Binding: Een response kan aan de signature van de request refereren om expliciet aan te geven (en aan te tonen) dat de response antwoord is op de specifieke request;</li>
+<li>TLS-Terminating Proxies: Een specifieke use-case voor de standaard is het omzetten van een via tweezijdig TLS ontvangen bericht naar het achterland van een API gateway; het ontvangen certificaat kan meegezonden worden voor verdere afhandeling, de gateway kan het zelf ondertekenen met het eigen certificaat om aan te geven dat de gateway het bericht (en certificaat) correct heeft ontvangen (en gevalideerd);</li>
+</ul>
+</section><section id="jades"><div class="header-wrapper"><h3 id="x1-4-jades"><bdi class="secno">1.4 </bdi>JAdES</h3><a class="self-link" href="#jades" aria-label="Permalink for Section 1.4"></a></div>
+<p>ETSI heeft een standaard voor JWS ontwikkeld, naast de andere ETSI standaarden voor de  AdES digital signatures van het Regulation (EU) No 910/2014,  genoemd JAdES  (ETSI TS 119 182-1). JAdES ondersteunt veilige communicatie die voldoet aan de vereisten van de eIDAS-verordening van de Europese Unie (nr. 910/2014) voor geavanceerde elektronische handtekeningen en zegels en wettelijke vereisten voor diensten zoals open bankieren.</p>
+<p><em>“In samenwerking met Open Banking Europe heeft ETSI een oplossing ontwikkeld die voldoet aan de vereisten van Open Banking API's en tegelijkertijd de authenticiteit van financiële transacties garandeert.”</em></p>
+<p><em>TS 119 182-1 is op RFC 7515 gebaseerd. Er zijn nieuwe attributen, header-parameters toegevoegd en er worden ook 4 "baseline levels"  geïntroduceerd.</em></p>
+<p>Het huidige profile (JSON signature) is gelijk met het basic JAdES-B-B level. Het maakt gebruik van JWS header parameters, zoals ook gedefinieerd in het JAdES profile.  </p>
+<p>ETSI TS 119 182-1 kan worden gebruikt voor elke transactie tussen een persoon en een bedrijf, tussen twee bedrijven, tussen een persoon en een overheidsinstantie, enz. die van toepassing is op elektronische communicatie. De technische kenmerken van de specificatie kunnen daarom worden toegepast op het gebruik van op PKI gebaseerde digitale handtekeningtechnologie.</p>
+<p>Ontwerp principes:</p>
+<ul>
+<li>De handtekeningen die voldoen aan dit profiel ondersteunen het gebruik van gekwalificeerde certificaten voor elektronische zegels in overeenstemming met Commission Delegated Regulation (EU) 2018/389</li>
+<li>Het profiel is afgestemd op JAdES baseline digitale handtekeningen zoals gespecificeerd door ETSI</li>
+<li>De handtekening beschermt een HTTP-body en optioneel geselecteerde HTTP-headervelden.</li>
+<li>Een enkele handtekening moet worden opgenomen in een HTTP-header die is losgekoppeld (detached) van het payload-message</li>
+<li>Het profiel is bedoeld om de interoperabiliteit te maximaliseren</li>
+<li>Er worden geen beperkingen opgelegd aan de inhoud van de ondertekende payloads. Het kan worden gebruikt om JSON, XML ISO 20022 of elke andere vorm van gegevens te beschermen</li>
+<li>JSON Web Signature-headers en HTTP-headervelden die essentieel zijn voor de beveiliging van de uitwisseling, evenals HTTP Body, zijn zodanig beveiligd dat ze niet gewijzigd kunnen worden .</li>
+<li>JAdES-handtekeningen kunnen geserialiseerd worden met behulp van: JWS Compact Serialization of JWS JSON Serialization zoals gespecificeerd in IETF RFC 7515 [2].</li>
+<li>Handtekeningen kunnen later worden gebruikt als bewijs in de rechtbank (d.w.z. zijn "onweerlegbaar").</li>
+<li>JAdES-handtekeningen met de profielen  B-LT, B-LTA kunnen de digitale certificaat validiteit op de lange termijn garanderen. Deze profielen zijn geschikt voor de realisatie van de archiveringseisen.</li>
+<li>Handtekeningen kunnen zowel op HTTP-requests en ook op HTTP-responses worden toegepast.</li>
+</ul>
+</section><section id="vergelijking-en-use-cases"><div class="header-wrapper"><h3 id="x1-5-vergelijking-en-use-cases"><bdi class="secno">1.5 </bdi>Vergelijking en Use Cases</h3><a class="self-link" href="#vergelijking-en-use-cases" aria-label="Permalink for Section 1.5"></a></div>
+<section id="http-message-signatures-httpbis-message-signatures-use-cases"><div class="header-wrapper"><h4 id="x1-5-1-http-message-signatures-httpbis-message-signatures-use-cases"><bdi class="secno">1.5.1 </bdi>HTTP Message Signatures (Httpbis-message-signatures) use-cases:</h4><a class="self-link" href="#http-message-signatures-httpbis-message-signatures-use-cases" aria-label="Permalink for Section 1.5.1"></a></div>
+<ul>
+<li><p>TLS-Terminating proxy use-case:
+De tweezijdig TLS ontvangen berichten via een API gateway kunnen middels de httpbis-message signature ondertekend worden met het eigen gateway certificaat. Dat is om aan te geven dat de gateway (en certificaat) het bericht correct , zonder transformaties heeft ontvangen (en gevalideerd);
+End-to-end communicatiebeveiliging en berichtenintegriteit voor de berichten http-message-componenten en de http-derived-componenten tussen 2 systemen wordt in dit geval gerealiseerd. </p>
+</li>
+<li><p>Realisatie van een additionele beveiligslaag in de uitwisselberichten tussen 2 systemen naast het transport tweezijdig TLS beveiligingscommunicatie. </p>
+</li>
+<li><p>Httpbis-message-signature is gespecialiseerd in de ondertekening van een deel van de http-headers-velden en http-derived components</p>
+</li>
+<li><p>Httpbis-message-signature introduceert een mechanisme van ’requesting-signature’ in de communicatie tussen 2 systemen</p>
+</li>
+<li><p>Httpbis-message-signature introduceert een mechanisme van ’request-response signature binding’</p>
+</li>
+</ul>
+</section><section id="jades-use-cases"><div class="header-wrapper"><h4 id="x1-5-2-jades-use-cases"><bdi class="secno">1.5.2 </bdi>JAdES use-cases:</h4><a class="self-link" href="#jades-use-cases" aria-label="Permalink for Section 1.5.2"></a></div>
+<ul>
+<li>De ondertekende berichten (payload) worden juridisch gebruikt als bewijs in de rechtbank (d.w.z. zijn "onweerlegbaar").</li>
+</ul>
+<p>JAdES-handtekening ondersteunt de veilige communicatie die voldoet aan de vereisten van de eIDAS-verordening van de Europese Unie (nr. 910/2014) voor geavanceerde of gekwalificeerd elektronische handtekeningen en zegels en wettelijke vereisten. In dit scenario kunnen geavanceerde /gekwalificeerd ondertekening certificaten van de PKI-QTPS’s of QTSA’s (gekwalificeerd timestamps certificaten) gebruikt worden.</p>
+<p>JAdES-handtekening wordt gebruikt als standaard in de communicatie van de payment-services conform EU Payment Services Directive 2015/2366 [16] (PSD2).</p>
+<ul>
+<li>JAdES–handtekening kan gebruikt worden in de realisatie van een B2B betrouwbare veilige communicatie tussen 2 systemen op basis van de REST-API.</li>
+</ul>
+<p>De ondertekening van de berichten en de payload-berichten kan makkelijk gerealiseerd worden met behulp van JAdES-B-B  als een JAdES-compliant JWT detached. Het is een eenvoudige JSON-structuur ondertekening. Daardoor kan het makkelijk door de client-applicaties gebruikt en gerealiseerd worden.  </p>
+<p>JAdES–handtekening detached verandert ook de payload-structuur niet. Dat betekent dat een client die de validatie van handtekening niet ondersteunt, kan blijven werken alsof er geen handtekening is toegepast.
+JAdES–handtekening detached kan getransporteerd worden met behulp van een HTTP-header, waardoor de aanwezigheid niet opdringerig is en gemakkelijk is te transporteren.</p>
+<p>In een juridisch context wordt de JAdES-handtekening verrijkt met verschillende velden in de handtekening bv: tijdstip ondertekening; commitment (reden) van de ondertekening; toevoegen van de counter-ondertekening;</p>
+<ul>
+<li>Realisatie van de archiveringseisen van de ondertekende communicatie berichten tussen 2 systemen.</li>
+</ul>
+<p>Met de implementatie van de JAdES-B-LT en JAdES-B-LTA profielen kunnen de JAdES-handtekeningen oneindig worden verlengd t.b.v archiveringseisen </p>
+</section></section><section id="bijlage-a-httpbis-message-signatures"><div class="header-wrapper"><h3 id="x1-6-bijlage-a-httpbis-message-signatures"><bdi class="secno">1.6 </bdi>BIJLAGE A : HTTPBIS-Message-Signatures</h3><a class="self-link" href="#bijlage-a-httpbis-message-signatures" aria-label="Permalink for Section 1.6"></a></div>
+<p>Zie [<cite><a class="bibref" data-link-type="biblio" href="#bib-http-messagesig" title="HTTP Message Signatures">HTTP-MessageSig</a></cite>]</p>
+<p>Voorbeelden:</p>
+<p>This section provides non-normative examples that may be used as test cases to validate implementation correctness. These examples are based on the following HTTP messages:</p>
+<p>For requests, this test-request message is used:</p>
+<pre><code aria-busy="false" class="hljs">NOTE: '\' line wrapping per RFC 8792
+
+POST /foo?param=Value&amp;Pet=dog HTTP/1.1
+Host: example.com
+Date: Tue, 20 Apr 2021 02:07:55 GMT
+Content-Type: application/json
+Content-Digest: sha-512=:WZDPaVn/7XgHaAy8pmojAkGWoRx2UFChF41A2svX+T\
+  aPm+AbwAgBWnrIiYllu7BNNyealdVLvRwEmTHWXvJwew==:
+Content-Length: 18
+
+{"hello": "world"}
+</code></pre>
+<p>For responses, this test-response message is used:</p>
+<pre><code aria-busy="false" class="hljs">NOTE: '\' line wrapping per RFC 8792
+
+HTTP/1.1 200 OK
+Date: Tue, 20 Apr 2021 02:07:56 GMT
+Content-Type: application/json
+Content-Digest: sha-512=:JlEy2bfUz7WrWIjc1qV6KVLpdr/7L5/L4h7Sxvh6sN\
+  HpDQWDCL+GauFQWcZBvVDhiyOnAQsxzZFYwi0wDH+1pw==:
+Content-Length: 23
+
+{"message": "good dog"}
+</code></pre>
+<section id="signing-components"><div class="header-wrapper"><h4 id="x1-6-1-signing-components"><bdi class="secno">1.6.1 </bdi>Signing components</h4><a class="self-link" href="#signing-components" aria-label="Permalink for Section 1.6.1"></a></div>
+<p>This example covers additional components (the authority, the Content-Digest header field, and a single named query parameter) in test-request using the rsa-pss-sha512 algorithm.</p>
+<p>The corresponding signature base is:</p>
+<pre><code aria-busy="false" class="hljs">NOTE: '\' line wrapping per RFC 8792
+
+"@authority": example.com
+"content-digest": sha-512=:WZDPaVn/7XgHaAy8pmojAkGWoRx2UFChF41A2svX\
+  +TaPm+AbwAgBWnrIiYllu7BNNyealdVLvRwEmTHWXvJwew==:
+"@query-param";name="Pet": dog
+"@signature-params": ("@authority" "content-digest" \
+  "@query-param";name="Pet")\
+  ;created=1618884473;keyid="test-key-rsa-pss"
+</code></pre>
+<p>This results in the following Signature-Input and Signature headers being added to the message under the label sig-b22:</p>
+<pre><code aria-busy="false" class="hljs">NOTE: '\' line wrapping per RFC 8792
+
+Signature-Input: sig-b22=("@authority" "content-digest" \
+  "@query-param";name="Pet");created=1618884473\
+  ;keyid="test-key-rsa-pss"
+Signature: sig-b22=:W2kxR52X0tXN9u7yjyPeWa0T3D0SVG8KkPo+lOWyb2TGdLz\
+  ixWjUlbehjnNhzA+wFWnE6+hdKH8KR6Z9FvsxCc+44XrqxzT7Vcsror5SjMyfx6Nq\
+  tELklj1u2L4JovANI80BSoVobSoc+v9NRVWJZU7WAVow8H2CucCcv2cy1tKFCTMyc\
+  m9LQrIz63Tg5tcGWj64b12nmwj9TwwkCygfz0MTyIytjYLVzKw7mXpL4jGFZ5lsw2\
+  VT2eB3qpF2d/Psy0p1heKhrkz9uvKeCoj+P5QjLMS4eirHDqpKqe9YmCaMsJAUYSU\
+  M86qC8qO6vMQhTMegTkEe25DquVcTiOAEAw==:
+</code></pre>
+</section></section><section id="bijlage-b-jades"><div class="header-wrapper"><h3 id="x1-7-bijlage-b-jades"><bdi class="secno">1.7 </bdi>BIJLAGE B : JAdES</h3><a class="self-link" href="#bijlage-b-jades" aria-label="Permalink for Section 1.7"></a></div>
+<ol>
+<li>JAdES-handtekening velden</li>
+</ol>
+<p>Conform  RFC 7515 en RFC 7797 (JSON Web Signature(JWS)) de elementen van de JSON ‘’digital signatures’’ zijn: </p>
+<ul>
+<li>JOSE Header (JSON Object Signing and Encryption):</li>
+<li>JWS Protected Header bevat de ’signed attributes’’ in het container-element ‘’etsiSigProps’’</li>
+<li>JWS Unprotected header bevat optioneel het container-header-element genoemd ‘’etsiU’’. Deze header parameter wordt in het JAdES Long Term Validation profile gebruikt.</li>
+<li>JWS Payload (’Data to be Signed’)   </li>
+<li>JWS Signature (‘’Detached’’ van ‘’Data to be Signed’’)</li>
+</ul>
+<ol start="2">
+<li>JAdES Serialisations methoden</li>
+</ol>
+<p>In alle serializatie-methoden zijn de JWS Protected Header, JWS Payload, and JWS Signature base64url encoded.</p>
+<ul>
+<li>JSON Compact Serialization
+Het kan alleen de ’protected headers’ bevatten.<br>Het wordt alleen in het JAdES-BASELINE-B level gebruikt. Het JSON-container-element signed attributes ‘’etsiSigProps’’, is een deel van de JWS Protected Header. </li>
+<li>JSON Serialization
+Het kan beide type headers (protected en unprotected) bevatten en ondersteunt meerdere ondertekeningen van hetzelfde object. 
+De JAdES-BASELINE-T/-LT/-LTA handtekening profielen kunnen dit serialization format gebruiken. Het JAdES- handtekening serialization format ondersteunt de realisatie van de ’multiple-signatures’ en ’counter-signatures’</li>
+<li>JSON Flattened Serialization
+Het kan gebruikt worden zoals één signature gebruikt wordt. De JAdES-BASELINE-T/-LT/-LTA signature profielen kunnen dit serialization format gebruiken. 
+Deze JAdES- handtekening flattened serialization format ondersteunt de realisatie van de   ’counter-signatures’.
+Het JWS object wordt als een HTTP header-veld: "x-jws-signature“ toegevoegd  in de HTTP-bericht-headers.</li>
+</ul>
+<ol start="3">
+<li>JAdES-handtekening format</li>
+</ol>
+<ul>
+<li><p>ENVELOPING: het JWS Payload is enveloped in de JAdES-handtekening. 
+Deze format kan alleen één handtekening bevatten. JAdES enveloping ondersteunt counter-signatures. </p>
+</li>
+<li><p>DETACHED:  het JWS Payload is niet toegevoegd in het JAdES signature.<br>Om deze signature te valideren is het oorspronkelijke bericht nodig.
+JAdES-detached ondersteunt multiple-siganture (parallel-sigantures)  en ook counter-signatures.
+Met JAdES-handtekening is het niet mogelijk alleen een deel van het JSON payload bericht te ondertekenen. Met JAdES-handtekening is het JSON payload bericht volledig ondertekend. Indien nodig zouden additioneel de rest van de payload als aparte berichten gestuurd moeten worden naar de betreffende partij.</p>
+</li>
+</ul>
+<ol start="4">
+<li>JAdES-handtekening profielen</li>
+</ol>
+<ul>
+<li>Het B-B-level bevat in de handtekening headerparameters en sommige niet-ondertekende componenten in de etsiU unsigned header-parameter.</li>
+<li>Het B-T-level bevat in de handtekening de elementen van het profiel B-B samen met een vertrouwd timestamp-token dat bewijst dat de handtekening zelf op een bepaald tijdstip daadwerkelijk bestond.</li>
+<li>Het B-LT-level bevat in de handtekening de elementen van het profiel B-T plus het materiaal dat nodig is voor het valideren van de handtekening in het handtekeningdocument. Dit niveau is bedoeld om de beschikbaarheid van het validatiemateriaal op lange termijn te realiseren.</li>
+<li>Het B-LTA-level bevat in de handtekening de elementen van het profiel B-LT plus de  elektronische tijdstempels die de validatie van de handtekening lang na het genereren ervan mogelijk maken. Dit niveau is bedoeld om de beschikbaarheid en integriteit van het validatiemateriaal op lange termijn te realiseren.</li>
+</ul>
+</section></section>
+  
+  
+  
+  
+
+
+<section id="references" class="appendix"><div class="header-wrapper"><h2 id="a-referenties"><bdi class="secno">A. </bdi>Referenties</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></div><section id="informatieve-referenties">
+    <div class="header-wrapper"><h3 id="a-1-informatieve-referenties"><bdi class="secno">A.1 </bdi>Informatieve referenties</h3><a class="self-link" href="#informatieve-referenties" aria-label="Permalink for Appendix A.1"></a></div>
+    <dl class="bibliography"><dt id="bib-http-messagesig">[HTTP-MessageSig]</dt><dd>
+      <a href="https://www.ietf.org/archive/id/draft-ietf-httpbis-message-signatures-11.html"><cite>HTTP Message Signatures</cite></a>. URL: <a href="https://www.ietf.org/archive/id/draft-ietf-httpbis-message-signatures-11.html">https://www.ietf.org/archive/id/draft-ietf-httpbis-message-signatures-11.html</a>
+    </dd><dt id="bib-jades">[JAdES]</dt><dd>
+      <a href="https://www.etsi.org/deliver/etsi_ts/119100_119199/11918201/01.01.01_60/ts_11918201v010101p.pdf"><cite>JAdES digital signatures</cite></a>. URL: <a href="https://www.etsi.org/deliver/etsi_ts/119100_119199/11918201/01.01.01_60/ts_11918201v010101p.pdf">https://www.etsi.org/deliver/etsi_ts/119100_119199/11918201/01.01.01_60/ts_11918201v010101p.pdf</a>
+    </dd></dl>
+  </section></section><p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
+  </p><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(setupPanel);
+} else {
+  setupPanel();
+}
+
+function setupPanel() {
+  const listener = panelListener();
+  document.body.addEventListener("keydown", listener);
+  document.body.addEventListener("click", listener);
+}
+
+function panelListener() {
+  /** @type {HTMLElement} */
+  let panel = null;
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    const action = deriveAction(event);
+
+    switch (action) {
+      case "show": {
+        hidePanel(panel);
+        /** @type {HTMLElement} */
+        const dfn = target.closest("dfn, .index-term");
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        const coords = deriveCoordinates(event);
+        displayPanel(dfn, panel, coords);
+        break;
+      }
+      case "dock": {
+        panel.style.left = null;
+        panel.style.top = null;
+        panel.classList.add("docked");
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        panel = null;
+        break;
+      }
+    }
+  };
+}
+
+/**
+ * @param {MouseEvent|KeyboardEvent} event
+ */
+function deriveCoordinates(event) {
+  const target = /** @type HTMLElement */ (event.target);
+
+  // We prevent synthetic AT clicks from putting
+  // the dialog in a weird place. The AT events sometimes
+  // lack coordinates, so they have clientX/Y = 0
+  const rect = target.getBoundingClientRect();
+  if (
+    event instanceof MouseEvent &&
+    event.clientX >= rect.left &&
+    event.clientY >= rect.top
+  ) {
+    // The event probably happened inside the bounding rect...
+    return { x: event.clientX, y: event.clientY };
+  }
+
+  // Offset to the middle of the element
+  const x = rect.x + rect.width / 2;
+  // Placed at the bottom of the element
+  const y = rect.y + rect.height;
+  return { x, y };
+}
+
+/**
+ * @param {Event} event
+ */
+function deriveAction(event) {
+  const target = /** @type {HTMLElement} */ (event.target);
+  const hitALink = !!target.closest("a");
+  if (target.closest("dfn:not([data-cite]), .index-term")) {
+    return hitALink ? "none" : "show";
+  }
+  if (target.closest(".dfn-panel")) {
+    if (hitALink) {
+      return target.classList.contains("self-link") ? "hide" : "dock";
+    }
+    const panel = target.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : "none";
+  }
+  if (document.querySelector(".dfn-panel:not([hidden])")) {
+    return "hide";
+  }
+  return "none";
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number, y: number }} clickPosition
+ */
+function displayPanel(dfn, panel, { x, y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top, bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects[0].height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement} */
+    const caret = panel.querySelector(".caret");
+    caret.style.left = `${newCaretOffset}px`;
+  }
+
+  // As it's a dialog, we trap focus.
+  // TODO: when <dialog> becomes a implemented, we should really
+  // use that.
+  trapFocus(panel, dfn);
+}
+
+/**
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function trapFocus(panel, dfn) {
+  /** @type NodeListOf<HTMLAnchorElement> elements */
+  const anchors = panel.querySelectorAll("a[href]");
+  // No need to trap focus
+  if (!anchors.length) return;
+
+  // Move focus to first anchor element
+  const first = anchors.item(0);
+  first.focus();
+
+  const trapListener = createTrapListener(anchors, panel, dfn);
+  panel.addEventListener("keydown", trapListener);
+
+  // Hiding the panel releases the trap
+  const mo = new MutationObserver(records => {
+    const [record] = records;
+    const target = /** @type HTMLElement */ (record.target);
+    if (target.hidden) {
+      panel.removeEventListener("keydown", trapListener);
+      mo.disconnect();
+    }
+  });
+  mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
+}
+
+/**
+ *
+ * @param {NodeListOf<HTMLAnchorElement>} anchors
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function createTrapListener(anchors, panel, dfn) {
+  const lastIndex = anchors.length - 1;
+  let currentIndex = 0;
+  return event => {
+    switch (event.key) {
+      // Hitting "Tab" traps us in a nice loop around elements.
+      case "Tab": {
+        event.preventDefault();
+        currentIndex += event.shiftKey ? -1 : +1;
+        if (currentIndex < 0) {
+          currentIndex = lastIndex;
+        } else if (currentIndex > lastIndex) {
+          currentIndex = 0;
+        }
+        anchors.item(currentIndex).focus();
+        break;
+      }
+
+      // Hitting "Enter" on an anchor releases the trap.
+      case "Enter":
+        hidePanel(panel);
+        break;
+
+      // Hitting "Escape" returns focus to dfn.
+      case "Escape":
+        hidePanel(panel);
+        dfn.focus();
+        return;
+    }
+  };
+}
+
+/** @param {HTMLElement} panel */
+function hidePanel(panel) {
+  if (!panel) return;
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
