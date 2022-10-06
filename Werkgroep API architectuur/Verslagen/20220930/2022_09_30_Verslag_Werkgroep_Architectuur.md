@@ -16,7 +16,7 @@ Totale set van wijzigingen per 1-1-2023:
 - De 17 nieuwe Architectuurprincipes vullen de Kwaliteitsdoelen in;
 - De 89 nieuwe Implicaties van Architectuurprincipes concretiseren de principes.
 
-Zie [Link naar presentatie NORA RFC Architectuurafspraken]()
+Zie [Link naar presentatie NORA RFC Architectuurafspraken](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20API%20architectuur/Verslagen/20220930/Handreiking%20doorvoeren%20wijzigingen%20in%20NORA%20v0.2.pdf)
 
 
 ### Discussie
