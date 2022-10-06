@@ -1,4 +1,4 @@
-Verslag
+
 
 # Verslag Werkgroep API Architectuur
  Bijeenkomst KPAPI Utrecht
