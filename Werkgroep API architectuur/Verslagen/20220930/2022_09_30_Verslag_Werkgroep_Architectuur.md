@@ -27,7 +27,12 @@ Zijn er bv ook generieke API-Architectuur Principes op te stellen ? (of bieden a
 
 (Zie ook de eerdere inventarisatie van de huidige NORA principes op [Enquete NORA Principes](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20API%20architectuur/Verslagen/20200703/NORA-API-enquete.md)
 
+### Vervolgstappen
+
 Dit onderwerp zal in de volgende Architectuur meetings op de agenda worden geplaatst, concreet zal gekeken worden naar:
 
 - Relatie API Architectuur concepten met nieuwe NORA principes
 - Huidige beschrijving API thema in de NORA
+
+
+
