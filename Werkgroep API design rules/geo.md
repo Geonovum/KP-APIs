@@ -6,6 +6,22 @@ github repository; zie issues met tag
 
 De werkgroep houdt 1x per 2 weken een korte online meeting (half uur). Neem voor deelname aan deze werkgroep contact op met Linda van den Brink (Geonovum).
 
+## verslag online meeting 8 november
+De geo module was de hele maand oktober in consultatie. Er zijn zo tussen de 50 en 60 reacties binnengekomen van twee organisaties. Op 8 november waren we bijeen om in de ADR geo module werkgroep de verwerking van consultatiereacties te bespreken. 
+
+- Aanwezig: Mark Strijker, Pieter Bresters, Martin van der Plas en Linda van den Brink. 
+- Afgemeld: George Mathijssen 
+
+De reacties staan in een [markdown document](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20API%20design%20rules/consultaties/geo-okt2022-reacties.md). Dit is een tussenvorm: vanuit deze lijst gaan we de reacties omzetten in github issues. Dit gaan Mark Strijker, Pieter Bresters en Martin van der Plas doen. 
+
+Vervolgens gaan we de issues oppakken. Om dit te faciliteren zullen we weer elke twee weken op dinsdag van half 2 tot 2 bij elkaar zitten (in teams). 
+
+Werkverdeling: 
+-	Mark Strijker: Kadaster Voorstellen 1 t/m 17
+-	Pieter Bresters: Kadaster Voorstellen 18 t/m 24 + Kadaster Suggesties 1 t/m 8
+-	Martin van der Plas: Kadaster Suggesties 9 t/m 25
+-	Linda van den Brink: Kadaster Tekstuele opmerkingen + Vicrea alle opmerkingen
+
 ## verslag online meeting 5 juli
 Aanwezig: Pieter, Mark, George, Linda
 
