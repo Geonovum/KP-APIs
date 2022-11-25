@@ -173,9 +173,9 @@ Use the following URIs to specify the CRS:
 |WGS 84 / Pseudo-Mercator | 2D | Global | http://www.opengis.net/def/crs/EPSG/9.9.1/3857|
 
 <aside class="note" title="CRS support and GeoJSON">
-Officially, WGS84 lat-long (CRS84) is the only CRS allowed in GeoJSON. However, GeoJSON does state that using another CRS is allowed, if this is agreed between provider and consumer of the data. The API functionality described above, to negotiate the CRS between client and server, can be viewed as such an agreement. Many GIS clients can deal with GeoJSON in other CRS than CRS84.
+Officially, WGS84 longitude-latitude (CRS84) is the only CRS allowed in GeoJSON. However, GeoJSON does state that using another CRS is allowed, if this is agreed between provider and consumer of the data. The API functionality described above, to negotiate the CRS between client and server, can be viewed as such an agreement. Many GIS clients can deal with GeoJSON in other CRS than CRS84.
 
-In addition, the Geonovum CRS guidelines [[hr-crs]] describe [how ETRS89 can be treated as equal to WGS84 under certain circumstances](https://docs.geostandaarden.nl/crs/cv-hr-crs-20211125/#wgs-84-gelijkstellen-aan-etrs89) - but note that GeoJSON requires coordinates to be in latitude-longitude order, while ETRS89 uses longitude-latitude. 
+In addition, the Geonovum CRS guidelines [[hr-crs]] describe [how ETRS89 can be treated as equal to WGS84 under certain circumstances](https://docs.geostandaarden.nl/crs/cv-hr-crs-20211125/#wgs-84-gelijkstellen-aan-etrs89). 
 
 [[JSON-FG]] is a proposed standard extension of GeoJSON that adds CRS support.
 </aside>
