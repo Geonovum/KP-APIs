@@ -87,7 +87,7 @@ The guiding principles for CRS support:
 - The default CRS, CRS84, is listed first in the list of supported CRSs in the API; if the consumer does not specify the CRS it is assumed it uses the default.
 - Coordinate reference systems API strategy: request/response in RD; ETRS89; CRS84; Pseudo  Mercator;
 - Consider no-regret: record in multiple much-requested CRSs instead of on-the-fly transformation;
-- Use RDNAPTRANS™ 2018 to transform RD/Amersfoort to ETRS89 (correction grid);
+- Use the latest version of RDNAPTRANS™ to transform RD to ETRS89 (correction grid);
 - Presentation depending on context (e.g. user requirements);
 - Exchange format (notation) ETRS89 and WGS84 longitude latitude in decimal degrees: DD.ddddddddd (for example: `5.962376256, 52.255023450`)
 - Exchange format (notation) RD and Pseudo Mercator X Y in meters: `195427.5200 311611.8400`
