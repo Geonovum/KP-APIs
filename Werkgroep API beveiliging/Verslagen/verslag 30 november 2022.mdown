@@ -6,7 +6,6 @@
 
 Frank Terpstra (Geonovum)
 Ronald Coenen (Tilburg)
-Eelco Hotting (VNG)
 Alexander Green (Logius)
 Geri Wolters (Ecosys/Digitale delta)
 Heiko Hudig (Politie)
