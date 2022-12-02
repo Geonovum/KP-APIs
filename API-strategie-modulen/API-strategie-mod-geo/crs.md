@@ -91,7 +91,7 @@ The guiding principles for CRS support:
 - Presentation depending on context (e.g. user requirements);
 - Exchange format (notation) for ETRS89 and WGS84 longitude latitude in decimal degrees: DD.ddddddddd (for example: `5.962376256, 52.255023450`)
 - Exchange format (notation) for RD X Y in meters: xxxxxx.xxxz yyyyyy.yyyy (for example: `195427.5200 311611.8400`)
-- WGS84 Pseudo Mercator (EPSG:3857) is rather inaccurate, therefor WGS84 Pseudo Mercator is only suitable for simple visualization of inprecise data. WGS84 Pseudo Merctor shall not be used for visualization of precise data or data that is not intended for visualization.
+- WGS 84 Pseudo Mercator (EPSG:3857) is rather inaccurate, therefor WGS 84 Pseudo Mercator is only suitable for simple visualization of inprecise data. WGS 84 Pseudo Merctor shall not be used for visualization of precise data or data that is not intended for visualization.
 
 The CRS can be specified for request and response individually using parameters or headers.
 
