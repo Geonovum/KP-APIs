@@ -55,7 +55,7 @@ The default CRS for GeoJSON and for OGC API Features is WGS84 with coordinate or
 When referring to a coordinate reference system using its code in the rest of this chapter, this is meant to refer to both the 2D and 3D variant of the system in question. E.g. when "RD" is mentioned, this should be taken to mean "RD or RD-NAP"; when WGS84 is mentioned, this should be taken to mean "WGS84 or WGS84h". 
 </aside>
 
-Since most client-side mapping libraries use WGS84, the W3C/OGC [Spatial Data on the Web](https://www.w3.org/2021/sdw/) working group recommends to use this as the default coordinate reference system. Thus, spatial data can be mapped without any complex transformations. The API strategy caters for this supporting not only ETRS89 and RD/Amersfoort, but also WGS84 and Pseudo Mercator (EPSG:3857).
+Since most client-side mapping libraries use WGS84, the W3C/OGC [Spatial Data on the Web](https://www.w3.org/2021/sdw/) working group recommends to use this as the default coordinate reference system. Thus, spatial data can be mapped without any complex transformations. The API strategy caters for this supporting not only ETRS89 and RD/Amersfoort but also WGS84.
 
 The *default* CRS, i.e. the CRS which is assumed when not specified by either the API or the client, is CRS84, in line with GeoJSON and OGC API Features. 
 
@@ -85,12 +85,13 @@ The guiding principles for CRS support:
 
 - Source systems record coordinates as they enter the system (legal context);
 - The default CRS, CRS84, is listed first in the list of supported CRSs in the API; if the consumer does not specify the CRS it is assumed it uses the default.
-- Coordinate reference systems API strategy: request/response in RD; ETRS89; CRS84; Pseudo  Mercator;
+- Coordinate reference systems API strategy: request/response in RD; ETRS89; CRS84;
 - Consider no-regret: record in multiple much-requested CRSs instead of on-the-fly transformation;
 - Use RDNAPTRANS™ 2018 to transform RD/Amersfoort to ETRS89 (correction grid);
 - Presentation depending on context (e.g. user requirements);
-- Exchange format (notation) ETRS89 and WGS84 longitude latitude in decimal degrees: DD.ddddddddd (for example: `5.962376256, 52.255023450`)
-- Exchange format (notation) RD and Pseudo Mercator X Y in meters: `195427.5200 311611.8400`
+- Exchange format (notation) for ETRS89 and WGS84 longitude latitude in decimal degrees: DD.ddddddddd (for example: `5.962376256, 52.255023450`)
+- Exchange format (notation) for RD X Y in meters: xxxxxx.xxxz yyyyyy.yyyy (for example: `195427.5200 311611.8400`)
+- WGS84 Pseudo Mercator (EPSG:3857) is rather inaccurate, therefor WGS84 Pseudo Mercator is only suitable for simple visualization of inprecise data. WGS84 Pseudo Merctor shall not be used for visualization of precise data or data that is not intended for visualization.
 
 The CRS can be specified for request and response individually using parameters or headers.
 
