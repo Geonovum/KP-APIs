@@ -10,7 +10,7 @@
 Pub/Sub event notificatie dienst – Toelichting Rob van der Horst (Politie)
 
 Rob heeft een overview gegeven van de architectuur en vervolgens ingezoomed op event driven concepten en de unified log zoals deze bij Politie is ingevoerd;
-(Als de presentatie gedeeld kan worden zal deze nog worden geplaatst)
+(Zie Presentatie [Event Driven Architecture](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20API%20architectuur/Verslagen/20221110/EDA%20-%20Pubsub%20-%20NORA%20API%20expertgroep.pdfEDA%20-%20Pubsub%20-%20NORA%20API%20expertgroep.pdf))
 
 ## Overig
 
