@@ -3,7 +3,7 @@
 A Coordinate Reference System (CRS) or Spatial Reference System (SRS) is a framework to measure locations on the earth surface as coordinates. Geometries consist of coordinates. To be able to measure the geometry's coordinates on the earth surface a CRS is required in conjunction with the coordinates.
 
 CRSs are uniquely identified by means of a Spatial Reference System Identifier (SRID).
-SRIDs may refer to different standards, for example European Petroleum Survey Group (EPSG) or Open Geospatial Consortium (OGC).
+SRIDs may refer to different standards, for example EPSG Geodetic Parameter Dataset or Open Geospatial Consortium (OGC).
 
 For a detailed description of CRSs see [[hr-crs]].
 
@@ -49,7 +49,7 @@ If all features in a feature collection are stored using a particular CRS, the p
 
 ## CRS negotiation
 
-The default CRS for GeoJSON and for OGC API Features is WGS84 with coordinate order longitude-latitude, also referred to as "CRS84". This is the global CRS that can be applied world-wide. Due to the datum and the tectonic displacements it is not accurate enough for local coordinate reference systems like ETRS89 (EPSG:4258, European), or RD/Amersfoort (EPSG:28992, Dutch). For more information about coordinate reference systems, read the Geonovum guidelines on CRS [[hr-crs]].
+The default CRS for GeoJSON and for OGC API Features is WGS84 with coordinate order longitude-latitude, also referred to as "CRS84". This refers to an ensemble of global CRSs that can be applied world-wide. Due to the datum and the tectonic displacements it is not accurate enough for local coordinate reference systems like ETRS89 (EPSG:4258, European), or RD/Amersfoort (EPSG:28992, Dutch). For more information about coordinate reference systems, read the Geonovum guidelines on CRS [[hr-crs]].
 
 <aside class="note" title="Convention">
 When referring to a coordinate reference system using its code in the rest of this chapter, this is meant to refer to both the 2D and 3D variant of the system in question. E.g. when "RD" is mentioned, this should be taken to mean "RD or RD-NAP"; when WGS84 is mentioned, this should be taken to mean "WGS84 or WGS84h". 
@@ -87,7 +87,7 @@ The guiding principles for CRS support:
 - The default CRS, CRS84, is listed first in the list of supported CRSs in the API; if the consumer does not specify the CRS it is assumed it uses the default.
 - Coordinate reference systems API strategy: request/response in RD; ETRS89; CRS84; Pseudo  Mercator;
 - Consider no-regret: record in multiple much-requested CRSs instead of on-the-fly transformation;
-- Use RDNAPTRANS™ 2018 to transform RD/Amersfoort to ETRS89 (correction grid);
+- Use the latest version of RDNAPTRANS™ to transform RD to ETRS89 (correction grid);
 - Presentation depending on context (e.g. user requirements);
 - Exchange format (notation) ETRS89 and WGS84 longitude latitude in decimal degrees: DD.ddddddddd (for example: `5.962376256, 52.255023450`)
 - Exchange format (notation) RD and Pseudo Mercator X Y in meters: `195427.5200 311611.8400`
@@ -157,6 +157,7 @@ The API should be able to handle the following scenarios based on the rules stat
 | No geometry in request, no geometry in response | No CRS negotiation necessary |
 | No geometry in request, geometry in response    | The client can request a specific CRS for the geometries in the response using the `crs` parameter. The server indicates the geometry CRS in the response using the `Content-Crs` header. |
 | Geometry in request body, no geometry in response | The client indicates the CRS of the geometry in the request body using the `Content-Crs` header. |
+| Geometry in request body, geometry in response | The client indicates the CRS of the geometry in the request body using the `Content-Crs` header, and can request a specific CRS for the geometries in the response using the `crs` parameter. The server indicates the geometry CRS in the response using the `Content-Crs` header. |
 | Geometry filter in request, no geometry in response    | The client indicates the CRS of the geometry filter in the request using the `bbox-crs` parameter if a bounding box is used to filter geospatially, or the `filter-crs` parameter if another way of geospatial filtering is used.|
 | Geometry filter in request, geometry in response       | The client indicates the CRS of the geometry filter in the request using `bbox-crs` or `filter-crs` as in the previous scenario, and requests a specific CRS for the geometries in the response using the `crs` parameter. The server indicates the geometry CRS in response using the `Content-Crs` header.|
 
@@ -173,9 +174,9 @@ Use the following URIs to specify the CRS:
 |WGS 84 / Pseudo-Mercator | 2D | Global | http://www.opengis.net/def/crs/EPSG/9.9.1/3857|
 
 <aside class="note" title="CRS support and GeoJSON">
-Officially, WGS84 lat-long (CRS84) is the only CRS allowed in GeoJSON. However, GeoJSON does state that using another CRS is allowed, if this is agreed between provider and consumer of the data. The API functionality described above, to negotiate the CRS between client and server, can be viewed as such an agreement. Many GIS clients can deal with GeoJSON in other CRS than CRS84.
+Officially, WGS84 longitude-latitude (CRS84) is the only CRS allowed in GeoJSON. However, GeoJSON does state that using another CRS is allowed, if this is agreed between provider and consumer of the data. The API functionality described above, to negotiate the CRS between client and server, can be viewed as such an agreement. Many GIS clients can deal with GeoJSON in other CRS than CRS84.
 
-In addition, the Geonovum CRS guidelines [[hr-crs]] describe [how ETRS89 can be treated as equal to WGS84 under certain circumstances](https://docs.geostandaarden.nl/crs/cv-hr-crs-20211125/#wgs-84-gelijkstellen-aan-etrs89) - but note that GeoJSON requires coordinates to be in latitude-longitude order, while ETRS89 uses longitude-latitude. 
+In addition, the Geonovum CRS guidelines [[hr-crs]] describe [how ETRS89 can be treated as equal to WGS84 under certain circumstances](https://docs.geostandaarden.nl/crs/cv-hr-crs-20211125/#wgs-84-gelijkstellen-aan-etrs89). 
 
 [[JSON-FG]] is a proposed standard extension of GeoJSON that adds CRS support.
 </aside>
