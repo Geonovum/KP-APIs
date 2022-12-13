@@ -1,10 +1,5 @@
 # Request and response
-
-Requesting resources and getting results back is an important part of any API. This is no different for REST APIs that handle geospatial data. There are, however, some specific aspects when dealing with geospatial data in REST APIs. The most important aspects are described in this chapter: 
-- how to supply a spatial filter in the call (request)
-- how to encode geometries in the response
-
-Note that when requesting information, for example about cadastral parcels, users do not necessarily require the geometry, even if they used a spatial filter. A name or parcel ID may be sufficient.
+REST APIs for handling geospatial features may provide spatial filtering. There is a distinction between retrieving geometries in the result (response) and supplying a spatial filter in the call (request). When requesting information, for example about cadastral parcels, users do not necessarily require the geometry. A name or parcel ID may be sufficient.
 
 ## GeoJSON
 
