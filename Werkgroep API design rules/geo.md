@@ -6,6 +6,29 @@ github repository; zie issues met tag
 
 De werkgroep houdt 1x per 2 weken een korte online meeting (half uur). Neem voor deelname aan deze werkgroep contact op met Linda van den Brink (Geonovum).
 
+## verslag online meeting 6 december
+- Aanwezig: Mark Strijker, Pieter Bresters, Martin van der Plas, George Mathijssen en Linda van den Brink. 
+
+Een aantal pull requests besproken. 
+- Een aantal issues verzoekt om te verwijzen naar specifieke members van CRS-sen in plaats van het ensemble. We willen hieraan tegemoet komen maar tegelijk niet teveel complexiteit introduceren. Besloten om een notitie toe te voegen in de intro van de  crs paragraaf over voorkeur voor members van ensambles als de nauwkeurigheid van de data dat vereist en het mogelijk is. Linda maakt hiervoor een issue aan (inmiddels gebeurd, [issue #513](https://github.com/Geonovum/KP-APIs/issues/513))
+- [PR #506](https://github.com/Geonovum/KP-APIs/pull/509) met tekstuele fixes gemerged 
+- Mark gaat opmerkingen op zijn PRs [#511](https://github.com/Geonovum/KP-APIs/pull/511) en [#512](https://github.com/Geonovum/KP-APIs/pull/512) verwerken
+
+Het gaat waarschijnlijk niet lukken om alle consultatie issues te verwerken voor eind 2022. Daarom wordt een aantal extra meetings gepland in het begin van 2023.  
+
+Linda gaat door de issuelijst heen om te kijken welke issues discussie nodig hebben, voordat ze kunnen worden opgepakt.
+
+## verslag online meeting 24 november
+
+- Aanwezig: Mark Strijker, Pieter Bresters, Martin van der Plas, George Mathijssen en Linda van den Brink. 
+
+Alle issues, die uit de consultatie zijn gekomen, zijn opgenomen als github issues. Deze zijn opgenomen in een github project zodat we een [geo module kanbanbord](https://github.com/Geonovum/KP-APIs/projects/2) hebben.
+
+Als werkwijze afgesproken:
+- ieder kiest voor zich issues uit om aan te werken. Dit laten we aan elkaar weten door ze dan aan onszelf toe te wijzen.
+- voor opgeloste issues dienen we een pull requests in
+- we werken in de `development-modulaire-opbouw` branch.
+
 ## verslag online meeting 8 november
 De geo module was de hele maand oktober in consultatie. Er zijn zo tussen de 50 en 60 reacties binnengekomen van twee organisaties. Op 8 november waren we bijeen om in de ADR geo module werkgroep de verwerking van consultatiereacties te bespreken. 
 
