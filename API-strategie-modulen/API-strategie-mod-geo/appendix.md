@@ -18,19 +18,19 @@ Request and response may be based on another coordinate reference system. This a
 
 |HTTP header|Value|Explanation|
 |-|-|-|
-|`Content-Crs`|EPSG:4326|WGS84, global|
+|`Content-Crs`|EPSG:4326|WGS 84, global|
 |`Content-Crs`|EPSG:3857|Pseudo Mercator, global|
 |`Content-Crs`|EPSG:4258|ETRS89, European|
-|`Content-Crs`|EPSG:28992|RD/Amersfoort, Dutch|
+|`Content-Crs`|EPSG:28992|RD, Dutch|
 
 The preferred CRS for the geometry in the response (response body) is specified using the header `Accept-Crs`.
 
 |HTTP header|Value|Explanation|
 |-|-|-|
-|`Accept-Crs`|EPSG:4326|WGS84, global|
+|`Accept-Crs`|EPSG:4326|WGS 84, global|
 |`Accept-Crs`|EPSG:3857|Pseudo Mercator, global|
 |`Accept-Crs`|EPSG:4258|ETRS89, European|
-|`Accept-Crs`|EPSG:28992|RD/Amersfoort, Dutch|
+|`Accept-Crs`|EPSG:28992|RD, Dutch|
 
 <p class="rulelab"><strong>Rule</strong>: Use content negotiation to serve different CRSs</p>
   <p>The CRS for the geometry in the response body is defined using the <code>Accept-Crs</code> header. In case the API does not support the requested CRS, send the HTTP status code <code>406 Not Acceptable</code>.</p>
