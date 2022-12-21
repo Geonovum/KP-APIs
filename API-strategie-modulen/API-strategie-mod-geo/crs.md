@@ -87,11 +87,15 @@ The guiding principles for CRS support:
 - The default CRS, CRS84, is listed first in the list of supported CRSs in the API; if the consumer does not specify the CRS it is assumed it uses the default.
 - Coordinate reference systems API strategy: request/response in RD; ETRS89; CRS84; Pseudo  Mercator;
 - Consider no-regret: record in multiple much-requested CRSs instead of on-the-fly transformation;
-- Use RDNAPTRANS™ 2018 to transform RD/Amersfoort to ETRS89 (correction grid);
+- Use RDNAPTRANS™ 2018 to transform Amersfoort / RD New to ETRS89 (correction grid);
 - Presentation depending on context (e.g. user requirements);
 - Exchange format (notation) ETRS89 and WGS84 longitude latitude in decimal degrees: DD.ddddddddd (for example: `5.962376256, 52.255023450`)
 - Exchange format (notation) RD and Pseudo Mercator X Y in meters: `195427.5200 311611.8400`
-- Use a nulltransformation to transform ETRF2000 to WGS 84 unless a time-dependent transformation is needed, see the CRS Guidelines [[hr-crs]]. If a time-dependent transformation is used for WGS 84, the CRS used as realisation of WGS 84 should be supported by the API too, e.g. if the transformation between ETRF2000 and ITRF2014 at epoch 2020 is used for request/response in WGS 84 (EPSG:4326), then the API should also support ITRF2014 (EPSG:9000).
+- Use the CRS Guidelines [[hr-crs]] for coordinate transformations.
+- CRSs may be grouped into ensemble CRSs. When exchanging geometry an ensemble member CRS shall be used (instead of an ensemble CRS) where possible.
+- Use enemble member CRS (instead of an ensemble CRS) as output of coordinate transformation, where possible.
+- APIs shall support and advertise both ensemble CRSs and ensemble member CRSs if geometry is exchanged and the CRS for the geometry is a member CRS.
+- If multiple coordinate transformation steps are required than APIs shall support and advertised all CRSs that are output of each CRS transformation.
 
 <div class="rule" id="api-geo-9">
   <p class="rulelab"><strong>API-GEO-9</strong>: When the API provides data in an ensemble CRS like WGS 84 or ETRS89 while it is known to what ensemble member CRS the data actaully refers to, this ensemble member should also be one of the CRSs supported by the API and advertised in the CRS list. E.g. when 2D data is transformed from RD with RDNAPTRANS not only EPSG:4258 should be supported but also EPSG::9067.</p>
@@ -176,13 +180,17 @@ Use the following URIs to specify the CRS:
 
 |Name|Dimension|Scope|URI|
 |-|-|-|-|
-|Amersfoort / RD New | 2D | Dutch | http://www.opengis.net/def/crs/EPSG/9.9.1/28992|
-|Amersfoort / RD New + NAP height | 3D | Dutch | http://www.opengis.net/def/crs/EPSG/9.9.1/7415|
-|ETRS89 | 2D | European | http://www.opengis.net/def/crs/EPSG/9.9.1/4258|
-|ETRS89 | 3D | European | http://www.opengis.net/def/crs/EPSG/9.9.1/4937|
-|WGS 84 longitude-latitude | 2D | Global | http://www.opengis.net/def/crs/OGC/1.3/CRS84|
-|WGS 84 longitude-latitude-height | 3D | Global | http://www.opengis.net/def/crs/OGC/0/CRS84h |
-|WGS 84 / Pseudo-Mercator | 2D | Global | http://www.opengis.net/def/crs/EPSG/9.9.1/3857|
+| Amersfoort / RD New | 2D | Dutch | http://www.opengis.net/def/crs/EPSG/9.9.1/28992 |
+| Amersfoort / RD New + NAP height | 3D | Dutch | http://www.opengis.net/def/crs/EPSG/9.9.1/7415 |
+| ETRS89 | 2D | European | http://www.opengis.net/def/crs/EPSG/9.9.1/4258 |
+| ETRS89 | 3D | European | http://www.opengis.net/def/crs/EPSG/9.9.1/4937 |
+| ETRF2000 - LatLon | 2D | European | http://www.opengis.net/def/crs/EPSG/9.9.1/9067 |
+| ETRF2000 - XYZ | 3D | European | http://www.opengis.net/def/crs/EPSG/9.9.1/7930 |
+| ITRF2014 - LatLon | 2D | Global | http://www.opengis.net/def/crs/EPSG/9.9.1/9000 |
+| ITRF2014 - LatLonEHt | 3D | Global | http://www.opengis.net/def/crs/EPSG/9.9.1/7912 |
+| WGS 84 longitude-latitude | 2D | Global | http://www.opengis.net/def/crs/OGC/1.3/CRS84 |
+| WGS 84 longitude-latitude-height | 3D | Global | http://www.opengis.net/def/crs/OGC/0/CRS84h |
+| WGS 84 / Pseudo-Mercator | 2D | Global | http://www.opengis.net/def/crs/EPSG/9.9.1/3857 |
 
 <aside class="note" title="CRS support and GeoJSON">
 Officially, WGS84 lat-long (CRS84) is the only CRS allowed in GeoJSON. However, GeoJSON does state that using another CRS is allowed, if this is agreed between provider and consumer of the data. The API functionality described above, to negotiate the CRS between client and server, can be viewed as such an agreement. Many GIS clients can deal with GeoJSON in other CRS than CRS84.
