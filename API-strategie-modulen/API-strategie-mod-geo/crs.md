@@ -90,13 +90,13 @@ The guiding principles for CRS support:
 - Use RDNAPTRANS™ 2018 to transform RD/Amersfoort to ETRS89 (correction grid);
 - Presentation depending on context (e.g. user requirements);
 - Exchange format (notation) for ETRS89 and WGS84 longitude latitude in decimal degrees: DD.ddddddddd (for example: `5.962376256, 52.255023450`)
-- Exchange format (notation) for RD X Y in meters: xxxxxx.xxxz yyyyyy.yyyy (for example: `195427.5200 311611.8400`)
+- Exchange format (notation) for RD X, Y in meters: xxxxxx.xxxz, yyyyyy.yyyy (for example: `195427.5200, 311611.8400`)
 - WGS 84 Pseudo Mercator (EPSG:3857) is rather inaccurate, therefor WGS 84 Pseudo Mercator is only suitable for simple visualization of inprecise data. WGS 84 Pseudo Merctor shall not be used for visualization of precise data or data that is not intended for visualization.
 
 The CRS can be specified for request and response individually using parameters or headers.
 
 <div class="rule" id="api-geo-9">
-  <p class="rulelab"><strong>API-GEO-9</strong>: Pass the coordinate reference system (CRS) of the geometry in a request parameter as a parameter</p>
+  <p class="rulelab"><strong>API-GEO-9</strong>: Support passing the coordinate reference system (CRS) of the geometry in the request as a query parameter</p>
   <p>Support the <a href="http://docs.opengeospatial.org/is/18-058/18-058.html#_parameter_bbox_crs">OGC API Features part 2 <code>bbox-crs</code> parameter</a> in conformance to the standard.
   </p>
   <p>Additionally, if other types of geospatial filters are supported in the API besides <code>bbox</code>: </p>
@@ -130,7 +130,7 @@ In an API that supports transactions, POST requests with geospatial content in t
 </div>
 
 <div class="rule" id="api-geo-11">
-  <p class="rulelab"><strong>API-GEO-11</strong>: Pass the desired coordinate reference system (CRS) of geometry in the response as a parameter</p>
+  <p class="rulelab"><strong>API-GEO-11</strong>: Support passing the desired coordinate reference system (CRS) of the geometry in the response as a query parameter</p>
   <p>Support the <a href="http://docs.opengeospatial.org/is/18-058/18-058.html#_parameter_crs">OGC API Features part 2 <code>crs</code> parameter</a> in conformance to the standard.
   </p>
   <h4 class="rulelab">How to test</h4>
@@ -174,7 +174,7 @@ Use the following URIs to specify the CRS:
 |WGS 84 / Pseudo-Mercator | 2D | Global | http://www.opengis.net/def/crs/EPSG/9.9.1/3857|
 
 <aside class="note" title="CRS support and GeoJSON">
-Officially, WGS84 lat-long (CRS84) is the only CRS allowed in GeoJSON. However, GeoJSON does state that using another CRS is allowed, if this is agreed between provider and consumer of the data. The API functionality described above, to negotiate the CRS between client and server, can be viewed as such an agreement. Many GIS clients can deal with GeoJSON in other CRS than CRS84.
+Officially, WGS84 (CRS84) is the only CRS allowed in GeoJSON. However, GeoJSON does state that using another CRS is allowed, if this is agreed between provider and consumer of the data. The API functionality described above, to negotiate the CRS between client and server, can be viewed as such an agreement. Many GIS clients can deal with GeoJSON in other CRS than CRS84.
 
 In addition, the Geonovum CRS guidelines [[hr-crs]] describe [how ETRS89 can be treated as equal to WGS84 under certain circumstances](https://docs.geostandaarden.nl/crs/cv-hr-crs-20211125/#wgs-84-gelijkstellen-aan-etrs89) - but note that GeoJSON requires coordinates to be in latitude-longitude order, while ETRS89 uses longitude-latitude. 
 
@@ -183,4 +183,4 @@ In addition, the Geonovum CRS guidelines [[hr-crs]] describe [how ETRS89 can be 
 
 ## CRS transformation
 
-If the requested CRS is not the same as the storage CRS, a coordinate transformation is needed. Performance is increased when the dataset is transformed in multiple CRSs and stored in advance, and not transformed at the moment the request has arrived. In case of a transformation between RD and ETRS89, it is highly recommended that this transformation uses the latest version of the procedure of [RDNAPTRANS™](https://docs.geostandaarden.nl/crs/cv-hr-crs-20211125/#transformatie-en-conversie-tussen-rd-nap-en-etrs89). This is certified software to transform between these coordinate reference systems.
+If the requested CRS is not the same as the storage CRS, a coordinate transformation is needed. Performance is increased when the dataset is transformed in multiple CRSs and stored in advance, and not transformed at the moment the request has arrived. In case of a transformation between RD and ETRS89, it is required that this transformation uses the latest version of the procedure of [RDNAPTRANS™](https://docs.geostandaarden.nl/crs/cv-hr-crs-20211125/#transformatie-en-conversie-tussen-rd-nap-en-etrs89). This is certified software to transform between these coordinate reference systems.
