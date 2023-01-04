@@ -90,8 +90,8 @@ The guiding principles for CRS support:
 - Use RDNAPTRANS™ 2018 to transform RD/Amersfoort to ETRS89 (correction grid);
 - Presentation depending on context (e.g. user requirements);
 - Exchange format (notation) for ETRS89 and WGS84 longitude latitude in decimal degrees: DD.ddddddddd (for example: `5.962376256, 52.255023450`)
-- Exchange format (notation) for RD X, Y in meters: xxxxxx.xxxz, yyyyyy.yyyy (for example: `195427.5200, 311611.8400`)
-- WGS 84 Pseudo Mercator (EPSG:3857) is rather inaccurate, therefor WGS 84 Pseudo Mercator is only suitable for simple visualization of inprecise data. WGS 84 Pseudo Merctor shall not be used for visualization of precise data or data that is not intended for visualization.
+- Exchange format (notation) for RD X, Y in meters: xxxxxx.xxxx, yyyyyy.yyyy (for example: `195427.5200, 311611.8400`)
+- WGS 84 Pseudo Mercator (EPSG:3857) is rather inaccurate, but suitable for simple visualization of inprecise spatial data on the web, e.g. when it suffices if the data is recognizable on a map. WGS 84 Pseudo Merctor shall not be used for precise data that is meant for accurate spatial analyses.
 
 The CRS can be specified for request and response individually using parameters or headers.
 
