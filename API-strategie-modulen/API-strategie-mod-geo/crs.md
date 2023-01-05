@@ -93,9 +93,8 @@ The guiding principles for CRS support:
 - Exchange format (notation) RD and Pseudo Mercator X Y in meters: `195427.5200 311611.8400`
 - Use the CRS Guidelines [[hr-crs]] for coordinate transformations.
 - CRSs may be grouped into ensemble CRSs. When exchanging geometry an ensemble member CRS shall be used (instead of an ensemble CRS) where possible.
-- Use enemble member CRS (instead of an ensemble CRS) as output of coordinate transformation, where possible.
-- APIs shall support and advertise both ensemble CRSs and ensemble member CRSs if geometry is exchanged and the CRS for the geometry is a member CRS.
-- If multiple coordinate transformation steps are required than APIs shall support and advertised all CRSs that are output of each CRS transformation.
+- Use an ensemble member CRS (instead of an ensemble CRS) as output of coordinate transformation, where possible.
+- APIs shall support and advertise both ensemble CRSs and ensemble member CRSs if geometry is exchanged and the CRS for the geometry is an ensemble member CRS.
 
 <div class="rule" id="api-geo-9">
   <p class="rulelab"><strong>API-GEO-9</strong>: When the API provides data in an ensemble CRS like WGS 84 or ETRS89 while it is known to what ensemble member CRS the data actaully refers to, this ensemble member should also be one of the CRSs supported by the API and advertised in the CRS list. E.g. when 2D data is transformed from RD with RDNAPTRANS not only EPSG:4258 should be supported but also EPSG::9067.</p>
