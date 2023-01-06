@@ -2,7 +2,7 @@
 
 ## Old CRS negotiation method
 
-An older method of specifying CRS in the headers of requests is described in this appendix. It was part of the first version of the "Geospatial Extension" which was never ratified. APIs that already support this old header method can add support for the current parameter method [TODO add ref] while still supporting the header method for a certain period. Supporting both the new method (using parameters) and the old (using headers) is trivial. 
+An older method of specifying CRS in the headers of requests is described in this appendix. It was part of the first version of the "Geospatial Extension" which was never ratified. APIs that already support this old header method can add support for the current parameter method (see [CRS negotiation](./crs.md#crs-negotiation)) while still supporting the header method for a certain period. Supporting both the new method (using parameters) and the old (using headers) is trivial. 
 
 If a client specifies CRS using a parameter AND in the header, the parameter takes precedence and the CRS in the header is ignored.
 
