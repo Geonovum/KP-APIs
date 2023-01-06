@@ -18,8 +18,8 @@ Request and response may be based on another coordinate reference system. This a
 
 |HTTP header|Value|Explanation|
 |-|-|-|
-|`Content-Crs`|EPSG:4326|WGS 84, global|
-|`Content-Crs`|EPSG:3857|Pseudo Mercator, global|
+|`Content-Crs`|EPSG:4326|CRS84, global|
+|`Content-Crs`|EPSG:3857|WGS 84 Pseudo Mercator, global|
 |`Content-Crs`|EPSG:4258|ETRS89, European|
 |`Content-Crs`|EPSG:28992|RD, Dutch|
 
@@ -27,8 +27,8 @@ The preferred CRS for the geometry in the response (response body) is specified 
 
 |HTTP header|Value|Explanation|
 |-|-|-|
-|`Accept-Crs`|EPSG:4326|WGS 84, global|
-|`Accept-Crs`|EPSG:3857|Pseudo Mercator, global|
+|`Accept-Crs`|EPSG:4326|CRS84, global|
+|`Accept-Crs`|EPSG:3857|WGS 84 Pseudo Mercator, global|
 |`Accept-Crs`|EPSG:4258|ETRS89, European|
 |`Accept-Crs`|EPSG:28992|RD, Dutch|
 

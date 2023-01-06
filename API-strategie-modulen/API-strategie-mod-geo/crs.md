@@ -55,7 +55,7 @@ The default CRS for GeoJSON and for OGC API Features is WGS 84 with coordinate o
 When referring to a coordinate reference system using its code in the rest of this chapter, this is meant to refer to both the 2D and 3D variant of the system in question. E.g. when "RD" is mentioned, this should be taken to mean "RD or RD-NAP"; when WGS 84 is mentioned, this should be taken to mean "CRS84 or CRS84h". 
 </aside>
 
-Since most client-side mapping libraries use WGS 84, the W3C/OGC [Spatial Data on the Web](https://www.w3.org/2021/sdw/) working group recommends to use this as the default coordinate reference system. Thus, spatial data can be mapped without any complex transformations. The API strategy caters for this supporting not only ETRS89 and RD, but also WGS 84 and Pseudo Mercator (EPSG:3857).
+Since most client-side mapping libraries use WGS 84, the W3C/OGC [Spatial Data on the Web](https://www.w3.org/2021/sdw/) working group recommends to use this as the default coordinate reference system. Thus, spatial data can be mapped without any complex transformations. The API strategy caters for this supporting not only ETRS89 and RD, but also CRS84.
 
 The *default* CRS, i.e. the CRS which is assumed when not specified by either the API or the client, is CRS84, in line with GeoJSON and OGC API Features. 
 
