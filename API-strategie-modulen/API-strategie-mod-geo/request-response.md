@@ -1,9 +1,11 @@
 # Request and response
-REST APIs for handling geospatial features may provide spatial filtering. There is a distinction between retrieving geometries in the result (response) and supplying a spatial filter in the call (request). When requesting information, for example about cadastral parcels, users do not necessarily require the geometry. A name or parcel ID may be sufficient.
+There are several challenges related to handling geospatial features in REST APIs. There is a distinction between retrieving geometries in the result (response) and supplying a geometry in the call (request). 
+
+Note that when requesting information, for example about cadastral parcels, users do not necessarily require the geometry. A name or parcel ID may be sufficient. Geometries can also be part of the request, for example as a spatial filter or when creating or updating a spatial feature. When geometry is part of the request or response, several rules apply, which are described below. 
 
 ## GeoJSON
 
-[[rfc7946]] describes the GeoJSON format, including a convention for describing 2D geometric objects in WGS 84 (CRS84). In this extension we adopt the GeoJSON conventions for describing geometry objects. The convention is extended to allow alternative projections.  
+[[rfc7946]] describes the GeoJSON format, including a convention for describing 2D geometric objects in WGS84 (EPSG:4326). In the Geospatial module of the API strategy we adopt the GeoJSON conventions for describing geometry objects. The convention is extended to allow alternative projections.  
 
 <div class="rule" id="api-geo-1">
   <p class="rulelab"><strong>API-GEO-1</strong>: Support GeoJSON for geospatial APIs</p>
