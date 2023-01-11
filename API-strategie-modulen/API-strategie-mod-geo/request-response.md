@@ -5,7 +5,7 @@ Note that when requesting information, for example about cadastral parcels, user
 
 ## GeoJSON
 
-[[rfc7946]] describes the GeoJSON format, including a convention for describing 2D geometric objects in WGS84 (EPSG:4326). In the Geospatial module of the API strategy we adopt the GeoJSON conventions for describing geometry objects. The convention is extended to allow alternative projections.  
+[[rfc7946]] describes the GeoJSON format, including a convention for describing 2D geometric objects in CRS84. In the Geospatial module of the API strategy we adopt the GeoJSON conventions for describing geometry objects. The convention is extended to allow alternative projections.  
 
 <div class="rule" id="api-geo-1">
   <p class="rulelab"><strong>API-GEO-1</strong>: Support GeoJSON for geospatial APIs</p>
