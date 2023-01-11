@@ -34,7 +34,7 @@ A simple spatial filter can be supplied as a bounding box. This is a common way 
   <p class="rulelab"><strong>API-GEO-2</strong>: Supply a simple spatial filter as a bounding box parameter</p>
   <p>Support the <a href="https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_bbox">OGC API Features part 1 <code>bbox</code> parameter</a> in conformance to the standard.
   <pre>
-   GET /api/v1/panden?bbox=5.4,52.1,5.5,53.2</pre>
+   GET /api/v1/buildings?bbox=5.4,52.1,5.5,53.2</pre>
   </p>
   <h4 class="rulelab">How to test</h4>
   <ul>
