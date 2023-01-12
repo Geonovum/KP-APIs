@@ -13,7 +13,7 @@ This module does not describe how to supply a geometry as part of a resource for
 
 ## GeoJSON
 
-[[rfc7946]] describes the GeoJSON format, including a convention for describing 2D geometric objects in WGS84 (EPSG:4326). In this extension we adopt the GeoJSON conventions for describing geometry objects. The convention is extended to allow alternative projections.
+[[rfc7946]] describes the GeoJSON format, including a convention for describing 2D geometric objects in CRS84. In the Geospatial module of the API strategy we adopt the GeoJSON conventions for describing geometry objects. The convention is extended to allow alternative projections.  
 
 <div class="rule" id="api-geo-1">
   <p class="rulelab"><strong>API-GEO-1</strong>: Support GeoJSON for geospatial APIs</p>
@@ -42,7 +42,7 @@ A simple spatial filter can be supplied as a bounding box. This is a common way 
   <p class="rulelab"><strong>API-GEO-2</strong>: Supply a simple spatial filter as a bounding box parameter</p>
   <p>Support the <a href="https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_bbox">OGC API Features part 1 <code>bbox</code> parameter</a> in conformance to the standard.
   <pre>
-   GET /api/v1/panden?bbox=5.4,52.1,5.5,53.2</pre>
+   GET /api/v1/buildings?bbox=5.4,52.1,5.5,53.2</pre>
   </p>
   <h4 class="rulelab">How to test</h4>
   <ul>
