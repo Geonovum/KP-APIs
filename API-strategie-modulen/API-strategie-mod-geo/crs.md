@@ -90,11 +90,26 @@ The guiding principles for CRS support:
 - Which CRSs are supported in an API depends on context (e.g. user requirements) - see [Spatial Data on the Web Best Practice 7: Choose coordinate reference systems to suit your user's applications](https://www.w3.org/TR/sdw-bp/#bp-crs-choice) [[sdw-bp]];
 - Exchange format (notation) for ETRS89 and CRS84 (longitude latitude) in decimal degrees: DD.ddddddddd (for example: `5.962376256, 52.255023450`)
 - Exchange format (notation) for RD X, Y in meters: xxxxxx.xxxx, yyyyyy.yyyy (for example: `195427.5200, 311611.8400`)
-- WGS 84 Pseudo Mercator (EPSG:3857) is rather inaccurate, but suitable for simple visualization of inprecise spatial data on the web, e.g. when it suffices if the data is recognizable on a map. WGS 84 Pseudo Merctor shall not be used for precise data that is meant for accurate spatial analysis.
+- WGS 84 Pseudo Mercator (EPSG:3857) is rather inaccurate, but suitable for simple visualization of inprecise spatial data on the web, e.g. when it suffices if the data is recognizable on a map. WGS 84 Pseudo Merctor shall not be used for precise data that is meant for accurate spatial analysis.- Use the CRS Guidelines [[hr-crs]] for coordinate transformations.
+- CRSs may be grouped into ensemble CRSs. When exchanging geometry an ensemble member CRS shall be used (instead of an ensemble CRS) where possible.
+- Use an ensemble member CRS (instead of an ensemble CRS) as output of coordinate transformation, where possible.
+- APIs shall support and advertise both ensemble CRSs and ensemble member CRSs if geometry is exchanged and the CRS for the geometry is an ensemble member CRS.
+- under certain conditions WGS 84 can be made equal to e.g. ETRS89, this is called a nultransformation, see [[hr-crs]]. If a nultransformation is used to realize WGS 84, then the CRS (e.g. ETRS89) that is used to realize WGS 84 shall be supported and advertised by an API.
+
+<div class="rule" id="api-geo-9">
+  <p class="rulelab"><strong>API-GEO-9</strong>: When the API provides data in an ensemble CRS like WGS 84 or ETRS89 while it is known to what ensemble member CRS the data actually refers, this ensemble member should also be one of the CRSs supported by the API and advertised in the CRS list. E.g. when 2D data is transformed from RD with RDNAPTRANS not only EPSG:4258 should be supported but also EPSG::9067.</p>
+  <h4 class="rulelab">How to test</h4>
+  <ul>
+    <li>Send a request to the <code>/collections</code> endpoint.</li>
+    <li>Validate that the returned document contains a <code>collections</code> object with the <code>crs</code> property.</li>
+    <li>Validate that the <code>crs</code> property contains an array with CRS references in the form of URIs.</li>
+    <li>Validate that when the <code>crs</code> property contains a URL for a ensemble CRS like ETRS89 (EPSG:4258), it also contains a URL for a ensemble member CRS like ETRF2000 (EPSG:9067).</li>
+  </ul>
+</div>
 
 The CRS can be specified for request and response individually using parameters or headers.
 
-<div class="rule" id="api-geo-9">
+<div class="rule" id="api-geo-10">
   <p class="rulelab"><strong>API-GEO-9</strong>: Support passing the coordinate reference system (CRS) of the geometry in the request as a query parameter</p>
   <p>Support the <a href="http://docs.opengeospatial.org/is/18-058/18-058.html#_parameter_bbox_crs">OGC API Features part 2 <code>bbox-crs</code> parameter</a> in conformance to the standard.
   </p>
@@ -116,7 +131,7 @@ If an invalid value, i.e. a CRS which is not in the list of supported CRSs, is g
 
 In an API that supports transactions, POST requests with geospatial content in the body may be sent by a client to the server. In that case, it is necessary to indicate the CRS used, unless CRS84, the default CRS, is used.
 
-<div class="rule" id="api-geo-10">
+<div class="rule" id="api-geo-11">
   <p class="rulelab"><strong>API-GEO-10</strong>: When HTTP POST requests are supported, pass the coordinate reference system (CRS) of geometry in the request body as a header</p>
   <p>Support the <a href="http://docs.ogc.org/DRAFTS/20-002.html#feature-crs">OGC API Features part 4 <code>Content-Crs</code> header</a> in conformance to the standard.</p>
   <p>Alternatively, if the feature representation supports expressing CRS information for each feature / geometry, the information can also be included in the feature representation. If no CRS is asserted, the default CRS, CRS84, is assumed.<p>
@@ -128,7 +143,7 @@ In an API that supports transactions, POST requests with geospatial content in t
   </ul>
 </div>
 
-<div class="rule" id="api-geo-11">
+<div class="rule" id="api-geo-12">
   <p class="rulelab"><strong>API-GEO-11</strong>: Support passing the desired coordinate reference system (CRS) of the geometry in the response as a query parameter</p>
   <p>Support the <a href="http://docs.opengeospatial.org/is/18-058/18-058.html#_parameter_crs">OGC API Features part 2 <code>crs</code> parameter</a> in conformance to the standard.
   </p>
@@ -139,7 +154,7 @@ In an API that supports transactions, POST requests with geospatial content in t
   </ul>
 </div>
 
-<div class="rule" id="api-geo-12">
+<div class="rule" id="api-geo-13">
   <p class="rulelab"><strong>API-GEO-12</strong>: Assert the coordinate reference system (CRS) used in the response using a header</p>
   <p>Support the <a href="http://docs.opengeospatial.org/is/18-058/18-058.html#_coordinate_reference_system_information_independent_of_the_feature_encoding">OGC API Features part 2 <code>Content-Crs</code> header</a> in conformance to the standard.
   </p>
@@ -169,6 +184,10 @@ Use the following URIs to specify the CRS:
 | Amersfoort / RD New + NAP height | 3D | Dutch | http://www.opengis.net/def/crs/EPSG/9.9.1/7415 |
 | ETRS89 | 2D | European | http://www.opengis.net/def/crs/EPSG/9.9.1/4258 |
 | ETRS89 | 3D | European | http://www.opengis.net/def/crs/EPSG/9.9.1/4937 |
+| ETRF2000 - LatLon | 2D | European | http://www.opengis.net/def/crs/EPSG/9.9.1/9067 |
+| ETRF2000 - XYZ | 3D | European | http://www.opengis.net/def/crs/EPSG/9.9.1/7930 |
+| ITRF2014 - LatLon | 2D | Global | http://www.opengis.net/def/crs/EPSG/9.9.1/9000 |
+| ITRF2014 - LatLonEHt | 3D | Global | http://www.opengis.net/def/crs/EPSG/9.9.1/7912 |
 | WGS 84 longitude-latitude | 2D | Global | http://www.opengis.net/def/crs/OGC/1.3/CRS84 |
 | WGS 84 longitude-latitude-height | 3D | Global | http://www.opengis.net/def/crs/OGC/0/CRS84h |
 | WGS 84 / Pseudo-Mercator | 2D | Global | http://www.opengis.net/def/crs/EPSG/9.9.1/3857 |
