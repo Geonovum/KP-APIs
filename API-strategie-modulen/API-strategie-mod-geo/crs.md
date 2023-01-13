@@ -98,7 +98,7 @@ The guiding principles for CRS support:
 - under certain conditions WGS 84 can be made equal to e.g. ETRS89, this is called a nultransformation, see [[hr-crs]]. If a nultransformation is used to realize WGS 84, then the CRS (e.g. ETRS89) that is used to realize WGS 84 shall be supported and advertised by an API.
 
 <div class="rule" id="api-geo-9">
-  <p class="rulelab"><strong>API-GEO-9</strong>: When the API provides data in an ensemble CRS like WGS 84 or ETRS89 while it is known to what ensemble member CRS the data actaully refers to, this ensemble member should also be one of the CRSs supported by the API and advertised in the CRS list. E.g. when 2D data is transformed from RD with RDNAPTRANS not only EPSG:4258 should be supported but also EPSG::9067.</p>
+  <p class="rulelab"><strong>API-GEO-9</strong>: When the API provides data in an ensemble CRS like WGS 84 or ETRS89 while it is known to what ensemble member CRS the data actually refers, this ensemble member should also be one of the CRSs supported by the API and advertised in the CRS list. E.g. when 2D data is transformed from RD with RDNAPTRANS not only EPSG:4258 should be supported but also EPSG::9067.</p>
   <h4 class="rulelab">How to test</h4>
   <ul>
     <li>Send a request to the <code>/collections</code> endpoint.</li>
