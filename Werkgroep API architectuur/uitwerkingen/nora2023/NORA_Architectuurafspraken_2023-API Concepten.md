@@ -1,6 +1,10 @@
 
-Dit totaalbestand bevat alle Architectuur afspraken, per onderdeel is aangegeven of er een relatie is met API Concepten.
+Dit totaalbestand bevat alle nieuwe NORA Architectuur afspraken (2023), per onderdeel is aangegeven of er een relatie is met API Concepten.
 Dit obv de stelling:
+
+_API's (& API Architectuur concepten) helpen specifiek om invulling te geven aan dit principe/onderdeel_
+
+Toelichting : (Denk m.n. aan RESTful API's en gerelateerde concepten en operatie op dataresource en event API gerelateerde concepten
 
 
 
@@ -11,18 +15,19 @@ Dit obv de stelling:
 | NAP03    | Lever een kanaal-onafhankelijk resultaat                                       | Architectuurprincipe |                       |                                                                    |
 | NAP04    | Bundel diensten                                                                | Architectuurprincipe |                       |                                                                    |
 | NAP05    | Bied de dienst proactief aan                                                   | Architectuurprincipe |                       |                                                                    |
-| NAP06    | Hergebruik vóór kopen vóór maken                                               | Architectuurprincipe | Ja                    |                                                                    |
-| NAP07    | Bouw diensten modulair op                                                      | Architectuurprincipe | Ja                    |                                                                    |
+| NAP06    | Hergebruik vóór kopen vóór maken                                               | Architectuurprincipe | Ja                    | API concepten ondersteunen hergebruik van diensten                                                                   |
+| NAP07    | Bouw diensten modulair op                                                      | Architectuurprincipe | Ja                    | API concepten ondersteunen modulaire opbouw / architectuur                                                                   |
 | NAP08    | Standaardiseer waar mogelijk                                                   | Architectuurprincipe |                       |                                                                    |
 | NAP09    | Beschrijf de dienst nauwkeurig                                                 | Architectuurprincipe |                       |                                                                    |
-| NAP10    | Neem gegevens als fundament                                                    | Architectuurprincipe | Ja                    |                                                                    |
+| NAP10    | Neem gegevens als fundament                                                    | Architectuurprincipe | Ja                    | (REST) API's ondersteunen specifiek operaties op een data resource                                                                  |
 | NAP11    | Pas doelbinding toe                                                            | Architectuurprincipe |                       |                                                                    |
-| NAP12    | Informeer bij de bron                                                          | Architectuurprincipe | Ja                    |                                                                    |
+| NAP12    | Informeer bij de bron                                                          | Architectuurprincipe | Ja                    | (REST) API's ondersteunen specifiek operaties op een data resource                                                                   |
 | NAP13    | Beheers risico's voortdurend                                                   | Architectuurprincipe |                       |                                                                    |
 | NAP14    | Verifieer altijd                                                               | Architectuurprincipe |                       |                                                                    |
-| NAP15    | Maak diensten schaalbaar                                                       | Architectuurprincipe | Ja                    |                                                                    |
-| NAP16    | Voorkom onnodige complexiteit                                                  | Architectuurprincipe | Ja                    |                                                                    |
+| NAP15    | Maak diensten schaalbaar                                                       | Architectuurprincipe | Ja                    | API concepten ondersteunen modulaire opbouw / architectuur (en daarmee een schaalbare opzet)                                                                  |
+| NAP16    | Voorkom onnodige complexiteit                                                  | Architectuurprincipe | Ja                    | API kunnen complexiteit verminderen (door modulaire opbouw en door complexiteit te verbergen achter de interface)                                                                   |
 | NAP17    | Stuur cyclisch op kwaliteit                                                    | Architectuurprincipe |                       |                                                                    |
+| | | | | |
 | IMP001   | Beschrijf informatieobjecten in een model                                      | Implicatie           | Ja                    | (REST) API's ondersteunen specifiek operaties op een data resource |
 | IMP002   | Voorkom verlies van informatie                                                 | Implicatie           |                       |                                                                    |
 | IMP003   | Maak zoveel mogelijk data beschikbaar als open data                            | Implicatie           | Ja                    | (REST) API's ondersteunen specifiek operaties op een data resource |
@@ -114,11 +119,13 @@ Dit obv de stelling:
 | IMP089   | Gebruik standaard oplossingen                                                  | Implicatie           |                       |                                                                    |
 | NAP06.01 | Deel open data                                                                 | Implicatie           |                       |                                                                    |
 | NAP07.01 | Diensten vullen elkaar aan                                                     | Implicatie           |                       |                                                                    |
+| | | | | |
 | KWD01    | Vertrouwen                                                                     | Kernwaarde           |                       |                                                                    |
 | KWD02    | Veilig                                                                         | Kernwaarde           |                       |                                                                    |
 | KWD03    | Toekomstgericht                                                                | Kernwaarde           |                       |                                                                    |
 | KWD04    | Doeltreffend                                                                   | Kernwaarde           |                       |                                                                    |
 | KWD05    | Doelmatig                                                                      | Kernwaarde           |                       |                                                                    |
+| | | | | |
 | KD01     | Transparant (Doel)                                                             | Kwaliteitsdoel       |                       |                                                                    |
 | KD02     | Betrouwbaar (Doel)                                                             | Kwaliteitsdoel       |                       |                                                                    |
 | KD03     | Ontvankelijk (Doel)                                                            | Kwaliteitsdoel       |                       |                                                                    |
