@@ -6,6 +6,30 @@ github repository; zie issues met tag
 
 De werkgroep houdt 1x per 2 weken een korte online meeting (half uur). Neem voor deelname aan deze werkgroep contact op met Linda van den Brink (Geonovum).
 
+## verslag online meeting 18 januari
+- Aanwezig: Martin van der Plas, George Mathijssen en Linda van den Brink. 
+
+Linda geeft overzicht: 
+- er zijn nu 23 open issues (2 zijn on hold)
+- geen open PRs. De afgelopen tijd hebben we veel PRs gehad, gereviewd en gemerged. 
+- Er staan 6 issues in de To discuss kolom
+- 15 in To do
+- niets In progress
+
+Een aantal issues staat wellicht onterecht nog open omdat ze niet aan een PR gelinkt waren; Linda heeft Mark gevraagd hiernaar te kijken. 
+
+George: heeft vooral PRs gereviewd. Was ook bezig met een issue, dat gaat hij nog afronden. 
+
+Martin: is bezig met modulaire opbouw van de API Design Rules in het algemene. Hij is onder andere een scheiding aan het maken tussen functionele en technische rules, die laatste kunnen echt getest worden, de eerste niet. Uiteindelijk zouden wij dat ook moeten doen in de geo module. Maar we kunnen eerst een versie vaststellen en daarna alsnog die rules gaan scheiden. 
+
+Een deel van de issues in To Do hebben we besproken: 
+- [#500](https://github.com/Geonovum/KP-APIs/issues/500): sluiten met rationale in comment.
+- [#495](https://github.com/Geonovum/KP-APIs/issues/495) en [#491](https://github.com/Geonovum/KP-APIs/issues/491): onduidelijk wat het antwoord zou moeten zijn en of je dit in de geo module zou moeten uitleggen (of in de crs handreiking?). Het lijkt ons niet iets voor de geo module > Mark en Pieter hier input over vragen voordat we deze issues evt. sluiten.
+- [#493](https://github.com/Geonovum/KP-APIs/issues/493): uitleg toevoegen aan tekst. George pakt deze op.
+- [#496](https://github.com/Geonovum/KP-APIs/issues/496): de opmerking is terecht, we voegen een note toe in de tekst. Linda pakt deze op.
+- [#494](https://github.com/Geonovum/KP-APIs/issues/494), [#492](https://github.com/Geonovum/KP-APIs/issues/492): Linda pakt deze op.
+- [#497](https://github.com/Geonovum/KP-APIs/issues/497), [#498](https://github.com/Geonovum/KP-APIs/issues/498): George pakt deze op.
+
 ## verslag online meeting 6 december
 - Aanwezig: Mark Strijker, Pieter Bresters, Martin van der Plas, George Mathijssen en Linda van den Brink. 
 
