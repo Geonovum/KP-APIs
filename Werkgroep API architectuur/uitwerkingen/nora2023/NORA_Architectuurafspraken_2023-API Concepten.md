@@ -4,7 +4,9 @@ Dit obv de stelling:
 
 _API's (& API Architectuur concepten) helpen specifiek om invulling te geven aan dit principe/onderdeel_
 
-Toelichting : (Denk m.n. aan RESTful API's en gerelateerde concepten en operatie op dataresource en event API gerelateerde concepten
+Toelichting : Denk m.n. aan RESTful API's en gerelateerde concepten en operatie op (data)resource en event API gerelateerde concepten
+
+(Tip bij editen van de tabel met de online github editor gebruik "no wrap") 
 
 # Principes & Implicaties
 
