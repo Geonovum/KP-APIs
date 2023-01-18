@@ -1,5 +1,5 @@
 
-Dit totaalbestand bevat alle nieuwe NORA Architectuur afspraken (2023), per onderdeel is aangegeven of er een relatie is met API Concepten.
+Dit totaalbestand bevat de nieuwe NORA Architectuur afspraken (2023), per onderdeel is aangegeven of er een relatie is met API Concepten.
 Dit obv de stelling:
 
 _API's (& API Architectuur concepten) helpen specifiek om invulling te geven aan dit principe/onderdeel_
