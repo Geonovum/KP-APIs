@@ -113,6 +113,8 @@ The CRS can be specified for request and response individually using parameters 
   <p class="rulelab"><strong>API-GEO-10</strong>: Support passing the coordinate reference system (CRS) of the geometry in the request as a query parameter</p>
   <p>Support the <a href="http://docs.opengeospatial.org/is/18-058/18-058.html#_parameter_bbox_crs">OGC API Features part 2 <code>bbox-crs</code> parameter</a> in conformance to the standard.
   </p>
+  <p>If a bounding box or geospatial filter is sent to the server without these parameters, the default CRS, CRS84, is assumed as specified in <a href="#api-geo-7">API-GEO-7</a>.</p>
+  <p>If an invalid value, i.e. a CRS which is not in the list of supported CRSs, is given for one of these parameters, the server responds with an HTTP status code `400`.</p>
   <p>Additionally, if other types of geospatial filters are supported in the API besides <code>bbox</code>: </p>
   <p>Support the <a href="http://docs.ogc.org/DRAFTS/19-079r1.html#filter-filter-crs">OGC API Features part 3 <code>filter-crs</code> parameter</a> in conformance to the standard.
   </p>
@@ -124,10 +126,6 @@ The CRS can be specified for request and response individually using parameters 
   </ul>
   <p>Perform the same test  for the <code>filter-crs</code> parameter, if the server supports other types of geospatial filters.</p>
 </div>
-
-If a bounding box or geospatial filter is sent to the server without these parameters, the default CRS, CRS84, is assumed.
-
-If an invalid value, i.e. a CRS which is not in the list of supported CRSs, is given for one of these parameters, the server responds with an HTTP status code `400`.
 
 In an API that supports transactions, POST requests with geospatial content in the body may be sent by a client to the server. In that case, it is necessary to indicate the CRS used, unless CRS84, the default CRS, is used.
 
