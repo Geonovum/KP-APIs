@@ -1,6 +1,6 @@
 # Agenda en Verslag 
 
-Agenda en Verslag van de Werkgroep API Design Rules 31 januari 2023 - Online overleg via MS-Teams
+Agenda en Verslag van de Werkgroep API Design Rules 31 januari 2023 - Online overleg via MS-Teams 10:30 - 12:00 uur. 
 
 ## Deelnemers
 -
