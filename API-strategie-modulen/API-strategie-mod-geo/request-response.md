@@ -96,7 +96,7 @@ However, until the filtering module is written, the geospatial module retains ru
 
 ## Result (response)
 
-In a JSON API the geometry is returned as a GeoJSON Geometry object.
+In a REST API that uses JSON as the data format, the geometry is returned as a GeoJSON Geometry object.
 
 <div class="rule" id="api-geo-4">
   <p class="rulelab"><strong>API-GEO-4</strong>: Embed GeoJSON Geometry object as part of the JSON resource</p>
