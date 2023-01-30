@@ -18,8 +18,8 @@ RFC Bindende architectuurafspraken 2022 - NORA Online
 
 Uit de discussie:
 - DNB en SVB nemen NORA als uitgangspunt
-- Door relatie van (Rest)API concepten met NORA principes en implicaties aan te geven, kan aangegeven worden wat de kracht is van een API gebaseerde architectuur
-in het NORA API Thema kan dit verder uitgewerkt worden
+- Door relatie van (Rest)API concepten met NORA principes en implicaties aan te geven, kan aangegeven worden wat de kracht is van een API gebaseerde architectuur.
+In het NORA API Thema kan dit verder uitgewerkt worden
 
 ## 4	KPAPI Onderwerpen Kanban board : Kennisplatform APIs Kanban (github.com)
 
