@@ -1,4 +1,4 @@
-(concept)
+
 
 # Verslag Werkgroep Architectuur
 
