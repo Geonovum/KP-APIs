@@ -12,7 +12,7 @@ De werkgroep API Architectuur richt zich op het ontwikkelen en delen van praktis
 
 Zie ook de presentatie van de Api Architectuur sessie op de bijeenkomst 4 maart 2020 : [2020_03_04_API Architectuur_handout.pdf](https://www.geonovum.nl/uploads/documents/2020_03_04_API%20Architectuur_handout.pdf)
 
-# Onderwerpen 2020-2021
+# Onderwerpen 
 
 - Ondersteuning API Strategie Algemeen
 - API Capability model 
