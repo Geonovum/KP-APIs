@@ -138,7 +138,7 @@ In an API that supports the creation of items, POST requests with geospatial con
   <p>In a request (i.e. when creating an item on the server):</p>
   <uL>
     <li>Issue an HTTP POST request to the API with spatial data in the request body, including the <code>Content-Crs</code> header with the value of the CRS identifier for the spatial data in the body.</li>
-    <li>Verify that a document was returned with a status code 201.</li>
+    <li>Verify that a document was returned with status code <code>201</code> in case a new item was created, or with status code <code>200</code>.</li>
   </ul>
 </div>
 
