@@ -5,6 +5,8 @@ A Coordinate Reference System (CRS) or Spatial Reference System (SRS) is a frame
 CRSs are uniquely identified by means of a Spatial Reference System Identifier (SRID).
 SRIDs may refer to different standards, for example EPSG Geodetic Parameter Dataset or Open Geospatial Consortium (OGC).
 
+CRSs may be grouped into ensemble CRSs. The CRSs that are part of an ensemble CRS are called ensemble member CRSs or member CRSs. When exchanging geometry an ensemble member CRS shall be used instead of an ensemble CRS when known and if accurate data is required. When transforming geometry from one CRS to another, use an ensemble member CRS (instead of an ensemble CRS) as input and output of coordinate transformation, when known and if accurate data is required.
+
 For a detailed description of CRSs see [[hr-crs]].
 
 ## CRS discovery
@@ -92,8 +94,8 @@ The guiding principles for CRS support:
 - Exchange format (notation) for RD (X, Y) in meters, for example: (`195427.520, 311611.840`). The X and Y coordinates are decimal numbers. The number of decimals in the fractional part may vary depending on the required accuracy. For an accuracy of 1 mm, 3 decimal places in the fractional part are sufficient. See [Nauwkeurigheid van coördinaten](https://docs.geostandaarden.nl/crs/crs/#nauwkeurigheid-van-coordinaten) in [[hr-crs]].
 - WGS 84 Pseudo Mercator (EPSG:3857) is rather inaccurate, but suitable for simple visualization of inprecise spatial data on the web, e.g. when it suffices if the data is recognizable on a map. WGS 84 Pseudo Mercator shall not be used for precise data that is meant for accurate spatial analysis.
 - Use the CRS Guidelines [[hr-crs]] for coordinate transformations.
-- CRSs may be grouped into ensemble CRSs. When exchanging geometry an ensemble member CRS shall be used (instead of an ensemble CRS) where possible.
-- Use an ensemble member CRS (instead of an ensemble CRS) as output of coordinate transformation, where possible.
+- Use an ensemble member CRS (instead of an ensemble CRS) for exchanging geometry, when known.
+- Use an ensemble member CRS (instead of an ensemble CRS) as output of coordinate transformation, when known.
 - APIs shall support and advertise both ensemble CRSs and ensemble member CRSs if geometry is exchanged and the CRS for the geometry is an ensemble member CRS.
 - under certain conditions WGS 84 can be made equal to e.g. ETRS89, this is called a nultransformation, see [[hr-crs]]. If a nultransformation is used to realize WGS 84, then the CRS (e.g. ETRS89) that is used to realize WGS 84 shall be supported and advertised by an API.
 
