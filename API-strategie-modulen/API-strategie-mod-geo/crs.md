@@ -17,9 +17,10 @@ A client shall be able to determine a list of CRSs supported by an API.
   // GET /api/v1/collections:</pre>
   <h4 class="rulelab">How to test</h4>
 <ul>
-  <li>Send a request to the <code>/collections</code> endpoint.</li>
+  <li>Issue an HTTP GET request to the <code>/collections</code> endpoint of the API.</li>
   <li>Validate that the returned document contains a <code>collections</code> object with the <code>crs</code> property.</li>
   <li>Validate that the <code>crs</code> property contains an array with CRS references in the form of URIs.</li>
+  <li>Validate that the CRS URIs return a GML document with an <code>epsg:CommonMetadata</code> element (<code>xmlns:epsg="urn:x-ogp:spec:schema-xsd:EPSG:1.0:dataset</code></li>
 </ul>
 </div>
 
@@ -37,11 +38,13 @@ If a feature collection supports a different set of CRSs than the set defined in
 For clients, it may be helpful to know the CRS identifier that may be used to retrieve features from that collection without the need to apply a CRS transformation.
 
 <div class="rule" id="api-geo-6">
-  <p class="rulelab"><strong>API-GEO-6</strong>: Make known in which CRS the geospatial data is stored.</p>
+  <p class="rulelab"><strong>API-GEO-6</strong>: Make known in which CRS the geospatial data is stored by specifying the property <code>storageCrs</code> in the collection object. </p>
+  <p>The value of this property shall be one of the CRSs the API supports.</p> 
   <h4 class="rulelab">How to test</h4>
   <ul>
-    <li>Request each collection in the <code>/collections</code> endpoint.</li>
+    <li>Issue an HTTP GET request to each collection in the <code>/collections</code> endpoint of the API.</li>
     <li>Validate that each returned collection contains the <code>storageCRS</code> property.</li>
+    <li>Validate that the value of the <code>storageCRS</code> property is one of the URIs from the list of supported CRSs.</li>
   </ul>
 </div>
 
@@ -64,7 +67,7 @@ The *default* CRS, i.e. the CRS which is assumed when not specified by either th
   <p>The implication of this is, that if no CRS is explicitly included in the request, CRS84 is assumed. This rule also applies if the request uses POST.</p>
   <h4 class="rulelab">How to test</h4>
   <ul>
-    <li>Request spatial data from the API without specifying a coordinate reference system.</li>
+    <li>Issue an HTTP GET request to retrieve some spatial data from the API without specifying a coordinate reference system.</li>
     <li>Validate the retrieved spatial data using the CRS84 reference system (for 2D geometries) or the CRS84h reference system (for 3D geometries).</li>
   </ul>
 </div>
@@ -76,7 +79,7 @@ In addition, support for ETRS89 and/or RD is required.
   <p>General usage of the European ETRS89 coordinate reference system (CRS) or RD/NAP is preferred, but is not the default CRS. Hence, one of these CRSs has to be explicitly included in each request when one of these CRSs is desired in the response or used in a request.</p>
   <h4 class="rulelab">How to test</h4>
   <ul>
-    <li>Request spatial data from the API, specifying ETRS89 and/or RD as coordinate reference system.</li>
+    <li>Issue an HTTP GET request to retrieve some spatial data from the API, specifying ETRS89 and/or RD as coordinate reference system.</li>
     <li>Validate the retrieved spatial data using the coordinate reference system used in the request.</li>
   </ul>  
 </div>
@@ -101,7 +104,7 @@ The guiding principles for CRS support:
   <p class="rulelab"><strong>API-GEO-9</strong>: When the API provides data in an ensemble CRS like WGS 84 or ETRS89 while it is known to what ensemble member CRS the data actually refers, this ensemble member should also be one of the CRSs supported by the API and advertised in the CRS list. E.g. when 2D data is transformed from RD with RDNAPTRANS not only EPSG:4258 should be supported but also EPSG::9067.</p>
   <h4 class="rulelab">How to test</h4>
   <ul>
-    <li>Send a request to the <code>/collections</code> endpoint.</li>
+    <li>Issue an HTTP GET request to the <code>/collections</code> endpoint.</li>
     <li>Validate that the returned document contains a <code>collections</code> object with the <code>crs</code> property.</li>
     <li>Validate that the <code>crs</code> property contains an array with CRS references in the form of URIs.</li>
     <li>Validate that when the <code>crs</code> property contains a URL for a ensemble CRS like ETRS89 (EPSG:4258), it also contains a URL for a ensemble member CRS like ETRF2000 (EPSG:9067).</li>
@@ -123,7 +126,7 @@ The CRS can be specified for request and response individually using parameters 
   <uL>
     <li>Issue an HTTP GET request to the API, including the <code>bbox</code> parameter AND the <code>bbox-crs</code> parameter.</li>
     <li>Validate that a document was returned with a status code 200.</li>
-    <li>Verify that the geometries in the document have the coordinate reference system that was requested using the <code>bbox-crs</code> parameter.</li>
+    <li>Verify that the response includes a <code>Content-Crs</code> http header with the value of the requested CRS identifier. </li>
   </ul>
   <p>Perform the same test  for the <code>filter-crs</code> parameter, if the server supports other types of geospatial filters.</p>
 </div>
@@ -159,8 +162,8 @@ In an API that supports the creation of items, POST requests with geospatial con
   </p>
   <h4 class="rulelab">How to test</h4>
   <uL>
-    <li>Issue an HTTP GET request to the API, requesting spatial data in a CRS supported by the server using the <code>crs</code> parameter.</li>
-    <li>Verify that the response includes the <code>Content-Crs</code> header with the value of the requested CRS identifier.</li>
+    <li>Issue an HTTP GET request to the API, requesting spatial data.</li>
+    <li>Verify that the response includes the <code>Content-Crs</code> header with the value of the requested CRS identifier if explicitly requested, or with the value <code>http://www.opengis.net/def/crs/OGC/1.3/CRS84</code> if no CRS was explicitly requested.</li>
   </ul>
 </div>
 
