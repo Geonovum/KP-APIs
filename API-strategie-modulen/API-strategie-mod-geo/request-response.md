@@ -48,7 +48,7 @@ A simple spatial filter can be supplied as a bounding box. This is a common way 
   </p>
   <p> The default spatial operator 'intersects' is used to determine which resources are returned.
   </P>
-  <p> Due to possible performance issue, especially when a combination of filters is used, it is up to the provider to decide to limit the size of the bounding box or the number of results. It is also up to the provider to decide if an error is returned in such cases. 
+  <p> Due to possible performance issue, especially when a combination of filters is used, a provider may decide to limit the size of the bounding box or the number of results. It is also up to the provider to decide if an error is returned in such cases. 
   The provider shall clearly document this behavior.
   </P>
   <p>
