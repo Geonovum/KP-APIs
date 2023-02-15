@@ -40,13 +40,25 @@ A simple spatial filter can be supplied as a bounding box. This is a common way 
 
 <div class="rule" id="api-geo-2">
   <p class="rulelab"><strong>API-GEO-2</strong>: Supply a simple spatial filter as a bounding box parameter</p>
-  <p>Support the <a href="https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_bbox">OGC API Features part 1 <code>bbox</code> parameter</a> in conformance to the standard.
+  <p>Support the <a href="https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_bbox">OGC API Features part 1 <code>bbox</code> query parameter</a> in conformance to the standard. 
   <pre>
    GET /api/v1/buildings?bbox=5.4,52.1,5.5,53.2</pre>
   </p>
+  <p>Note that if a resource contains multiple geometries, it is up to the provider to decide if a single or multiple geometries are returned and that the provider shall clearly document this behavior.
+  </p>
+  <p> The default spatial operator 'intersects' is used to determine which resources are returned.
+  </P>
+  <p> Due to possible performance issue, especially when a combination of filters is used, a provider may decide to limit the size of the bounding box or the number of results. It is also up to the provider to decide if an error is returned in such cases. 
+  The provider shall clearly document this behavior.
+  </P>
+  <p>
+  The provider shall be able to provide resources that do not have a geometry property and are related to resources that match the bounding box filter.
+  </p>
+  <p> An error shall be given if the provided coordinates are outside the specified coordinate reference system.
+  </p>
   <h4 class="rulelab">How to test</h4>
   <ul>
-    <li>Issue an HTTP GET request to the API, including the <code>bbox</code> parameter.</li>
+    <li>Issue an HTTP GET request to the API, including the <code>bbox</code> query parameter.</li>
     <li>Validate that a document was returned with a status code 200.</li>
     <li>Verify that only features that have a spatial geometry that intersects the bounding box are returned as part of the result set.</li>
   </ul>
