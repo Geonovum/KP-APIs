@@ -70,6 +70,7 @@ The *default* CRS, i.e. the CRS which is assumed when not specified by either th
   <h4 class="rulelab">How to test</h4>
   <ul>
     <li>Issue an HTTP GET request to retrieve some spatial data from the API without specifying a coordinate reference system.</li>
+    <li>Validate that the response includes a <code>Content-Crs</code> header with the URI for CRS84 or CRS84h.</li>
     <li>Validate the retrieved spatial data using the CRS84 reference system (for 2D geometries) or the CRS84h reference system (for 3D geometries).</li>
   </ul>
 </div>
@@ -82,6 +83,7 @@ In addition, support for ETRS89 and/or RD is required.
   <h4 class="rulelab">How to test</h4>
   <ul>
     <li>Issue an HTTP GET request to retrieve some spatial data from the API, specifying ETRS89 and/or RD as coordinate reference system.</li>
+    <li>Validate that the response includes a <code>Content-Crs</code> header with the URI for the requested CRS.</li>
     <li>Validate the retrieved spatial data using the coordinate reference system used in the request.</li>
   </ul>  
 </div>
@@ -128,7 +130,7 @@ The CRS can be specified for request and response individually using parameters 
   <uL>
     <li>Issue an HTTP GET request to the API, including the <code>bbox</code> parameter AND the <code>bbox-crs</code> parameter.</li>
     <li>Validate that a document was returned with a status code 200.</li>
-    <li>Verify that the response includes a <code>Content-Crs</code> http header with the value of the requested CRS identifier.</li>
+    <li>Verify that the response includes a <code>Content-Crs</code> http header with the URI of the requested CRS identifier.</li>
   </ul>
   <p>Perform the same test  for the <code>filter-crs</code> parameter, if the server supports other types of geospatial filters.</p>
 </div>
@@ -165,7 +167,7 @@ In an API that supports the creation of items, POST requests with geospatial con
   <h4 class="rulelab">How to test</h4>
   <uL>
     <li>Issue an HTTP GET request to the API, requesting spatial data.</li>
-    <li>Verify that the response includes the <code>Content-Crs</code> header with the value of the requested CRS identifier if explicitly requested, or with the value <code>http://www.opengis.net/def/crs/OGC/1.3/CRS84</code> if no CRS was explicitly requested.</li>
+    <li>Verify that the response includes the <code>Content-Crs</code> header with the URI of the requested CRS identifier if explicitly requested, or with the value <code>http://www.opengis.net/def/crs/OGC/1.3/CRS84</code> if no CRS was explicitly requested.</li>
   </ul>
 </div>
 
