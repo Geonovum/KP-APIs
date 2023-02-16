@@ -29,7 +29,8 @@ In het NORA API Thema kan dit verder uitgewerkt worden.
 
 Robert van Wessel geeft aan:
 
-Handreiking RFC: https://www.noraonline.nl/images/noraonline/4/43/Handreiking_doorvoeren_wijzigingen_in_de_NORA.pdf bron: https://www.noraonline.nl/wiki/NORA_Gebruikersraad/2022-11-15
+Handreiking RFC: https://www.noraonline.nl/images/noraonline/4/43/Handreiking_doorvoeren_wijzigingen_in_de_NORA.pdf 
+bron: https://www.noraonline.nl/wiki/NORA_Gebruikersraad/2022-11-15
 
 
 
