@@ -71,7 +71,7 @@ input.task-list-item-checkbox {
     <!-- Invullen: de naam van de lokale CSS file =============================================== -->
     <link rel="stylesheet" type="text/css" href="./media/style.css">
     <link rel="shortcut icon" type="image/x-icon" href="https://tools.geostandaarden.nl/respec/style/logos/Geonovum.ico">
-    <style type="text/css" id="operaUserStyle"></style>
+    
     
 <!-- ============================================================================================ -->
 <!-- File. . . :  index.html                                                                      -->
@@ -537,8 +537,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   "postProcess": [
     null
   ],
-  "publishISODate": "2023-02-03T00:00:00.000Z",
-  "generatedSubtitle": "Werkversie 03 februari 2023"
+  "publishISODate": "2023-02-16T00:00:00.000Z",
+  "generatedSubtitle": "Werkversie 16 februari 2023"
 }</script><meta name="description" content="The API strategy consists of a core — a generic set of rules for all government APIs — and various modules that only pertain to a specific application. See API Strategie for a list of all parts of the API Strategy."><script type="application/ld+json">{
   "@context": [
     "http://schema.org",
@@ -567,7 +567,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   "name": "API Design rules Module: Geospatial",
   "inLanguage": "en",
   "license": "https://creativecommons.org/licenses/by/4.0/legalcode",
-  "datePublished": "2023-02-03",
+  "datePublished": "2023-02-16",
   "copyrightHolder": {
     "name": "Geonovum",
     "url": "https://www.geonovum.nl/"
@@ -674,12 +674,12 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   ]
 }</script></head>
   <!-- HTML-Body ================================================================================ -->
-  <body class="h-entry"><div class="head">
+  <body class="h-entry toc-inline"><div class="head">
   <a href="https://www.geonovum.nl/" class="logo"><img id="Geonovum" alt="Geonovum" width="132" height="67" src="https://tools.geostandaarden.nl/respec/style/logos/Geonovum.svg"></a>
   <h1 class="title p-name" id="title">API Design rules Module: Geospatial</h1>
   
   <h2>Geonovum Handreiking<br>
-  Werkversie <time class="dt-published" datetime="2023-02-03">03 februari 2023</time></h2>
+  Werkversie <time class="dt-published" datetime="2023-02-16">16 februari 2023</time></h2>
   <dl>
     <dt>This version:</dt><dd><a class="u-url" href="https://geonovum.github.io/KP-APIs/API-strategie-mod-geo/">https://geonovum.github.io/KP-APIs/API-strategie-mod-geo/</a></dd><dt>Latest published version:</dt><dd><a href="https://docs.geostandaarden.nl/api/API-Strategie-mod-geo/">https://docs.geostandaarden.nl/api/API-Strategie-mod-geo/</a></dd>
     
@@ -736,7 +736,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <section data-format="markdown" aria-busy="false" id="introduction"><!--OddPage--><h2 id="x1-introduction"><span class="secno">1. </span>Introduction</h2><p>This document provides rules for publishing geospatial data using Web APIs. Spatial data is </p><blockquote>
 <p>data that describes anything with spatial extent (i.e. size, shape or position). Spatial data is also known as location information. [<cite><a class="bibref" href="#bib-sdw-bp">sdw-bp</a></cite>]</p>
 </blockquote><p>Geospatial data is more specific in that it is explicitly located relative to the Earth. </p><p>Geospatial data is 'special' data in the sense that it typically indicates the location of things using geometry. This geometry allows geospatial functions such as 'find only the things located within this area' but also requires specific ways of handling. There are international regulations and standards for geospatial data that need to be taken into account in certain cases.</p><figure id="fig-the-red-bounding-box-acts-as-a-filter-to-find-only-the-castles-located-within-this-area">
-<img alt="castle features shown on map with bounding box" src="media/boundingbox.png" height="414" width="498">
+<img alt="castle features shown on map with bounding box" src="media/boundingbox.png">
 <figcaption>Figure <span class="figno">1</span> <span class="fig-title">The red bounding box acts as a filter to find only the castles located within this area</span></figcaption>
 </figure><p>The Geospatial Module provides rules for the structuring of geospatial payloads and for functions in APIs to handle geospatial data.</p><p>In the geospatial module the abbreviation RD is used. RD refers to the "Stelsel van de Rijksdriehoeksmeting", this is the equivalent of EPSG code 28992 and EPSG name Amersfoort / RD New.</p></section>
     <section data-format="markdown" aria-busy="false" id="request-and-response"><!--OddPage--><h2 id="x2-request-and-response"><span class="secno">2. </span>Request and response</h2><p>Providing requested resources is the essence of any API. This also applies to REST APIs that handle geospatial data. There are, however, some specific aspects when dealing with geospatial data in REST APIs. The most important aspects are described in this chapter: </p><ul>
@@ -762,12 +762,24 @@ GeoJSON does not cover all use cases. For example, it is not possible to store c
 <li>When supporting GML, do this according to OGC API Features <a href="https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geography_markup_language_gml_simple_features_profile_level_0">Requirements class 8.4</a> for GML Simple Features level 0, or <a href="https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geography_markup_language_gml_simple_features_profile_level_2">Requirements class 8.4</a> for GML Simple Features level 2. </li>
 <li>Use a workaround, e.g. convert circular lines / arcs to regular linestrings.</li></ul></aside></div></section><section id="call-requests"><h3 id="x2-2-call-requests"><span class="secno">2.2 </span>Call (requests)</h3><p>A simple spatial filter can be supplied as a bounding box. This is a common way of filtering spatial data and can be supplied as a parameter. We adopt the OGC API Features [<cite><a class="bibref" href="#bib-ogcapi-features-1">ogcapi-features-1</a></cite>] bounding box parameter:</p><div class="rule" id="api-geo-2">
 <p class="rulelab"><strong>API-GEO-2</strong>: Supply a simple spatial filter as a bounding box parameter</p>
-<p>Support the <a href="https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_bbox">OGC API Features part 1 <code>bbox</code> parameter</a> in conformance to the standard.
+<p>Support the <a href="https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_bbox">OGC API Features part 1 <code>bbox</code> query parameter</a> in conformance to the standard.
 </p><pre aria-busy="false"><code class="hljs">   GET /api/v1/buildings?bbox=5.4,52.1,5.5,53.2</code></pre>
 <p></p>
+<p>Note that if a resource contains multiple geometries, it is up to the provider to decide if a single or multiple geometries are returned and that the provider shall clearly document this behavior.
+</p>
+<p>The default spatial operator 'intersects' is used to determine which resources are returned.
+ </p>
+<p>Due to possible performance issue, especially when a combination of filters is used, a provider may decide to limit the size of the bounding box or the number of results. It is also up to the provider to decide if an error is returned in such cases. 
+ The provider shall clearly document this behavior.
+</p>
+<p>
+The provider shall be able to provide resources that do not have a geometry property and are related to resources that match the bounding box filter.
+</p>
+<p>An error shall be given if the provided coordinates are outside the specified coordinate reference system.
+</p>
 <h4 class="rulelab" id="how-to-test-0">How to test</h4>
 <ul>
-<li>Issue an HTTP GET request to the API, including the <code>bbox</code> parameter.</li>
+<li>Issue an HTTP GET request to the API, including the <code>bbox</code> query parameter.</li>
 <li>Validate that a document was returned with a status code 200.</li>
 <li>Verify that only features that have a spatial geometry that intersects the bounding box are returned as part of the result set.</li>
 </ul>
@@ -778,8 +790,8 @@ Spatial filtering is an extensive topic. There are use cases for geospatial oper
 <p>However, until the filtering module is written, the geospatial module retains rule API-GEO-3 about dealing with results of a global spatial query. This rule may be moved to the filtering module at a later stage.</p>
 </aside></div><div class="rule" id="api-geo-3">
 <p class="rulelab"><strong>API-GEO-3</strong>: Place results of a global spatial query in the relevant geometric context</p>
-<p>In case of a global query <code>/api/v1/_search</code>, results should be placed in the relevant geometric context, because results from different collections are retrieved. Express the name of the collection to which the results belong in the singular form using the property <code>type</code>. For example:</p>
-<pre aria-busy="false"><code class="hljs json">  <span class="hljs-comment">// POST /api/v1/_zoek:</span>
+<p>In case of a global query <code>/api/v1/_search</code>, results should be placed in the relevant geometric context, because results from different <a href="https://publicatie.centrumvoorstandaarden.nl/api/adr/#resources">collections</a>, i.e. different sets of resources of the same type, are retrieved. Express the name of the collection to which the results belong in the singular form using the property <code>type</code>. For example:</p>
+<pre aria-busy="false"><code class="hljs json">  <span class="hljs-comment">// POST /api/v1/_search:</span>
   {
     <span class="hljs-attr">"currentPage"</span>: <span class="hljs-number">1</span>,
     <span class="hljs-attr">"nextPage"</span>: <span class="hljs-number">2</span>,
@@ -826,7 +838,7 @@ Spatial filtering is an extensive topic. There are use cases for geospatial oper
 </ul>
 </div></section></section>
     <section data-format="markdown" aria-busy="false" id="coordinate-reference-system-crs"><!--OddPage--><h2 id="x3-coordinate-reference-system-crs"><span class="secno">3. </span>Coordinate Reference System (CRS)</h2><p>A Coordinate Reference System (CRS) or Spatial Reference System (SRS) is a framework to measure locations on the earth surface as coordinates. Geometries consist of coordinates. To be able to measure the geometry's coordinates on the earth surface a CRS is required in conjunction with the coordinates.</p><p>CRSs are uniquely identified by means of a Spatial Reference System Identifier (SRID).
-SRIDs may refer to different standards, for example EPSG Geodetic Parameter Dataset or Open Geospatial Consortium (OGC).</p><p>For a detailed description of CRSs see [<cite><a class="bibref" href="#bib-hr-crs">hr-crs</a></cite>].</p><section id="crs-discovery"><h3 id="x3-1-crs-discovery"><span class="secno">3.1 </span>CRS discovery</h3><p>A client shall be able to determine a list of CRSs supported by an API.</p><div class="rule" id="api-geo-5">
+SRIDs may refer to different standards, for example EPSG Geodetic Parameter Dataset or Open Geospatial Consortium (OGC).</p><p>CRSs may be grouped into ensemble CRSs. The CRSs that are part of an ensemble CRS are called ensemble member CRSs or member CRSs. When exchanging geometry an ensemble member CRS shall be used instead of an ensemble CRS when known and if accurate data is required. When transforming geometry from one CRS to another, use an ensemble member CRS (instead of an ensemble CRS) as input and output of coordinate transformation, when known and if accurate data is required.</p><p>For a detailed description of CRSs see [<cite><a class="bibref" href="#bib-hr-crs">hr-crs</a></cite>].</p><section id="crs-discovery"><h3 id="x3-1-crs-discovery"><span class="secno">3.1 </span>CRS discovery</h3><p>A client shall be able to determine a list of CRSs supported by an API.</p><div class="rule" id="api-geo-5">
 <p class="rulelab"><strong>API-GEO-5</strong>: Provide a list of all CRSs that are supported by the API</p>
 <pre aria-busy="false"><code class="hljs javascript">  <span class="hljs-comment">// GET /api/v1/collections:</span></code></pre>
 <h4 class="rulelab" id="how-to-test-3">How to test</h4>
@@ -872,8 +884,8 @@ When referring to a coordinate reference system using its code in the rest of th
 <li>Exchange format (notation) for RD (X, Y) in meters, for example: (<code>195427.520, 311611.840</code>). The X and Y coordinates are decimal numbers. The number of decimals in the fractional part may vary depending on the required accuracy. For an accuracy of 1 mm, 3 decimal places in the fractional part are sufficient. See <a href="https://docs.geostandaarden.nl/crs/crs/#nauwkeurigheid-van-coordinaten">Nauwkeurigheid van coördinaten</a> in [<cite><a class="bibref" href="#bib-hr-crs">hr-crs</a></cite>].</li>
 <li>WGS 84 Pseudo Mercator (EPSG:3857) is rather inaccurate, but suitable for simple visualization of inprecise spatial data on the web, e.g. when it suffices if the data is recognizable on a map. WGS 84 Pseudo Mercator shall not be used for precise data that is meant for accurate spatial analysis.</li>
 <li>Use the CRS Guidelines [<cite><a class="bibref" href="#bib-hr-crs">hr-crs</a></cite>] for coordinate transformations.</li>
-<li>CRSs may be grouped into ensemble CRSs. When exchanging geometry an ensemble member CRS shall be used (instead of an ensemble CRS) where possible.</li>
-<li>Use an ensemble member CRS (instead of an ensemble CRS) as output of coordinate transformation, where possible.</li>
+<li>Use an ensemble member CRS (instead of an ensemble CRS) for exchanging geometry, when known.</li>
+<li>Use an ensemble member CRS (instead of an ensemble CRS) as output of coordinate transformation, when known.</li>
 <li>APIs shall support and advertise both ensemble CRSs and ensemble member CRSs if geometry is exchanged and the CRS for the geometry is an ensemble member CRS.</li>
 <li>under certain conditions WGS 84 can be made equal to e.g. ETRS89, this is called a nultransformation, see [<cite><a class="bibref" href="#bib-hr-crs">hr-crs</a></cite>]. If a nultransformation is used to realize WGS 84, then the CRS (e.g. ETRS89) that is used to realize WGS 84 shall be supported and advertised by an API.</li>
 </ul><div class="rule" id="api-geo-9">
