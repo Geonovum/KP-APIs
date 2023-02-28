@@ -17,11 +17,11 @@ This module does not describe how to supply a geometry as part of a resource for
 
 <div class="rule" id="api-geo-1">
   <p class="rulelab"><strong>API-GEO-1</strong>: Support GeoJSON for geospatial APIs</p>
-  <p>For representing 2D geometric information in an API, preferably use the convention for describing geometry as defined in the GeoJSON format [[rfc7946]]. Support GeoJSON as described in OGC API Features <a href="https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geojson">Requirements class 8.3</a> [[ogcapi-features-1]]. </p>
+  <p>For representing 2D geometric information in an API, preferably use the convention for describing geometry as defined in the GeoJSON format [[rfc7946]]. Support GeoJSON as described in OGC API Features <a href="https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geojson">Requirements class 8.3</a> [[ogcapi-features-1]]. Use the templates OGC provides for the definition of the schemas for the GeoJSON responses in OpenAPI definitions. These are available at <a href="http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/featureCollectionGeoJSON.yaml">featureCollectionGeoJSON.yaml</a>, <a href="http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/featureGeoJSON.yaml">featureGeoJSON.yaml</a> and <a href="http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml">geometryGeoJSON.yaml</a>. </p>
   <h4 class="rulelab">How to test</h4>
   <ul>
-    <li>Request a resource that includes feature content (i.e., coordinates) with response media type of <code>application/geo+json</code>. This must be answered with a 200-response.</li>
-    <li>Validate that the returned document is a GeoJSON document.</li>  
+    <li>Issue an HTTP GET request to the API and request a resource that includes feature content (i.e., coordinates) with response media type of <code>application/geo+json</code>. This must be answered with a 200-response.</li>
+    <li>Validate that the returned document is a GeoJSON document using the OGC schema definitions <code>featureCollectionGeoJSON.yaml</code>, <code>featureGeoJSON.yaml</code> and <code>geometryGeoJSON.yaml</code>.</li>
   </ul>
 </div>
 
@@ -103,7 +103,10 @@ However, until the filtering module is written, the geospatial module retains ru
     }
   }</pre>
   <h4 class="rulelab">How to test</h4>
-  <p>Validate that the returned document contains the expected <code>type</code> property for each member.</p>
+  <ul>
+    <li>Issue an HTTP GET request to the API.</li>
+    <li>Validate that the returned document contains the expected <code>type</code> property for each member.</li>
+  </ul>
 </div>
 
 ## Result (response)
@@ -122,7 +125,7 @@ In a REST API that uses JSON as the data format, the geometry is returned as a G
     }
   }</pre>
   <h4 class="rulelab">How to test</h4>
-  <p>Validate that the returned document represents coordinates using: </p>
+  <p>Issue an HTTP GET request to the API. Validate that the returned document represents geometry as specified in <a href="http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml">geometryGeoJSON.yaml</a>, i.e. using: </p>
   <ul>
     <li>a property <code>type</code> containing the name of one of the GeoJSON geometry types, and</li>
     <li>a property <code>coordinates</code> containing an array with a minimum of 2 numbers.</li>
