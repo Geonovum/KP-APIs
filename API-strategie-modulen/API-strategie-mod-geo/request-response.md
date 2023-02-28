@@ -125,7 +125,7 @@ In a REST API that uses JSON as the data format, the geometry is returned as a G
     }
   }</pre>
   <h4 class="rulelab">How to test</h4>
-  <p>Issue an HTTP GET request to the API. Validate that the returned document represents coordinates as specified in <a href="http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml">geometryGeoJSON.yaml</a>, i.e. using: </p>
+  <p>Issue an HTTP GET request to the API. Validate that the returned document represents geometry as specified in <a href="http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml">geometryGeoJSON.yaml</a>, i.e. using: </p>
   <ul>
     <li>a property <code>type</code> containing the name of one of the GeoJSON geometry types, and</li>
     <li>a property <code>coordinates</code> containing an array with a minimum of 2 numbers.</li>
