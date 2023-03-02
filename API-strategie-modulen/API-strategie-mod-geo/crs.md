@@ -138,15 +138,16 @@ The CRS can be specified for request and response individually using parameters 
 In an API that supports the creation of items, POST requests with geospatial content in the body may be sent by a client to the server. In that case, it is necessary to indicate the CRS used, unless CRS84, the default CRS, is used.
 
 <div class="rule" id="api-geo-11">
-  <p class="rulelab"><strong>API-GEO-11</strong>: When HTTP POST requests are supported, pass the coordinate reference system (CRS) of geometry in the request body as a header</p>
+  <p class="rulelab"><strong>API-GEO-11</strong>: When HTTP POST, PUT and/or PATCH requests are supported, pass the coordinate reference system (CRS) of geometry in the request body as a header</p>
   <p>Support the <a href="http://docs.ogc.org/DRAFTS/20-002.html#feature-crs">OGC API Features part 4 <code>Content-Crs</code> header</a> in conformance to the standard.</p>
   <p>Alternatively, if the feature representation supports expressing CRS information for each feature / geometry, the information can also be included in the feature representation. If no CRS is asserted, the default CRS, CRS84, is assumed, as stated in <a href="#api-geo-7">API-GEO-7</a>.<p>
   <h4 class="rulelab">How to test</h4>
-  <p>In a request (i.e. when creating an item on the server):</p>
+  <p>In a request (i.e. when creating or updating an item on the server):</p>
   <uL>
     <li>Issue an HTTP POST request to the API with spatial data in the request body, including the <code>Content-Crs</code> header with the value of the CRS identifier for the spatial data in the body.</li>
     <li>Verify that a document was returned with status code <code>201</code> in case a new item was created, or with status code <code>200</code>.</li>
   </ul>
+  <p>Repeat with a similar test voor PUT and/or PATCH if the server supports these.</p>
 </div>
 
 <div class="rule" id="api-geo-12">
