@@ -8,7 +8,7 @@ Providing requested resources is the essence of any API. This also applies to RE
 When requesting information, for example about cadastral parcels, users do not necessarily require the geometry, even if they used a spatial filter. A name or parcel ID may be sufficient.
 
 <aside class="note">
-This module does not describe how to supply a geometry as part of a resource for storage, i.e. when creating, replacing or updating resources. [OGC API Features part 4](http://docs.ogc.org/DRAFTS/20-002.html), which is still in development, will address this. In general, this would be done using a POST request with `Content-crs` header to indicate the CRS used.
+This module does not describe how to supply a geometry as part of a resource for storage, i.e. when creating, replacing or updating resources. <a href="http://docs.ogc.org/DRAFTS/20-002.html">OGC API Features part 4</a>, which is still in development, will address this. In general, this would be done using a POST request with <code>Content-crs</code> header to indicate the CRS used.
 </aside>
 
 ## GeoJSON
