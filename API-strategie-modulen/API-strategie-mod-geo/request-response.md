@@ -48,24 +48,16 @@ A simple spatial filter can be supplied as a bounding box. This is a common way 
   </p>
   <h4 class="rulelab">How to test</h4>
   <ul>
-    <li>Issue an HTTP GET request to the API, including the <code>bbox</code> query parameter and <code>bbox-crs</code> heaeder containing a CRS supported by the provider. If the provider supports CRS84 than the <code>bbox-crs</code> header may be omitted.</li>
+    <li>Issue an HTTP GET request to the API, including the <code>bbox</code> query parameter and using <a href="https://docs.geostandaarden.nl/api/API-strategie-modulen/API-strategie-mod-geo/#crs-negotiation">CRS Negotiation</a>.</li>
     <li>Validate that a response with status code 200 is returned.</li>
     <li>Verify that only features that have a spatial geometry that intersects the bounding box are returned as part of the result set.</li>
   </ul>
 </div>
 
-TO DO 
-Bovenstaande voorbeeld is redundant met het voorbeeld bij API-GEO-10. Het lijkt me goed om hier het voorbeeld van bbox te gebruiken en bij API-GEO-10 een ander voorbeeld, of vanuit API-GEO-10 te verwijzen naar dit voorbeeld of andersom.
-
 <aside class="note">
 Spatial filtering is an extensive topic. There are use cases for geospatial operators like <code>intersects</code> or <code>within</code>. Geospatial filters can be large and complex, which sometimes causes problems since <code>GET</code> may not have a payload (although supported by some clients). 
 
 More complex spatial filtering is not addressed in this module. A new API Design Rules module on filtering will address spatial as well as non-spatial filtering. [[ogcapi-features-3]] will provide input for this.
-
-TO DO 
-Moet hier een requirement worden opgenomen, dat als er met geometrie gezocht wordt, tenminste GeoJSON <code>Geometry</code> objecten ondersteund moeten worden? Of als de geometrie niet in GeoJSON past (curves etc.) dat dan WKT en WKB ondersteund moeten worden?
-
-Onderstaande hoort hier m.i. niet, maar dat is volgens mij issue #496.
 
 However, until the filtering module is written, the geospatial module retains rule API-GEO-3 about dealing with results of a global spatial query. This rule may be moved to the filtering module at a later stage.
 </aside>
@@ -268,7 +260,7 @@ In case a collection of resources is returned, the name of the array containing 
   <p>
   Note that:
   
-  - The resource and resource collection may be HAL resources and therefor may contain a _links object, that shall contain a self link and in case of a collection may contain navigation links.
+  - The resource and resource collection may be [[HAL]] resources and therefor may contain a _links object. The _links object should contain a self link and in case of a collection also navigation links (e.g. first, next prev, last).
   </p>
   <h4 class="rulelab">How to test</h4>
   <p>
@@ -328,11 +320,6 @@ In case a collection of resources is returned, the name of the array containing 
     </ul>
   </ul>
 </div>
-
-TO DO
-Moet hier ook iets worden gezegd over de naam van de property die de GeoJSON bevat? Als we hier kiezen voor geometry als naam (zoals ook voorgeschreven in OGC API Features, dan ontstaan er verschillen in de naamgeving van attributen in de resources. 
-
-
 
 
 
