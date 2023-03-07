@@ -180,7 +180,7 @@ In case a REST API shall comply to the OGC API Features specification, e.g. for 
   Test case 2:
   </p>
   <ul>
-    <li>Request a collection of resources that include feature content (i.e. coordinates) with response media type <code>application/geo+json</code> in the <code>Accept</code> header.</li>
+    <li>Request a collection of resources that includes feature content (i.e. coordinates) with response media type <code>application/geo+json</code> in the <code>Accept</code> header.</li>
     <li>Validate that a response with status code 200 is returned.</li>
     <li>Validate that <code>Content-Type</code> header contains <code>application/geo+json</code></li> 
     <li>Validate that the returned document is a GeoJSON FeatureCollection document.</li> 
@@ -198,7 +198,7 @@ In case a REST API shall comply to the OGC API Features specification, e.g. for 
   Test case 4:
   </p>
   <ul>
-    <li>Request a collection of resources that do not includes feature content (i.e. coordinates) with response media type <code>application/geo+json</code> or <code>application/json</code> in the <code>Accept</code> header.</li>
+    <li>Request a collection of resources that do not include feature content (i.e. coordinates) with response media type <code>application/geo+json</code> or <code>application/json</code> in the <code>Accept</code> header.</li>
     <li>Validate that a response with status code 200 is returned.</li>
     <li>Validate that <code>Content-Type</code> header contains <code>application/json</code></li> 
     <li>Validate that the returned document is a JSON document.</li> 
