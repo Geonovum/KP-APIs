@@ -16,6 +16,7 @@ This module does not describe how to supply a geometry as part of a resource for
 [[rfc7946]] describes the GeoJSON format, including a convention for describing 2D geometric objects in CRS84. In the Geospatial module of the API strategy we adopt the GeoJSON conventions for describing geometry objects. The convention is extended to allow alternative projections.
 The GeoJSON conventions and extensions described in this module apply to both geometry passed in input parameters and responses.
 
+
 <aside class="note">
 GeoJSON does not cover all use cases. For example, it is not possible to store circular arc geometries or solids in GeoJSON. In such cases, there are several valid options: 
 
@@ -94,7 +95,10 @@ However, until the filtering module is written, the geospatial module retains ru
   }
   </pre>
   <h4 class="rulelab">How to test</h4>
-  <p>Validate that the returned document contains the expected <code>type</code> property for each member.</p>
+  <ul>
+    <li>Issue an HTTP GET request to the API.</li>
+    <li>Validate that the returned document contains the expected <code>type</code> property for each member.</li>
+  </ul>
 </div>
 
 ## Result (response)
