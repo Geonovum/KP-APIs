@@ -32,22 +32,19 @@ GeoJSON does not cover all use cases. For example, it is not possible to store c
 - When supporting GML, do this according to OGC API Features [Requirements class 8.4](https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geography_markup_language_gml_simple_features_profile_level_0) for GML Simple Features level 0, or [Requirements class 8.4](https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geography_markup_language_gml_simple_features_profile_level_2) for GML Simple Features level 2. 
 - Use a workaround, e.g. convert circular lines / arcs to regular linestrings. 
 
-Example of embedding WKT in a JSON object:
+Example of embedding WKT in a JSON object using the following definition for a JSON object:
 <pre>
-// definition of JSON object
-//
-// type: object
-// required:
-//   - building
-// properties:
-//   building:
-//     type: object
-//     required:
-//       - geometry
-//     properties:
-//       geometry:
-//         type: string
-//         format: wkt
+building:
+  type: object
+  required:
+    - geometry
+  properties:
+    geometry:
+      type: string
+      format: wkt
+</pre>
+Sample response:
+<pre>
 {
   "building": {
     "geometry": "POLYGON Z((194174.445 465873.676 0, 194174.452 465872.291 0, 194158.154 465872.213 0, 194158.226 465856.695 0, 194223.89 465856.969 0, 194223.821 465872.48 0, 194207.529 465872.415 0, 194207.505 465882.528 0, 194207.498 465883.902 0, 194223.799 465883.967 0, 194223.732 465899.48 0, 194216.55 465899.45 0, 194215.15 465899.445 0, 194213.85 465899.439 0, 194158.068 465899.211 0, 194158.148 465883.685 0, 194174.42 465883.767 0, 194174.445 465873.676 0))"
@@ -55,23 +52,39 @@ Example of embedding WKT in a JSON object:
 }
 </pre>
 
-Example of embedding GML as a base64 string in a JSON object:
+Example of embedding WKB in a JSON object using the following definition for a JSON object:
 <pre>
-// definition of JSON object
-//
-// type: object
-// required:
-//   - terrain
-// properties:
-//   terrain:
-//     type: object
-//     required:
-//       - geometry
-//     properties:
-//       geometry:
-//         type: string
-//         contentType: application/gml+xml; charset=utf-8; version=3.2
-//         contentEncoding: base64
+building:
+  type: object
+  required:
+    - geometry
+  properties:
+    geometry:
+      type: string
+      format: wkb
+</pre>
+Sample response:
+<pre>
+{
+  "building": {
+    "geometry": "01030000A0F71C00000100000012000000F6285C8FF3B30741105839B4466F1C4100000000000000000E2DB29DF3B307416DE7FB29416F1C4100000000000000001D5A643B71B3074108AC1CDA406F1C4100000000000000008716D9CE71B307417B14AEC7026F1C410000000000000000EC51B81E7FB50741378941E0036F1C410000000000000000B07268917EB50741B81E85EB416F1C4100000000000000001D5A643BFCB407418FC2F5A8416F1C410000000000000000A4703D0AFCB407413108AC1C6A6F1C4100000000000000008B6CE7FBFBB4074154E3A59B6F6F1C410000000000000000AC1C5A647EB507417D3F35DE6F6F1C410000000000000000E5D022DB7DB50741B81E85EBAD6F1C4100000000000000006666666644B50741CDCCCCCCAD6F1C4100000000000000003333333339B507417B14AEC7AD6F1C410000000000000000CDCCCCCC2EB507414C3789C1AD6F1C4100000000000000008195438B70B307414E6210D8AC6F1C410000000000000000BE9F1A2F71B30741D7A370BD6E6F1C410000000000000000C3F5285CF3B30741B07268116F6F1C410000000000000000F6285C8FF3B30741105839B4466F1C410000000000000000"
+  }
+}
+</pre>
+
+Example of embedding GML as a base64 string in a JSON object using the following definition for a JSON object:
+<pre>
+terrain:
+  type: object
+  required:
+    - geometry
+  properties:
+    geometry:
+      type: string
+      format: byte
+</pre>
+Sample response:
+<pre>
 {
   "terrain": {
     "geometry": "PGdtbDpQb2x5Z29uIHhtbG5zOmdtbD0iaHR0cDovL3d3dy5vcGVuZ2lzLm5ldC9nbWwiIHNyc05hbWU9IkVQU0c6Mjg5OTIiPgogPGdtbDpleHRlcmlvcj4KICA8Z21sOlJpbmc+CiAgIDxnbWw6Y3VydmVNZW1iZXI+CiAgICA8Z21sOkN1cnZlPgogICAgIDxnbWw6c2VnbWVudHM+CiAgICAgIDxnbWw6TGluZVN0cmluZ1NlZ21lbnQ+CiAgICAgICA8Z21sOnBvc0xpc3Qgc3JzRGltZW5zaW9uPSIyIj4xMzE0NzIuNTc5IDU0MDkwNy41NTcgMTMxNDc1LjMyMyA1NDA5MDguOTI5IDEzMTQ3Ni4xNDYgNTQwOTA5LjM0MSAxMzE0NzUuNzA2IDU0MDkxMC4yMTk8L2dtbDpwb3NMaXN0PgogICAgICA8L2dtbDpMaW5lU3RyaW5nU2VnbWVudD4KICAgICAgPGdtbDpBcmM+CiAgICAgICA8Z21sOnBvc0xpc3Qgc3JzRGltZW5zaW9uPSIyIj4xMzE0NzUuNzA2IDU0MDkxMC4yMTkgMTMxNDc1LjE4MSA1NDA5MTAuNTQzIDEzMTQ3NC41NjcgNTQwOTEwLjQ4ODwvZ21sOnBvc0xpc3Q+CiAgICAgIDwvZ21sOkFyYz4KICAgICAgPGdtbDpMaW5lU3RyaW5nU2VnbWVudD4KICAgICAgIDxnbWw6cG9zTGlzdCBzcnNEaW1lbnNpb249IjIiPjEzMTQ3NC41NjcgNTQwOTEwLjQ4OCAxMzE0NzIuNjA4IDU0MDkwOS41MDc8L2dtbDpwb3NMaXN0PgogICAgICA8L2dtbDpMaW5lU3RyaW5nU2VnbWVudD4KICAgICAgPGdtbDpBcmM+CiAgICAgICA8Z21sOnBvc0xpc3Qgc3JzRGltZW5zaW9uPSIyIj4xMzE0NzIuNjA4IDU0MDkwOS41MDcgMTMxNDcyLjE5NSA1NDA5MDkuMDQ5IDEzMTQ3Mi4xNDAgNTQwOTA4LjQzNTwvZ21sOnBvc0xpc3Q+CiAgICAgIDwvZ21sOkFyYz4KICAgICAgPGdtbDpMaW5lU3RyaW5nU2VnbWVudD4KICAgICAgIDxnbWw6cG9zTGlzdCBzcnNEaW1lbnNpb249IjIiPjEzMTQ3Mi4xNDAgNTQwOTA4LjQzNSAxMzE0NzIuNTc5IDU0MDkwNy41NTc8L2dtbDpwb3NMaXN0PgogICAgICA8L2dtbDpMaW5lU3RyaW5nU2VnbWVudD4KICAgICA8L2dtbDpzZWdtZW50cz4KICAgIDwvZ21sOkN1cnZlPgogICA8L2dtbDpjdXJ2ZU1lbWJlcj4KICA8L2dtbDpSaW5nPgogPC9nbWw6ZXh0ZXJpb3I+CjwvZ21sOlBvbHlnb24+"
