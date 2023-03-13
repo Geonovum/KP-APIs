@@ -116,14 +116,20 @@ var respecConfig =
       publisher: "Open Geospatial Consortium",
       version: "1.0.0-rc.1"
     },
-     "JSON-FG": {
+    "JSON-FG": {
       href: "https://docs.ogc.org/DRAFTS/21-045.html",
       title: "OGC Features and Geometries JSON - Part 1: Core",
       editors: ["Clemens Portele", "Panagiotis (Peter) A. Vretanos"],
       status: "Editor's Draft",
       publisher: "Open Geospatial Consortium",
       version: "0.1"
-     },
+    },
+    "HAL": {
+      href: "http://stateless.co/hal_specification.html",
+      title: "HAL - Hypertext Application Language",
+      authors: ["Mike Kelly"],
+      date: " 2013-09-18",
+    },
   },
   postProcess:[custGHPG],
 };
