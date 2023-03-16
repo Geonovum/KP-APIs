@@ -183,7 +183,7 @@ The API should be able to handle the following scenarios based on the rules stat
 | Geometry filter in request, no geometry in response    | The client indicates the CRS of the geometry filter in the request using the `bbox-crs` parameter if a bounding box is used to filter geospatially, or the `filter-crs` parameter if another way of geospatial filtering is used.|
 | Geometry filter in request, geometry in response       | The client indicates the CRS of the geometry filter in the request using `bbox-crs` or `filter-crs` as in the previous scenario, and requests a specific CRS for the geometries in the response using the `crs` parameter. The server indicates the geometry CRS in response using the `Content-Crs` header.|
 
-Use the following URIs to specify the CRS:
+Below is a list of the most commonly used CRSs in the Netherlands:
 
 | Name | Dimension | Scope | URI |
 |-|-|-|-|
@@ -193,11 +193,16 @@ Use the following URIs to specify the CRS:
 | ETRS89 | 3D | European | http://www.opengis.net/def/crs/EPSG/9.9.1/4937 |
 | ETRF2000 - LatLon | 2D | European | http://www.opengis.net/def/crs/EPSG/9.9.1/9067 |
 | ETRF2000 - XYZ | 3D | European | http://www.opengis.net/def/crs/EPSG/9.9.1/7930 |
+| ETRF2000 - LatLonEHt | 3D | European | http://www.opengis.net/def/crs/EPSG/9.9.1/7931 |
 | ITRF2014 - LatLon | 2D | Global | http://www.opengis.net/def/crs/EPSG/9.9.1/9000 |
 | ITRF2014 - LatLonEHt | 3D | Global | http://www.opengis.net/def/crs/EPSG/9.9.1/7912 |
 | WGS 84 longitude-latitude | 2D | Global | http://www.opengis.net/def/crs/OGC/1.3/CRS84 |
 | WGS 84 longitude-latitude-height | 3D | Global | http://www.opengis.net/def/crs/OGC/0/CRS84h |
 | WGS 84 / Pseudo-Mercator | 2D | Global | http://www.opengis.net/def/crs/EPSG/9.9.1/3857 |
+
+For a more extensive overview of CRSs see: https://docs.geostandaarden.nl/crs/crs/#bijlage-a-crs-overzicht-tabel.
+Note that The URI of each CRS contains a version number and that new versions may be released in future.
+Before using a URI verify if newer versions are available and use the latest version.
 
 <aside class="note" title="CRS support and GeoJSON">
 Officially, WGS 84 longitude-latitude (CRS84) is the only CRS allowed in GeoJSON. However, GeoJSON does state that using another CRS is allowed, if this is agreed between provider and consumer of the data. The API functionality described above, to negotiate the CRS between client and server, can be viewed as such an agreement. Many GIS clients can deal with GeoJSON in other CRS than CRS84.
