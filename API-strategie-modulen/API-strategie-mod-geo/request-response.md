@@ -209,7 +209,7 @@ In case a REST API shall comply to the OGC API Features specification, e.g. for 
   </ul>
 </div>
 
-In case a REST API does not have to comply to the OGC API Features specification, e.g. for usage in administrative applications, the REST API shall use the JSON data format. If resources contain geometry, the geometry shall be returned as a GeoJSON <code>Geometry</code> object embedded in the resource. The media type <code>application/json</code> must be supported. The media type <code>application/geo+json</code> should not be supported while the resource does not comply to the GeoJSON specification, i.e. the response does not return a feature or feature collection.
+In case a REST API does not have to comply to the OGC API Features specification, e.g. for usage in administrative applications, the REST API shall use the JSON data format. If resources contain geometry, the geometry shall be returned as a GeoJSON <code>Geometry</code> object embedded in the resource. The media type <code>application/json</code>  must be supported. This may also apply to other media types <code>application/\*+json</code>, however this depends on the media type specification. If the media type specification prescribes that resource information must be embedded in a JSON structure defined in the media type specification, then the media type should not be supported while it is impossible to comply to that specification with the method described below. The media type <code>application/geo+json</code> should not be supported while the resource does not comply to the GeoJSON specification, i.e. the response does not return a feature or feature collection.
 A template for the definition of the schemas for the GeoJSON <code>Geometry</code> object in the responses in OpenAPI definitions are available [geometryGeoJSON.yaml](https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml).
 In case a collection of resources is returned, the name of the array containing the resources should be the plural of the resource name.
 
@@ -284,7 +284,7 @@ In case a collection of resources is returned, the name of the array containing 
   <p>
   Note that:
   
-  - The resource and resource collection may be [[HAL]] resources and therefore may contain a _links object. The _links object should contain a self link and in case of a collection also navigation links (e.g. first, next prev, last).
+  - The resource and resource collection may be [[HAL]] resources and therefore may contain a _links object. The _links object should contain a self link and in case of a collection also navigation links (e.g. first, next prev, last). In such cases the <code>application/hal+json</code> media type may be used.
   </p>
   <h4 class="rulelab">How to test</h4>
   <p>
