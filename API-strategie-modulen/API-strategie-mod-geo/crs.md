@@ -15,15 +15,27 @@ A client shall be able to determine a list of CRSs supported by an API.
 
 <div class="rule" id="api-geo-5">
   <p class="rulelab"><strong>API-GEO-5</strong>: Provide a list of all CRSs that are supported by the API</p>
+  <p>If a REST API shall comply to the OGC API Features specification then the API must provide an endpoint to determine a list of supported CRSs.</p>
   <pre>
   // GET /api/v1/collections:</pre>
   <h4 class="rulelab">How to test</h4>
-<ul>
-  <li>Issue an HTTP GET request to the <code>/collections</code> endpoint of the API.</li>
-  <li>Validate that the returned document contains a <code>collections</code> object with the <code>crs</code> property.</li>
-  <li>Validate that the <code>crs</code> property contains an array with CRS references in the form of URIs.</li>
-  <li>Validate that the CRS URIs return a GML document with an <code>epsg:CommonMetadata</code> element (<code>xmlns:epsg="urn:x-ogp:spec:schema-xsd:EPSG:1.0:dataset</code></li>
-</ul>
+  <ul>
+    <li>Issue an HTTP GET request to the <code>/collections</code> endpoint of the API.</li>
+    <li>Validate that the returned document contains a <code>collections</code> object with the <code>crs</code> property.</li>
+    <li>Validate that the <code>crs</code> property contains an array with CRS references in the form of URIs.</li>
+    <li>Validate that the CRS URIs return a GML document with an <code>epsg:CommonMetadata</code> element (<code>xmlns:epsg="urn:x-ogp:spec:schema-xsd:EPSG:1.0:dataset</code>).</li>
+  </ul>
+  
+  <p>If a REST API does not have to comply to the OGC API Features specification, e.g. when the API is used for administrative purposes, then the API shall also provide an endpoint to determine the supported CRSs.</P>
+  <pre>
+  // GET /api/v1/crss:</pre>
+  <h4 class="rulelab">How to test</h4>
+  <ul>
+    <li>Issue an HTTP GET request to the <code>/crss</code> endpoint of the API.</li>
+    <li>Validate that the returned document contains an object with a <code>crs</code> property.</li>
+    <li>Validate that the <code>crs</code> property contains an array with CRS references in the form of URIs.</li>
+    <li>Validate that the CRS URIs return a GML document with an <code>epsg:CommonMetadata</code> element (<code>xmlns:epsg="urn:x-ogp:spec:schema-xsd:EPSG:1.0:dataset</code>).</li>
+  </ul>
 </div>
 
 According to [OGC API Features - part 1 - 7.13. Feature collections](https://docs.opengeospatial.org/is/17-069r3/17-069r3.html#_collections_) an OGC API Features API shall provide a GET operation on the `/collections` endpoint which returns a collections object.
