@@ -26,7 +26,7 @@ A client shall be able to determine a list of CRSs supported by an API.
     <li>Validate that the CRS URIs return a GML document with an <code>epsg:CommonMetadata</code> element (<code>xmlns:epsg="urn:x-ogp:spec:schema-xsd:EPSG:1.0:dataset</code>).</li>
   </ul>
   
-  <p>If a REST API does not have to comply to the OGC API Features specification, e.g. when the API is used for administrative purposes, then the API shall also provide an endpoint to determine the supported CRSs.</P>
+  <p>If a REST API does not have to comply to the OGC API Features specification, e.g. when the API is used for administrative purposes, then the API shall also provide an endpoint to determine the supported CRSs.</p>
   <pre>
   // GET /api/v1/crss:</pre>
   <h4 class="rulelab">How to test</h4>
