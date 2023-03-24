@@ -36,7 +36,7 @@ Publieke sector, op alfabetische volgorde van organisatie: Redouan Ahaloui (Foru
 Verbinding leggen met federatief data stelsel, interbestuurlijke data strategie. Onderdeel van de strategie: breng de aandacht bij elkaar. 
 
 ***Edwin Wisse***:<br> 
-Visie: focus niet duidelijk. Hoe komen de burgers erin terug? Want de burgers zijn niet gebruikers van API’s. Wat ik mis is transparantie, openheid van data. Beleidsdoelstellingen komen ook niet terug (met bronverwijzingen). 
+Visie: focus niet duidelijk. Waarom worden in de tekst burgers expliciet genoemd? Want de burgers zijn niet gebruikers van API’s. Wat ik mis is transparantie, openheid van data. Beleidsdoelstellingen komen ook niet terug (neem bronverwijzingen naar beleidsstukken op).  
 
 ***Paul Dam***:<br>
 Verbinding maken met wat bestuurders interessant vinden. API’s zijn maar een middel, geen doel op zich. 
@@ -51,7 +51,7 @@ Bredere context formuleren. Beginnen met constateren dat als overheid we vaker u
 Autonome nut van API’s heel duidelijk maken. Waarom wil je een API? Wat kan je met een API wat je normaal niet kunt? Die API brengt real-time, eenvoud. Strategie moet daarop focussen. Nut van API’s centraal.
 
 ***Edwin Wisse***:<br>
-Dat staat niet haaks op beleidsdoelstellingen. Hoe wil je dat? Laagdrempelig en makkelijk. Dat zijn eigenschappen van API-gebruik. De API’s ondersteunen specifieke doelstellingen. 
+Dat staat niet haaks op beleidsdoelstellingen. Eens met het belang om het nut van API's te beschrijven zoals gemak voor ontwikkelaars. Voor de overheid ondersteunen API’s specifieke doelstellingen.  
 
 ***Marcel Krassenburg***:<br>
 Knip van applicatie en data. In je processen heb je dan veel meer vrijheid om te kiezen waar je je data voor inzet. De kern van de flexibele informatievoorziening is belangrijk. Waarom moet een bestuurder dan ook begrijpen wat er in zijn eigen organisatie moet gebeuren?
