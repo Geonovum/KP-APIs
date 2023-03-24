@@ -2,7 +2,7 @@
 
 ### Het nut van API's
 
-_Inleidende alinea over de toepassing van API's (zoals Gino in de eerste bijeenkomst voorstelde).
+_Inleidende alinea over de toepassing van API's (zoals Gino in de eerste bijeenkomst voorstelde)._
 
 ### Een veranderende rol voor de overheid
 **Bestaande tekst (schrappen?):** _Maatschappelijke uitdagingen veranderen en het boeken van vooruitgang wordt steeds meer als coproductie van overheid, maatschappelijke organisaties, bedrijven en burgers opgepakt. De rol van de overheid is daarbij belangrijk. Burgers zijn lang alleen als klant, als afnemer van overheidsdiensten, gezien._ 
@@ -12,9 +12,9 @@ De samenleving verwacht een open overheid. De data die de overheid voor het uitv
 De overheid moet wendbaarder worden om meer met burgers, maatschappelijke organisaties en bedrijven te kunnen meedenken en samenwerken. Tegelijk blijven bestaande overheidsdiensten van belang. De overheid is traditioneel georganiseerd in beleidskolommen en gespecialiseerde uitvoeringsorganisaties. Voor de nieuwe maatschappelijke uitdagingen moet de overheidsdienstverlening echter meer rond de burger en ondernemer worden georganiseerd. 
 
 ### Een wendbare informatievoorziening
-Een eenvoudiger, flexibeler en slimmer ingerichte informatievoorziening faciliteert de overheid hierbij. Dit is hard nodig nu in hoog tempo meer data verzameld en opgeslagen wordt en de vraag om data en het datagebruik toenemen. Dit past ook bij de [Europese datastrategie](https://eur-lex.europa.eu/legal-content/NL/TXT/PDF/?uri=CELEX:52020DC0066&from=NL). Hierin wordt een voorstel gedaan voor een [richtlijn](https://eur-lex.europa.eu/legal-content/NL/TXT/PDF/?uri=CELEX:52020DC0066&from=NL) inzake open data en hergebruik van overheidsinformatie. 
+Een eenvoudiger, flexibeler en slimmer ingerichte informatievoorziening faciliteert de overheid hierbij. Dit is hard nodig nu in hoog tempo meer data verzameld en opgeslagen wordt en de vraag om data en het datagebruik toenemen. Dit past ook bij de [Europese datastrategie](https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/europe-fit-digital-age/european-data-strategy_en). De  [Data Governance Regulation](https://digital-strategy.ec.europa.eu/en/policies/data-governance-act) en de [Data act](https://digital-strategy.ec.europa.eu/en/policies/data-act) maken deel uit van deze strategie. Het eindrapport van het _API guidelines for government_ project [An Application Programming Interface (API) framework for digital government](https://op.europa.eu/en/publication-detail/-/publication/0e262d9b-ca32-11ea-adf7-01aa75ed71a1) geeft een aantal voorstellen voor API toepassing voor overheden zoals _Align APIs with policy goals_ en _Measure policy impacts of APIs_. 
 
-Momenteel is API-technologie de meest gebruikelijke manier om tussen verschillende organisaties en systemen data uit te wisselen. De overheid loopt achter in de adoptie van deze technologie.
+Binnen Nederland kunnen we beleidsdoelen met toepassing van API's beter mogelijk maken zoals de [Interbestuurlijke Datastrategie](https://realisatieibds.pleio.nl/), en dan vooral het Federatief Data Stelsel. In de [Staat van de Uitvoering](https://staatvandeuitvoering.nl/) is een oproep opgenomen _Breng gegevensuitwisseling tussen publieke dienstverleners nu echt op gang_. Deze gegevensuitwisseling kan juist met API's worden gefaciliteerd.
 
 De overheid biedt in initiatieven zoals Haal Centraal, Common Ground en het Digitaal Stelsel Omgevingswet al API’s aan om applicaties en gegevensbronnen te ontsluiten. De overheid doet door deze initiatieven kennis en expertise op over het gebruik van API’s. In onze visie zal de overheid deze beweging voortzetten. De komende jaren wordt data door de overheid steeds vaker veilig en efficiënt beschikbaar gesteld en maken applicaties daarvan gebruik. Data blijft bij de bron, blijft daar bewaard en wordt daar opgehaald wanneer het nodig is. De toegang tot data wordt zo ontdaan van de complexiteit van achterliggende organisaties en systemen waarin data veelal nu nog besloten ligt.
 
