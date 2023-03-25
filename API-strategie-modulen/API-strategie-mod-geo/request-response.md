@@ -7,10 +7,6 @@ Providing requested resources is the essence of any API. This also applies to RE
 
 When requesting information, for example about cadastral parcels, users do not necessarily require the geometry, even if they used a spatial filter. A name or parcel ID may be sufficient.
 
-<aside class="note">
-This module does not describe how to supply a geometry as part of a resource for storage, i.e. when creating, replacing or updating resources. [OGC API Features part 4](http://docs.ogc.org/DRAFTS/20-002.html), which is still in development, will address this. In general, this would be done using a POST request with <code>Content-Crs</code> header to indicate the CRS used.
-</aside>
-
 ## GeoJSON
 
 [[rfc7946]] describes the GeoJSON format, including a convention for describing 2D geometric objects in CRS84. In the Geospatial module of the API strategy we adopt the GeoJSON conventions for describing geometry objects. The convention is extended to allow alternative projections.
@@ -98,6 +94,90 @@ However, until the filtering module is written, the geospatial module retains ru
   <ul>
     <li>Issue an HTTP GET request to the API.</li>
     <li>Validate that the returned document contains the expected <code>type</code> property for each member.</li>
+  </ul>
+</div>
+
+In case a REST API shall comply to the OGC API Features specification for creating, replacing, updating and deleting a resource, the following applies.
+
+<div class="rule" id="api-geo-1">
+  <p class="rulelab"><strong>API-GEO-4</strong>: Support GeoJSON for geospatial APIs</p>
+  <p>For representing geometric information in an API, use the convention for describing geometry as defined in the GeoJSON format [[rfc7946]]. Support GeoJSON as described in <a href="http://docs.ogc.org/DRAFTS/20-002.html">OGC API Features part 4</a>, but note that this standard is still in development.</p>
+  Example: POST feature
+  <pre>
+  {
+    "type": "Feature",
+    "geometry":  {
+      "type": "Point",
+      "coordinates": [5.2795,52.1933]
+    },
+    "properties": {
+      "naam": "Paleis Soestdijk",
+      ...
+    }
+  }
+  </pre>
+  Example: POST feature collection
+  <pre>
+  {
+    "type": "FeatureCollection",
+    "features": [
+    {
+      "type": "Feature",
+      "geometry":  {
+        "type": "Point",
+        "coordinates": [5.2795,52.1933]
+      },
+      "properties": {
+        "naam": "Paleis Soestdijk",
+        ...
+      }
+    }]
+  }  
+  </pre>
+  <h4 class="rulelab">How to test</h4>
+  <ul>
+    <li>Create a new resource that includes feature content (i.e. coordinates) using the HTTP POST method with request media type <code>application/geo+json</code> in the <code>Content-Type</code> header.</li>
+    <li>Validate that a response with status code <code>201</code> (Created) is returned.</li>
+    <li>Validate that the response includes the <code>Location</code> header with the URI of the newly added resource.
+  </ul>
+</div>
+
+In case a REST API does not have to comply to the OGC API Features specification, e.g. for usage in administrative applications, the REST API shall use the JSON data format. If a resource contains geometry, that geometry shall be embedded as a GeoJSON <code>Geometry</code> object within the resource. The media type <code>application/json</code> must be supported. This may also apply to other media types <code>application/*+json</code>, however this depends on the media type specification. If the media type specification prescribes that resource information must be embedded in a JSON structure defined in the media specification, then the media type should not be supported while it is impossible to comply to that specification with the method described below. The media type <code>application/geo+json</code> should not be supported while the resource does not comply to the GeoJSON specification, i.e. the request resource does not embed a feature or feature collection.
+A template for the definition of the schemas for the GeoJSON <code>Geometry</code> object in the requests in OpenAPI definitions are available [geometryGeoJSON.yaml](https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml).
+In case a collection of resources is embedded in the request resource, the name of the array containing the resources should be the plural of the resource name.
+
+<div class="rule" id="api-geo-4">
+  <p class="rulelab"><strong>API-GEO-4</strong>: Embed GeoJSON <code>Geometry</code> object as part of the JSON resource</p>
+  <p>When a JSON (<code>application/json</code>) request contains a geometry, represent it in the same way as the <code>Geometry</code> object of GeoJSON.</p>
+  Example: POST resource containing geometry
+  <pre>
+  {
+    "type": "Feature",
+    "naam": "Paleis Soestdijk",
+    "geometrie":  {
+      "type": "Point",
+      "coordinates": [5.2795,52.1933]
+    }
+  }
+  </pre>
+  Example: POST resource containing geometry collection
+  <pre>
+  {
+    "<plural of resource name>": [
+    {
+      "naam": "Paleis Soestdijk",
+      "geometrie": {
+        "type": "Point",
+        "coordinates": [5.2795,52.1933]
+      }
+    }]
+  }  
+  </pre>
+  <h4 class="rulelab">How to test</h4>
+  <ul>
+    <li>Create a new resource that includes geometry of GeoJSON <code>Geometry</code> object type using the HTTP POST method with request media type <code>application/json</code> in the <code>Content-Type</code> header.</li>
+    <li>Validate that a response with status code <code>201</code> (Created) is returned.</li>
+    <li>Validate that the response includes the <code>Location</code> header with the URI of the newly added resource.
   </ul>
 </div>
 
@@ -344,6 +424,3 @@ In case a collection of resources is returned, the name of the array containing 
     </ul>
   </ul>
 </div>
-
-
-
