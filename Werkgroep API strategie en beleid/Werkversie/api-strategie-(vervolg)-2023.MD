@@ -1,4 +1,4 @@
-# Visie (nieuw concept).
+# Visie (nieuw concept)
 
 ### Het nut van API's
 API's bieden de overheid de kans om data snel, eenvoudig en in real-time aan te bieden. De samenleving verwacht een open overheid. De data die de overheid voor het uitvoeren van haar taken verzamelt wordt nu al [voor hergebruik beschikbaar gemaakt](https://data.overheid.nl/). Nu wordt data nog vaak als bestand beschikbaar gemaakt waarbij het aan de gebruiker is de data te vinden, binnen te halen en te verwerken. API's maken nieuwe toepassingen met data mogelijk voor burgers.
