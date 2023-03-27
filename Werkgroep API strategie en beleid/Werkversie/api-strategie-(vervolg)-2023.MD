@@ -1,13 +1,11 @@
 # Visie (nieuw concept).
 
 ### Het nut van API's
+_API's bieden de overheid de kans om data snel, eenvoudig en in real-time aan te bieden._
 
-_Inleidende alinea over de toepassing van API's (zoals Gino in de eerste bijeenkomst voorstelde)._
-
-### Een veranderende rol voor de overheid
 **Bestaande tekst (schrappen?):** _Maatschappelijke uitdagingen veranderen en het boeken van vooruitgang wordt steeds meer als coproductie van overheid, maatschappelijke organisaties, bedrijven en burgers opgepakt. De rol van de overheid is daarbij belangrijk. Burgers zijn lang alleen als klant, als afnemer van overheidsdiensten, gezien._ 
 
-**Toevoeging EW**: De samenleving verwacht een open overheid. De data die de overheid voor het uitvoeren van haar beleidstaken verzamelt wordt nu al [voor hergebruik beschikbaar gemaakt](https://data.overheid.nl/). Nu wordt data nog vaak als bestand beschikbaar gemaakt waarbij het aan de gebruiker is de data te vinden, binnen te halen en te verwerken. Het nut van API's kan ook de hier het gebruiksgemak voor de burger verbeteren.
+**Toevoeging EW**: De samenleving verwacht een open overheid. De data die de overheid voor het uitvoeren van haar taken verzamelt wordt nu al [voor hergebruik beschikbaar gemaakt](https://data.overheid.nl/). Nu wordt data nog vaak als bestand beschikbaar gemaakt waarbij het aan de gebruiker is de data te vinden, binnen te halen en te verwerken. API's kunnen ook hier het gebruiksgemak voor de burger verbeteren.
 
 **Bestaande tekst**: De overheid moet wendbaarder worden om meer met burgers, maatschappelijke organisaties en bedrijven te kunnen meedenken en samenwerken. Tegelijk blijven bestaande overheidsdiensten van belang. De overheid is traditioneel georganiseerd in beleidskolommen en gespecialiseerde uitvoeringsorganisaties. Voor de nieuwe maatschappelijke uitdagingen moet de overheidsdienstverlening echter meer rond de burger en ondernemer worden georganiseerd. 
 
