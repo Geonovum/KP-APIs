@@ -5,6 +5,14 @@ github repository; zie issues met tag
 [Geo-extensie](https://github.com/Geonovum/KP-APIs/issues?q=is%3Aissue+is%3Aopen+label%3AGeo-extensie).
 
 De werkgroep houdt 1x per 2 weken een korte online meeting (half uur). Neem voor deelname aan deze werkgroep contact op met Linda van den Brink (Geonovum).
+## verslag online meeting 28 maart
+- Aanwezig: George Mathijssen, Mark Strijker en Linda van den Brink. 
+
+De werkgroep is in de afgelopen periode elke 2 weken online bij elkaar geweest en heeft inmiddels bijna alle consultatie issues verwerkt. De laatste loodjes worden deze week afgerond. 
+
+Tegelijkertijd zorgt Mark dat zijn collega's bij het Kadaster nog één keer kunnen reviewen of ze tevreden zijn met de manier waarop het commentaar is afgehandeld en verwerkt in de nieuwe versie. Linda maakt hiervoor een snapshot en zet dit in de master branch zodat het document via github pages in een browser te lezen is. 
+
+We hebben afgesproken over 2 weken weer bij elkaar te komen om samen te bezien wat er nog nodig is voordat het document naar de Kennisplatform API stuurgroep kan ter vaststelling.
 
 ## verslag online meeting 18 januari
 - Aanwezig: Martin van der Plas, George Mathijssen en Linda van den Brink. 
