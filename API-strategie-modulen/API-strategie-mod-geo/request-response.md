@@ -104,6 +104,8 @@ In case a REST API shall comply to the OGC API Features specification for creati
   <p>For representing geometric information in an API, use the convention for describing geometry as defined in the GeoJSON format [[rfc7946]]. Support GeoJSON as described in <a href="http://docs.ogc.org/DRAFTS/20-002.html">OGC API Features part 4</a>, but note that this standard is still in development.</p>
   Example: POST feature
   <pre>
+  POST /collections/gebouwen/items   HTTP/1.1              |
+  Content-Type: application/geo+json
   {
     "type": "Feature",
     "geometry":  {
@@ -118,6 +120,8 @@ In case a REST API shall comply to the OGC API Features specification for creati
   </pre>
   Example: POST feature collection
   <pre>
+  POST /collections   HTTP/1.1              |
+  Content-Type: application/geo+json
   {
     "type": "FeatureCollection",
     "features": [
@@ -151,6 +155,8 @@ In case a collection of resources is embedded in the request resource, the name 
   <p>When a JSON (<code>application/json</code>) request contains a geometry, represent it in the same way as the <code>Geometry</code> object of GeoJSON.</p>
   Example: POST resource containing geometry
   <pre>
+  POST /collections/gebouwen/items   HTTP/1.1              |
+  Content-Type: application/json
   {
     "type": "Feature",
     "naam": "Paleis Soestdijk",
@@ -162,6 +168,8 @@ In case a collection of resources is embedded in the request resource, the name 
   </pre>
   Example: POST resource containing geometry collection
   <pre>
+  POST /collections   HTTP/1.1              |
+  Content-Type: application/json
   {
     "<plural of resource name>": [
     {
