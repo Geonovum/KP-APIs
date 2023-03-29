@@ -144,7 +144,7 @@ In case a REST API shall comply to the OGC API Features specification for creati
   <p>For representing geometric information in an API, use the convention for describing geometry as defined in the GeoJSON format [[rfc7946]]. Support GeoJSON as described in <a href="http://docs.ogc.org/DRAFTS/20-002.html">OGC API Features part 4</a>, but note that this standard is still in development.</p>
   Example: POST feature
   <pre>
-  POST /collections/gebouwen/items   HTTP/1.1              |
+  POST /collections/gebouwen/items   HTTP/1.1
   Content-Type: application/geo+json
   {
     "type": "Feature",
@@ -160,7 +160,7 @@ In case a REST API shall comply to the OGC API Features specification for creati
   </pre>
   Example: POST feature collection
   <pre>
-  POST /collections   HTTP/1.1              |
+  POST /collections   HTTP/1.1
   Content-Type: application/geo+json
   {
     "type": "FeatureCollection",
@@ -195,12 +195,11 @@ In case a collection of resources is embedded in the request resource, the name 
   <p>When a JSON (<code>application/json</code>) request contains a geometry, represent it in the same way as the <code>Geometry</code> object of GeoJSON.</p>
   Example: POST resource containing geometry
   <pre>
-  POST /collections/gebouwen/items   HTTP/1.1              |
+  POST /collections/gebouwen/items   HTTP/1.1
   Content-Type: application/json
   {
-    "type": "Feature",
     "naam": "Paleis Soestdijk",
-    "geometrie":  {
+    "geometrie": {
       "type": "Point",
       "coordinates": [5.2795,52.1933]
     }
@@ -208,19 +207,22 @@ In case a collection of resources is embedded in the request resource, the name 
   </pre>
   Example: POST resource containing geometry collection
   <pre>
-  POST /collections   HTTP/1.1              |
+  POST /collections/gebouwen/items   HTTP/1.1
   Content-Type: application/json
   {
-    "<plural of resource name>": [
-    {
-      "naam": "Paleis Soestdijk",
-      "geometrie": {
-        "type": "Point",
-        "coordinates": [5.2795,52.1933]
-      }
-    }]
-  }  
+    "naam": "Paleis Soestdijk",
+    "geometrie": {
+      "type": "GeometryCollection",
+      "geometries": [
+        {
+          "type": "Point",
+          "coordinates": [5.2795,52.1933]
+        }
+      ]
+    }
+  }
   </pre>
+
   <h4 class="rulelab">How to test</h4>
   <ul>
     <li>Create a new resource that includes geometry of GeoJSON <code>Geometry</code> object type using the HTTP POST method with request media type <code>application/json</code> in the <code>Content-Type</code> header.</li>
@@ -370,8 +372,10 @@ In case a collection of resources is returned, the name of the array containing 
     "geometrie": {
       "type": "GeometryCollection",
       "geometries": [
-        "type": "Point"
-        "coordinates": [5.2795,52.1933]
+        {
+          "type": "Point",
+          "coordinates": [5.2795,52.1933]
+        }
       ]
     },
     ...,
