@@ -240,6 +240,11 @@ In case a REST API shall comply to the OGC API Features specification, e.g. for 
   <p>For representing 2D geometric information in an API, use the convention for describing geometry as defined in the GeoJSON format [[rfc7946]]. Support GeoJSON as described in OGC API Features <a href="https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geojson">Requirements class 8.3</a> [[ogcapi-features-1]]. </p>
   Example: feature
   <pre>
+  Request:
+  // GET /collections/gebouwen/items/0308100000022041   HTTP 1.1
+  // Content-type: application/geo+json
+
+  Response:
   {
     "type": "Feature",
     "id": "0308100000022041",
@@ -252,48 +257,54 @@ In case a REST API shall comply to the OGC API Features specification, e.g. for 
       ...
     },
     "links": [
-    {
-      "self": ""
-    } 
+      {
+        "self": "/collections/gebouwen/items/0308100000022041"
+      } 
     ]
-  }
-  </pre>
+  }</pre>
 
   Example: feature collection
   <pre>
+  Request:
+  // GET /collections/gebouwen   HTTP 1.1
+  // Content-type: application/geo+json
+
+  Response:
   {
     "type": "FeatureCollection",
     "features": [
-    {
-      "type": "Feature",
-      "id": "0308100000022041",
-      "geometry":  {
-        "type": "Point",
-        "coordinates": [5.2795,52.1933]
-      },
-      "properties": {
-        "naam": "Paleis Soestdijk",
-        ...
-      },
-      "links": [
       {
-        "self": ""
-      } 
-      ]
-    }],
+        "type": "Feature",
+        "id": "0308100000022041",
+        "geometry":  {
+          "type": "Point",
+          "coordinates": [5.2795,52.1933]
+        },
+        "properties": {
+          "naam": "Paleis Soestdijk",
+          ...
+        },
+        "links": [
+          {
+            "self": "/collections/gebouwen/0308100000022041"
+          } 
+        ]
+      },
+      {
+      }
+    ],
     "timeStamp" : "2023-02-22T10:32:23Z",
     "numberMatched" : "0308100000022041",
     "numberReturned" : "1",
     "links": [
-    {
-      "self": ""
-    } ,
-    {
-      "next": ""
-    } ,
+      {
+        "self": "/collections/gebouwen"
+      },
+      {
+        "next": ""
+      }
     ]
-  }
-  </pre>
+  }</pre>
   <p>
   Note that:
   
@@ -349,6 +360,11 @@ In case a collection of resources is returned, the name of the array containing 
 
   Example: resource containing geometry
   <pre>
+  Request:
+  // GET /gebouwen/0308100000022041   HTTP 1.1
+  // Content-type: application/hal+json
+
+  Response:
   {
     "identificatie": "0308100000022041",
     "naam": "Paleis Soestdijk",
@@ -359,13 +375,18 @@ In case a collection of resources is returned, the name of the array containing 
     ...,
     "_links": {
       {
-        "self": ""
+        "self": "/gebouwen/0308100000022041"
       }
     }
   }</pre>
 
  Example: resource containing geometry collection
   <pre>
+  Request:
+  // GET /gebouwen/0308100000022041   HTTP 1.1
+  // Content-type: application/hal+json
+
+  Response:
   {
     "identificatie": "0308100000022041",
     "naam": "Paleis Soestdijk",
@@ -373,40 +394,50 @@ In case a collection of resources is returned, the name of the array containing 
       "type": "GeometryCollection",
       "geometries": [
         {
-          "type": "Point",
+          "type": "Point"
           "coordinates": [5.2795,52.1933]
+        },
+        {
+          "type": "Polygon"
+          "coordinates" : [...]
         }
       ]
     },
     ...,
     "_links": {
       {
-        "self": ""
+        "self": "/gebouwen/0308100000022041"
       }
     }
   }</pre>
 
   Example: collection of resources containing geometry
   <pre>
+  Request:
+  // GET /gebouwen   HTTP 1.1
+  // Content-type: application/hal+json
+
+  Response:
   {
-    "&lt;plural of resource name&gt;": [
-    {
-      "identificatie": "0308100000022041",
-      "naam": "Paleis Soestdijk",
-      "geometrie":  {
-        "type": "Point",
-        "coordinates": [5.2795,52.1933]
-      }
-      ...
-      "_links": {
-        {
-          "self": ""
+    "gebouwen": [
+      {
+        "identificatie": "0308100000022041",
+        "naam": "Paleis Soestdijk",
+        "geometrie":  {
+          "type": "Point",
+          "coordinates": [5.2795,52.1933]
+        }
+        ...
+        "_links": {
+          {
+            "self": "/gebouwen/0308100000022041"
+          }
         }
       }
-    } ],
+    ],
     "_links": {
       {
-        "self": ""
+        "self": "/gebouwen"
       },
       {
         "next": ""
