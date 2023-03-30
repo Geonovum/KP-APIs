@@ -7,6 +7,11 @@ Providing requested resources is the essence of any API. This also applies to RE
 
 When requesting information, for example about cadastral parcels, users do not necessarily require the geometry, even if they used a spatial filter. A name or parcel ID may be sufficient.
 
+<aside class="note">
+<h4>HTML</h4>
+The Geospatial Module is focused on JSON-based encoding of data. However, consider also supporting <code>text/html</code>, as recommended in OGC API Features [[ogcapi-features-1]]. Sharing data on the Web should include publication in HTML, as this allows discovery of the data through common search engines as well as viewing the data directly in a browser.
+</aside>
+
 ## GeoJSON
 
 [[rfc7946]] describes the GeoJSON format, including a convention for describing 2D geometric objects in CRS84. In the Geospatial module of the API strategy we adopt the GeoJSON conventions for describing geometry objects. The convention is extended to allow alternative projections.
