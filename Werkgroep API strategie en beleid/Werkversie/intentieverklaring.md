@@ -1,4 +1,4 @@
-#Intentieverklaring API Strategie
+# Intentieverklaring API Strategie
 
 In onze visie zal de digitale overheid de komende jaren steeds meer veilig en efficiënt data uitwisselen door applicaties zoveel mogelijk te scheiden van de data, en deze data bij de bron te bewaren. Voorzieningen gaan data ophalen bij de bron zodra deze nodig is. Om deze data-uitwisseling mogelijk te maken, zijn platformen, API's en verplichte standaarden onmisbaar. Hiermee biedt de overheid toegang tot evenwichtige en consistente data sets, onafhankelijk van de complexiteit van achterliggende systemen, voor burgers, bedrijven en ketenpartners van de overheid. 
 
