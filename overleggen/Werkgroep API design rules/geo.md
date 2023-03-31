@@ -5,6 +5,77 @@ github repository; zie issues met tag
 [Geo-extensie](https://github.com/Geonovum/KP-APIs/issues?q=is%3Aissue+is%3Aopen+label%3AGeo-extensie).
 
 De werkgroep houdt 1x per 2 weken een korte online meeting (half uur). Neem voor deelname aan deze werkgroep contact op met Linda van den Brink (Geonovum).
+## verslag online meeting 28 maart
+- Aanwezig: George Mathijssen, Mark Strijker en Linda van den Brink. 
+
+De werkgroep is in de afgelopen periode elke 2 weken online bij elkaar geweest en heeft inmiddels bijna alle consultatie issues verwerkt. De laatste loodjes worden deze week afgerond. 
+
+Tegelijkertijd zorgt Mark dat zijn collega's bij het Kadaster nog één keer kunnen reviewen of ze tevreden zijn met de manier waarop het commentaar is afgehandeld en verwerkt in de nieuwe versie. Linda maakt hiervoor een snapshot en zet dit in de master branch zodat het document via github pages in een browser te lezen is. 
+
+We hebben afgesproken over 2 weken weer bij elkaar te komen om samen te bezien wat er nog nodig is voordat het document naar de Kennisplatform API stuurgroep kan ter vaststelling.
+
+## verslag online meeting 18 januari
+- Aanwezig: Martin van der Plas, George Mathijssen en Linda van den Brink. 
+
+Linda geeft overzicht: 
+- er zijn nu 23 open issues (2 zijn on hold)
+- geen open PRs. De afgelopen tijd hebben we veel PRs gehad, gereviewd en gemerged. 
+- Er staan 6 issues in de To discuss kolom
+- 15 in To do
+- niets In progress
+
+Een aantal issues staat wellicht onterecht nog open omdat ze niet aan een PR gelinkt waren; Linda heeft Mark gevraagd hiernaar te kijken. 
+
+George: heeft vooral PRs gereviewd. Was ook bezig met een issue, dat gaat hij nog afronden. 
+
+Martin: is bezig met modulaire opbouw van de API Design Rules in het algemene. Hij is onder andere een scheiding aan het maken tussen functionele en technische rules, die laatste kunnen echt getest worden, de eerste niet. Uiteindelijk zouden wij dat ook moeten doen in de geo module. Maar we kunnen eerst een versie vaststellen en daarna alsnog die rules gaan scheiden. 
+
+Een deel van de issues in To Do hebben we besproken: 
+- [#500](https://github.com/Geonovum/KP-APIs/issues/500): sluiten met rationale in comment.
+- [#495](https://github.com/Geonovum/KP-APIs/issues/495) en [#491](https://github.com/Geonovum/KP-APIs/issues/491): onduidelijk wat het antwoord zou moeten zijn en of je dit in de geo module zou moeten uitleggen (of in de crs handreiking?). Het lijkt ons niet iets voor de geo module > Mark en Pieter hier input over vragen voordat we deze issues evt. sluiten.
+- [#493](https://github.com/Geonovum/KP-APIs/issues/493): uitleg toevoegen aan tekst. George pakt deze op.
+- [#496](https://github.com/Geonovum/KP-APIs/issues/496): de opmerking is terecht, we voegen een note toe in de tekst. Linda pakt deze op.
+- [#494](https://github.com/Geonovum/KP-APIs/issues/494), [#492](https://github.com/Geonovum/KP-APIs/issues/492): Linda pakt deze op.
+- [#497](https://github.com/Geonovum/KP-APIs/issues/497), [#498](https://github.com/Geonovum/KP-APIs/issues/498): George pakt deze op.
+
+## verslag online meeting 6 december
+- Aanwezig: Mark Strijker, Pieter Bresters, Martin van der Plas, George Mathijssen en Linda van den Brink. 
+
+Een aantal pull requests besproken. 
+- Een aantal issues verzoekt om te verwijzen naar specifieke members van CRS-sen in plaats van het ensemble. We willen hieraan tegemoet komen maar tegelijk niet teveel complexiteit introduceren. Besloten om een notitie toe te voegen in de intro van de  crs paragraaf over voorkeur voor members van ensambles als de nauwkeurigheid van de data dat vereist en het mogelijk is. Linda maakt hiervoor een issue aan (inmiddels gebeurd, [issue #513](https://github.com/Geonovum/KP-APIs/issues/513))
+- [PR #506](https://github.com/Geonovum/KP-APIs/pull/509) met tekstuele fixes gemerged 
+- Mark gaat opmerkingen op zijn PRs [#511](https://github.com/Geonovum/KP-APIs/pull/511) en [#512](https://github.com/Geonovum/KP-APIs/pull/512) verwerken
+
+Het gaat waarschijnlijk niet lukken om alle consultatie issues te verwerken voor eind 2022. Daarom wordt een aantal extra meetings gepland in het begin van 2023.  
+
+Linda gaat door de issuelijst heen om te kijken welke issues discussie nodig hebben, voordat ze kunnen worden opgepakt.
+
+## verslag online meeting 24 november
+
+- Aanwezig: Mark Strijker, Pieter Bresters, Martin van der Plas, George Mathijssen en Linda van den Brink. 
+
+Alle issues, die uit de consultatie zijn gekomen, zijn opgenomen als github issues. Deze zijn opgenomen in een github project zodat we een [geo module kanbanbord](https://github.com/Geonovum/KP-APIs/projects/2) hebben.
+
+Als werkwijze afgesproken:
+- ieder kiest voor zich issues uit om aan te werken. Dit laten we aan elkaar weten door ze dan aan onszelf toe te wijzen.
+- voor opgeloste issues dienen we een pull requests in
+- we werken in de `development-modulaire-opbouw` branch.
+
+## verslag online meeting 8 november
+De geo module was de hele maand oktober in consultatie. Er zijn zo tussen de 50 en 60 reacties binnengekomen van twee organisaties. Op 8 november waren we bijeen om in de ADR geo module werkgroep de verwerking van consultatiereacties te bespreken. 
+
+- Aanwezig: Mark Strijker, Pieter Bresters, Martin van der Plas en Linda van den Brink. 
+- Afgemeld: George Mathijssen 
+
+De reacties staan in een [markdown document](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20API%20design%20rules/consultaties/geo-okt2022-reacties.md). Dit is een tussenvorm: vanuit deze lijst gaan we de reacties omzetten in github issues. Dit gaan Mark Strijker, Pieter Bresters en Martin van der Plas doen. 
+
+Vervolgens gaan we de issues oppakken. Om dit te faciliteren zullen we weer elke twee weken op dinsdag van half 2 tot 2 bij elkaar zitten (in teams). 
+
+Werkverdeling: 
+-	Mark Strijker: Kadaster Voorstellen 1 t/m 17
+-	Pieter Bresters: Kadaster Voorstellen 18 t/m 24 + Kadaster Suggesties 1 t/m 8
+-	Martin van der Plas: Kadaster Suggesties 9 t/m 25
+-	Linda van den Brink: Kadaster Tekstuele opmerkingen + Vicrea alle opmerkingen
 
 ## verslag online meeting 5 juli
 Aanwezig: Pieter, Mark, George, Linda

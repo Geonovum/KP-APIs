@@ -1,0 +1,34 @@
+# Werkgroep Beveiliging
+
+**Datum:** 30-9-2022
+
+**Aanwezig:** 
+Frank Terpstra (Geonovum)
+Ronald Coenen (Tilburg)
+Eelco Hotting (VNG)
+Alexander Green (Logius)
+Ro Elisabeth (KvK)
+Bob te Riele (RvIG)
+Geri Wolters (Ecosys/Digitale delta)
+Heiko Hudig (Politie)
+
+**Client credentials flow toevoegen**
+Eerste voorzet gedaan om de client credentials flow toe te voegen aan het Nederlands profiel OAuth. https://github.com/Logius-standaarden/OAuth-NL-profiel/tree/Frank-toevoegen-client-credentials-flow
+Behalve dat wat al gedaan is hebben we nodig:
+**Rationale voor Client Crediantials boven API token goed uitleggen (binnen PoC laten uitwerken)
+**Plaatje en uitleg van de extra flow toevoegen (frank vraagt remco of hij dit kan maken alternatief is Ro)
+Discussie over toepasbaarheid en automatisering (Eelco)
+
+**extensie scopes & claims**
+Martin van der plas heeft een eerste voorzet gedaan voor een extensie scopes en claims: https://github.com/Geonovum/KP-APIs/blob/master/API-strategie-extensies/ext-scopes_and_claims.md
+Frank organiseert meeting met Ronald Ro, Heiko, Martin vd P
+
+**API 58**
+Er staat een pull request open op de extensie beveiliging  https://github.com/Geonovum/KP-APIs/pull/464
+Discussie naar aanleiding hiervan. API 58 en de voorgestelde oplossing gaan er vanuit dat de gehele URL niet geecrypt wordt en dat de URL wel gelogd wordt maar de payload niet. Dit blijkt niet terecht alleen het stuk voor de "/" wordt niet geencrypt met HTTPS de rest van de URL en de payload wel. Daarnaast is bij veel loggers de standaard instelling om zowel URL als payload te loggen. Daardoor biedt de voorgestelde oplossingsrichting uit het pull request geen soelaas daar waar het gaat om onnodige opslag van gevoelige gegevens te beperken. 
+We moeten dus eigenlijk eisen stellen aan de logging van gevoelige gegevens ook op http niveau en niet aan het al dan niet plaatsen van gevoelige gegevens in de URL. Mogelijke uitzondering is bij publieke (niet vertrouwde) clients.
+
+
+
+
+
