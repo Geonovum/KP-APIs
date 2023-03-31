@@ -29,7 +29,7 @@ Agenda  van de Werkgroep API Design Rules (dit omvat ook het Technisch Overleg (
    1. Notificatie standaard wordt door Logius in beheer genomen
    1. Deelnemers worden gevraagd een update te geven van recente ontwikkelingen
 
-3. Vaststellen verslag vorig overleg @@@link opnemen
+3. Vaststellen [verslag vorig overleg van 17 Mei 2022](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20API%20design%20rules/Verslagen/20220317/Agenda%20en%20verslag%2020220317-Draft.md)
 
 4. Update subwerkgroepen:
 
@@ -38,7 +38,7 @@ Agenda  van de Werkgroep API Design Rules (dit omvat ook het Technisch Overleg (
    - we hebben geen input ontvangen van de  werkgroepen Tijdreizen & Omgaan met relaties
 
    1. [Profielen en capabilities](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20API%20design%20rules/profielen.md) (trekker Pieter Dijkstra)
-      1. bespreken nieuwe modulaire opzet, @@@ link opnemen / infographic bespreken
+      1. bespreken nieuwe [modulaire opzet](https://github.com/Geonovum/KP-APIs/tree/Development-modulaire-opbouw/API-strategie-algemeen) & [infographic](https://raw.githubusercontent.com/Geonovum/KP-APIs/8d3692cca80f55fce74b0f9fba3761773e59c83a/media/API_infographic.svg) bespreken
    2. [Tijdreizen](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20API%20design%20rules/tijdreizen.md) (trekker Tony Sloos) - uitwerking combineren met DIS Geo / SOR sessies en daarna extensie updaten
    3. [Omgaan met relaties](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20API%20design%20rules/relaties.md) (voormalig put/patch/post/delete) (trekker Henri Korver)
    4. [Geo](https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20API%20design%20rules/geo.md) (trekker Linda van den Brink)
