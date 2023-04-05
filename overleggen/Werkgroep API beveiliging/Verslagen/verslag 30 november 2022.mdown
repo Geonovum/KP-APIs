@@ -1,0 +1,80 @@
+# Werkgroep Beveiliging
+
+**Datum:** 30-11-2022
+
+**Aanwezig:** 
+
+Frank Terpstra (Geonovum)
+Ronald Coenen (Tilburg)
+Alexander Green (Logius)
+Geri Wolters (Ecosys/Digitale delta)
+Heiko Hudig (Politie)
+Erwin Reinhoud (Kennisnet)
+Jan Jaap Zoutendijk (Ilionx)
+Arnoud Quanjer (VNG)
+Peter Haasnoot (Logius)
+Hans Oostrom 
+Henri Korver (VNG)
+Martin van der Plas (Logius)
+
+
+**API 58**
+
+Er staat een pull request open op de extensie beveiliging  https://github.com/Geonovum/KP-APIs/pull/464
+Discussie naar aanleiding hiervan. API 58 en de voorgestelde oplossing gaan er vanuit dat de gehele URL niet geecrypt wordt en dat de URL wel gelogd wordt maar de payload niet. Dit blijkt niet terecht alleen het stuk voor de "/" wordt niet geencrypt met HTTPS de rest van de URL en de payload wel. Daarnaast is bij veel loggers de standaard instelling om zowel URL als payload te loggen. Daardoor biedt de voorgestelde oplossingsrichting uit het pull request geen soelaas daar waar het gaat om onnodige opslag van gevoelige gegevens te beperken. 
+We moeten dus eigenlijk eisen stellen aan de logging van gevoelige gegevens ook op http niveau en niet aan het al dan niet plaatsen van gevoelige gegevens in de URL. Mogelijke uitzondering is bij publieke (niet vertrouwde) clients.
+
+Hashing zoals aangedraqgen door Edwin wisse lijkt niet direct een oplossing omdat je dat ongedaan kan maken, de gegevens zijn er nog steeds. 
+
+Ook andere genoemde technieken zoals get met body lijken geen oplossing.
+
+binnen een organisatie waar logs gemaakt worden van URLs daar zou je dit willen vermijden. 
+Je heb niet altijd controle over de logging van derde partijen in je keten. Je moet met hen afspraken maken over logging. Techniek is niet de enige oplossing
+
+Lijkt concensus dat hij nu te sterk geformuleerd is. Voor system to system zou hij niet moeten gelden. Voor browsers en andere niet vertrouwde(untrusted) clients zou een afgezwakte regel nog steeds van toepassing kunnen zijn. (jan jaap doet tekst voorstel) We leggen dit aan het hele kennisplatform voor op 3 februari.
+
+**subwerkgroep signing**
+
+Gekeken naar jades en http message signatures. Gekeken naar beide specificaties als ook de adoptie van beiden. Ze lopen redelijk gelijk op qua ontwikkeling en volwassenheid. Ze worden beiden nog relatief weinig in software ondersteund. De usecases voor beiden zijn mogelijk verschillend daar moet nog verder naar gekeken worden. De Politie heeft een usecases aan de hand waarvan we de toepasbaarheid van beide profielen beter kunnen bekijken. De hoop is dat deze usecase binnekort wordt uitgetest.
+
+eDelivery heeft pilot gedaan met REST APIs waarbij Jades concreet is uitgewerkt. Dat profiel heeft geen formele status maar kan wel dienen als basis voor een evt extensie op de design-rules.
+
+PSD2 adviseert jades/JWS variant met detached signatures. Http message signing maakt gebruikt van dezelfde technieken maar slaat de signature anders op.
+
+Jades is ingebed in Eidas regelgeving, http message signing zou je daar ook aan kunnen alten voldoen maar het is niet gespecificeerd hoe je dat moet doen.
+
+Vraag: gaan we hier een extensie voor maken?
+Antwoord Frank: Als er helder omschreven en voor meerderre partijen herkenbare usecases zijn dan is het antwoord ja. Zijn de usecases er niet dan kunnen we onze geleerde lessen vastleggen maar lijkt een extensie niet op zijn plaats.
+
+**Client credentials flow toevoegen**
+
+Eerste voorzet gedaan om de client credentials flow toe te voegen aan het Nederlands profiel OAuth. https://github.com/Logius-standaarden/OAuth-NL-profiel/tree/Frank-toevoegen-client-credentials-flow
+Behalve dat wat al gedaan is hebben we nodig:
+**Rationale voor Client Crediantials boven API token goed uitleggen (binnen PoC laten uitwerken)
+Twee cases vanuit de groep:
+
+eerste case: UNI api van digitale delta doe meteingen mbt water. Deze API moet data halen uit meerdere bronnen en over meerdere bronnen heen vragen kunnen stellen. Federatieve opzet, één api roept een aantal andere aan. Deze API wil zichzelf met clientcredentials flow autoriseren. 
+Vraag: Is hier token exchange geen alternatief? 
+Antwoord: In dit geval niet want je hoeft de user helemaal niet te kennen.
+
+tweede case: Batchverwerkingen of andere processen waarbij geen gebruiker hoeft ingelogd te zijn maar je wil wel APIs aanroepen met identiteit.
+
+Heiko levert concept tekst voor de usecase aan, Frank doet redactieslag en zet neer in concept standaard.
+
+Plaatje en uitleg van de extra flow toevoegen: Jan Jaap blijkt oorspronkelijke auteur bestaande plaatje. Hij maakt op basis van https://github.com/Logius-standaarden/Overleg/tree/main/OAuth/Werkgroepconcepten
+in draw.io een nieuw plaatjes voor de clientcredentials flow. De authorization code flow staat op bovenstaande link als in draw.io formaat.
+
+Aanpassing van Functioneel toepassingsgebied, is met toevoeging van client credentials flow niet nodig.
+
+**afsluiting**
+
+Heiko: is token exchange een onderwerp dat we moeten standaardiseren? Heiko stuurt per mail het idee rond zodat hele werkgroep kan reageren.
+
+Vervolgafspraken:
+11 januari is er een online werksessie voor het profiel OAuth met Heiko Jan-Jaap, Martin en Edwin.
+
+Woensdag 1 februari komt de werkgroep weer online bijeen en vrijdag 3 februari is er in de middag weer een fysieke bijeenkomst van het kennisplatform APIs in utrecht (jaarbeurs meetup in het Beatrix gebouw). Frank stuurt uitnodigingen rond.
+
+
+
+
