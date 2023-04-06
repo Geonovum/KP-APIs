@@ -2,3 +2,4 @@ __pycache__
 *.sqlite3
 *.code-workspace
 .DS_Store
+*.bkp
