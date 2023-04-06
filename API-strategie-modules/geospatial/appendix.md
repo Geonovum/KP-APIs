@@ -10,6 +10,7 @@ What follows is the original description of the rules in the old Geospatial Exte
 
 A spatial filter can be complex and large. It is best practice to supply complex queries in the body, not in the request URI. Since `GET` may not have a payload (although supported by some clients) use a `POST` request to a separate endpoint. For example, a GEO query to all *panden* where the geometry in the field `_geo` (there may be multiple geometry fields) contains a GeoJSON object (in this case a `Point`, so one coordinate pair):
 
+<a name="api-36"></a>
 <p class="rulelab"><strong>Deprecated rule (was: API-36)</strong>: Provide a <code>POST</code> endpoint for geo queries</p>
 
 Spatial queries are sent in a `POST` to a dedicated endpoint.
@@ -27,6 +28,7 @@ Spatial queries are sent in a `POST` to a dedicated endpoint.
 
 Other geospatial operators like `intersects` or `within` can be used as well.
 
+<a name="api-37"></a>
 <p class="rulelab"><strong>Deprecated rule (was: API-37)</strong>: Support mixed queries at <code>POST</code> endpoints</p>
 
 The `POST` endpoint is preferably set up as a generic query endpoint to support combined queries:
@@ -53,6 +55,7 @@ If a client specifies CRS using a parameter AND in the header, the parameter tak
 What follows is the original description of the rule in the old Geospatial Extension. 
 </aside>
 
+<a name="api-40"></a>
 <p class="rulelab"><strong>Deprecated rule (was: API-40)</strong>: Pass the coordinate reference system (CRS) of the request and the response in the headers</p>
 
 The coordinate reference system (CRS) for both the request and the response are passed as part of the request headers and response headers. In case this header is missing, send the HTTP status code `412 Precondition Failed`.

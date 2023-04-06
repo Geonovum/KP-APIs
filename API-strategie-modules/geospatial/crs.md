@@ -13,8 +13,8 @@ For a detailed description of CRSs see [[hr-crs]].
 
 A client shall be able to determine a list of CRSs supported by an API.
 
-<div class="rule" id="api-geo-5">
-  <p class="rulelab"><strong>API-GEO-5</strong>: Provide a list of all CRSs that are supported by the API</p>
+<div class="rule" id="crs-list">
+  <p class="rulelab"><strong>CRS-LIST</strong>: Provide a list of all CRSs that are supported by the API</p>
   <p>If a REST API shall comply to the OGC API Features specification then the API must provide an endpoint to determine a list of supported CRSs.</p>
   <pre>
   // GET /api/v1/collections:</pre>
@@ -51,8 +51,8 @@ If a feature collection supports a different set of CRSs than the set defined in
 
 For clients, it may be helpful to know the CRS identifier that may be used to retrieve features from that collection without the need to apply a CRS transformation.
 
-<div class="rule" id="api-geo-6">
-  <p class="rulelab"><strong>API-GEO-6</strong>: Make known in which CRS the geospatial data is stored by specifying the property <code>storageCrs</code> in the collection object. </p>
+<div class="rule" id="storage-crs">
+  <p class="rulelab"><strong>STORAGE-CRS</strong>: Make known in which CRS the geospatial data is stored by specifying the property <code>storageCrs</code> in the collection object. </p>
   <p>The value of this property shall be one of the CRSs the API supports.</p> 
   <h4 class="rulelab">How to test</h4>
   <ul>
@@ -76,8 +76,8 @@ Since most client-side mapping libraries use WGS 84 longitude-latitude (CRS84), 
 
 The *default* CRS, i.e. the CRS which is assumed when not specified by either the API or the client, is CRS84, in line with GeoJSON and OGC API Features. 
 
-<div class="rule" id="api-geo-7">
-  <p class="rulelab"><strong>API-GEO-7</strong>: Use <a href="http://www.opengis.net/def/crs/OGC/1.3/CRS84">CRS84</a> as the default coordinate reference system (CRS). Support CRS84 in line with OGC API Features <a href="http://docs.ogc.org/is/17-069r3/17-069r3.html#_coordinate_reference_systems">Requirement 10</a>. </p>
+<div class="rule" id="default-crs">
+  <p class="rulelab"><strong>DEFAULT-CRS</strong>: Use <a href="http://www.opengis.net/def/crs/OGC/1.3/CRS84">CRS84</a> as the default coordinate reference system (CRS). Support CRS84 in line with OGC API Features <a href="http://docs.ogc.org/is/17-069r3/17-069r3.html#_coordinate_reference_systems">Requirement 10</a>. </p>
   <p>The implication of this is, that if no CRS is explicitly included in the request, CRS84 is assumed. This rule also applies if the request uses POST.</p>
   <h4 class="rulelab">How to test</h4>
   <ul>
@@ -89,8 +89,9 @@ The *default* CRS, i.e. the CRS which is assumed when not specified by either th
 
 In addition, support for ETRS89 and/or RD is required. 
 
-<div class="rule" id="api-geo-8">
-  <p class="rulelab"><strong>API-GEO-8</strong>: Use ETRS89 and/or RD when required, as these are the preferred coordinate reference systems (CRS) for Dutch geospatial data. Follow the Dutch Guideline for the use of CRSs [[hr-crs]].</p>
+<a name="api-39"></a>
+<div class="rule" id="preferred-crs">
+  <p class="rulelab"><strong>PREFERRED-CRS</strong>: Use ETRS89 and/or RD when required, as these are the preferred coordinate reference systems (CRS) for Dutch geospatial data. Follow the Dutch Guideline for the use of CRSs [[hr-crs]].</p>
   <p>General usage of the European ETRS89 coordinate reference system (CRS) or RD/NAP is preferred, but is not the default CRS. Hence, one of these CRSs has to be explicitly included in each request when one of these CRSs is desired in the response or used in a request.</p>
   <h4 class="rulelab">How to test</h4>
   <ul>
@@ -116,8 +117,8 @@ The guiding principles for CRS support:
 - APIs shall support and advertise both ensemble CRSs and ensemble member CRSs if geometry is exchanged and the CRS for the geometry is an ensemble member CRS.
 - under certain conditions WGS 84 can be made equal to e.g. ETRS89, this is called a nultransformation, see [[hr-crs]]. If a nultransformation is used to realize WGS 84, then the CRS (e.g. ETRS89) that is used to realize WGS 84 shall be supported and advertised by an API.
 
-<div class="rule" id="api-geo-9">
-  <p class="rulelab"><strong>API-GEO-9</strong>: When the API provides data in an ensemble CRS like WGS 84 or ETRS89 while it is known to what ensemble member CRS the data actually refers, this ensemble member should also be one of the CRSs supported by the API and advertised in the CRS list. E.g. when 2D data is transformed from RD with RDNAPTRANS not only EPSG:4258 should be supported but also EPSG::9067.</p>
+<div class="rule" id="ensemble-member-crs">
+  <p class="rulelab"><strong>ENSEMBLE-MEMBER-CRS</strong>: When the API provides data in an ensemble CRS like WGS 84 or ETRS89 while it is known to what ensemble member CRS the data actually refers, this ensemble member should also be one of the CRSs supported by the API and advertised in the CRS list. E.g. when 2D data is transformed from RD with RDNAPTRANS not only EPSG:4258 should be supported but also EPSG::9067.</p>
   <h4 class="rulelab">How to test</h4>
   <ul>
     <li>Issue an HTTP GET request to the <code>/collections</code> endpoint.</li>
@@ -129,30 +130,40 @@ The guiding principles for CRS support:
 
 The CRS can be specified for request and response individually using parameters or headers.
 
-<div class="rule" id="api-geo-10">
-  <p class="rulelab"><strong>API-GEO-10</strong>: Support passing the coordinate reference system (CRS) of the geometry in the request as a query parameter</p>
+<div class="rule" id="bbox-crs-query-parameter">
+  <p class="rulelab"><strong>BBOX-CRS-QUERY-PARAMETER</strong>: Support passing the coordinate reference system (CRS) of the bounding box in the request as a query parameter</p>
   <p>Support the <a href="http://docs.opengeospatial.org/is/18-058/18-058.html#_parameter_bbox_crs">OGC API Features part 2 <code>bbox-crs</code> parameter</a> in conformance to the standard.
   </p>
-  <p>If a bounding box or geospatial filter is sent to the server without these parameters, the default CRS, CRS84, is assumed as specified in <a href="#api-geo-7">API-GEO-7</a>.</p>
+  <p>If a bounding box is sent to the server without these parameters, the default CRS, CRS84, is assumed as specified in <a href="#default-crs">DEFAULT-CRS</a>.</p>
   <p>If an invalid value, i.e. a CRS which is not in the list of supported CRSs, is given for one of these parameters, the server responds with an HTTP status code `400`.</p>
-  <p>Additionally, if other types of geospatial filters are supported in the API besides <code>bbox</code>: </p>
-  <p>Support the <a href="http://docs.ogc.org/DRAFTS/19-079r1.html#filter-filter-crs">OGC API Features part 3 <code>filter-crs</code> parameter</a> in conformance to the standard.
-  </p>
-  <h4 class="rulelab">How to test</h4>
+    <h4 class="rulelab">How to test</h4>
   <uL>
     <li>Issue an HTTP GET request to the API, including the <code>bbox</code> parameter AND the <code>bbox-crs</code> parameter.</li>
     <li>Validate that a document was returned with a status code 200.</li>
-    <li>Verify that the response includes a <code>Content-Crs</code> http header with the URI of the requested CRS identifier.</li>
+    <li>Verify that the response includes a <code>Content-Crs</code> HTTP header with the URI of the requested CRS identifier.</li>
   </ul>
-  <p>Perform the same test  for the <code>filter-crs</code> parameter, if the server supports other types of geospatial filters.</p>
+</div>
+
+<div class="rule" id="filter-crs-query-parameter">
+  <p class="rulelab"><strong>FILTER-CRS-QUERY-PARAMETER</strong>: Support passing the coordinate reference system (CRS) of the geospatial filter in the request as a query parameter</p>
+  <p>Support the <a href="http://docs.ogc.org/DRAFTS/19-079r1.html#filter-filter-crs">OGC API Features part 3 <code>filter-crs</code> parameter</a> in conformance to the standard.
+  </p>
+  <p>If a geospatial filter is sent to the server without these parameters, the default CRS, CRS84, is assumed as specified in <a href="#default-crs">DEFAULT-CRS</a>.</p>
+  <p>If an invalid value, i.e. a CRS which is not in the list of supported CRSs, is given for one of these parameters, the server responds with an HTTP status code `400`.</p>
+  <h4 class="rulelab">How to test</h4>
+  <uL>
+    <li>Issue an HTTP GET request to the API, including a geospatial filter AND the <code>filter-crs</code> parameter.</li>
+    <li>Validate that a document was returned with a status code 200.</li>
+    <li>Verify that the response includes a <code>Content-Crs</code> HTTP header with the URI of the requested CRS identifier.</li>
+  </ul>
 </div>
 
 In an API that supports the creation and/or updating of items, POST, PUT or PATCH requests with geospatial content in the body may be sent by a client to the server. In that case, it is necessary to indicate the CRS used, unless CRS84, the default CRS, is used.
 
-<div class="rule" id="api-geo-11">
-  <p class="rulelab"><strong>API-GEO-11</strong>: When HTTP POST, PUT and/or PATCH requests are supported, pass the coordinate reference system (CRS) of geometry in the request body as a header</p>
+<div class="rule" id="content-crs-request-header">
+  <p class="rulelab"><strong>CONTENT-CRS-REQUEST-HEADER</strong>: When HTTP POST, PUT and/or PATCH requests are supported, pass the coordinate reference system (CRS) of geometry in the request body as a header</p>
   <p>Support the <a href="http://docs.ogc.org/DRAFTS/20-002.html#feature-crs">OGC API Features part 4 <code>Content-Crs</code> header</a> in conformance to the standard.</p>
-  <p>Alternatively, if the feature representation supports expressing CRS information for each feature / geometry, the information can also be included in the feature representation. If no CRS is asserted, the default CRS, CRS84, is assumed, as stated in <a href="#api-geo-7">API-GEO-7</a>.<p>
+  <p>Alternatively, if the feature representation supports expressing CRS information for each feature / geometry, the information can also be included in the feature representation. If no CRS is asserted, the default CRS, CRS84, is assumed, as stated in <a href="#default-crs">DEFAULT-CRS</a>.<p>
   <h4 class="rulelab">How to test</h4>
   <p>In a request (i.e. when creating or updating an item on the server):</p>
   <uL>
@@ -162,8 +173,8 @@ In an API that supports the creation and/or updating of items, POST, PUT or PATC
   <p>Repeat with a similar test voor PUT and/or PATCH if the server supports these.</p>
 </div>
 
-<div class="rule" id="api-geo-12">
-  <p class="rulelab"><strong>API-GEO-12</strong>: Support passing the desired coordinate reference system (CRS) of the geometry in the response as a query parameter</p>
+<div class="rule" id="crs-query-parameter">
+  <p class="rulelab"><strong>CRS-QUERY-PARAMETER</strong>: Support passing the desired coordinate reference system (CRS) of the geometry in the response as a query parameter</p>
   <p>Support the <a href="http://docs.opengeospatial.org/is/18-058/18-058.html#_parameter_crs">OGC API Features part 2 <code>crs</code> parameter</a> in conformance to the standard.
   </p>
   <h4 class="rulelab">How to test</h4>
@@ -173,8 +184,8 @@ In an API that supports the creation and/or updating of items, POST, PUT or PATC
   </ul>
 </div>
 
-<div class="rule" id="api-geo-13">
-  <p class="rulelab"><strong>API-GEO-13</strong>: Assert the coordinate reference system (CRS) used in the response using a header</p>
+<div class="rule" id="content-crs-response-header">
+  <p class="rulelab"><strong>CONTENT-CRS-RESPONSE-HEADER</strong>: Assert the coordinate reference system (CRS) used in the response using a header</p>
   <p>Support the <a href="http://docs.opengeospatial.org/is/18-058/18-058.html#_coordinate_reference_system_information_independent_of_the_feature_encoding">OGC API Features part 2 <code>Content-Crs</code> header</a> in conformance to the standard.
   </p>
   <h4 class="rulelab">How to test</h4>
