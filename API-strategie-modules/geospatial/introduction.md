@@ -15,5 +15,4 @@ Geospatial data is 'special' data in the sense that it typically indicates the l
 
 The Geospatial Module provides rules for the structuring of geospatial payloads and for functions in APIs to handle geospatial data.
 
-
-In the geospatial module the abbreviation RD is used. RD refers to the "Stelsel van de Rijksdriehoeksmeting", this is the equivalent of EPSG code 28992 and EPSG name Amersfoort / RD New.
+<aside class="note">In the geospatial module the abbreviation RD is used. RD refers to the "Stelsel van de Rijksdriehoeksmeting", this is the equivalent of EPSG code 28992 and EPSG name Amersfoort / RD New.</aside>
