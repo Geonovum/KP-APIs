@@ -5,6 +5,16 @@ github repository; zie issues met tag
 [Geo-extensie](https://github.com/Geonovum/KP-APIs/issues?q=is%3Aissue+is%3Aopen+label%3AGeo-extensie).
 
 De werkgroep houdt 1x per 2 weken een korte online meeting (half uur). Neem voor deelname aan deze werkgroep contact op met Linda van den Brink (Geonovum).
+
+## Verslag online meeting 11 april
+- Aanwezig: George Mathijssen, Mark Strijker, Pieter Bresters en Linda van den Brink. 
+
+- [Redactioneel PR](https://github.com/Geonovum/KP-APIs/pull/589) van Linda was goedgekeurd en is gemerged
+- [Open PR van Mark](https://github.com/Geonovum/KP-APIs/pull/591) voor het hernoemen van de geo module rules heeft een merge conflict. Mark lost dit op en Linda kijkt nog even naar de gekozen namen. Daarna kan dit PR gemerged worden zonder verdere review. 
+- Mark werkt aan een PR voor de laatste reviewopmerkingen van het Kadaster [(#590)](https://github.com/Geonovum/KP-APIs/issues/590). Dit PR reviewen de werkgroepleden zodra gereed. 
+- De werkgroepleden zijn het eens dat de geo module, zodra deze laatste PR verwerkt is, klaar is voor vaststelling en publicatie. Met de inhoud is iedereen akkoord. Wel willen ze nog één keer de mogelijkheid hebben het hele document, zoals het ter goedkeuring gaat, te bekijken. Eventuele spelfouten etc kunnen er dan in de definitieve versie nog uitgehaald worden. Verbeteringen kunnen via een PR of issue worden aangemeld.
+- Zodra dit PR goedgekeurd is maakt Linda een snapshot met status 'versie ter vaststelling' en stuurt dat parallel naar de werkgroep om nog een laatste keer door te lezen, en naar de Stuurgroep van het Kennisplatform APIs ter goedkeuring. 
+
 ## verslag online meeting 28 maart
 - Aanwezig: George Mathijssen, Mark Strijker en Linda van den Brink. 
 

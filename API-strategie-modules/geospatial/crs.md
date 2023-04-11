@@ -49,7 +49,7 @@ If a feature collection supports additional CRSs compared to the global CRS list
 
 If a feature collection supports a different set of CRSs than the set defined in the global CRS list, then a reference to the global CRS list is omitted and only the URIs of the supported CRSs are added to the CRS list in the `crs` property of the feature collection.
 
-For clients, it may be helpful to know the CRS identifier that may be used to retrieve features from that collection without the need to apply a CRS transformation.
+For clients, it may be helpful to know the CRS identifier that may be used to retrieve features from that collection without the need to apply a CRS transformation. If all features in a feature collection are stored using a particular CRS, the property `storageCRS` shall be used to specify this CRS, in accordance with [OGC API Features - part 2 - 6.2.2 Storage CRS](https://docs.ogc.org/is/18-058/18-058.html#_storage_crs). The value of this property shall be one of the CRSs supported by the API and advertised in the CRS list as stated in requirement 4 of [OGC API Features - part 2 - 6.2.2 Storage CRS](https://docs.ogc.org/is/18-058/18-058.html#_storage_crs). If relevant, the epoch should also be specified, using the `storageCRSCoordinateEpoch` property. For an explanation of the use of epochs with CRS, see the CRS Guidelines [[hr-crs]]. 
 
 <div class="rule" id="storage-crs">
   <p class="rulelab"><strong>STORAGE-CRS</strong>: Make known in which CRS the geospatial data is stored by specifying the property <code>storageCrs</code> in the collection object. </p>
@@ -61,8 +61,6 @@ For clients, it may be helpful to know the CRS identifier that may be used to re
     <li>Validate that the value of the <code>storageCRS</code> property is one of the URIs from the list of supported CRSs.</li>
   </ul>
 </div>
-
-If all features in a feature collection are stored using a particular CRS, the property `storageCRS` shall be used to specify this CRS, in accordance with [OGC API Features - part 2 - 6.2.2 Storage CRS](https://docs.ogc.org/is/18-058/18-058.html#_storage_crs). The value of this property shall be one of the CRSs supported by the API and advertised in the CRS list as stated in requirement 4 of [OGC API Features - part 2 - 6.2.2 Storage CRS](https://docs.ogc.org/is/18-058/18-058.html#_storage_crs). If relevant, the epoch should also be specified, using the `storageCRSCoordinateEpoch` property. For an explanation of the use of epochs with CRS, see the CRS Guidelines [[hr-crs]]. 
 
 ## CRS negotiation
 
@@ -115,7 +113,7 @@ The guiding principles for CRS support:
 - Use an ensemble member CRS (instead of an ensemble CRS) for exchanging geometry, when known.
 - Use an ensemble member CRS (instead of an ensemble CRS) as output of coordinate transformation, when known.
 - APIs shall support and advertise both ensemble CRSs and ensemble member CRSs if geometry is exchanged and the CRS for the geometry is an ensemble member CRS.
-- under certain conditions WGS 84 can be made equal to e.g. ETRS89, this is called a nultransformation, see [[hr-crs]]. If a nultransformation is used to realize WGS 84, then the CRS (e.g. ETRS89) that is used to realize WGS 84 shall be supported and advertised by an API.
+- Under certain conditions WGS 84 can be made equal to e.g. ETRS89, this is called a nultransformation, see [[hr-crs]]. If a nultransformation is used to realize WGS 84, then the CRS (e.g. ETRS89) that is used to realize WGS 84 shall be supported and advertised by an API.
 
 <div class="rule" id="ensemble-member-crs">
   <p class="rulelab"><strong>ENSEMBLE-MEMBER-CRS</strong>: When the API provides data in an ensemble CRS like WGS 84 or ETRS89 while it is known to what ensemble member CRS the data actually refers, this ensemble member should also be one of the CRSs supported by the API and advertised in the CRS list. E.g. when 2D data is transformed from RD with RDNAPTRANS not only EPSG:4258 should be supported but also EPSG::9067.</p>
@@ -224,7 +222,7 @@ Below is a list of the most commonly used CRSs in the Netherlands:
 | WGS 84 / Pseudo-Mercator | 2D | Global | http://www.opengis.net/def/crs/EPSG/9.9.1/3857 |
 
 For a more extensive overview of CRSs see: https://docs.geostandaarden.nl/crs/crs/#bijlage-a-crs-overzicht-tabel.
-Note that The URI of each CRS contains a version number and that new versions may be released in future.
+Note that the URI of each CRS contains a version number and that new versions may be released in future.
 Before using a URI verify if newer versions are available and use the latest version.
 
 <aside class="note" title="CRS support and GeoJSON">
