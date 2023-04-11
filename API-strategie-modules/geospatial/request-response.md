@@ -196,9 +196,8 @@ In case a REST API does not have to comply to the OGC API Features specification
 A template for the definition of the schemas for the GeoJSON <code>Geometry</code> object in the requests in OpenAPI definitions is available: [geometryGeoJSON.yaml](https://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/schemas/geometryGeoJSON.yaml).
 In case a collection of resources is embedded in the request resource, the name of the array containing the resources should be the plural of the resource name.
 
-  <p class="rulelab"><strong>API-GEO-4</strong>: Embed GeoJSON <code>Geometry</code> object as part of the JSON resource in API requests</p>
 <div class="rule" id="embed-geojson-geometry-request">
-  <p class="rulelab"><strong>EMBED-GEOJSON-GEOMETRY-REQUEST</strong>: Embed GeoJSON <code>Geometry</code> object as part of the JSON resource</p>
+  <p class="rulelab"><strong>EMBED-GEOJSON-GEOMETRY-REQUEST</strong>: Embed GeoJSON <code>Geometry</code> object as part of the JSON resource in API requests</p>
   <p>When a JSON (<code>application/json</code>) request contains a geometry, represent it in the same way as the <code>Geometry</code> object of GeoJSON.</p>
   Example: POST resource containing geometry
   <pre>
