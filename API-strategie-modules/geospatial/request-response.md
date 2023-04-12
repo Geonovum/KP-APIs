@@ -9,7 +9,7 @@ When requesting information, for example about cadastral parcels, users do not n
 
 ## GeoJSON
 
-[[rfc7946]] describes the GeoJSON format, including a convention for describing 2D geometric objects in CRS84. In the Geospatial module of the API strategy we adopt the GeoJSON conventions for describing geometry objects. The convention is extended to allow alternative projections.
+[[rfc7946]] describes the GeoJSON format, including a convention for describing 2D geometric objects in CRS84 (OGC:CRS84). In the Geospatial module of the API strategy we adopt the GeoJSON conventions for describing geometry objects. The convention is extended to allow alternative projections.
 The GeoJSON conventions and extensions described in this module apply to both geometry passed in input parameters and responses.
 
 
@@ -90,6 +90,10 @@ A simple spatial filter can be supplied as a bounding box. This is a common way 
     <li>Verify that only features that have a spatial geometry that intersects the bounding box are returned as part of the result set.</li>
   </ul>
 </div>
+
+<aside class="note">
+Spatial operations like <code>intersects</code> and <code>within</code> in combination with a filter geometry (e.g. <code>bbox</code>) or resource geometry containing lines with a length > 200 m, may result in erroneous responses, see <a href="https://docs.geostandaarden.nl/crs/cv-hr-crs-20211125/#vormvastheid">vormvastheid</a> (Dutch).
+</aside>
 
 <aside class="note">
 Spatial filtering is an extensive topic. There are use cases for geospatial operators like <code>intersects</code> or <code>within</code>. Geospatial filters can be large and complex, which sometimes causes problems since <code>GET</code> may not have a payload (although supported by some clients). 
