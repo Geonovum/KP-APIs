@@ -216,7 +216,7 @@ Note that The URI of each CRS contains a version number and that new versions ma
 Before using a URI verify if newer versions are available and use the latest version.
 
 <aside class="note">
-New ensemble memeber CRSs may be released in future (e.g. ITRF2020 has been release as a realization for  ITRF), these new realizations shall be used instead of older realizations (e.g. ITRF2014).
+New ensemble member CRSs may be released in future (e.g. ITRF2020 has been released as a realization for  ITRF), these new realizations shall be used instead of older realizations (e.g. ITRF2014).
 </aside>
 
 <aside class="note">
