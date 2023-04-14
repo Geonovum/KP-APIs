@@ -5,7 +5,7 @@ A Coordinate Reference System (CRS) or Spatial Reference System (SRS) is a frame
 CRSs are uniquely identified by means of a Spatial Reference System Identifier (SRID).
 SRIDs may refer to different standards, for example EPSG Geodetic Parameter Dataset or Open Geospatial Consortium (OGC).
 
-CRSs may be grouped into ensemble CRSs. The CRSs that are part of an ensemble CRS are called ensemble member CRSs or member CRSs. When exchanging geometry an ensemble member CRS shall be used instead of an ensemble CRS when known and if accurate data is required. When transforming geometry from one CRS to another, use an ensemble member CRS (instead of an ensemble CRS) as input and output of coordinate transformation, when known and if accurate data is required.
+CRSs may be grouped into ensemble CRSs, e.g. ETRS89 (EPSG:4258). The CRSs that are part of an ensemble CRS are called ensemble member CRSs or member CRSs that realize a ensemble CRS, e.g ETRF2000 (EPSG:9067) is a member of and realizes the ETRS89 (EPSG:4258) ensemble. When exchanging geometry an ensemble member CRS shall be used instead of an ensemble CRS when known and if accurate data is required. When transforming geometry from one CRS to another, use an ensemble member CRS (instead of an ensemble CRS) as input and output of coordinate transformation, when known and if accurate data is required.
 
 For a detailed description of CRSs see [[hr-crs]].
 
@@ -64,10 +64,10 @@ For clients, it may be helpful to know the CRS identifier that may be used to re
 
 ## CRS negotiation
 
-The default CRS for GeoJSON and for OGC API Features is WGS 84 with coordinate order longitude-latitude, also referred to as "CRS84". This refers to an ensemble of global CRSs that can be applied world-wide. Due to the datum and the tectonic displacements it is not accurate enough for local coordinate reference systems like ETRS89 (EPSG:4258, European), or RD (EPSG:28992, Dutch). For more information about coordinate reference systems, read the Geonovum guidelines on CRS [[hr-crs]].
+The default CRS for GeoJSON and for OGC API Features is CRS84 (OGC:CRS84), this is WGS 84 with coordinate order longitude-latitude. This refers to an ensemble of global CRSs that can be applied world-wide. For accurate applications the use of the CRS84 ensemble is not suitable. For more information about coordinate reference systems, read the Geonovum guidelines on CRS [[hr-crs]].
 
-<aside class="note" title="Convention">
-When referring to a coordinate reference system using its code in the rest of this chapter, this is meant to refer to both the 2D and 3D variant of the system in question. E.g. when "RD" is mentioned, this should be taken to mean "RD or RD-NAP"; when WGS 84 is mentioned, this should be taken to mean "CRS84 or CRS84h". 
+<aside class="note">
+When referring to a coordinate reference system using its code in the rest of this chapter, this is meant to refer to both the 2D and 3D variant of the system in question. E.g. when "RD" is mentioned, this should be taken to mean "RD or RDNAP"; when WGS 84 is mentioned, this should be taken to mean "CRS84 or CRS84h". Each variant has an identifier.
 </aside>
 
 Since most client-side mapping libraries use WGS 84 longitude-latitude (CRS84), the W3C/OGC [Spatial Data on the Web](https://www.w3.org/2021/sdw/) working group recommends to use this as the default coordinate reference system. The API strategy caters for this supporting not only ETRS89 and RD, but also CRS84.
@@ -90,7 +90,7 @@ In addition, support for ETRS89 and/or RD is required.
 <a name="api-39"></a>
 <div class="rule" id="preferred-crs">
   <p class="rulelab"><strong>PREFERRED-CRS</strong>: Use ETRS89 and/or RD when required, as these are the preferred coordinate reference systems (CRS) for Dutch geospatial data. Follow the Dutch Guideline for the use of CRSs [[hr-crs]].</p>
-  <p>General usage of the European ETRS89 coordinate reference system (CRS) or RD/NAP is preferred, but is not the default CRS. Hence, one of these CRSs has to be explicitly included in each request when one of these CRSs is desired in the response or used in a request.</p>
+  <p>General usage of the European ETRS89 coordinate reference system (CRS) or RDNAP is preferred, but is not the default CRS. Hence, one of these CRSs has to be explicitly included in each request when one of these CRSs is desired in the response or used in a request.</p>
   <h4 class="rulelab">How to test</h4>
   <ul>
     <li>Issue an HTTP GET request to retrieve some spatial data from the API, specifying ETRS89 and/or RD as coordinate reference system.</li>
@@ -113,10 +113,11 @@ The guiding principles for CRS support:
 - Use an ensemble member CRS (instead of an ensemble CRS) for exchanging geometry, when known.
 - Use an ensemble member CRS (instead of an ensemble CRS) as output of coordinate transformation, when known.
 - APIs shall support and advertise both ensemble CRSs and ensemble member CRSs if geometry is exchanged and the CRS for the geometry is an ensemble member CRS.
-- Under certain conditions WGS 84 can be made equal to e.g. ETRS89, this is called a nultransformation, see [[hr-crs]]. If a nultransformation is used to realize WGS 84, then the CRS (e.g. ETRS89) that is used to realize WGS 84 shall be supported and advertised by an API.
+- Under certain conditions WGS 84 can be made equal to e.g. ETRS89, this is called a 'null transformation', see [[hr-crs]]. If a null transformation is used to realize WGS 84, then the CRS (e.g. ETRS89) that is used to realize WGS 84 and the CRS for WGS 84 itself shall both be supported and advertised by an API.
 
-<div class="rule" id="ensemble-member-crs">
-  <p class="rulelab"><strong>ENSEMBLE-MEMBER-CRS</strong>: When the API provides data in an ensemble CRS like WGS 84 or ETRS89 while it is known to what ensemble member CRS the data actually refers, this ensemble member should also be one of the CRSs supported by the API and advertised in the CRS list. E.g. when 2D data is transformed from RD with RDNAPTRANS not only EPSG:4258 should be supported but also EPSG::9067.</p>
+div class="rule" id="ensemble-member-crs">
+  <p class="rulelab"><strong>ENSEMBLE-MEMBER-CRS</strong>: When the API provides data in an ensemble CRS like WGS 84 or ETRS89 while it is known to what ensemble member CRS the data actually refers, this ensemble member should also be one of the CRSs supported by the API and advertised in the CRS list.</p>
+  <p>For example when 2D data is transformed from RD with RDNAPTRANS not only ETRS89 (EPSG:4258) should be supported but also ETRF2000 (EPSG::9067).</p>
   <h4 class="rulelab">How to test</h4>
   <ul>
     <li>Issue an HTTP GET request to the <code>/collections</code> endpoint.</li>
@@ -156,7 +157,7 @@ The CRS can be specified for request and response individually using parameters 
   </ul>
 </div>
 
-In an API that supports the creation and/or updating of items, POST, PUT or PATCH requests with geospatial content in the body may be sent by a client to the server. In that case, it is necessary to indicate the CRS used, unless CRS84, the default CRS, is used.
+In an API that supports the creation and/or updating of items, POST, PUT or PATCH requests with geospatial content in the body may be sent by a client to the server. In that case, it is necessary to indicate the CRS used, unless CRS84 (OGC:CRS84), the default CRS, is used.
 
 <div class="rule" id="content-crs-request-header">
   <p class="rulelab"><strong>CONTENT-CRS-REQUEST-HEADER</strong>: When HTTP POST, PUT and/or PATCH requests are supported, pass the coordinate reference system (CRS) of geometry in the request body as a header</p>
@@ -206,33 +207,36 @@ The API should be able to handle the following scenarios based on the rules stat
 
 Below is a list of the most commonly used CRSs in the Netherlands:
 
-| Name | Dimension | Scope | URI |
-|-|-|-|-|
-| Amersfoort / RD New | 2D | Dutch | http://www.opengis.net/def/crs/EPSG/9.9.1/28992 |
-| Amersfoort / RD New + NAP height | 3D | Dutch | http://www.opengis.net/def/crs/EPSG/9.9.1/7415 |
-| ETRS89 | 2D | European | http://www.opengis.net/def/crs/EPSG/9.9.1/4258 |
-| ETRS89 | 3D | European | http://www.opengis.net/def/crs/EPSG/9.9.1/4937 |
-| ETRF2000 - LatLon | 2D | European | http://www.opengis.net/def/crs/EPSG/9.9.1/9067 |
-| ETRF2000 - XYZ | 3D | European | http://www.opengis.net/def/crs/EPSG/9.9.1/7930 |
-| ETRF2000 - LatLonEHt | 3D | European | http://www.opengis.net/def/crs/EPSG/9.9.1/7931 |
-| ITRF2014 - LatLon | 2D | Global | http://www.opengis.net/def/crs/EPSG/9.9.1/9000 |
-| ITRF2014 - LatLonEHt | 3D | Global | http://www.opengis.net/def/crs/EPSG/9.9.1/7912 |
-| WGS 84 longitude-latitude | 2D | Global | http://www.opengis.net/def/crs/OGC/1.3/CRS84 |
-| WGS 84 longitude-latitude-height | 3D | Global | http://www.opengis.net/def/crs/OGC/0/CRS84h |
-| WGS 84 / Pseudo-Mercator | 2D | Global | http://www.opengis.net/def/crs/EPSG/9.9.1/3857 |
+| Name | Code | Type | Dimension | Scope | URI |
+|-|-|-|-|-|-|
+| Amersfoort / RD New | 28992 | easting, northing (x, y) | 2D | Dutch | http://www.opengis.net/def/crs/EPSG/9.9.1/28992 |
+| Amersfoort / RD New + NAP height | 7415 | easting, northing, height (x, y, h) | 3D | Dutch | http://www.opengis.net/def/crs/EPSG/9.9.1/7415 |
+| ETRS89 | 4258 | latitude, longitude (&#966;, &#955;) |2D | European | http://www.opengis.net/def/crs/EPSG/9.9.1/4258 |
+| ETRS89 | 4937 | latitude, longitude, height (&#966;, &#955;, h) | 3D | European | http://www.opengis.net/def/crs/EPSG/9.9.1/4937 |
+| ETRF2000 | 7931 | latitude, longitude, height (&#966;, &#955;, h) | 3D | European | http://www.opengis.net/def/crs/EPSG/9.9.1/7931 |
+| ETRF2000 | 9067 | latitude, longitude (&#966;, &#955;) | 2D | European | http://www.opengis.net/def/crs/EPSG/9.9.1/9067 |
+| ITRF2014 | 7912 | latitude, longitude, height (&#966;, &#955;, h) | 3D | Global | http://www.opengis.net/def/crs/EPSG/9.9.1/7912 |
+| ITRF2014 | 9000 | latitude, longitude (&#966;, &#955;) | 2D | Global | http://www.opengis.net/def/crs/EPSG/9.9.1/9000 |
+| WGS 84 longitude-latitude | CRS84 | longitude, latitude (&#966;, &#955;) | 2D | Global | http://www.opengis.net/def/crs/OGC/1.3/CRS84 |
+| WGS 84 longitude-latitude-height | CRS84h | longitude, latitude, height (&#966;, &#955;, h) | 3D | Global | http://www.opengis.net/def/crs/OGC/0/CRS84h |
+| WGS 84 / Pseudo-Mercator | 3857 | easting, northing (x, y) | 2D | Global | http://www.opengis.net/def/crs/EPSG/9.9.1/3857 |
 
 For a more extensive overview of CRSs see: https://docs.geostandaarden.nl/crs/crs/#bijlage-a-crs-overzicht-tabel.
 Note that the URI of each CRS contains a version number and that new versions may be released in future.
 Before using a URI verify if newer versions are available and use the latest version.
 
-<aside class="note" title="CRS support and GeoJSON">
-Officially, WGS 84 longitude-latitude (CRS84) is the only CRS allowed in GeoJSON. However, GeoJSON does state that using another CRS is allowed, if this is agreed between provider and consumer of the data. The API functionality described above, to negotiate the CRS between client and server, can be viewed as such an agreement. Many GIS clients can deal with GeoJSON in other CRS than CRS84.
+<aside class="note">
+New ensemble member CRSs may be released in future (e.g. ITRF2020 has been released as a realization for  ITRF), these new realizations shall be used instead of older realizations (e.g. ITRF2014).
+</aside>
 
-In addition, the Geonovum CRS guidelines [[hr-crs]] describe [how ETRS89 can be treated as equal to CRS84 under certain circumstances](https://docs.geostandaarden.nl/crs/cv-hr-crs-20211125/#wgs-84-gelijkstellen-aan-etrs89). 
+<aside class="note">
+Officially, WGS 84 longitude-latitude (OGC:CRS84) is the only CRS allowed in GeoJSON. However, GeoJSON does state that using another CRS is allowed, if this is agreed between provider and consumer of the data. The API functionality described above, to negotiate the CRS between client and server, can be viewed as such an agreement. Many GIS clients can deal with GeoJSON in other CRS than CRS84 (OGC:CRS84).
+
+In addition, the Geonovum CRS guidelines [[hr-crs]] describe [how ETRS89 can be treated as equal to CRS84 (OGC:CRS84)under certain circumstances](https://docs.geostandaarden.nl/crs/cv-hr-crs-20211125/#wgs-84-gelijkstellen-aan-etrs89). 
 
 [[JSON-FG]] is a proposed standard extension of GeoJSON that adds CRS support.
 </aside>
 
 ## CRS transformation
 
-If the requested CRS is not the same as the storage CRS, a coordinate transformation is needed. Performance is increased when the dataset is transformed in multiple CRSs and stored in advance, and not transformed at the moment the request has arrived. In case of a transformation between RD and ETRS89, it is required that this transformation uses the latest version of the procedure of [RDNAPTRANS™](https://docs.geostandaarden.nl/crs/cv-hr-crs-20211125/#transformatie-en-conversie-tussen-rd-nap-en-etrs89). This is certified software to transform between these coordinate reference systems.
+If the requested CRS is not the same as the storage CRS, a coordinate transformation is needed. Performance is increased when the dataset is transformed in multiple CRSs and stored in advance, and not transformed at the moment the request has arrived. In case of a transformation between RD and ETRS89, it is required that this transformation uses the latest version of the procedure of [RDNAPTRANS™](https://docs.geostandaarden.nl/crs/cv-hr-crs-20211125/#transformatie-en-conversie-tussen-rd-nap-en-etrs89).
