@@ -103,7 +103,7 @@ Spatial filtering is an extensive topic. There are use cases for geospatial oper
 
 More complex spatial filtering is not addressed in this module. A new API Design Rules module on filtering will address spatial as well as non-spatial filtering. [[ogcapi-features-3]] will provide input for this.
 
-However, until the filtering module is written, the geospatial module retains rule <a href="#geometric-context">geometric context</a> about dealing with results of a global spatial query. This rule may be moved to the filtering module at a later stage.
+However, until the filtering module is written, the geospatial module retains rule <a href="#/geo/geometric-context">/geo/geometric-context</a> about dealing with results of a global spatial query. This rule may be moved to the filtering module at a later stage.
 </aside>
 
 <a name="api-38"></a>

@@ -133,7 +133,7 @@ The CRS can be specified for request and response individually using parameters 
   <p class="rulelab"><b>/geo/bbox-crs-query-parameter</b>: Support passing the coordinate reference system (CRS) of the bounding box in the request as a query parameter</p>
   <p>Support the <a href="http://docs.opengeospatial.org/is/18-058/18-058.html#_parameter_bbox_crs">OGC API Features part 2 <code>bbox-crs</code> parameter</a> in conformance to the standard.
   </p>
-  <p>If a bounding box is sent to the server without these parameters, the default CRS, CRS84, is assumed as specified in <a href="#default-crs">DEFAULT-CRS</a>.</p>
+  <p>If a bounding box is sent to the server without these parameters, the default CRS, CRS84, is assumed as specified in <a href="#/geo/default-crs">/geo/default-crs</a>.</p>
   <p>If an invalid value, i.e. a CRS which is not in the list of supported CRSs, is given for one of these parameters, the server responds with an HTTP status code `400`.</p>
     <h4 class="rulelab">How to test</h4>
   <uL>
@@ -147,7 +147,7 @@ The CRS can be specified for request and response individually using parameters 
   <p class="rulelab"><b>/geo/filter-crs-query-parameter</b>: Support passing the coordinate reference system (CRS) of the geospatial filter in the request as a query parameter</p>
   <p>Support the <a href="http://docs.ogc.org/DRAFTS/19-079r1.html#filter-filter-crs">OGC API Features part 3 <code>filter-crs</code> parameter</a> in conformance to the standard.
   </p>
-  <p>If a geospatial filter is sent to the server without these parameters, the default CRS, CRS84, is assumed as specified in <a href="#default-crs">DEFAULT-CRS</a>.</p>
+  <p>If a geospatial filter is sent to the server without these parameters, the default CRS, CRS84, is assumed as specified in <a href="#/geo/default-crs">/geo/default-crs</a>.</p>
   <p>If an invalid value, i.e. a CRS which is not in the list of supported CRSs, is given for one of these parameters, the server responds with an HTTP status code `400`.</p>
   <h4 class="rulelab">How to test</h4>
   <uL>
@@ -162,7 +162,7 @@ In an API that supports the creation and/or updating of items, POST, PUT or PATC
 <div class="rule" id="/geo/content-crs-request-header">
   <p class="rulelab"><b>/geo/content-crs-request-header</b>: When HTTP POST, PUT and/or PATCH requests are supported, pass the coordinate reference system (CRS) of geometry in the request body as a header</p>
   <p>Support the <a href="http://docs.ogc.org/DRAFTS/20-002.html#feature-crs">OGC API Features part 4 <code>Content-Crs</code> header</a> in conformance to the standard.</p>
-  <p>Alternatively, if the feature representation supports expressing CRS information for each feature / geometry, the information can also be included in the feature representation. If no CRS is asserted, the default CRS, CRS84, is assumed, as stated in <a href="#default-crs">DEFAULT-CRS</a>.<p>
+  <p>Alternatively, if the feature representation supports expressing CRS information for each feature / geometry, the information can also be included in the feature representation. If no CRS is asserted, the default CRS, CRS84, is assumed, as stated in <a href="#/geo/default-crs">/geo/default-crs</a>.<p>
   <h4 class="rulelab">How to test</h4>
   <p>In a request (i.e. when creating or updating an item on the server):</p>
   <uL>
