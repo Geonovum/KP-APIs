@@ -16,7 +16,7 @@ A client shall be able to determine a list of CRSs supported by an API.
 <div class="rule" id="crs-list">
   <p class="rulelab"><strong>CRS-LIST</strong>: Provide a list of all CRSs that are supported by the API</p>
   <p>If a REST API shall comply to the OGC API Features specification then the API must provide an endpoint to determine a list of supported CRSs.</p>
-  <pre>
+  <pre class="example">
   // GET /api/v1/collections:</pre>
   <h4 class="rulelab">How to test</h4>
   <ul>
@@ -27,7 +27,7 @@ A client shall be able to determine a list of CRSs supported by an API.
   </ul>
   
   <p>If a REST API does not have to comply to the OGC API Features specification, e.g. when the API is used for administrative purposes, then the API shall also provide an endpoint to determine the supported CRSs.</p>
-  <pre>
+  <pre class="example">
   // GET /api/v1/crss:</pre>
   <h4 class="rulelab">How to test</h4>
   <ul>
