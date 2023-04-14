@@ -70,7 +70,7 @@ GeoJSON does not cover all use cases. For example, it is not possible to store c
 A simple spatial filter can be supplied as a bounding box. This is a common way of filtering spatial data and can be supplied as a parameter. We adopt the OGC API Features [[ogcapi-features-1]] bounding box parameter:
 
 <div class="rule" id="/geo/bbox-query-parameter">
-  <p class="rulelab"><strong>/geo/bbox-query-parameter</strong>: Supply a simple spatial filter as a bounding box parameter</p>
+  <p class="rulelab"><b>/geo/bbox-query-parameter</b>: Supply a simple spatial filter as a bounding box parameter</p>
   <p>Support the <a href="https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_bbox">OGC API Features part 1 <code>bbox</code> query parameter</a> in conformance to the standard.</p> 
   <pre class="example">
     GET /api/v1/buildings?bbox=5.4,52.1,5.5,53.2</pre>
@@ -108,7 +108,7 @@ However, until the filtering module is written, the geospatial module retains ru
 
 <a name="api-38"></a>
 <div class="rule" id="/geo/geometric-context">
-  <p class="rulelab"><strong>/geo/geometric-context</strong>: Place results of a global spatial query in the relevant geometric context</p>
+  <p class="rulelab"><b>/geo/geometric-context</b>: Place results of a global spatial query in the relevant geometric context</p>
   <p>In case of a global query <code>/api/v1/_search</code>, results should be placed in the relevant geometric context, because results from different <a href="https://publicatie.centrumvoorstandaarden.nl/api/adr/#resources">collections</a>, i.e. different sets of resources of the same type, are retrieved. Express the name of the collection to which the results belong in the singular form using the property <code>type</code>. For example:</p>
   <pre class="example">
   // POST /api/v1/_search:
@@ -149,7 +149,7 @@ In case a REST API shall comply to the OGC API Features specification for creati
 
 <a name="api-34"></a>
 <div class="rule" id="/geo/geojson-request">
-  <p class="rulelab"><strong>/geo/geojson-request</strong>: Support GeoJSON in geospatial API requests</p>
+  <p class="rulelab"><b>/geo/geojson-request</b>: Support GeoJSON in geospatial API requests</p>
   <p>For representing geometric information in an API, use the convention for describing geometry as defined in the GeoJSON format [[rfc7946]]. Support GeoJSON as described in <a href="http://docs.ogc.org/DRAFTS/20-002.html">OGC API Features part 4</a>, but note that this standard is still in development.</p>
   Example: POST feature
   <pre class="example">
@@ -200,7 +200,7 @@ A template for the definition of the schemas for the GeoJSON <code>Geometry</cod
 In case a collection of resources is embedded in the request resource, the name of the array containing the resources should be the plural of the resource name.
 
 <div class="rule" id="/geo/embed-geojson-geometry-request">
-  <p class="rulelab"><strong>/geo/embed-geojson-geometry-request</strong>: Embed GeoJSON <code>Geometry</code> object as part of the JSON resource in API requests</p>
+  <p class="rulelab"><b>/geo/embed-geojson-geometry-request</b>: Embed GeoJSON <code>Geometry</code> object as part of the JSON resource in API requests</p>
   <p>When a JSON (<code>application/json</code>) request contains a geometry, represent it in the same way as the <code>Geometry</code> object of GeoJSON.</p>
   Example: POST resource containing geometry
   <pre class="example">
@@ -245,7 +245,7 @@ In case a collection of resources is embedded in the request resource, the name 
 In case a REST API shall comply to the OGC API Features specification, e.g. for usage in GIS applications, the following applies.
 
 <div class="rule" id="/geo/geojson-response">
-  <p class="rulelab"><strong>/geo/geojson-response</strong>: Support GeoJSON in geospatial API responsess</p>
+  <p class="rulelab"><b>/geo/geojson-response</b>: Support GeoJSON in geospatial API responsess</p>
   <p>For representing 2D geometric information in an API response, use the convention for describing geometry as defined in the GeoJSON format [[rfc7946]]. Support GeoJSON as described in OGC API Features <a href="https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geojson">Requirements class 8.3</a> [[ogcapi-features-1]]. </p>
   Example: feature
   <pre class="example">
@@ -365,7 +365,7 @@ In case a collection of resources is returned, the name of the array containing 
 
 <a name="api-35"></a>
 <div class="rule" id="/geo/embed-geojson-geometry-response">
-  <p class="rulelab"><strong>/geo/embed-geojson-geometry-response</strong>: Embed GeoJSON <code>Geometry</code> object as part of the JSON resource in API responses</p>
+  <p class="rulelab"><b>/geo/embed-geojson-geometry-response</b>: Embed GeoJSON <code>Geometry</code> object as part of the JSON resource in API responses</p>
   <p>When a JSON (<code>application/json</code>) response contains a geometry, represent it in the same way as the <code>Geometry</code> object of GeoJSON.</p>
 
   Example: resource containing geometry
