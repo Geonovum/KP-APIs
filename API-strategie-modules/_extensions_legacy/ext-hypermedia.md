@@ -4,9 +4,9 @@
 
 Hypermedia relates to the use of hyperlinks (from now on called _links_) as part of a document's payload, which are essentially URIs pointing to other resources. Typically, but not necessarily, these links are retrievable (also called _dereferencable_) from the web over the HTTP protocol. We intentionally make a clear separation between navigation controls and external links. Both kinds can easily be combined as part of a single API.
 
+<a name="api-70"></a>
 <div class="rule" id="/hypermedia/absolute-uris">
   <p class="rulelab"><b>/hypermedia/absolute-uris</b>: Provide absolute URIs for hyperlinks</p>
-  <a name="api-70"></a>
   <p>Only absolute URIs may be provided since this enables simple traversal of links by following URIs. While relative links are more compact and may be practical when having multi-environment deployments, they introduce extra complexity for the client and may potentially result in erroneous behaviour (e.g. when dealing with trailing slashes or dot segments). For the same reasons, absolute URIs may not be templated.</p>
 </div>
 
