@@ -9,8 +9,7 @@ Agenda en Verslag van de Werkgroep API Design Rules 9 mei 2023 - Online overleg 
 ## Agenda/Verslag
 
 1. Opening en welkom
-   1. Opening en welkom door de voorzitter Pieter Dijkstra.
-
+   
 2. Mededelingen
 
 4. Het toevoegen van condities (wellicht in rules) voor het optioneel of verplicht gebruik van modules. Bijvoorbeeld de geo en tls security modules.
@@ -23,16 +22,13 @@ Agenda en Verslag van de Werkgroep API Design Rules 9 mei 2023 - Online overleg 
 
    1. API-56 – versionering betaversies/releasecandidates als zodanig niet zichtbaar. Mogelijk extra laag toevoegen om dit inzichtelijk te maken. op versieniveau. 
    Er is overeenstemming dat de API-designrule aangepast kan worden waarbij we de standaard op het gebied van semantic versioning kunnen volgen. Joost merkt hierbij nog wel op dat de onderliggende vraag is wanneer er sprake is van een breaking change. 
-
-   Het proces voor het doorvoeren van deze wijzigingen wordt besproken. Er blijkt nog geen duidelijk vastgesteld proces te zijn voor de wijziging van bestaande rules. Afgesproken dat wijzigingen in de werkversie op basis van goedgekeurde pullrequests doorgevoerd kunnen worden. Het formaliseren van de werkversie is een proces waarbij consultatie vereist is. Er is niet afgesproken wie deze wijziging door gaat voeren. De verantwoordelijkheid hiervoor is nog niet belegd.  
-
+  
 7. Bespreken status huidige subwerkgroepen:
-   1. Geo: https://github.com/Geonovum/KP-APIs/blob/master/Werkgroep%20API%20design%20rules/geo.md
+   1. Geo: https://github.com/Geonovum/KP-APIs/blob/master/overleggen/Werkgroep%20API%20design%20rules/geo.md
    
 8. Stand van zaken modulaire opzet API DesignRules 
-Besproken wordt hoe modules zich verhouden tot het normatieve deel. En hoe verplicht het gebruik van een module is. Opgemerkt wordt dat het wenselijk is dat zo veel mogelijk als normatief wordt vastgesteld. 
 
 9. Bijeenkomst API kennisplatform 11 mei 
 
 10.  Rondvraag, nieuwe ontwikkelingen & wvttk
-Joost merkt op dat Kadaster en Geonovum samen werken aan de orchestratie van API's. HEt doel hiervan is dat API's beter gebruikt kunnen worden bij het bevragen van verschillende bronnen. Dit wordt vanuit de werkgroep gezien als een interessante ontwikkeling. 
+
