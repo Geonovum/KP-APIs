@@ -10,4 +10,4 @@ Met deze intentieverklaring, verklaart onze organisatie dat wij onze API’s str
 
 3. Voor het realiseren van veilige koppelvlakken gebruikt de overheid de standaard DigiKoppeling. Deze standaard maakt het ook mogelijk om een REST API aan te bieden op een veilige manier die voldoet aan punten 1 en 2 hierboven. 
 
-4. De overheid registreert haar publiek toegankelijke REST API's bij developer.overheid.nl. Zo kunnen ontwikkelaars de APIs van de overheid altijd vinden. 
+4. De overheid registreert haar extern toegankelijke REST API's bij developer.overheid.nl, tenzij dit om beveiligingsredenen niet gewenst is. Zo kunnen ontwikkelaars de APIs van de overheid altijd vinden.
