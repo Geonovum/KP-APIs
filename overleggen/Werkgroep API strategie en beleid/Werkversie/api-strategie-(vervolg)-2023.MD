@@ -16,10 +16,12 @@ De API Strategie van de Nederlandse overheid bevat afspraken en standaarden om A
 Nu het gebruik van API’s in opmars is, is het van belang de gemaakte afspraken toe te passen. Voor zover verdere afspraken nodig zijn, werken we samen in de Werkgroepen van het Kennisplatform API's.
 
 ### Visie op het Kennisplatform API’s
-Het Kennisplatform API’s wil de adoptie van API’s stimuleren en brengt daartoe partijen samen. Het Kennisplatform API’s is dé plek voor overheden om afspraken over de toepassing van API’s te maken en om standaardisatie te bevorderen. Aanbieders van API’s krijgen handvatten waarmee zij hun API’s vorm kunnen geven. Afnemers van API’s profiteren door een meer uniform aanbod van API’s. Het Kennisplatform API’s streeft naar gedragen uitgangspunten voor technische interoperabiliteit, vindbaarheid, toegang, aansluitvoorwaarden en andere afspraken voor het aanbieden en gebruiken van API’s. Deze afspraken worden voorbereid in drie werkgroepen:
-1. architectuur,
-2. beveiliging, en
-3. design rules.
+Het Kennisplatform API’s wil de adoptie van API’s stimuleren en brengt daartoe partijen samen. Het Kennisplatform API’s is dé plek voor overheden om afspraken over de toepassing van API’s te maken en om standaardisatie te bevorderen. Aanbieders van API’s krijgen handvatten waarmee zij hun API’s vorm kunnen geven. Afnemers van API’s profiteren door een meer uniform aanbod van API’s. Het Kennisplatform API’s streeft naar gedragen uitgangspunten voor technische interoperabiliteit, vindbaarheid, toegang, aansluitvoorwaarden en andere afspraken voor het aanbieden en gebruiken van API’s. Deze afspraken worden door het Kennisplatform API's voorbereid op vier thema's:
+
+1. governance, strategie en beleid,
+2. architectuurprincipes,
+3. beveiliging, en
+4. API design rules.
 
 
 [^1]: De [Data Governance Regulation](https://digital-strategy.ec.europa.eu/en/policies/data-governance-act) en de [Data act](https://digital-strategy.ec.europa.eu/en/policies/data-act) maken deel uit van deze strategie. Het eindrapport van het _API guidelines for government_ project [An Application Programming Interface (API) framework for digital government](https://op.europa.eu/en/publication-detail/-/publication/0e262d9b-ca32-11ea-adf7-01aa75ed71a1) geeft een aantal voorstellen voor API toepassing voor overheden zoals _Align APIs with policy goals_ en _Measure policy impacts of APIs_.
