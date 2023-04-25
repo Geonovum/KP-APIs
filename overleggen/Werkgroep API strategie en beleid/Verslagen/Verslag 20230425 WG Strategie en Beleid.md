@@ -99,6 +99,3 @@ Is dit een zinnige vierdeling?
 ***Gino***: En je kan een paar thema’s aanreiken om de innovatiewerkplaats richting te geven. 
 
 ***Marcel***: Ik had het eerste puntje ook bekeken. Het aanbrengen van die structuur zou ik interessant vinden. Maar het invullen van de inhoud van de API’s is per organisatie anders. Hoe ga je dat in het begin, in de kern goed definiëren?
-
-
-![image](https://user-images.githubusercontent.com/82813567/234365456-a902ba24-89a1-46b1-a2b1-2de607bdea03.png)
