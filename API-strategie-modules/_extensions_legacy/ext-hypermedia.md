@@ -4,8 +4,9 @@
 
 Hypermedia relates to the use of hyperlinks (from now on called _links_) as part of a document's payload, which are essentially URIs pointing to other resources. Typically, but not necessarily, these links are retrievable (also called _dereferencable_) from the web over the HTTP protocol. We intentionally make a clear separation between navigation controls and external links. Both kinds can easily be combined as part of a single API.
 
-<div class="rule" id="api-70">
-  <p class="rulelab"><strong>API-70</strong>: Provide absolute URIs for hyperlinks</p>
+<a name="api-70"></a>
+<div class="rule" id="/hypermedia/absolute-uris">
+  <p class="rulelab"><b>/hypermedia/absolute-uris</b>: Provide absolute URIs for hyperlinks</p>
   <p>Only absolute URIs may be provided since this enables simple traversal of links by following URIs. While relative links are more compact and may be practical when having multi-environment deployments, they introduce extra complexity for the client and may potentially result in erroneous behaviour (e.g. when dealing with trailing slashes or dot segments). For the same reasons, absolute URIs may not be templated.</p>
 </div>
 
@@ -17,8 +18,9 @@ Navigation controls are references to URIs within the scope of the originating A
 
 <p class="note">The only exception when navigation controls are allowed to point to other APIs is when they share governance and security context. When doing so, the governing party must guarantee stability of links between the APIs, which means the target operation of navigational links may never change during the lifetime of (a major version of) the originating API. They must also share the same security context, otherwise clients have to exchange mixed credentials for different endpoints.</p>
 
-<div class="rule" id="api-71">
-  <p class="rulelab"><strong>API-71</strong>: Support the HAL media type for every GET response</p>
+<a name="api-71"></a>
+<div class="rule" id="/hypermedia/support-hal">
+  <p class="rulelab"><b>/hypermedia/support-hal</b>: Support the HAL media type for every GET response</p>
   <p>The [[HAL]] standard is a universal and widely adopted standard for serializing hyperlinks in JSON responses. As standardized by the HAL specification, navigation controls must be provided in a dedicated links-container, named <code>_links</code>. This introduces a clear separation between the data and the interface controls, preventing possible naming conflicts. Link objects can reside on any level in the JSON tree. HAL response messages must explictly specify the corresponding media type.</p>
   <div class="example">
     <p>For example, a book resource may provide a self-referencing link.</p>
@@ -40,13 +42,15 @@ Navigation controls are references to URIs within the scope of the originating A
 
 <p class="note">Navigation controls should not be intermixed with functional identification. Information resources represent real-world entities, which are functionally identified outside the context of an individual API. The same entities may be exchanged via other channels or other (versions of) APIs, providing the same functional identifiers.</p>
 
-<div class="rule" id="api-72">
-  <p class="rulelab"><strong>API-72</strong>: Provide at least an <code>href</code> attribute for every link object</p>
+<a name="api-72"></a>
+<div class="rule" id="/hypermedia/link-href">
+  <p class="rulelab"><b>/hypermedia/link-href</b>: Provide at least an <code>href</code> attribute for every link object</p>
   <p>A link object must at least contain an <code>href</code> attribute with an absolute URI as value. Additionally, a <code>title</code> attribute may be provided for providing a human-readable description of the link. Other attributes should not be used.</p>
 </div>
 
-<div class="rule" id="api-73">
-  <p class="rulelab"><strong>API-73</strong>: Provide self-referencing links for all resources</p>
+<a name="api-73"></a>
+<div class="rule" id="/hypermedia/self-link">
+  <p class="rulelab"><b>/hypermedia/self-link</b>: Provide self-referencing links for all resources</p>
   <p>In case a JSON object represents an entity which is exposed as an individual resource within the API, a self-referencing link with relation type <code>self</code> must be provided. This includes resources which are (partially) embedded in other resources. Self-referencing links typically do not contain a <code>title</code> attribute.</p>
   <div class="example">
     <p>For example, a book resource may provide a self-reference for itself and for its author (which resides in a nested object).</p>
@@ -76,13 +80,15 @@ Navigation controls are references to URIs within the scope of the originating A
   </div>
 </div>
 
-<div class="rule" id="api-74">
-  <p class="rulelab"><strong>API-74</strong>: Provide navigational links pointing to GET operations only</p>
+<a name="api-74"></a>
+<div class="rule" id="/hypermedia/nav-get">
+  <p class="rulelab"><b>/hypermedia/nav-get</b>: Provide navigational links pointing to GET operations only</p>
   <p>Navigation controls may be provided, only when pointing to read (GET) operations. Other operations require more prior knowledge for client applications to be able to use them in a meaningful manner.</p>
 </div>
 
-<div class="rule" id="api-75">
-  <p class="rulelab"><strong>API-75</strong>: Only provide navigational links when there is a clear functional goal</p>
+<a name="api-75"></a>
+<div class="rule" id="/hypermedia/nav-functional">
+  <p class="rulelab"><b>/hypermedia/nav-functional</b>: Only provide navigational links when there is a clear functional goal</p>
   <p>While it might be tempting to provide navigation controls for every possible client interaction, navigation links must be added sparingly. Only when there is a clear functional goal / added value, additional navigation controls should be provided.</p>
 </div>
 
@@ -94,8 +100,9 @@ External links are references to URIs outside of the scope of the originating AP
 - Links to HTML web pages, providing human-friendly content
 - Links to universal standards, such as RDF vocabularies
 
-<div class="rule" id="api-76">
-  <p class="rulelab"><strong>API-76</strong>: Treat external links as regular resource attributes</p>
+<a name="api-76"></a>
+<div class="rule" id="/hypermedia/external-links">
+  <p class="rulelab"><b>/hypermedia/external-links</b>: Treat external links as regular resource attributes</p>
   <p>External links must be considered in the same way as regular resource attributes.</p>
   <div class="example">
     <p>For example, a book resource may provide a link to the cover image:</p>
