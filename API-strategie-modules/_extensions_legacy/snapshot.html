@@ -1132,17 +1132,17 @@ Design rules have unique and permanent numbers. In the event of design rules bei
 <li><a href="#api-50">API-50</a>: Use CORS to control access</li>
 <li><a href="#api-52">API-52</a>: Use OAuth 2.0 for authorization with rights delegation</li>
 <li><a href="#api-58">API-58</a>: Do not put any sensitive information in URIs when communicating over shared networks</li>
-<li><a href="#api-59">API-59</a>: Use spinal-case for path segments</li>
-<li><a href="#api-60">API-60</a>: Normalize characters with diacritics to their base characters for path segments</li>
-<li><a href="#api-61">API-61</a>: Do not explicitly indicate that a resource is an API</li>
-<li><a href="#api-62">API-62</a>: Do not use file extensions in path segments</li>
-<li><a href="#api-63">API-63</a>: Do not use nonstandard abbreviations as resource names</li>
+<li><a href="#/naming/path-case">/naming/path-case</a>: Use spinal-case for path segments</li>
+<li><a href="#/naming/path-diacritics">/naming/path-diacritics</a>: Normalize characters with diacritics to their base characters for path segments</li>
+<li><a href="#/naming/api-resource">/naming/api-resource</a>: Do not explicitly indicate that a resource is an API</li>
+<li><a href="#/naming/file-extensions">/naming/file-extensions</a>: Do not use file extensions in path segments</li>
+<li><a href="#/naming/abbreviations">/naming/abbreviations</a>: Do not use nonstandard abbreviations as resource names</li>
 <li><a href="#api-64">API-64</a>: Do not use compound words for nested objects</li>
 <li><a href="#api-65">API-65</a>: Use enumerations only for fixed sets of values that are unlikely to change</li>
 <li><a href="#api-66">API-66</a>: Use UPPER_SNAKE_CASE for enumeration values</li>
-<li><a href="#api-67">API-67</a>: Omit symbols and punctuation marks other than hyphens from path segments</li>
+<li><a href="#/naming/path-symbols">/naming/path-symbols</a>: Omit symbols and punctuation marks other than hyphens from path segments</li>
 <li><a href="#api-68">API-68</a>: Use meaningful enumeration values</li>
-<li><a href="#api-69">API-69</a>: Use lowerCamelCase for query parameter keys</li>
+<li><a href="#/naming/query-keys">/naming/query-keys</a>: Use lowerCamelCase for query parameter keys</li>
 <li><a href="#/hypermedia/absolute-uris">/hypermedia/absolute-uris</a>: Provide absolute URIs for hyperlinks</li>
 <li><a href="#/hypermedia/support-hal">/hypermedia/support-hal</a>: Support the HAL media type for every GET response</li>
 <li><a href="#/hypermedia/link-href">/hypermedia/link-href</a>: Provide at least an <code>href</code> attribute for every link object</li>
@@ -1310,31 +1310,31 @@ For outbound filtering, the main concern is leaking of information.</p></section
 <p class="rulelab"><strong>API-21</strong>: Inform users of a deprecated API actively</p>
 <p>Using the <code>Warning</code> response header in all responses of the deprecated APIs, users are informed of the deprecation and upcoming removal date.</p>
 </div></section></section>
-    <section class="informative" data-format="markdown" aria-busy="false" id="naming-conventions"><!--OddPage--><h2 id="x5-naming-conventions"><span class="secno">5. </span>Naming conventions</h2><p><em>Dit onderdeel is niet normatief.</em></p><div class="note" role="note" id="issue-container-generatedID-4"><div role="heading" class="note-title marker" id="h-note-2" aria-level="3"><span>Note</span></div><p class="">The working group has indicated this extension to be stable.</p></div><p>Although according to the URI specification [<cite><a class="bibref" href="#bib-rfc3986">rfc3986</a></cite>] URI's are case sensitive, except the scheme/protocol (e.g. <code>https://</code>) and domain (e.g. <code>api.example.org</code>) parts, this section describes design rules related to URI's to ensure interoperability among implementations.</p><p>Specifically, design rules related to the path segments and query strings of URI's that are used to specify API resource locations are described.</p><section id="path-segments"><h3 id="x5-1-path-segments"><span class="secno">5.1 </span>Path segments</h3><p>First, in order to avoid compatibility issues with web servers and frameworks that do not handle case sensitivity of URI's well, the use of spinal-case path segments is preferred over camelCase. Also, it is a more common implementation choice for path segments than snake_case.</p><div class="rule" id="api-59">
-<p class="rulelab"><strong>API-59</strong>: Use spinal-case for path segments</p>
+    <section class="informative" data-format="markdown" aria-busy="false" id="naming-conventions"><!--OddPage--><h2 id="x5-naming-conventions"><span class="secno">5. </span>Naming conventions</h2><p><em>Dit onderdeel is niet normatief.</em></p><div class="note" role="note" id="issue-container-generatedID-4"><div role="heading" class="note-title marker" id="h-note-2" aria-level="3"><span>Note</span></div><p class="">The working group has indicated this extension to be stable.</p></div><p>Although according to the URI specification [<cite><a class="bibref" href="#bib-rfc3986">rfc3986</a></cite>] URI's are case sensitive, except the scheme/protocol (e.g. <code>https://</code>) and domain (e.g. <code>api.example.org</code>) parts, this section describes design rules related to URI's to ensure interoperability among implementations.</p><p>Specifically, design rules related to the path segments and query strings of URI's that are used to specify API resource locations are described.</p><section id="path-segments"><h3 id="x5-1-path-segments"><span class="secno">5.1 </span>Path segments</h3><p>First, in order to avoid compatibility issues with web servers and frameworks that do not handle case sensitivity of URI's well, the use of spinal-case path segments is preferred over camelCase. Also, it is a more common implementation choice for path segments than snake_case.</p><div class="rule" id="/naming/path-case">
+<p class="rulelab"><strong>/naming/path-case</strong>: Use spinal-case for path segments</p>
 <p>In case path segments include compound words, the individual words are written in lower case and may be separated with hyphens. For example, a resource representing a collection of organisatie codes, results in either a path segment <code>organisatie-codes</code> or <code>organisatiecodes</code>.</p>
-</div><p>Also, the use of special characters used in path segments should be reduced to a minimum. Therefore, the use of diacritics and punctuation marks (other than hyphens, which are used in the spinal-case convention) must be avoided.</p><div class="rule" id="api-60">
-<p class="rulelab"><strong>API-60</strong>: Normalize characters with diacritics to their base characters for path segments</p>
+</div><p>Also, the use of special characters used in path segments should be reduced to a minimum. Therefore, the use of diacritics and punctuation marks (other than hyphens, which are used in the spinal-case convention) must be avoided.</p><div class="rule" id="/naming/path-diacritics">
+<p class="rulelab"><strong>/naming/path-diacritics</strong>: Normalize characters with diacritics to their base characters for path segments</p>
 <p>In case path segments include diacritics (e.g. accents), these characters are normalized to their base characters. For example, a resource <code>scènes</code> results in path segment <code>scenes</code>.</p>
-</div><div class="rule" id="api-67">
-<p class="rulelab"><strong>API-67</strong>: Omit symbols and punctuation marks other than hyphens from path segments</p>
+</div><div class="rule" id="/naming/path-symbols">
+<p class="rulelab"><strong>/naming/path-symbols</strong>: Omit symbols and punctuation marks other than hyphens from path segments</p>
 <p>Symbols and punctuation marks, other than hypens, must be omitted from path segments. For example:
 </p><ul>
 <li><code>https://api.example.org/v1/schemas</code> (<code>'</code> of schema's is omitted)</li>
 <li><code>https://api.example.org/v1/hotel-restaurants</code> (<code>-</code> is preserved)</li>
 </ul>
 <p></p>
-</div><p>With regards to naming, resources must use clear, descriptive names that expresses what the respective resources represent. Therefore, the use of nonstandard abbreviations and superfluous prefixes should be avoided in resource names.</p><div class="rule" id="api-61">
-<p class="rulelab"><strong>API-61</strong>: Do not explicitly indicate that a resource is an API</p>
+</div><p>With regards to naming, resources must use clear, descriptive names that expresses what the respective resources represent. Therefore, the use of nonstandard abbreviations and superfluous prefixes should be avoided in resource names.</p><div class="rule" id="/naming/api-resource">
+<p class="rulelab"><strong>/naming/api-resource</strong>: Do not explicitly indicate that a resource is an API</p>
 <p>Use resource names as path segments (e.g. <code>gebouwen</code>) and do not explicitly mention that the resource is an API in the name (e.g. <code>gebouwen_api</code>).</p>
-</div><div class="rule" id="api-62">
-<p class="rulelab"><strong>API-62</strong>: Do not use file extensions in path segments</p>
+</div><div class="rule" id="/naming/file-extensions">
+<p class="rulelab"><strong>/naming/file-extensions</strong>: Do not use file extensions in path segments</p>
 <p>Preferably use content negotiation using the <code>Accept</code> header</p>
-</div><div class="rule" id="api-63">
-<p class="rulelab"><strong>API-63</strong>: Do not use nonstandard abbreviations as resource names</p>
+</div><div class="rule" id="/naming/abbreviations">
+<p class="rulelab"><strong>/naming/abbreviations</strong>: Do not use nonstandard abbreviations as resource names</p>
 <p>Avoid using nonstandard abbreviations for naming resources (e.g. <code>/coords</code> instead of <code>/coordinates</code>). This does not apply to standard or broadly used abbreviations (e.g. <code>bagNummeraanduiding</code>).</p>
-</div></section><section id="query-parameters"><h3 id="x5-2-query-parameters"><span class="secno">5.2 </span>Query parameters</h3><div class="rule" id="api-69">
-<p class="rulelab"><strong>API-69</strong>: Use lowerCamelCase for query parameter keys</p>
+</div></section><section id="query-parameters"><h3 id="x5-2-query-parameters"><span class="secno">5.2 </span>Query parameters</h3><div class="rule" id="/naming/query-keys">
+<p class="rulelab"><strong>/naming/query-keys</strong>: Use lowerCamelCase for query parameter keys</p>
 <p>Keys of query parameters must be written in lowerCamelCase. This naming convention aligns nicely with JSON property names and plays well with client side libraries such as JavaScript. Query parameters should not be prefixed with an underscore (e.g. <code>_sort</code>), but in case prefixing elements with underscores is required (e.g. for data API's where field names are dynamically defined by clients or to align with HAL conventions), an underscore prefix must only be used to denote meta-parameters such as `_sort`, `_expand` and `_filter`.</p>
 </div></section></section>
     <section class="informative" data-format="markdown" aria-busy="false" id="json"><!--OddPage--><h2 id="x6-json"><span class="secno">6. </span>JSON</h2><p><em>Dit onderdeel is niet normatief.</em></p><div class="warning" id="issue-container-generatedID-5"><div role="heading" class="warning-title marker" id="h-warning-1" aria-level="3"><span>Warning</span></div><p class="">This extension is still in development and can be modified at any time.</p></div><p>JavaScript Object Notation (JSON) [<cite><a class="bibref" href="#bib-rfc7159">rfc7159</a></cite>] is a format, just like XML, to serialize, store and transfer data. JSON is the primary representation format for APIs. In contrast to XML, JSON has a compact notation, for example:</p><pre><code class="language-json hljs" aria-busy="false">{
