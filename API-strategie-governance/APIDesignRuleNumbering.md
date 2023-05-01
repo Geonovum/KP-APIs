@@ -55,13 +55,13 @@ Design rules have unique and permanent numbers. In the event of design rules bei
 * <a href="#/naming/path-symbols">/naming/path-symbols</a>: Omit symbols and punctuation marks other than hyphens from path segments
 * <a href="#api-68">API-68</a>: Use meaningful enumeration values
 * <a href="#/naming/query-keys">/naming/query-keys</a>: Use lowerCamelCase for query parameter keys
-* <a href="#api-70">API-70</a>: Provide absolute URIs for hyperlinks
-* <a href="#api-71">API-71</a>: Support the HAL media type for every GET response
-* <a href="#api-72">API-72</a>: Provide at least an <code>href</code> attribute for every link object
-* <a href="#api-73">API-73</a>: Provide self-referencing links for all resources
-* <a href="#api-74">API-74</a>: Provide navigational links pointing to GET operations only
-* <a href="#api-75">API-75</a>: Only provide navigational links when there is a clear functional goal
-* <a href="#api-76">API-76</a>: Treat external links as regular resource attributes
+* <a href="#/hypermedia/absolute-uris">/hypermedia/absolute-uris</a>: Provide absolute URIs for hyperlinks
+* <a href="#/hypermedia/support-hal">/hypermedia/support-hal</a>: Support the HAL media type for every GET response
+* <a href="#/hypermedia/link-href">/hypermedia/link-href</a>: Provide at least an <code>href</code> attribute for every link object
+* <a href="#/hypermedia/self-link">/hypermedia/self-link</a>: Provide self-referencing links for all resources
+* <a href="#/hypermedia/nav-get">/hypermedia/nav-get</a>: Provide navigational links pointing to GET operations only
+* <a href="#/hypermedia/nav-functional">/hypermedia/nav-functional</a>: Only provide navigational links when there is a clear functional goal
+* <a href="#/hypermedia/external-links">/hypermedia/external-links</a>: Treat external links as regular resource attributes
 
 <!-- ### <a name="api-12"></a>API-12: Allow access to an API only if an API key is provided
 
