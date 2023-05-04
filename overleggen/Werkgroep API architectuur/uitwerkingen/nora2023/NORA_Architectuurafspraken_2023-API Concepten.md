@@ -130,7 +130,7 @@ Toelichting : Denk m.n. aan RESTful API's en gerelateerde concepten en operatie 
 
 # Samenvatting API gerelateerde Architectuur principes
 
-Uit bovenstaande inventarisatie volgt de volgende 'shortlist'
+Uit bovenstaande inventarisatie volgt de onderstaande 'shortlist'.
 API Concepten ondersteunen de volgende algemene principes  
 
 # Principes 
