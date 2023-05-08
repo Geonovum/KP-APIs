@@ -210,7 +210,7 @@ graph LR
 ```
 
 ```mermaid
-graph TD
+graph LR
   API["API"]
   AP4["Informeer bij de bron"]
   IMP007["IMP007: Verwijs naar de bron"] -->|Realiseert| AP4
@@ -226,7 +226,7 @@ graph TD
 ```
 
 ```mermaid
-graph TD
+graph LR
   API["API"]
   AP5["Verplaats je in de gebruiker"]
   IMP017["IMP017: Zorg dat overheidsinformatie eenvoudig te raadplegen is"] -->|Realiseert| AP5
@@ -234,7 +234,7 @@ graph TD
 ```
 
 ```mermaid
-graph TD
+graph LR
   API["API"]
   AP6["Bundel diensten"]
 IMP021["IMP021: Bevorder hergebruik van gegevens"] -->|Realiseert| AP6
@@ -242,7 +242,7 @@ API --> IMP021
 ```
 
 ```mermaid
-graph TD
+graph LR
 API["API"]
 AP7["Bied de dienst proactief aan"]
 IMP021["IMP021: Bevorder hergebruik van gegevens"] -->|Realiseert| AP7
@@ -250,7 +250,7 @@ API --> IMP021
 ```
 
 ```mermaid
-graph TD
+graph LR
 API["API"]
 AP8["Bouw diensten modulair op"]
 IMP031["IMP031: Ontwerp op modulaire wijze"] -->|Realiseert| AP8
