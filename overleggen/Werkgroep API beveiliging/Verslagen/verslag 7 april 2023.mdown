@@ -72,10 +72,7 @@ headers die altijd moeten testen geeft max een warning, andere content afhankeli
 
 API-50 CORS
 wel testen info feedback op teruggeven. mogelijk aanbieders laten aangeven of het van toepassing is dan wel op laten falen.
-aanbieder moet dan aangeven of het mogelijk is dat een client een browserbased applicatie is.
-
-
-
+Aanbieder moet dan aangeven of het mogelijk is dat een client een browserbased applicatie is.
 
 OIDCconnect update
 expertgroep jaar geleden bijeengekomen. Samenleven met SAML is ingewikkeld. Idee om ze samen onder één paraplu standaard neer te zetten (net als Digikoppeling). Dit is nog in bespreking. Daarnaast wordt er gewerkt aan testvoorziening vanwege wet digitale overheid moeten veel voorzieningen gaan voldoen, daar is deze tooling voor neergezet.
