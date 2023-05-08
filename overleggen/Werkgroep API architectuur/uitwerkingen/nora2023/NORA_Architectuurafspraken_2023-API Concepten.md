@@ -209,4 +209,55 @@ graph LR
   API --> IMP039
 ```
 
-etc
+```mermaid
+graph TD
+  API["API"]
+  AP4["Informeer bij de bron"]
+  IMP007["IMP007: Verwijs naar de bron"] -->|Realiseert| AP4
+  IMP021["IMP021: Bevorder hergebruik van gegevens"] -->|Realiseert| AP4
+  IMP055["IMP055: Gegevens eenmalig uitgevraagd, uniek opgeslagen, meervoudig gebruikt"] -->|Realiseert| AP4
+  IMP056["IMP056: Registreer gegevens bij de bron"] -->|Realiseert| AP4
+  IMP059["IMP059: Geef de voorkeur aan halen i.p.v. brengen van gegevens"] -->|Realiseert| AP4
+  API --> IMP007
+  API --> IMP021
+  API --> IMP055
+  API --> IMP056
+  API --> IMP059
+```
+
+```mermaid
+graph TD
+  API["API"]
+  AP5["Verplaats je in de gebruiker"]
+  IMP017["IMP017: Zorg dat overheidsinformatie eenvoudig te raadplegen is"] -->|Realiseert| AP5
+  API --> IMP017
+```
+
+```mermaid
+graph TD
+  API["API"]
+  AP6["Bundel diensten"]
+IMP021["IMP021: Bevorder hergebruik van gegevens"] -->|Realiseert| AP6
+API --> IMP021
+```
+
+```mermaid
+graph TD
+API["API"]
+AP7["Bied de dienst proactief aan"]
+IMP021["IMP021: Bevorder hergebruik van gegevens"] -->|Realiseert| AP7
+API --> IMP021
+```
+
+```mermaid
+graph TD
+API["API"]
+AP8["Bouw diensten modulair op"]
+IMP031["IMP031: Ontwerp op modulaire wijze"] -->|Realiseert| AP8
+IMP039["IMP039: Zorg voor open specificaties"] -->|Realiseert| AP8
+IMP083["IMP083: Wissel gegevens tussen (web)applicaties uit met API's"] -->|Realiseert| AP8
+API --> IMP031
+API --> IMP039
+API --> IMP083
+```
+
