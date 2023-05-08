@@ -75,7 +75,7 @@ A simple spatial filter can be supplied as a bounding box. This is a common way 
   <p>Support the <a href="https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_bbox">OGC API Features part 1 <code>bbox</code> query parameter</a> in conformance to the standard.</p> 
   <pre class="example">
     GET /api/v1/buildings?bbox=5.4,52.1,5.5,53.2</pre>
-  <p>Note that if a resource contains multiple geometries, it is up to the provider to decide if a single or multiple geometries are returned and that the provider shall clearly document this behavior.
+  <p>Note that if a resource contains multiple geometries, it is up to the provider to decide if a single geometry or multiple geometries are returned and that the provider shall clearly document this behavior.
   </p>
   <p> The default spatial operator <code>intersects</code> is used to determine which resources are returned.
   </P>
