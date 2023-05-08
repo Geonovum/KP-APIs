@@ -3,3 +3,4 @@ __pycache__
 *.code-workspace
 .DS_Store
 *.bkp
+*_log
