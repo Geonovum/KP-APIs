@@ -117,7 +117,7 @@ The guiding principles for CRS support:
 - APIs shall support and advertise both ensemble CRSs and ensemble member CRSs if geometry is exchanged and the CRS for the geometry is an ensemble member CRS.
 - Under certain conditions WGS 84 can be made equal to e.g. ETRS89, this is called a 'null transformation', see [[hr-crs]]. If a null transformation is used to realize WGS 84, then the CRS (e.g. ETRS89) that is used to realize WGS 84 and the CRS for WGS 84 itself shall both be supported and advertised by an API.
 
-div class="rule" id="ensemble-member-crs">
+<div class="rule" id="ensemble-member-crs">
   <p class="rulelab"><strong>ENSEMBLE-MEMBER-CRS</strong>: When the API provides data in an ensemble CRS like WGS 84 or ETRS89 while it is known to what ensemble member CRS the data actually refers, this ensemble member should also be one of the CRSs supported by the API and advertised in the CRS list.</p>
   <p>For example when 2D data is transformed from RD with RDNAPTRANS not only ETRS89 (EPSG:4258) should be supported but also ETRF2000 (EPSG::9067).</p>
   <h4 class="rulelab">How to test</h4>
