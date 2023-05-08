@@ -9,6 +9,8 @@ CRSs may be grouped into ensemble CRSs, e.g. ETRS89 (EPSG:4258). The CRSs that a
 
 For a detailed description of CRSs see [[hr-crs]].
 
+<aside class="note">In the geospatial module the abbreviation RD is used. RD refers to the "Stelsel van de Rijksdriehoeksmeting", this is the equivalent of EPSG code 28992 and EPSG name Amersfoort / RD New.</aside>
+
 ## CRS discovery
 
 A client shall be able to determine a list of CRSs supported by an API.
