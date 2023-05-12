@@ -11,11 +11,11 @@ De vorige 2 sessies waren gericht op kennisdeling, deze sessie is meer gericht o
 ## 2	Event Driven Architecture - 
 
 VNG heeft in  het kader van het Project Notificatie Services waarin de [NL GOV Cloudevents standaard](https://logius.nl/domeinen/gegevensuitwisseling/nl-gov-profile-cloudevents) is ontwikkeld, ook een bijbehorend Architectuur document gemaakt dat
-goed bruikbaar is voor verdere invulling van het onderwerp in binnen de API-Stratgie en het hoofdstuk Architectuur.
+goed bruikbaar is voor verdere invulling van het onderwerp in binnen de API-Strategie en het hoofdstuk Architectuur.
 Zie [Architectuur Notificatie Services](https://github.com/Geonovum/KP-APIs/blob/master/overleggen/Werkgroep%20API%20architectuur/Verslagen/20230508/notificatieservices_architectuur.pdf)
 
 ## 3	NORA Architectuur principes en API Architectuur principes
-RFC Bindende architectuurafspraken 2022 - NORA Online
+RFC Bindende architectuurafspraken 2022 - [NORA Online](https://www.noraonline.nl/wiki/RFC_Bindende_architectuurafspraken_2022)
 (Hoe sluiten API concepten en het API Thema in de NORA hierop aan)
 - Door relatie van (Rest)API concepten met NORA principes en implicaties aan te geven, kan aangegeven worden wat de kracht is van een API gebaseerde architectuur.
 
@@ -43,7 +43,7 @@ Volgende stap is de relatie ook te beschrijven op de pagina NORA API pagina;
 - 6 API Management
 
 
-_(geen aanvullende opmerkingen / onderdelen zijn uitgewerkt in huidige versie Architectuur hoofdstuk)_
+_(geen specifieke aanvullende opmerkingen / onderdelen zijn uitgewerkt in huidige versie Architectuur hoofdstuk)_
 
 ## 6 	Afspraken & vervolgstappen
 
