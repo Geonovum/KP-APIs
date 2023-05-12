@@ -19,12 +19,10 @@ RFC Bindende architectuurafspraken 2022 - [NORA Online](https://www.noraonline.n
 (Hoe sluiten API concepten en het API Thema in de NORA hierop aan)
 - Door relatie van (Rest)API concepten met NORA principes en implicaties aan te geven, kan aangegeven worden wat de kracht is van een API gebaseerde architectuur.
 
-De eerdere inventarisatie is samengevat
+De eerdere inventarisatie is samengevat :
 [Samenvatting](https://github.com/Geonovum/KP-APIs/blob/master/overleggen/Werkgroep%20API%20architectuur/uitwerkingen/nora2023/NORA_Architectuurafspraken_2023-API%20Concepten.md#implicaties-1)
 
-en gevisualiseerd in een aantal diagrammen.
-
-[Diagrammen](https://github.com/Geonovum/KP-APIs/blob/master/overleggen/Werkgroep%20API%20architectuur/uitwerkingen/nora2023/NORA_Architectuurafspraken_2023-API%20Concepten.md#diagram)
+en gevisualiseerd in een aantal diagrammen : [Diagrammen](https://github.com/Geonovum/KP-APIs/blob/master/overleggen/Werkgroep%20API%20architectuur/uitwerkingen/nora2023/NORA_Architectuurafspraken_2023-API%20Concepten.md#diagram)
 
 Volgende stap is de relatie ook te beschrijven op de pagina NORA API pagina;
 
