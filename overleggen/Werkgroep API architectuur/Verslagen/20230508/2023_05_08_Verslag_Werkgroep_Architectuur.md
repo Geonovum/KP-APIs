@@ -11,7 +11,7 @@ De vorige 2 sessies waren gericht op kennisdeling, deze sessie is meer gericht o
 ## 2	Event Driven Architecture - 
 
 VNG heeft in  het kader van het Project Notificatie Services waarin de [NL GOV Cloudevents standaard](https://logius.nl/domeinen/gegevensuitwisseling/nl-gov-profile-cloudevents) is ontwikkeld, ook een bijbehorend Architectuur document gemaakt dat
-goed bruikbaar is voor verdere invulling van het onderwerp in binnen de API-Strategie en het hoofdstuk Architectuur.
+goed bruikbaar is voor verdere invulling van het onderwerp binnen de API-Strategie en het hoofdstuk Architectuur.
 Zie [Architectuur Notificatie Services](https://github.com/Geonovum/KP-APIs/blob/master/overleggen/Werkgroep%20API%20architectuur/Verslagen/20230508/notificatieservices_architectuur.pdf)
 
 ## 3	NORA Architectuur principes en API Architectuur principes
@@ -24,7 +24,7 @@ De eerdere inventarisatie is samengevat :
 
 en gevisualiseerd in een aantal diagrammen : [Diagrammen](https://github.com/Geonovum/KP-APIs/blob/master/overleggen/Werkgroep%20API%20architectuur/uitwerkingen/nora2023/NORA_Architectuurafspraken_2023-API%20Concepten.md#diagram)
 
-Volgende stap is de relatie ook te beschrijven op de pagina NORA API pagina;
+Volgende stap is de relatie ook te beschrijven op de pagina[ NORA API Thema](https://www.noraonline.nl/wiki/API)
 
 
 
