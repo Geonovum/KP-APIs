@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="nl"><head>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
-<meta name="generator" content="ReSpec 32.6.0">
+<meta name="generator" content="ReSpec 34.1.1">
 <style>
 dfn{cursor:pointer}
 .dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
@@ -340,20 +340,19 @@ ul.index code{color:inherit}
 }</script>
 <link rel="stylesheet" href="https://gitdocumentatie.logius.nl/publicatie/respec/style/base.css"></head>
 
-<body class="h-entry"><div class="head">
+<body class="h-entry toc-inline"><div class="head">
      <h1 id="title" class="title">Vergelijking REST API Signing Standaarden</h1>
     
     <h2>
       KPAPI Handreiking<br>
       Werkversie
-      <time class="dt-published" datetime="2022-06-24">22 februari 2023</time>
+      <time class="dt-published" datetime="2022-06-24">12 mei 2023</time>
     </h2>
     <dl>
       <dt>Deze versie:</dt><dd class="status">
               <a class="u-url status" href="https://phaasnoot.github.io/REST_API_Signing_Standaarden/">https://phaasnoot.github.io/REST_API_Signing_Standaarden/</a>
-            </dd><dt>Laatst gepubliceerde versie:</dt><dd>
-              <a href="https://geonovum.github.io/KP-APIs/publicaties/REST_API_Signing_Standaarden//dev/">https://geonovum.github.io/KP-APIs/publicaties/REST_API_Signing_Standaarden//dev/</a>
             </dd>
+      
       <dt>Laatste werkversie:</dt><dd><a href="https://phaasnoot.github.io/REST_API_Signing_Standaarden/">https://phaasnoot.github.io/REST_API_Signing_Standaarden/</a></dd>
       
       
@@ -427,7 +426,7 @@ Digitale handtekeningen zijn gebaseerd op asymmetrische (of openbare sleutel) cr
 <p>Een ‘signed’ attribuut is een object, toegevoegd in de "digitaal signature" structuur. Het is een binair deel van het berekenen van het  digitale signature veld.  </p>
 <p>Afhankelijk van het business/juridische-scenario worden bepaalde velden in het ’signed-attributen’  en/of unsigned attributen structuur wel/niet toegevoegd.  </p>
 </section><section id="http-message-signatures"><div class="header-wrapper"><h3 id="x1-3-http-message-signatures"><bdi class="secno">1.3 </bdi>Http Message Signatures</h3><a class="self-link" href="#http-message-signatures" aria-label="Permalink for Section 1.3"></a></div>
-<p>Op moment van schrijven is dit de laatste versie van de standaard: <em>draft-ietf-httpbis-message-signatures-16</em> [<cite><a class="bibref" data-link-type="biblio" href="#bib-http-messagesig" title="HTTP Message Signatures">HTTP-MessageSig</a></cite>].</p>
+<p>Op moment van schrijven is dit de laatste versie van de standaard: <em>draft-ietf-httpbis-message-signatures-17</em> [<cite><a class="bibref" data-link-type="biblio" href="#bib-http-messagesig" title="HTTP Message Signatures">HTTP-MessageSig</a></cite>].</p>
 <p>HTTP Message Signatures ondersteunt gebruiksscenario's waar het volledige HTTP-bericht mogelijk niet bekend is bij de ondertekenaar, en waar het bericht onderweg kan worden getransformeerd (bijvoorbeeld door tussenpersonen) voordat deze de ontvanger bereikt.
 De standaard beschrijft ook een middel voor de verzender van een ‘request’ om te verzoeken om een handtekening van de ontvanger toe te passen op de ‘response’ in een lopende HTTP-uitwisseling.</p>
 <p>De standaard geeft specifiek invulling aan:</p>
@@ -446,7 +445,6 @@ De standaard beschrijft ook een middel voor de verzender van een ‘request’ o
 <li>Components: Er worden componenten van een HTTP bericht gedefinieerd om fijnmazig onderdelen te kunnen benoemen/ondertekenen (bv: query, uri etc) </li>
 <li>Multiple Signatures: Er is ondersteuning voor meerdere signatures, bv ondertekening door een proxy onderweg;</li>
 <li>Requesting Signatures: Een partij in de communicatie kan expliciet aangeven dat hij/zij een ondertekend bericht verwacht van de andere partij;</li>
-<li>Request-Response Signature Binding: Een response kan aan de signature van de request refereren om expliciet aan te geven (en aan te tonen) dat de response antwoord is op de specifieke request;</li>
 <li>Mogelijkheid om trailer headers te ondertekenen;</li>
 <li>TLS-Terminating Proxies: Een specifieke use-case voor de standaard is het omzetten van een via tweezijdig TLS ontvangen bericht naar het achterland van een API gateway; het ontvangen certificaat kan meegezonden worden voor verdere afhandeling, de gateway kan het zelf ondertekenen met het eigen certificaat om aan te geven dat de gateway het bericht (en certificaat) correct heeft ontvangen (en gevalideerd);</li>
 </ul>
@@ -544,21 +542,23 @@ Content-Length: 23
 "@query-param";name="Pet": dog
 "@signature-params": ("@authority" "content-digest" \
   "@query-param";name="Pet")\
-  ;created=1618884473;keyid="test-key-rsa-pss"
+  ;created=1618884473;keyid="test-key-rsa-pss"\
+  ;tag="header-example"
 </code></pre>
 <p>This results in the following Signature-Input and Signature headers being added to the message under the label sig-b22:</p>
 <pre><code aria-busy="false" class="hljs">NOTE: '\' line wrapping per RFC 8792
 
 Signature-Input: sig-b22=("@authority" "content-digest" \
   "@query-param";name="Pet");created=1618884473\
-  ;keyid="test-key-rsa-pss"
-Signature: sig-b22=:W2kxR52X0tXN9u7yjyPeWa0T3D0SVG8KkPo+lOWyb2TGdLz\
-  ixWjUlbehjnNhzA+wFWnE6+hdKH8KR6Z9FvsxCc+44XrqxzT7Vcsror5SjMyfx6Nq\
-  tELklj1u2L4JovANI80BSoVobSoc+v9NRVWJZU7WAVow8H2CucCcv2cy1tKFCTMyc\
-  m9LQrIz63Tg5tcGWj64b12nmwj9TwwkCygfz0MTyIytjYLVzKw7mXpL4jGFZ5lsw2\
-  VT2eB3qpF2d/Psy0p1heKhrkz9uvKeCoj+P5QjLMS4eirHDqpKqe9YmCaMsJAUYSU\
-  M86qC8qO6vMQhTMegTkEe25DquVcTiOAEAw==:
+  ;keyid="test-key-rsa-pss";tag="header-example"
+Signature: sig-b22=:LjbtqUbfmvjj5C5kr1Ugj4PmLYvx9wVjZvD9GsTT4F7GrcQ\
+  EdJzgI9qHxICagShLRiLMlAJjtq6N4CDfKtjvuJyE5qH7KT8UCMkSowOB4+ECxCmT\
+  8rtAmj/0PIXxi0A0nxKyB09RNrCQibbUjsLS/2YyFYXEu4TRJQzRw1rLEuEfY17SA\
+  RYhpTlaqwZVtR8NV7+4UKkjqpcAoFqWFQh62s7Cl+H2fjBSpqfZUJcsIk4N6wiKYd\
+  4je2U/lankenQ99PZfB4jY3I5rSV2DSBVkSFsURIjYErOs0tFTQosMTAoxk//0RoK\
+  UqiYY8Bh0aaUEb0rQl3/XaVe4bXTugEjHSw==:
 </code></pre>
+<p><em>Note that the RSA PSS algorithm in use here is non-deterministic, meaning a different signature value will be created every time the algorithm is run. The signature value provided here can be validated against the given keys, but newly-generated signature values are not expected to match the example.</em> c</p>
 </section></section><section id="bijlage-b-jades"><div class="header-wrapper"><h3 id="x1-7-bijlage-b-jades"><bdi class="secno">1.7 </bdi>BIJLAGE B : JAdES</h3><a class="self-link" href="#bijlage-b-jades" aria-label="Permalink for Section 1.7"></a></div>
 <ol>
 <li>JAdES-handtekening velden</li>
