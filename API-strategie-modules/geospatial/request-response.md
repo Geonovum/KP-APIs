@@ -75,7 +75,7 @@ A simple spatial filter can be supplied as a bounding box. This is a common way 
   <p>Support the <a href="https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_bbox">OGC API Features part 1 <code>bbox</code> query parameter</a> in conformance to the standard.</p> 
   <pre class="example">
     GET /api/v1/buildings?bbox=5.4,52.1,5.5,53.2</pre>
-  <p>Note that if a resource contains multiple geometries, it is up to the provider to decide if a single geometry or multiple geometries are returned and that the provider shall clearly document this behavior.
+  <p>Note that if a resource contains multiple geometries, it is up to the provider to decide if geometries of type single geometry or type multiple geometry are returned and that the provider shall clearly document this behavior.
   </p>
   <p> The default spatial operator <code>intersects</code> is used to determine which resources are returned.
   </P>
@@ -246,7 +246,7 @@ In case a collection of resources is embedded in the request resource, the name 
 In case a REST API shall comply to the OGC API Features specification, e.g. for usage in GIS applications, the following applies.
 
 <div class="rule" id="geojson-response">
-  <p class="rulelab"><strong>GEOJSON-RESPONSE</strong>: Support GeoJSON in geospatial API responsess</p>
+  <p class="rulelab"><strong>GEOJSON-RESPONSE</strong>: Support GeoJSON in geospatial API responses</p>
   <p>For representing 2D geometric information in an API response, use the convention for describing geometry as defined in the GeoJSON format [[rfc7946]]. Support GeoJSON as described in OGC API Features <a href="https://docs.ogc.org/is/17-069r3/17-069r3.html#_requirements_class_geojson">Requirements class 8.3</a> [[ogcapi-features-1]]. </p>
   Example: feature
   <pre class="example">
