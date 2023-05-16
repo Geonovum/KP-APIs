@@ -96,7 +96,7 @@ A simple spatial filter can be supplied as a bounding box. This is a common way 
 </div>
 
 <aside class="note">
-Spatial operations like <code>intersects</code> and <code>within</code> in combination with a filter geometry (e.g. <code>bbox</code>) or resource geometry containing lines with a length > 200 m, may result in erroneous responses, see the <a href="https://docs.geostandaarden.nl/crs/crs/#vormvastheid">explanation in the Handreiking CRS</a> (Dutch).
+Spatial operations like <code>intersects</code> and <code>within</code> in combination with a filter geometry (e.g. <code>bbox</code>) or resource geometry containing long lines, may result in erroneous responses when the filter geometry is in another CRS than the storage CRS. See the <a href="https://docs.geostandaarden.nl/crs/crs/#vormvastheid">explanation in the Handreiking CRS</a> (Dutch).
 </aside>
 
 <aside class="note">
