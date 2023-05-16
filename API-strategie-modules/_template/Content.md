@@ -8,14 +8,14 @@ Bijvoorbeeld:
   - Statement
   - Rationale
   - Implications
-- Zie ook als voorbeeld:
+- Zie onderstaande voorbeelden
 
 ## HTTP methods
 
 Although the REST architectural style does not impose a specific protocol, REST APIs are typically implemented using HTTP [[rfc7231]].
 
 <div class="rule" id="\core\example">
-   <p class="rulelab"><b>\core\example</b>: Only apply examples</p>
+   <p class="rulelab"><dfn>\core\example</dfn>: Only apply examples</p>
    <dl>
       <dt>Statement</dt>
       <dd>
@@ -34,6 +34,15 @@ Although the REST architectural style does not impose a specific protocol, REST 
    </div>
    <p class="note">the following shows a note</p>
 </div>
+
+### Verwijzing
+
+Er kan verwezen worden naar een regel binnen het document met de tekst in de `<dfn>` tags van de regel.
+
+Voorbeeld: <pre>Zie regel [=\core\example=].</pre> Resultaat:
+> Zie regel [=\core\example=].
+
+De regels komen ook automatisch in [[[#index-defined-here]]].
 
 ## Note
 
