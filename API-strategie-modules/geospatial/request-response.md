@@ -89,7 +89,7 @@ A simple spatial filter can be supplied as a bounding box. This is a common way 
   </p>
   <h4 class="rulelab">How to test</h4>
   <ul>
-    <li>Issue an HTTP GET request to the API, including the <code>bbox</code> query parameter and using <a href="https://docs.geostandaarden.nl/api/API-strategie-modulen/API-strategie-mod-geo/#crs-negotiation">CRS Negotiation</a>.</li>
+    <li>Issue an HTTP GET request to the API, including the <code>bbox</code> query parameter and using <a href="https://docs.geostandaarden.nl/api/API-Strategie-mod-geo/#crs-negotiation">CRS Negotiation</a>.</li>
     <li>Validate that a response with status code 200 is returned.</li>
     <li>Verify that only features that have a spatial geometry that intersects the bounding box are returned as part of the result set.</li>
   </ul>
