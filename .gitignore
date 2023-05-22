@@ -3,6 +3,7 @@ __pycache__
 *.code-workspace
 .DS_Store
 *.bkp
+*_log
 media/.$API infographic.drawio.bkp
 media/.$API infographic.drawio.bkp
 media/.$Samenhang_rules-modulen.drawio.dtmp
