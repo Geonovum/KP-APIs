@@ -41,6 +41,7 @@ mindmap
     (Welke beleidsdoelen zien we?)
       Data bij de bron
       Digitale inclusiviteit
+      Federatief Data Stelsel
       Informatie op orde
       Overheids API platform
       Transparante Overheid
