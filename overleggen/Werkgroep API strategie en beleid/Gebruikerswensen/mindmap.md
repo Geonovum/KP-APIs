@@ -21,7 +21,7 @@ mindmap
       Mee in gesprek
       Niet?
       Standaarden doorontwikkelen
-      Transitie ondersteunen (Architectuurschuld)
+      Transitie ondersteunen, architectuurschuld
       Wettelijk verplichten
       Ze helpen
     (Met welke initiatieven moeten we in verbinding?)
