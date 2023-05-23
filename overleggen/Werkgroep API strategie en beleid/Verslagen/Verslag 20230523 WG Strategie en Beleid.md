@@ -2,7 +2,7 @@
 Verslag van de virtuele bijeenkomst van **23 mei 2023**
 
 ## Aanwezig
-Redouan Ahaloui (Forum Standaardisatie / Kennisplatform APIs), Frans Smit (Belastingdienst), Paul Dam (Kennisplatform APIs), Sophie Makhlouf (Kennisplatform APIs), Edwin Wisse (Logius), Gino Laan (Stichting RINIS), Theo Peters (VNG), Dolf Daal (IHW)
+Redouan Ahaloui (Forum Standaardisatie / Kennisplatform APIs), Frans Smit (Belastingdienst), Sophie Makhlouf (Kennisplatform APIs), Edwin Wisse (Logius), Theo Peters (VNG), Dolf Daal (IHW)
 
 ## Afwezig
 Paul Dam (Kennisplatform APIs). Marcel Krassenburg (MKIdee), Gino Laan (Stichting RINIS)
