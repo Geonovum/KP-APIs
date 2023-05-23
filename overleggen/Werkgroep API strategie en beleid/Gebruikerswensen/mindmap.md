@@ -5,9 +5,12 @@ Mindmap met resultaten van haalsessie 11 mei
 mindmap
   root((Strategie))
     Hoe stimuleren we vindbaarheid?
+      Bekendheid van platform stimuleren
       DCAT
       Forum Standaardisatie
       Harvesten
+      Laagdrempelig houden voor API aanbieders
+      Publiceren van inspirerende voorbeelden
       schema.org
     Hoe gaan we om met afwijkende partijen?
       Kwaliteitsdrempel voor partijen die wel meedoen
