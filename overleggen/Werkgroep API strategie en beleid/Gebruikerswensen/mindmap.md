@@ -27,9 +27,12 @@ mindmap
       Open source
       Security
     Waar zijn we *niet* van?
+      SOAP/XML
+      Handhaving
     Beleidsdoelen
       Data bij de bron
       Digitale inclusiviteit
       Informatie op orde
+      Overheids API platform
       Transparante Overheid
 ```
