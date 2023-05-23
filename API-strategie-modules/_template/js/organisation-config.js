@@ -1,6 +1,6 @@
 const organisationConfig = {
     // nl_organisationName is used in the header (and Sotd)
-    nl_organisationName: "Logius",
+    nl_organisationName: "NL GOV",
 
     // this url points to the folder where organsation specific css files are stored
     // defaults to https://tools.geostandaarden.nl/respec/style/ if not set
@@ -18,11 +18,11 @@ const organisationConfig = {
     // defaults to https://tools.geostandaarden.nl/respec/style/logos/Geonovum.svg
     nl_logo: {
         src: "https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg",
-        alt: "Logius",
-        id: "Logius",
+        alt: "NL Gov",
+        id: "NL GOV",
         height: 77,
         width: 44,
-        url: "https://www.logius.nl/standaarden",
+        url: "https://developer.overheid.nl",
     },
 	
 	localBiblio: {

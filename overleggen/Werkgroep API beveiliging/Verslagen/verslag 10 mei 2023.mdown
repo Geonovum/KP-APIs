@@ -1,0 +1,54 @@
+# Werkgroep Beveiliging
+
+**Datum:** 10-5-2023
+
+**Aanwezig:** 
+Frank Terpstra (Geonovum)
+Ronald Coenen (Tilburg)
+Alexander Green (Logius)
+Geri Wolters (Ecosys/Digitale delta)
+Remco Schaar (Logius)
+Dolf Daal (IHW)
+Andre van de Nouweland (Den Haag)
+Erwin Reinhoud (Kennisnet)
+Peter Haasnoot (Logius)
+
+**verslag vorige keer**
+geen opmerkingen op het verslag
+
+**Documentatie OAuth**
+
+Heiko en Jeroen hebben ervaring uitgewisseld, zijn hier lessen, best practices uit te halen? Heiko en Jeroen zijn niet aanwezig. beeld van de wel aanwezigen:
+Helpt om meer handson document met concrete, praktische stappen te hebben. De best practices voor het toepassen van scopes en claims. Autorisatie ontwerp zal zeer verschillend zijn per organisatie. Met name het eerste lijkt veralgemeniseerbaar.
+
+Politie heeft opmerkingen gegeven bij document RWS. Politie heeft extra paramater tokens (proof of possesion). Extra informatie over audience, aanbeveling om toegangspad te begruiken, vergelijkbaar met zalando en australische versie iGov. Opmerking over gebruik scopes claims bij resource server. Scope is vrij groot bereik (business area) en er is een mapping naar meerdere claims. Resource server kijkt naar claims.
+Nog een aantal opmerkingen met name zijn een aantal van deze opmerkingen best practices en niet allen sec een directieve uitwerking van het NL profiel OAuth.
+
+Bij politie is er een developer confluence pagina met post man projecten e.d. Een aantal daarvan zijn generiek en mogelijk publiek deelbaar.
+
+Heiko gaat weg bij politie draagt over aan michiel albrachts.
+
+Heiko wil meeschrijven aan stuk over token exchange. Andere mogelijke deelnemers: 
+hollandse luchten (martin vd plas)
+Sensorthings API (Geri, Hylke van der Schaaf?)
+BAG rechtendelegatie(Jan Jaap)
+Usecase edsn, (Tony Sloos)?
+
+woensdag 24 mei van 13:00-15:00 bij Geonovum gaan we een schrijfmiddag houden.
+
+**PoC rechtendelegatie vooraankondiging review FSC**
+
+Vraag aan onze werkgroep om dit profiel te reviewen. Volgende bijeenkomst komt VNG langs om toe te lichten
+https://commonground.gitlab.io/standards/fsc/
+
+
+**Modulaire opbouw API strategie**
+Martin ligt modulaire opbouw toe zoals die nu al in github staat. Onderdeel van nieuwe formaat is dat testbaarheid expliciet aangegeven moet worden. Dat moet nog gebeuren voor design rules opgesteld door deze werkgroep.
+Middag voor testbaar maken van design rules uit beveiligings extensie doen we als we tijd over hebben op 24 mei.
+
+**OIDCconnect update**
+Afgelopen week terugkoppeling van forum standaardisatie geweest. Zoals in vorige overleg al aangekondigt komt er een overkoepelende standaard voor OpenIDConnect en SAML. Verwachting is dat overkoepelende standaard vanaf september op de lijst verplichte standaarden komt.
+
+
+
+

@@ -1,0 +1,82 @@
+# Werkgroep Beveiliging
+
+**Datum:** 7-4-2023
+
+**Aanwezig:** 
+Frank Terpstra (Geonovum)
+Ronald Coenen (Tilburg)
+Alexander Green (Logius)
+Geri Wolters (Ecosys/Digitale delta)
+Remco Schaar (Logius)
+Dolf Daal (IHW)
+Andre van de Nouweland (Den Haag)
+Erwin Reinhoud (Kennisnet)
+Peter Haasnoot (Logius)
+
+**Nederlands profiel OAuth uitbreiding met client credentials flow**
+
+Kunnen we usecases en werkingsgebied voor client credentials flow helderder formuleren?: 
+* BAG rechten delegatie eerste usecase, dus wel met gebruiker maar verantwoordelijkheid ligt op organisatieniveau. 
+* Voorbeeld autonoom systeem, dat zonder eindgebruiker werkt. Batch processen die asynchroon taken uitvoeren 
+* Sensornetwerken waar sensoren informatie namens organisatie vanuit sensor aanlevert. Bijv sesnsorthings API (mogelijk kunnen client credentials flow inbrengen in werkgroep SensorThingsAPI van OGC)
+* Veiliger vorm voor clients ipv API key (geen rechten delegatie).
+* Verschillende authenticatievormen laten uniformeren naar één autorisatie mechanisme. Ontkoppeling authenticatie en autorisatie. Maakt centrale autorisatie via één authorizationserver mogelijk (niet noodzakelijk rechtendelegatie).
+
+usecases zonder rechtendelegatie zouden buiten verplichte werking van de standaard moeten vallen.
+
+We overwegen token exchange toe te voegen wat zijnhier de usecases voor?
+
+* SAML naar OAuth omwisselen
+* Voor user consent breed token, voor privacy redenen smaller token aanvragen voor specifieke APIs voor risico beperking
+bijvoorbeeld pensioen overzicht, 1x consent voor alle pensioenfondsen en vervolgens met token per pensioenfonds info ophalen. (omzetten audiences of scope)
+* wisselen van rol, gebruikers rechten inwisselen voor organisatierechten, emergency override, tijdelijke adminrechten aanvragen. Impersonatie van gebruiker.
+Wat is de adoptie bij bestaande providers? is het wel interoperabel met bestaande OAuth implementaties.
+Maak het geen MUST maar een SHOULD
+Kunnen we dit internationaal oppakken in iGov of EU?
+
+**Documentatie OAuth**
+
+Heiko en Jeroen hebben ervaring uitgewisseld, zijn hier lessen, best practices uit te halen? Heiko en Jeroen zijn niet aanwezig. beeld van de wel aanwezigen:
+Helpt om meer handson document met concrete, praktische stappen te hebben. De best practices voor het toepassen van scopes en claims. Autorisatie ontwerp zal zeer verschillend zijn per organisatie. Met name het eerste lijkt veralgemeniseerbaar.
+
+**Compliance voorziening OAuth aandachtspunten**
+
+Vanuit programma data bij de bron overwegen we compliance voorziening te laten bouwen, wat is het MVP?
+Sugesties vanuit de werkgroep: Ook afspraken maken met leveranciers. Voortraject met leveranciers, marktconsultatie
+Mogelijk relevante leveranciers: Microsoft, Google, Auth0, yenlo, portsrock, keycloack, lijst openidconnect(https://openid.net/developers/certified/). Gateway leveranciers, component libraries(java platform, spring, .net platform, python).
+Client en authorization servers zullen meeste uitdagingen hebben.
+
+Vanuit BZK word voor openidconnect gewerkt aan een zelftest op basis van openid tools
+Federatie waar aantal producten geimplementeerd zijn met juiste configuratie waar nieuwe partijen interoperabiliteit kunnen testen. Publieke logggevens. Remco geeft contactgegevens door aan Frank.
+
+**Modulaire opbouw API strategie**
+Belangrijke verandering bij modulaire opbouw is dat we ook testbaarheid mee moeten nemen. hieronder een aantal suggesties voor testen verschillende design rules module connectiviteit
+
+API-11 TLS:
+
+SSLlabs (https://github.com/ssllabs/ssllabs-scan), internet.nl testen dit. Tests uit SSL cryptolibrary  https://github.com/openssl/openssl/tree/master/test
+testen op TLS versies en ciphersuites, 
+test op wat handshake zegt is basis. Klopt dit met NCSC?
+testen van daadwerkelijke implementatie gaat waarschijnlijk te ver
+
+API-58:
+ 
+rexp op BSN, creditcardnr, mogelijk als warning verder niet te testen
+
+
+2.3.1 security headers:
+
+je moet weten wat de aard van de API is. aanbieders moeten datacassificatie meeleveren om goed te kunnen testen
+pentest tooling?
+headers die altijd moeten testen geeft max een warning, andere content afhankelijke headers ook testen maar alleen informational feedback op geven
+
+API-50 CORS
+wel testen info feedback op teruggeven. mogelijk aanbieders laten aangeven of het van toepassing is dan wel op laten falen.
+Aanbieder moet dan aangeven of het mogelijk is dat een client een browserbased applicatie is.
+
+OIDCconnect update
+expertgroep jaar geleden bijeengekomen. Samenleven met SAML is ingewikkeld. Idee om ze samen onder één paraplu standaard neer te zetten (net als Digikoppeling). Dit is nog in bespreking. Daarnaast wordt er gewerkt aan testvoorziening vanwege wet digitale overheid moeten veel voorzieningen gaan voldoen, daar is deze tooling voor neergezet.
+
+
+
+

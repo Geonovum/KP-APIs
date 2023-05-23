@@ -74,7 +74,7 @@ A simple spatial filter can be supplied as a bounding box. This is a common way 
   <p>Support the <a href="https://docs.ogc.org/is/17-069r4/17-069r4.html#_parameter_bbox">OGC API Features part 1 <code>bbox</code> query parameter</a> in conformance to the standard.</p> 
   <pre class="example">
     GET /api/v1/buildings?bbox=5.4,52.1,5.5,53.2</pre>
-  <p>Note that if a resource contains multiple geometries, it is up to the provider to decide if a single or multiple geometries are returned and that the provider shall clearly document this behavior.
+  <p>Note that if a resource contains multiple geometries, it is up to the provider to decide if geometries of type single geometry or type multiple geometry are returned and that the provider shall clearly document this behavior.
   </p>
   <p> The default spatial operator <code>intersects</code> is used to determine which resources are returned.
   </P>
@@ -88,14 +88,14 @@ A simple spatial filter can be supplied as a bounding box. This is a common way 
   </p>
   <h4 class="rulelab">How to test</h4>
   <ul>
-    <li>Issue an HTTP GET request to the API, including the <code>bbox</code> query parameter and using <a href="https://docs.geostandaarden.nl/api/API-strategie-modulen/API-strategie-mod-geo/#crs-negotiation">CRS Negotiation</a>.</li>
+    <li>Issue an HTTP GET request to the API, including the <code>bbox</code> query parameter and using <a href="https://docs.geostandaarden.nl/api/API-Strategie-mod-geo/#crs-negotiation">CRS Negotiation</a>.</li>
     <li>Validate that a response with status code 200 is returned.</li>
     <li>Verify that only features that have a spatial geometry that intersects the bounding box are returned as part of the result set.</li>
   </ul>
 </div>
 
 <aside class="note">
-Spatial operations like <code>intersects</code> and <code>within</code> in combination with a filter geometry (e.g. <code>bbox</code>) or resource geometry containing lines with a length > 200 m, may result in erroneous responses, see <a href="https://docs.geostandaarden.nl/crs/cv-hr-crs-20211125/#vormvastheid">vormvastheid</a> (Dutch).
+Spatial operations like <code>intersects</code> and <code>within</code> in combination with a filter geometry (e.g. <code>bbox</code>) or resource geometry containing long lines, may result in erroneous responses, since a straight line between two coordinates in a CRS is, depending on the CRS, not a straight line in reality. See the <a href="https://docs.geostandaarden.nl/crs/crs/#vormvastheid">explanation in the Handreiking CRS</a> (Dutch).
 </aside>
 
 <aside class="note">

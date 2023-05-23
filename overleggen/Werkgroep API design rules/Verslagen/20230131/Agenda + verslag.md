@@ -60,4 +60,4 @@ Besproken wordt hoe modules zich verhouden tot het normatieve deel. En hoe verpl
 Er zijn geen specifieke aandachtspunten vanuit de werkgroep voor de bijeenkomst van 3 februari
 
 7.  Rondvraag, nieuwe ontwikkelingen & wvttk
-Joost merkt op dat Kadaster en Geonoum samen werken aan de orchestratie van API's. HEt doel hiervan is dat API's beter gebruikt kunnen worden bij het bevragen van verschillende bronnen. Dit wordt vanuit de werkgroep gezien als een interessante ontwikkeling. 
+Joost merkt op dat Kadaster en Geonovum samen werken aan de orchestratie van API's. HEt doel hiervan is dat API's beter gebruikt kunnen worden bij het bevragen van verschillende bronnen. Dit wordt vanuit de werkgroep gezien als een interessante ontwikkeling. 

@@ -39,11 +39,12 @@ var respecConfig =
   //specStatus: "GN-CV",
   //specStatus: "GN-VV",
   specStatus: "GN-WV",
+  //specStatus: "GN-DEF",
   specType: "HR",
   pubDomain: "api",
-  //publishDate: "2023-04-14",
-  previousPublishDate: "2023-04-14",
-  previousMaturity: "GN-VV",
+  //publishDate: "2023-05-22",
+  previousPublishDate: "2023-05-22",
+  previousMaturity: "GN-DEF",
   edDraftURI: "https://geonovum.github.io/KP-APIs/API-strategie-modules/geospatial/",
   editors:
   [
