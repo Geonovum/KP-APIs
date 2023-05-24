@@ -42,11 +42,11 @@ Een toepassingsgebied (nog) niet van toepassing.
 Deze sectie beschrijft de status en uitgangspunten voor het Nederlands profiel OAuth. het profiel zelf is een op zichzelfstaand document.
 Het Nederlands profiel OAuth is hier te vinden:
 <!-- https://geonovum.github.io/KP-APIs-OAuthNL/#dutch-government-assurance-profile-for-oauth-2-0 -->
-https://publicatie.centrumvoorstandaarden.nl/api/oauth/static.html
+https://publicatie.centrumvoorstandaarden.nl/api/oauth/
 
-In aanvulling hierop is er een document dat de verschillen met iGOV kort samenvat en voorziet van rationales.
-<!-- https://github.com/Geonovum/KP-APIs-OAuthNL/blob/master/Additional%20specification%20and%20constraints%20of%20iGov-NL%20to%20the%20iGov%20profile.md -->
-https://github.com/Logius-standaarden/OAuth-NL-profiel/blob/master/Additional%20specification%20and%20constraints%20of%20iGov-NL%20to%20the%20iGov%20profile.md
+In aanvulling hierop is er een document dat de verschillen met iGOV kort samenvat en voorziet van rationales:
+
+[Additional specification and constraints of iGov-NL to the iGov profile](https://github.com/Logius-standaarden/OAuth-NL-profiel/blob/master/Additional%20specification%20and%20constraints%20of%20iGov-NL%20to%20the%20iGov%20profile.md)
 
 ### Oorsprong standaard
 
