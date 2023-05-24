@@ -5,8 +5,8 @@ const documentConfig = {
     specType: "HR",
     pubDomain: "api",
     shortName: "security",
-    publishDate: "2022-06-24",
-    publishVersion: "0.0.1",
+    publishDate: "2023-05-24",
+    publishVersion: "0.1.0",
     // previousPublishVersion: "(none)",
     //  previousPublishDate: "(none)",
     //  previousMaturity: "WV",
@@ -24,6 +24,11 @@ const documentConfig = {
                 name: "Kennisplatform API's",
                 company: "Kennisplatform API's",
                 companyURL: "https://github.com/Geonovum/KP-APIs",
+            }
+            {
+                name: "Martin van der Plas",
+                company: "Logius",
+                companyURL: "https://logius.nl",
             }
         ],
     github: "https://github.com/Geonovum/KP-APIs",
