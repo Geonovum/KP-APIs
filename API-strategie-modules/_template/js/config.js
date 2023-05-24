@@ -7,7 +7,7 @@ const documentConfig = {
     shortName: "template",
     publishDate: "2022-06-24",
     publishVersion: "0.0.1",
-    // previousPublishVersion: "(none)",
+    previousPublishVersion: "0.0.0",
     //  previousPublishDate: "(none)",
     //  previousMaturity: "WV",
     editors:
