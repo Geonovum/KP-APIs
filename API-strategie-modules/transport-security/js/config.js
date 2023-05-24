@@ -24,7 +24,7 @@ const documentConfig = {
                 name: "Kennisplatform API's",
                 company: "Kennisplatform API's",
                 companyURL: "https://github.com/Geonovum/KP-APIs",
-            }
+            },
             {
                 name: "Martin van der Plas",
                 company: "Logius",
