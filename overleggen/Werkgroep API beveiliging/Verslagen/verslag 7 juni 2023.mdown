@@ -1,0 +1,59 @@
+# Werkgroep Beveiliging
+
+**Datum:** 7-6-2023
+
+**Aanwezig:** 
+Frank Terpstra (Geonovum)
+Ronald Coenen (Tilburg)
+Alexander Green (Logius)
+Geri Wolters (Ecosys/Digitale delta)
+Remco Schaar (Logius)
+Edward van Gelderen (VNG)
+Andre van de Nouweland (Den Haag)
+Erwin Reinhoud (Kennisnet)
+Peter Haasnoot (Logius)
+Edwin Wisse (Logius)
+Ro Elizabeth (KvK)
+Martin van der Plas (Logius)
+Jan Jaap Zoutendijk - Erdin (Ilionx/Geonovum)
+Heiko Hudig (Politie)
+Henk van Maanen (Rinis)
+
+
+**verslag vorige keer**
+geen opmerkingen op het verslag
+
+**signing & encryptie**
+Afgelopen maandag in klein commitee gesproken over toepassing HTTPbis message siging toepassing. Gebruikt voor ondertekenen twee attributen. Bibliotheek zelf geimplementeerd omdat ze niet tevreden waren over bestaande bibliotheken.
+Eenvoudige toepassing van de standaard, bijvoorbeeld onderhandelen over welke attributen te onderteken. Integriteit bij messaging is de usecase. Met ondertekende procesID kon nagegaan worden of gevraagde operatie toegestaan is.
+
+**Federated service connectivity standaard**
+ (toelichting door VNG) https://commonground.gitlab.io/standards/fsc/
+Zie presentatie in bijlage
+NLX is niet meer voorzien als verplichte software maar als voorbeeld implementatie van een standaard.
+Standaar opgeschreven als internationale standaard. 
+Mogelijk komt er een Nederlands profiel waar een aantal rollen worden ingevuld
+Waarom wordt Dynamic client registration dmv software IDs niet toegepast? Komt edward op terug
+https://www.rfc-editor.org/rfc/rfc7591 , https://openid.net/specs/openid-connect-registration-1_0.html
+Hoe wordt de token gevalideerd? 
+Alle connecties tussen manager en gateway en tussen gateways is mTLS. Interne beveiliging binnen IT landschap consumer en provider is een aandachtspunt, daar zegt de standaard nu niets over.
+Alle cerficaten zijn van zelfde trustanchor.
+
+Logging: Wat zijn de eisen voor de logging waar je een oplossing voor bouwt? Je komt met deze oplossing tot een bepaald niveau, maar afhankelijk van je functionele eisen. Afhankelijk van de use case heb je verschillende eisen en wil je misschien ook signing gaan toepassen. Je legt je nu op één set van maatregelen vast dus dat beperkt de usecases. Nog niet voorziene usecases voorzien extra exenties of uitbreiding bestaande extensie.
+Waar begint audit en waar eindigt technische logging. Binnen FSC transactie logging, dit is een bouwsteen die je vervolgens kan verwerken in auditlogging. Dit op elkaar afstemmen vereist aanvullende afspraken bijvoorbeeld over bewaartermijnen. Of deze additionele afspraken binnen FSC moeten worden opgenomen is een uitzoekpunt. 
+Advies: neem op in profiel om bewaartermijnen vast te leggen afhankelijk van je context, evt. met minimum.
+
+delegation: Niet in alle contexten nodig om alle 3 partijen contract te laten tekenen.
+In australië en openbanking wordt dit met dynamic clientregistration opgelost https://consumerdatastandardsaustralia.github.io/register/#ecosystem-entities
+
+**voortgang client credentials flow**
+Voortgang Client credentials flow en token exchange in NL profile OAuth (uitkomst schrijfmiddag 24 mei)
+We hebben een aantal usecases beschreven https://github.com/Logius-standaarden/OAuth-NL-profiel/tree/develop/Use-cases deze kunnen in de inleiding van de standaard en een apart inleidend document gebruikt worden om helder te maken wat OAuth is en waarvoor je het gebruikt. Actie voor volgende keer dit inleidend document maken en voorleggen.
+
+**Testbaarheid modules transport security en access control**
+Ronald, Jan Jaap, Ro, Martin en Frank doen graag mee met schrijven van testen we plannen daarvoor over een paar weken een meeting in. 
+
+
+
+
+
