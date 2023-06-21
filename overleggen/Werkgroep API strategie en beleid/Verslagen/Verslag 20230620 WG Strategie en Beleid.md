@@ -42,7 +42,7 @@ In de intentieverklaring staat dat je standaarden gebruikt. Het feit dat het op 
 ***Redouan***:
 Het Kadaster heeft het wel getekend. 
 
-****Gino***:
+***Gino***:
 Wij gebruiken E-delivery als koppelvlak. 
 
 ***Edwin***:
