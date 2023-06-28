@@ -10,8 +10,9 @@ Een aantal beleidsdoelen waarin API's een rol kunnen spelen (met het voor API's 
 * Transparante overheid. In het kader van de Wet Open Overheid wil de overheid ondermeer _hergebruik van open data_ stimuleren. Zie ook Open Data Directive van de EU.
 * [Digitale inclusie](https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/digitale-inclusie/) Door gegevens _via een API first strategie_ openbaar te maken kunnen gedifferentieerde gebruikersinterfaces die voor minder digitaal vaardige burgers bruikbaar zijn.  
 * [Datagedreven werken](https://www.rijksoverheid.nl/documenten/rapporten/2019/07/31/data-gedreven-werken-wat-is-er-voor-nodig)
-* De [Interbestuurlijke Data Strategie (IBDS)](https://realisatieibds.pleio.nl/) is het resultaat van nauwe samenwerking tussen departementen, uitvoeringsorganisaties en koepels van medeoverheden. Het programma zorgt ervoor dat het makkelijker wordt om binnen de overheid verantwoord met data te werken. 
+* De [Interbestuurlijke Data Strategie (IBDS)](https://realisatieibds.pleio.nl/) is het resultaat van nauwe samenwerking tussen departementen, uitvoeringsorganisaties en koepels van medeoverheden. Het programma zorgt ervoor dat het makkelijker wordt om binnen de overheid verantwoord met data te werken. Eeen van de speerpunten van het IBDS is het ontwikkelen van overheidsbrede systeemfuncties waaronder een federatief datastelsel waarmee data beter vindbaar en technisch uitwisselbaar wordt.
 * [EU Data Act](https://digital-strategy.ec.europa.eu/en/policies/data-act)
+
 
 ## API first
 Tot de omgeving van een publieke organisatie hoort iedereen die interactie heeft of wil hebben met een publieke organisatie. Burger, bedrijf, ketenpartner of andere organisaties uit de publieke sector. 
