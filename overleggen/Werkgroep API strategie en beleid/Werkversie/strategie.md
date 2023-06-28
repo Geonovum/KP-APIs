@@ -1,4 +1,5 @@
-# Strategie
+# Strategie van het Kennisplatform
+
 De strategie heeft vier hoofdonderwerpen:
 
 * De focus van het Kennisplatform API’s ligt op de standaardisatie “hoe” je een API gebruikt in plaats van “waarvoor” je een API gebruikt. Het gaat ons niet om de inhoud van de data, maar om alles daaromheen.
@@ -9,5 +10,15 @@ De strategie heeft vier hoofdonderwerpen:
 
 * Het Kennisplatform API’s jaagt standaardisatie van het gebruik van API's actief aan door inhoudelijke uitdagingen te agenderen waar nodig, zoals in IBDS (zoals bij de Innovatielabs, daar heeft het Kennisplatform API’s een community in de aanbieding), expertgroepen en consultaties van het Forum en dergelijke. Het Kennisplatform API's doet dit met leden die ambassadeurs zijn voor het Kennisplatform API's en op eigen titel in andere initiatieven.
 
-
 Hoe geven we handen en voeten aan deze uitgangspunten? Het voorstel is dit ook op te halen in een workshop tijdens de fysieke bijeenkomst van het Kennisplatform API’s op 11 mei.
+
+# API strategie voor de overheid
+
+* Beleidsdoelen. Om de beleidsdoelen voor de Digitale Overheid haalbaar te maken passen we API koppelvlakken toe. Een aantal beleidsdoelen waarin API's kunne helpen zijn:
+  * Informatiehuishouding op orde
+  * Regie op gegevens. HIerbij is het doel om burgers en bedrijven te ondersteunen bij regie op hun gegevens, die door de overheid verzameld en gebruikt worden. (zie [Regie op gegevens](zie https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/regie-op-gegevens/)). Dit resulteert in een sector-verstijgend kader dat veilige, betrouwbare en gebruiksvriendelijke digitale uitwisseling van gegevens tussen overheden, private en maatschappelijke organisaties mogelijk maakt. Veiligheid en betrouwbare gegevensuitwisseling kan worden gewaarborgd door toepassing van de API Design Rules. 
+  * Transparante overheid
+  * digitale inclusiviteit
+  * Dtaagedreven werken 
+* Omgeving
+* Vindbaarheid
