@@ -10,8 +10,10 @@ Een aantal beleidsdoelen waarin API's een rol kunnen spelen (met het voor API's 
 * Transparante overheid. In het kader van de Wet Open Overheid wil de overheid ondermeer _hergebruik van open data_ stimuleren. Zie ook Open Data Directive van de EU.
 * [Digitale inclusie](https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/digitale-inclusie/) Door gegevens _via een API first strategie_ openbaar te maken kunnen gedifferentieerde gebruikersinterfaces die voor minder digitaal vaardige burgers bruikbaar zijn.  
 * [Datagedreven werken](https://www.rijksoverheid.nl/documenten/rapporten/2019/07/31/data-gedreven-werken-wat-is-er-voor-nodig)
-* De [Interbestuurlijke Data Strategie (IBDS)](https://realisatieibds.pleio.nl/) is het resultaat van nauwe samenwerking tussen departementen, uitvoeringsorganisaties en koepels van medeoverheden. Het programma zorgt ervoor dat het makkelijker wordt om binnen de overheid verantwoord met data te werken. Eeen van de speerpunten van het IBDS is het ontwikkelen van overheidsbrede systeemfuncties waaronder een federatief datastelsel waarmee data beter vindbaar en technisch uitwisselbaar wordt.
+* De [Interbestuurlijke Data Strategie (IBDS)](https://realisatieibds.pleio.nl/) is het resultaat van nauwe samenwerking tussen departementen, uitvoeringsorganisaties en koepels van medeoverheden. Het programma zorgt ervoor dat het makkelijker wordt om binnen de overheid verantwoord met data te werken. Eeen van de speerpunten van het IBDS is het ontwikkelen van overheidsbrede systeemfuncties waaronder een federatief datastelsel waarmee data beter _vindbaar en technisch uitwisselbaar_ wordt.
 * [EU Data Act](https://digital-strategy.ec.europa.eu/en/policies/data-act)
+
+Voor al deze beleidsdoelen geldt dat API's er een rol in kunnen spelen maar dat de API Design Rules er nog niet altijd in beeld zijn.
 
 ## Omgeving
 De omgeving van een organisatie uit de publieke sector is al jaren bekend met APIs en de toepassing ervan. Zo herkent iedere burger hoe eenvoudige verschillende platforms uit de platform economie (Google Amazon Linkedin Meta) eenvoudig elkaars functionaliteit integreren. Denk aan de store in store concepten op bij grote online retailers, knoppen om informatie te delen op je favoriete sociale medium. 
