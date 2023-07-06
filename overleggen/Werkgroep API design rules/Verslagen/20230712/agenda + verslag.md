@@ -29,7 +29,8 @@ Testbaarheid
 API-scores verhogen
 
 7. Openstaande vragen/verzoeken over bestaande API-designrules:
-   1. API-03  
+   1. API-03
+   2. Voorschrijven ontsluiten landingspagina zonder autorisatie
    
 8. Rondvraag, nieuwe ontwikkelingen & wvttk
  
