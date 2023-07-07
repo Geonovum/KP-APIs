@@ -11,22 +11,22 @@ Agenda en Verslag van de Werkgroep API Design Rules 12 juli 2023 - Online overle
 1. Opening, welkom en (voor zover) nodig voorstelrondje
    
 2. Mededelingen
-Geo-module vastgesteld 
+   1. Geo-module vastgesteld 
 
 3. Update wijzigingen normatieve deel API-designrules
 
 4. Update modulaire opbouw designrules
-Aankondiging versie 2.0
-Beheer nieuwe opzet
+   1. Aankondiging versie 2.0
+   2. Beheer nieuwe opzet
 
 5. Subwerkgroepen
-orchestratie-API
-Filtering 
-beheer en governance - mandaat Kennisplatform
+   1. orchestratie-API
+   2. Filtering 
+   3. beheer en governance - mandaat Kennisplatform
 
 6. Ontwikkelingen Developer.overheid.nl
-Testbaarheid
-API-scores verhogen
+   1. Testbaarheid
+   2. API-scores verhogen
 
 7. Openstaande vragen/verzoeken over bestaande API-designrules:
    1. API-03
