@@ -14,10 +14,14 @@ Agenda en Verslag van de Werkgroep API Design Rules 12 juli 2023 - Online overle
    1. Geo-module vastgesteld 
 
 3. Update wijzigingen normatieve deel API-designrules
+   1.	Aankondiging API Design Rules 2.0 
+   2.	De tijdslijn en mijlpalen voor de API Design Rules 2.0
+   3.	Overzicht van de huidige RFC’s en bijbehorende status
+   4.	Verzoek om te participeren / feedback te geven binnen de werkgroep
+   5.	Plannen vervolgoverleg voor vaststelling wijzigingen.
 
 4. Update modulaire opbouw designrules
-   1. Aankondiging versie 2.0
-   2. Beheer nieuwe opzet
+   1. Beheer nieuwe opzet
 
 5. Subwerkgroepen
    1. orchestratie-API
