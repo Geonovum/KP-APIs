@@ -27,7 +27,7 @@ In dit hoofdstuk wordt specifiek ingegaan op de 'aanbod kant': het onderdeel 'Di
 Overheidsorganisaties bieden diensten aan Burgers, Bedrijven en andere Overheidsorganisaties.
 Onderstaande figuur geeft de dienstverlening middels API's aan de verschillende partijen grafisch weer.
 
-![alt text](https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20API%20architectuur/uitwerkingen/media/API-arch-v22.png)
+![alt text](https://github.com/Geonovum/KP-APIs/raw/master/overleggen/Werkgroep%20API%20architectuur/uitwerkingen/media/API-arch-v22.png)
 Figuur 2: API Diensten voor Burgers, Bedrijven en Overheden
 
 *Toelichting*
@@ -65,7 +65,7 @@ Een organisatie heeft verschillende soorten API's:
 Een overheidsorganisatie ontsluit zijn diensten naar andere overheidsorganisaties, naar bedrijven/private organisaties en naar burgers.
 
 In onderstaande figuur wordt dit visueel weergegeven.
-![alt text](https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20API%20architectuur/uitwerkingen/media/govapi.png)
+![alt text](https://github.com/Geonovum/KP-APIs/raw/master/overleggen/Werkgroep%20API%20architectuur/uitwerkingen/media/govapi.png)
 Figuur 3 : Soorten API's
 
 *Afkortingen*:
@@ -118,7 +118,7 @@ In onderstaand voorbeeld is dit:
 - Met toegangsbeperking
 - Met doelbinding
 
-![](https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20API%20architectuur/uitwerkingen/media/api-virt.png)
+![](https://github.com/Geonovum/KP-APIs/raw/master/overleggen/Werkgroep%20API%20architectuur/uitwerkingen/media/api-virt.png)
 
 ### API Language styles
 
@@ -463,7 +463,7 @@ Via een API ontsluit een applicatie data en functionaliteit. Hierbij helpt het o
 
 Het Resource Model is als het ware een logische view op het achterliggende Data Model.
 
-![alt text](https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20API%20architectuur/uitwerkingen/media/API-Informatiemodel.png)
+![alt text](https://github.com/Geonovum/KP-APIs/raw/master/overleggen/Werkgroep%20API%20architectuur/uitwerkingen/media/API-Informatiemodel.png)
 
 Figuur 6: Resource Model
 
@@ -485,7 +485,7 @@ Voor complexe Domeinen of gecombineerde Diensten waarbij meerdere bronnen worden
 
 Het Resource Model als logische view op achterliggende datamodellen heeft ook als voordeel dat op de laag van het Resource Model al integratie van data modellen kan plaatsvinden nog voordat de achterliggende modellen zijn aangepast of volledig geïntegreerd. Een (nieuw) geïntegreerd Resource model over meerdere achterliggende datamodellen heen kan zo databronnen integreren en aanbieden. Met behulp van een geïntegreerd resourcemodel op het niveau van API's kan sneller gestandaardiseerd worden en kan men ook sneller innoveren.
 
-![alt text](https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20API%20architectuur/uitwerkingen/media/API-Infomodel2.png)
+![alt text](https://github.com/Geonovum/KP-APIs/raw/master/overleggen/Werkgroep%20API%20architectuur/uitwerkingen/media/API-Infomodel2.png)
 
 Figuur 7: Geïntegreerd Resource Model
 
@@ -533,7 +533,7 @@ Aan vertrouwelijkheid gerelateerde API capabilities zijn *Caching*, *Analytics*,
 
 Onderstaande afbeelding geeft een overzicht van standaard componenten in een API architectuur. Deze sectie beschrijft de aan API beveiliging gerelateerde componenten in dit diagram.
 
-![API Security Architectuur diagram](https://github.com/Geonovum/KP-APIs/raw/master/Werkgroep%20API%20architectuur/uitwerkingen/media/api-security-architecture.png)
+![API Security Architectuur diagram](https://github.com/Geonovum/KP-APIs/raw/master/overleggen/Werkgroep%20API%20architectuur/uitwerkingen/media/api-security-architecture.png)
 
 Figuur 8: API Security
 
