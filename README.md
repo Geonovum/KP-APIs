@@ -22,7 +22,7 @@ De verschillende onderdelen van de NL API Strategie bevat de volgende documenten
 | Aanvullende module     | [API Transport Security module](https://geonovum.github.io/KP-APIs/API-strategie-modules/transport-security/)    | Stabiel (Werkgroep Kennisplatform)| 11-07-2023        |
 | Aanvullende module     | [API Access control module](https://geonovum.github.io/KP-APIs/API-strategie-modules/access-control/)            | Stabiel (Werkgroep Kennisplatform)| 11-07-2023        |
 | Aanvullende module     | [API Naming conventions module](https://geonovum.github.io/KP-APIs/API-strategie-modules/naming-conventions/)    | Stabiel (Werkgroep Kennisplatform)| 12-07-2023        |
-| Aanvullende module     | [APIHypermedia module](https://geonovum.github.io/KP-APIs/API-strategie-modules/hypermedia/)                     | Stabiel (Werkgroep Kennisplatform)| 12-07-2023        |
+| Aanvullende module     | [API Hypermedia module](https://geonovum.github.io/KP-APIs/API-strategie-modules/hypermedia/)                    | Stabiel (Werkgroep Kennisplatform)| 12-07-2023        |
 
 ## Folders
 
