@@ -53,7 +53,7 @@ Een voorstelrondje blijkt niet nodig te zijn.
    1. API-03
    - Omdat Mark Strijker niet aanwezig is, schuift dit agendapunt door naar een volgend overleg. 
    2. Voorschrijven ontsluiten landingspagina zonder autorisatie
-   - Duidelijk wordt dat er geen Productowner van de issues is wat prioritering van wensen en het daadwerkelijk oppakken daarvan ingewikkeld maakt. Pieter maakt hiervan een issue aan en dan gaan we kijken hoe het vervolgproces verloopt. 
+   - Duidelijk wordt dat er geen Productowner van de issues is wat prioritering van wensen en het daadwerkelijk oppakken daarvan ingewikkeld maakt. Pieter maakt hiervan een issue aan en dan gaan we kijken hoe het vervolgproces verloopt. (red: zie: https://github.com/Geonovum/KP-APIs/issues/604) 
    
 8. Rondvraag, nieuwe ontwikkelingen & wvttk
    - Geen punten. 
