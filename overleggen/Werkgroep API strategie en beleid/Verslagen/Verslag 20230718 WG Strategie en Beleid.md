@@ -10,7 +10,7 @@ Dolf Daal (IHW), Redouan Ahaloui (Forum Standaardisatie / Kennisplatform APIs)
 ## Samenvatting notulen
 
 Blok 1: Strategie
--	Klik [hier] (https://github.com/Geonovum/KP-APIs/blob/strategie-werktekst/overleggen/Werkgroep%20API%20strategie%20en%20beleid/Werkversie/strategie-overheid.md) voor de strategie. 
+-	Klik [hier](https://github.com/Geonovum/KP-APIs/blob/strategie-werktekst/overleggen/Werkgroep%20API%20strategie%20en%20beleid/Werkversie/strategie-overheid.md) voor de strategie. 
 
 Nieuwe sessie
 -	Dinsdag 12 september van 15:00 tot 16:00.
