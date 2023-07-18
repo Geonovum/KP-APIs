@@ -2,7 +2,7 @@
 Verslag van de virtuele bijeekomst van **18 juli 2023**
 
 ## Aanwezig
-Gino Laan (Stichting RINIS), Theo Peters (VNG), Frans Smit (Belastingdienst), Sophie Makhlouf (Kennisplatform APIs) 
+Gino Laan (Stichting RINIS), Theo Peters (VNG), Marcel Krassenburg (MKIdee), Edwin Wisse (Logius), Frank Terpstra (Kennisplatform APIs), Frans Smit (Belastingdienst), Sophie Makhlouf (Kennisplatform APIs), Paul Dam (Kennisplatform APIs) 
 
 ## Afwezig
 Dolf Daal (IHW), Redouan Ahaloui (Forum Standaardisatie / Kennisplatform APIs)
