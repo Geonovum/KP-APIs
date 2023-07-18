@@ -10,7 +10,7 @@ Dolf Daal (IHW), Redouan Ahaloui (Forum Standaardisatie / Kennisplatform APIs)
 ## Samenvatting notulen
 
 Blok 1: Strategie
--	Klik hier voor de strategie. 
+-	Klik [hier] (https://github.com/Geonovum/KP-APIs/blob/strategie-werktekst/overleggen/Werkgroep%20API%20strategie%20en%20beleid/Werkversie/strategie-overheid.md) voor de strategie. 
 
 Nieuwe sessie
 -	Dinsdag 12 september van 15:00 tot 16:00.
@@ -90,5 +90,4 @@ Paul Dam: Je moet het wel laden met wat we dan verwachten. Hoe we het concreter 
 
 Marcel Krassenburg: Gebaseerd op de ADR, en op een goed datamodel, en goede definities. 
 
-Frank Terpstra: Vrijdag stuur ik aan deze groep rond wat ik heb. En een vervolgactie inplannen met Paul. 
-![image](https://github.com/Geonovum/KP-APIs/assets/82813567/268543e4-0567-43bf-9484-f923a24b45b0)
+Frank Terpstra: Vrijdag stuur ik aan deze groep rond wat ik heb. En een vervolgactie inplannen met Paul.
