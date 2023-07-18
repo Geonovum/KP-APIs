@@ -1,6 +1,13 @@
-Werkgroep S&B sessie 18/7 14:00 – 15:00
+# Werkgroep API Strategie en Beleid  sessie 18/7 14:00 – 15:00
+Verslag van de virtuele bijeekomst van **18 juli 2023**
 
-Samenvatting notulen
+## Aanwezig
+Gino Laan (Stichting RINIS), Theo Peters (VNG), Frans Smit (Belastingdienst), Sophie Makhlouf (Kennisplatform APIs) 
+
+## Afwezig
+Dolf Daal (IHW), Redouan Ahaloui (Forum Standaardisatie / Kennisplatform APIs)
+
+## Samenvatting notulen
 
 Blok 1: Strategie
 -	Klik hier voor de strategie. 
@@ -9,9 +16,9 @@ Nieuwe sessie
 -	Dinsdag 12 september van 15:00 tot 16:00.
 
 
-Uitgebreide notulen
+# Uitgebreide notulen
 
-Blok 1: STRATEGIE
+## Blok 1: STRATEGIE
 
 Edwin Wisse: Allereerst zijn de beleidsdoelen op een rijtje gezet met de links erbij. 
 
