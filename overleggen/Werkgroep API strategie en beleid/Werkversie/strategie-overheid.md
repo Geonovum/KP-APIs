@@ -46,7 +46,7 @@ Het volgen van standaarden als REST API design rules is in het belang van de kos
 Je staat als organisatie in de publieke sector in de uitvoering nooit alleen. Je maakt de functionaliteit niet alleen, je werkt altijd in een keten met andere overheden en niet overheden. De kern van de samenwerking zit voor een significant deel in de koppeling. Daarom is het op een uniforme manier aanpakken van de APIs die daar invulling aan geven van belang. Als organisatie in de publieke sector deel je kennis over hoe je dat doet met de hele publieke sector en maakt waar mogelijk hergebruik van wat anderen al hebben gemaakt. Voor APIs doen we dat binnen het kennisplatform APIs. Daar maken we standaarden en best practices die we met elkaar delen. Het gaat hier om standaarden voor uniformiteit, en interoperabiliteit van APIs, maar ook voor over onwterpkeuzes binnen APIs, voor de IT architectuur waarbinnen ze gebruikt worden als ook over de vindtbaarheid van APIs. We streven ernaar deze binnen bestaande gremia zoals de lijst verplichte standaarden van het forum standaardisatie voor standaarden en de NORA voor architectuur vast te stellen.
 
 
-## Actie 3: Zorg dat APIs vindbaar zijn.
+## Actie 3: Zorg dat APIs vindbaar zijn
 Het is niet alleen belangrijk om APIs aan te bieden, ze moeten ook door de omgeving gevonden kunnen worden. 
 Het is belangrijk om een balans te vinden tussen vindbaarheid en vereiste inspanning om alle publieke informatie op verschillende plekken actueel te houden.
 Vindbaarheid verhoog je door het voor makers van APIs zo laagdrempelig mogelijk te maken om APIs te publiceren. 
