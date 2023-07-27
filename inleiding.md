@@ -14,7 +14,10 @@ De genoemde auteurs zijn de trekkers van de werkgroepen zoals API Strategie, Arc
 ## Leeswijzer
 
 De API strategie bestaat uit een een inleidend document, verschillende normatieve documenten (NL GOV standaarden) en meerdere modulen die voor verschillende functionele of technische situaties kunnen worden ingezet. Een actueel overzicht van alle documenten is weergegeven in de onderstaande infographic:
-![NL API Strategie Infographic](https://raw.githubusercontent.com/Geonovum/KP-APIs/a0ee2f718777eb333a4e625edb1e8ce1387b51d3/media/API_infographic.svg)
+<figure>
+  <object data="https://geonovum.github.io/KP-APIs/media/API_infographic.svg" type="image/svg+xml" id="infographic"></object>
+  <figcaption>NL API Strategie Infographic</figcaption>
+</figure>
 
 De verschillende onderdelen van de NL API Strategie bevat de volgende documenten:
 
