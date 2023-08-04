@@ -141,8 +141,9 @@ Usage of the Client Credential method with OAuth is RECOMMENDED over direct auth
 
 It is RECOMMENDED to use token-based access to APIs. REST APIs SHOULD NOT maintain session state on the server. The authentication and authorization of a request SHOULD NOT depend on sessions. Instead, a token has to be sent with each request.
 
-<div class="rule" id="api-13">
-  <p class="rulelab"><strong>API-13</strong>: Accept tokens as HTTP headers only</p>
+<span id="api-13"></span>
+<div class="rule" id="/access-control/tokens-headers-only">
+  <p class="rulelab"><strong>/access-control/tokens-headers-only</strong>: Accept tokens as HTTP headers only</p>
   <p>There is an inherent security issue when passing tokens as a query parameter, because most Web servers store query parameters in the server logs.</p>
 </div>
 
@@ -155,14 +156,24 @@ Using tokens, a distinction is made between authorized and non-authorized servic
 
 In case the proper headers are not sent, then there are no authentication details available and a status error code `403 Forbidden` is returned.
 
-<div class="rule" id="api-52">
-  <p class="rulelab"><strong>API-52</strong>: Use OAuth 2.0 for authorization with rights delegation</p>
+**How to test**
+Testing is conditional on a correct Open API Specification(OAS) being present as well as an access token being provided by the API provider to the test client. If this is the case an automated test client can test if the access control method works according to this rule and the method specified in the OAS spec is indeed implemented. Negative tests are out of scope as there are to many variables to account for when testing other (not allowed) methods for providing tokens.
+
+<span id="api-52"></span>
+<div class="rule" id="/access-control/OAuth">
+  <p class="rulelab"><strong>="/access-control/OAuth</strong>: Use OAuth 2.0 for authorization with rights delegation</p>
   <p>This is in line with the way the OAuth standard appears on the comply or explain list of Forum Standaardisatie.</p>
 </div>
+
+**How to test**
+Any test is conditional upon the API provider informing the test client in some way that rights delegation is applicable. IF this is the case the test client can identify if the endpoints required by NL GOV Assurance profile for OAuth 2.0 are present and active. A full compliance test of this profile is out of scope for this module.
+
+### Specifications for authorization methods
 
 See also [The NL GOV Assurance profile for OAuth 2.0](https://publicatie.centrumvoorstandaarden.nl/api/oauth/) for further explanation of the applicaton of OAuth.
 
 The [Digikoppeling standard](https://publicatie.centrumvoorstandaarden.nl/dk/actueel/) currently has a [RESTful API profile in development](https://centrumvoorstandaarden.github.io/DigikoppelingRestfulApiProfiel/) that specifies how to use PKIOverheid x.509 certificates for authorization.
+
 
 ### Authorization errors
 
