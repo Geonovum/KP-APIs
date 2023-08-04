@@ -13,16 +13,18 @@ Note: security controls for signing and encrypting of application level messages
 ## Transport security
 One should secure all APIs assuming they can be accessed from any location on the internet. Information MUST be exchanged over TLS-based secured connections. No exceptions, so everywhere and always. This is [required by law](https://wetten.overheid.nl/BWBR0048156/2023-07-01). One SHOULD follow [the latest NCSC guidelines for TLS](https://english.ncsc.nl/publications/publications/2021/january/19/it-security-guidelines-for-transport-layer-security-2.1)
 
-<div class="rule" id="api-11">
-  <p class="rulelab"><strong>API-11</strong>: Secure connections using TLS</p>
+<span id="api-11"></span>
+<div class="rule" id="/transport/TLS">
+  <p class="rulelab"><strong>/transport/TLS</strong>: Secure connections using TLS</p>
   <p>Secure connections using TLS following the latest NCSC guidelines [[NCSC.TLS]].</p>
   <p>Since the connection is always secured, the access method can be straightforward. This allows the application of basic access tokens instead of encrypted access tokens.</p>
 </div>
 
 Even when using TLS-based secured connections information in URIs is not secured. URIs can be cached and logged outside of the servers controlled by clients and servers. Any information contained in them should therfor be considered readable by anyone with access to the netwerk being used (in case of the internet the whole world) and MUST NOT contain any sensitive information. Neither client secrets used for authentication, privacy sensitive informations suchs as BSNs nor any other information which should not be shared. Be aware that queries (anything after the '?' in a URI) are also part of an URI.
 
-<div class="rule" id="api-58">
-  <p class="rulelab"><strong>API-58</strong>: No sensitive information in URIs</p>
+<span id="api-58"></span>
+<div class="rule" id="/transport/no-sensitive-URIs">
+  <p class="rulelab"><strong>/transport/no-sensitive-URIs</strong>: No sensitive information in URIs</p>
   <p>Do not put any sensitive information in URIs</p>
   <p>Even when the connection is secure URIs can be cached and logged, in systems outside the control of client and/or server.</p>
 </div>
@@ -50,8 +52,8 @@ System-to-system (sometimes called machine-to-machine) may have a need for the l
 
 ### Security Headers
 
-<div class="rule" id="security-headers">
-  <p class="rulelab"><strong>security-headers</strong>: Use mandatory security headers in API all responses</p>
+<div class="rule" id="/transport/security-headers">
+  <p class="rulelab"><strong>/transport/security-headers</strong>: Use mandatory security headers in API all responses</p>
   <p>Return API security headers in all server responses to instruct the client to act in a secure manner</p>
 </div>
 
@@ -84,8 +86,9 @@ The precense of the mandatory security headers can be tested in an automated way
 
 ### CORS-policy
 
-<div class="rule" id="api-50">
-  <p class="rulelab"><strong>API-50</strong>: Use CORS to control access</p>
+<span id="api-50"></span>
+<div class="rule" id="/transport/CORS">
+  <p class="rulelab"><strong>/transport/CORS</strong>: Use CORS to control access</p>
   <p>Use CORS to restrict access from other domains (if applicable).</p>
 </div>
 
