@@ -1,6 +1,6 @@
 const organisationConfig = {
     // nl_organisationName is used in the header (and Sotd)
-    nl_organisationName: "Kennisplatofrm API's",
+    nl_organisationName: "Kennisplatform API's",
 
     // this url points to the folder where organsation specific css files are stored
     // defaults to https://tools.geostandaarden.nl/respec/style/ if not set
