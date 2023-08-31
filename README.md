@@ -5,10 +5,7 @@ Hier vind je ook de mogelijkheid je aan te melden voor de werkgroepen, het slack
 
 De API strategie bestaat uit een een inleidend document, verschillende normatieve documenten (NL GOV standaarden) en meerdere modulen die voor verschillende functionele of technische situaties kunnen worden ingezet. Een actueel overzicht van alle documenten is weergegeven in de onderstaande infographic:
 
-<figure>
-  <object data="https://geonovum.github.io/KP-APIs/media/API_infographic.svg" type="image/svg+xml" id="infographic"></object>
-  <figcaption>NL API Strategie Infographic</figcaption>
-</figure>
+[![NL API Strategie Infographic](/media/API_infographic.svg)](https://geonovum.github.io/KP-APIs/API-strategie-algemeen/Inleiding/#infographic)
 
 De verschillende onderdelen van de NL API Strategie bevat de volgende documenten:
 
