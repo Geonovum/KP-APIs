@@ -26,12 +26,15 @@ De verschillende onderdelen van de NL API Strategie bevat de volgende documenten
 | Algemeen               | [Inleiding NL API Strategie](https://geonovum.github.io/KP-APIs/API-strategie-algemeen/Inleiding/)               | Vastgesteld (door Kennisplatform) | 09-03-2022        |
 | Algemeen               | [Architectuur NL API Strategie](https://geonovum.github.io/KP-APIs/API-strategie-algemeen/Architectuur/)         | Vastgesteld (door Kennisplatform) | 09-03-2022        |
 | Algemeen               | [Gebruikerswensen NL API Strategie](https://geonovum.github.io/KP-APIs/API-strategie-algemeen/Gebruikerswensen/) | Vastgesteld (door Kennisplatform) | 09-03-2022        |
-| Normatieve standaard   | [API Design Rules (ADR)](https://publicatie.centrumvoorstandaarden.nl/api/adr/)                                  | Verplicht (pas toe leg uit)       | 09-07-2020 v1.0.0 |
-| Normatieve standaard   | [Open API Specification (OAS)](https://forumstandaardisatie.nl/open-standaarden/openapi-specification)           | Verplicht (pas toe leg uit)       | 25-05-2018 v3.0.0 |
-| Normatieve standaard   | [NL GOV OAuth profiel](https://publicatie.centrumvoorstandaarden.nl/api/oauth/)                                  | Verplicht (pas toe leg uit)       | 09-07-2020 v1.0.0 |
-| Normatieve standaard   | [Digikoppeling REST API koppelvlak specificatie](https://publicatie.centrumvoorstandaarden.nl/dk/restapi/)       | Verplicht (pas toe leg uit)       | 14-11-2022 v1.1.1 |
+| Normatieve standaard   | [API Design Rules (ADR)](https://gitdocumentatie.logius.nl/publicatie/api/adr/)                                  | Verplicht (pas toe leg uit)       | 09-07-2020 v1.0.0 |
+| Verplichte standaard   | [Open API Specification (OAS)](https://forumstandaardisatie.nl/open-standaarden/openapi-specification)           | Verplicht (pas toe leg uit)       | 25-05-2018 v3.0.0 |
+| Normatieve standaard   | [NL GOV OAuth profiel](https://gitdocumentatie.logius.nl/publicatie/api/oauth/)                                  | Verplicht (pas toe leg uit)       | 09-07-2020 v1.0.0 |
+| Voorgestelde standaard | [NL GOV OpenID Connect profile](https://logius.gitlab.io/oidc/)                                                  | Bijna Verplicht* (pas toe leg uit)| 18-02-2021 v1.0.0 |
+| Verplichte standaard   | [Digikoppeling REST API koppelvlak specificatie](https://gitdocumentatie.logius.nl/publicatie/dk/restapi/)       | Verplicht (pas toe leg uit)       | 14-11-2022 v1.1.1 |
 | Aanvullende module     | [API Geospatial Design Rules module](https://docs.geostandaarden.nl/api/API-Strategie-mod-geo/)                  | Vastgesteld (door Kennisplatform) | 23-05-2023        |
 | Aanvullende module     | [API Transport Security module](https://geonovum.github.io/KP-APIs/API-strategie-modules/transport-security/)    | Stabiel (Werkgroep Kennisplatform)| 11-07-2023        |
 | Aanvullende module     | [API Access control module](https://geonovum.github.io/KP-APIs/API-strategie-modules/access-control/)            | Stabiel (Werkgroep Kennisplatform)| 11-07-2023        |
 | Aanvullende module     | [API Naming conventions module](https://geonovum.github.io/KP-APIs/API-strategie-modules/naming-conventions/)    | Stabiel (Werkgroep Kennisplatform)| 12-07-2023        |
 | Aanvullende module     | [API Hypermedia module](https://geonovum.github.io/KP-APIs/API-strategie-modules/hypermedia/)                    | Stabiel (Werkgroep Kennisplatform)| 12-07-2023        |
+
+* 21 september 2023 besluit het OBDO over de opname van het OIDC profiel op de lijst verplichte standaarden van het Forum Standaardisatie.
