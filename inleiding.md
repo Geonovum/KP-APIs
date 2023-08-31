@@ -1,15 +1,15 @@
-# Inleiding
+# Inleiding van de NL API strategie
 
-Dit Hoofdstuk geeft een inleiding op de Nederlandse API strategie. De stategie is opgebouwd uit meerdere documenten, standaarden en modulen.
+Dit Hoofdstuk geeft een inleiding op de Nederlandse API strategie. De stategie is opgebouwd uit meerdere documenten, standaarden en modulen. De NL API Strategie wordt doorontwikkeld en beheerd door [het Kennisplatform API's](https://www.geonovum.nl/themas/kennisplatform-apis).
 
-## Status van de API strategie
+## Status 
 
 Op [GitHub](https://github.com/geonovum/KP-APIs/issues) kan bekeken worden wat de actuele ontwikkelingen zijn met betrekking tot de Nederlandse API strategie. 
 
 ## Auteurs
 
 Er worden slechts een beperkt aantal auteurs genoemd, echter aan deze strategie is door veel meer mensen gewerkt.
-De genoemde auteurs zijn de trekkers van de werkgroepen zoals API Strategie, Architectuur, Security, Design Rules, Authenticatie en Autorisatie, Strategie en Beleid, en Gebruikerswensen.
+De genoemde auteurs zijn de trekkers van de Kennisplatform API's werkgroepen zoals: API Strategie, Architectuur, Security, Design Rules, Authenticatie en Autorisatie, Strategie en Beleid, en Gebruikerswensen.
 
 ## Leeswijzer
 
