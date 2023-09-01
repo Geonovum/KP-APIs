@@ -167,97 +167,99 @@ API Concepten ondersteunen de volgende algemene principes
 
 # Diagram
 
-API's (& API Architectuur concepten) helpen specifiek om invulling te geven aan dit principe/onderdeel
+Onderstaande Diagrammen tonen de relatie van API's (& API Architectuur concepten) met Implicaties en Architectuur principes.
+Dit is weergegeven als __[API]__ -> ondersteunt invulling van -> __[Implicatie]__ -> welke bijdraagt aan de realisatie van ->__[Principe]__
+
 
 ```mermaid
 graph LR
-  API["API"]
+  API["API Concept"]
   AP1["Beschrijf de dienst nauwkeurig"]
   IMP001["IMP001: Beschrijf informatieobjecten in een model"] -->|Realiseert| AP1
   IMP003["IMP003: Maak zoveel mogelijk data beschikbaar als open data"] -->|Realiseert| AP1
   IMP039["IMP039: Zorg voor open specificaties"] -->|Realiseert| AP1
-  API --> IMP001
-  API --> IMP003
-  API --> IMP039
+  API --> |Ondersteunt| IMP001
+  API --> |Ondersteunt| IMP003
+  API --> |Ondersteunt| IMP039
  ```
  
 ```mermaid 
 graph LR
-  API["API"]
+  API["API Concept"]
   AP2["Neem gegevens als fundament"]
   IMP001["IMP001: Beschrijf informatieobjecten in een model"] -->|Realiseert| AP2
   IMP003["IMP003: Maak zoveel mogelijk data beschikbaar als open data"] -->|Realiseert| AP2
   IMP021["IMP021: Bevorder hergebruik van gegevens"] -->|Realiseert| AP2
-  API --> IMP001
-  API --> IMP003
-  API --> IMP021
+  API --> |Ondersteunt|IMP001
+  API --> |Ondersteunt|IMP003
+  API --> |Ondersteunt|IMP021
 ```
 
 ```mermaid
 graph LR
-  API["API"]
+  API["API Concept"]
   AP3["Hergebruik vóór kopen vóór maken"]
   IMP003["IMP003: Maak zoveel mogelijk data beschikbaar als open data"] -->|Realiseert| AP3
   IMP021["IMP021: Bevorder hergebruik van gegevens"] -->|Realiseert| AP3
   IMP023["IMP023: Regisseer hergebruik diensten in de keten"] -->|Realiseert| AP3
   IMP028["IMP028: Maak diensten herbruikbaar"] -->|Realiseert| AP3
   IMP039["IMP039: Zorg voor open specificaties"] -->|Realiseert| AP3
-  API --> IMP003
-  API --> IMP021
-  API --> IMP023
-  API --> IMP028
-  API --> IMP039
+  API --> |Ondersteunt|IMP003
+  API --> |Ondersteunt|IMP021
+  API --> |Ondersteunt|IMP023
+  API --> |Ondersteunt|IMP028
+  API --> |Ondersteunt|IMP039
 ```
 
 ```mermaid
 graph LR
-  API["API"]
+  API["API Concept"]
   AP4["Informeer bij de bron"]
   IMP007["IMP007: Verwijs naar de bron"] -->|Realiseert| AP4
   IMP021["IMP021: Bevorder hergebruik van gegevens"] -->|Realiseert| AP4
   IMP055["IMP055: Gegevens eenmalig uitgevraagd, uniek opgeslagen, meervoudig gebruikt"] -->|Realiseert| AP4
   IMP056["IMP056: Registreer gegevens bij de bron"] -->|Realiseert| AP4
   IMP059["IMP059: Geef de voorkeur aan halen i.p.v. brengen van gegevens"] -->|Realiseert| AP4
-  API --> IMP007
-  API --> IMP021
-  API --> IMP055
-  API --> IMP056
-  API --> IMP059
+  API --> |Ondersteunt|IMP007
+  API --> |Ondersteunt|IMP021
+  API --> |Ondersteunt|IMP055
+  API --> |Ondersteunt|IMP056
+  API --> |Ondersteunt|IMP059
 ```
 
 ```mermaid
 graph LR
-  API["API"]
+  API["API Concept"]
   AP5["Verplaats je in de gebruiker"]
   IMP017["IMP017: Zorg dat overheidsinformatie eenvoudig te raadplegen is"] -->|Realiseert| AP5
-  API --> IMP017
+  API --> |Ondersteunt|IMP017
 ```
 
 ```mermaid
 graph LR
-  API["API"]
+  API["API Concept"]
   AP6["Bundel diensten"]
 IMP021["IMP021: Bevorder hergebruik van gegevens"] -->|Realiseert| AP6
-API --> IMP021
+API --> |Ondersteunt|IMP021
 ```
 
 ```mermaid
 graph LR
-API["API"]
+API["API Concept"]
 AP7["Bied de dienst proactief aan"]
 IMP021["IMP021: Bevorder hergebruik van gegevens"] -->|Realiseert| AP7
-API --> IMP021
+API --> |Ondersteunt|IMP021
 ```
 
 ```mermaid
 graph LR
-API["API"]
+API["API Concept"]
 AP8["Bouw diensten modulair op"]
 IMP031["IMP031: Ontwerp op modulaire wijze"] -->|Realiseert| AP8
 IMP039["IMP039: Zorg voor open specificaties"] -->|Realiseert| AP8
 IMP083["IMP083: Wissel gegevens tussen (web)applicaties uit met API's"] -->|Realiseert| AP8
-API --> IMP031
-API --> IMP039
-API --> IMP083
+API --> |Ondersteunt|IMP031
+API --> |Ondersteunt|IMP039
+API --> |Ondersteunt|IMP083
 ```
 
