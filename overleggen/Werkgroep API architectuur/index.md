@@ -24,4 +24,4 @@ Zie ook de presentatie van de Api Architectuur sessie op de bijeenkomst 4 maart 
 
 # Draft versie Hoofdstuk Architectuur
 
-[Draft versie van het hoofdstuk Architectuur](https://geonovum.github.io/KP-APIs/API-strategie-algemeen/#architectuur)
+[Draft versie van het hoofdstuk Architectuur](https://geonovum.github.io/KP-APIs/API-strategie-algemeen/Architectuur/)
