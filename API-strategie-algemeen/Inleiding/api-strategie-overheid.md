@@ -1,6 +1,7 @@
 # API strategie voor de overheid
 
-## Visie
+<section id="api-strategie-overheid-visie" class="terconsultatie">
+<h2>Visie</h2>
 
 ### Data en het nut van API's
 De overheid gebruikt data voor het oplossen van maatschappelijke vraagstukken en opgaven zoals in wonen, stikstof, de energietransitie, armoede, schulden en zorg. Met API's zijn we in staat een platform van data te laten ontstaan waarop we de maatschappelijke vraagstukken en dienstverlening organiseren. Het bedrijfsleven en grote internetplatforms maken al volop gebruik van API's om data flexibel te ontsluiten. 
@@ -27,7 +28,11 @@ Het Kennisplatform API’s wil de adoptie van API’s stimuleren en brengt daart
 
 [^1]: De [Data Governance Regulation](https://digital-strategy.ec.europa.eu/en/policies/data-governance-act) en de [Data act](https://digital-strategy.ec.europa.eu/en/policies/data-act) maken deel uit van deze strategie. Het eindrapport van het _API guidelines for government_ project [An Application Programming Interface (API) framework for digital government](https://op.europa.eu/en/publication-detail/-/publication/0e262d9b-ca32-11ea-adf7-01aa75ed71a1) geeft een aantal voorstellen voor API toepassing voor overheden zoals _Align APIs with policy goals_ en _Measure policy impacts of APIs_.
 
-## API first Strategie
+</section>
+
+<section id="api-strategie-overheid-visie" class="terconsultatie">
+<h2>API first Strategie</h2>
+
 De API first strategie past binnen de huidige beleidsdoelen en de omgeving van de publieke sector. Voor uit te leggen wat API first inhoud lichten we eerst deze beleidsdoelen en de omgeving (vanuit APIs bezien) toe. Daarna volgt wat API first inhoud en drie concrete acties die er uit af te leiden zijn.
 
 ### Beleidsdoelen
@@ -84,6 +89,8 @@ Vindbaarheid verhoog je door het voor makers van API's zo laagdrempelig mogelijk
 Praktisch zijn er, afhankelijk van de ambitie en middelen van een organisatie, meerdere manieren voor. Je kan een eigen developer portaal bouwen waar je API's ontsluit toegang regelt (indien nodig) en zorgt voor goede documentatie. Je kan ook hergebruik maken van de catalogi en portalen die de overheid biedt. 
 We werken als publieke sector aan afspraken (zoals in het Federatief Data Stelsel) om de vindbaarheid van API's in catalogi en portalen te vergroten waarbij het streven is dat informatie over API's eenmalig door de aanbieder wordt aangeleverd en in meerdere catalogi en portalen kan worden hergebruikt.
 API's moeten waar mogelijk (binnen grenzen openbaarheid) centraal en publiekelijk vindbaar zijn, dus niet alleen via de kanalen van de aanbiedende organisatie maar ook vanuit landelijke portalen/catalogi.
+
+</section>
 
 ## Intentieovereenkomst
 Bij het realiseren van bovengenoemde visie volgt de overheid een aantal bestaande afspraken (1 /tm 3) van het [Forum Standaardisatie](https://www.forumstandaardisatie.nl/open-standaarden/verplicht?domein=126) deze zijn al bekrachtigd in het Overheidsbreed Beleidsoverleg Digitale Overheid (OBDO) :
