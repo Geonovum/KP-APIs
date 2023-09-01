@@ -136,3 +136,10 @@ redactie
 dfn {
   font-style: normal;
 }
+
+/*-- style voor specifieke onderdelen van de tekst ter consultatie ----------------------------------*/
+.terconsultatie
+{
+  background-color: rgb(221, 246, 216); 
+  color: rgb(0, 0, 0);
+}
