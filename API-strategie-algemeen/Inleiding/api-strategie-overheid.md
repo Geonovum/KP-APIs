@@ -25,6 +25,8 @@ Het Kennisplatform API’s wil de adoptie van API’s stimuleren en brengt daart
 3. beveiliging, en
 4. API design rules.
 
+[^1]: De [Data Governance Regulation](https://digital-strategy.ec.europa.eu/en/policies/data-governance-act) en de [Data act](https://digital-strategy.ec.europa.eu/en/policies/data-act) maken deel uit van deze strategie. Het eindrapport van het _API guidelines for government_ project [An Application Programming Interface (API) framework for digital government](https://op.europa.eu/en/publication-detail/-/publication/0e262d9b-ca32-11ea-adf7-01aa75ed71a1) geeft een aantal voorstellen voor API toepassing voor overheden zoals _Align APIs with policy goals_ en _Measure policy impacts of APIs_.
+
 ## API first Strategie
 De API first strategie past binnen de huidige beleidsdoelen en de omgeving van de publieke sector. Voor uit te leggen wat API first inhoud lichten we eerst deze beleidsdoelen en de omgeving (vanuit APIs bezien) toe. Daarna volgt wat API first inhoud en drie concrete acties die er uit af te leiden zijn.
 
@@ -131,6 +133,5 @@ De hieronder vermelde organisaties hebben bijgedragen aan deze API strategie voo
 
 *Dit is nog geen officiële lijst van ondertekenaars*
 
-[^1]: De [Data Governance Regulation](https://digital-strategy.ec.europa.eu/en/policies/data-governance-act) en de [Data act](https://digital-strategy.ec.europa.eu/en/policies/data-act) maken deel uit van deze strategie. Het eindrapport van het _API guidelines for government_ project [An Application Programming Interface (API) framework for digital government](https://op.europa.eu/en/publication-detail/-/publication/0e262d9b-ca32-11ea-adf7-01aa75ed71a1) geeft een aantal voorstellen voor API toepassing voor overheden zoals _Align APIs with policy goals_ en _Measure policy impacts of APIs_.
 
 <!--*Dit is nog geen officiële lijst van ondertekenaars, en hier moeten natuurlijk alle organisaties komen te staan die achter de API strategie staan en het manifest willen ondertekenen.*  -->
