@@ -2,7 +2,7 @@
 
 ## Inleiding
 Op 09-07-2020 is besloten om versie 1.0 van de API Design Rules "Verplicht" te stellen op de lijst van open standaarden van het forum standaardisatie. zie ook https://forumstandaardisatie.nl/open-standaarden/rest-api-design-rules
-In samenwerking met het Kennisplatform APIs is afgelopen jaren gewerkt om de designrules modulair op te zetten, nauw te verbinden met de tests op developer.overheid.nl en verschillende kleine verbeteringen door te voeren. Deze werkzaamheden hebben geleid tot deze nieuwe versie.
+In samenwerking met het Kennisplatform APIs is afgelopen jaren gewerkt om de designrules modulair op te zetten, nauw te verbinden met de tests op developer.overheid.nl en verschillende kleine verbeteringen door te voeren. Deze werkzaamheden hebben geleid tot deze nieuwe versie 2.0.0.
 
 
 ## Overzicht wijzigingen en issues
@@ -16,16 +16,16 @@ In samenwerking met het Kennisplatform APIs is afgelopen jaren gewerkt om de des
 | 5      | -                                                            | [PR # 124 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/124) (referentie beheermodel opgenomen)              | nvt              | Gereed (patch)                         |
 | 6      | -                                                            | [PR # 125 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/125) (samenhang testen op DON)                       | 2023-05-03       | Gereed (minor change)                  |
 | 7      | -                                                            | [PR # 127 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/127) (links en config  file bijgewerkt)              | 2023-04-13       | Gereed (patch)                         |
-| 8      | -                                                            | [PR # 128 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/128) (omnummeren)                                    | 2023-04-13       | In  Review                             |
-| 9      | [KP #132](https://github.com/Geonovum/KP-APIs/issues/132)    | [PR # 129 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/129) (inleiding bijgewerkt naar modulair)            | 2023-04-13       | In  Review                             |
-| 10     | [KP #349](https://github.com/Geonovum/KP-APIs/issues/349)    | [PR # 130 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/130) (Http Methods –  patch verduidelijkt)           | 2023-04-20       | In  Review                             |
-| 11     | [KP #420](https://github.com/Geonovum/KP-APIs/issues/420)    | [PR # 131 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/131) (herstructurering API-53 : hide-implementation) | 2023-04-20       | In  Review                             |
+| 8      | -                                                            | [PR # 128 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/128) (omnummeren)                                    | 2023-09-05 | Gereed (minor change)                  |
+| 9      | [KP #132](https://github.com/Geonovum/KP-APIs/issues/132)    | [PR # 129 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/129) (inleiding bijgewerkt naar modulair)            | 2023-09-05       | Gereed (minor change)                  |
+| 10     | [KP #349](https://github.com/Geonovum/KP-APIs/issues/349)    | [PR # 130 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/130) (Http Methods –  patch verduidelijkt)           | 2023-09-05       | Gereed (minor change)                  |
+| 11     | [KP #420](https://github.com/Geonovum/KP-APIs/issues/420)    | [PR # 131 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/131) (herstructurering API-53 : hide-implementation) | 2023-09-05       | Gereed (minor change)                  |
 | 12     |                                                              | [PR # 133 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/133) (Testen API-03 – http Methods)                  | 2023-07-06       | Gereed (Opgenomen in RFC #134)         |
-| 13     | [KP #351](https://github.com/Geonovum/KP-APIs/issues/351)    | [PR # 134 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/134) (Verdieping Testen)                             | todo             | In  Review                             |
-| 14     | [KP #468](https://github.com/Geonovum/KP-APIs/issues/468)    | [PR # 135 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/135) (rules  aangepast obv eDelivery)                | todo             | In  Review                             |
-| 15     | [KP #468](https://github.com/Geonovum/KP-APIs/issues/468)    | [PR # 136 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/136) (2 rules  aangevuld obv eDelivery)              | todo             | In  Review                             |
-| 16     | -                                                            | [PR # 137 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/137) (verwijzing GEO rule)                           | todo             | In  Review                             |
-| 17     | -                                                            | [PR # 138 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/138) (verwijzing Transport security module)          | todo             | In  Review                             |
+| 13     | [KP #351](https://github.com/Geonovum/KP-APIs/issues/351)    | [PR # 134 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/134) (Verdieping Testen)                             | 2023-09-05       | Gereed (minor change)                  |
+| 14     | [KP #468](https://github.com/Geonovum/KP-APIs/issues/468)    | [PR # 135 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/135) (rules  aangepast obv eDelivery)                | 2023-09-05       | Gereed (minor change)                  |
+| 15     | [KP #468](https://github.com/Geonovum/KP-APIs/issues/468)    | [PR # 136 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/136) (2 rules  aangevuld obv eDelivery)              | 2023-09-05       | Gereed (minor change)                  |
+| 16     | -                                                            | [PR # 137 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/137) (verwijzing GEO rule)                           | 2023-09-05       | Gereed (minor change)                  |
+| 17     | -                                                            | [PR # 138 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/138) (verwijzing Transport security module)          | 2023-09-05       | Gereed (minor change)                  |
 
 ## Tot slot
 
