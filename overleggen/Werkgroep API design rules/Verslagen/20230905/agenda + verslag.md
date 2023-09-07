@@ -23,6 +23,7 @@ Agenda en Verslag van de Werkgroep API Design Rules 5 september 2023 - Online ov
    Joost geeft aan dat er twee werkgroepen worden opgestart. 
    - Filtering 
    - Orchestration
+
 Joost stelt een tekst op voor een uitvraag voor deelnemers aan deze werkgroepen. Pieter stuurt deze uitvraag vervolgens toe aan de deelnemers van de werkgroep.   
    
 4. Sluiting
