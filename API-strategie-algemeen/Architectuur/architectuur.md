@@ -624,7 +624,7 @@ Event-driven Architecture heeft een relatie met API Architectuur in de zin dat d
 
 Een EDA bestaat uit event producenten die events produceren en doorgeven aan event consumers welke luisteren naar de events en hierop reageren.
 
-![Event Driven Architectuur diagram](https://github.com/Geonovum/KP-APIs/raw/master/overleggen/Werkgroep%20API%20architectuur/uitwerkingen/media/api-eda.png)
+![Event Driven Architectuur diagram](../../overleggen/Werkgroep%20API%20architectuur/uitwerkingen/media/api-eda.png)
 
 Figuur 9: Basispatroon waarbij een Producer gebruik maakt van een Intermediair voor het verstrekken van notificaties aan Consumers
 
@@ -660,7 +660,7 @@ Hieronder een aantal voordelen
 
 ### Meer informatie
 Zie ook de gedetailleerde uitwerking van EDA in de context van het project Notificatieservices en de CloudEvents standaard:
-* [Notificatie services & EDA](https://github.com/Geonovum/KP-APIs/raw/master/overleggen/Werkgroep%20API%20architectuur/uitwerkingen/media/notificatieservices_architectuur.pdf)
+* [Notificatie services & EDA](../../overleggen/Werkgroep%20API%20architectuur/uitwerkingen/media/notificatieservices_architectuur.pdf)
 * [CloudEvents standaard](https://logius.nl/domeinen/gegevensuitwisseling/nl-gov-profile-cloudevents)
 
 
