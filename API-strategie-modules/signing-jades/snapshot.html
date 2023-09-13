@@ -1,7 +1,20 @@
-<!DOCTYPE html><html lang="nl"><head>
+<!DOCTYPE html><html lang="en"><head>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
 <meta name="generator" content="ReSpec 32.1.10">
+<style>
+.issue-label{text-transform:initial}
+.warning>p:first-child{margin-top:0}
+.warning{padding:.5em;border-left-width:.5em;border-left-style:solid}
+span.warning{padding:.1em .5em .15em}
+.issue.closed span.issue-number{text-decoration:line-through}
+.issue.closed span.issue-number::after{content:" (Closed)";font-size:smaller}
+.warning{border-color:#f11;border-width:.2em;border-style:solid;background:#fbe9e9}
+.warning-title:before{content:"⚠";font-size:1.3em;float:left;padding-right:.3em;margin-top:-.3em}
+li.task-list-item{list-style:none}
+input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}
+.issue a.respec-gh-label{padding:5px;margin:0 2px 0 2px;font-size:10px;text-transform:none;text-decoration:none;font-weight:700;border-radius:4px;position:relative;bottom:2px;border:none;display:inline-block}
+</style>
 <style>
 dfn{cursor:pointer}
 .dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
@@ -25,7 +38,7 @@ dfn{cursor:pointer}
   
   
   
-<title>Vergelijking REST API Signing Standaarden</title>
+<title>ADR-HTTP Message and payload signing with JAdES</title>
   
   
 <link rel="shortcut icon" type="image/x-icon" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/logius.ico">
@@ -91,7 +104,7 @@ dd{margin-left:0}
 .removeOnSave{display:none}
 }
 </style>
-<meta name="description" content="In dit document worden de volgende standaarden beschreven en met elkaar vergeleken:">
+<meta name="description" content="This ADR Module contains the requirements for ADR-HTTP Message and payload signing with JAdES">
 <style>
 .hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}
 .hljs-comment,.hljs-quote{color:#717277;font-style:italic}
@@ -119,13 +132,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   "pubDomain": "dk",
   "shortName": "template",
   "publishDate": "2022-06-24",
-  "publishVersion": "0.0.1",
+  "publishVersion": "0.9",
   "editors": [
-    {
-      "name": "Carmen Visinescu",
-      "company": "Kadaster",
-      "companyURL": "https://kadaster.nl"
-    },
     {
       "name": "Peter Haasnoot",
       "company": "Logius",
@@ -134,17 +142,12 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   ],
   "authors": [
     {
-      "name": "Carmen Visinescu",
-      "company": "Kadaster",
-      "companyURL": "https://kadaster.nl"
-    },
-    {
-      "name": "Peter Haasnoot",
-      "company": "Logius",
-      "companyURL": "https://logius.nl"
+      "name": "KPAPI",
+      "company": "KPAPI",
+      "companyURL": "https://github.com/Geonovum/KPAPI"
     }
   ],
-  "github": "https://github.com/PHaasnoot/REST_API_Signing_Standaarden",
+  "github": "https://github.com/Geonovum/KPAPI",
   "addSectionLinks": true,
   "nl_addReleaseTagTitle": true,
   "nl_organisationName": "KPAPI",
@@ -176,56 +179,61 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     },
     "HTTP-MessageSig": {
       "href": "https://www.ietf.org/archive/id/draft-ietf-httpbis-message-signatures-14.html",
-      "title": "HTTP Message Signatures",
-      "id": "http-messagesig"
+      "title": "HTTP Message Signatures"
+    },
+    "ETSI-JADES": {
+      "href": "https://www.etsi.org/deliver/etsi_ts/119100_119199/11918201/01.01.01_60/ts_11918201v010101p.pdf",
+      "title": "JAdES digital signatures",
+      "id": "etsi-jades"
+    },
+    "ENISA-CRYPTO-2020": {
+      "href": "https://www.enisa.europa.eu/topics/cryptography",
+      "title": "ENISA Good Practises in Cryptography – Primitives and Schemes, December 2020. (Limited availability)",
+      "id": "enisa-crypto-2020"
     }
   },
   "publishISODate": "2022-06-24T00:00:00.000Z",
-  "generatedSubtitle": "Werkversie 17 november 2022"
+  "generatedSubtitle": "Draft 07 juli 2023"
 }</script>
 <link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/X-WV.css"></head>
 
-<body class="h-entry informative toc-inline"><div class="head">
+<body class="h-entry toc-inline"><div class="head">
     <a class="logo"><img alt="KPAPI" height="77" id="KPAPI" src="media/leeg.png" width="44">
-  </a> <h1 id="title" class="title">Vergelijking REST API Signing Standaarden</h1>
+  </a> <h1 id="title" class="title">ADR-HTTP Message and payload signing with JAdES</h1>
     
     <h2>
-      KPAPI Handreiking<br>
-      Werkversie
-      <time class="dt-published" datetime="2022-06-24">17 november 2022</time>
+      KPAPI Guide<br>
+      Draft
+      <time class="dt-published" datetime="2022-06-24">07 juli 2023</time>
     </h2>
     <dl>
-      <dt>Deze versie:</dt><dd class="status">
-              <a class="u-url status" href="https://phaasnoot.github.io/REST_API_Signing_Standaarden/">https://phaasnoot.github.io/REST_API_Signing_Standaarden/</a>
-            </dd><dt>Laatst gepubliceerde versie:</dt><dd>
+      <dt>This version:</dt><dd class="status">
+              <a class="u-url status" href="https://geonovum.github.io/KPAPI/">https://geonovum.github.io/KPAPI/</a>
+            </dd><dt>Latest published version:</dt><dd>
               <a href="https://publicatie.centrumvoorstandaarden.nl/dk/template/">https://publicatie.centrumvoorstandaarden.nl/dk/template/</a>
             </dd>
-      <dt>Laatste werkversie:</dt><dd><a href="https://phaasnoot.github.io/REST_API_Signing_Standaarden/">https://phaasnoot.github.io/REST_API_Signing_Standaarden/</a></dd>
+      <dt>Latest editor's draft:</dt><dd><a href="https://geonovum.github.io/KPAPI/">https://geonovum.github.io/KPAPI/</a></dd>
       
       
       
       
       
-      <dt>Redacteurs:</dt>
+      <dt>Editor:</dt>
       <dd class="editor p-author h-card vcard">
-    <span class="p-name fn">Carmen Visinescu</span> (<a class="p-org org h-org" href="https://kadaster.nl">Kadaster</a>)
-  </dd><dd class="editor p-author h-card vcard">
     <span class="p-name fn">Peter Haasnoot</span> (<a class="p-org org h-org" href="https://logius.nl">Logius</a>)
   </dd>
       
-      <dt>Auteurs:</dt><dd class="editor p-author h-card vcard">
-    <span class="p-name fn">Carmen Visinescu</span> (<a class="p-org org h-org" href="https://kadaster.nl">Kadaster</a>)
-  </dd><dd class="editor p-author h-card vcard">
-    <span class="p-name fn">Peter Haasnoot</span> (<a class="p-org org h-org" href="https://logius.nl">Logius</a>)
+      <dt>Author:</dt><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">KPAPI</span> (<a class="p-org org h-org" href="https://github.com/Geonovum/KPAPI">KPAPI</a>)
   </dd>
-      <dt>Doe mee:</dt><dd>
-    <a href="https://github.com/PHaasnoot/REST_API_Signing_Standaarden/">GitHub PHaasnoot/REST_API_Signing_Standaarden</a>
+      <dt>Participate:</dt><dd>
+    <a href="https://github.com/Geonovum/KPAPI/">GitHub Geonovum/KPAPI</a>
   </dd><dd>
-    <a href="https://github.com/PHaasnoot/REST_API_Signing_Standaarden/issues/">Dien een melding in</a>
+    <a href="https://github.com/Geonovum/KPAPI/issues/">File an issue</a>
   </dd><dd>
-    <a href="https://github.com/PHaasnoot/REST_API_Signing_Standaarden/commits/">Revisiehistorie</a>
+    <a href="https://github.com/Geonovum/KPAPI/commits/">Commit history</a>
   </dd><dd>
-    <a href="https://github.com/PHaasnoot/REST_API_Signing_Standaarden/pulls/">Pull requests</a>
+    <a href="https://github.com/Geonovum/KPAPI/pulls/">Pull requests</a>
   </dd>
     </dl>
     
@@ -237,233 +245,192 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
         </p>
     <hr title="Separator for header">
   </div>
-  <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>In dit document worden de volgende standaarden beschreven en met elkaar vergeleken:</p>
+
+  <section id="abstract" class="introductory"><h2>Abstract</h2><p>This ADR Module contains the requirements for ADR-HTTP Message and payload signing with JAdES</p>
 <ul>
 <li>JAdES [<cite><a class="bibref" data-link-type="biblio" href="#bib-jades" title="JAdES digital signatures">JAdES</a></cite>]</li>
-<li>HTTP Message Signatures (httpbis-message-signatures)  [<cite><a class="bibref" data-link-type="biblio" href="#bib-http-messagesig" title="HTTP Message Signatures">HTTP-MessageSig</a></cite>]</li>
 </ul>
+<p>This module is based on the <em>ISA² IPS REST API Profile v1.0 section 5.2.2 Message And Payload Level Security</em></p>
 </section>
-  <section id="sotd" class="introductory"><h2>Status van dit document</h2>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door de werkgroep goedgekeurde consultatieversie.<p></p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#vergelijking-jades-vs-httpbis-message-signatures"><bdi class="secno">1. </bdi>Vergelijking JAdES vs httpbis-message-signatures</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1.1 </bdi>Inleiding</a></li><li class="tocline"><a class="tocxref" href="#digital-signature-algemeen"><bdi class="secno">1.2 </bdi>Digital Signature algemeen</a></li><li class="tocline"><a class="tocxref" href="#http-message-signatures"><bdi class="secno">1.3 </bdi>Http Message Signatures</a></li><li class="tocline"><a class="tocxref" href="#jades"><bdi class="secno">1.4 </bdi>JAdES</a></li><li class="tocline"><a class="tocxref" href="#vergelijking-en-use-cases"><bdi class="secno">1.5 </bdi>Vergelijking en Use Cases</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#http-message-signatures-httpbis-message-signatures-use-cases"><bdi class="secno">1.5.1 </bdi>HTTP Message Signatures (Httpbis-message-signatures) use-cases:</a></li><li class="tocline"><a class="tocxref" href="#jades-use-cases"><bdi class="secno">1.5.2 </bdi>JAdES use-cases:</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-a-httpbis-message-signatures"><bdi class="secno">1.6 </bdi>BIJLAGE A : HTTPBIS-Message-Signatures</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#signing-components"><bdi class="secno">1.6.1 </bdi>Signing components</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-b-jades"><bdi class="secno">1.7 </bdi>BIJLAGE B : JAdES</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">A.1 </bdi>Informatieve referenties</a></li></ol></li></ol></nav>
-  <section class="informative" id="vergelijking-jades-vs-httpbis-message-signatures"><div class="header-wrapper"><h2 id="x1-vergelijking-jades-vs-httpbis-message-signatures"><bdi class="secno">1. </bdi>Vergelijking JAdES vs httpbis-message-signatures</h2><a class="self-link" href="#vergelijking-jades-vs-httpbis-message-signatures" aria-label="Permalink for Section 1."></a></div><p><em>Dit onderdeel is niet normatief.</em></p>
-<section id="inleiding"><div class="header-wrapper"><h3 id="x1-1-inleiding"><bdi class="secno">1.1 </bdi>Inleiding</h3><a class="self-link" href="#inleiding" aria-label="Permalink for Section 1.1"></a></div>
-<p>In deze handreiking wordt eerst ingegaan op de algemene aspecten van signing, daarna worden de signing standaarden JAdES en http-message-signatures in hoofdlijnen beschreven en wordt aangeven wat de voornaamste eigenschappen en functionele aspecten zijn van beide standaarden.</p>
-</section><section id="digital-signature-algemeen"><div class="header-wrapper"><h3 id="x1-2-digital-signature-algemeen"><bdi class="secno">1.2 </bdi>Digital Signature algemeen</h3><a class="self-link" href="#digital-signature-algemeen" aria-label="Permalink for Section 1.2"></a></div>
-<p>Digitale handtekeningen zijn ontworpen om de integriteit van de inhoud en authenticatie van de oorsprong en onweerlegbaarheid van de oorsprong te bieden aan gegevensobjecten die door netwerken van hun oorsprong naar hun bestemming worden getransporteerd.
-Digitale handtekeningen zijn gebaseerd op asymmetrische (of openbare sleutel) cryptografie. Het digitaal ondertekenen van een gegevensobject bestaat uit twee stappen :</p>
-<ol>
-<li>het berekenen van de samenvatting van de binaire representatie van het te ondertekenen data-object – de digest-data</li>
-<li>het resultaat van deze operatie versleutelen (encrypten) met de privésleutel van de ondertekenaar.
-(ETSI (European Standards Institute TR 119 001)  gebruikt het term  "digital signature value" voor het resultaat van de laatste stap)</li>
-</ol>
-<p>De proces-verificatie bevat de volgende stappen: </p>
-<ol>
-<li>Voorbereiden van de "to-be-signed-data" met de canonicalisatie- geaccepteerde transformaties en het berekenen van het digest-data (bv. met behulp van een hash algorithme) </li>
-<li>Decrypt de ondertekende digital signature waarde met de public-key   </li>
-<li>Vergelijk beide waarden van het oorspronkelijke bericht met het resultaat van stap 2. Als de waarden gelijk zijn, dan is de verificatie succesvol.</li>
-</ol>
-<p>De digitale ondertekening maakt gebruik van een Public Key Infrastructure (welke verder gebruik maakt van entiteiten zoals certificaten, CRLs, OCSP antwoorden, time-stamp tokens (die bewijzen dat een bepaald data-object bestond op een bepaald moment), Trust services, zoals services uitgevers certificaten (CAs), services uitgevers time-stamp tokens, etc.</p>
-<p><strong>Alle standaard formaten bevatten de volgende componenten:</strong>  </p>
-<ul>
-<li>het "signed data object"</li>
-<li>het "digital signature" veld</li>
-<li>het "signing certificaat" (of het certificaat pad)</li>
-<li>de objecten genoemd ‘signed attributen’ optionele of verplichte velden</li>
-<li>de objecten genoemd : ‘unsigned attributen’  toegevoegd  op een gegeven moment ook, nadat de "digital signature" is gerealiseerd</li>
-</ul>
-<p>Een ‘signed’ attribuut is een object, toegevoegd in de "digitaal signature" structuur. Het is een binair deel van het berekenen van het  digitale signature veld.  </p>
-<p>Afhankelijk van het business/juridische-scenario worden bepaalde velden in het ’signed-attributen’  en/of unsigned attributen structuur wel/niet toegevoegd.  </p>
-</section><section id="http-message-signatures"><div class="header-wrapper"><h3 id="x1-3-http-message-signatures"><bdi class="secno">1.3 </bdi>Http Message Signatures</h3><a class="self-link" href="#http-message-signatures" aria-label="Permalink for Section 1.3"></a></div>
-<p>Op moment van schrijven is dit de laatste versie van de standaard: draft-ietf-httpbis-message-signatures-14 [<cite><a class="bibref" data-link-type="biblio" href="#bib-http-messagesig" title="HTTP Message Signatures">HTTP-MessageSig</a></cite>].</p>
-<p>HTTP Message Signatures ondersteunt gebruiksscenario's waar het volledige HTTP-bericht mogelijk niet bekend is bij de ondertekenaar, en waar het bericht onderweg kan worden getransformeerd (bijvoorbeeld door tussenpersonen) voordat deze de ontvanger bereikt.
-De standaard beschrijft ook een middel voor de verzender van een ‘request’ om te verzoeken om een handtekening van de ontvanger toe te passen op de ‘response’ in een lopende HTTP-uitwisseling.</p>
-<p>De standaard geeft specifiek invulling aan:</p>
-<ul>
-<li><p>Een algemene nomenclatuur en canonieke regels voor de verschillende protocolelementen en andere componenten van HTTP-berichten die gebruikt worden om de handtekeningbasis te maken.</p>
-</li>
-<li><p>Algoritmen voor het genereren en verifiëren van handtekeningen via HTTP berichtcomponenten die deze handtekeningbasis gebruiken door toepassing van cryptografische primitieven.</p>
-</li>
-<li><p>Een mechanisme voor het toevoegen van een handtekening en gerelateerde metadata aan een HTTP-bericht en voor het ontleden van bijgevoegde handtekeningen en metagegeven van HTTP-berichten. Om dit te vergemakkelijken, definieert de standaard de "Signing-Input" en "Signature" velden.</p>
-</li>
-</ul>
-<p>Specifieke features van de standaard:</p>
-<ul>
-<li>Transformation resistant: Er wordt rekening mee gehouden dat de HTTP standaard toestaat dat de volgorde van HTTP elementen in een bericht kan veranderen.</li>
-<li>Canonicalization: Regels geven aan hoe elementen naar een standaard representatie worden vertaald (geschikt voor ondertekening)</li>
-<li>Components: Er worden componenten van een HTTP bericht gedefinieerd om fijnmazig onderdelen te kunnen benoemen/ondertekenen (bv: query, uri etc) </li>
-<li>Multiple Signatures: Er is ondersteuning voor meerdere signatures, bv ondertekening door een proxy onderweg;</li>
-<li>Requesting Signatures: Een partij in de communicatie kan expliciet aangeven dat hij/zij een ondertekend bericht verwacht van de andere partij;</li>
-<li>Request-Response Signature Binding: Een response kan aan de signature van de request refereren om expliciet aan te geven (en aan te tonen) dat de response antwoord is op de specifieke request;</li>
-<li>Mogelijkheid om trailer headers te ondertekenen;</li>
-<li>TLS-Terminating Proxies: Een specifieke use-case voor de standaard is het omzetten van een via tweezijdig TLS ontvangen bericht naar het achterland van een API gateway; het ontvangen certificaat kan meegezonden worden voor verdere afhandeling, de gateway kan het zelf ondertekenen met het eigen certificaat om aan te geven dat de gateway het bericht (en certificaat) correct heeft ontvangen (en gevalideerd);</li>
-</ul>
-</section><section id="jades"><div class="header-wrapper"><h3 id="x1-4-jades"><bdi class="secno">1.4 </bdi>JAdES</h3><a class="self-link" href="#jades" aria-label="Permalink for Section 1.4"></a></div>
-<p>ETSI heeft een standaard voor JWS ontwikkeld, naast de andere ETSI standaarden voor de  AdES digital signatures van het Regulation (EU) No 910/2014,  genoemd JAdES  (ETSI TS 119 182-1). JAdES ondersteunt veilige communicatie die voldoet aan de vereisten van de eIDAS-verordening van de Europese Unie (nr. 910/2014) voor geavanceerde elektronische handtekeningen en zegels en wettelijke vereisten voor diensten zoals open bankieren.</p>
-<p><em>“In samenwerking met Open Banking Europe heeft ETSI een oplossing ontwikkeld die voldoet aan de vereisten van Open Banking API's en tegelijkertijd de authenticiteit van financiële transacties garandeert.”</em></p>
-<p><em>TS 119 182-1 is op RFC 7515 gebaseerd. Er zijn nieuwe attributen, header-parameters toegevoegd en er worden ook 4 "baseline levels"  geïntroduceerd.</em></p>
-<p>Het huidige profile (JSON signature) is gelijk met het basic JAdES-B-B level. Het maakt gebruik van JWS header parameters, zoals ook gedefinieerd in het JAdES profile.  </p>
-<p>ETSI TS 119 182-1 kan worden gebruikt voor elke transactie tussen een persoon en een bedrijf, tussen twee bedrijven, tussen een persoon en een overheidsinstantie, enz. die van toepassing is op elektronische communicatie. De technische kenmerken van de specificatie kunnen daarom worden toegepast op het gebruik van op PKI gebaseerde digitale handtekeningtechnologie.</p>
-<p>Ontwerp principes:</p>
-<ul>
-<li>De handtekeningen die voldoen aan dit profiel ondersteunen het gebruik van gekwalificeerde certificaten voor elektronische zegels in overeenstemming met Commission Delegated Regulation (EU) 2018/389</li>
-<li>Het profiel is afgestemd op JAdES baseline digitale handtekeningen zoals gespecificeerd door ETSI</li>
-<li>De handtekening beschermt een HTTP-body en optioneel geselecteerde HTTP-headervelden.</li>
-<li>Een enkele handtekening moet worden opgenomen in een HTTP-header die is losgekoppeld (detached) van het payload-message</li>
-<li>Het profiel is bedoeld om de interoperabiliteit te maximaliseren</li>
-<li>Er worden geen beperkingen opgelegd aan de inhoud van de ondertekende payloads. Het kan worden gebruikt om JSON, XML ISO 20022 of elke andere vorm van gegevens te beschermen</li>
-<li>JSON Web Signature-headers en HTTP-headervelden die essentieel zijn voor de beveiliging van de uitwisseling, evenals HTTP Body, zijn zodanig beveiligd dat ze niet gewijzigd kunnen worden .</li>
-<li>JAdES-handtekeningen kunnen geserialiseerd worden met behulp van: JWS Compact Serialization of JWS JSON Serialization zoals gespecificeerd in IETF RFC 7515 [2].</li>
-<li>Handtekeningen kunnen later worden gebruikt als bewijs in de rechtbank (d.w.z. zijn "onweerlegbaar").</li>
-<li>JAdES-handtekeningen met de profielen  B-LT, B-LTA kunnen de digitale certificaat validiteit op de lange termijn garanderen. Deze profielen zijn geschikt voor de realisatie van de archiveringseisen.</li>
-<li>Handtekeningen kunnen zowel op HTTP-requests en ook op HTTP-responses worden toegepast.</li>
-</ul>
-</section><section id="vergelijking-en-use-cases"><div class="header-wrapper"><h3 id="x1-5-vergelijking-en-use-cases"><bdi class="secno">1.5 </bdi>Vergelijking en Use Cases</h3><a class="self-link" href="#vergelijking-en-use-cases" aria-label="Permalink for Section 1.5"></a></div>
-<section id="http-message-signatures-httpbis-message-signatures-use-cases"><div class="header-wrapper"><h4 id="x1-5-1-http-message-signatures-httpbis-message-signatures-use-cases"><bdi class="secno">1.5.1 </bdi>HTTP Message Signatures (Httpbis-message-signatures) use-cases:</h4><a class="self-link" href="#http-message-signatures-httpbis-message-signatures-use-cases" aria-label="Permalink for Section 1.5.1"></a></div>
-<ul>
-<li><p>TLS-Terminating proxy use-case:
-De tweezijdig TLS ontvangen berichten via een API gateway kunnen middels de httpbis-message signature ondertekend worden met het eigen gateway certificaat. Dat is om aan te geven dat de gateway (en certificaat) het bericht correct , zonder transformaties heeft ontvangen (en gevalideerd);
-End-to-end communicatiebeveiliging en berichtenintegriteit voor de berichten http-message-componenten en de http-derived-componenten tussen 2 systemen wordt in dit geval gerealiseerd. </p>
-</li>
-<li><p>Realisatie van een additionele beveiligslaag in de uitwisselberichten tussen 2 systemen naast het transport tweezijdig TLS beveiligingscommunicatie. </p>
-</li>
-<li><p>Httpbis-message-signature is gespecialiseerd in de ondertekening van een deel van de http-headers-velden en http-derived components</p>
-</li>
-<li><p>Httpbis-message-signature introduceert een mechanisme van ’requesting-signature’ in de communicatie tussen 2 systemen</p>
-</li>
-<li><p>Httpbis-message-signature introduceert een mechanisme van ’request-response signature binding’</p>
-</li>
-</ul>
-</section><section id="jades-use-cases"><div class="header-wrapper"><h4 id="x1-5-2-jades-use-cases"><bdi class="secno">1.5.2 </bdi>JAdES use-cases:</h4><a class="self-link" href="#jades-use-cases" aria-label="Permalink for Section 1.5.2"></a></div>
-<ul>
-<li>De ondertekende berichten (payload) worden juridisch gebruikt als bewijs in de rechtbank (d.w.z. zijn "onweerlegbaar").</li>
-</ul>
-<p>JAdES-handtekening ondersteunt de veilige communicatie die voldoet aan de vereisten van de eIDAS-verordening van de Europese Unie (nr. 910/2014) voor geavanceerde of gekwalificeerd elektronische handtekeningen en zegels en wettelijke vereisten. In dit scenario kunnen geavanceerde /gekwalificeerd ondertekening certificaten van de PKI-QTPS’s of QTSA’s (gekwalificeerd timestamps certificaten) gebruikt worden.</p>
-<p>JAdES-handtekening wordt gebruikt als standaard in de communicatie van de payment-services conform EU Payment Services Directive 2015/2366 [16] (PSD2).</p>
-<ul>
-<li>JAdES–handtekening kan gebruikt worden in de realisatie van een B2B betrouwbare veilige communicatie tussen 2 systemen op basis van de REST-API.</li>
-</ul>
-<p>De ondertekening van de berichten en de payload-berichten kan makkelijk gerealiseerd worden met behulp van JAdES-B-B  als een JAdES-compliant JWT detached. Het is een eenvoudige JSON-structuur ondertekening. Daardoor kan het makkelijk door de client-applicaties gebruikt en gerealiseerd worden.  </p>
-<p>JAdES–handtekening detached verandert ook de payload-structuur niet. Dat betekent dat een client die de validatie van handtekening niet ondersteunt, kan blijven werken alsof er geen handtekening is toegepast.
-JAdES–handtekening detached kan getransporteerd worden met behulp van een HTTP-header, waardoor de aanwezigheid niet opdringerig is en gemakkelijk is te transporteren.</p>
-<p>In een juridisch context wordt de JAdES-handtekening verrijkt met verschillende velden in de handtekening bv: tijdstip ondertekening; commitment (reden) van de ondertekening; toevoegen van de counter-ondertekening;</p>
-<ul>
-<li>Realisatie van de archiveringseisen van de ondertekende communicatie berichten tussen 2 systemen.</li>
-</ul>
-<p>Met de implementatie van de JAdES-B-LT en JAdES-B-LTA profielen kunnen de JAdES-handtekeningen oneindig worden verlengd t.b.v archiveringseisen </p>
-</section></section><section id="bijlage-a-httpbis-message-signatures"><div class="header-wrapper"><h3 id="x1-6-bijlage-a-httpbis-message-signatures"><bdi class="secno">1.6 </bdi>BIJLAGE A : HTTPBIS-Message-Signatures</h3><a class="self-link" href="#bijlage-a-httpbis-message-signatures" aria-label="Permalink for Section 1.6"></a></div>
-<p>Zie [<cite><a class="bibref" data-link-type="biblio" href="#bib-http-messagesig" title="HTTP Message Signatures">HTTP-MessageSig</a></cite>]</p>
-<p>Voorbeelden:</p>
-<p>This section provides non-normative examples that may be used as test cases to validate implementation correctness. These examples are based on the following HTTP messages:</p>
-<p>For requests, this test-request message is used:</p>
-<pre><code aria-busy="false" class="hljs">NOTE: '\' line wrapping per RFC 8792
+  <section id="sotd" class="introductory"><h2>Status of This Document</h2>This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by de werkgroep.<p></p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#adr-http-message-and-payload-signing-with-jades"><bdi class="secno">1. </bdi>ADR-HTTP Message and payload signing with JAdES</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1.1 </bdi>Introduction</a></li><li class="tocline"><a class="tocxref" href="#jws-detached-signatures"><bdi class="secno">1.2 </bdi>JWS detached signatures</a></li><li class="tocline"><a class="tocxref" href="#cryptographic-algorithms"><bdi class="secno">1.3 </bdi>Cryptographic Algorithms</a></li><li class="tocline"><a class="tocxref" href="#payload-signing"><bdi class="secno">1.4 </bdi>Payload signing</a></li><li class="tocline"><a class="tocxref" href="#http-message-signing"><bdi class="secno">1.5 </bdi>HTTP Message signing</a></li><li class="tocline"><a class="tocxref" href="#signature-representations"><bdi class="secno">1.6 </bdi>Signature Representations</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">2. </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">A.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">A.2 </bdi>Informative references</a></li></ol></li></ol></nav>
+  <section id="adr-http-message-and-payload-signing-with-jades"><div class="header-wrapper"><h2 id="x1-adr-http-message-and-payload-signing-with-jades"><bdi class="secno">1. </bdi>ADR-HTTP Message and payload signing with JAdES</h2><a class="self-link" href="#adr-http-message-and-payload-signing-with-jades" aria-label="Permalink for Section 1."></a></div>
+<div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="3"><span>Note</span><span class="issue-label">: Status</span></div><aside class="">
+        <p>This module is under development</p>
+</aside></div>
 
-POST /foo?param=Value&amp;Pet=dog HTTP/1.1
-Host: example.com
-Date: Tue, 20 Apr 2021 02:07:55 GMT
-Content-Type: application/json
-Content-Digest: sha-512=:WZDPaVn/7XgHaAy8pmojAkGWoRx2UFChF41A2svX+T\
-  aPm+AbwAgBWnrIiYllu7BNNyealdVLvRwEmTHWXvJwew==:
-Content-Length: 18
 
-{"hello": "world"}
+<section id="introduction"><div class="header-wrapper"><h3 id="x1-1-introduction"><bdi class="secno">1.1 </bdi>Introduction</h3><a class="self-link" href="#introduction" aria-label="Permalink for Section 1.1"></a></div>
+<p>This module specifies the use of JAdES signatures for HTTP message and payload siging. The module is directly based on the <em>ISA² IPS REST API Profile v1.0</em> (which was a result of the REST API Pilot project for eDelivery)</p>
+</section><section id="jws-detached-signatures"><div class="header-wrapper"><h3 id="x1-2-jws-detached-signatures"><bdi class="secno">1.2 </bdi>JWS detached signatures</h3><a class="self-link" href="#jws-detached-signatures" aria-label="Permalink for Section 1.2"></a></div>
+<p>This module enforces the use of JWS detached signatures following the HttpHeaders Mechanism of the ETSI ESI JAdES specification [ETSI-JADES]. </p>
+<p>This structure is enforced for the following reasons:</p>
+<ul>
+<li>JWS, being a simple JSON Structure, can be supported by clients in a light context, while specifications like the ETSI ESI ASIC containers are more difficult to do.</li>
+<li>JWS in detached form does not change the payload structure, meaning that a client not supporting the validation of signature can continue to operate as if there was no signature applied.</li>
+<li>JWS Detached can be transported using an HTTP header, making its presence unintrusive and easily transportable.</li>
+</ul>
+</section><section id="cryptographic-algorithms"><div class="header-wrapper"><h3 id="x1-3-cryptographic-algorithms"><bdi class="secno">1.3 </bdi>Cryptographic Algorithms</h3><a class="self-link" href="#cryptographic-algorithms" aria-label="Permalink for Section 1.3"></a></div>
+<p>Following ENISA's Good Practises in Cryptography – Primitives and Schemes [<cite><a class="bibref" data-link-type="biblio" href="#bib-enisa-crypto-2020" title="ENISA Good Practises in Cryptography – Primitives and Schemes, December 2020. (Limited availability)">ENISA-CRYPTO-2020</a></cite>], the following algorithms found in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7518" title="JSON Web Algorithms (JWA)">RFC7518</a></cite>] are selected for this profile, to be used in the following form:</p>
+<ul>
+<li>The ECDSA Algorithm with SHA-256 and P-256 Curve <em class="rfc2119">MUST</em> be supported, with a key length of at least 256 bits. The value "ES256" for the alg parameter <em class="rfc2119">MUST</em> be used in this case as defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7518" title="JSON Web Algorithms (JWA)">RFC7518</a></cite>].</li>
+<li>The EdDSA Algorithm [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8032" title="Edwards-Curve Digital Signature Algorithm (EdDSA)">RFC8032</a></cite>] using one of the curves defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7748" title="Elliptic Curves for Security">RFC7748</a></cite>] <em class="rfc2119">SHOULD</em> be supported and is <em class="rfc2119">RECOMMENDED</em> for use, with a key length of at least 256 bits. The value "EdDSA" for the alg parameter <em class="rfc2119">MUST</em> be used in this case and the curve shall be encoded in the crv parameter as defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8037" title="CFRG Elliptic Curve Diffie-Hellman (ECDH) and Signatures in JSON Object Signing and Encryption (JOSE)">RFC8037</a></cite>].</li>
+</ul>
+</section><section id="payload-signing"><div class="header-wrapper"><h3 id="x1-4-payload-signing"><bdi class="secno">1.4 </bdi>Payload signing</h3><a class="self-link" href="#payload-signing" aria-label="Permalink for Section 1.4"></a></div>
+<p>Payload signing ensures the integrity and authenticity of the payload part of the message.  When payload signing is considered, the Detached JSON Web Signatures following the JAdES specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-etsi-jades" title="JAdES digital signatures">ETSI-JADES</a></cite>] <em class="rfc2119">MUST</em> be applied with the following restrictions:</p>
+<ul>
+<li>The JWS content (Data to be Signed) <em class="rfc2119">MUST</em> be detached from the signatures as defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7515" title="JSON Web Signature (JWS)">RFC7515</a></cite>] Appendix F. </li>
+<li>The signed SigD parameter object <em class="rfc2119">MUST</em> be present in the JWS headers, denoting the use of the JAdES detached header profile. </li>
+<li>The value of the mId parameter <em class="rfc2119">MUST</em> be set to "<a href="http://uri.etsi.org/19182/HttpHeaders&quot;">http://uri.etsi.org/19182/HttpHeaders"</a>.</li>
+<li>The pars array of the SigD <em class="rfc2119">MUST</em> contain only the element "digest", denoting that for the calculation of the signature only the digest of the HTTP payload must be taken into account, according to [[RFC3230]. </li>
+<li>The alg parameter <em class="rfc2119">MUST</em> be set to the correct value depending on the algorithm used (see above). </li>
+<li>If the alg parameter is set to "EdDSA", the crv parameter <em class="rfc2119">MUST</em> be set to the correct value (see above).</li>
+</ul>
+<p>The JWS structure shall be carried in HTTP header field named <strong>nlgov-adr-payload-sig</strong>. The header field can be used in both requests and responses. The header field <em class="rfc2119">MUST</em> not appear more than once in a message; if a message contains multiple nlgov-adr-payload-sig header fields, the receiver <em class="rfc2119">MUST</em> consider the signature invalid.</p>
+</section><section id="http-message-signing"><div class="header-wrapper"><h3 id="x1-5-http-message-signing"><bdi class="secno">1.5 </bdi>HTTP Message signing</h3><a class="self-link" href="#http-message-signing" aria-label="Permalink for Section 1.5"></a></div>
+<p>The Introduction section of [[DRAFT-IETF-HTTPSBIS-MSG-SIGS] details why message integrity and authenticity are critical to the secure operation of many HTTP/REST applications.
+When Message-Level Security is considered, the HttpHeaders Mechanism of the JAdES Specification [[ETSI-JADES] <em class="rfc2119">MUST</em> be used, with the following restrictions applied:</p>
+<ul>
+<li><p>The JWS content (Data to be Signed) <em class="rfc2119">MUST</em> be detached from the signatures as defined in [[RFC7515] Appendix F. </p>
+</li>
+<li><p>The signed SigD parameter object <em class="rfc2119">MUST</em> be present in the JWS headers, denoting the use of the JAdES detached header profile. </p>
+</li>
+<li><p>The value of the mId parameter <em class="rfc2119">MUST</em> be set to "<a href="http://uri.etsi.org/19182/HttpHeaders&quot;">http://uri.etsi.org/19182/HttpHeaders"</a>. </p>
+</li>
+<li><p>The pars array of the SigD <em class="rfc2119">MUST</em> contain at least the following elements:</p>
+<ul>
+<li>the element "(request-target)", for containing the HTTP Request URI</li>
+<li>the element "host", for containing the host the message was submitted to, if present</li>
+<li>the element "origin", for containing the scheme, hostname, and port from which the request was initiated, if present</li>
+<li>the element "content-encoding", if present</li>
+<li>the element "content-type", if present</li>
+<li>the element "content-length", if present</li>
+<li>the element "digest", for taking into account the Digest header that contains the hash value of the HTTP payload.</li>
+</ul>
+</li>
+<li><p>The alg parameter <em class="rfc2119">MUST</em> be set to the correct value depending on the algorithm used (see above). </p>
+</li>
+<li><p>If the alg parameter is set to "EdDSA", the crv parameter <em class="rfc2119">MUST</em> be set to the correct value (see above).</p>
+</li>
+</ul>
+<p>Implementations that make use of the HTTP Header fields for data representation <em class="rfc2119">SHOULD</em> also include these header fields in the pars array. The JWS structure <em class="rfc2119">MUST</em> be carried in HTTP header field named <strong>nlgov-adr-message-sig</strong>. The header field can be used in both requests and responses. The header field <em class="rfc2119">MUST</em> not appear more than once in a message; if a message contains multiple nlgov-adr-message-sig header fields, the receiver <em class="rfc2119">MUST</em> consider the signature invalid.</p>
+</section><section id="signature-representations"><div class="header-wrapper"><h3 id="x1-6-signature-representations"><bdi class="secno">1.6 </bdi>Signature Representations</h3><a class="self-link" href="#signature-representations" aria-label="Permalink for Section 1.6"></a></div>
+<p>The folowing example is strictly informative !</p>
+<pre><code aria-busy="false" class="hljs javascript">openapi: <span class="hljs-number">3.1</span><span class="hljs-number">.0</span>
+<span class="hljs-attr">info</span>:
+    title: JAdES Signatures
+    <span class="hljs-attr">summary</span>: An example showcasing JAdES signatures
+    <span class="hljs-attr">description</span>: An example showcasing JAdES signatures <span class="hljs-keyword">as</span> JWS detached signatures <span class="hljs-keyword">for</span> securing a sample REST endpoint (/certificate)
+    <span class="hljs-attr">termsOfService</span>: https:<span class="hljs-comment">//domain.server.io/terms-of-service</span>
+    license:
+        name: EUPL-<span class="hljs-number">1.2</span> or later
+        <span class="hljs-attr">url</span>: https:<span class="hljs-comment">//eupl.eu/1.2/en/</span>
+    version: <span class="hljs-number">1.0</span><span class="hljs-number">.0</span>
+    x-edelivery:
+        lifecycle:
+            maturity: supported
+        <span class="hljs-attr">publisher</span>:
+            name: ACME Publisher
+            <span class="hljs-attr">URL</span>: https:<span class="hljs-comment">//www.acme-publisher.org/</span>
+externalDocs:
+   description: The ISA² IPS REST API Core Profile
+   <span class="hljs-attr">url</span>: https:<span class="hljs-comment">//joinup.ec.europa.eu/collection/api4dt/document/isa2-ips-rest-api-profile</span>
+servers:
+- url: https:<span class="hljs-comment">//domain.server.io/v2</span>
+tags:
+- name: DetachedPayloadSignature
+  <span class="hljs-attr">description</span>: Operations using payload security
+- name: DetachedMessageSignature
+  <span class="hljs-attr">description</span>: Operations using message-level security
+<span class="hljs-attr">paths</span>:
+    /openapi:
+        get:
+            summary: Returns the OpenAPI Document <span class="hljs-keyword">for</span> the API
+        ...
+        <span class="hljs-attr">responses</span>:
+        <span class="hljs-number">200</span>:
+            description: ...
+            <span class="hljs-attr">content</span>: {
+               <span class="hljs-attr">$ref</span>: <span class="hljs-string">'https://spec.openapis.org/oas/3.1/schema/2021-05-20'</span>
+               ...
+            }
+    /certificate:
+    get:
+      tags:
+      - DetachedMessageSignature
+      <span class="hljs-attr">summary</span>: Get a Certificate
+      <span class="hljs-attr">securitySchemes</span>:
+        OAuth2:
+           type: oauth2
+        <span class="hljs-attr">flows</span>:
+           authorizationCode:
+              authorizationUrl: https:<span class="hljs-comment">//example.com/api/oauth/dialog</span>
+              scopes:
+                 send:message: send a message
+       ...
+      <span class="hljs-attr">responses</span>:
+      <span class="hljs-number">200</span>:
+         headers:
+            nlgov-adr-message-sig:
+               $ref: <span class="hljs-string">'#/components/headers/nlgov-adr-message-sig'</span>
+          <span class="hljs-attr">description</span>: List <span class="hljs-keyword">of</span> Certificates
+          <span class="hljs-attr">content</span>: { ... }
+<span class="hljs-attr">components</span>:
+   headers:
+      nlgov-adr-payload-sig:
+         schema:
+             $ref: <span class="hljs-string">'#/components/schemas/JwsCompactDetached'</span>
+      nlgov-adr-message-sig:
+         schema:
+             $ref: <span class="hljs-string">'#/components/schemas/JwsCompactDetached'</span>
+   <span class="hljs-attr">schemas</span>:
+      JwsCompactDetached:
+         title: The format <span class="hljs-keyword">for</span> the message-level and payload signature
+         <span class="hljs-attr">description</span>: Defines the string pattern <span class="hljs-keyword">as</span> a regular expression that
+         MUST be followed to represent detached JWS compact tokens
+        <span class="hljs-string">"$id"</span>: https:<span class="hljs-comment">//raw.githubusercontent.com/isa2-api4ips/rest-api-profile/main/api-core-profile/components/schemas/jws-compact-detached.json</span>
+        <span class="hljs-string">"$schema"</span>: https:<span class="hljs-comment">//json-schema.org/draft/2020-12/schema</span>
+         type: string
+         <span class="hljs-attr">format</span>: jws-compact-detached
+         <span class="hljs-attr">pattern</span>: ^[A-Za-z0-9_-]+(?:(\\.\\.)[A-Za-z0-9_-]+){<span class="hljs-number">1</span>}
 </code></pre>
-<p>For responses, this test-response message is used:</p>
-<pre><code aria-busy="false" class="hljs">NOTE: '\' line wrapping per RFC 8792
-
-HTTP/1.1 200 OK
-Date: Tue, 20 Apr 2021 02:07:56 GMT
-Content-Type: application/json
-Content-Digest: sha-512=:JlEy2bfUz7WrWIjc1qV6KVLpdr/7L5/L4h7Sxvh6sN\
-  HpDQWDCL+GauFQWcZBvVDhiyOnAQsxzZFYwi0wDH+1pw==:
-Content-Length: 23
-
-{"message": "good dog"}
-</code></pre>
-<section id="signing-components"><div class="header-wrapper"><h4 id="x1-6-1-signing-components"><bdi class="secno">1.6.1 </bdi>Signing components</h4><a class="self-link" href="#signing-components" aria-label="Permalink for Section 1.6.1"></a></div>
-<p>This example covers additional components (the authority, the Content-Digest header field, and a single named query parameter) in test-request using the rsa-pss-sha512 algorithm.</p>
-<p>The corresponding signature base is:</p>
-<pre><code aria-busy="false" class="hljs">NOTE: '\' line wrapping per RFC 8792
-
-"@authority": example.com
-"content-digest": sha-512=:WZDPaVn/7XgHaAy8pmojAkGWoRx2UFChF41A2svX\
-  +TaPm+AbwAgBWnrIiYllu7BNNyealdVLvRwEmTHWXvJwew==:
-"@query-param";name="Pet": dog
-"@signature-params": ("@authority" "content-digest" \
-  "@query-param";name="Pet")\
-  ;created=1618884473;keyid="test-key-rsa-pss"
-</code></pre>
-<p>This results in the following Signature-Input and Signature headers being added to the message under the label sig-b22:</p>
-<pre><code aria-busy="false" class="hljs">NOTE: '\' line wrapping per RFC 8792
-
-Signature-Input: sig-b22=("@authority" "content-digest" \
-  "@query-param";name="Pet");created=1618884473\
-  ;keyid="test-key-rsa-pss"
-Signature: sig-b22=:W2kxR52X0tXN9u7yjyPeWa0T3D0SVG8KkPo+lOWyb2TGdLz\
-  ixWjUlbehjnNhzA+wFWnE6+hdKH8KR6Z9FvsxCc+44XrqxzT7Vcsror5SjMyfx6Nq\
-  tELklj1u2L4JovANI80BSoVobSoc+v9NRVWJZU7WAVow8H2CucCcv2cy1tKFCTMyc\
-  m9LQrIz63Tg5tcGWj64b12nmwj9TwwkCygfz0MTyIytjYLVzKw7mXpL4jGFZ5lsw2\
-  VT2eB3qpF2d/Psy0p1heKhrkz9uvKeCoj+P5QjLMS4eirHDqpKqe9YmCaMsJAUYSU\
-  M86qC8qO6vMQhTMegTkEe25DquVcTiOAEAw==:
-</code></pre>
-</section></section><section id="bijlage-b-jades"><div class="header-wrapper"><h3 id="x1-7-bijlage-b-jades"><bdi class="secno">1.7 </bdi>BIJLAGE B : JAdES</h3><a class="self-link" href="#bijlage-b-jades" aria-label="Permalink for Section 1.7"></a></div>
-<ol>
-<li>JAdES-handtekening velden</li>
-</ol>
-<p>Conform  RFC 7515 en RFC 7797 (JSON Web Signature(JWS)) de elementen van de JSON ‘’digital signatures’’ zijn: </p>
-<ul>
-<li>JOSE Header (JSON Object Signing and Encryption):</li>
-<li>JWS Protected Header bevat de ’signed attributes’’ in het container-element ‘’etsiSigProps’’</li>
-<li>JWS Unprotected header bevat optioneel het container-header-element genoemd ‘’etsiU’’. Deze header parameter wordt in het JAdES Long Term Validation profile gebruikt.</li>
-<li>JWS Payload (’Data to be Signed’)   </li>
-<li>JWS Signature (‘’Detached’’ van ‘’Data to be Signed’’)</li>
-</ul>
-<ol start="2">
-<li>JAdES Serialisations methoden</li>
-</ol>
-<p>In alle serializatie-methoden zijn de JWS Protected Header, JWS Payload, and JWS Signature base64url encoded.</p>
-<ul>
-<li>JSON Compact Serialization
-Het kan alleen de ’protected headers’ bevatten.<br>Het wordt alleen in het JAdES-BASELINE-B level gebruikt. Het JSON-container-element signed attributes ‘’etsiSigProps’’, is een deel van de JWS Protected Header. </li>
-<li>JSON Serialization
-Het kan beide type headers (protected en unprotected) bevatten en ondersteunt meerdere ondertekeningen van hetzelfde object. 
-De JAdES-BASELINE-T/-LT/-LTA handtekening profielen kunnen dit serialization format gebruiken. Het JAdES- handtekening serialization format ondersteunt de realisatie van de ’multiple-signatures’ en ’counter-signatures’</li>
-<li>JSON Flattened Serialization
-Het kan gebruikt worden zoals één signature gebruikt wordt. De JAdES-BASELINE-T/-LT/-LTA signature profielen kunnen dit serialization format gebruiken. 
-Deze JAdES- handtekening flattened serialization format ondersteunt de realisatie van de   ’counter-signatures’.
-Het JWS object wordt als een HTTP header-veld: "x-jws-signature“ toegevoegd  in de HTTP-bericht-headers.</li>
-</ul>
-<ol start="3">
-<li>JAdES-handtekening format</li>
-</ol>
-<ul>
-<li><p>ENVELOPING: het JWS Payload is enveloped in de JAdES-handtekening. 
-Deze format kan alleen één handtekening bevatten. JAdES enveloping ondersteunt counter-signatures. </p>
-</li>
-<li><p>DETACHED:  het JWS Payload is niet toegevoegd in het JAdES signature.<br>Om deze signature te valideren is het oorspronkelijke bericht nodig.
-JAdES-detached ondersteunt multiple-siganture (parallel-sigantures)  en ook counter-signatures.
-Met JAdES-handtekening is het niet mogelijk alleen een deel van het JSON payload bericht te ondertekenen. Met JAdES-handtekening is het JSON payload bericht volledig ondertekend. Indien nodig zouden additioneel de rest van de payload als aparte berichten gestuurd moeten worden naar de betreffende partij.</p>
-</li>
-</ul>
-<ol start="4">
-<li>JAdES-handtekening profielen</li>
-</ol>
-<ul>
-<li>Het B-B-level bevat in de handtekening headerparameters en sommige niet-ondertekende componenten in de etsiU unsigned header-parameter.</li>
-<li>Het B-T-level bevat in de handtekening de elementen van het profiel B-B samen met een vertrouwd timestamp-token dat bewijst dat de handtekening zelf op een bepaald tijdstip daadwerkelijk bestond.</li>
-<li>Het B-LT-level bevat in de handtekening de elementen van het profiel B-T plus het materiaal dat nodig is voor het valideren van de handtekening in het handtekeningdocument. Dit niveau is bedoeld om de beschikbaarheid van het validatiemateriaal op lange termijn te realiseren.</li>
-<li>Het B-LTA-level bevat in de handtekening de elementen van het profiel B-LT plus de  elektronische tijdstempels die de validatie van de handtekening lang na het genereren ervan mogelijk maken. Dit niveau is bedoeld om de beschikbaarheid en integriteit van het validatiemateriaal op lange termijn te realiseren.</li>
-</ul>
 </section></section>
+  <section id="conformance"><div class="header-wrapper"><h2 id="x2-conformance"><bdi class="secno">2. </bdi>Conformance</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 2."></a></div><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p><p>
+        The key words <em class="rfc2119">MUST</em>, <em class="rfc2119">RECOMMENDED</em>, and <em class="rfc2119">SHOULD</em> in this document
+        are to be interpreted as described in
+        <a href="https://datatracker.ietf.org/doc/html/bcp14">BCP 14</a>
+        [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">RFC2119</a></cite>] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8174" title="Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words">RFC8174</a></cite>]
+        when, and only when, they appear in all capitals, as shown here.
+      </p></section>
   
   
   
   
 
 
-<section id="references" class="appendix"><div class="header-wrapper"><h2 id="a-referenties"><bdi class="secno">A. </bdi>Referenties</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></div><section id="informatieve-referenties">
-    <div class="header-wrapper"><h3 id="a-1-informatieve-referenties"><bdi class="secno">A.1 </bdi>Informatieve referenties</h3><a class="self-link" href="#informatieve-referenties" aria-label="Permalink for Appendix A.1"></a></div>
-    <dl class="bibliography"><dt id="bib-http-messagesig">[HTTP-MessageSig]</dt><dd>
-      <a href="https://www.ietf.org/archive/id/draft-ietf-httpbis-message-signatures-14.html"><cite>HTTP Message Signatures</cite></a>. URL: <a href="https://www.ietf.org/archive/id/draft-ietf-httpbis-message-signatures-14.html">https://www.ietf.org/archive/id/draft-ietf-httpbis-message-signatures-14.html</a>
-    </dd><dt id="bib-jades">[JAdES]</dt><dd>
+<section id="references" class="appendix"><div class="header-wrapper"><h2 id="a-references"><bdi class="secno">A. </bdi>References</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></div><section id="normative-references">
+    <div class="header-wrapper"><h3 id="a-1-normative-references"><bdi class="secno">A.1 </bdi>Normative references</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Appendix A.1"></a></div>
+    <dl class="bibliography"><dt id="bib-enisa-crypto-2020">[ENISA-CRYPTO-2020]</dt><dd>
+      <a href="https://www.enisa.europa.eu/topics/cryptography"><cite>ENISA Good Practises in Cryptography – Primitives and Schemes, December 2020. (Limited availability)</cite></a>. URL: <a href="https://www.enisa.europa.eu/topics/cryptography">https://www.enisa.europa.eu/topics/cryptography</a>
+    </dd><dt id="bib-etsi-jades">[ETSI-JADES]</dt><dd>
+      <a href="https://www.etsi.org/deliver/etsi_ts/119100_119199/11918201/01.01.01_60/ts_11918201v010101p.pdf"><cite>JAdES digital signatures</cite></a>. URL: <a href="https://www.etsi.org/deliver/etsi_ts/119100_119199/11918201/01.01.01_60/ts_11918201v010101p.pdf">https://www.etsi.org/deliver/etsi_ts/119100_119199/11918201/01.01.01_60/ts_11918201v010101p.pdf</a>
+    </dd><dt id="bib-rfc2119">[RFC2119]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>
+    </dd><dt id="bib-rfc7515">[RFC7515]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc7515"><cite>JSON Web Signature (JWS)</cite></a>. M. Jones; J. Bradley; N. Sakimura.  IETF. May 2015. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc7515">https://www.rfc-editor.org/rfc/rfc7515</a>
+    </dd><dt id="bib-rfc7518">[RFC7518]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc7518"><cite>JSON Web Algorithms (JWA)</cite></a>. M. Jones.  IETF. May 2015. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc7518">https://www.rfc-editor.org/rfc/rfc7518</a>
+    </dd><dt id="bib-rfc7748">[RFC7748]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc7748"><cite>Elliptic Curves for Security</cite></a>. A. Langley; M. Hamburg; S. Turner.  IETF. January 2016. Informational. URL: <a href="https://www.rfc-editor.org/rfc/rfc7748">https://www.rfc-editor.org/rfc/rfc7748</a>
+    </dd><dt id="bib-rfc8032">[RFC8032]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc8032"><cite>Edwards-Curve Digital Signature Algorithm (EdDSA)</cite></a>. S. Josefsson; I. Liusvaara.  IETF. January 2017. Informational. URL: <a href="https://www.rfc-editor.org/rfc/rfc8032">https://www.rfc-editor.org/rfc/rfc8032</a>
+    </dd><dt id="bib-rfc8037">[RFC8037]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc8037"><cite>CFRG Elliptic Curve Diffie-Hellman (ECDH) and Signatures in JSON Object Signing and Encryption (JOSE)</cite></a>. I. Liusvaara.  IETF. January 2017. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc8037">https://www.rfc-editor.org/rfc/rfc8037</a>
+    </dd><dt id="bib-rfc8174">[RFC8174]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</cite></a>. B. Leiba.  IETF. May 2017. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>
+    </dd></dl>
+  </section><section id="informative-references">
+    <div class="header-wrapper"><h3 id="a-2-informative-references"><bdi class="secno">A.2 </bdi>Informative references</h3><a class="self-link" href="#informative-references" aria-label="Permalink for Appendix A.2"></a></div>
+    <dl class="bibliography"><dt id="bib-jades">[JAdES]</dt><dd>
       <a href="https://www.etsi.org/deliver/etsi_ts/119100_119199/11918201/01.01.01_60/ts_11918201v010101p.pdf"><cite>JAdES digital signatures</cite></a>. URL: <a href="https://www.etsi.org/deliver/etsi_ts/119100_119199/11918201/01.01.01_60/ts_11918201v010101p.pdf">https://www.etsi.org/deliver/etsi_ts/119100_119199/11918201/01.01.01_60/ts_11918201v010101p.pdf</a>
     </dd></dl>
   </section></section><p role="navigation" id="back-to-top">
