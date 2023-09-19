@@ -93,14 +93,21 @@ API's moeten waar mogelijk (binnen grenzen openbaarheid) centraal en publiekelij
 </section>
 
 ## Intentieovereenkomst
-Bij het realiseren van bovengenoemde visie volgt de overheid een aantal bestaande afspraken (1 /tm 3) van het [Forum Standaardisatie](https://www.forumstandaardisatie.nl/open-standaarden/verplicht?domein=126) deze zijn al bekrachtigd in het Overheidsbreed Beleidsoverleg Digitale Overheid (OBDO) :
+Intentieverklaring API Strategie
 
-1. Waar de overheid REST APIs inzet, gebeurt dat volgens de [REST API Design Rules](https://docs.geostandaarden.nl/api/API-Designrules/). Zo biedt de overheid haar data en diensten via REST APIs op een standaard manier en goed gedocumenteerd aan.
-2. Veilige autorisatie van toegang tot data via REST APIs realiseert de overheid met het [NL GOV Assurance Profile for OAuth 2.0](https://docs.geostandaarden.nl/api/oauth/). Dit profiel op de authorisatie standaard OAuth is speciaal ontwikkeld voor de Nederlandse overheid.
-3. Voor het realiseren van veilige koppelvlakken gebruikt de overheid de standaard [DigiKoppeling](https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/basisregistraties-en-stelselafspraken/stelselvoorzieningen/digikoppeling/). Deze standaard maakt het ook mogelijk om een REST API aan te bieden op een veilige manier die voldoet aan punten 1 en 2 hierboven.
-4. De overheid registreert haar extern toegankelijke REST API's bij een centraal vindbare openbare catalogus, tenzij dit om beveiligingsredenen niet gewenst is. Zo kunnen ontwikkelaars de APIs van de overheid altijd vinden.
+In onze visie zal de digitale overheid de komende jaren steeds meer veilig en efficiënt data uitwisselen door applicaties zoveel mogelijk te scheiden van de data, en deze data bij de bron te bewaren. Voorzieningen gaan data ophalen bij de bron zodra deze nodig is. Om deze data-uitwisseling mogelijk te maken, zijn platformen, API's en verplichte standaarden onmisbaar. Hiermee biedt de overheid toegang tot evenwichtige en consistente data sets, onafhankelijk van de complexiteit van achterliggende systemen, voor burgers, bedrijven en ketenpartners van de overheid. 
 
-Het aantal samenwerkende partijen binnen het Kennisplatform API's wordt verder uitgebreid. Gezamelijk wordt een concrete strategie opgesteld om de visie te realiseren.
+Met deze intentieverklaring, verklaart onze organisatie dat wij de volgende afspraken tussen de deelnemers van het Kennisplatform API's zullen naleven:  
+
+1. Deelnemers aan het Kennisplatform API's leveren een actieve bijdrage aan standaardisatie van het gebruik van API's in en buiten het Kennisplatform API's.  
+
+2. Waar de overheid REST API's inzet, gebeurt dat volgens de [REST API Design Rules](https://docs.geostandaarden.nl/api/API-Designrules/). Zo biedt de overheid haar data en diensten via REST API’s op een standaard manier en goed gedocumenteerd aan. 
+
+3. Veilige autorisatie van toegang tot data via REST API's realiseert de overheid met het [NL GOV Assurance Profile for OAuth 2.0](https://docs.geostandaarden.nl/api/oauth/). Dit profiel op de authorisatie standaard OAuth is speciaal ontwikkeld voor de Nederlandse overheid. 
+
+4. Voor het realiseren van veilige koppelvlakken gebruikt de overheid de standaard DigiKoppeling](https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/basisregistraties-en-stelselafspraken/stelselvoorzieningen/digikoppeling/). Deze standaard maakt het ook mogelijk om een REST API aan te bieden op een veilige manier die voldoet aan punten 1 en 2 hierboven. 
+
+5. De overheid registreert haar extern toegankelijke REST API's bij een centraal vindbare openbare catalogus, tenzij dit om beveiligingsredenen niet gewenst is. Zo kunnen ontwikkelaars de APIs van de overheid altijd vinden.
 
 ## Praktijkvoorbeelden
 
