@@ -105,8 +105,6 @@ Met deze intentieverklaring, verklaart onze organisatie dat wij de volgende afsp
 
 3. Veilige autorisatie van toegang tot data via REST API's realiseert de overheid met het [NL GOV Assurance Profile for OAuth 2.0](https://docs.geostandaarden.nl/api/oauth/). Dit profiel op de authorisatie standaard OAuth is speciaal ontwikkeld voor de Nederlandse overheid. 
 
-4. Voor het realiseren van veilige koppelvlakken gebruikt de overheid de standaard DigiKoppeling](https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/basisregistraties-en-stelselafspraken/stelselvoorzieningen/digikoppeling/). Deze standaard maakt het ook mogelijk om een REST API aan te bieden op een veilige manier die voldoet aan punten 1 en 2 hierboven. 
-
 5. De overheid registreert haar extern toegankelijke REST API's bij een centraal vindbare openbare catalogus, tenzij dit om beveiligingsredenen niet gewenst is. Zo kunnen ontwikkelaars de APIs van de overheid altijd vinden.
 
 ## Praktijkvoorbeelden
