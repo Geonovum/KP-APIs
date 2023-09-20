@@ -22,13 +22,14 @@ In samenwerking met het Kennisplatform APIs is afgelopen jaren gewerkt om de des
 | 11     | [KP #420](https://github.com/Geonovum/KP-APIs/issues/420)    | [PR # 131 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/131) (herstructurering API-53 : hide-implementation) | 2023-09-05       | Gereed (minor change)                  |
 | 12     |                                                              | [PR # 133 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/133) (Testen API-03 – http Methods)                  | 2023-07-06       | Gereed (Opgenomen in RFC #134)         |
 | 13     | [KP #351](https://github.com/Geonovum/KP-APIs/issues/351)    | [PR # 134 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/134) (Verdieping Testen)                             | 2023-09-05       | Gereed (minor change)                  |
-| 14     | [KP #468](https://github.com/Geonovum/KP-APIs/issues/468)    | [PR # 135 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/135) (rules  aangepast obv eDelivery)                | 2023-09-05       | Gereed (minor change)                  |
-| 15     | [KP #468](https://github.com/Geonovum/KP-APIs/issues/468)    | [PR # 136 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/136) (2 rules  aangevuld obv eDelivery)              | 2023-09-05       | Gereed (minor change)                  |
+| 14     | [KP #468](https://github.com/Geonovum/KP-APIs/issues/468)    | [PR # 135 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/135) (rules  aangepast obv eDelivery)                | 2023-09-05       | Afgewezen (minor change)                  |
+| 15     | [KP #468](https://github.com/Geonovum/KP-APIs/issues/468)    | [PR # 136 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/136) (2 rules  aangevuld obv eDelivery)              | 2023-09-05       | Afgewezen (minor change)                  |
 | 16     | -                                                            | [PR # 137 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/137) (verwijzing GEO rule)                           | 2023-09-05       | Gereed (minor change)                  |
 | 17     | -                                                            | [PR # 138 ](https://github.com/Logius-standaarden/API-Design-Rules/pull/138) (verwijzing Transport security module)          | 2023-09-05       | Gereed (minor change)                  |
 
 ## Tot slot
 
+- de wijzigingen mbt edelivery zijn afgewezen zodat nader onderzoek kan worden gedaan naar de impact 
 - Zie voor de actuele status van de nog te bespreken wijzigingen:
   - https://github.com/Logius-standaarden/API-Design-Rules/pulls?q=is%3Aopen+is%3Apr+label%3A%22Status%3A+In+review%22
 - Zie voor een overzicht van reeds besproken wijzigingen:
