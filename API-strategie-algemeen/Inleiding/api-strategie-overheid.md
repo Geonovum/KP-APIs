@@ -99,13 +99,13 @@ In onze visie zal de digitale overheid de komende jaren steeds meer veilig en ef
 
 Met deze intentieverklaring, verklaart onze organisatie dat wij de volgende afspraken tussen de deelnemers van het Kennisplatform API's zullen naleven:  
 
+( 0. In lijn met de API first strategie bij te dragen aan modernisering van de IT voorzieningen in de overheid )
+
 1. Deelnemers aan het Kennisplatform API's leveren een actieve bijdrage aan standaardisatie van het gebruik van API's in en buiten het Kennisplatform API's.  
 
-2. Waar de overheid REST API's inzet, gebeurt dat volgens de [REST API Design Rules](https://docs.geostandaarden.nl/api/API-Designrules/). Zo biedt de overheid haar data en diensten via REST API’s op een standaard manier en goed gedocumenteerd aan. 
+2. We houden ons aan de API standaarden die we samen hebben ontwikkeld welke op de lijst verplichte standaarden van het forum standaardisatie staan, zoals de [REST API Design Rules](https://forumstandaardisatie.nl/open-standaarden/rest-api-design-rules) voor het aanbieden van RESTful APIs en het [NL GOV Assurance Profile for OAuth 2.0](https://forumstandaardisatie.nl/open-standaarden/nl-gov-assurance-profile-oauth-20) voor autorisatie op APIs waar door gebruikers rechtendelegatie kan worden toegepast.  
 
-3. Veilige autorisatie van toegang tot data via REST API's realiseert de overheid met het [NL GOV Assurance Profile for OAuth 2.0](https://docs.geostandaarden.nl/api/oauth/). Dit profiel op de authorisatie standaard OAuth is speciaal ontwikkeld voor de Nederlandse overheid. 
-
-4. De overheid registreert haar extern toegankelijke REST API's bij een centraal vindbare openbare catalogus, tenzij dit om beveiligingsredenen niet gewenst is. Zo kunnen ontwikkelaars de APIs van de overheid altijd vinden.
+3. De overheid registreert haar extern toegankelijke REST API's bij een centraal vindbare openbare catalogus, tenzij dit om beveiligingsredenen niet gewenst is. Zo kunnen ontwikkelaars de APIs van de overheid altijd vinden.
 
 ## Praktijkvoorbeelden
 
