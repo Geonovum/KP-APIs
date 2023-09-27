@@ -42,7 +42,7 @@ const documentConfig = {
           href: "https://www.ncsc.nl/documenten/publicaties/2021/januari/19/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2.1",
           title: "ICT-beveiligingsrichtlijnen voor Transport Layer Security (TLS)",
           authors: ["NCSC"],
-          date: "April 2019"
+          date: "Januari 2021"
         }
     }
 }
