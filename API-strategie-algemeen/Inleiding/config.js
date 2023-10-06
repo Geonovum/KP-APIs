@@ -41,7 +41,7 @@ function custGHPG(respecConfig)
 
 var respecConfig =
 {
-  specStatus: "WV",
+  specStatus: "CV",
   specType: "HR",
   pubDomain: "api",
   //publishDate: "2022-01-13",
