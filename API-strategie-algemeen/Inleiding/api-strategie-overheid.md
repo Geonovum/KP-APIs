@@ -21,19 +21,19 @@ Nu het gebruik van API’s in opmars is, is het van belang de gemaakte afspraken
 ### Visie op het Kennisplatform API’s
 Het Kennisplatform API’s wil de adoptie van API’s stimuleren en brengt daartoe partijen samen. Het Kennisplatform API’s is dé plek voor overheden om afspraken over de toepassing van API’s te maken en om standaardisatie te bevorderen. Aanbieders van API’s krijgen handvatten waarmee zij hun API’s vorm kunnen geven. Afnemers van API’s profiteren door een meer uniform aanbod van API’s. Het Kennisplatform API’s streeft naar gedragen uitgangspunten voor technische interoperabiliteit, vindbaarheid, toegang, aansluitvoorwaarden en andere afspraken voor het aanbieden en gebruiken van API’s. Deze afspraken worden door het Kennisplatform API's voorbereid op vier thema's:
 
-1. governance, strategie en beleid,
-2. architectuurprincipes,
-3. beveiliging, en
-4. API design rules.
+1. governance, strategie en beleid
+2. architectuurprincipes
+3. beveiliging
+4. API design rules
 
-[^1]: De [Data Governance Regulation](https://digital-strategy.ec.europa.eu/en/policies/data-governance-act) en de [Data act](https://digital-strategy.ec.europa.eu/en/policies/data-act) maken deel uit van deze strategie. Het eindrapport van het _API guidelines for government_ project [An Application Programming Interface (API) framework for digital government](https://op.europa.eu/en/publication-detail/-/publication/0e262d9b-ca32-11ea-adf7-01aa75ed71a1) geeft een aantal voorstellen voor API toepassing voor overheden zoals _Align APIs with policy goals_ en _Measure policy impacts of APIs_.
+[^1]: De [Data Governance Regulation](https://digital-strategy.ec.europa.eu/en/policies/data-governance-act) en de [Data act](https://digital-strategy.ec.europa.eu/en/policies/data-act) maken deel uit van deze strategie. Het eindrapport van het _API guidelines for government_ project [An Application Programming Interface (API) framework for digital government](https://op.europa.eu/en/publication-detail/-/publication/0e262d9b-ca32-11ea-adf7-01aa75ed71a1) geeft een aantal voorstellen voor API toepassing voor overheden zoals _Align API's with policy goals_ en _Measure policy impacts of API's_.
 
 </section>
 
 <section id="api-strategie-overheid-visie" class="terconsultatie">
 <h2>API first Strategie</h2>
 
-De API first strategie past binnen de huidige beleidsdoelen en de omgeving van de publieke sector. Voor uit te leggen wat API first inhoud lichten we eerst deze beleidsdoelen en de omgeving (vanuit APIs bezien) toe. Daarna volgt wat API first inhoud en drie concrete acties die er uit af te leiden zijn.
+De API first strategie past binnen de huidige beleidsdoelen en de omgeving van de publieke sector. Voor uit te leggen wat API first inhoud lichten we eerst deze beleidsdoelen en de omgeving (vanuit API's bezien) toe. Daarna volgt wat API first inhoud en drie concrete acties die er uit af te leiden zijn.
 
 ### Beleidsdoelen
 
@@ -45,7 +45,7 @@ Een aantal beleidsdoelen waarin API's een rol kunnen spelen (met het voor API's 
 * De [Interbestuurlijke Data Strategie (IBDS)](https://realisatieibds.pleio.nl/) is het resultaat van nauwe samenwerking tussen departementen, uitvoeringsorganisaties en koepels van medeoverheden. Het programma zorgt ervoor dat het makkelijker wordt om binnen de overheid verantwoord met data te werken. Een van de speerpunten van het IBDS is het ontwikkelen van overheidsbrede systeemfuncties waaronder een federatief datastelsel waarmee data beter _vindbaar en technisch uitwisselbaar_ wordt.
 * [EU Data Act of _Datawet_](https://digital-strategy.ec.europa.eu/nl/policies/data-act) De datawet is gericht op eerlijke toegang tot en het gebruik van gegevens. Hierbij worden met name _Internet of Things_ (IoT) apparaten genoemd en middelen voor openbare lichamen om toegang te krijgen tot gegevens die in het bezit zijn van de particuliere sector. De datawet maakt deel uit van de Europese datastrategie.
 
-Voor al deze beleidsdoelen geldt dat APIs er een rol in kunnen spelen maar dat de API standaarden en best practices er nog niet altijd in beeld zijn.
+Voor al deze beleidsdoelen geldt dat API's er een rol in kunnen spelen maar dat de API standaarden en best practices er nog niet altijd in beeld zijn.
 
 ### Omgeving
 Tot de omgeving van een publieke organisatie hoort iedereen die interactie heeft of wil hebben met een publieke organisatie. Burger, bedrijf, ketenpartner of andere organisaties uit de publieke sector. De omgeving van een organisatie uit de publieke sector is al jaren bekend met API's en de toepassing ervan. Zo herkent iedere burger hoe eenvoudige verschillende platforms uit de platform economie (Google Amazon Linkedin Meta) eenvoudig elkaars functionaliteit integreren. Denk aan de store in store concepten op bij grote online retailers, knoppen om informatie te delen op je favoriete sociale medium. 
@@ -54,7 +54,7 @@ De grootste kennis in de markt van (potentiële) software leveranciers in de pub
 In de publieke sector zelf zijn API's in sommige sectoren ook al dominant, CBS ontsluit al haar statistische informatie al meer dan 10 jaar via API's, het digitaal stelsel omgevingswet heeft ze van begin af aan omarmt, het KNMI en het Kadaster en vele anderen bieden hun open data via API's aan zodat anderen deze kunnen hergebruiken. 
 API's pas je dus toe om goed aan te sluiten op de verwachtingen van je omgeving. 
 Niet alle organisaties zijn zo ver, sommige cruciale bedrijfsprocessen draaien nog op oude (maar meestal ook zeer stabiele) systemen die bedacht zijn voordat API's gemeengoed werden in de IT. Je zal hen moeten blijven bedienen tot zij de omslag hebben kunnen maken. Die omslag maken is vaak niet eenvoudig, in de bankwereld was er de PSD2 wetgeving nodig om dit te laten gebeuren. 
-In de gemeentelijk wereld wordt deze omslag gemaakt in het common ground initiatief. Net als bij PSD2 worden API's ook bij common ground ingezet als transitie mechanisme. APIs worden gebruikt om in stappen over te gaan naar nieuwe manier van werken waarbij API's het ontkoppelpunt vormen.
+In de gemeentelijk wereld wordt deze omslag gemaakt in het common ground initiatief. Net als bij PSD2 worden API's ook bij common ground ingezet als transitie mechanisme. API's worden gebruikt om in stappen over te gaan naar nieuwe manier van werken waarbij API's het ontkoppelpunt vormen.
 
 ### API first
 Tot de omgeving van een publieke organisatie hoort iedereen die interactie heeft of wil hebben met een publieke organisatie. Burger, bedrijf, ketenpartner of andere organisaties uit de publieke sector. 
@@ -71,10 +71,10 @@ Achter al deze ontsluitingskanalen zit een IT systeem. Het is in de huidige digi
 
 
 ### Actie 1: Houdt regie door open API standaarden toe te passen
-APIs vormen bij de grote platforms van de IT wereld, maar ook al bij nationale leveranciers een essentieel onderdeel van hun strategie. In de relatie met de markt houdt je als overheid de regie door zelf te bepalen hou informatie middels open API standaarden wordt uitgewisseld. Samen werking met de de markt op basis van open standaarden is wenselijk. Samenwerking op basis van leveranciers eigen oplossingen onder voorwaarden van die leverancier is (hoewel op korte termijn soms aantrekkelijk) op de lange termijn zeer risicovol. Vanwege de kans op "vendor lock-in" maar misschien nog wel meer vanwege de mogelijkheid dat we als publieke sector de controle verliezen over wat er met gevoelige informatie die wij bijhouden gebeurd. Met name als die bij de grote platforms terecht komen. De samenleving verwacht van organisaties in de publieke sector dat we zorgvuldig met hun gegevens omgaan. Het gebruik van niet open standaarden voor gegevensuitwisseling past daar niet bij.
+API's vormen bij de grote platforms van de IT wereld, maar ook al bij nationale leveranciers een essentieel onderdeel van hun strategie. In de relatie met de markt houdt je als overheid de regie door zelf te bepalen hou informatie middels open API standaarden wordt uitgewisseld. Samenwerking met de markt op basis van open standaarden is wenselijk. Samenwerking op basis van leveranciers eigen oplossingen onder voorwaarden van die leverancier is (hoewel op korte termijn soms aantrekkelijk) op de lange termijn zeer risicovol. Vanwege de kans op "vendor lock-in" maar misschien nog wel meer vanwege de mogelijkheid dat we als publieke sector de controle verliezen over wat er met gevoelige informatie die wij bijhouden gebeurd. Met name als die bij de grote platforms terecht komen. De samenleving verwacht van organisaties in de publieke sector dat we zorgvuldig met hun gegevens omgaan. Het gebruik van niet open standaarden voor gegevensuitwisseling past daar niet bij.
 
 ### Actie 2: Druk kosten door API standaarden toe te passen
-Als organisatie uit de publieke sector druk je kosten door zoveel mogelijk gebruik te maken van dat wat brede marktondersteuning heeft. Dan zijn er meer partijen die je kunnen helpen, is er meer personeel te vinden met de benodigde kennis en meer keuze betekent meer concurrentie en dus lagere kosten. Kennis over APIs in momenteel zeer breed in de markt beschikbaar. Breder dan nog regelmatig toegepaste alternatieven als SOAP XML(WUS/ ebMS koppelvlakken van Digikoppeling). Het is dus logisch om hier op in te zetten, tegelijkertijd is het goed om innovaties goed te volgen. Dit is eenvoudig te volgen via de lijsten met verplichte en veelgebruikte standaarden van het forum standaardisatie. Daarin is te vinden dat er de REST API Design rules zijn evanals een (daarop aansluitend) REST API profiel binnen Digikoppeling. Gebruik de standaarden bij inkoop voor nieuwbouw en verbouw van IT systemen. 
+Als organisatie uit de publieke sector druk je kosten door zoveel mogelijk gebruik te maken van dat wat brede marktondersteuning heeft. Dan zijn er meer partijen die je kunnen helpen, is er meer personeel te vinden met de benodigde kennis en meer keuze betekent meer concurrentie en dus lagere kosten. Kennis over API's in momenteel zeer breed in de markt beschikbaar. Breder dan nog regelmatig toegepaste alternatieven als SOAP XML(WUS/ ebMS koppelvlakken van Digikoppeling). Het is dus logisch om hier op in te zetten, tegelijkertijd is het goed om innovaties goed te volgen. Dit is eenvoudig te volgen via de lijsten met verplichte en veelgebruikte standaarden van het forum standaardisatie. Daarin is te vinden dat er de REST API Design rules zijn evenals een (daarop aansluitend) REST API profiel binnen Digikoppeling. Gebruik de standaarden bij inkoop voor nieuwbouw en verbouw van IT systemen. 
 Het volgen van standaarden als de REST API design rules is in het belang van de kosten van de overheid in zijn geheel omdat breed gebruik van de standaard interoperabiliteit, wendbaarheid en bijkomende kostenvoordeel voor de hele publieke sector bewerkstelligt.
 
 
@@ -98,13 +98,13 @@ In onze visie zal de digitale overheid de komende jaren steeds meer veilig en ef
 
 Met deze intentieverklaring, verklaart onze organisatie dat wij de volgende afspraken tussen de deelnemers van het Kennisplatform API's zullen naleven:  
 
-( 0. In lijn met de API first strategie bij te dragen aan modernisering van de IT voorzieningen in de overheid )
+1. In lijn met de API first strategie bij te dragen aan modernisering van de IT voorzieningen in de overheid
 
-1. Deelnemers aan het Kennisplatform API's leveren een actieve bijdrage aan standaardisatie van het gebruik van API's in en buiten het Kennisplatform API's.  
+2. Deelnemers aan het Kennisplatform API's leveren een actieve bijdrage aan standaardisatie van het gebruik van API's in en buiten het Kennisplatform API's.  
 
-2. We houden ons aan de API standaarden die we samen hebben ontwikkeld welke op de lijst verplichte standaarden van het forum standaardisatie staan, zoals de [REST API Design Rules](https://forumstandaardisatie.nl/open-standaarden/rest-api-design-rules) voor het aanbieden van RESTful APIs en het [NL GOV Assurance Profile for OAuth 2.0](https://forumstandaardisatie.nl/open-standaarden/nl-gov-assurance-profile-oauth-20) voor autorisatie op APIs waar door gebruikers rechtendelegatie kan worden toegepast.  
+3. We houden ons aan de API standaarden die we samen hebben ontwikkeld welke op de lijst verplichte standaarden van het forum standaardisatie staan, zoals de [REST API Design Rules](https://forumstandaardisatie.nl/open-standaarden/rest-api-design-rules) voor het aanbieden van RESTful API's en het [NL GOV Assurance Profile for OAuth 2.0](https://forumstandaardisatie.nl/open-standaarden/nl-gov-assurance-profile-oauth-20) voor autorisatie op API's waar door gebruikers rechtendelegatie kan worden toegepast.  
 
-3. De overheid registreert haar extern toegankelijke REST API's bij een centraal vindbare openbare catalogus, tenzij dit om beveiligingsredenen niet gewenst is. Zo kunnen ontwikkelaars de APIs van de overheid altijd vinden.
+4. De overheid registreert haar extern toegankelijke REST API's bij een centraal vindbare openbare catalogus, tenzij dit om beveiligingsredenen niet gewenst is. Zo kunnen ontwikkelaars de API's van de overheid altijd vinden.
 
 ## Praktijkvoorbeelden
 
@@ -133,7 +133,7 @@ De [Wet bescherming persoonsgegevens](https://wetten.overheid.nl/BWBR0011468/201
 
 In de [beleidsbrief regie op gegevens](https://www.rijksoverheid.nl/documenten/brieven/2019/07/11/beleidsbrief-regie-op-gegevens-nadere-uitwerking) regie op gegevens van 2019 onderstreept het kabinet nog eens het beleidsvoornemen om serieus werk te maken van regie op gegevens. Maar dan er zal er dus iets moeten gebeuren in het gegevenslandschap om dit mogelijk te maken.
 
-Om het inzicht in de verstrekking van persoonsgegevens veel eenvoudiger te maken, is er door [VNG-Realisatie een model API opgesteld](https://commonground.nl/cms/view/c99f1789-adba-4fa7-bc2d-e1f8a96618c5/api-standaarden-voor-logging-en-verwerking), die overheden in staat kan stellen de verwerking van persoonsgegevens op een toegankelijke manier te tonen. Deze API haakt aan bij wat conform de AVG al tot stand komt: de organisatie-brede registers van verwerkingen van persoonsgegevens. Als de overheid gegevens bij de bron gaat beheren en ontsluiten met APIs, wordt het gemakkelijker om bij de bron volledige inzage te geven. De overheid kan dan digitale inzage geven in een uniform gebruiksvriendelijk format, en ook de correctie van gegevens wordt eenvoudiger.
+Om het inzicht in de verstrekking van persoonsgegevens veel eenvoudiger te maken, is er door [VNG-Realisatie een model API opgesteld](https://commonground.nl/cms/view/c99f1789-adba-4fa7-bc2d-e1f8a96618c5/api-standaarden-voor-logging-en-verwerking), die overheden in staat kan stellen de verwerking van persoonsgegevens op een toegankelijke manier te tonen. Deze API haakt aan bij wat conform de AVG al tot stand komt: de organisatie-brede registers van verwerkingen van persoonsgegevens. Als de overheid gegevens bij de bron gaat beheren en ontsluiten met API's, wordt het gemakkelijker om bij de bron volledige inzage te geven. De overheid kan dan digitale inzage geven in een uniform gebruiksvriendelijk format, en ook de correctie van gegevens wordt eenvoudiger.
 
 ## Samenvattend
 De platformeconomie biedt nieuwe kansen voor de digitale overheid. Om deze kansen te benutten en tegelijkertijd de dienstverlening van de digitale overheid te verbeteren vindt er transitie plaats in het gegevenslandschap. Initiatieven zoals Common Ground, Haal Centraal en het Digitaal Stelsel Omgevingswet (DSO) willen de digitale overheid efficiënter, slimmer, veiliger en beter beheersbaar maken door applicaties beter te scheiden van de gegevens en de gegevens alleen bij de bron te beheren. Hierdoor hoeven gegevens niet meer op grote schaal gedupliceerd en gesynchroniseerd te worden. In deze ambitie spelen API’s als ondersteunende technologie een belangrijke rol. Nagenoeg alle organisaties binnen de overheid zijn de omslag van traditionele IT naar een API-ecosysteem aan het maken. Dit hoofdstuk biedt een kader aan waarbinnen de overheid zich kan committeren bij ontwikkeling en te realiseren beleid rondom API’s. Om die reden krijgen organisaties die aan deze API Strategie hebben bijgedragen het verzoek om de intentieovereenkomst te ondertekenen.
