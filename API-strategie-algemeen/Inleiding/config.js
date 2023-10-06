@@ -41,12 +41,12 @@ function custGHPG(respecConfig)
 
 var respecConfig =
 {
-  specStatus: "GN-CV",
+ specStatus: "GN-WV",
   specType: "HR",
   pubDomain: "api",
   //publishDate: "2022-01-13",
-  previousPublishDate: "2022-03-09",
-  previousMaturity: "GN-DEF",
+  previousPublishDate: "2023-10-06",
+  previousMaturity: "GN-CV",
   edDraftURI: "https://geonovum.github.io/KP-APIs/API-strategie-algemeen/",
   editors:
   [
