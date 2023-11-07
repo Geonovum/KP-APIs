@@ -1,2 +1,2 @@
-# ADR-Signing-JAdES
-ADR-HTTP Message and payload signing with JAdES
+# ADR-Encryption
+ADR-HTTP payload encryption with JWE
