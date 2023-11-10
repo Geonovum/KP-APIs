@@ -3,11 +3,11 @@ var respecConfig =
   //voor specStatus mogelijkheden zie https://github.com/Logius-standaarden/respec/wiki/specStatus
   specStatus: "WV",
   //voor specType mogelijkheden zie https://github.com/Logius-standaarden/respec/wiki/specType
-  specType: "HR",
-  pubDomain: "dk",
+  specType: "ST",
+  pubDomain: "adr",
   shortName: "template",
   publishDate: "2023-11-03",
-  publishVersion: "0.9",
+  publishVersion: "1.0",
   // previousPublishVersion: "(none)",
   //  previousPublishDate: "(none)",
   //  previousMaturity: "WV",
@@ -59,7 +59,7 @@ var respecConfig =
 
   // nl_organisationPublishURL points to organisation specifica publication page, used in header
   // defaults to  https://docs.geostandaarden.nl/"
-  nl_organisationPublishURL: "https://publicatie.centrumvoorstandaarden.nl/",
+  nl_organisationPublishURL: "https://github.com/Geonovum/KPAPI",
 
   // nl_logo refers to company logo
   // defaults to https://tools.geostandaarden.nl/respec/style/logos/Geonovum.svg

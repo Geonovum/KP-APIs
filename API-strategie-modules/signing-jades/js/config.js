@@ -3,7 +3,7 @@ var respecConfig =
   //voor specStatus mogelijkheden zie https://github.com/Logius-standaarden/respec/wiki/specStatus
   specStatus: "WV",
   //voor specType mogelijkheden zie https://github.com/Logius-standaarden/respec/wiki/specType
-  specType: "HR",
+  specType: "ST",
   pubDomain: "dk",
   shortName: "template",
   publishDate: "2022-06-24",
