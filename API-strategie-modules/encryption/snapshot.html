@@ -38,7 +38,7 @@ dfn{cursor:pointer}
   
   
   
-<title>ADR-HTTP Message and payload signing with JAdES</title>
+<title>ADR-HTTP Payload encryption</title>
   
   
 <link rel="shortcut icon" type="image/x-icon" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/logius.ico">
@@ -104,7 +104,7 @@ dd{margin-left:0}
 .removeOnSave{display:none}
 }
 </style>
-<meta name="description" content="This ADR Module contains the requirements for ADR-HTTP Message and payload signing with JAdES">
+<meta name="description" content="This ADR Module contains the requirements for ADR REST-API encryption based on JWE">
 <style>
 .hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}
 .hljs-comment,.hljs-quote{color:#717277;font-style:italic}
@@ -128,11 +128,11 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 </style>
 <script id="initialUserConfig" type="application/json">{
   "specStatus": "WV",
-  "specType": "HR",
-  "pubDomain": "dk",
+  "specType": "ST",
+  "pubDomain": "adr",
   "shortName": "template",
-  "publishDate": "2022-06-24",
-  "publishVersion": "0.9",
+  "publishDate": "2023-11-03",
+  "publishVersion": "1.0",
   "editors": [
     {
       "name": "Peter Haasnoot",
@@ -154,7 +154,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   "nl_organisationStylesURL": "https://publicatie.centrumvoorstandaarden.nl/respec/style/",
   "nl_organisationPrefix": "X-",
   "nl_markdownEmbedImageInFigure": true,
-  "nl_organisationPublishURL": "https://publicatie.centrumvoorstandaarden.nl/",
+  "nl_organisationPublishURL": "https://github.com/Geonovum/KPAPI",
   "nl_logo": {
     "src": "media/leeg.png",
     "alt": "KPAPI",
@@ -174,8 +174,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     },
     "JAdES": {
       "href": "https://www.etsi.org/deliver/etsi_ts/119100_119199/11918201/01.01.01_60/ts_11918201v010101p.pdf",
-      "title": "JAdES digital signatures",
-      "id": "jades"
+      "title": "JAdES digital signatures"
     },
     "HTTP-MessageSig": {
       "href": "https://www.ietf.org/archive/id/draft-ietf-httpbis-message-signatures-14.html",
@@ -183,34 +182,32 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     },
     "ETSI-JADES": {
       "href": "https://www.etsi.org/deliver/etsi_ts/119100_119199/11918201/01.01.01_60/ts_11918201v010101p.pdf",
-      "title": "JAdES digital signatures",
-      "id": "etsi-jades"
+      "title": "JAdES digital signatures"
     },
     "ENISA-CRYPTO-2020": {
       "href": "https://www.enisa.europa.eu/topics/cryptography",
-      "title": "ENISA Good Practises in Cryptography – Primitives and Schemes, December 2020. (Limited availability)",
-      "id": "enisa-crypto-2020"
+      "title": "ENISA Good Practises in Cryptography – Primitives and Schemes, December 2020. (Limited availability)"
     }
   },
-  "publishISODate": "2022-06-24T00:00:00.000Z",
-  "generatedSubtitle": "Draft 07 juli 2023"
+  "publishISODate": "2023-11-03T00:00:00.000Z",
+  "generatedSubtitle": "Draft 10 november 2023"
 }</script>
 <link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/X-WV.css"></head>
 
 <body class="h-entry toc-inline"><div class="head">
     <a class="logo"><img alt="KPAPI" height="77" id="KPAPI" src="media/leeg.png" width="44">
-  </a> <h1 id="title" class="title">ADR-HTTP Message and payload signing with JAdES</h1>
+  </a> <h1 id="title" class="title">ADR-HTTP Payload encryption</h1>
     
     <h2>
-      KPAPI Guide<br>
+      KPAPI Standard<br>
       Draft
-      <time class="dt-published" datetime="2022-06-24">07 juli 2023</time>
+      <time class="dt-published" datetime="2023-11-03">10 november 2023</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
               <a class="u-url status" href="https://geonovum.github.io/KPAPI/">https://geonovum.github.io/KPAPI/</a>
             </dd><dt>Latest published version:</dt><dd>
-              <a href="https://publicatie.centrumvoorstandaarden.nl/dk/template/">https://publicatie.centrumvoorstandaarden.nl/dk/template/</a>
+              <a href="https://github.com/Geonovum/KPAPI/adr/template/">https://github.com/Geonovum/KPAPI/adr/template/</a>
             </dd>
       <dt>Latest editor's draft:</dt><dd><a href="https://geonovum.github.io/KPAPI/">https://geonovum.github.io/KPAPI/</a></dd>
       
@@ -246,156 +243,78 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     <hr title="Separator for header">
   </div>
 
-  <section id="abstract" class="introductory"><h2>Abstract</h2><p>This ADR Module contains the requirements for ADR-HTTP Message and payload signing with JAdES</p>
-<ul>
-<li>JAdES [<cite><a class="bibref" data-link-type="biblio" href="#bib-jades" title="JAdES digital signatures">JAdES</a></cite>]</li>
-</ul>
-<p>This module is based on the <em>ISA² IPS REST API Profile v1.0 section 5.2.2 Message And Payload Level Security</em></p>
+  <section id="abstract" class="introductory"><h2>Abstract</h2><p>This ADR Module contains the requirements for ADR REST-API encryption based on JWE</p>
 </section>
-  <section id="sotd" class="introductory"><h2>Status of This Document</h2>This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by de werkgroep.<p></p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#adr-http-message-and-payload-signing-with-jades"><bdi class="secno">1. </bdi>ADR-HTTP Message and payload signing with JAdES</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1.1 </bdi>Introduction</a></li><li class="tocline"><a class="tocxref" href="#jws-detached-signatures"><bdi class="secno">1.2 </bdi>JWS detached signatures</a></li><li class="tocline"><a class="tocxref" href="#cryptographic-algorithms"><bdi class="secno">1.3 </bdi>Cryptographic Algorithms</a></li><li class="tocline"><a class="tocxref" href="#payload-signing"><bdi class="secno">1.4 </bdi>Payload signing</a></li><li class="tocline"><a class="tocxref" href="#http-message-signing"><bdi class="secno">1.5 </bdi>HTTP Message signing</a></li><li class="tocline"><a class="tocxref" href="#signature-representations"><bdi class="secno">1.6 </bdi>Signature Representations</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">2. </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">A.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">A.2 </bdi>Informative references</a></li></ol></li></ol></nav>
-  <section id="adr-http-message-and-payload-signing-with-jades"><div class="header-wrapper"><h2 id="x1-adr-http-message-and-payload-signing-with-jades"><bdi class="secno">1. </bdi>ADR-HTTP Message and payload signing with JAdES</h2><a class="self-link" href="#adr-http-message-and-payload-signing-with-jades" aria-label="Permalink for Section 1."></a></div>
+  <section id="sotd" class="introductory"><h2>Status of This Document</h2>This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by de werkgroep.<p></p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#adr-http-payload-encryption"><bdi class="secno">1. </bdi>ADR-HTTP Payload encryption</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1.1 </bdi>Introduction</a></li><li class="tocline"><a class="tocxref" href="#notational-conventions"><bdi class="secno">1.2 </bdi>Notational Conventions</a></li><li class="tocline"><a class="tocxref" href="#jwe-encryption"><bdi class="secno">1.3 </bdi>JWE encryption</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#basic-jwe-proces-flow"><bdi class="secno">1.3.1 </bdi>Basic JWE proces flow</a></li><li class="tocline"><a class="tocxref" href="#parameters-and-requirements"><bdi class="secno">1.3.2 </bdi>Parameters and requirements</a></li></ol></li><li class="tocline"><a class="tocxref" href="#cryptographic-algorithms"><bdi class="secno">1.4 </bdi>Cryptographic Algorithms</a></li><li class="tocline"><a class="tocxref" href="#encryption-in-combination-with-signing"><bdi class="secno">1.5 </bdi>Encryption in combination with signing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">2. </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">A.1 </bdi>Normative references</a></li></ol></li></ol></nav>
+  <section id="adr-http-payload-encryption"><div class="header-wrapper"><h2 id="x1-adr-http-payload-encryption"><bdi class="secno">1. </bdi>ADR-HTTP Payload encryption</h2><a class="self-link" href="#adr-http-payload-encryption" aria-label="Permalink for Section 1."></a></div>
 <div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="3"><span>Note</span><span class="issue-label">: Status</span></div><aside class="">
         <p>This module is under development</p>
 </aside></div>
 
 
 <section id="introduction"><div class="header-wrapper"><h3 id="x1-1-introduction"><bdi class="secno">1.1 </bdi>Introduction</h3><a class="self-link" href="#introduction" aria-label="Permalink for Section 1.1"></a></div>
-<p>This module specifies the use of JAdES signatures for HTTP message and payload siging. The module is directly based on the <em>ISA² IPS REST API Profile v1.0</em> (which was a result of the REST API Pilot project for eDelivery)</p>
-</section><section id="jws-detached-signatures"><div class="header-wrapper"><h3 id="x1-2-jws-detached-signatures"><bdi class="secno">1.2 </bdi>JWS detached signatures</h3><a class="self-link" href="#jws-detached-signatures" aria-label="Permalink for Section 1.2"></a></div>
-<p>This module enforces the use of JWS detached signatures following the HttpHeaders Mechanism of the ETSI ESI JAdES specification [ETSI-JADES]. </p>
-<p>This structure is enforced for the following reasons:</p>
+<p>This module specifies the use of JWE for HTTP payload encryption.</p>
+</section><section id="notational-conventions"><div class="header-wrapper"><h3 id="x1-2-notational-conventions"><bdi class="secno">1.2 </bdi>Notational Conventions</h3><a class="self-link" href="#notational-conventions" aria-label="Permalink for Section 1.2"></a></div>
+<p>   The key words "<em class="rfc2119">MUST</em>", "<em class="rfc2119">MUST NOT</em>", "<em class="rfc2119">REQUIRED</em>", "<em class="rfc2119">SHALL</em>", "<em class="rfc2119">SHALL NOT</em>",
+   "<em class="rfc2119">SHOULD</em>", "<em class="rfc2119">SHOULD NOT</em>", "<em class="rfc2119">RECOMMENDED</em>", "<em class="rfc2119">NOT RECOMMENDED</em>", "<em class="rfc2119">MAY</em>", and
+   "<em class="rfc2119">OPTIONAL</em>" in this document are to be interpreted as described in
+   "Key words for use in RFCs to Indicate Requirement Levels" [RFC2119].
+   The interpretation should only be applied when the terms appear in
+   all capital letters.</p>
+</section><section id="jwe-encryption"><div class="header-wrapper"><h3 id="x1-3-jwe-encryption"><bdi class="secno">1.3 </bdi>JWE encryption</h3><a class="self-link" href="#jwe-encryption" aria-label="Permalink for Section 1.3"></a></div>
+<p> For encryption <a href="https://datatracker.ietf.org/doc/html/rfc7516">JSON Web Encryption (JWE)</a> is used as defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7516" title="JSON Web Encryption (JWE)">RFC7516</a></cite>];</p>
+<section id="basic-jwe-proces-flow"><div class="header-wrapper"><h4 id="x1-3-1-basic-jwe-proces-flow"><bdi class="secno">1.3.1 </bdi>Basic JWE proces flow</h4><a class="self-link" href="#basic-jwe-proces-flow" aria-label="Permalink for Section 1.3.1"></a></div>
+<p>The basic flow for encryption using JWE is :</p>
+<p><figure id="fig-generatedID"><img src="media/API_encryption.png" alt="Encryption" height="847" width="783"><figcaption>Figure <bdi class="figno">1</bdi> <span class="fig-title"></span></figcaption></figure></p>
 <ul>
-<li>JWS, being a simple JSON Structure, can be supported by clients in a light context, while specifications like the ETSI ESI ASIC containers are more difficult to do.</li>
-<li>JWS in detached form does not change the payload structure, meaning that a client not supporting the validation of signature can continue to operate as if there was no signature applied.</li>
-<li>JWS Detached can be transported using an HTTP header, making its presence unintrusive and easily transportable.</li>
-</ul>
-</section><section id="cryptographic-algorithms"><div class="header-wrapper"><h3 id="x1-3-cryptographic-algorithms"><bdi class="secno">1.3 </bdi>Cryptographic Algorithms</h3><a class="self-link" href="#cryptographic-algorithms" aria-label="Permalink for Section 1.3"></a></div>
-<p>Following ENISA's Good Practises in Cryptography – Primitives and Schemes [<cite><a class="bibref" data-link-type="biblio" href="#bib-enisa-crypto-2020" title="ENISA Good Practises in Cryptography – Primitives and Schemes, December 2020. (Limited availability)">ENISA-CRYPTO-2020</a></cite>], the following algorithms found in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7518" title="JSON Web Algorithms (JWA)">RFC7518</a></cite>] are selected for this profile, to be used in the following form:</p>
-<ul>
-<li>The ECDSA Algorithm with SHA-256 and P-256 Curve <em class="rfc2119">MUST</em> be supported, with a key length of at least 256 bits. The value "ES256" for the alg parameter <em class="rfc2119">MUST</em> be used in this case as defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7518" title="JSON Web Algorithms (JWA)">RFC7518</a></cite>].</li>
-<li>The EdDSA Algorithm [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8032" title="Edwards-Curve Digital Signature Algorithm (EdDSA)">RFC8032</a></cite>] using one of the curves defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7748" title="Elliptic Curves for Security">RFC7748</a></cite>] <em class="rfc2119">SHOULD</em> be supported and is <em class="rfc2119">RECOMMENDED</em> for use, with a key length of at least 256 bits. The value "EdDSA" for the alg parameter <em class="rfc2119">MUST</em> be used in this case and the curve shall be encoded in the crv parameter as defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8037" title="CFRG Elliptic Curve Diffie-Hellman (ECDH) and Signatures in JSON Object Signing and Encryption (JOSE)">RFC8037</a></cite>].</li>
-</ul>
-</section><section id="payload-signing"><div class="header-wrapper"><h3 id="x1-4-payload-signing"><bdi class="secno">1.4 </bdi>Payload signing</h3><a class="self-link" href="#payload-signing" aria-label="Permalink for Section 1.4"></a></div>
-<p>Payload signing ensures the integrity and authenticity of the payload part of the message.  When payload signing is considered, the Detached JSON Web Signatures following the JAdES specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-etsi-jades" title="JAdES digital signatures">ETSI-JADES</a></cite>] <em class="rfc2119">MUST</em> be applied with the following restrictions:</p>
-<ul>
-<li>The JWS content (Data to be Signed) <em class="rfc2119">MUST</em> be detached from the signatures as defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7515" title="JSON Web Signature (JWS)">RFC7515</a></cite>] Appendix F. </li>
-<li>The signed SigD parameter object <em class="rfc2119">MUST</em> be present in the JWS headers, denoting the use of the JAdES detached header profile. </li>
-<li>The value of the mId parameter <em class="rfc2119">MUST</em> be set to "<a href="http://uri.etsi.org/19182/HttpHeaders&quot;">http://uri.etsi.org/19182/HttpHeaders"</a>.</li>
-<li>The pars array of the SigD <em class="rfc2119">MUST</em> contain only the element "digest", denoting that for the calculation of the signature only the digest of the HTTP payload must be taken into account, according to [[RFC3230]. </li>
-<li>The alg parameter <em class="rfc2119">MUST</em> be set to the correct value depending on the algorithm used (see above). </li>
-<li>If the alg parameter is set to "EdDSA", the crv parameter <em class="rfc2119">MUST</em> be set to the correct value (see above).</li>
-</ul>
-<p>The JWS structure shall be carried in HTTP header field named <strong>nlgov-adr-payload-sig</strong>. The header field can be used in both requests and responses. The header field <em class="rfc2119">MUST</em> not appear more than once in a message; if a message contains multiple nlgov-adr-payload-sig header fields, the receiver <em class="rfc2119">MUST</em> consider the signature invalid.</p>
-</section><section id="http-message-signing"><div class="header-wrapper"><h3 id="x1-5-http-message-signing"><bdi class="secno">1.5 </bdi>HTTP Message signing</h3><a class="self-link" href="#http-message-signing" aria-label="Permalink for Section 1.5"></a></div>
-<p>The Introduction section of [[DRAFT-IETF-HTTPSBIS-MSG-SIGS] details why message integrity and authenticity are critical to the secure operation of many HTTP/REST applications.
-When Message-Level Security is considered, the HttpHeaders Mechanism of the JAdES Specification [[ETSI-JADES] <em class="rfc2119">MUST</em> be used, with the following restrictions applied:</p>
-<ul>
-<li><p>The JWS content (Data to be Signed) <em class="rfc2119">MUST</em> be detached from the signatures as defined in [[RFC7515] Appendix F. </p>
+<li><p>1 Service Requester encrypts payload using Service Provider public encryption key:</p>
 </li>
-<li><p>The signed SigD parameter object <em class="rfc2119">MUST</em> be present in the JWS headers, denoting the use of the JAdES detached header profile. </p>
+<li><p>2 Service Provider decrypts the request using the corresponding Service Provider private encryption key.</p>
 </li>
-<li><p>The value of the mId parameter <em class="rfc2119">MUST</em> be set to "<a href="http://uri.etsi.org/19182/HttpHeaders&quot;">http://uri.etsi.org/19182/HttpHeaders"</a>. </p>
+<li><p>3 Service Provider performs the request and then generates an encrypted response;</p>
 </li>
-<li><p>The pars array of the SigD <em class="rfc2119">MUST</em> contain at least the following elements:</p>
-<ul>
-<li>the element "(request-target)", for containing the HTTP Request URI</li>
-<li>the element "host", for containing the host the message was submitted to, if present</li>
-<li>the element "origin", for containing the scheme, hostname, and port from which the request was initiated, if present</li>
-<li>the element "content-encoding", if present</li>
-<li>the element "content-type", if present</li>
-<li>the element "content-length", if present</li>
-<li>the element "digest", for taking into account the Digest header that contains the hash value of the HTTP payload.</li>
-</ul>
-</li>
-<li><p>The alg parameter <em class="rfc2119">MUST</em> be set to the correct value depending on the algorithm used (see above). </p>
-</li>
-<li><p>If the alg parameter is set to "EdDSA", the crv parameter <em class="rfc2119">MUST</em> be set to the correct value (see above).</p>
+<li><p>4 Service Requester decrypts response using providers public key</p>
 </li>
 </ul>
-<p>Implementations that make use of the HTTP Header fields for data representation <em class="rfc2119">SHOULD</em> also include these header fields in the pars array. The JWS structure <em class="rfc2119">MUST</em> be carried in HTTP header field named <strong>nlgov-adr-message-sig</strong>. The header field can be used in both requests and responses. The header field <em class="rfc2119">MUST</em> not appear more than once in a message; if a message contains multiple nlgov-adr-message-sig header fields, the receiver <em class="rfc2119">MUST</em> consider the signature invalid.</p>
-</section><section id="signature-representations"><div class="header-wrapper"><h3 id="x1-6-signature-representations"><bdi class="secno">1.6 </bdi>Signature Representations</h3><a class="self-link" href="#signature-representations" aria-label="Permalink for Section 1.6"></a></div>
-<p>The folowing example is strictly informative !</p>
-<pre><code aria-busy="false" class="hljs javascript">openapi: <span class="hljs-number">3.1</span><span class="hljs-number">.0</span>
-<span class="hljs-attr">info</span>:
-    title: JAdES Signatures
-    <span class="hljs-attr">summary</span>: An example showcasing JAdES signatures
-    <span class="hljs-attr">description</span>: An example showcasing JAdES signatures <span class="hljs-keyword">as</span> JWS detached signatures <span class="hljs-keyword">for</span> securing a sample REST endpoint (/certificate)
-    <span class="hljs-attr">termsOfService</span>: https:<span class="hljs-comment">//domain.server.io/terms-of-service</span>
-    license:
-        name: EUPL-<span class="hljs-number">1.2</span> or later
-        <span class="hljs-attr">url</span>: https:<span class="hljs-comment">//eupl.eu/1.2/en/</span>
-    version: <span class="hljs-number">1.0</span><span class="hljs-number">.0</span>
-    x-edelivery:
-        lifecycle:
-            maturity: supported
-        <span class="hljs-attr">publisher</span>:
-            name: ACME Publisher
-            <span class="hljs-attr">URL</span>: https:<span class="hljs-comment">//www.acme-publisher.org/</span>
-externalDocs:
-   description: The ISA² IPS REST API Core Profile
-   <span class="hljs-attr">url</span>: https:<span class="hljs-comment">//joinup.ec.europa.eu/collection/api4dt/document/isa2-ips-rest-api-profile</span>
-servers:
-- url: https:<span class="hljs-comment">//domain.server.io/v2</span>
-tags:
-- name: DetachedPayloadSignature
-  <span class="hljs-attr">description</span>: Operations using payload security
-- name: DetachedMessageSignature
-  <span class="hljs-attr">description</span>: Operations using message-level security
-<span class="hljs-attr">paths</span>:
-    /openapi:
-        get:
-            summary: Returns the OpenAPI Document <span class="hljs-keyword">for</span> the API
-        ...
-        <span class="hljs-attr">responses</span>:
-        <span class="hljs-number">200</span>:
-            description: ...
-            <span class="hljs-attr">content</span>: {
-               <span class="hljs-attr">$ref</span>: <span class="hljs-string">'https://spec.openapis.org/oas/3.1/schema/2021-05-20'</span>
-               ...
-            }
-    /certificate:
-    get:
-      tags:
-      - DetachedMessageSignature
-      <span class="hljs-attr">summary</span>: Get a Certificate
-      <span class="hljs-attr">securitySchemes</span>:
-        OAuth2:
-           type: oauth2
-        <span class="hljs-attr">flows</span>:
-           authorizationCode:
-              authorizationUrl: https:<span class="hljs-comment">//example.com/api/oauth/dialog</span>
-              scopes:
-                 send:message: send a message
-       ...
-      <span class="hljs-attr">responses</span>:
-      <span class="hljs-number">200</span>:
-         headers:
-            nlgov-adr-message-sig:
-               $ref: <span class="hljs-string">'#/components/headers/nlgov-adr-message-sig'</span>
-          <span class="hljs-attr">description</span>: List <span class="hljs-keyword">of</span> Certificates
-          <span class="hljs-attr">content</span>: { ... }
-<span class="hljs-attr">components</span>:
-   headers:
-      nlgov-adr-payload-sig:
-         schema:
-             $ref: <span class="hljs-string">'#/components/schemas/JwsCompactDetached'</span>
-      nlgov-adr-message-sig:
-         schema:
-             $ref: <span class="hljs-string">'#/components/schemas/JwsCompactDetached'</span>
-   <span class="hljs-attr">schemas</span>:
-      JwsCompactDetached:
-         title: The format <span class="hljs-keyword">for</span> the message-level and payload signature
-         <span class="hljs-attr">description</span>: Defines the string pattern <span class="hljs-keyword">as</span> a regular expression that
-         MUST be followed to represent detached JWS compact tokens
-        <span class="hljs-string">"$id"</span>: https:<span class="hljs-comment">//raw.githubusercontent.com/isa2-api4ips/rest-api-profile/main/api-core-profile/components/schemas/jws-compact-detached.json</span>
-        <span class="hljs-string">"$schema"</span>: https:<span class="hljs-comment">//json-schema.org/draft/2020-12/schema</span>
-         type: string
-         <span class="hljs-attr">format</span>: jws-compact-detached
-         <span class="hljs-attr">pattern</span>: ^[A-Za-z0-9_-]+(?:(\\.\\.)[A-Za-z0-9_-]+){<span class="hljs-number">1</span>}
+</section><section id="parameters-and-requirements"><div class="header-wrapper"><h4 id="x1-3-2-parameters-and-requirements"><bdi class="secno">1.3.2 </bdi>Parameters and requirements</h4><a class="self-link" href="#parameters-and-requirements" aria-label="Permalink for Section 1.3.2"></a></div>
+<p>The following specific requirements <em class="rfc2119">MUST</em> be met:</p>
+<ul>
+<li><p>The request is sent to Service Provider with the content-type: application/jose+json.</p>
+</li>
+<li><p>An encrypted request needs to pass application/jose+json as the value for the Content-Type and Accept headers:</p>
+</li>
+</ul>
+<pre><code aria-busy="false" class="hljs css"><span class="hljs-attribute">Content</span>-Type: application/jose+json
+Accept: application/jose+json
 </code></pre>
+<ul>
+<li><p>When the encrypted request uses an unsupported algorithm, the Service Provider rejects the request with a 400 HTTP response.</p>
+</li>
+<li><p>Use for encryption the public key from the X.509 certificate of the other party</p>
+</li>
+<li><p>Use the following parameters in the JWE protected header:</p>
+</li>
+</ul>
+<pre><code aria-busy="false" class="hljs css">alg : <span class="hljs-string">"RSA-OAEP"</span>, 
+enc : <span class="hljs-string">"A256GCM"</span>,
+typ : <span class="hljs-string">"JWE"</span>
+</code></pre>
+<ul>
+<li>JWE compact serialization format is used</li>
+</ul>
+</section></section><section id="cryptographic-algorithms"><div class="header-wrapper"><h3 id="x1-4-cryptographic-algorithms"><bdi class="secno">1.4 </bdi>Cryptographic Algorithms</h3><a class="self-link" href="#cryptographic-algorithms" aria-label="Permalink for Section 1.4"></a></div>
+<p>The following algorithms are used</p>
+<ul>
+<li>Key Management : <a href="https://datatracker.ietf.org/doc/html/rfc7518#section-4.3">RSA-OAEP</a></li>
+<li>Content encryption : <a href="https://datatracker.ietf.org/doc/html/rfc7518#section-5.3">A256GCM</a></li>
+</ul>
+<p>As defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7518" title="JSON Web Algorithms (JWA)">rfc7518</a></cite>] </p>
+</section><section id="encryption-in-combination-with-signing"><div class="header-wrapper"><h3 id="x1-5-encryption-in-combination-with-signing"><bdi class="secno">1.5 </bdi>Encryption in combination with signing</h3><a class="self-link" href="#encryption-in-combination-with-signing" aria-label="Permalink for Section 1.5"></a></div>
+<p>The following diagram shows the order in which encryption &amp; signing must be applied when encryption is used in combination with signing</p>
+<p><figure id="fig-generatedID-0"><img src="media/API_signing_encryption.png" alt="Encryption in combination with signing" height="853" width="607"><figcaption>Figure <bdi class="figno">2</bdi> <span class="fig-title"></span></figcaption></figure></p>
 </section></section>
   <section id="conformance"><div class="header-wrapper"><h2 id="x2-conformance"><bdi class="secno">2. </bdi>Conformance</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 2."></a></div><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p><p>
-        The key words <em class="rfc2119">MUST</em>, <em class="rfc2119">RECOMMENDED</em>, and <em class="rfc2119">SHOULD</em> in this document
+        The key words <em class="rfc2119">MAY</em>, <em class="rfc2119">MUST</em>, <em class="rfc2119">MUST NOT</em>, <em class="rfc2119">NOT RECOMMENDED</em>, <em class="rfc2119">OPTIONAL</em>, <em class="rfc2119">RECOMMENDED</em>, <em class="rfc2119">REQUIRED</em>, <em class="rfc2119">SHALL</em>, <em class="rfc2119">SHALL NOT</em>, <em class="rfc2119">SHOULD</em>, and <em class="rfc2119">SHOULD NOT</em> in this document
         are to be interpreted as described in
         <a href="https://datatracker.ietf.org/doc/html/bcp14">BCP 14</a>
         [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">RFC2119</a></cite>] [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc8174" title="Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words">RFC8174</a></cite>]
@@ -409,29 +328,14 @@ tags:
 
 <section id="references" class="appendix"><div class="header-wrapper"><h2 id="a-references"><bdi class="secno">A. </bdi>References</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></div><section id="normative-references">
     <div class="header-wrapper"><h3 id="a-1-normative-references"><bdi class="secno">A.1 </bdi>Normative references</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Appendix A.1"></a></div>
-    <dl class="bibliography"><dt id="bib-enisa-crypto-2020">[ENISA-CRYPTO-2020]</dt><dd>
-      <a href="https://www.enisa.europa.eu/topics/cryptography"><cite>ENISA Good Practises in Cryptography – Primitives and Schemes, December 2020. (Limited availability)</cite></a>. URL: <a href="https://www.enisa.europa.eu/topics/cryptography">https://www.enisa.europa.eu/topics/cryptography</a>
-    </dd><dt id="bib-etsi-jades">[ETSI-JADES]</dt><dd>
-      <a href="https://www.etsi.org/deliver/etsi_ts/119100_119199/11918201/01.01.01_60/ts_11918201v010101p.pdf"><cite>JAdES digital signatures</cite></a>. URL: <a href="https://www.etsi.org/deliver/etsi_ts/119100_119199/11918201/01.01.01_60/ts_11918201v010101p.pdf">https://www.etsi.org/deliver/etsi_ts/119100_119199/11918201/01.01.01_60/ts_11918201v010101p.pdf</a>
-    </dd><dt id="bib-rfc2119">[RFC2119]</dt><dd>
+    <dl class="bibliography"><dt id="bib-rfc2119">[RFC2119]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>
-    </dd><dt id="bib-rfc7515">[RFC7515]</dt><dd>
-      <a href="https://www.rfc-editor.org/rfc/rfc7515"><cite>JSON Web Signature (JWS)</cite></a>. M. Jones; J. Bradley; N. Sakimura.  IETF. May 2015. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc7515">https://www.rfc-editor.org/rfc/rfc7515</a>
-    </dd><dt id="bib-rfc7518">[RFC7518]</dt><dd>
+    </dd><dt id="bib-rfc7516">[RFC7516]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc7516"><cite>JSON Web Encryption (JWE)</cite></a>. M. Jones; J. Hildebrand.  IETF. May 2015. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc7516">https://www.rfc-editor.org/rfc/rfc7516</a>
+    </dd><dt id="bib-rfc7518">[rfc7518]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc7518"><cite>JSON Web Algorithms (JWA)</cite></a>. M. Jones.  IETF. May 2015. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc7518">https://www.rfc-editor.org/rfc/rfc7518</a>
-    </dd><dt id="bib-rfc7748">[RFC7748]</dt><dd>
-      <a href="https://www.rfc-editor.org/rfc/rfc7748"><cite>Elliptic Curves for Security</cite></a>. A. Langley; M. Hamburg; S. Turner.  IETF. January 2016. Informational. URL: <a href="https://www.rfc-editor.org/rfc/rfc7748">https://www.rfc-editor.org/rfc/rfc7748</a>
-    </dd><dt id="bib-rfc8032">[RFC8032]</dt><dd>
-      <a href="https://www.rfc-editor.org/rfc/rfc8032"><cite>Edwards-Curve Digital Signature Algorithm (EdDSA)</cite></a>. S. Josefsson; I. Liusvaara.  IETF. January 2017. Informational. URL: <a href="https://www.rfc-editor.org/rfc/rfc8032">https://www.rfc-editor.org/rfc/rfc8032</a>
-    </dd><dt id="bib-rfc8037">[RFC8037]</dt><dd>
-      <a href="https://www.rfc-editor.org/rfc/rfc8037"><cite>CFRG Elliptic Curve Diffie-Hellman (ECDH) and Signatures in JSON Object Signing and Encryption (JOSE)</cite></a>. I. Liusvaara.  IETF. January 2017. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc8037">https://www.rfc-editor.org/rfc/rfc8037</a>
     </dd><dt id="bib-rfc8174">[RFC8174]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc8174"><cite>Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</cite></a>. B. Leiba.  IETF. May 2017. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>
-    </dd></dl>
-  </section><section id="informative-references">
-    <div class="header-wrapper"><h3 id="a-2-informative-references"><bdi class="secno">A.2 </bdi>Informative references</h3><a class="self-link" href="#informative-references" aria-label="Permalink for Appendix A.2"></a></div>
-    <dl class="bibliography"><dt id="bib-jades">[JAdES]</dt><dd>
-      <a href="https://www.etsi.org/deliver/etsi_ts/119100_119199/11918201/01.01.01_60/ts_11918201v010101p.pdf"><cite>JAdES digital signatures</cite></a>. URL: <a href="https://www.etsi.org/deliver/etsi_ts/119100_119199/11918201/01.01.01_60/ts_11918201v010101p.pdf">https://www.etsi.org/deliver/etsi_ts/119100_119199/11918201/01.01.01_60/ts_11918201v010101p.pdf</a>
     </dd></dl>
   </section></section><p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Back to Top">↑</abbr></a>
