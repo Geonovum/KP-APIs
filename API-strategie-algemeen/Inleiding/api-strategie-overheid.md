@@ -4,7 +4,7 @@
 <h2>Visie</h2>
 
 ### Data en het nut van API's
-De overheid gebruikt data voor het oplossen van maatschappelijke vraagstukken en opgaven zoals in wonen, stikstof, de energietransitie, armoede, schulden en zorg. Met API's zijn we in staat een platform van data te laten ontstaan waarop we de maatschappelijke vraagstukken en dienstverlening organiseren. Het bedrijfsleven en grote internetplatforms maken al volop gebruik van API's om data flexibel te ontsluiten. 
+De overheid gebruikt data voor het oplossen van maatschappelijke vraagstukken en opgaven zoals in wonen, stikstof, de energietransitie, armoede, de bestrijding van criminaliteit en ondermijning, schulden en zorg. Met API's zijn we in staat een platform van data te laten ontstaan waarop we de maatschappelijke vraagstukken en dienstverlening organiseren. Het bedrijfsleven en grote internetplatforms maken al volop gebruik van API's om data flexibel te ontsluiten. 
 
 Het gebruik van API's maakt een een onstuimige groei door. Steeds meer organisaties bieden API's aan en veel organisaties bieden steeds meer API's aan. API's bieden de overheid de kans om data snel, eenvoudig en in real-time aan te bieden. De samenleving verwacht een open overheid. Dat kan met API's. De data die de overheid voor het uitvoeren van haar taken verzamelt, wordt nu al [voor hergebruik beschikbaar gemaakt](https://data.overheid.nl/). Nu wordt data nog vaak als bestand beschikbaar gemaakt waarbij het aan de gebruiker is de data te vinden, binnen te halen en te verwerken. Met API's wordt data steeds bij de bron opgehaald, pas wanneer de data nodig is. Met API's kan data heel toegespitst op een vraag verstrekt worden, waardoor bovenmatige verstrekking van data wordt voorkomen (dataminimalisatie). Met API's is het eenvoudiger het datagebruik te verantwoorden. Door al deze voordelen maken API's nieuwe toepassingen met data mogelijk voor burgers.
 
@@ -14,7 +14,7 @@ Een eenvoudiger, flexibeler en slimmer ingerichte informatievoorziening facilite
 Dit is hard nodig nu in hoog tempo meer data verzameld en opgeslagen wordt. De vraag om data en het datagebruik nemen toe. Dit past ook bij de [Europese datastrategie](https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/europe-fit-digital-age/european-data-strategy_en).[^1]
 
 ### Afspraken en standaardisatie API’s sleutel tot succes
-De API Strategie van de Nederlandse overheid bevat afspraken en standaarden om API’s te ontwerpen, te beveiligen, toegankelijk te maken en te gebruiken. Zo zijn API’s door afspraken over de publicatie van de specificaties voor afnemers op een uniforme en voorspelbare manier vindbaar. En zijn API’s door afspraken en standaarden over authenticatie, autorisatie, logging en andere specificaties beter en op een uniforme manier toegankelijk en bruikbaar. Het gebruik van de afspraken en standaarden door aanbieders vergemakkelijkt het gebruik van API’s voor afnemers. Dit geeft aanbieders het vertrouwen dat hun API’s door afnemers op een bekende voorspelbare manier te gebruiken zijn. Daarnaast maken afspraken en standaarden het mogelijk om aan te geven of API’s aan minimumvereisten voldoen. Daarmee neemt het vertrouwen van afnemers in de kwaliteit van API’s toe. Zo voorkomen we dat de manier van datadeling op verschillende manieren wordt ingericht.
+De API Strategie van de Nederlandse overheid bevat afspraken en standaarden om API’s te ontwerpen, te beveiligen, toegankelijk te maken en te gebruiken. Zo zijn API’s door afspraken over de publicatie van de specificaties voor afnemers op een uniforme en voorspelbare manier vindbaar. En zijn al afspraken en standaarden voor API’s op het gebied van authenticatie, autorisatie, logging en andere onderwerpen die data beter en op een uniforme manier toegankelijk en bruikbaar maken. Het gebruik van de afspraken en standaarden door aanbieders vergemakkelijkt het gebruik van API’s voor afnemers. Dit geeft aanbieders het vertrouwen dat hun API’s door afnemers op een bekende voorspelbare manier te gebruiken zijn. Daarnaast maken afspraken en standaarden het mogelijk om aan te geven of API’s aan minimumvereisten voldoen. Daarmee neemt het vertrouwen van afnemers in de kwaliteit van API’s toe. Zo voorkomen we dat de manier van datadeling op verschillende manieren wordt ingericht.
 
 Nu het gebruik van API’s in opmars is, is het van belang de gemaakte afspraken toe te passen. Voor zover verdere afspraken nodig zijn, werken we samen in de Werkgroepen van het Kennisplatform API's.
 
@@ -36,7 +36,7 @@ Het Kennisplatform API’s wil de adoptie van API’s stimuleren en brengt daart
 De API first strategie past binnen de huidige beleidsdoelen en de omgeving van de publieke sector. Eerst leggen we uit wat "API first" inhoud daarna hoe je daarmee je omgeving bediend en voor welke beleidsdoelen "API first" relevant is. Als laatste zetten we de strategie om in 4 acties die in het beleid van een "API first" organisatie opgenomen zouden moeten worden.
 
 ### API first
-Als organisatie zou je voor ontsluiting van data en functionaliteit altijd "API first" moeten werken: 
+Iedere organisatie zou voor ontsluiting van data en functionaliteit altijd "API first" moeten werken: 
 * Altijd is er een goed gedocumenteerde machine interface die aan de omgeving ter beschikking gesteld kan worden. 
 * Voor de ontsluiting die je zelf direct realiseert (bijvoorbeeld een website) maak je gebruik van diezelfde interface. Het geeft je omgeving de mogelijkheid om daar waar er voor hen geen geschikte ontsluiting bestaat, deze zelf te maken, als ook om nieuwe mogelijkheden te ontdekken die je zelf nog niet had bedacht.
 * Wanneer je de API met iedereen deelt geeft het ook je gehele omgeving in de basis een gelijke informatiepositie. 
@@ -45,21 +45,21 @@ Als organisatie zou je voor ontsluiting van data en functionaliteit altijd "API 
 * API first is niet alleen een voorwaarde voor moderne IT systemen, het toepassen ervan is ook een middel voor modernisering, zoals Common ground en PSD2 laten zien (zie sectie bedien de omgeving). 
 
 ### API first voor de omgeving
-Tot de omgeving van een publieke organisatie hoort iedereen die interactie heeft of wil hebben met een publieke organisatie. Burger, bedrijf, ketenpartner of andere organisaties uit de publieke sector.De omgeving van een organisatie uit de publieke sector is al jaren bekend met API's en de toepassing ervan. 
+Tot de omgeving van een publieke organisatie hoort iedereen die interactie heeft of wil hebben met een publieke organisatie. Burger, bedrijf, ketenpartner of andere organisaties uit de publieke sector. De omgeving van een organisatie uit de publieke sector is al jaren bekend met API's en de toepassing ervan. 
 
 #### Burgers
-Zo herkent iedere burger hoe eenvoudige verschillende platforms uit de platform economie (Google Amazon Linkedin Meta) eenvoudig elkaars functionaliteit integreren. Denk aan de store in store concepten op bij grote online retailers, knoppen om informatie te delen op je favoriete sociale medium. 
+Zo herkent iedere burger hoe eenvoudig verschillende platforms uit de platform economie (zoals Google, Amazon, Linkedin en Meta) eenvoudig elkaars functionaliteit integreren. Denk aan de store in store concepten bij grote online retailers en knoppen om informatie te delen op je favoriete sociale medium. 
 
 #### Bedrijven
-Het bedrijfsleven weet hoe via PSD2 de functionaliteit en data van de bankwereld via API's is opengebroken en interoperabel gemaakt is. Men weet ook hoe functionaliteit als betalingen, klantrelatiesystemen, boekhoudpakketten en salaris administratie middels API's met elkaar te integreren zijn. 
-De grootste kennis in de markt van (potentiële) software leveranciers in de publieke sector voor het verbinden van IT systemen ligt mede om bovengenoemde redenen bij API's.
+Het bedrijfsleven weet hoe via PSD2 de functionaliteit en data van de bankwereld via API's is opengebroken en interoperabel gemaakt is. Men weet ook hoe functionaliteit als betalingen, klantrelatiesystemen, boekhoudpakketten en salarisadministratie door API's met elkaar te integreren zijn. 
+De grootste kennis in de markt van (potentiële) softwareleveranciers in de publieke sector voor het verbinden van IT systemen ligt mede om bovengenoemde redenen bij API's.
 
 #### Publieke sector
 In de publieke sector zelf zijn API's in sommige onderdelen ook al dominant, CBS ontsluit al haar statistische informatie al meer dan 10 jaar via API's, het digitaal stelsel omgevingswet heeft ze van begin af aan omarmt, het KNMI en het Kadaster en vele anderen bieden hun open data via API's aan zodat anderen deze kunnen hergebruiken. 
 
 #### Bedien de omgeving
 
-De omgeving van organisaties in de publieke sector bedien je het best door hen de mogelijkheid te geven zoveel mogelijk op hun eigen voorwaarden gebruik te maken van data en functionaliteit die je als publieke organisatie aanbied. 
+De omgeving van organisaties in de publieke sector bedien je het best door hen de mogelijkheid te geven zoveel mogelijk op hun eigen voorwaarden gebruik te maken van data en functionaliteit die je als publieke organisatie aanbiedt. 
 Je moet ze dus niet dwingen om één manier te gebruiken. Tegenwoordig zijn er vele manieren om data & functionaliteit te ontsluiten: 
 * Websites, 
 * Mobiele Apps, 
@@ -68,10 +68,10 @@ Je moet ze dus niet dwingen om één manier te gebruiken. Tegenwoordig zijn er v
 * Fysieke loketten,
 * Brievenpost
 
-Achter al deze ontsluitingsmanieren zit een IT systeem. Het is in de huidige digitale samenleving niet reëel om al deze manieren volledig zelf in de hand te hebben. Door direct toegang te geven tot data en functionaliteit middels een API biedt je de mogelijkheid om deze via verschillende kanalen aan te bieden. Je kan voor ieder kanaal afwegen of je dat als organisatie zelf aanbied of dit aan een andere partij laat. 
- 
-Niet alle organisaties zijn zo ver, sommige cruciale bedrijfsprocessen draaien nog op oude (maar meestal ook zeer stabiele) systemen die bedacht zijn voordat API's gemeengoed werden in de IT. Je zal hen moeten blijven bedienen tot zij de omslag hebben kunnen maken. Die omslag maken is vaak niet eenvoudig, in de bankwereld was er de PSD2 wetgeving nodig om dit te laten gebeuren. 
-In de gemeentelijk wereld wordt deze omslag gemaakt in het common ground initiatief. Net als bij PSD2 worden API's ook bij common ground ingezet als transitie mechanisme. API's worden gebruikt om in stappen over te gaan naar nieuwe manier van werken waarbij API's het ontkoppelpunt vormen.
+Achter al deze ontsluitingsmanieren zit een IT systeem. Het is in de huidige digitale samenleving niet reëel om al deze manieren volledig zelf in de hand te hebben. Door direct toegang te geven tot data en functionaliteit door een API bied je de mogelijkheid om deze via verschillende kanalen aan te bieden. Je kan voor ieder kanaal afwegen of je dat als organisatie zelf aanbiedt of dit aan een andere partij overlaat. 
+
+Niet alle organisaties zijn zo ver. Sommige cruciale bedrijfsprocessen draaien nog op oude (maar meestal ook zeer stabiele) systemen die bedacht zijn voordat API's gemeengoed werden. Je zal hen moeten blijven bedienen tot zij de omslag hebben kunnen maken. Die omslag maken is vaak niet eenvoudig, in de bankwereld was er de PSD2-wetgeving nodig om dit te laten gebeuren. 
+In de gemeentelijk wereld wordt deze omslag gemaakt in het Common Ground initiatief. Net als bij PSD2 worden API's ook bij Common Ground ingezet als transitiemechanisme. API's worden gebruikt om in stappen over te gaan naar een nieuwe manier van werken waarbij API's het ontkoppelpunt vormen.
 
 ### API first voor beleidsdoelen
 
