@@ -1,17 +1,19 @@
 # API strategie voor de overheid
 
-<section id="api-strategie-overheid-visie" class="terconsultatie">
-<h2>Visie</h2>
+## Samenvatting
+De platformeconomie biedt nieuwe kansen voor de digitale overheid. Om deze kansen te benutten en tegelijkertijd de dienstverlening van de digitale overheid te verbeteren vindt er transitie plaats in het gegevenslandschap. Initiatieven zoals Common Ground, Haal Centraal en het Digitaal Stelsel Omgevingswet (DSO) willen de digitale overheid efficiënter, slimmer, veiliger en beter beheersbaar maken door applicaties beter te scheiden van de gegevens en de gegevens alleen bij de bron te beheren. Hierdoor hoeven gegevens niet meer op grote schaal gedupliceerd en gesynchroniseerd te worden. In deze ambitie spelen API’s als ondersteunende technologie een belangrijke rol.
 
-### Data en het nut van API's
 De overheid gebruikt data voor het oplossen van maatschappelijke vraagstukken en opgaven zoals in wonen, stikstof, de energietransitie, armoede, de bestrijding van criminaliteit en ondermijning, schulden en zorg. Met API's zijn we in staat een platform van data te laten ontstaan waarop we de maatschappelijke vraagstukken en dienstverlening organiseren. Het bedrijfsleven en grote internetplatforms maken al volop gebruik van API's om data flexibel te ontsluiten. 
 
+Nagenoeg alle organisaties binnen de overheid zijn de omslag van traditionele IT naar een API-ecosysteem aan het maken. Dit hoofdstuk biedt een kader aan waarbinnen de overheid zich kan committeren bij ontwikkeling en te realiseren beleid rondom API’s. Het hoofdstuk sluit af met een Intentieverklaring van organisaties uit de publieke sector die dit commitment willen geven. De uitnodiging is open aan alle organisaties uit de publieke sector om ook te ondertekenen.
+
+## Visie
 Het gebruik van API's maakt een een onstuimige groei door. Steeds meer organisaties bieden API's aan en veel organisaties bieden steeds meer API's aan. API's bieden de overheid de kans om data snel, eenvoudig en in real-time aan te bieden. De samenleving verwacht een open overheid. Dat kan met API's. De data die de overheid voor het uitvoeren van haar taken verzamelt, wordt nu al [voor hergebruik beschikbaar gemaakt](https://data.overheid.nl/). Nu wordt data nog vaak als bestand beschikbaar gemaakt waarbij het aan de gebruiker is de data te vinden, binnen te halen en te verwerken. Met API's wordt data steeds bij de bron opgehaald, pas wanneer de data nodig is. Met API's kan data heel toegespitst op een vraag verstrekt worden, waardoor bovenmatige verstrekking van data wordt voorkomen (dataminimalisatie). Met API's is het eenvoudiger het datagebruik te verantwoorden. Door al deze voordelen maken API's nieuwe toepassingen met data mogelijk voor burgers.
 
 ### Een wendbare informatievoorziening
 Een eenvoudiger, flexibeler en slimmer ingerichte informatievoorziening faciliteert de overheid hierbij. We kunnen beleidsdoelen met toepassing van API's beter mogelijk maken. In de [Staat van de Uitvoering](https://staatvandeuitvoering.nl/) is een oproep opgenomen _Breng gegevensuitwisseling tussen publieke dienstverleners nu echt op gang_. Deze gegevensuitwisseling kan juist met API's worden gefaciliteerd. Verschillende initiatieven zijn al genomen, zoals de [Interbestuurlijke Datastrategie](https://realisatieibds.pleio.nl/), het Federatief Data Stelsel, [Data bij de bron](https://www.geonovum.nl/uploads/documents/Actieplan%20data%20bij%20de%20bron%20v2%20-%20ZONDER%20NAMEN.pdf) en het [Digitaal Stelsel Omgevingswet](https://iplo.nl/digitaal-stelsel/).
 
-Dit is hard nodig nu in hoog tempo meer data verzameld en opgeslagen wordt. De vraag om data en het datagebruik nemen toe. Dit past ook bij de [Europese datastrategie](https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/europe-fit-digital-age/european-data-strategy_en).[^1]
+Dit is hard nodig nu in hoog tempo meer data verzameld en opgeslagen wordt. De vraag om data en het datagebruik nemen toe. Dit past ook bij de [Europese datastrategie](https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/europe-fit-digital-age/european-data-strategy_en).<sup><a href="#fn1" id="ref1">1</a></sup>
 
 ### Afspraken en standaardisatie API’s sleutel tot succes
 De API Strategie van de Nederlandse overheid bevat afspraken en standaarden om API’s te ontwerpen, te beveiligen, toegankelijk te maken en te gebruiken. Zo zijn API’s door afspraken over de publicatie van de specificaties voor afnemers op een uniforme en voorspelbare manier vindbaar. En zijn al afspraken en standaarden voor API’s op het gebied van authenticatie, autorisatie, logging en andere onderwerpen die data beter en op een uniforme manier toegankelijk en bruikbaar maken. Het gebruik van de afspraken en standaarden door aanbieders vergemakkelijkt het gebruik van API’s voor afnemers. Dit geeft aanbieders het vertrouwen dat hun API’s door afnemers op een bekende voorspelbare manier te gebruiken zijn. Daarnaast maken afspraken en standaarden het mogelijk om aan te geven of API’s aan minimumvereisten voldoen. Daarmee neemt het vertrouwen van afnemers in de kwaliteit van API’s toe. Zo voorkomen we dat de manier van datadeling op verschillende manieren wordt ingericht.
@@ -26,12 +28,11 @@ Het Kennisplatform API’s wil de adoptie van API’s stimuleren en brengt daart
 3. beveiliging
 4. API design rules
 
-[^1]: De [Data Governance Regulation](https://digital-strategy.ec.europa.eu/en/policies/data-governance-act) en de [Data act](https://digital-strategy.ec.europa.eu/en/policies/data-act) maken deel uit van deze strategie. Het eindrapport van het _API guidelines for government_ project [An Application Programming Interface (API) framework for digital government](https://op.europa.eu/en/publication-detail/-/publication/0e262d9b-ca32-11ea-adf7-01aa75ed71a1) geeft een aantal voorstellen voor API toepassing voor overheden zoals _Align API's with policy goals_ en _Measure policy impacts of API's_.
+<sup id="fn1">1. [De [Data Governance Regulation](https://digital-strategy.ec.europa.eu/en/policies/data-governance-act) en de [Data act](https://digital-strategy.ec.europa.eu/en/policies/data-act) maken deel uit van deze strategie. Het eindrapport van het _API guidelines for government_ project [An Application Programming Interface (API) framework for digital government](https://op.europa.eu/en/publication-detail/-/publication/0e262d9b-ca32-11ea-adf7-01aa75ed71a1) geeft een aantal voorstellen voor API toepassing voor overheden zoals _Align API's with policy goals_ en _Measure policy impacts of API's_.]<a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup>
+ 
 
-</section>
 
-<section id="api-strategie-overheid-visie" class="terconsultatie">
-<h2>API first Strategie</h2>
+## API first Strategie
 
 De API first strategie past binnen de huidige beleidsdoelen en de omgeving van de publieke sector. Eerst leggen we uit wat "API first" inhoud daarna hoe je daarmee je omgeving bediend en voor welke beleidsdoelen "API first" relevant is. Als laatste zetten we de strategie om in 4 acties die in het beleid van een "API first" organisatie opgenomen zouden moeten worden.
 
@@ -51,7 +52,7 @@ Tot de omgeving van een publieke organisatie hoort iedereen die interactie heeft
 Zo herkent iedere burger hoe eenvoudig verschillende platforms uit de platform economie (zoals Google, Amazon, Linkedin en Meta) eenvoudig elkaars functionaliteit integreren. Denk aan de store in store concepten bij grote online retailers en knoppen om informatie te delen op je favoriete sociale medium. 
 
 #### Bedrijven
-Het bedrijfsleven weet hoe via PSD2 de functionaliteit en data van de bankwereld via API's is opengebroken en interoperabel gemaakt is. Men weet ook hoe functionaliteit als betalingen, klantrelatiesystemen, boekhoudpakketten en salarisadministratie door API's met elkaar te integreren zijn. 
+Het bedrijfsleven weet hoe via de ["payment service directive 2" (PSD2)](https://www.rijksoverheid.nl/onderwerpen/financiele-sector/nieuwe-wetgeving-voor-betalingsverkeer-psd2) de functionaliteit en data van de bankwereld via API's is opengebroken en interoperabel gemaakt is. Men weet ook hoe functionaliteit als betalingen, klantrelatiesystemen, boekhoudpakketten en salarisadministratie door API's met elkaar te integreren zijn. 
 De grootste kennis in de markt van (potentiële) softwareleveranciers in de publieke sector voor het verbinden van IT systemen ligt mede om bovengenoemde redenen bij API's.
 
 #### Publieke sector
@@ -102,22 +103,6 @@ Praktisch zijn er, afhankelijk van de ambitie en middelen van een organisatie, m
 We werken als publieke sector aan afspraken (zoals in het Federatief Data Stelsel) om de vindbaarheid van API's in catalogi en portalen te vergroten waarbij het streven is dat informatie over API's eenmalig door de aanbieder wordt aangeleverd en in meerdere catalogi en portalen kan worden hergebruikt.
 API's moeten waar mogelijk (binnen de grenzen van openbaarheid) centraal en publiekelijk vindbaar zijn, dus niet alleen via de kanalen van de aanbiedende organisatie maar ook vanuit landelijke portalen/catalogi.
 
-</section>
-
-## Intentieverklaring API strategie
-
-In onze visie zal de digitale overheid de komende jaren steeds meer veilig en efficiënt data uitwisselen door applicaties zoveel mogelijk te scheiden van de data, en deze data bij de bron te bewaren. Voorzieningen gaan data ophalen bij de bron zodra deze nodig is. Om deze data-uitwisseling mogelijk te maken, zijn platformen, API's en verplichte standaarden onmisbaar. Hiermee biedt de overheid toegang tot evenwichtige en consistente data sets, onafhankelijk van de complexiteit van achterliggende systemen, voor burgers, bedrijven en ketenpartners van de overheid. 
-
-Met deze intentieverklaring, verklaart onze organisatie dat wij de volgende afspraken tussen de deelnemers van het Kennisplatform API's zullen naleven:  
-
-1. In lijn met de API first strategie bij te dragen aan modernisering van de IT voorzieningen in de overheid
-
-2. Deelnemers aan het Kennisplatform API's leveren een actieve bijdrage aan standaardisatie van het gebruik van API's in en buiten het Kennisplatform API's.  
-
-3. We houden ons aan de API standaarden die we samen hebben ontwikkeld welke op de lijst verplichte standaarden van het forum standaardisatie staan, zoals de [REST API Design Rules](https://forumstandaardisatie.nl/open-standaarden/rest-api-design-rules) voor het aanbieden van RESTful API's en het [NL GOV Assurance Profile for OAuth 2.0](https://forumstandaardisatie.nl/open-standaarden/nl-gov-assurance-profile-oauth-20) voor autorisatie op API's waar door gebruikers rechtendelegatie kan worden toegepast.  
-
-4. De overheid registreert haar extern toegankelijke REST API's bij een centraal vindbare openbare catalogus, tenzij dit om beveiligingsredenen niet gewenst is. Zo kunnen ontwikkelaars de API's van de overheid altijd vinden.
-
 ## Praktijkvoorbeelden
 
 ### De API op de Basisregistratie Personen (BRP) van Haal Centraal
@@ -147,8 +132,19 @@ In de [beleidsbrief regie op gegevens](https://www.rijksoverheid.nl/documenten/b
 
 Om het inzicht in de verstrekking van persoonsgegevens veel eenvoudiger te maken, is er door [VNG-Realisatie een model API opgesteld](https://commonground.nl/cms/view/c99f1789-adba-4fa7-bc2d-e1f8a96618c5/api-standaarden-voor-logging-en-verwerking), die overheden in staat kan stellen de verwerking van persoonsgegevens op een toegankelijke manier te tonen. Deze API haakt aan bij wat conform de AVG al tot stand komt: de organisatie-brede registers van verwerkingen van persoonsgegevens. Als de overheid gegevens bij de bron gaat beheren en ontsluiten met API's, wordt het gemakkelijker om bij de bron volledige inzage te geven. De overheid kan dan digitale inzage geven in een uniform gebruiksvriendelijk format, en ook de correctie van gegevens wordt eenvoudiger.
 
-## Samenvattend
-De platformeconomie biedt nieuwe kansen voor de digitale overheid. Om deze kansen te benutten en tegelijkertijd de dienstverlening van de digitale overheid te verbeteren vindt er transitie plaats in het gegevenslandschap. Initiatieven zoals Common Ground, Haal Centraal en het Digitaal Stelsel Omgevingswet (DSO) willen de digitale overheid efficiënter, slimmer, veiliger en beter beheersbaar maken door applicaties beter te scheiden van de gegevens en de gegevens alleen bij de bron te beheren. Hierdoor hoeven gegevens niet meer op grote schaal gedupliceerd en gesynchroniseerd te worden. In deze ambitie spelen API’s als ondersteunende technologie een belangrijke rol. Nagenoeg alle organisaties binnen de overheid zijn de omslag van traditionele IT naar een API-ecosysteem aan het maken. Dit hoofdstuk biedt een kader aan waarbinnen de overheid zich kan committeren bij ontwikkeling en te realiseren beleid rondom API’s. Om die reden krijgen organisaties die aan deze API Strategie hebben bijgedragen het verzoek om de intentieovereenkomst te ondertekenen.
+## Intentieverklaring API strategie
+
+In onze visie zal de digitale overheid de komende jaren steeds meer veilig en efficiënt data uitwisselen door applicaties zoveel mogelijk te scheiden van de data, en deze data bij de bron te bewaren. Voorzieningen gaan data ophalen bij de bron zodra deze nodig is. Om deze data-uitwisseling mogelijk te maken, zijn platformen, API's en verplichte standaarden onmisbaar. Hiermee biedt de overheid toegang tot evenwichtige en consistente data sets, onafhankelijk van de complexiteit van achterliggende systemen, voor burgers, bedrijven en ketenpartners van de overheid. 
+
+Met deze intentieverklaring, verklaart onze organisatie dat wij de volgende afspraken tussen de deelnemers van het Kennisplatform API's zullen naleven:  
+
+1. In lijn met de "API first" strategie bij te dragen aan modernisering van de IT voorzieningen in de overheid
+
+2. Deelnemers aan het Kennisplatform API's leveren een actieve bijdrage aan standaardisatie van het gebruik van API's in en buiten het Kennisplatform API's.  
+
+3. We houden ons aan de API standaarden die we samen hebben ontwikkeld welke op de lijst verplichte standaarden van het forum standaardisatie staan, zoals de [REST API Design Rules](https://forumstandaardisatie.nl/open-standaarden/rest-api-design-rules) voor het aanbieden van RESTful API's en het [NL GOV Assurance Profile for OAuth 2.0](https://forumstandaardisatie.nl/open-standaarden/nl-gov-assurance-profile-oauth-20) voor autorisatie op API's waar door gebruikers rechtendelegatie kan worden toegepast.  
+
+4. De overheid registreert haar extern toegankelijke REST API's bij een centraal vindbare openbare catalogus, tenzij dit om beveiligingsredenen niet gewenst is. Zo kunnen ontwikkelaars de API's van de overheid altijd vinden.
 
 ## Ondertekening
 De hieronder vermelde organisaties hebben bijgedragen aan deze API strategie voor de overheid en onderschrijven de basisafspraken:
