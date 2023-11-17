@@ -56,62 +56,54 @@ var respecConfig =
       companyURL: "https://www.geonovum.nl/",
     },
     {
-      name: "Jan van Gelder",
-      company: "Geonovum",
-      companyURL: "https://www.Geonovum.nl/",
+      name: "Paul Dam",
+      company: "lex digitalis",
+      companyURL: "https://www.lexdigitalis.nl",
     }
   ],
   authors:
   [
-    {
-      name: "Lancelot Schellevis",
-      company: "Forum Standaardisatie",
-      companyURL: "https://www.forumstandaardisatie.nl/",
-    },
-    {
-      name: "Han Zuidweg",
-      company: "Forum Standaardisatie",
-      companyURL: "https://www.forumstandaardisatie.nl/",
-    },
-    {
-      name: "Friso Penninga",
-      company: "Geonovum",
-      companyURL: "https://geonovum.nl/",
-    },
-    {
-      name: "Matthias Snoei",
-      company: "Swis",
-      companyURL: "https://swis.nl/",
-    },
-    {
-      name: "Jasper Roes",
-      company: "Het Kadaster",
-      companyURL: "https://www.kadaster.nl/",
-    },
-    {
-      name: "Peter Haasnoot",
+{
+      name: "Edwin Wisse",
       company: "Logius",
-      companyURL: "https://logius.nl/",
-    },
-    {
-      name: "Frank van Es",
-      company: "Logius",
-      companyURL: "https://logius.nl/",
-    },
-    {
-      name: "Alexander Green",
-      company: "Logius",
-      companyURL: "https://logius.nl/",
-    },
-	  {
-      name: "Martin van der Plas",
-      company: "Logius",
-      companyURL: "https://logius.nl/",
+      companyURL: "https://www.logius.nl",
     },{
-      name: "Dennis de Wit",
-      company: "Solventa",
-      companyURL: "https://www.solventa.nl",
-    },
+      name: "Marcel Tulen",
+      company: "Sociale Verzekeringsbank",
+      companyURL: "https://www.svb.nl",
+    },{
+      name: "Marcel Krassenburg",
+      company: "CCoverheid",
+      companyURL: "https://www.ccoverheid.nl",
+    },{
+      name: "Redouan Ahaloui",
+      company: "Bureau Forum Standaardisatie",
+      companyURL: "https://www.forumstandaardisatie.nl",
+    },{
+      name: "Theo Peters",
+      company: "Vereniging Nederlandse Gemeenten(VNG)",
+      companyURL: "https://www.vng.nl",
+    },{
+      name: "Gino Laan",
+      company: "RINIS",
+      companyURL: "https://www.rinis.nl",
+    },{
+      name: "Vedran Bilanovic",
+      company: "Ministerie van Binnenlandse Zaken en Koninkrijksrelaties (BZK)",
+      companyURL: "https://www.minbzk.nl",
+    },{
+      name: "Dolf Daal",
+      company: "Informatiehuis Water (IHW)",
+      companyURL: "https://www.ihw.nl",
+    },{
+      name: "Rob van der Horst",
+      company: "Politie",
+      companyURL: "https://www.politie.nl",
+    },{
+      name: "Frank Smit",
+      company: "",
+      companyURL: "https://www.fmsmit.nl",
+    }
   ],
   shortName: "API-Strategie",
   github: "https://github.com/geonovum/KP-APIs/",
