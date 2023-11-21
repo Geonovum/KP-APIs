@@ -1,4 +1,4 @@
-var respecConfig =
+let respecConfig =
 {
   //voor specStatus mogelijkheden zie https://github.com/Logius-standaarden/respec/wiki/specStatus
   specStatus: "WV",
