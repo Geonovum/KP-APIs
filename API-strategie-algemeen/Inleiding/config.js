@@ -101,8 +101,8 @@ var respecConfig =
       companyURL: "https://www.politie.nl",
     },{
       name: "Frank Smit",
-      company: "",
-      companyURL: "https://www.fmsmit.nl",
+      company: "belastingdienst",
+      companyURL: "https://www.belastingdienst.nl",
     }
   ],
   shortName: "API-Strategie",
