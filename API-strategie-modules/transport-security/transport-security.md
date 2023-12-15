@@ -1,7 +1,5 @@
 # Transport Security
 
-<p class="note">The working group has indicated this module to be stable.</p>
-
 ## Introduction
 This section describes security principles, concepts and technologies to apply when working with APIs. Controls need to be applied for the security objectives of integrity, confidentiality and availability of the API and services and data provided thereby. The (new draft of the) [architecture section of the API strategy](https://docs.geostandaarden.nl/api/cv-hr-API-Strategie-20210628/#architectuur) contains architecture patterns for implementing Transport security.
 
