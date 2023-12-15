@@ -101,11 +101,11 @@ var respecConfig =
       companyURL: "https://www.politie.nl",
     },{
       name: "Frank Smit",
-      company: "belastingdienst",
+      company: "Belastingdienst",
       companyURL: "https://www.belastingdienst.nl",
     },{
       name: "Raymond Kers",
-      company: "ministerie van Justitie en Veiligheid",
+      company: "Ministerie van Justitie en Veiligheid",
       companyURL: "https://www.minJenV.nl",
       }
   ],
