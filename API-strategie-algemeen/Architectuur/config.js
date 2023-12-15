@@ -42,7 +42,7 @@ function custGHPG(respecConfig)
 
 var respecConfig =
 {
-  specStatus: "VV",
+  specStatus: "GN-VV",
   specType: "HR",
   pubDomain: "api",
   //publishDate: "2023-01-13",

@@ -7,7 +7,7 @@ const documentConfig = {
     shortName: "naming-conventions",
 //    publishDate: "2023-06-06",
     publishVersion: "1.0.0",
-    previousPublishVersion: "0.0.0",
+//    previousPublishVersion: "0.0.0",
     //  previousPublishDate: "(none)",
     //  previousMaturity: "WV",
     edDraftURI: "https://geonovum.github.io/KP-APIs/API-strategie-modules/naming-conventions/",
