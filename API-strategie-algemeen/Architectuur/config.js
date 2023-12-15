@@ -115,7 +115,7 @@ var respecConfig =
       companyURL: "https://www.solventa.nl",
     },
   ],
-  shortName: "API-Strategie",
+  shortName: "API-Strategie-architectuur",
   github: "https://github.com/geonovum/KP-APIs/",
   issueBase: "https://github.com/geonovum/KP-APIs/issues/",
   localBiblio: {
