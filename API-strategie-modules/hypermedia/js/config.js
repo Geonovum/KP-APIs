@@ -7,6 +7,7 @@ const documentConfig = {
     shortName: "hypermedia",
 //    publishDate: "2023-06-05",
     publishVersion: "1.0.0",
+    edDraftURI: "https://geonovum.github.io/KP-APIs/API-strategie-modules/hypermedia/",
 //    previousPublishVersion: "0.0.0",
     //  previousPublishDate: "(none)",
     //  previousMaturity: "WV",

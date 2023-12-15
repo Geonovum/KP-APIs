@@ -10,6 +10,7 @@ const documentConfig = {
     // previousPublishVersion: "(none)",
     //  previousPublishDate: "(none)",
     //  previousMaturity: "WV",
+    edDraftURI: "https://geonovum.github.io/KP-APIs/API-strategie-modules/transport-security/",    
     editors:
         [
             {
@@ -24,11 +25,6 @@ const documentConfig = {
                 name: "Kennisplatform API's",
                 company: "Kennisplatform API's",
                 companyURL: "https://github.com/Geonovum/KP-APIs",
-            },
-            {
-                name: "Martin van der Plas",
-                company: "Logius",
-                companyURL: "https://logius.nl",
             }
         ],
     github: "https://github.com/Geonovum/KP-APIs",
