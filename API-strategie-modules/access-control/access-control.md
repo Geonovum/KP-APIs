@@ -27,7 +27,7 @@ To deny the client access to these resources after initial permission is granted
 ### Session based API access pattern
 While this method is considered legacy it is in common use for handling access control to APIs, even though it conflicts with best practices for APIs. Because this pattern is more a standard web application pattern we refer to [the latest NCSC guidelines on the subject of web application security](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-webapplicaties) for security considerations.
 
-We consider this method to be mostly outside the scope of this document and refer to the aforementioned NCSC document for security considerations. We do provide some additional considerations for web clients in the section on [HTTP-level Security](#http-level-security).
+We consider this method to be mostly outside the scope of this document and refer to the aforementioned NCSC document for security considerations. We do provide some additional considerations for web clients in the section on [transport Security](https://docs.geostandaarden.nl/api/API-Strategie-mod-transport-security/).
 
 ## Identification
 
@@ -174,11 +174,13 @@ Note that usage of the Authorization header is part of the OAuth2 specifications
 
 When authentication is implicit or when just the presence of an Authorization header is enough for authentication and/or authorization: use the flow chart in figure 1 to determine the correct error code.
 
-![](../../media/HTTP-FlowChart1.PNG)
+<figure>
+    <img alt="flowchart describing responses when authentication is implicit" src="../../media/HTTP-FlowChart1.PNG"/>
+    <figcaption>authentication is implicit</figcaption>
+</figure>
 
-Figure 1: authentication is implicit.
 
-Links from flow chart in figure 1:
+Links from flow chart in figure above:
 
 https://tools.ietf.org/html/rfc6750#section-3.1
 
@@ -188,11 +190,12 @@ https://tools.ietf.org/html/rfc7231#section-6.5.4
 
 When authentication is explicit, that is the authentication credentials are actively verfied when present, use the flow chart in figure 2 to determine the correct error codes.
 
-![](../../media/HTTP-FlowChart2.PNG)
+<figure>
+    <img alt="flowchart describing responses when authentication is explicit" src="../../media/HTTP-FlowChart2.PNG"/>
+    <figcaption>authentication is explicit</figcaption>
+</figure>
 
-Figure 2: authentication is explicit.
-
-Links from flow chart in figure 2:
+Links from flow chart in figure above:
 
 https://tools.ietf.org/html/rfc7235#section-3.1
 
@@ -204,11 +207,12 @@ https://tools.ietf.org/html/rfc7231#section-6.5.4
 
 When authentication is explicit and there is a check whether the provided authorization confirmation claim (`cnf`, see [[rfc7800]]) matches the credentials provided for authentication use the flow chart in figure 3 to esteblish the correct error codes.
 
-![](../../media/HTTP-FlowChart3.PNG)
+<figure>
+    <img alt="flowchart describing responses when authentication is explicit and client authorization confirmation claim (`cnf`) matches authentication." src="../../media/HTTP-FlowChart3.PNG"/>
+    <figcaption>authentication is explicit, and client authorization confirmation claim (`cnf`) matches authentication.</figcaption>
+</figure>
 
-Figure 3: authentication is explicit, and client authorization confirmation claim (`cnf`) matches authentication.
-
-Links from flow chart in figure 3:
+Links from flow chart in figure above:
 
 https://tools.ietf.org/html/rfc7235#section-3.1
 

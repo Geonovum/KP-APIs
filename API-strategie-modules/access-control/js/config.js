@@ -10,6 +10,7 @@ const documentConfig = {
     // previousPublishVersion: "(none)",
     //  previousPublishDate: "(none)",
     //  previousMaturity: "WV",
+    edDraftURI: "https://geonovum.github.io/KP-APIs/API-strategie-modules/access-control/",
     editors:
         [
             {
@@ -226,11 +227,11 @@ const documentConfig = {
      },
   },
     // Controls if linked "§" section markers are added to a document
-    addSectionLinks: true,
+    //addSectionLinks: true,
 
     // this parameter will add the tag_name of the latest release to the document Title
     // only set this parameter when a release has been set
-    nl_addReleaseTagTitle: true,
+    //nl_addReleaseTagTitle: true,
 
     // if nl_markdownEmbedImageInFigure is set to true images in markdown generated content will be surrounded with <figures> element
     // so that figures can be linked are be a part of table of figures
