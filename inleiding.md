@@ -8,8 +8,8 @@ Op [GitHub](https://github.com/geonovum/KP-APIs/issues) kan bekeken worden wat d
 
 ## Auteurs
 
-Er worden slechts een beperkt aantal auteurs genoemd, echter aan deze strategie is door veel meer mensen gewerkt.
-De genoemde auteurs zijn de trekkers van de Kennisplatform API's werkgroepen zoals: API Strategie, Architectuur, Security, Design Rules, Authenticatie en Autorisatie, Strategie en Beleid, en Gebruikerswensen.
+Er worden slechts een beperkt aantal auteurs genoemd, echter aan deze strategie is door veel meer mensen gewerkt. Per onderdeel van de API strategie staan de degene verantwoordelijk voor de laatste versie vermeld.
+De genoemde auteurs zijn deelnemers aan de relevante werkgroep van het Kennisplatform API's zoals: API Strategie, Architectuur, Security, Design Rules, Authenticatie en Autorisatie, Strategie en Beleid, en Gebruikerswensen.
 
 ## Leeswijzer
 
