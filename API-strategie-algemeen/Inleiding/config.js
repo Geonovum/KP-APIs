@@ -103,7 +103,11 @@ var respecConfig =
       name: "Frank Smit",
       company: "belastingdienst",
       companyURL: "https://www.belastingdienst.nl",
-    }
+    },{
+      name: "Raymond Kers",
+      company: "ministerie van Justitie en Veiligheid",
+      companyURL: "https://www.minJenV.nl",
+      }
   ],
   shortName: "API-Strategie",
   github: "https://github.com/geonovum/KP-APIs/",
