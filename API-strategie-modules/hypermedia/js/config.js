@@ -1,29 +1,29 @@
 const documentConfig = {
     //voor specStatus mogelijkheden zie https://github.com/Logius-standaarden/respec/wiki/specStatus
-    specStatus: "WV",
+    specStatus: "VV",
     //voor specType mogelijkheden zie https://github.com/Logius-standaarden/respec/wiki/specType
     specType: "HR",
     pubDomain: "api",
     shortName: "hypermedia",
-    publishDate: "2023-06-05",
+//    publishDate: "2023-06-05",
     publishVersion: "1.0.0",
-    previousPublishVersion: "0.0.0",
+//    previousPublishVersion: "0.0.0",
     //  previousPublishDate: "(none)",
     //  previousMaturity: "WV",
     editors:
         [
             {
-                name: "Logius Standaarden",
-                company: "Logius",
-                companyURL: "https://github.com/Logius-standaarden",
+                name: "Kennisplatform API's",
+                company: "Kennisplatform API's",
+                companyURL: "https://github.com/Geonovum/KP-APIs",
             }
         ],
     authors:
         [
             {
-                name: "Logius Standaarden",
-                company: "Logius",
-                companyURL: "https://github.com/Logius-standaarden",
+                name: "Kennisplatform API's",
+                company: "Kennisplatform API's",
+                companyURL: "https://github.com/Geonovum/KP-APIs",
             }
         ],
     github: "https://github.com/Geonovum/KP-APIs",

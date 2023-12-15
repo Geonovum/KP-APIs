@@ -1,12 +1,12 @@
 const documentConfig = {
     //voor specStatus mogelijkheden zie https://github.com/Logius-standaarden/respec/wiki/specStatus
-    specStatus: "WV",
+    specStatus: "VV",
     //voor specType mogelijkheden zie https://github.com/Logius-standaarden/respec/wiki/specType
     specType: "HR",
     pubDomain: "api",
-    shortName: "security",
-    publishDate: "2023-05-24",
-    publishVersion: "0.1.0",
+    shortName: "transport-security",
+//    publishDate: "2023-05-24",
+    publishVersion: "1.0.0",
     // previousPublishVersion: "(none)",
     //  previousPublishDate: "(none)",
     //  previousMaturity: "WV",

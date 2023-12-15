@@ -12,6 +12,7 @@
 //-- . . . . . :  20200417 - JvG - Definitieve versie van 04-02-2020 gemaakt
 //-- . . . . . :  20220412 - EJR - Vastgestelde versie van 09-03-2022 gemaakt
 //-- . . . . . :  20220909 - MvdP - Concept versie opzet voor Modulaire opbouw
+//-- . . . . . :  20220909 - Ft - Versie ter vaststelling voor Modulaire opbouw
 //--
 //-------------------------------------------------------------------------------------
 
@@ -41,13 +42,13 @@ function custGHPG(respecConfig)
 
 var respecConfig =
 {
-  specStatus: "WV",
+  specStatus: "VV",
   specType: "HR",
   pubDomain: "api",
-  //publishDate: "2022-01-13",
+  //publishDate: "2023-01-13",
   previousPublishDate: "2022-03-09",
   previousMaturity: "GN-DEF",
-  edDraftURI: "https://geonovum.github.io/KP-APIs/API-strategie-algemeen/",
+  edDraftURI: "https://geonovum.github.io/KP-APIs/API-strategie-algemeen/Architectuur/",
   editors:
   [
     {
@@ -59,6 +60,11 @@ var respecConfig =
       name: "Jan van Gelder",
       company: "Geonovum",
       companyURL: "https://www.Geonovum.nl/",
+    },
+    {
+      name: "Martin van der Plas",
+      company: "Logius",
+      companyURL: "https://logius.nl/",
     }
   ],
   authors:
