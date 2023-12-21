@@ -7,8 +7,8 @@ const documentConfig = {
     shortName: "transport-security",
 //    publishDate: "2023-05-24",
     publishVersion: "1.0.0",
-    // previousPublishVersion: "(none)",
-    //  previousPublishDate: "(none)",
+    previousPublishVersion: "(none)",
+    previousPublishDate: "(none)",
     //  previousMaturity: "WV",
     edDraftURI: "https://geonovum.github.io/KP-APIs/API-strategie-modules/transport-security/",    
     editors:
