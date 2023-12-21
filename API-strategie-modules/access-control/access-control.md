@@ -191,7 +191,7 @@ https://tools.ietf.org/html/rfc7231#section-6.5.4
 When authentication is explicit, that is the authentication credentials are actively verfied when present, use the flow chart in figure 2 to determine the correct error codes.
 
 <figure>
-    <img alt="flowchart describing responses when authentication is explicit" src=".media/HTTP-FlowChart2.PNG"/>
+    <img alt="flowchart describing responses when authentication is explicit" src="media/HTTP-FlowChart2.PNG"/>
     <figcaption>authentication is explicit</figcaption>
 </figure>
 
