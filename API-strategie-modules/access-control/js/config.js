@@ -2,7 +2,7 @@ let respecConfig = {
   useLogo: true,
   useLabel: true,
   // title is verplicht! Neem hier de titel van het document op ----------------------
-  title: "Transport Security Module",
+  title: "API Access control module",
   //-- specStatus is verplicht! (activeer 1 van de volgende) --------------------------
   specStatus: "vv",                   // Werkversie
   //specStatus: "cv",               // Consultatieversie
@@ -26,8 +26,8 @@ let respecConfig = {
   //licence: "cc0",                 // Public Domain Dedication
   licence: "cc-by",                 // Attribution, met bronvermelding
   //-- shortName is verplicht! (komt in de URL: kies logische afkorting)--------------
-  shortName: "transport-security",
-  edDraftURI: "https://geonovum.github.io/KP-APIs/API-strategie-modules/transport-security/",  
+  shortName: "access-control",
+  edDraftURI: "https://geonovum.github.io/KP-APIs/API-strategie-modules/access-control/",  
   //edDraftURI = De URI van de draft version. Deze wordt automatisch afgeleid van de github URI; maar kan hier overschreven worden. 
 	//edDraftURI: ["https://geonovum.github.io", "/", "shortName"],
 
