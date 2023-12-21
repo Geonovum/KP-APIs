@@ -24,8 +24,8 @@ De verschillende onderdelen van de NL API Strategie bevat de volgende documenten
 | Onderdeel              | Documentnaam & </br> Verwijzing naar de gepubliceerde versie                                                     | Status                                    | Versie                  |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------- | ----------------------------------------- | ----------------------- |
 | Algemeen               | [Inleiding NL API Strategie](https://docs.geostandaarden.nl/api/API-Strategie/)         					        | Vastgesteld </br> (door Kennisplatform)   | 09-03-2022              |
-| Algemeen               | [Architectuur NL API Strategie](https://docs.geostandaarden.nl/api/API-Strategie/Architectuur/)    		        | Vastgesteld </br> (door Kennisplatform)   | 09-03-2022              |
-| Algemeen               | [Gebruikerswensen NL API Strategie](https://docs.geostandaarden.nl/api/API-Strategie/Gebruikerswensen/) 			| Vastgesteld </br> (door Kennisplatform)   | 09-03-2022              |
+| Algemeen               | [Architectuur NL API Strategie](https://docs.geostandaarden.nl/api/API-Strategie-architectuur/)    		        | Vastgesteld </br> (door Kennisplatform)   | 09-03-2022              |
+| Algemeen               | [Gebruikerswensen NL API Strategie](https://docs.geostandaarden.nl/api/API-Strategie-gebruikerswensen/) 			| Vastgesteld </br> (door Kennisplatform)   | 09-03-2022              |
 | Normatieve standaard   | [API Design Rules (ADR)](https://gitdocumentatie.logius.nl/publicatie/api/adr/)                                  | Verplicht </br> (pas toe leg uit)         | 09-07-2020 </br> v1.0.0 |
 | Verplichte standaard   | [Open API Specification (OAS)](https://forumstandaardisatie.nl/open-standaarden/openapi-specification)           | Verplicht </br> (pas toe leg uit)         | 25-05-2018 </br> v3.0.0 |
 | Normatieve standaard   | [NL GOV OAuth profiel](https://gitdocumentatie.logius.nl/publicatie/api/oauth/)                                  | Verplicht </br> (pas toe leg uit)         | 09-07-2020 </br> v1.0.0 |
