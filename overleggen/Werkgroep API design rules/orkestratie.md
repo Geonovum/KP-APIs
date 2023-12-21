@@ -2,6 +2,20 @@
 
 Eerder dit jaar heeft Kadaster in samenwerking met Geonovum het IMX initiatief gestart. Dit initiatief heeft als ambitie om basisregistraties (en andere bronnen) in samenhang te kunnen bevragen door middel van API orkestratie. Om op een efficiënte manier te kunnen orkestreren moeten bron API’s voldoen aan diverse randvoorwaarden. Deze werkgroep is bedoeld om te onderzoeken welke randvoorwaarden dit zijn en op welke manier deze gestandaardiseerd zouden kunnen worden als design rules.
 
+## Verslag bijeenkomst 30 november 2023
+
+Actiepunten:
+
+- Joost doet een aanzet voor een nieuwe design rule voor batch bevragingen.
+- Frank en Martin zetten wat ideëen op papier voor beveiligingsarchitectuur in de context van orkestratie.
+- Peter zoekt nog afstemming met Pano over begrippen.
+
+De volgende bijeenkomst staat gepland op donderdag 21 december van 11u tot 12u.
+
+## Verslag bijeenkomst 9 november 2023
+
+Pano heeft het lineage model van IMX toegelicht.
+
 ## Verslag bijeenkomst 2 november 2023
 
 Rondje langs de aanwezigen om wat te vertellen over de affiniteit met het onderwerp en wat we hopen te bereiken.
