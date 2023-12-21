@@ -216,6 +216,14 @@ let respecConfig = {
       title: "The GeoJSON Format",
       authors: ["H. Butler, M. Daly, A. Doyle, S. Gillies, T. Schaub, S. Hagen"],
       date: "2016-08-01",
+    },
+    "OAuth2.Browser-Based-Apps": {
+      href: "https://tools.ietf.org/html/draft-ietf-oauth-browser-based-apps",
+      title:
+        "OAuth 2.0 for Browser-Based Apps",
+      authors: ["A. Parecki", "D. Waite"],
+      status: "Internet-Draft",
+      publisher: "IETF OAuth Working Group",
     }   
     }  
   
