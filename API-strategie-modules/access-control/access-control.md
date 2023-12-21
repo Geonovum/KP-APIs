@@ -175,7 +175,7 @@ Note that usage of the Authorization header is part of the OAuth2 specifications
 When authentication is implicit or when just the presence of an Authorization header is enough for authentication and/or authorization: use the flow chart in figure 1 to determine the correct error code.
 
 <figure>
-    <img alt="flowchart describing responses when authentication is implicit" src="../../media/HTTP-FlowChart1.PNG"/>
+    <img alt="flowchart describing responses when authentication is implicit" src="media/HTTP-FlowChart1.PNG"/>
     <figcaption>authentication is implicit</figcaption>
 </figure>
 
@@ -191,7 +191,7 @@ https://tools.ietf.org/html/rfc7231#section-6.5.4
 When authentication is explicit, that is the authentication credentials are actively verfied when present, use the flow chart in figure 2 to determine the correct error codes.
 
 <figure>
-    <img alt="flowchart describing responses when authentication is explicit" src="../../media/HTTP-FlowChart2.PNG"/>
+    <img alt="flowchart describing responses when authentication is explicit" src=".media/HTTP-FlowChart2.PNG"/>
     <figcaption>authentication is explicit</figcaption>
 </figure>
 
@@ -208,7 +208,7 @@ https://tools.ietf.org/html/rfc7231#section-6.5.4
 When authentication is explicit and there is a check whether the provided authorization confirmation claim (`cnf`, see [[rfc7800]]) matches the credentials provided for authentication use the flow chart in figure 3 to esteblish the correct error codes.
 
 <figure>
-    <img alt="flowchart describing responses when authentication is explicit and client authorization confirmation claim (`cnf`) matches authentication." src="../../media/HTTP-FlowChart3.PNG"/>
+    <img alt="flowchart describing responses when authentication is explicit and client authorization confirmation claim (`cnf`) matches authentication." src="media/HTTP-FlowChart3.PNG"/>
     <figcaption>authentication is explicit, and client authorization confirmation claim (`cnf`) matches authentication.</figcaption>
 </figure>
 
