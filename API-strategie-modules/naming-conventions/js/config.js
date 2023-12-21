@@ -2,7 +2,7 @@ let respecConfig = {
   useLogo: true,
   useLabel: true,
   // title is verplicht! Neem hier de titel van het document op ----------------------
-  title: "Transport Security Module",
+  title: "Naming Conventions",
   //-- specStatus is verplicht! (activeer 1 van de volgende) --------------------------
   specStatus: "vv",                   // Werkversie
   //specStatus: "cv",               // Consultatieversie
