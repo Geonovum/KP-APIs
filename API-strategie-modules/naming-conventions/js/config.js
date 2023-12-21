@@ -26,7 +26,7 @@ let respecConfig = {
   //licence: "cc0",                 // Public Domain Dedication
   licence: "cc-by",                 // Attribution, met bronvermelding
   //-- shortName is verplicht! (komt in de URL: kies logische afkorting)--------------
-  shortName: "naming-conventions",
+  shortName: "API-Strategie-mod-naming-conventions",
   edDraftURI: "https://geonovum.github.io/KP-APIs/API-strategie-modules/naming-conventions/",  
   //edDraftURI = De URI van de draft version. Deze wordt automatisch afgeleid van de github URI; maar kan hier overschreven worden. 
 	//edDraftURI: ["https://geonovum.github.io", "/", "shortName"],
