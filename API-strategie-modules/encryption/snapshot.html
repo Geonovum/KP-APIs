@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
-<meta name="generator" content="ReSpec 32.1.10">
+<meta name="generator" content="ReSpec 34.1.4">
 <style>
 .issue-label{text-transform:initial}
 .warning>p:first-child{margin-top:0}
@@ -39,9 +39,14 @@ dfn{cursor:pointer}
   
   
 <title>ADR-HTTP Payload encryption</title>
+    
   
   
-<link rel="shortcut icon" type="image/x-icon" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/logius.ico">
+<script>
+   respecConfig = {...organisationConfig, ...respecConfig};
+  </script>
+  
+<link href="https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/logius.ico" rel="shortcut icon" type="image/x-icon">
   
 
 <style id="respec-mainstyle">
@@ -63,8 +68,6 @@ a.bibref{text-decoration:none}
 }
 #references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
 cite .bibref{font-style:normal}
-code{color:#c63501}
-th code{color:inherit}
 a[href].orcid{padding-left:4px;padding-right:4px}
 a[href].orcid>svg{margin-bottom:-2px}
 .toc a,.tof a{text-decoration:none}
@@ -91,9 +94,8 @@ details.respec-tests-details>ul{width:100%;margin-top:-.3em}
 details.respec-tests-details>li{padding-left:1em}
 .self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
 aside.example .marker>a.self-link{color:inherit}
-.header-wrapper{display:flex;align-items:baseline}
-:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2){position:relative;left:-.5em}
-:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-1.1em;font-size:1rem;opacity:.5}
+.header-wrapper{display:flex;align-items:baseline;position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-.7em;font-size:1rem;opacity:.5}
 :is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
 :is(h2,h3)+a.self-link{top:-.2em}
 :is(h4,h5,h6)+a.self-link::before{color:#000}
@@ -103,6 +105,9 @@ dd{margin-left:0}
 @media print{
 .removeOnSave{display:none}
 }
+</style>
+<style id="respec-nlgov">
+img.license{float:left;padding-right:5px}
 </style>
 <meta name="description" content="This ADR Module contains the requirements for ADR REST-API encryption based on JWE">
 <style>
@@ -120,48 +125,139 @@ dd{margin-left:0}
 .hljs-link{text-decoration:underline}
 </style>
 <style>
-var{position:relative;cursor:pointer}
-var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
-var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
-var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
-var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
+
+  .sidelabel {
+    position: fixed;
+    -webkit-transform-origin: top right;
+    right: 100%;
+    top: 0;
+    -webkit-transform: rotate(-90deg);
+    padding: 4px 50px 4px 10px;
+    color: white;
+    white-space: nowrap;
+    z-index: 1;
+    background-color: #32a852;
+  }
 </style>
 <script id="initialUserConfig" type="application/json">{
-  "specStatus": "WV",
-  "specType": "ST",
-  "pubDomain": "adr",
-  "shortName": "template",
-  "publishDate": "2023-11-03",
-  "publishVersion": "1.0",
-  "editors": [
+  "nl_organisationName": "Kennisplatform API's",
+  "nl_organisationStylesURL": "https://tools.geostandaarden.nl/respec/style/",
+  "nl_organisationPublishURL": "https://docs.geostandaarden.nl/",
+  "logos": [
     {
-      "name": "Peter Haasnoot",
-      "company": "Logius",
-      "companyURL": "https://logius.nl"
+      "src": "https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg",
+      "alt": "Logius",
+      "id": "Logius",
+      "height": 77,
+      "width": 44,
+      "url": "https://www.logius.nl/standaarden"
     }
   ],
-  "authors": [
-    {
-      "name": "KPAPI",
-      "company": "KPAPI",
-      "companyURL": "https://github.com/Geonovum/KPAPI"
-    }
+  "latestVersion": [
+    "nl_organisationPublishURL",
+    "pubDomain",
+    "/",
+    "shortName"
   ],
-  "github": "https://github.com/Geonovum/KPAPI",
+  "thisVersion": [
+    "nl_organisationPublishURL",
+    "pubDomain",
+    "/",
+    "shortName",
+    "/",
+    "publishVersion"
+  ],
+  "prevVersion": [
+    "nl_organisationPublishURL",
+    "pubDomain",
+    "/",
+    "shortName",
+    "/",
+    "previousPublishVersion"
+  ],
+  "useLogo": false,
+  "useLabel": true,
+  "license": "cc-by",
   "addSectionLinks": true,
-  "nl_addReleaseTagTitle": true,
-  "nl_organisationName": "KPAPI",
-  "nl_organisationStylesURL": "https://publicatie.centrumvoorstandaarden.nl/respec/style/",
-  "nl_organisationPrefix": "X-",
-  "nl_markdownEmbedImageInFigure": true,
-  "nl_organisationPublishURL": "https://github.com/Geonovum/KPAPI",
-  "nl_logo": {
-    "src": "media/leeg.png",
-    "alt": "KPAPI",
-    "id": "KPAPI",
-    "height": 77,
-    "width": 44,
-    "url": ""
+  "localizationStrings": {
+    "en": {
+      "wv": "Draft",
+      "cv": "Recommendation",
+      "vv": "Proposed recommendation",
+      "def": "Definitive version",
+      "basis": "Document",
+      "eo": "Outdated version",
+      "tg": "Rescinded version",
+      "no": "Norm",
+      "st": "Standard",
+      "im": "Information model",
+      "pr": "Guideline",
+      "hr": "Guide",
+      "wa": "Proposed recommendation",
+      "al": "General",
+      "bd": "Governance documentation",
+      "bp": "Best practice"
+    },
+    "nl": {
+      "wv": "Werkversie",
+      "cv": "Consultatieversie",
+      "vv": "Versie ter vaststelling",
+      "def": "Vastgestelde versie",
+      "basis": "Document",
+      "eo": "Verouderde versie",
+      "tg": "Teruggetrokken versie",
+      "no": "Norm",
+      "st": "Standaard",
+      "im": "Informatiemodel",
+      "pr": "Praktijkrichtlijn",
+      "hr": "Handreiking",
+      "wa": "Werkafspraak",
+      "al": "Algemeen",
+      "bd": "Beheerdocumentatie",
+      "bp": "Best practice"
+    }
+  },
+  "sotdText": {
+    "nl": {
+      "sotd": "Status van dit document",
+      "def": "Dit is de definitieve versie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.",
+      "wv": "Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.",
+      "cv": "Dit is een door het TO goedgekeurde consultatieversie. Commentaar over dit document kan gestuurd worden naar ",
+      "vv": "Dit is een definitief concept van de nieuwe versie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.",
+      "basis": "Dit is een document zonder officiële status."
+    },
+    "en": {
+      "sotd": "Status of This Document",
+      "def": "This is the definitive version of this document. Edits resulting from consultations have been applied.",
+      "wv": "This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.",
+      "cv": "This is a proposed recommendation approved by TO. Comments regarding this document may be sent to ",
+      "vv": "This is the definitive concept of this document. Edits resulting from consultations have been applied.",
+      "basis": "This document has no official standing."
+    }
+  },
+  "labelColor": {
+    "def": "#154273",
+    "wv": "#32a852"
+  },
+  "licenses": {
+    "cc0": {
+      "name": "Creative Commons 0 Public Domain Dedication",
+      "short": "CC0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "image": "https://tools.geostandaarden.nl/respec/style/logos/CC-Licentie.svg"
+    },
+    "cc-by": {
+      "name": "Creative Commons Attribution 4.0 International Public License",
+      "short": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+      "image": "https://tools.geostandaarden.nl/respec/style/logos/cc-by.svg"
+    },
+    "cc-by-nd": {
+      "name": "Creative Commons Naamsvermelding-GeenAfgeleideWerken 4.0 Internationaal",
+      "short": "CC-BY-ND",
+      "url": "https://creativecommons.org/licenses/by-nd/4.0/legalcode.nl",
+      "image": "https://tools.geostandaarden.nl/respec/style/logos/cc-by-nd.svg"
+    }
   },
   "localBiblio": {
     "SemVer": {
@@ -189,25 +285,44 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "title": "ENISA Good Practises in Cryptography – Primitives and Schemes, December 2020. (Limited availability)"
     }
   },
-  "publishISODate": "2023-11-03T00:00:00.000Z",
-  "generatedSubtitle": "Draft 10 november 2023"
+  "specStatus": "WV",
+  "specType": "HR",
+  "pubDomain": "api",
+  "shortName": "signing-jades",
+  "publishDate": "2023-06-24",
+  "publishVersion": "0.9",
+  "editors": [
+    {
+      "name": "Peter Haasnoot",
+      "company": "Logius",
+      "companyURL": "https://logius.nl"
+    }
+  ],
+  "authors": [
+    {
+      "name": "KPAPI",
+      "company": "KPAPI",
+      "companyURL": "https://github.com/Geonovum/KPAPI"
+    }
+  ],
+  "github": "https://github.com/Geonovum/KPAPI"
 }</script>
-<link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/X-WV.css"></head>
+<link rel="stylesheet" href="https://tools.geostandaarden.nl/respec/style/base.css"></head>
 
-<body class="h-entry toc-inline"><div class="head">
-    <a class="logo"><img alt="KPAPI" height="77" id="KPAPI" src="media/leeg.png" width="44">
-  </a> <h1 id="title" class="title">ADR-HTTP Payload encryption</h1>
+<body class="h-entry"><div class="head">
+     <h1 id="title" class="title">ADR-HTTP Payload encryption</h1>
     
     <h2>
-      KPAPI Standard<br>
+      Kennisplatform API's Guide<br>
       Draft
-      <time class="dt-published" datetime="2023-11-03">10 november 2023</time>
+      <time class="dt-published" datetime="2023-06-24">January 25, 2024</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
               <a class="u-url status" href="https://geonovum.github.io/KPAPI/">https://geonovum.github.io/KPAPI/</a>
-            </dd><dt>Latest published version:</dt><dd>
-              <a href="https://github.com/Geonovum/KPAPI/adr/template/">https://github.com/Geonovum/KPAPI/adr/template/</a>
+            </dd>
+      <dt>Latest published version:</dt><dd>
+              <a href="https://docs.geostandaarden.nl/api/signing-jades">https://docs.geostandaarden.nl/api/signing-jades</a>
             </dd>
       <dt>Latest editor's draft:</dt><dd><a href="https://geonovum.github.io/KPAPI/">https://geonovum.github.io/KPAPI/</a></dd>
       
@@ -236,16 +351,16 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     
     
     
-    <p class="copyright" lang="en">
-          This document is licensed under a
-          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" class="subfoot">Creative Commons Attribution 4.0 License</a>.
+    <p class="copyright">
+          This document is licensed under 
+          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://tools.geostandaarden.nl/respec/style/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
         </p>
     <hr title="Separator for header">
   </div>
 
   <section id="abstract" class="introductory"><h2>Abstract</h2><p>This ADR Module contains the requirements for ADR REST-API encryption based on JWE</p>
 </section>
-  <section id="sotd" class="introductory"><h2>Status of This Document</h2>This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by de werkgroep.<p></p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#adr-http-payload-encryption"><bdi class="secno">1. </bdi>ADR-HTTP Payload encryption</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1.1 </bdi>Introduction</a></li><li class="tocline"><a class="tocxref" href="#notational-conventions"><bdi class="secno">1.2 </bdi>Notational Conventions</a></li><li class="tocline"><a class="tocxref" href="#jwe-encryption"><bdi class="secno">1.3 </bdi>JWE encryption</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#basic-jwe-proces-flow"><bdi class="secno">1.3.1 </bdi>Basic JWE proces flow</a></li><li class="tocline"><a class="tocxref" href="#parameters-and-requirements"><bdi class="secno">1.3.2 </bdi>Parameters and requirements</a></li></ol></li><li class="tocline"><a class="tocxref" href="#cryptographic-algorithms"><bdi class="secno">1.4 </bdi>Cryptographic Algorithms</a></li><li class="tocline"><a class="tocxref" href="#encryption-in-combination-with-signing"><bdi class="secno">1.5 </bdi>Encryption in combination with signing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">2. </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">A.1 </bdi>Normative references</a></li></ol></li></ol></nav>
+  <section id="sotd" class="introductory"><h2>Status of This Document</h2><p>This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.</p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#adr-http-payload-encryption"><bdi class="secno">1. </bdi>ADR-HTTP Payload encryption</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1.1 </bdi>Introduction</a></li><li class="tocline"><a class="tocxref" href="#notational-conventions"><bdi class="secno">1.2 </bdi>Notational Conventions</a></li><li class="tocline"><a class="tocxref" href="#jwe-encryption"><bdi class="secno">1.3 </bdi>JWE encryption</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#basic-jwe-proces-flow"><bdi class="secno">1.3.1 </bdi>Basic JWE proces flow</a></li><li class="tocline"><a class="tocxref" href="#parameters-and-requirements"><bdi class="secno">1.3.2 </bdi>Parameters and requirements</a></li></ol></li><li class="tocline"><a class="tocxref" href="#cryptographic-algorithms"><bdi class="secno">1.4 </bdi>Cryptographic Algorithms</a></li><li class="tocline"><a class="tocxref" href="#encryption-in-combination-with-signing"><bdi class="secno">1.5 </bdi>Encryption in combination with signing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">2. </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">A.1 </bdi>Normative references</a></li></ol></li></ol></nav>
   <section id="adr-http-payload-encryption"><div class="header-wrapper"><h2 id="x1-adr-http-payload-encryption"><bdi class="secno">1. </bdi>ADR-HTTP Payload encryption</h2><a class="self-link" href="#adr-http-payload-encryption" aria-label="Permalink for Section 1."></a></div>
 <div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="3"><span>Note</span><span class="issue-label">: Status</span></div><aside class="">
         <p>This module is under development</p>
@@ -265,7 +380,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 <p> For encryption <a href="https://datatracker.ietf.org/doc/html/rfc7516">JSON Web Encryption (JWE)</a> is used as defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7516" title="JSON Web Encryption (JWE)">RFC7516</a></cite>];</p>
 <section id="basic-jwe-proces-flow"><div class="header-wrapper"><h4 id="x1-3-1-basic-jwe-proces-flow"><bdi class="secno">1.3.1 </bdi>Basic JWE proces flow</h4><a class="self-link" href="#basic-jwe-proces-flow" aria-label="Permalink for Section 1.3.1"></a></div>
 <p>The basic flow for encryption using JWE is :</p>
-<p><figure id="fig-generatedID"><img src="media/API_encryption.png" alt="Encryption" height="847" width="783"><figcaption>Figure <bdi class="figno">1</bdi> <span class="fig-title"></span></figcaption></figure></p>
+<p><figure id="fig-generatedID"><img src="media/API_encryption.png" alt="Encryption"><figcaption><a class="self-link" href="#fig-generatedID">Figure <bdi class="figno">1</bdi></a> <span class="fig-title"></span></figcaption></figure></p>
 <ul>
 <li><p>1 Service Requester encrypts payload using Service Provider public encryption key:</p>
 </li>
@@ -311,7 +426,7 @@ typ : <span class="hljs-string">"JWE"</span>
 <p>As defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7518" title="JSON Web Algorithms (JWA)">rfc7518</a></cite>] </p>
 </section><section id="encryption-in-combination-with-signing"><div class="header-wrapper"><h3 id="x1-5-encryption-in-combination-with-signing"><bdi class="secno">1.5 </bdi>Encryption in combination with signing</h3><a class="self-link" href="#encryption-in-combination-with-signing" aria-label="Permalink for Section 1.5"></a></div>
 <p>The following diagram shows the order in which encryption &amp; signing must be applied when encryption is used in combination with signing</p>
-<p><figure id="fig-generatedID-0"><img src="media/API_signing_encryption.png" alt="Encryption in combination with signing" height="853" width="607"><figcaption>Figure <bdi class="figno">2</bdi> <span class="fig-title"></span></figcaption></figure></p>
+<p><figure id="fig-generatedID-0"><img src="media/API_signing_encryption.png" alt="Encryption in combination with signing"><figcaption><a class="self-link" href="#fig-generatedID-0">Figure <bdi class="figno">2</bdi></a> <span class="fig-title"></span></figcaption></figure></p>
 </section></section>
   <section id="conformance"><div class="header-wrapper"><h2 id="x2-conformance"><bdi class="secno">2. </bdi>Conformance</h2><a class="self-link" href="#conformance" aria-label="Permalink for Section 2."></a></div><p>As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.</p><p>
         The key words <em class="rfc2119">MAY</em>, <em class="rfc2119">MUST</em>, <em class="rfc2119">MUST NOT</em>, <em class="rfc2119">NOT RECOMMENDED</em>, <em class="rfc2119">OPTIONAL</em>, <em class="rfc2119">RECOMMENDED</em>, <em class="rfc2119">REQUIRED</em>, <em class="rfc2119">SHALL</em>, <em class="rfc2119">SHALL NOT</em>, <em class="rfc2119">SHOULD</em>, and <em class="rfc2119">SHOULD NOT</em> in this document
@@ -561,4 +676,4 @@ function hidePanel(panel) {
   panel.hidden = true;
   panel.classList.remove("docked");
 }
-})()</script><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
+})()</script><div class="sidelabel">Kennisplatform API's Guide - Draft</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
