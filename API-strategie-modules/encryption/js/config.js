@@ -66,4 +66,6 @@ let respecConfig =
       title: "ENISA Good Practises in Cryptography – Primitives and Schemes, December 2020. (Limited availability)",
     }
   },
+  
+  postProcess: [window.respecMermaid.createFigures],
 };
