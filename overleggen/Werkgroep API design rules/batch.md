@@ -1,97 +1,308 @@
 # Batch bevragingen
 
-Stel je voor dat bron 1 een lijst met 10 personen oplevert, en dat je van ieder indidueel persoon de bijbehorende adresgegevens uit een andere bron erbij wil voegen. Je hebt dan te maken met het zogeheten "N+1 probleem". Dat wil zeggen dat je in totaal 11 requests nodig hebt, namelijk 1 request naar bron 1 en vervolgens 10 requests naar bron 2. Dit zou voorkomen kunnen worden als bron 2 batch requests zou ondersteunen. In dat geval kan het aantal requests teruggebracht worden naar 2 (1 per bron).
+Stel je voor dat bron 1 een lijst met 10 personen oplevert incl alleen het adres ID, en dat je van ieder indidueel persoon de bijbehorende adresgegevens uit een andere bron erbij wil voegen. Je hebt dan te maken met het zogeheten _N+1 probleem_. Dat wil zeggen dat je in totaal 11 requests nodig hebt, namelijk 1 request naar bron 1 en vervolgens 10 requests naar bron 2. Dit is slechts een voorbeeld van een situatie waarbij het aantal requests hard op kan lopen. Dit heeft nadelige gevolgen voor performance en gaat ten koste van schaalbaarheid.
 
-Hierbij gelden de volgende uitgangspunten:
+Door middel van _request batching_ zou het aantal requests gereduceerd kunnen worden, in het eerder genoemde voorbeeld tot slechts 2 (1 per bron). Matching op gerelateerde objecten kan gebaseerd zijn op:
 
-- Objecten kunnen samengestelde sleutels gebruiken (een combinatie van meerdere identificerende kenmerken)
-- Voorafgaand aan de bevraging is niet met zekerheid te stellen dat een object daadwerkelijk bestaat. Er is altijd kans op een dode link. Dit is inherent aan een gedistribueerd gegevenslandschap.
+- Identificerende attributen (primary key)
+  - Dit kan ook een samengengestelde sleutel zijn.
+  - Voorafgaand aan de bevraging is niet met zekerheid te stellen dat een object daadwerkelijk bestaat. Er is altijd kans op een dode link. Dit is inherent aan een gedistribueerd gegevenslandschap.
+- Filter op 1 of meerdere kenmerken, zoals relatie-kenmerken (foreign keys) of attributen (bijv. een type of geometrie)
+  - Een relatie-kenmerk kan ook een samengengestelde sleutel van het doel-object zijn
+  - Een combinatie van meerdere (soorten) kenmerken is ook mogelijk
 
-## Voorstel
+## Voorstel: batch endpoint per collectie
 
-Voeg voor iedere collectie een extra endpoint toe met de naam `_batch`. Voor bovengenoemd voorbeeld zou dit bijvoorbeeld `/adressen/_batch` worden. Dit endpoint implementeert de `POST` operatie, waarbij als input een lijst met object identificaties wordt verwacht.
+Deze oplossing maakt het mogelijk om per collectie een batch request uit te voeren. Dit vereist een extra endpoint, bijvoorbeeld met de naam `_batch`; voor bovengenoemd voorbeeld zou dit bijvoorbeeld `/adressen/_batch` worden. Dit endpoint implementeert de `POST` operatie, waarbij als request payload een lijst met criteria wordt verwacht (De HTTP specificatie staat in principe ook een request payload voor `GET` operaties toe. Dit is echter zeer ongebruikelijk en ondersteuning vanuit tooling, frameworks en server applicaties is te beperkt).
 
-Voor de input gelden de volgende eisen:
+De lijst met criteria wordt omsloten door een wrapper met de naam `requests`, om de mogelijkheid te hebben om extra contextuele parameters toe te kunnen voegen aan de payload. Om performance en beschikbaarheid te waarborgen dient wel een limitatie te gelden voor het aantal items per batch-bevraging. Dat zou bijvoorbeeld 100 of 1000 items kunnen zijn. Iedere lijst entry bevat 1 property. De naam en het schema van de property hangen af van het type criterium.
 
-- De lijst met sleutels wordt omsloten door een wrapper, om de mogelijkheid te hebben om extra contextuele parameters toe te kunnen voegen aan de input. De naam van de lijst property is `keys`.
-- Om performance en beschikbaarheid te waarborgen dient wel een limitatie te gelden voor het aantal items per batch-bevraging. Dat zou bijvoorbeeld 100 of 1000 items kunnen zijn.
+Voor het resultaat gelden de volgende eisen:
+
+- Het endpoint levert één lijst met alle resultaten (zonder paginering).
+- De lijst met resultaten wordt omsloten door een wrapper met de naam `results`.
+- Het aantal resultaten dient exact gelijk te zijn aan het aantal items in de input.
+- De volgorde van de resultaten dient exact gelijk te zijn aan de volgorde van de input.
+
+## Matchen op identificatie
+
+Voor het raadplegen van een object op basis van identificatie dient de property `key` gebruikt te worden.
+
+- De waarde is de waarde(n) van de identificerende kenmerken van het object.
+- Alleen bij samengestelde sleutels dienen de waarden in een array opgesomd te worden.
+- Het datatype van de identificerende kenmerken kan verschillen, waardoor ook het schema per objecttype kan verschillen.
 
 De request payload ziet er bijvoorbeeld als volgt uit:
 
 ```json
 {
-  "keys": [
+  "requests": [
     {
-      "identificatie": "12345"
+      "key": "12345"
     },
     {
-      "identificatie": "23456"
-    },
-    {
-      "identificatie": "34567"
+      "key": "34567"
     }
+    // ....
   ]
 }
 ```
-
-Voor het resultaat gelden de volgende eisen:
-
-- Het endpoint levert één lijst met alle resultaten (zonder paginering).
-- De lijst met resultaten wordt omsloten door een wrapper, om de mogelijkheid te hebben om (in de toekomst) meta-gegevens toe te kunnen voegen aan het resultaat. De naam van de lijst property is `items`.
-- Het aantal resultaten dient exact gelijk te zijn aan het aantal items in de input.
-- De volgorde van de resultaten dient exact gelijk te zijn aan de volgorde van de input.
-- Objecten die niet gevonden worden, worden teruggeven als `null`.
 
 Een voorbeeld resultaat zou kunnen zijn:
 
 ```json
 {
-  "items": [
+  "results": [
     {
       "identificatie": "12345",
       "postcode": "1234AB",
       "huisnummer": 1
     },
-    null,
+    null
+  ]
+}
+```
+
+Objecten die niet gevonden worden, worden teruggeven als `null`.
+
+### Matchen op relaties en/of attributen (filtering)
+
+Als het gaat om het filteren op een relatie (foreign key) en/of ander kenmerk, dan kan een lijst met filter criteria worden aangeleverd, bijv:
+
+```json
+{
+  "requests": [
     {
-      "identificatie": "34567",
-      "postcode": "3456AB",
-      "huisnummer": 3
+      "filter": {
+        "type": "Spoor­baan",
+        "ligtIn": {
+          "identificatie": "12345"
+        }
+      }
+    },
+    {
+      "filter": {
+        "type": "Spoor­baan",
+        "ligtIn": {
+          "identificatie": "67890"
+        }
+      }
+    }
+    // ...
+  ]
+}
+```
+
+Een voorbeeld resultaat zou dan kunnen zijn:
+
+```json
+{
+  "results": [
+    {
+      "items": [
+        {
+          "identificatie": "12345",
+          "postcode": "1234AB",
+          "huisnummer": 1
+        },
+        {
+          "identificatie": "34567",
+          "postcode": "3456AB",
+          "huisnummer": 3
+        }
+      ]
+    },
+    {
+      "items": []
     }
   ]
 }
 ```
 
-## Alternatieven
+Als er geen objecten gevonden worden, wordt een lege array van items teruggegeven.
 
-De volgende alternatieven zijn overwogen.
+@TODO: Paginering per result?? Next token of link opnemen?
 
-### Alternatief 1: Collectie filtering
+### Combinatie
 
-Batch support zou geïmplementeerd kunnen worden door de reeks met sleutels als filter mee te geven aan een collectie endpoint.
+Beide manieren van selecteren kunnen ook gecombineerd worden, bijv:
 
-Hiervoor is niet gekozen, omdat:
+```json
+{
+  "requests": [
+    {
+      "key": "12345"
+    },
+    {
+      "filter": {
+        "type": "Spoor­baan",
+        "ligtIn": {
+          "identificatie": "12345"
+        }
+      }
+    }
+    // ....
+  ]
+}
+```
 
-- Het aantal karakters van de URL mogelijk problemen oplevert.
-- Het lastig is om een lijst van samengestelde keys als filter uit te drukken.
-- De client moet gaan pagineren (indien de page size lager is dan de batch size).
-- De client zelf moet detecteren welke objecten wel of geen resultaat opleveren.
-- De client het resultaat moet gaan hersorteren (indien relevant voor implementatie/toepassing)
+Met als resultaat:
 
-### Alternatief 2: Batch endpoint als GET operatie
+```json
+{
+  "results": [
+    {
+      "identificatie": "12345",
+      "postcode": "1234AB",
+      "huisnummer": 1
+    },
+    {
+      "items": [
+        {
+          "identificatie": "12345",
+          "postcode": "1234AB",
+          "huisnummer": 1
+        },
+        {
+          "identificatie": "34567",
+          "postcode": "3456AB",
+          "huisnummer": 3
+        }
+      ]
+    }
+  ]
+}
+```
 
-De HTTP spec staat in principe ook een request payload voor `GET` operaties toe. Hier is echter niet voor gekozen, omdat dit ongebruikelijk is, en omdat de ondersteuning vanuit tooling, frameworks en server applicaties zeer beperkt is.
+## Alternatief overwogen: Collectie filtering
+
+Batch support zou ook geïmplementeerd kunnen worden door de reeks met criteria als filter mee te geven aan een (bestaand) collectie endpoint.
+
+Hieraan kleven echter wel een hoop nadelen, o.a.:
+
+- Het aantal karakters van de URL levert mogelijk problemen op
+- Het is lastig om een lijst van complexe criteria uit te drukken in een URL.
+- De client moet gaan pagineren.
+- De client moet zelf gaan detecteren welke objecten wel of geen resultaat opleveren, en/of welke resultaten bij welk filter criteria horen.
+- De client moet mogelijk het resultaat gaan hersorteren (indien relevant voor implementatie/toepassing)
 
 ## Uitzoekpunten
 
 - 1 globaal batch endpoint ipv een batch endpoint per objecttype?
-- Batch bevragingen zonder primaire sleutel, bijv:
-  - op basis van vreemde sleutels (kardinaliteit is van belang!)
-  - matching op geometrie (bijv. intersectie)
 - Implementatie voorbeelden / best practices
 - Wanneer gebruik je het wel / niet
-- Beveiliging
-- Relatie tot andere API stijlen
 - Hoe bepaal je de max batch size? En wie?
 - Check t.o.v. bestaande design rules
-- Analyse op bestaande standaarden / voorbeelden
+- Hypermedia links?
+- Generalisatie
+- Beveiliging
+
+## Bestaande standaarden
+
+### Elasticsearch
+
+Elasticsearch kent een approach, vergelijkbaar met alternatief 1.
+
+```json
+// GET /my-index/_mget
+{
+  "docs": [
+    {
+      "_id": "1"
+    },
+    {
+      "_id": "2"
+    }
+  ]
+}
+```
+
+Als alternatief kan het `ids` element worden gebruikt.
+
+```json
+// GET /my-index/_mget
+{
+  "ids": ["1", "2"]
+}
+```
+
+Dit kan tevens globaal worden uitgevoerd over meerdere collecties heen:
+
+```json
+// GET /_mget
+{
+  "docs": [
+    {
+      "_index": "my-index-1",
+      "_id": "1"
+    },
+    {
+      "_index": "my-index-2",
+      "_id": "2"
+    }
+  ]
+}
+```
+
+Er geldt geen limiet op het aantal documenten.
+
+### OData Batching
+
+Docs: https://docs.oasis-open.org/odata/odata-json-format/v4.01/odata-json-format-v4.01.html#sec_BatchRequestsandResponses
+
+In OData heb je een globaal endpoint voor het bundelen van meerdere requests.
+
+```json
+// POST https://example.org/api/$batch
+{
+  "requests": [
+    {
+      "id": "1",
+      "method": "get",
+      "url": "https://example.org/api/buildings/1"
+    },
+    {
+      "id": "2",
+      "method": "get",
+      "url": "https://example.org/api/buildings/2"
+    }
+  ]
+}
+```
+
+In de response krijg je voor ieder subrequest de volledige HTTP response terug, maar gebundeld in 1 document. Headers zijn hierbij opgenomen in de payload.
+
+```json
+{
+  "responses": [
+    {
+      "id": "1",
+      "status": 200,
+      "body": {
+        "@odata.context": "https://example.org/api/$metadata#Building/$entity",
+        "Id": "1",
+        "BuildingYear": 2024
+      }
+    },
+    {
+      "id": "2",
+      "status": 200,
+      "body": {
+        "@odata.context": "https://example.org/api/$metadata#Building/$entity",
+        "Id": "2",
+        "BuildingYear": 2003
+      }
+    }
+  ]
+}
+```
+
+Het grote voordeel van deze aanpak is dat je alle vrijheid hebt in de bevragingen, of zelfs schrijf-operaties, die je wil combineren. Ook kun je per subrequest de exacte resultaat status zien, niet alleen wanneer iets niet bestaat, maar ook als men bijv niet is geautoriseerd.
+
+In plaats van het uidrukken van requests/responses in JSON, kan ook het `multipart/mixed` media type worden gebruikt.
+
+### Google Drive
+
+Docs: https://developers.google.com/drive/api/guides/performance#batch-requests
+
+Google Drive kent een vergelijkbare aanpak als OData, maar ondersteunt alleen het `multipart/mixed` media type. Dat kan functioneel hetzelfde, maar is lastiger te implementeren.
