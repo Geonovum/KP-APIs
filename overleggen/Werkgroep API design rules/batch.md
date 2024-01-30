@@ -43,7 +43,6 @@ De request payload ziet er bijvoorbeeld als volgt uit:
     {
       "key": "34567"
     }
-    // ....
   ]
 }
 ```
@@ -88,7 +87,6 @@ Als het gaat om het filteren op een relatie (foreign key) en/of ander kenmerk, d
         }
       }
     }
-    // ...
   ]
 }
 ```
@@ -141,7 +139,6 @@ Beide manieren van selecteren kunnen ook gecombineerd worden, bijv:
         }
       }
     }
-    // ....
   ]
 }
 ```
@@ -203,8 +200,9 @@ Hieraan kleven echter wel een hoop nadelen, o.a.:
 
 Elasticsearch kent een approach, vergelijkbaar met alternatief 1.
 
+`GET /my-index/\_mget`
+
 ```json
-// GET /my-index/_mget
 {
   "docs": [
     {
@@ -219,8 +217,9 @@ Elasticsearch kent een approach, vergelijkbaar met alternatief 1.
 
 Als alternatief kan het `ids` element worden gebruikt.
 
+`GET /my-index/_mget`
+
 ```json
-// GET /my-index/_mget
 {
   "ids": ["1", "2"]
 }
@@ -228,8 +227,9 @@ Als alternatief kan het `ids` element worden gebruikt.
 
 Dit kan tevens globaal worden uitgevoerd over meerdere collecties heen:
 
+`GET /_mget`
+
 ```json
-// GET /_mget
 {
   "docs": [
     {
@@ -252,8 +252,9 @@ Docs: https://docs.oasis-open.org/odata/odata-json-format/v4.01/odata-json-forma
 
 In OData heb je een globaal endpoint voor het bundelen van meerdere requests.
 
+`POST https://example.org/api/$batch`
+
 ```json
-// POST https://example.org/api/$batch
 {
   "requests": [
     {
