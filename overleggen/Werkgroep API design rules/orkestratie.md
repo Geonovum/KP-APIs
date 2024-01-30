@@ -2,6 +2,17 @@
 
 Eerder dit jaar heeft Kadaster in samenwerking met Geonovum het IMX initiatief gestart. Dit initiatief heeft als ambitie om basisregistraties (en andere bronnen) in samenhang te kunnen bevragen door middel van API orkestratie. Om op een efficiënte manier te kunnen orkestreren moeten bron API’s voldoen aan diverse randvoorwaarden. Deze werkgroep is bedoeld om te onderzoeken welke randvoorwaarden dit zijn en op welke manier deze gestandaardiseerd zouden kunnen worden als design rules.
 
+## Verslag bijeenkomst 12 januari 2024
+
+Tijdens deze sessie is de input van Martin besproken rondom het onderwerp security. Besproken is dat in ieder geval de volgende scenatio's verder worden uitgewerkt:
+
+- De bron API's kennen de identiteit van de eindgebruiker niet. Het orkestrerende component handelt daarbij vanuit de identiteit van de applicatie.
+- De bron API's kennen de identiteit van de eindgebruiker wel. Het orkestrerende component handelt daarbij vanuit de identiteit van de eindgebruiker. [OAuth Token Exchange](https://datatracker.ietf.org/doc/html/rfc8693) kan daarbij worden gebruikt om access tokens in te wisselen, zodat voor iedere bron API een apart credential (met eigen scope/audience) wordt gebruikt.
+
+Het document zal de komende tijd verder worden aangepast/uitgebreid op basis van de feedback van de werkgroep.
+
+Frank heeft een inventarisatie gemaakt van standaarden voor het specificeren van API workflows. Dit lijkt niet te bestaan, al is er wel een nieuw initiatief gestart vanuit de OpenAPI foundation: de [Workflows Specification](https://github.com/OAI/sig-workflows/blob/main/versions/1.0.0.md). Dit project bevindt zich echter nog in een vroeg stadium. Ook is het maar de vraag in hoeverre (commerciële) software vendors erbij gebaat zouden zijn een dergelijke standaard te implenteren. Verder wordt de kanttekening geplaatst dat benodigde stappen bij orkestratie ook dynamisch kunnen worden berekend, zoals bij IMX wordt gedaan. In dat geval is het specificeren van een workflow niet relevant.
+
 ## Verslag bijeenkomst 21 december 2023
 
 Door Joost is een [voorstel voor batch bevragingen](batch.md) gepresenteerd.
