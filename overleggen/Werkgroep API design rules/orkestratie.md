@@ -4,7 +4,7 @@ Eerder dit jaar heeft Kadaster in samenwerking met Geonovum het IMX initiatief g
 
 ## Verslag bijeenkomst 12 januari 2024
 
-Tijdens deze sessie is de input van Martin besproken rondom het onderwerp security. Besproken is dat in ieder geval de volgende scenatio's verder worden uitgewerkt:
+Tijdens deze sessie is de input van Martin besproken rondom het onderwerp security. Besproken is dat in ieder geval de volgende scenario's verder worden uitgewerkt:
 
 - De bron API's kennen de identiteit van de eindgebruiker niet. Het orkestrerende component handelt daarbij vanuit de identiteit van de applicatie.
 - De bron API's kennen de identiteit van de eindgebruiker wel. Het orkestrerende component handelt daarbij vanuit de identiteit van de eindgebruiker. [OAuth Token Exchange](https://datatracker.ietf.org/doc/html/rfc8693) kan daarbij worden gebruikt om access tokens in te wisselen, zodat voor iedere bron API een apart credential (met eigen scope/audience) wordt gebruikt.
