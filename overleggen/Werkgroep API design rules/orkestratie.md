@@ -13,6 +13,8 @@ Het document zal de komende tijd verder worden aangepast/uitgebreid op basis van
 
 Frank heeft een inventarisatie gemaakt van standaarden voor het specificeren van API workflows. Dit lijkt niet te bestaan, al is er wel een nieuw initiatief gestart vanuit de OpenAPI foundation: de [Workflows Specification](https://github.com/OAI/sig-workflows/blob/main/versions/1.0.0.md). Dit project bevindt zich echter nog in een vroeg stadium. Ook is het maar de vraag in hoeverre (commerciële) software vendors erbij gebaat zouden zijn een dergelijke standaard te implenteren. Verder wordt de kanttekening geplaatst dat benodigde stappen bij orkestratie ook dynamisch kunnen worden berekend, zoals bij IMX wordt gedaan. In dat geval is het specificeren van een workflow niet relevant.
 
+De volgende bijeenkomst staat gepland op vrijdag 2 februari van 9u tot 10:30u.
+
 ## Verslag bijeenkomst 21 december 2023
 
 Door Joost is een [voorstel voor batch bevragingen](batch.md) gepresenteerd.
