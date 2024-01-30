@@ -74,17 +74,13 @@ Als het gaat om het filteren op een relatie (foreign key) en/of ander kenmerk, d
     {
       "filter": {
         "type": "Spoor­baan",
-        "ligtIn": {
-          "identificatie": "12345"
-        }
+        "ligtIn": "12345"
       }
     },
     {
       "filter": {
         "type": "Spoor­baan",
-        "ligtIn": {
-          "identificatie": "67890"
-        }
+        "ligtIn": "67890"
       }
     }
   ]
@@ -134,9 +130,7 @@ Beide manieren van selecteren kunnen ook gecombineerd worden, bijv:
     {
       "filter": {
         "type": "Spoor­baan",
-        "ligtIn": {
-          "identificatie": "12345"
-        }
+        "ligtIn": "12345"
       }
     }
   ]
