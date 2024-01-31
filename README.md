@@ -17,15 +17,13 @@ De verschillende onderdelen van de NL API Strategie bevat de volgende documenten
 | Normatieve standaard   | [API Design Rules (ADR)](https://gitdocumentatie.logius.nl/publicatie/api/adr/)                                  | Verplicht </br> (pas toe leg uit)       | 09-07-2020 </br> v1.0.0 |
 | Verplichte standaard   | [Open API Specification (OAS)](https://forumstandaardisatie.nl/open-standaarden/openapi-specification)           | Verplicht </br> (pas toe leg uit)       | 25-05-2018 </br> v3.0.0 |
 | Normatieve standaard   | [NL GOV OAuth profiel](https://gitdocumentatie.logius.nl/publicatie/api/oauth/)                                  | Verplicht </br> (pas toe leg uit)       | 09-07-2020 </br> v1.0.0 |
-| Voorgestelde standaard | [NL GOV OpenID Connect profile](https://logius.gitlab.io/oidc/)                                                  | Bijna Verplicht* </br> (pas toe leg uit)| 18-02-2021 </br> v1.0.0 |
+| Verplichte standaard   | [NL GOV OpenID Connect profile](https://logius.gitlab.io/oidc/)                                                  | Verplicht </br> (pas toe leg uit)       | 18-09-2023 </br> v1.0.1 |
 | Verplichte standaard   | [Digikoppeling REST API koppelvlak specificatie](https://gitdocumentatie.logius.nl/publicatie/dk/restapi/)       | Verplicht </br> (pas toe leg uit)       | 14-11-2022 </br> v1.1.1 |
 | Aanvullende module     | [API Geospatial Design Rules module](https://docs.geostandaarden.nl/api/API-Strategie-mod-geo/)                  | Vastgesteld </br> (door Kennisplatform) | 23-05-2023              |
 | Aanvullende module     | [API Transport Security module](https://geonovum.github.io/KP-APIs/API-strategie-modules/transport-security/)    | Stabiel </br> (Werkgroep Kennisplatform)| 11-07-2023              |
 | Aanvullende module     | [API Access control module](https://geonovum.github.io/KP-APIs/API-strategie-modules/access-control/)            | Stabiel </br> (Werkgroep Kennisplatform)| 11-07-2023              |
 | Aanvullende module     | [API Naming conventions module](https://geonovum.github.io/KP-APIs/API-strategie-modules/naming-conventions/)    | Stabiel </br> (Werkgroep Kennisplatform)| 12-07-2023              |
 | Aanvullende module     | [API Hypermedia module](https://geonovum.github.io/KP-APIs/API-strategie-modules/hypermedia/)                    | Stabiel </br> (Werkgroep Kennisplatform)| 12-07-2023              |
-
-* 21 september 2023 besluit het OBDO over de opname van het OIDC profiel op de lijst verplichte standaarden van het Forum Standaardisatie.
 
 ## Folders
 
