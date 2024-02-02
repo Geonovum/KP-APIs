@@ -180,11 +180,13 @@ Hieraan kleven echter wel een hoop nadelen, o.a.:
 ## Uitzoekpunten
 
 - 1 globaal batch endpoint ipv een batch endpoint per objecttype?
+- Discoverability (welke filters zijn er beschikbaar en kunnen worden gecombineerd?)
 - Implementatie voorbeelden / best practices
 - Wanneer gebruik je het wel / niet
 - Hoe bepaal je de max batch size? En wie?
 - Check t.o.v. bestaande design rules
 - Hypermedia links?
+- Subcollecties?
 - Generalisatie
 - Beveiliging
 
