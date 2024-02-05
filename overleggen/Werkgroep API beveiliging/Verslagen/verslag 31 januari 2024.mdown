@@ -63,18 +63,18 @@ Marc presenteert in volgende bijeenkomst bevindingen op dit gebied van FDS. Op f
 **Subwerkgroep Signing & encryptie**
 
 * Toevoegen van Module Signing met Jades
-** Add module signing jades · Pull Request #614 · Geonovum/KP-APIs (github.com)
-** Goedkeuren opnemen van module
-** Goedkeuren van status stabiel (of vervolg acties om daar te komen)
+*	Add module signing jades · Pull Request #614 · Geonovum/KP-APIs (github.com)
+*	Goedkeuren opnemen van module
+*	Goedkeuren van status stabiel (of vervolg acties om daar te komen)
 
 Goedgekeurd voor publicaties nog niet als stabiel, toevoegen usecases voor stabiel verklaren. Usecases van VNG sociaal domein, politie en Logius digipoort
  
 * Toevoegen van Module Encryptie
-** Add module encryption  · Pull Request #621 · Geonovum/KP-APIs (github.com)
-**       Goedkeuren opnemen van module
-**        Goedkeuren van status ‘in ontwikkeling’  
-	akkoord
-** Oproep voor review (dit concept is vooral bedoeld om participatie op het onderwerp te krijgen) Kadaster gebruikt PADES voor payload encryptie. 
+*	Add module encryption  · Pull Request #621 · Geonovum/KP-APIs (github.com)
+*   Goedkeuren opnemen van module
+*   Goedkeuren van status ‘in ontwikkeling’  
+akkoord
+*	Oproep voor review (dit concept is vooral bedoeld om participatie op het onderwerp te krijgen) Kadaster gebruikt PADES voor payload encryptie. 
 Hoe zit het bij de wallet toepassingen?Martin B zoekt iemand vanuit kadaster om  aan te haken
 
 
