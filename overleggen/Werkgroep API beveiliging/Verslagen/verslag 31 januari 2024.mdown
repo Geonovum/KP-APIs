@@ -18,7 +18,7 @@ Hans Oostrom
 Niels Dequeker	(VNG)
 Peter Haasnoot (Logius)
 Edward van Gelderen	(VNG)
-Bas	
+Bas	(?)
 Alexander Green (Logius)
 Heiko Hudig
 Anita Potters (Gemeente Tilburg)
@@ -43,6 +43,7 @@ Voorstel x509 ipv PKIOverheid opnemen, via rfc8705. Mocht RFC8705 niet passen (l
 	Frank plant Afspraak met Martin Martin en Heiko om dit na te lopen (was al een keer een start mee gemaakt).
 
 **Open Policy Agent (https://www.openpolicyagent.org) en ODRL (https://www.w3.org/TR/odrl-model/)**
+
 Marc van Andel licht toe dat hij beide is tegengekomen en vraagt zich af wat de ervaringen zijn van werkgroepleden en hoe deze zich tot elkaar verhouden.
 Kees Trautwein: ODRL tegengekomen in DCAT voor vastleggen van policies bij metadata catalogi . was  te complex voor NL profiel DCAT. Beschrijven kost heel veel tijd. Verwachting dat afnemers het niet begrijpen.
 Policy enforcement op basis van ODRL lijkt niet bestaand in software paketten
@@ -60,18 +61,20 @@ OpenID heeft workinggroup finegrained access control, nieuwe workinggroup sugges
 Marc presenteert in volgende bijeenkomst bevindingen op dit gebied van FDS. Op fysieke bijeenkomst Kennisplatform begin mei.
 
 **Subwerkgroep Signing & encryptie**
-•         Toevoegen van Module Signing met Jades
-Add module signing jades · Pull Request #614 · Geonovum/KP-APIs (github.com)
-•         Goedkeuren opnemen van module
-•         Goedkeuren van status stabiel (of vervolg acties om daar te komen)
+
+* Toevoegen van Module Signing met Jades
+** Add module signing jades · Pull Request #614 · Geonovum/KP-APIs (github.com)
+** Goedkeuren opnemen van module
+** Goedkeuren van status stabiel (of vervolg acties om daar te komen)
+
 Goedgekeurd voor publicaties nog niet als stabiel, toevoegen usecases voor stabiel verklaren. Usecases van VNG sociaal domein, politie en Logius digipoort
  
-•	Toevoegen van Module Encryptie
-Add module encryption  · Pull Request #621 · Geonovum/KP-APIs (github.com)
-•         Goedkeuren opnemen van module
-•         Goedkeuren van status ‘in ontwikkeling’  
+* Toevoegen van Module Encryptie
+** Add module encryption  · Pull Request #621 · Geonovum/KP-APIs (github.com)
+**       Goedkeuren opnemen van module
+**        Goedkeuren van status ‘in ontwikkeling’  
 	akkoord
-•         Oproep voor review (dit concept is vooral bedoeld om participatie op het onderwerp te krijgen) Kadaster gebruikt PADES voor payload encryptie. 
+** Oproep voor review (dit concept is vooral bedoeld om participatie op het onderwerp te krijgen) Kadaster gebruikt PADES voor payload encryptie. 
 Hoe zit het bij de wallet toepassingen?Martin B zoekt iemand vanuit kadaster om  aan te haken
 
 
