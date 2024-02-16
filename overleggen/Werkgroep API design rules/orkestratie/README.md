@@ -2,6 +2,22 @@
 
 Eerder dit jaar heeft Kadaster in samenwerking met Geonovum het IMX initiatief gestart. Dit initiatief heeft als ambitie om basisregistraties (en andere bronnen) in samenhang te kunnen bevragen door middel van API orkestratie. Om op een efficiënte manier te kunnen orkestreren moeten bron API’s voldoen aan diverse randvoorwaarden. Deze werkgroep is bedoeld om te onderzoeken welke randvoorwaarden dit zijn en op welke manier deze gestandaardiseerd zouden kunnen worden als design rules.
 
+## Verslag bijeenkomst 16 februari 2024
+
+De bijgewerkte versie (v0.2) van het [beveiligingsdocument](https://github.com/Geonovum/KP-APIs/blob/master/overleggen/Werkgroep%20API%20design%20rules/orkestratie/Orkestratie_beveiliging.md) van Martin is besproken.
+
+Actiepunten:
+
+- Peter: opzet voor begrippen orkestratie / compositie (en de samenhang daartussen).
+- Martin: bijwerken beveiligingsdocumentatie (o.a. Oauth, token exchange verplaatsen, resource hernoemen naar source diversen). Zodra gereed meldt Martin dit aan de groep, met een verzoek ter review.
+- Pano: Aanzet voor beschrijving hoe gegevens zich verhouden tot API's (vervolgactie: PROV).
+
+De volgende bijeenkomst staat gepland op vrijdag 8 maart van 9u tot 10:30u.
+
+## Verslag bijeenkomst 2 februari 2024
+
+De nieuwe versie van het [batching voorstel](https://github.com/Geonovum/KP-APIs/blob/master/overleggen/Werkgroep%20API%20design%20rules/orkestratie/batch.md) is besproken.
+
 ## Verslag bijeenkomst 12 januari 2024
 
 Tijdens deze sessie is de input van Martin besproken rondom het onderwerp security. Besproken is dat in ieder geval de volgende scenario's verder worden uitgewerkt:
