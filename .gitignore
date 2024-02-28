@@ -3,9 +3,7 @@ __pycache__
 *.code-workspace
 .vscode
 .DS_Store
-*.bkp
 *_log
-*.dtmp
 *.bkp
 *.dtmp
 Thumbs.db
