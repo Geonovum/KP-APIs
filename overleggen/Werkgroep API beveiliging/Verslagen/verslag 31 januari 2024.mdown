@@ -1,0 +1,84 @@
+# Werkgroep Beveiliging
+
+**Datum:** 10-5-2023
+
+**Aanwezig:** 
+Frank Terpstra	(Geonovum)
+Joost Farla	(Geonovum)
+Ronald Koster	(VNG)
+Erwin Willemsen	(Enable-U)
+Martin van der Plas	(Logius)
+Erwin Reinhoud	(Kennisnet)
+Kees Trautwein (Logius)
+Jeroen Mol	(RWS)
+Martin Borgman (Kadaster)
+Pim Gaemers (VNG)
+Marc van Andel (Kadaster)
+Hans Oostrom
+Niels Dequeker	(VNG)
+Peter Haasnoot (Logius)
+Edward van Gelderen	(VNG)
+Bas	(?)
+Alexander Green (Logius)
+Heiko Hudig
+Anita Potters (Gemeente Tilburg)
+John Zwart	(RVDK)
+
+**Volgende versie NL profiel OAuth**
+*	Voorstel VNG voor compatibiliteit met FSC standaard
+Voorstel x509 ipv PKIOverheid opnemen, via rfc8705. Mocht RFC8705 niet passen (lijkt een issue met verplicht authenticeren op ClientIDs) dan terugval naar authenticeren op x509 certificaten (PKIOverheid is te smal)
+*	Toevoegen token exchange
+	Geen bezwaar voor opname
+	Usecase beschrijving in introductie (Heiko zoekt usecase op)
+	Actie Frank en Martin van der Plas: Deelnemen aan werkgroep iGov
+*	Wat ontbreekt er verder nog?
+	suggesties voor overige onderwerpen van Heiko:
+	Rfc8628 specificatie voor inloggen voor kiosks (device authentication flow)
+	CIBA client initiated backchannel authentication
+	Alternatief voor authorization codeflow met signing
+	Deze zetten we op de backlog zodat we de huidige versie af kunnen krijgen.
+	
+	
+	Bestpractices rondom OAUth gebundeld in OAuth 2.1 voldoet profiel daaraan? https://oauth.net/2.1/
+	Frank plant Afspraak met Martin Martin en Heiko om dit na te lopen (was al een keer een start mee gemaakt).
+
+**Open Policy Agent (https://www.openpolicyagent.org) en ODRL (https://www.w3.org/TR/odrl-model/)**
+
+Marc van Andel licht toe dat hij beide is tegengekomen en vraagt zich af wat de ervaringen zijn van werkgroepleden en hoe deze zich tot elkaar verhouden.
+Kees Trautwein: ODRL tegengekomen in DCAT voor vastleggen van policies bij metadata catalogi . was  te complex voor NL profiel DCAT. Beschrijven kost heel veel tijd. Verwachting dat afnemers het niet begrijpen.
+Policy enforcement op basis van ODRL lijkt niet bestaand in software paketten
+
+Joost: Open policy agent vooral gebruikt om policies te enforcen op basis van gegevens in request. Enforcen op basis van gegevens is veelal lastig omdat je niet direct bij de gegevens kan.
+
+Heiko: OPA is breed toepasbaar ook op basis van gegevens. Geen ervaring met ODRL lijkt best complex. Heeft contact bij politie met kennis van ODRL (ewout vochtelo)
+Gartner laat model PEP PDP PIP los heiko geeft document nr door aan Marc
+
+Martin vd plas: XACML uit 2013 zie je terug in tools die policies enforce (zonder expliciet standaard te nomen. ODRL lijkt niet door tooling gebruikt te worden.
+OPA heeft eigen bedachte (open source) taal , maar geen open standaard.
+
+Concept module voor policies in kennisplatform, Kijken of hier behoefte aan is binnen de publieke sector?
+OpenID heeft workinggroup finegrained access control, nieuwe workinggroup suggestie om die te volgen.
+Marc presenteert in volgende bijeenkomst bevindingen op dit gebied van FDS. Op fysieke bijeenkomst Kennisplatform begin mei.
+
+**Subwerkgroep Signing & encryptie**
+
+* Toevoegen van Module Signing met Jades
+*	Add module signing jades · Pull Request #614 · Geonovum/KP-APIs (github.com)
+*	Goedkeuren opnemen van module
+*	Goedkeuren van status stabiel (of vervolg acties om daar te komen)
+
+Goedgekeurd voor publicaties nog niet als stabiel, toevoegen usecases voor stabiel verklaren. Usecases van VNG sociaal domein, politie en Logius digipoort
+ 
+* Toevoegen van Module Encryptie
+*	Add module encryption  · Pull Request #621 · Geonovum/KP-APIs (github.com)
+*   Goedkeuren opnemen van module
+*   Goedkeuren van status ‘in ontwikkeling’  
+akkoord
+*	Oproep voor review (dit concept is vooral bedoeld om participatie op het onderwerp te krijgen) Kadaster gebruikt PADES voor payload encryptie. 
+Hoe zit het bij de wallet toepassingen?Martin B zoekt iemand vanuit kadaster om  aan te haken
+
+
+
+
+
+

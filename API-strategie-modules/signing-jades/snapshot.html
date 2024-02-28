@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta content="text/html; charset=utf-8" http-equiv="content-type">
-<meta name="generator" content="ReSpec 32.1.10">
+<meta name="generator" content="ReSpec 34.1.4">
 <style>
 .issue-label{text-transform:initial}
 .warning>p:first-child{margin-top:0}
@@ -41,8 +41,12 @@ dfn{cursor:pointer}
 <title>ADR-HTTP Message and payload signing with JAdES</title>
   
   
+  
+  
 <link rel="shortcut icon" type="image/x-icon" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/logius.ico">
   
+  
+<link href="../../media/respec/style.css" rel="stylesheet" type="text/css">
 
 <style id="respec-mainstyle">
 @keyframes pop{
@@ -63,8 +67,6 @@ a.bibref{text-decoration:none}
 }
 #references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
 cite .bibref{font-style:normal}
-code{color:#c63501}
-th code{color:inherit}
 a[href].orcid{padding-left:4px;padding-right:4px}
 a[href].orcid>svg{margin-bottom:-2px}
 .toc a,.tof a{text-decoration:none}
@@ -91,9 +93,8 @@ details.respec-tests-details>ul{width:100%;margin-top:-.3em}
 details.respec-tests-details>li{padding-left:1em}
 .self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
 aside.example .marker>a.self-link{color:inherit}
-.header-wrapper{display:flex;align-items:baseline}
-:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2){position:relative;left:-.5em}
-:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-1.1em;font-size:1rem;opacity:.5}
+.header-wrapper{display:flex;align-items:baseline;position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-.7em;font-size:1rem;opacity:.5}
 :is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
 :is(h2,h3)+a.self-link{top:-.2em}
 :is(h4,h5,h6)+a.self-link::before{color:#000}
@@ -103,6 +104,9 @@ dd{margin-left:0}
 @media print{
 .removeOnSave{display:none}
 }
+</style>
+<style id="respec-nlgov">
+img.license{float:left;padding-right:5px}
 </style>
 <meta name="description" content="This ADR Module contains the requirements for ADR-HTTP Message and payload signing with JAdES">
 <style>
@@ -120,48 +124,139 @@ dd{margin-left:0}
 .hljs-link{text-decoration:underline}
 </style>
 <style>
-var{position:relative;cursor:pointer}
-var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
-var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
-var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
-var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
+
+  .sidelabel {
+    position: fixed;
+    -webkit-transform-origin: top right;
+    right: 100%;
+    top: 0;
+    -webkit-transform: rotate(-90deg);
+    padding: 4px 50px 4px 10px;
+    color: white;
+    white-space: nowrap;
+    z-index: 1;
+    background-color: #32a852;
+  }
 </style>
 <script id="initialUserConfig" type="application/json">{
-  "specStatus": "WV",
-  "specType": "HR",
-  "pubDomain": "dk",
-  "shortName": "template",
-  "publishDate": "2022-06-24",
-  "publishVersion": "0.9",
-  "editors": [
+  "nl_organisationName": "Kennisplatform API's",
+  "nl_organisationStylesURL": "https://tools.geostandaarden.nl/respec/style/",
+  "nl_organisationPublishURL": "https://docs.geostandaarden.nl/",
+  "logos": [
     {
-      "name": "Peter Haasnoot",
-      "company": "Logius",
-      "companyURL": "https://logius.nl"
+      "src": "https://gitdocumentatie.logius.nl/publicatie/respec/style/logos/figure-logius.svg",
+      "alt": "Logius",
+      "id": "Logius",
+      "height": 77,
+      "width": 44,
+      "url": "https://www.logius.nl/standaarden"
     }
   ],
-  "authors": [
-    {
-      "name": "KPAPI",
-      "company": "KPAPI",
-      "companyURL": "https://github.com/Geonovum/KPAPI"
-    }
+  "latestVersion": [
+    "nl_organisationPublishURL",
+    "pubDomain",
+    "/",
+    "shortName"
   ],
-  "github": "https://github.com/Geonovum/KPAPI",
+  "thisVersion": [
+    "nl_organisationPublishURL",
+    "pubDomain",
+    "/",
+    "shortName",
+    "/",
+    "publishVersion"
+  ],
+  "prevVersion": [
+    "nl_organisationPublishURL",
+    "pubDomain",
+    "/",
+    "shortName",
+    "/",
+    "previousPublishVersion"
+  ],
+  "useLogo": false,
+  "useLabel": true,
+  "license": "cc-by",
   "addSectionLinks": true,
-  "nl_addReleaseTagTitle": true,
-  "nl_organisationName": "KPAPI",
-  "nl_organisationStylesURL": "https://publicatie.centrumvoorstandaarden.nl/respec/style/",
-  "nl_organisationPrefix": "X-",
-  "nl_markdownEmbedImageInFigure": true,
-  "nl_organisationPublishURL": "https://publicatie.centrumvoorstandaarden.nl/",
-  "nl_logo": {
-    "src": "media/leeg.png",
-    "alt": "KPAPI",
-    "id": "KPAPI",
-    "height": 77,
-    "width": 44,
-    "url": ""
+  "localizationStrings": {
+    "en": {
+      "wv": "Draft",
+      "cv": "Recommendation",
+      "vv": "Proposed recommendation",
+      "def": "Definitive version",
+      "basis": "Document",
+      "eo": "Outdated version",
+      "tg": "Rescinded version",
+      "no": "Norm",
+      "st": "Standard",
+      "im": "Information model",
+      "pr": "Guideline",
+      "hr": "Guide",
+      "wa": "Proposed recommendation",
+      "al": "General",
+      "bd": "Governance documentation",
+      "bp": "Best practice"
+    },
+    "nl": {
+      "wv": "Werkversie",
+      "cv": "Consultatieversie",
+      "vv": "Versie ter vaststelling",
+      "def": "Vastgestelde versie",
+      "basis": "Document",
+      "eo": "Verouderde versie",
+      "tg": "Teruggetrokken versie",
+      "no": "Norm",
+      "st": "Standaard",
+      "im": "Informatiemodel",
+      "pr": "Praktijkrichtlijn",
+      "hr": "Handreiking",
+      "wa": "Werkafspraak",
+      "al": "Algemeen",
+      "bd": "Beheerdocumentatie",
+      "bp": "Best practice"
+    }
+  },
+  "sotdText": {
+    "nl": {
+      "sotd": "Status van dit document",
+      "def": "Dit is de definitieve versie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.",
+      "wv": "Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.",
+      "cv": "Dit is een door het TO goedgekeurde consultatieversie. Commentaar over dit document kan gestuurd worden naar ",
+      "vv": "Dit is een definitief concept van de nieuwe versie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.",
+      "basis": "Dit is een document zonder officiële status."
+    },
+    "en": {
+      "sotd": "Status of This Document",
+      "def": "This is the definitive version of this document. Edits resulting from consultations have been applied.",
+      "wv": "This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.",
+      "cv": "This is a proposed recommendation approved by TO. Comments regarding this document may be sent to ",
+      "vv": "This is the definitive concept of this document. Edits resulting from consultations have been applied.",
+      "basis": "This document has no official standing."
+    }
+  },
+  "labelColor": {
+    "def": "#154273",
+    "wv": "#32a852"
+  },
+  "licenses": {
+    "cc0": {
+      "name": "Creative Commons 0 Public Domain Dedication",
+      "short": "CC0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "image": "https://tools.geostandaarden.nl/respec/style/logos/CC-Licentie.svg"
+    },
+    "cc-by": {
+      "name": "Creative Commons Attribution 4.0 International Public License",
+      "short": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+      "image": "https://tools.geostandaarden.nl/respec/style/logos/cc-by.svg"
+    },
+    "cc-by-nd": {
+      "name": "Creative Commons Naamsvermelding-GeenAfgeleideWerken 4.0 Internationaal",
+      "short": "CC-BY-ND",
+      "url": "https://creativecommons.org/licenses/by-nd/4.0/legalcode.nl",
+      "image": "https://tools.geostandaarden.nl/respec/style/logos/cc-by-nd.svg"
+    }
   },
   "localBiblio": {
     "SemVer": {
@@ -190,27 +285,51 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "href": "https://www.enisa.europa.eu/topics/cryptography",
       "title": "ENISA Good Practises in Cryptography – Primitives and Schemes, December 2020. (Limited availability)",
       "id": "enisa-crypto-2020"
+    },
+    "DRAFT-IETF-HTTPSBIS-MSG-SIGS": {
+      "href": "https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-message-signatures",
+      "title": "HTTP Message Signatures",
+      "id": "draft-ietf-httpsbis-msg-sigs"
     }
   },
-  "publishISODate": "2022-06-24T00:00:00.000Z",
-  "generatedSubtitle": "Draft 07 juli 2023"
+  "specStatus": "WV",
+  "specType": "HR",
+  "pubDomain": "api",
+  "shortName": "signing-jades",
+  "publishDate": "2023-06-24",
+  "publishVersion": "0.9",
+  "editors": [
+    {
+      "name": "Peter Haasnoot",
+      "company": "Logius",
+      "companyURL": "https://logius.nl"
+    }
+  ],
+  "authors": [
+    {
+      "name": "KPAPI",
+      "company": "KPAPI",
+      "companyURL": "https://github.com/Geonovum/KPAPI"
+    }
+  ],
+  "github": "https://github.com/Geonovum/KPAPI"
 }</script>
-<link rel="stylesheet" href="https://publicatie.centrumvoorstandaarden.nl/respec/style/X-WV.css"></head>
+<link rel="stylesheet" href="https://tools.geostandaarden.nl/respec/style/base.css"></head>
 
-<body class="h-entry toc-inline"><div class="head">
-    <a class="logo"><img alt="KPAPI" height="77" id="KPAPI" src="media/leeg.png" width="44">
-  </a> <h1 id="title" class="title">ADR-HTTP Message and payload signing with JAdES</h1>
+<body class="h-entry"><div class="head">
+     <h1 id="title" class="title">ADR-HTTP Message and payload signing with JAdES</h1>
     
     <h2>
-      KPAPI Guide<br>
+      Kennisplatform API's Guide<br>
       Draft
-      <time class="dt-published" datetime="2022-06-24">07 juli 2023</time>
+      <time class="dt-published" datetime="2023-06-24">November 21, 2023</time>
     </h2>
     <dl>
       <dt>This version:</dt><dd class="status">
               <a class="u-url status" href="https://geonovum.github.io/KPAPI/">https://geonovum.github.io/KPAPI/</a>
-            </dd><dt>Latest published version:</dt><dd>
-              <a href="https://publicatie.centrumvoorstandaarden.nl/dk/template/">https://publicatie.centrumvoorstandaarden.nl/dk/template/</a>
+            </dd>
+      <dt>Latest published version:</dt><dd>
+              <a href="https://docs.geostandaarden.nl/api/signing-jades">https://docs.geostandaarden.nl/api/signing-jades</a>
             </dd>
       <dt>Latest editor's draft:</dt><dd><a href="https://geonovum.github.io/KPAPI/">https://geonovum.github.io/KPAPI/</a></dd>
       
@@ -239,9 +358,9 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     
     
     
-    <p class="copyright" lang="en">
-          This document is licensed under a
-          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" class="subfoot">Creative Commons Attribution 4.0 License</a>.
+    <p class="copyright">
+          This document is licensed under 
+          <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="https://tools.geostandaarden.nl/respec/style/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
         </p>
     <hr title="Separator for header">
   </div>
@@ -252,7 +371,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 </ul>
 <p>This module is based on the <em>ISA² IPS REST API Profile v1.0 section 5.2.2 Message And Payload Level Security</em></p>
 </section>
-  <section id="sotd" class="introductory"><h2>Status of This Document</h2>This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by de werkgroep.<p></p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#adr-http-message-and-payload-signing-with-jades"><bdi class="secno">1. </bdi>ADR-HTTP Message and payload signing with JAdES</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1.1 </bdi>Introduction</a></li><li class="tocline"><a class="tocxref" href="#jws-detached-signatures"><bdi class="secno">1.2 </bdi>JWS detached signatures</a></li><li class="tocline"><a class="tocxref" href="#cryptographic-algorithms"><bdi class="secno">1.3 </bdi>Cryptographic Algorithms</a></li><li class="tocline"><a class="tocxref" href="#payload-signing"><bdi class="secno">1.4 </bdi>Payload signing</a></li><li class="tocline"><a class="tocxref" href="#http-message-signing"><bdi class="secno">1.5 </bdi>HTTP Message signing</a></li><li class="tocline"><a class="tocxref" href="#signature-representations"><bdi class="secno">1.6 </bdi>Signature Representations</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">2. </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">A.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">A.2 </bdi>Informative references</a></li></ol></li></ol></nav>
+  <section id="sotd" class="introductory"><h2>Status of This Document</h2><p>This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.</p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#adr-http-message-and-payload-signing-with-jades"><bdi class="secno">1. </bdi>ADR-HTTP Message and payload signing with JAdES</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1.1 </bdi>Introduction</a></li><li class="tocline"><a class="tocxref" href="#jws-detached-signatures"><bdi class="secno">1.2 </bdi>JWS detached signatures</a></li><li class="tocline"><a class="tocxref" href="#cryptographic-algorithms"><bdi class="secno">1.3 </bdi>Cryptographic Algorithms</a></li><li class="tocline"><a class="tocxref" href="#payload-signing"><bdi class="secno">1.4 </bdi>Payload signing</a></li><li class="tocline"><a class="tocxref" href="#http-message-signing"><bdi class="secno">1.5 </bdi>HTTP Message signing</a></li><li class="tocline"><a class="tocxref" href="#signature-representations"><bdi class="secno">1.6 </bdi>Signature Representations</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">2. </bdi>Conformance</a></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">A. </bdi>References</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#normative-references"><bdi class="secno">A.1 </bdi>Normative references</a></li><li class="tocline"><a class="tocxref" href="#informative-references"><bdi class="secno">A.2 </bdi>Informative references</a></li></ol></li></ol></nav>
   <section id="adr-http-message-and-payload-signing-with-jades"><div class="header-wrapper"><h2 id="x1-adr-http-message-and-payload-signing-with-jades"><bdi class="secno">1. </bdi>ADR-HTTP Message and payload signing with JAdES</h2><a class="self-link" href="#adr-http-message-and-payload-signing-with-jades" aria-label="Permalink for Section 1."></a></div>
 <div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="3"><span>Note</span><span class="issue-label">: Status</span></div><aside class="">
         <p>This module is under development</p>
@@ -260,9 +379,9 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
 
 <section id="introduction"><div class="header-wrapper"><h3 id="x1-1-introduction"><bdi class="secno">1.1 </bdi>Introduction</h3><a class="self-link" href="#introduction" aria-label="Permalink for Section 1.1"></a></div>
-<p>This module specifies the use of JAdES signatures for HTTP message and payload siging. The module is directly based on the <em>ISA² IPS REST API Profile v1.0</em> (which was a result of the REST API Pilot project for eDelivery)</p>
+<p>This module specifies the use of JAdES signatures for HTTP message and payload siging. The module is directly based on the <em>ISA² IPS REST API Profile v1.0</em> (which was a result of the <a href="https://joinup.ec.europa.eu/collection/api4dt/document/isa2-ips-rest-api-profile">REST API Pilot project for eDelivery</a>)</p>
 </section><section id="jws-detached-signatures"><div class="header-wrapper"><h3 id="x1-2-jws-detached-signatures"><bdi class="secno">1.2 </bdi>JWS detached signatures</h3><a class="self-link" href="#jws-detached-signatures" aria-label="Permalink for Section 1.2"></a></div>
-<p>This module enforces the use of JWS detached signatures following the HttpHeaders Mechanism of the ETSI ESI JAdES specification [ETSI-JADES]. </p>
+<p>This module enforces the use of JWS detached signatures following the HTTP Headers Mechanism of the ETSI ESI JAdES specification [ETSI-JADES]. </p>
 <p>This structure is enforced for the following reasons:</p>
 <ul>
 <li>JWS, being a simple JSON Structure, can be supported by clients in a light context, while specifications like the ETSI ESI ASIC containers are more difficult to do.</li>
@@ -280,21 +399,21 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 <ul>
 <li>The JWS content (Data to be Signed) <em class="rfc2119">MUST</em> be detached from the signatures as defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7515" title="JSON Web Signature (JWS)">RFC7515</a></cite>] Appendix F. </li>
 <li>The signed SigD parameter object <em class="rfc2119">MUST</em> be present in the JWS headers, denoting the use of the JAdES detached header profile. </li>
-<li>The value of the mId parameter <em class="rfc2119">MUST</em> be set to "<a href="http://uri.etsi.org/19182/HttpHeaders&quot;">http://uri.etsi.org/19182/HttpHeaders"</a>.</li>
-<li>The pars array of the SigD <em class="rfc2119">MUST</em> contain only the element "digest", denoting that for the calculation of the signature only the digest of the HTTP payload must be taken into account, according to [[RFC3230]. </li>
+<li>The value of the mId parameter <em class="rfc2119">MUST</em> be set to "<a href="http://uri.etsi.org/19182/HttpHeaders">http://uri.etsi.org/19182/HttpHeaders</a>".</li>
+<li>The pars array of the SigD <em class="rfc2119">MUST</em> contain only the element "digest", denoting that for the calculation of the signature only the digest of the HTTP payload must be taken into account, according to [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc3230" title="Instance Digests in HTTP">RFC3230</a></cite>]. </li>
 <li>The alg parameter <em class="rfc2119">MUST</em> be set to the correct value depending on the algorithm used (see above). </li>
 <li>If the alg parameter is set to "EdDSA", the crv parameter <em class="rfc2119">MUST</em> be set to the correct value (see above).</li>
 </ul>
 <p>The JWS structure shall be carried in HTTP header field named <strong>nlgov-adr-payload-sig</strong>. The header field can be used in both requests and responses. The header field <em class="rfc2119">MUST</em> not appear more than once in a message; if a message contains multiple nlgov-adr-payload-sig header fields, the receiver <em class="rfc2119">MUST</em> consider the signature invalid.</p>
 </section><section id="http-message-signing"><div class="header-wrapper"><h3 id="x1-5-http-message-signing"><bdi class="secno">1.5 </bdi>HTTP Message signing</h3><a class="self-link" href="#http-message-signing" aria-label="Permalink for Section 1.5"></a></div>
-<p>The Introduction section of [[DRAFT-IETF-HTTPSBIS-MSG-SIGS] details why message integrity and authenticity are critical to the secure operation of many HTTP/REST applications.
-When Message-Level Security is considered, the HttpHeaders Mechanism of the JAdES Specification [[ETSI-JADES] <em class="rfc2119">MUST</em> be used, with the following restrictions applied:</p>
+<p>The Introduction section of [<cite><a class="bibref" data-link-type="biblio" href="#bib-draft-ietf-httpsbis-msg-sigs" title="HTTP Message Signatures">DRAFT-IETF-HTTPSBIS-MSG-SIGS</a></cite>] details why message integrity and authenticity are critical to the secure operation of many HTTP/REST applications.
+When Message-Level Security is considered, the HttpHeaders Mechanism of the JAdES Specification [<cite><a class="bibref" data-link-type="biblio" href="#bib-etsi-jades" title="JAdES digital signatures">ETSI-JADES</a></cite>] <em class="rfc2119">MUST</em> be used, with the following restrictions applied:</p>
 <ul>
-<li><p>The JWS content (Data to be Signed) <em class="rfc2119">MUST</em> be detached from the signatures as defined in [[RFC7515] Appendix F. </p>
+<li><p>The JWS content (Data to be Signed) <em class="rfc2119">MUST</em> be detached from the signatures as defined in [<cite><a class="bibref" data-link-type="biblio" href="#bib-rfc7515" title="JSON Web Signature (JWS)">RFC7515</a></cite>] Appendix F. </p>
 </li>
 <li><p>The signed SigD parameter object <em class="rfc2119">MUST</em> be present in the JWS headers, denoting the use of the JAdES detached header profile. </p>
 </li>
-<li><p>The value of the mId parameter <em class="rfc2119">MUST</em> be set to "<a href="http://uri.etsi.org/19182/HttpHeaders&quot;">http://uri.etsi.org/19182/HttpHeaders"</a>. </p>
+<li><p>The value of the mId parameter <em class="rfc2119">MUST</em> be set to "<a href="http://uri.etsi.org/19182/HttpHeaders">http://uri.etsi.org/19182/HttpHeaders</a>". </p>
 </li>
 <li><p>The pars array of the SigD <em class="rfc2119">MUST</em> contain at least the following elements:</p>
 <ul>
@@ -325,13 +444,7 @@ When Message-Level Security is considered, the HttpHeaders Mechanism of the JAdE
         name: EUPL-<span class="hljs-number">1.2</span> or later
         <span class="hljs-attr">url</span>: https:<span class="hljs-comment">//eupl.eu/1.2/en/</span>
     version: <span class="hljs-number">1.0</span><span class="hljs-number">.0</span>
-    x-edelivery:
-        lifecycle:
-            maturity: supported
-        <span class="hljs-attr">publisher</span>:
-            name: ACME Publisher
-            <span class="hljs-attr">URL</span>: https:<span class="hljs-comment">//www.acme-publisher.org/</span>
-externalDocs:
+<span class="hljs-attr">externalDocs</span>:
    description: The ISA² IPS REST API Core Profile
    <span class="hljs-attr">url</span>: https:<span class="hljs-comment">//joinup.ec.europa.eu/collection/api4dt/document/isa2-ips-rest-api-profile</span>
 servers:
@@ -407,14 +520,19 @@ tags:
   
 
 
+
 <section id="references" class="appendix"><div class="header-wrapper"><h2 id="a-references"><bdi class="secno">A. </bdi>References</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix A."></a></div><section id="normative-references">
     <div class="header-wrapper"><h3 id="a-1-normative-references"><bdi class="secno">A.1 </bdi>Normative references</h3><a class="self-link" href="#normative-references" aria-label="Permalink for Appendix A.1"></a></div>
-    <dl class="bibliography"><dt id="bib-enisa-crypto-2020">[ENISA-CRYPTO-2020]</dt><dd>
+    <dl class="bibliography"><dt id="bib-draft-ietf-httpsbis-msg-sigs">[DRAFT-IETF-HTTPSBIS-MSG-SIGS]</dt><dd>
+      <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-message-signatures"><cite>HTTP Message Signatures</cite></a>. URL: <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-message-signatures">https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-message-signatures</a>
+    </dd><dt id="bib-enisa-crypto-2020">[ENISA-CRYPTO-2020]</dt><dd>
       <a href="https://www.enisa.europa.eu/topics/cryptography"><cite>ENISA Good Practises in Cryptography – Primitives and Schemes, December 2020. (Limited availability)</cite></a>. URL: <a href="https://www.enisa.europa.eu/topics/cryptography">https://www.enisa.europa.eu/topics/cryptography</a>
     </dd><dt id="bib-etsi-jades">[ETSI-JADES]</dt><dd>
       <a href="https://www.etsi.org/deliver/etsi_ts/119100_119199/11918201/01.01.01_60/ts_11918201v010101p.pdf"><cite>JAdES digital signatures</cite></a>. URL: <a href="https://www.etsi.org/deliver/etsi_ts/119100_119199/11918201/01.01.01_60/ts_11918201v010101p.pdf">https://www.etsi.org/deliver/etsi_ts/119100_119199/11918201/01.01.01_60/ts_11918201v010101p.pdf</a>
     </dd><dt id="bib-rfc2119">[RFC2119]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. S. Bradner.  IETF. March 1997. Best Current Practice. URL: <a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>
+    </dd><dt id="bib-rfc3230">[RFC3230]</dt><dd>
+      <a href="https://www.rfc-editor.org/rfc/rfc3230"><cite>Instance Digests in HTTP</cite></a>. J. Mogul; A. Van Hoff.  IETF. January 2002. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc3230">https://www.rfc-editor.org/rfc/rfc3230</a>
     </dd><dt id="bib-rfc7515">[RFC7515]</dt><dd>
       <a href="https://www.rfc-editor.org/rfc/rfc7515"><cite>JSON Web Signature (JWS)</cite></a>. M. Jones; J. Bradley; N. Sakimura.  IETF. May 2015. Proposed Standard. URL: <a href="https://www.rfc-editor.org/rfc/rfc7515">https://www.rfc-editor.org/rfc/rfc7515</a>
     </dd><dt id="bib-rfc7518">[RFC7518]</dt><dd>
@@ -657,4 +775,4 @@ function hidePanel(panel) {
   panel.hidden = true;
   panel.classList.remove("docked");
 }
-})()</script><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
+})()</script><div class="sidelabel">Kennisplatform API's Guide - Draft</div><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>

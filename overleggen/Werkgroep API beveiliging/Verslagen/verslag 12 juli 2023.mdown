@@ -1,0 +1,36 @@
+# Werkgroep Beveiliging
+
+**Datum:** 12-7-2023
+
+**Aanwezig:** 
+Frank Terpstra (Geonovum)
+Ronald Coenen (Tilburg)
+Alexander Green (Logius)
+Edward van Gelderen (VNG)
+Niels Dequeker (VNG)
+Erwin Reinhoud (Kennisnet)
+Peter Haasnoot (Logius)
+Martin van der Plas (Logius)
+Heiko Hudig
+
+
+**verslag vorige keer**
+
+geen opmerkingen op het verslag
+
+**FSC terugkoppeling**
+
+Edward en Heiko hebben gesproken over FSC. Heiko heeft suggesties voor het gebruik van Dynamic clientregistration en OIDConnect.
+We gaan dieper op in op de ideeën. Uitkomst is voor nu dat het logisch is dat je binnen FSC zelf iets defnieerd voor het registreren van deelnemende partijen en dat je voor regulier verkeer bestaande standaarden als OAuth gebruikt. Dit is ook het idee van de FSC standaard maar voor Heiko lijkt het nu nog niet zo wanneer je de specificaties leest. Frank Heiko en Edward plannen een vervolg afspraak in om hier verder over te praten. Erwin en Martin sluiten ook graag aan.
+
+**Testbaarheid modules transport security en access control**
+
+Frank laat resultaten zien van werkbijeenkomst Frank Martin en Hugo. Waarin testen worden beschreven. Belangrijkste punt is dat een aantal testen alleen uitgevoerd kunnen worden als de aanbieder van de te testen API aangeeft dat ze van toepassing zijn en in sommige gevallen zijn tests afhankelijk van het aanwezig zijn van een geldige OAS specificatie. Dit is voor de werkgroep geen probleem. Frank gaat de tests toevoegen in de werkversie van de modules.
+
+**rondvraag**
+
+Heiko: Remco druk aan het werk Digid en eherkenning op OIDConnect te kijken. Dat kan handig zijn voor andere SSO en brokers. Is daar informatie over te delen? Frank neemt contact op met Remco of dit op de fysieke bijeenkomst van 6 oktober gepresenteerd kan worden.
+
+Martin: Centraal aansluitpunt heeft bouwstenen voor eHerkenning en OAuth. Het is geen compliace voorzienign maar ze zouden mogelijk wel een omgeving beschikbaar kunnen stellen voor tests.
+
+Frank: 6 oktober is er weer een fysieke bijeenkomst van het Kennisplatform. Ideeën voor sprekers zijn welkom, een save the date wordt verstuurd. 4 oktober komen we weer online bijeen.

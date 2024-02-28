@@ -1,7 +1,5 @@
 # Transport Security
 
-<p class="note">The working group has indicated this module to be stable.</p>
-
 ## Introduction
 This section describes security principles, concepts and technologies to apply when working with APIs. Controls need to be applied for the security objectives of integrity, confidentiality and availability of the API and services and data provided thereby. The (new draft of the) [architecture section of the API strategy](https://docs.geostandaarden.nl/api/cv-hr-API-Strategie-20210628/#architectuur) contains architecture patterns for implementing Transport security.
 
@@ -11,7 +9,7 @@ In order to meet the complete security objectives, every implementer MUST also a
 Note: security controls for signing and encrypting of application level messages will be part of a separate extension, [Signing and Encryption](#signing-and-encryption).
 
 ## Transport security
-One should secure all APIs assuming they can be accessed from any location on the internet. Information MUST be exchanged over TLS-based secured connections. No exceptions, so everywhere and always. One SHOULD follow [the latest NCSC guidelines for TLS](https://english.ncsc.nl/publications/publications/2021/january/19/it-security-guidelines-for-transport-layer-security-2.1)
+One should secure all APIs assuming they can be accessed from any location on the internet. Information MUST be exchanged over TLS-based secured connections. No exceptions, so everywhere and always. This is [required by law](https://wetten.overheid.nl/BWBR0048156/2023-07-01). One SHOULD follow [the latest NCSC guidelines for TLS](https://english.ncsc.nl/publications/publications/2021/january/19/it-security-guidelines-for-transport-layer-security-2.1)
 
 <div class="rule" id="api-11">
   <p class="rulelab"><strong>API-11</strong>: Secure connections using TLS</p>
@@ -26,6 +24,11 @@ Even when using TLS-based secured connections information in URIs is not secured
   <p>Do not put any sensitive information in URIs</p>
   <p>Even when the connection is secure URIs can be cached and logged, in systems outside the control of client and/or server.</p>
 </div>
+
+**How to test**
+Sensitive information URIS is not machine testable and therfor not part of automated tests. It should be part of any security audit performed by human experts. 
+
+The usage of TLS is machine testable. The test is designed for maximum automation. To test, adherence to NCSC reccomendations should be tested. The serverside is what will be tested, only control over the server is assumed for testing. A testing client will be employed to test adherence of the server. Supporting any protocols, algorithms, key sizes, options or ciphers dat are deemed insufficient or phase out by NCSC will lead to failure on the automated test. Both positive and negative scenario's are part of the test. Testing that a subset of good and sufficient reccomendations are supported and testing that phase out and insufficient reccomendations are not. A manual exception to the automated test results can be made when phase out reccomendations are supported. The API provider will have to provide clear documentation for the phase out schedule.  
 
 ## HTTP-level Security
 The guidelines and principles defined in this extension are client agnostic. When implementing a client agnostic API, one SHOULD at least facilitate that multi-purpose generic HTTP-clients like browsers are able to securely interact with the API. When implementing an API for a specific client it may be possible to limit measures as long as it ensures secure access for this specific client. Nevertheless it is advised to review the following security measures, which are mostly inspired by the [OWASP REST Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html)
@@ -44,6 +47,12 @@ For browser-based applications a subsection is included with additional details 
 System-to-system (sometimes called machine-to-machine) may have a need for the listed specifications as well. Note that different usage patterns may be applicable in contexts with system-to-system clients, see above under Client Authentication.
 
 ### Security Headers
+
+<div class="rule" id="security-headers">
+  <p class="rulelab"><strong>security-headers</strong>: Use mandatory security headers in API all responses</p>
+  <p>Return API security headers in all server responses to instruct the client to act in a secure manner</p>
+</div>
+
 There are a number of security related headers that can be returned in the HTTP responses to instruct browsers to act in specific ways. However, some of these headers are intended to be used with HTML responses, and as such may provide little or no security benefits on an API that does not return HTML. The following headers SHOULD be included in all API responses:
 
 | Header                                            | Rationale                                                                                              |
@@ -56,6 +65,7 @@ There are a number of security related headers that can be returned in the HTTP 
 | `X-Frame-Options: DENY`                           | To protect against drag-and-drop style clickjacking attacks.                                           |
 | `Access-Control-Allow-Origin`                     | To relax the 'same origin' policy and allow cross-origin access. See CORS-policy below                 |
 
+Note that strict transport security is not only mandated by this module [but also by law](https://wetten.overheid.nl/BWBR0048156/2023-07-01). 
 
 The headers below are only intended to provide additional security when responses are rendered as HTML. As such, if the API will never return HTML in responses, then these headers may not be necessary. However, if there is any uncertainty about the function of the headers, or the types of information that the API returns (or may return in future), then it is RECOMMENDED to include them as part of a defense-in-depth approach.
 
@@ -67,6 +77,9 @@ The headers below are only intended to provide additional security when response
 
 In addition to the above listed HTTP security headers, web- and browser-based applications SHOULD apply Subresource Integrity [SRI](https://www.w3.org/TR/SRI/). When using third-party hosted contents, e.g. using a Content Delivery Network, this is even more relevant. While this is primarily a client implementation concern, it may affect the API when it is not strictly segregated or for example when shared supporting libraries are offered.
 
+**How to test**
+The precense of the mandatory security headers can be tested in an automated way. A test client makes a call to the API root. The response is tested for the precense of mandatory headers.
+
 ### CORS-policy
 
 <div class="rule" id="api-50">
@@ -77,6 +90,9 @@ In addition to the above listed HTTP security headers, web- and browser-based ap
 Modern web browsers use Cross-Origin Resource Sharing (CORS) to minimize the risk associated with cross-site HTTP-requests. By default browsers only allow 'same origin' access to resources. This means that responses on requests to another `[scheme]://[hostname]:[port]` than the `Origin` request header of the initial request will not be processed by the browser. To enable cross-site requests API's can return a `Access-Control-Allow-Origin` response header. It is RECOMMENDED to use a whitelist to determine the validity of different cross-site request. To do this check the `Origin` header of the incoming request and check if the domain in this header is on the whitelist. If this is the case, set the incoming `Origin` header in the `Access-Control-Allow-Origin` response header.
 
 Using a wildcard `*` in the `Access-Control-Allow-Origin` response header is NOT RECOMMENDED, because it disables CORS-security measures. Only for an open API which has to be accessed by numerous other websites this is appropriate.
+
+**How to test**
+Tests of this design rule can only be performed when the intended client is known to the tester. A thest can be performed when this information is provided by the API provider. Otherwise no conclusive test result can be reached. 
 
 ### Browser-based applications
 A specific subclass of clients are browser-based applications, that require the presence of particular security controls to facilitate secure implementation. Clients in this class are also known as _user-agent-based_ or _single-page-applications_ (SPA).

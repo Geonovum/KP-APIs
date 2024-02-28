@@ -1,12 +1,12 @@
-var respecConfig =
+let respecConfig =
 {
   //voor specStatus mogelijkheden zie https://github.com/Logius-standaarden/respec/wiki/specStatus
   specStatus: "WV",
   //voor specType mogelijkheden zie https://github.com/Logius-standaarden/respec/wiki/specType
   specType: "ST",
-  pubDomain: "dk",
-  shortName: "template",
-  publishDate: "2022-06-24",
+  pubDomain: "api",
+  shortName: "signing-jades",
+  publishDate: "2023-06-24",
   publishVersion: "0.9",
   // previousPublishVersion: "(none)",
   //  previousPublishDate: "(none)",
@@ -37,41 +37,6 @@ var respecConfig =
  // Controls if linked "§" section markers are added to a document
  addSectionLinks: true,
  
-    // this parameter will add the tag_name of the latest release to the document Title
-  // only set this parameter when a release has been set
-  nl_addReleaseTagTitle: true,
-
-    // nl_organisationName is used for some company specific values in the header (and Sotd)
-  // currently supported: Logius and Geonovum (default)  
-  nl_organisationName: "KPAPI",
-  
-  // this url points to the folder where organsation specific css files are stored
-  // defaults to https://tools.geostandaarden.nl/respec/style/ if not set
-  nl_organisationStylesURL: "https://publicatie.centrumvoorstandaarden.nl/respec/style/",
-
-  // prefix for the names of company specific css, svg and ico prefixes
-  // defaults to "GN-"  
-  nl_organisationPrefix: "X-",
-
-  // if nl_markdownEmbedImageInFigure is set to true images in markdown generated content will be surrounded with <figures> element
-  // so that figures can be linked are be a part of table of figures
-  nl_markdownEmbedImageInFigure: true,
-
-  // nl_organisationPublishURL points to organisation specifica publication page, used in header
-  // defaults to  https://docs.geostandaarden.nl/"
-  nl_organisationPublishURL: "https://publicatie.centrumvoorstandaarden.nl/",
-
-  // nl_logo refers to company logo
-  // defaults to https://tools.geostandaarden.nl/respec/style/logos/Geonovum.svg
-   nl_logo: {
-   // src: "xhttps://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg",
-    src: "media/leeg.png", 
-    alt: "KPAPI",
-    id: "KPAPI",
-    height: 77,
-    width: 44,
-    url: "",
-   },
 
 
   localBiblio: {
@@ -98,6 +63,11 @@ var respecConfig =
     "ENISA-CRYPTO-2020": {
       href: "https://www.enisa.europa.eu/topics/cryptography",
       title: "ENISA Good Practises in Cryptography – Primitives and Schemes, December 2020. (Limited availability)",
-    }
+    },
+    "DRAFT-IETF-HTTPSBIS-MSG-SIGS": {
+      href: "https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-message-signatures",
+      title: "HTTP Message Signatures",
+    },
+
   },
 };

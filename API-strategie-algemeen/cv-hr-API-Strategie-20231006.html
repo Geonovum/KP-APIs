@@ -1,0 +1,908 @@
+<!DOCTYPE html><html lang="nl"><!-- HTML-Header ============================================================================== --><head><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta content="text/html; charset=utf-8" http-equiv="content-type"><meta name="generator" content="ReSpec 24.5.2">
+    
+    
+    <!-- Invullen: de titel van de standaard of het document ==================================== -->
+    <title>API Strategie Algemeen (Inleiding)</title>
+    <!-- Invullen: de naam van de lokale CSS file =============================================== -->
+    <link rel="stylesheet" type="text/css" href="../../media/respec/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="https://tools.geostandaarden.nl/respec/style/logos/Geonovum.ico">
+    
+    
+<!-- ============================================================================================ -->
+<!-- File. . . :  index.html                                                                      -->
+<!-- Bevat . . :  Template voor de index.html die verplicht is voor respec                        -->
+<!--              Gebaseerd op https://github.com/Geonovum/respec/wiki                            -->
+<!--              Deze file moet worden neergezet in de root-directory van de                     -->
+<!--              betreffende standaard.                                                          -->
+<!-- Door. . . :  Jan van Gelder                                                                  -->
+<!-- ============================================================================================ -->
+<!-- ============================================================================================ -->
+<!-- Log . . . :  20181015 - JvG - Initiele versie                                                -->
+<!--
+====================================================================================================
+0        1         2         3         4         5         6         7         8         9         0
+1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+================================================================================================= -->
+
+  <style id="respec-mainstyle">/*****************************************************************
+ * ReSpec 3 CSS
+ * Robin Berjon - http://berjon.com/
+ *****************************************************************/
+
+/* Override code highlighter background */
+.hljs {
+  background: transparent !important;
+}
+
+/* --- INLINES --- */
+h1 abbr,
+h2 abbr,
+h3 abbr,
+h4 abbr,
+h5 abbr,
+h6 abbr,
+a abbr {
+  border: none;
+}
+
+dfn {
+  font-weight: bold;
+}
+
+a.internalDFN {
+  color: inherit;
+  border-bottom: 1px solid #99c;
+  text-decoration: none;
+}
+
+a.externalDFN {
+  color: inherit;
+  border-bottom: 1px dotted #ccc;
+  text-decoration: none;
+}
+
+a.bibref {
+  text-decoration: none;
+}
+
+#references :target {
+  background: #eaf3ff;
+}
+
+cite .bibref {
+  font-style: normal;
+}
+
+code {
+  color: #c83500;
+}
+
+th code {
+  color: inherit;
+}
+
+/* --- TOC --- */
+
+.toc a,
+.tof a {
+  text-decoration: none;
+}
+
+a .secno,
+a .figno {
+  color: #000;
+}
+
+ul.tof,
+ol.tof {
+  list-style: none outside none;
+}
+
+.caption {
+  margin-top: 0.5em;
+  font-style: italic;
+}
+
+/* --- TABLE --- */
+
+table.simple {
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-bottom: 3px solid #005a9c;
+}
+
+.simple th {
+  background: #005a9c;
+  color: #fff;
+  padding: 3px 5px;
+  text-align: left;
+}
+
+.simple th[scope="row"] {
+  background: inherit;
+  color: inherit;
+  border-top: 1px solid #ddd;
+}
+
+.simple td {
+  padding: 3px 10px;
+  border-top: 1px solid #ddd;
+}
+
+.simple tr:nth-child(even) {
+  background: #f0f6ff;
+}
+
+/* --- DL --- */
+
+.section dd>p:first-child {
+  margin-top: 0;
+}
+
+.section dd>p:last-child {
+  margin-bottom: 0;
+}
+
+.section dd {
+  margin-bottom: 1em;
+}
+
+.section dl.attrs dd,
+.section dl.eldef dd {
+  margin-bottom: 0;
+}
+
+#issue-summary>ul,
+.respec-dfn-list {
+  column-count: 2;
+}
+
+#issue-summary li,
+.respec-dfn-list li {
+  list-style: none;
+}
+
+details.respec-tests-details {
+  margin-left: 1em;
+  display: inline-block;
+  vertical-align: top;
+}
+
+details.respec-tests-details>* {
+  padding-right: 2em;
+}
+
+details.respec-tests-details[open] {
+  z-index: 999999;
+  position: absolute;
+  border: thin solid #cad3e2;
+  border-radius: 0.3em;
+  background-color: white;
+  padding-bottom: 0.5em;
+}
+
+details.respec-tests-details[open]>summary {
+  border-bottom: thin solid #cad3e2;
+  padding-left: 1em;
+  margin-bottom: 1em;
+  line-height: 2em;
+}
+
+details.respec-tests-details>ul {
+  width: 100%;
+  margin-top: -0.3em;
+}
+
+details.respec-tests-details>li {
+  padding-left: 1em;
+}
+
+a[href].self-link:hover {
+  opacity: 1;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
+}
+
+aside.example .marker > a.self-link {
+  color: inherit;
+}
+
+h2>a.self-link,
+h3>a.self-link,
+h4>a.self-link,
+h5>a.self-link,
+h6>a.self-link {
+  border: none;
+  color: inherit;
+  font-size: 83%;
+  height: 2em;
+  left: -1.6em;
+  opacity: .5;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  top: 0;
+  transition: opacity .2s;
+  width: 2em;
+}
+
+h2>a.self-link::before,
+h3>a.self-link::before,
+h4>a.self-link::before,
+h5>a.self-link::before,
+h6>a.self-link::before {
+  content: "§";
+  display: block;
+}
+
+@media (max-width: 767px) {
+  dd {
+    margin-left: 0;
+  }
+
+  /* Don't position self-link in headings off-screen */
+  h2>a.self-link,
+  h3>a.self-link,
+  h4>a.self-link,
+  h5>a.self-link,
+  h6>a.self-link {
+    left: auto;
+    top: auto;
+  }
+}
+
+@media print {
+  .removeOnSave {
+    display: none;
+  }
+}
+</style><link rel="stylesheet" href="https://tools.geostandaarden.nl/respec/style/GN-CV.css"><link rel="shortcut icon" type="image/x-icon" href="https://tools.geostandaarden.nl/respec/style/logos/Geonovum.ico"><script id="initialUserConfig" type="application/json">{
+  "specStatus": "GN-CV",
+  "specType": "HR",
+  "pubDomain": "api",
+  "previousPublishDate": "2022-03-09",
+  "previousMaturity": "GN-DEF",
+  "edDraftURI": "https://geonovum.github.io/KP-APIs/API-strategie-algemeen/",
+  "editors": [
+    {
+      "name": "Frank Terpstra",
+      "company": "Geonovum",
+      "companyURL": "https://www.geonovum.nl/"
+    },
+    {
+      "name": "Jan van Gelder",
+      "company": "Geonovum",
+      "companyURL": "https://www.Geonovum.nl/"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Lancelot Schellevis",
+      "company": "Forum Standaardisatie",
+      "companyURL": "https://www.forumstandaardisatie.nl/"
+    },
+    {
+      "name": "Han Zuidweg",
+      "company": "Forum Standaardisatie",
+      "companyURL": "https://www.forumstandaardisatie.nl/"
+    },
+    {
+      "name": "Friso Penninga",
+      "company": "Geonovum",
+      "companyURL": "https://geonovum.nl/"
+    },
+    {
+      "name": "Matthias Snoei",
+      "company": "Swis",
+      "companyURL": "https://swis.nl/"
+    },
+    {
+      "name": "Jasper Roes",
+      "company": "Het Kadaster",
+      "companyURL": "https://www.kadaster.nl/"
+    },
+    {
+      "name": "Peter Haasnoot",
+      "company": "Logius",
+      "companyURL": "https://logius.nl/"
+    },
+    {
+      "name": "Frank van Es",
+      "company": "Logius",
+      "companyURL": "https://logius.nl/"
+    },
+    {
+      "name": "Alexander Green",
+      "company": "Logius",
+      "companyURL": "https://logius.nl/"
+    },
+    {
+      "name": "Martin van der Plas",
+      "company": "Logius",
+      "companyURL": "https://logius.nl/"
+    },
+    {
+      "name": "Dennis de Wit",
+      "company": "Solventa",
+      "companyURL": "https://www.solventa.nl"
+    }
+  ],
+  "shortName": "API-Strategie",
+  "github": "https://github.com/geonovum/KP-APIs/",
+  "issueBase": "https://github.com/geonovum/KP-APIs/issues/",
+  "localBiblio": {
+    "OAuth2": {
+      "href": "https://tools.ietf.org/html/rfc6749",
+      "title": "The OAuth 2.0 Authorization Framework",
+      "authors": [
+        "D. Hardt"
+      ],
+      "date": "October 2012",
+      "publisher": "The Internet Engineering Task Force"
+    },
+    "Expert": {
+      "href": "https://www.forumstandaardisatie.nl/sites/bfs/files/Expertadvies%20OAuth%202.0.pdf",
+      "title": "Expertadvies OAuth 2.0",
+      "authors": [
+        "P. Dam"
+      ],
+      "date": "24 februari 2017",
+      "publisher": "Forum Standaardisatie",
+      "id": "expert"
+    },
+    "JWT": {
+      "href": "https://tools.ietf.org/html/rfc7519",
+      "title": "JSON Web Token (JWT)",
+      "authors": [
+        "M. Jones, J. Bradley, N. Sakimura"
+      ],
+      "date": "may 2015",
+      "publisher": "IETF"
+    },
+    "JWS": {
+      "href": "https://tools.ietf.org/html/rfc7515",
+      "title": "JSON Web Signature (JWS)",
+      "authors": [
+        "M. Jones, J. Bradley, N. Sakimura"
+      ],
+      "date": "may 2015",
+      "publisher": "IETF"
+    },
+    "JWE": {
+      "href": "https://tools.ietf.org/html/rfc7516",
+      "title": "JSON Web Encryption (JWE)",
+      "authors": [
+        "M. Jones, J. Hildebrand"
+      ],
+      "date": "may 2015",
+      "publisher": "IETF"
+    },
+    "JWK": {
+      "href": "https://tools.ietf.org/html/rfc7517",
+      "title": "JSON Web Key (JWK))",
+      "authors": [
+        "M. Jones"
+      ],
+      "date": "may 2015",
+      "publisher": "IETF"
+    },
+    "JWA": {
+      "href": "https://tools.ietf.org/html/rfc7518",
+      "title": "JSON Web Algorithms (JWA)",
+      "authors": [
+        "M. Jones"
+      ],
+      "date": "may 2015",
+      "publisher": "IETF"
+    },
+    "PKCE": {
+      "href": "https://tools.ietf.org/html/rfc7636",
+      "title": "Proof Key for Code Exchange by OAuth Public Clients",
+      "authors": [
+        "N. Sakimura, J. Bradley, N. Agarwal"
+      ],
+      "date": "september 2015",
+      "publisher": "IETF"
+    },
+    "Introspection": {
+      "href": "https://tools.ietf.org/html/rfc7662",
+      "title": "OAuth 2.0 Token Introspection",
+      "authors": [
+        "J. Richer"
+      ],
+      "date": "October 2015",
+      "publisher": "IETF"
+    },
+    "OpenID.Core": {
+      "href": "https://openid.net/specs/openid-connect-core-1_0.html",
+      "title": "OpenID Connect Core 1.0",
+      "authors": [
+        "N. Sakimura, J. Bradley, M. Jones, B. de Medeiros, C. Mortimore"
+      ],
+      "date": "November 8 2014",
+      "publisher": "OpenID foundation"
+    },
+    "iGOV.OpenID": {
+      "href": "https://openid.net/specs/openid-igov-openid-connect-1_0.html",
+      "title": "International Government Assurance Profile (iGov) for OpenID Connect 1.0 - draft 3",
+      "authors": [
+        "M. Varley, P. Grassi"
+      ],
+      "date": "October 5 2018",
+      "publisher": "OpenID foundation",
+      "id": "igov.openid"
+    },
+    "iGOV.OAuth2": {
+      "href": "https://openid.net/specs/openid-igov-oauth2-1_0.html",
+      "title": "International Government Assurance Profile (iGov) for OAuth 2.0",
+      "authors": [
+        "J. Richer, M. Varley, P. Grassi"
+      ],
+      "date": "October 5 2018",
+      "publisher": "OpenID foundation",
+      "id": "igov.oauth2"
+    },
+    "OpenID.Discovery": {
+      "href": "https://openid.net/specs/openid-connect-discovery-1_0.html",
+      "title": "OpenID Connect Discovery 1.0",
+      "authors": [
+        "N. Sakimura, J. Bradley, M. Jones, E. Jay"
+      ],
+      "date": "November 8 2014",
+      "publisher": "OpenID foundation"
+    },
+    "I-D.ietf-oauth-pop-architecture": {
+      "href": "https://tools.ietf.org/html/draft-ietf-oauth-pop-architecture-08",
+      "title": "OAuth 2.0 Proof-of-Possession (PoP) Security Architecture",
+      "authors": [
+        "P. Hunt, J. Richer, W. Mills, P. Mishra, H. Tschofenig"
+      ],
+      "date": "July 8, 2016",
+      "publisher": "IETF"
+    },
+    "HEART.OAuth2": {
+      "href": "https://openid.net/specs/openid-heart-oauth2-1_0.html",
+      "title": "Health Relationship Trust Profile for OAuth 2.0",
+      "authors": [
+        "J. Richer"
+      ],
+      "date": "April 25, 2017",
+      "publisher": "OpenID foundation"
+    },
+    "JWS.JWE.Algs": {
+      "href": "https://www.iana.org/assignments/jose/jose.xhtml#web-signature-encryption-algorithms",
+      "title": "IANA JSON Web Signatures and Encryption Algorithms registry",
+      "authors": [
+        "Jim Schaad, Jeff Hodges, Joe Hildebrand, Sean Turner"
+      ],
+      "date": "",
+      "publisher": "IANA"
+    },
+    "BCP195": {
+      "href": "https://tools.ietf.org/html/bcp195",
+      "title": "Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS)",
+      "authors": [
+        "Y. Sheffer, R. Holz, P. Saint-Andre"
+      ],
+      "date": "May 2015",
+      "publisher": "IETF"
+    },
+    "HAL": {
+      "href": "http://stateless.co/hal_specification.html",
+      "title": "HAL - Hypertext Application Language",
+      "authors": [
+        "Mike Kelly"
+      ],
+      "date": " 2013-09-18"
+    },
+    "rfc7946": {
+      "href": "https://datatracker.ietf.org/doc/html/rfc7946",
+      "title": "The GeoJSON Format",
+      "authors": [
+        "H. Butler, M. Daly, A. Doyle, S. Gillies, T. Schaub, S. Hagen"
+      ],
+      "date": "2016-08-01"
+    }
+  },
+  "postProcess": [
+    null
+  ],
+  "publishISODate": "2023-10-06T00:00:00.000Z",
+  "generatedSubtitle": "Consultatieversie 06 oktober 2023"
+}</script><meta name="description" content="Dit document beschrijft een API strategie voor de Nederlandse overheid."><script type="application/ld+json">{
+  "@context": [
+    "http://schema.org",
+    {
+      "@vocab": "http://schema.org/",
+      "@language": "nl",
+      "foaf": "http://xmlns.com/foaf/0.1/",
+      "datePublished": {
+        "@type": "http://www.w3.org/2001/XMLSchema#date"
+      },
+      "inLanguage": {
+        "@language": null
+      },
+      "isBasedOn": {
+        "@type": "@id"
+      },
+      "license": {
+        "@type": "@id"
+      }
+    }
+  ],
+  "id": "https://docs.geostandaarden.nl/api/cv-hr-API-Strategie-20231006/",
+  "type": [
+    "TechArticle"
+  ],
+  "name": "API Strategie Algemeen (Inleiding)",
+  "inLanguage": "nl",
+  "license": "https://creativecommons.org/licenses/by/4.0/legalcode",
+  "datePublished": "2023-10-06",
+  "copyrightHolder": {
+    "name": "Geonovum",
+    "url": "https://www.geonovum.nl/"
+  },
+  "discussionUrl": "https://github.com/geonovum/KP-APIs/issues/",
+  "alternativeHeadline": "",
+  "isBasedOn": "https://docs.geostandaarden.nl/api/def-hr-API-Strategie-20220309/",
+  "description": "Dit document beschrijft een API strategie voor de Nederlandse overheid.",
+  "editor": [
+    {
+      "type": "Person",
+      "name": "Frank Terpstra",
+      "worksFor": {
+        "name": "Geonovum",
+        "url": "https://www.geonovum.nl/"
+      }
+    },
+    {
+      "type": "Person",
+      "name": "Jan van Gelder",
+      "worksFor": {
+        "name": "Geonovum",
+        "url": "https://www.Geonovum.nl/"
+      }
+    }
+  ],
+  "contributor": [
+    {
+      "type": "Person",
+      "name": "Lancelot Schellevis",
+      "worksFor": {
+        "name": "Forum Standaardisatie",
+        "url": "https://www.forumstandaardisatie.nl/"
+      }
+    },
+    {
+      "type": "Person",
+      "name": "Han Zuidweg",
+      "worksFor": {
+        "name": "Forum Standaardisatie",
+        "url": "https://www.forumstandaardisatie.nl/"
+      }
+    },
+    {
+      "type": "Person",
+      "name": "Friso Penninga",
+      "worksFor": {
+        "name": "Geonovum",
+        "url": "https://geonovum.nl/"
+      }
+    },
+    {
+      "type": "Person",
+      "name": "Matthias Snoei",
+      "worksFor": {
+        "name": "Swis",
+        "url": "https://swis.nl/"
+      }
+    },
+    {
+      "type": "Person",
+      "name": "Jasper Roes",
+      "worksFor": {
+        "name": "Het Kadaster",
+        "url": "https://www.kadaster.nl/"
+      }
+    },
+    {
+      "type": "Person",
+      "name": "Peter Haasnoot",
+      "worksFor": {
+        "name": "Logius",
+        "url": "https://logius.nl/"
+      }
+    },
+    {
+      "type": "Person",
+      "name": "Frank van Es",
+      "worksFor": {
+        "name": "Logius",
+        "url": "https://logius.nl/"
+      }
+    },
+    {
+      "type": "Person",
+      "name": "Alexander Green",
+      "worksFor": {
+        "name": "Logius",
+        "url": "https://logius.nl/"
+      }
+    },
+    {
+      "type": "Person",
+      "name": "Martin van der Plas",
+      "worksFor": {
+        "name": "Logius",
+        "url": "https://logius.nl/"
+      }
+    },
+    {
+      "type": "Person",
+      "name": "Dennis de Wit",
+      "worksFor": {
+        "name": "Solventa",
+        "url": "https://www.solventa.nl"
+      }
+    }
+  ],
+  "citation": [
+    {
+      "id": "https://www.forumstandaardisatie.nl/sites/bfs/files/Expertadvies%20OAuth%202.0.pdf",
+      "type": "TechArticle",
+      "name": "Expertadvies OAuth 2.0",
+      "url": "https://www.forumstandaardisatie.nl/sites/bfs/files/Expertadvies%20OAuth%202.0.pdf"
+    },
+    {
+      "id": "https://openid.net/specs/openid-igov-oauth2-1_0.html",
+      "type": "TechArticle",
+      "name": "International Government Assurance Profile (iGov) for OAuth 2.0",
+      "url": "https://openid.net/specs/openid-igov-oauth2-1_0.html"
+    },
+    {
+      "id": "https://openid.net/specs/openid-igov-openid-connect-1_0.html",
+      "type": "TechArticle",
+      "name": "International Government Assurance Profile (iGov) for OpenID Connect 1.0 - draft 3",
+      "url": "https://openid.net/specs/openid-igov-openid-connect-1_0.html"
+    }
+  ]
+}</script></head>
+  <!-- HTML-Body ================================================================================ -->
+  <body class="h-entry toc-inline"><div class="head">
+  <a href="https://www.geonovum.nl/" class="logo"><img id="Geonovum" alt="Geonovum" width="132" height="67" src="https://tools.geostandaarden.nl/respec/style/logos/Geonovum.svg"></a>
+  <h1 class="title p-name" id="title">API Strategie Algemeen (Inleiding)</h1>
+  
+  <h2>Geonovum Handreiking<br>
+  Consultatieversie <time class="dt-published" datetime="2023-10-06">06 oktober 2023</time></h2>
+  <dl>
+    <dt>Deze versie:</dt><dd><a class="u-url" href="https://docs.geostandaarden.nl/api/cv-hr-API-Strategie-20231006/">https://docs.geostandaarden.nl/api/cv-hr-API-Strategie-20231006/</a></dd><dt>Laatst gepubliceerde versie:</dt><dd><a href="https://docs.geostandaarden.nl/api/API-Strategie/">https://docs.geostandaarden.nl/api/API-Strategie/</a></dd>
+    
+    <dt>Vorige versie:</dt><dd><a href="https://docs.geostandaarden.nl/api/def-hr-API-Strategie-20220309/">https://docs.geostandaarden.nl/api/def-hr-API-Strategie-20220309/</a></dd>
+    <dt>Laatste werkversie:</dt><dd><a href="https://geonovum.github.io/KP-APIs/API-strategie-algemeen/">https://geonovum.github.io/KP-APIs/API-strategie-algemeen/</a></dd>
+    <dt>Redacteurs:</dt>
+    <dd class="p-author h-card vcard"><span class="p-name fn">Frank Terpstra</span>, <a class="p-org org h-org h-card" href="https://www.geonovum.nl/">Geonovum</a></dd><dd class="p-author h-card vcard"><span class="p-name fn">Jan van Gelder</span>, <a class="p-org org h-org h-card" href="https://www.Geonovum.nl/">Geonovum</a></dd>
+    <dt>Auteurs:</dt><dd class="p-author h-card vcard"><span class="p-name fn">Lancelot Schellevis</span>, <a class="p-org org h-org h-card" href="https://www.forumstandaardisatie.nl/">Forum Standaardisatie</a></dd><dd class="p-author h-card vcard"><span class="p-name fn">Han Zuidweg</span>, <a class="p-org org h-org h-card" href="https://www.forumstandaardisatie.nl/">Forum Standaardisatie</a></dd><dd class="p-author h-card vcard"><span class="p-name fn">Friso Penninga</span>, <a class="p-org org h-org h-card" href="https://geonovum.nl/">Geonovum</a></dd><dd class="p-author h-card vcard"><span class="p-name fn">Matthias Snoei</span>, <a class="p-org org h-org h-card" href="https://swis.nl/">Swis</a></dd><dd class="p-author h-card vcard"><span class="p-name fn">Jasper Roes</span>, <a class="p-org org h-org h-card" href="https://www.kadaster.nl/">Het Kadaster</a></dd><dd class="p-author h-card vcard"><span class="p-name fn">Peter Haasnoot</span>, <a class="p-org org h-org h-card" href="https://logius.nl/">Logius</a></dd><dd class="p-author h-card vcard"><span class="p-name fn">Frank van Es</span>, <a class="p-org org h-org h-card" href="https://logius.nl/">Logius</a></dd><dd class="p-author h-card vcard"><span class="p-name fn">Alexander Green</span>, <a class="p-org org h-org h-card" href="https://logius.nl/">Logius</a></dd><dd class="p-author h-card vcard"><span class="p-name fn">Martin van der Plas</span>, <a class="p-org org h-org h-card" href="https://logius.nl/">Logius</a></dd><dd class="p-author h-card vcard"><span class="p-name fn">Dennis de Wit</span>, <a class="p-org org h-org h-card" href="https://www.solventa.nl">Solventa</a></dd>
+    <dt>Doe mee:</dt><dd>
+      <a href="https://github.com/geonovum/KP-APIs/">GitHub geonovum/KP-APIs</a>
+    </dd><dd>
+      <a href="https://github.com/geonovum/KP-APIs/issues/">Dien een melding in</a>
+    </dd><dd>
+      <a href="https://github.com/geonovum/KP-APIs/commits/">Revisiehistorie</a>
+    </dd><dd>
+      <a href="https://github.com/geonovum/KP-APIs/pulls/">Pull requests</a>
+    </dd>
+  </dl>
+  
+  
+    <dl>
+          <dt>Rechtenbeleid:</dt>
+          <dd>
+            <div class="copyright" style="margin: 0.25em 0;">
+              <abbr title="Creative Commons Attribution 4.0 International Public License">
+              <a href="https://creativecommons.org/licenses/by/4.0/legalcode"><img width="115" height="40" src="https://tools.geostandaarden.nl/respec/style/logos/cc-by.svg" alt="Creative Commons Attribution 4.0 International Public License"></a>
+            </abbr>
+              <div style="display:inline-block; vertical-align:top">
+                <p style="font-size: small;">Creative Commons Attribution 4.0 International Public License<br>(CC-BY)</p>
+              </div>
+            </div>
+          </dd>
+        </dl>
+  <hr title="Separator for header">
+</div>
+    <section id="abstract" data-format="markdown" aria-busy="false" class="introductory"><h2>Samenvatting</h2><p>Dit document beschrijft een API strategie voor de Nederlandse overheid.</p></section>
+    <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>
+    <em>Deze paragraaf beschrijft de status van dit document ten tijde van publicatie. Het is mogelijk dat er actuelere versies van dit document bestaan. Een lijst van Geonovum publicaties en de laatste gepubliceerde versie van dit document zijn te vinden op <a href="https://www.geonovum.nl/geo-standaarden/alle-standaarden">https://www.geonovum.nl/geo-standaarden/alle-standaarden</a>.</em>
+  </p><p>
+
+
+
+    Dit is een door de werkgroep goedgekeurde consultatieversie. Commentaar over dit document kan gestuurd worden naar
+    <a href="mailto:geo-standaarden@geonovum.nl">
+        geo-standaarden@geonovum.nl</a>.
+
+
+
+
+
+
+</p><p>Ten opzichte van de vorige versie van de API strategie (09-03-2022) is het hoofdstuk "API Strategie voor de overheid" aangepast. De sectie visie is aangepast en de sectie API first strategie zijn toegevoegd. Deze secties zijn het onderwerp van de de consultatie in deze consultatieversie. De betreffende secties zijn groen gemarkeerd.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding-van-de-nl-api-strategie"><span class="secno">1. </span>Inleiding van de NL API strategie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#status"><span class="secno">1.1 </span>Status</a></li><li class="tocline"><a class="tocxref" href="#auteurs"><span class="secno">1.2 </span>Auteurs</a></li><li class="tocline"><a class="tocxref" href="#leeswijzer"><span class="secno">1.3 </span>Leeswijzer</a></li></ol></li><li class="tocline"><a class="tocxref" href="#api-strategie-voor-de-overheid"><span class="secno">2. </span>API strategie voor de overheid</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#api-strategie-overheid-visie"><span class="secno">2.1 </span>Visie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#data-en-het-nut-van-api-s"><span class="secno">2.1.1 </span>Data en het nut van API's</a></li><li class="tocline"><a class="tocxref" href="#een-wendbare-informatievoorziening"><span class="secno">2.1.2 </span>Een wendbare informatievoorziening</a></li><li class="tocline"><a class="tocxref" href="#afspraken-en-standaardisatie-api-s-sleutel-tot-succes"><span class="secno">2.1.3 </span>Afspraken en standaardisatie API’s sleutel tot succes</a></li><li class="tocline"><a class="tocxref" href="#visie-op-het-kennisplatform-api-s"><span class="secno">2.1.4 </span>Visie op het Kennisplatform API’s</a></li></ol></li><li class="tocline"><a class="tocxref" href="#api-strategie-overheid-visie"><span class="secno">2.2 </span>API first Strategie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#beleidsdoelen"><span class="secno">2.2.1 </span>Beleidsdoelen</a></li><li class="tocline"><a class="tocxref" href="#omgeving"><span class="secno">2.2.2 </span>Omgeving</a></li><li class="tocline"><a class="tocxref" href="#api-first"><span class="secno">2.2.3 </span>API first</a></li><li class="tocline"><a class="tocxref" href="#actie-1-houdt-regie-door-open-api-standaarden-toe-te-passen"><span class="secno">2.2.4 </span>Actie 1: Houdt regie door open API standaarden toe te passen</a></li><li class="tocline"><a class="tocxref" href="#actie-2-druk-kosten-door-api-standaarden-toe-te-passen"><span class="secno">2.2.5 </span>Actie 2: Druk kosten door API standaarden toe te passen</a></li><li class="tocline"><a class="tocxref" href="#actie-3-deel-kennis-over-toepassen-van-api-s"><span class="secno">2.2.6 </span>Actie 3: Deel Kennis over toepassen van API's</a></li><li class="tocline"><a class="tocxref" href="#actie-4-zorg-dat-api-s-vindbaar-zijn"><span class="secno">2.2.7 </span>Actie 4: Zorg dat API's vindbaar zijn</a></li></ol></li><li class="tocline"><a class="tocxref" href="#intentieverklaring-api-strategie"><span class="secno">2.3 </span>Intentieverklaring API strategie</a></li><li class="tocline"><a class="tocxref" href="#praktijkvoorbeelden"><span class="secno">2.4 </span>Praktijkvoorbeelden</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#de-api-op-de-basisregistratie-personen-brp-van-haal-centraal"><span class="secno">2.4.1 </span>De API op de Basisregistratie Personen (BRP) van Haal Centraal</a></li><li class="tocline"><a class="tocxref" href="#de-api-voor-zaakgericht-werken-van-common-ground"><span class="secno">2.4.2 </span>De API voor Zaakgericht Werken van Common Ground</a></li><li class="tocline"><a class="tocxref" href="#de-api-voor-basisregistratie-kadaster-brk-publiekrechtelijke-beperkingen"><span class="secno">2.4.3 </span>De API voor Basisregistratie Kadaster (BRK) - Publiekrechtelijke Beperkingen</a></li><li class="tocline"><a class="tocxref" href="#de-api-voor-regie-op-gegevens"><span class="secno">2.4.4 </span>De API voor regie op gegevens</a></li></ol></li><li class="tocline"><a class="tocxref" href="#samenvattend"><span class="secno">2.5 </span>Samenvattend</a></li><li class="tocline"><a class="tocxref" href="#ondertekening"><span class="secno">2.6 </span>Ondertekening</a></li></ol></li><li class="tocline"><a class="tocxref" href="#standaarden"><span class="secno">3. </span>Standaarden</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#api-designrules-nederlandse-api-strategie"><span class="secno">3.1 </span>API Designrules (Nederlandse API Strategie)</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#oorsprong-standaard"><span class="secno">3.1.1 </span>Oorsprong standaard</a></li><li class="tocline"><a class="tocxref" href="#status-bij-forum-standaardisatie"><span class="secno">3.1.2 </span>Status bij forum standaardisatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#werkingsgebied-standaard"><span class="secno">3.1.2.1 </span>Werkingsgebied standaard</a></li><li class="tocline"><a class="tocxref" href="#toepassingsgebied-standaard"><span class="secno">3.1.2.2 </span>Toepassingsgebied standaard</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#api-designrules-modulen"><span class="secno">3.2 </span>API Designrules modulen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#oorsprong-standaard-0"><span class="secno">3.2.1 </span>Oorsprong standaard</a></li><li class="tocline"><a class="tocxref" href="#status-0"><span class="secno">3.2.2 </span>Status</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#werkingsgebied-standaard-0"><span class="secno">3.2.2.1 </span>Werkingsgebied standaard</a></li><li class="tocline"><a class="tocxref" href="#toepassingsgebied-standaard-0"><span class="secno">3.2.2.2 </span>Toepassingsgebied standaard</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#nederlands-profiel-oauth"><span class="secno">3.3 </span>Nederlands profiel OAuth</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#oorsprong-standaard-1"><span class="secno">3.3.1 </span>Oorsprong standaard</a></li><li class="tocline"><a class="tocxref" href="#status-bij-forum-standaardisatie-0"><span class="secno">3.3.2 </span>Status bij forum standaardisatie</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#werkingsgebied-standaard-1"><span class="secno">3.3.2.1 </span>Werkingsgebied standaard</a></li><li class="tocline"><a class="tocxref" href="#toepassingsgebied-standaard-1"><span class="secno">3.3.2.2 </span>Toepassingsgebied standaard</a></li><li class="tocline"><a class="tocxref" href="#bijzonderheden"><span class="secno">3.3.2.3 </span>Bijzonderheden</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#openid-connect-buiten-scope"><span class="secno">3.3.2.3.1 </span>OpenID connect buiten scope</a></li><li class="tocline"><a class="tocxref" href="#aansluiting-op-internationale-standaard-igov"><span class="secno">3.3.2.3.2 </span>Aansluiting op internationale standaard iGov</a></li></ol></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><span class="secno">A. </span>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><span class="secno">A.1 </span>Informatieve referenties</a></li></ol></li></ol></nav>
+    <!-- vanaf hier per hoofdstuk een sectie of een div in het document ======================== -->
+    <!-- Secties komen in de inhoudsopgave div's niet ========================================== -->
+    <!-- Secties hebben verplicht <h2> tags, div's niet ======================================== -->
+    <section data-format="markdown" class="informative" aria-busy="false" id="inleiding-van-de-nl-api-strategie"><!--OddPage--><h2 id="x1-inleiding-van-de-nl-api-strategie"><span class="secno">1. </span>Inleiding van de NL API strategie</h2><p><em>Dit onderdeel is niet normatief.</em></p><p>Dit Hoofdstuk geeft een inleiding op de Nederlandse API strategie. De stategie is opgebouwd uit meerdere documenten, standaarden en modulen. De NL API Strategie wordt doorontwikkeld en beheerd door <a href="https://www.geonovum.nl/themas/kennisplatform-apis">het Kennisplatform API's</a>.</p><section id="status"><h3 id="x1-1-status"><span class="secno">1.1 </span>Status</h3><p>Op <a href="https://github.com/geonovum/KP-APIs/issues">GitHub</a> kan bekeken worden wat de actuele ontwikkelingen zijn met betrekking tot de Nederlandse API strategie. </p></section><section id="auteurs"><h3 id="x1-2-auteurs"><span class="secno">1.2 </span>Auteurs</h3><p>Er worden slechts een beperkt aantal auteurs genoemd, echter aan deze strategie is door veel meer mensen gewerkt.
+De genoemde auteurs zijn de trekkers van de Kennisplatform API's werkgroepen zoals: API Strategie, Architectuur, Security, Design Rules, Authenticatie en Autorisatie, Strategie en Beleid, en Gebruikerswensen.</p></section><section id="leeswijzer"><h3 id="x1-3-leeswijzer"><span class="secno">1.3 </span>Leeswijzer</h3><p>De API strategie bestaat uit een een inleidend document, verschillende normatieve documenten (NL GOV standaarden) en meerdere modulen die voor verschillende functionele of technische situaties kunnen worden ingezet. Een actueel overzicht van alle documenten is weergegeven in de onderstaande infographic:</p><figure id="fig-nl-api-strategie-infographic">
+<object data="https://geonovum.github.io/KP-APIs/media/API_infographic.svg" type="image/svg+xml" id="infographic"></object>
+<figcaption>Figuur <span class="figno">1</span> <span class="fig-title">NL API Strategie Infographic</span></figcaption>
+</figure><p>De verschillende onderdelen van de NL API Strategie bevat de volgende documenten:</p><table>
+<thead>
+<tr>
+<th>Onderdeel</th>
+<th>Documentnaam &amp; <br> Verwijzing naar de gepubliceerde versie</th>
+<th>Status</th>
+<th>Versie</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Algemeen</td>
+<td><a href="https://geonovum.github.io/KP-APIs/API-strategie-algemeen/Inleiding/">Inleiding NL API Strategie</a></td>
+<td>Vastgesteld <br> (door Kennisplatform)</td>
+<td>09-03-2022</td>
+</tr>
+<tr>
+<td>Algemeen</td>
+<td><a href="https://geonovum.github.io/KP-APIs/API-strategie-algemeen/Architectuur/">Architectuur NL API Strategie</a></td>
+<td>Vastgesteld <br> (door Kennisplatform)</td>
+<td>09-03-2022</td>
+</tr>
+<tr>
+<td>Algemeen</td>
+<td><a href="https://geonovum.github.io/KP-APIs/API-strategie-algemeen/Gebruikerswensen/">Gebruikerswensen NL API Strategie</a></td>
+<td>Vastgesteld <br> (door Kennisplatform)</td>
+<td>09-03-2022</td>
+</tr>
+<tr>
+<td>Normatieve standaard</td>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/">API Design Rules (ADR)</a></td>
+<td>Verplicht <br> (pas toe leg uit)</td>
+<td>09-07-2020 <br> v1.0.0</td>
+</tr>
+<tr>
+<td>Verplichte standaard</td>
+<td><a href="https://forumstandaardisatie.nl/open-standaarden/openapi-specification">Open API Specification (OAS)</a></td>
+<td>Verplicht <br> (pas toe leg uit)</td>
+<td>25-05-2018 <br> v3.0.0</td>
+</tr>
+<tr>
+<td>Normatieve standaard</td>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/api/oauth/">NL GOV OAuth profiel</a></td>
+<td>Verplicht <br> (pas toe leg uit)</td>
+<td>09-07-2020 <br> v1.0.0</td>
+</tr>
+<tr>
+<td>Voorgestelde standaard</td>
+<td><a href="https://logius.gitlab.io/oidc/">NL GOV OpenID Connect profile</a></td>
+<td>Bijna Verplicht* <br> (pas toe leg uit)</td>
+<td>18-02-2021 <br> v1.0.0</td>
+</tr>
+<tr>
+<td>Verplichte standaard</td>
+<td><a href="https://gitdocumentatie.logius.nl/publicatie/dk/restapi/">Digikoppeling REST API koppelvlak specificatie</a></td>
+<td>Verplicht <br> (pas toe leg uit)</td>
+<td>14-11-2022 <br> v1.1.1</td>
+</tr>
+<tr>
+<td>Aanvullende module</td>
+<td><a href="https://docs.geostandaarden.nl/api/API-Strategie-mod-geo/">API Geospatial Design Rules module</a></td>
+<td>Vastgesteld <br> (door Kennisplatform)</td>
+<td>23-05-2023</td>
+</tr>
+<tr>
+<td>Aanvullende module</td>
+<td><a href="https://geonovum.github.io/KP-APIs/API-strategie-modules/transport-security/">API Transport Security module</a></td>
+<td>Stabiel <br> (Werkgroep Kennisplatform)</td>
+<td>11-07-2023</td>
+</tr>
+<tr>
+<td>Aanvullende module</td>
+<td><a href="https://geonovum.github.io/KP-APIs/API-strategie-modules/access-control/">API Access control module</a></td>
+<td>Stabiel <br> (Werkgroep Kennisplatform)</td>
+<td>11-07-2023</td>
+</tr>
+<tr>
+<td>Aanvullende module</td>
+<td><a href="https://geonovum.github.io/KP-APIs/API-strategie-modules/naming-conventions/">API Naming conventions module</a></td>
+<td>Stabiel <br> (Werkgroep Kennisplatform)</td>
+<td>12-07-2023</td>
+</tr>
+<tr>
+<td>Aanvullende module</td>
+<td><a href="https://geonovum.github.io/KP-APIs/API-strategie-modules/hypermedia/">API Hypermedia module</a></td>
+<td>Stabiel <br> (Werkgroep Kennisplatform)</td>
+<td>12-07-2023</td>
+</tr>
+</tbody></table><ul>
+<li>21 september 2023 besluit het OBDO over de opname van het OIDC profiel op de lijst verplichte standaarden van het Forum Standaardisatie.</li>
+</ul></section></section>
+    <section data-format="markdown" class="informative" aria-busy="false" id="api-strategie-voor-de-overheid"><!--OddPage--><h2 id="x2-api-strategie-voor-de-overheid"><span class="secno">2. </span>API strategie voor de overheid</h2><p><em>Dit onderdeel is niet normatief.</em></p><section id="api-strategie-overheid-visie" class="terconsultatie"><h3 id="x2-1-visie"><span class="secno">2.1 </span>Visie</h3><section id="data-en-het-nut-van-api-s"><h4 id="x2-1-1-data-en-het-nut-van-api-s"><span class="secno">2.1.1 </span>Data en het nut van API's</h4><p>De overheid gebruikt data voor het oplossen van maatschappelijke vraagstukken en opgaven zoals in wonen, stikstof, de energietransitie, armoede, schulden en zorg. Met API's zijn we in staat een platform van data te laten ontstaan waarop we de maatschappelijke vraagstukken en dienstverlening organiseren. Het bedrijfsleven en grote internetplatforms maken al volop gebruik van API's om data flexibel te ontsluiten. </p><p>Het gebruik van API's maakt een een onstuimige groei door. Steeds meer organisaties bieden API's aan en veel organisaties bieden steeds meer API's aan. API's bieden de overheid de kans om data snel, eenvoudig en in real-time aan te bieden. De samenleving verwacht een open overheid. Dat kan met API's. De data die de overheid voor het uitvoeren van haar taken verzamelt, wordt nu al <a href="https://data.overheid.nl/">voor hergebruik beschikbaar gemaakt</a>. Nu wordt data nog vaak als bestand beschikbaar gemaakt waarbij het aan de gebruiker is de data te vinden, binnen te halen en te verwerken. Met API's wordt data steeds bij de bron opgehaald, pas wanneer de data nodig is. Met API's kan data heel toegespitst op een vraag verstrekt worden, waardoor bovenmatige verstrekking van data wordt voorkomen (dataminimalisatie). Met API's is het eenvoudiger het datagebruik te verantwoorden. Door al deze voordelen maken API's nieuwe toepassingen met data mogelijk voor burgers.</p></section><section id="een-wendbare-informatievoorziening"><h4 id="x2-1-2-een-wendbare-informatievoorziening"><span class="secno">2.1.2 </span>Een wendbare informatievoorziening</h4><p>Een eenvoudiger, flexibeler en slimmer ingerichte informatievoorziening faciliteert de overheid hierbij. We kunnen beleidsdoelen met toepassing van API's beter mogelijk maken. In de <a href="https://staatvandeuitvoering.nl/">Staat van de Uitvoering</a> is een oproep opgenomen <em>Breng gegevensuitwisseling tussen publieke dienstverleners nu echt op gang</em>. Deze gegevensuitwisseling kan juist met API's worden gefaciliteerd. Verschillende initiatieven zijn al genomen, zoals de <a href="https://realisatieibds.pleio.nl/">Interbestuurlijke Datastrategie</a>, het Federatief Data Stelsel, <a href="https://www.geonovum.nl/uploads/documents/Actieplan%20data%20bij%20de%20bron%20v2%20-%20ZONDER%20NAMEN.pdf">Data bij de bron</a> en het <a href="https://iplo.nl/digitaal-stelsel/">Digitaal Stelsel Omgevingswet</a>.</p><p>Dit is hard nodig nu in hoog tempo meer data verzameld en opgeslagen wordt. De vraag om data en het datagebruik nemen toe. Dit past ook bij de <a href="https://commission.europa.eu/strategy-and-policy/priorities-2019-2024/europe-fit-digital-age/european-data-strategy_en">Europese datastrategie</a>.[^1]</p></section><section id="afspraken-en-standaardisatie-api-s-sleutel-tot-succes"><h4 id="x2-1-3-afspraken-en-standaardisatie-api-s-sleutel-tot-succes"><span class="secno">2.1.3 </span>Afspraken en standaardisatie API’s sleutel tot succes</h4><p>De API Strategie van de Nederlandse overheid bevat afspraken en standaarden om API’s te ontwerpen, te beveiligen, toegankelijk te maken en te gebruiken. Zo zijn API’s door afspraken over de publicatie van de specificaties voor afnemers op een uniforme en voorspelbare manier vindbaar. En zijn API’s door afspraken en standaarden over authenticatie, autorisatie, logging en andere specificaties beter en op een uniforme manier toegankelijk en bruikbaar. Het gebruik van de afspraken en standaarden door aanbieders vergemakkelijkt het gebruik van API’s voor afnemers. Dit geeft aanbieders het vertrouwen dat hun API’s door afnemers op een bekende voorspelbare manier te gebruiken zijn. Daarnaast maken afspraken en standaarden het mogelijk om aan te geven of API’s aan minimumvereisten voldoen. Daarmee neemt het vertrouwen van afnemers in de kwaliteit van API’s toe. Zo voorkomen we dat de manier van datadeling op verschillende manieren wordt ingericht.</p><p>Nu het gebruik van API’s in opmars is, is het van belang de gemaakte afspraken toe te passen. Voor zover verdere afspraken nodig zijn, werken we samen in de Werkgroepen van het Kennisplatform API's.</p></section><section id="visie-op-het-kennisplatform-api-s"><h4 id="x2-1-4-visie-op-het-kennisplatform-api-s"><span class="secno">2.1.4 </span>Visie op het Kennisplatform API’s</h4><p>Het Kennisplatform API’s wil de adoptie van API’s stimuleren en brengt daartoe partijen samen. Het Kennisplatform API’s is dé plek voor overheden om afspraken over de toepassing van API’s te maken en om standaardisatie te bevorderen. Aanbieders van API’s krijgen handvatten waarmee zij hun API’s vorm kunnen geven. Afnemers van API’s profiteren door een meer uniform aanbod van API’s. Het Kennisplatform API’s streeft naar gedragen uitgangspunten voor technische interoperabiliteit, vindbaarheid, toegang, aansluitvoorwaarden en andere afspraken voor het aanbieden en gebruiken van API’s. Deze afspraken worden door het Kennisplatform API's voorbereid op vier thema's:</p><ol>
+<li>governance, strategie en beleid</li>
+<li>architectuurprincipes</li>
+<li>beveiliging</li>
+<li>API design rules</li>
+</ol><p>[^1]: De <a href="https://digital-strategy.ec.europa.eu/en/policies/data-governance-act">Data Governance Regulation</a> en de <a href="https://digital-strategy.ec.europa.eu/en/policies/data-act">Data act</a> maken deel uit van deze strategie. Het eindrapport van het <em>API guidelines for government</em> project <a href="https://op.europa.eu/en/publication-detail/-/publication/0e262d9b-ca32-11ea-adf7-01aa75ed71a1">An Application Programming Interface (API) framework for digital government</a> geeft een aantal voorstellen voor API toepassing voor overheden zoals <em>Align API's with policy goals</em> en <em>Measure policy impacts of API's</em>.</p></section></section><section id="api-strategie-overheid-visie" class="terconsultatie"><h3 id="x2-2-api-first-strategie"><span class="secno">2.2 </span>API first Strategie</h3><p>De API first strategie past binnen de huidige beleidsdoelen en de omgeving van de publieke sector. Voor uit te leggen wat API first inhoud lichten we eerst deze beleidsdoelen en de omgeving (vanuit API's bezien) toe. Daarna volgt wat API first inhoud en drie concrete acties die er uit af te leiden zijn.</p><section id="beleidsdoelen"><h4 id="x2-2-1-beleidsdoelen"><span class="secno">2.2.1 </span>Beleidsdoelen</h4><p>Om de beleidsdoelen van de overheid te halen is doorontwikkeling van de digitale overheid van groot belang. API koppelvlakken kunnen hierin een rol spelen om informatie eenvoudig en veilig uit te wisselen tussen overheden onderling en tussen overheden en burgers of bedrijven. 
+Een aantal beleidsdoelen waarin API's een rol kunnen spelen (met het voor API's relevante sleutelwoord in <em>cursief</em>) zijn:</p><ul>
+<li>Transparante overheid. In het kader van de <a href="https://www.rijksoverheid.nl/onderwerpen/wet-open-overheid-woo">Wet Open Overheid</a> wil de overheid ondermeer <em>hergebruik van open data</em> stimuleren. Zie ook de <a href="https://digital-strategy.ec.europa.eu/nl/policies/psi-open-data">Open Data Directive van de EU.</a></li>
+<li><a href="https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/regie-op-gegevens/">Regie op gegevens.</a> Hierbij is het doel om burgers en bedrijven te ondersteunen bij regie op hun gegevens, die door de overheid verzameld en gebruikt worden. Dit resulteert in een sector-overstijgend kader dat <em>veilige, betrouwbare en gebruiksvriendelijke digitale uitwisseling van gegevens</em> tussen overheden, private en maatschappelijke organisaties mogelijk maakt. Veiligheid en betrouwbare gegevensuitwisseling kan worden gewaarborgd door toepassing van de API Design Rules. </li>
+<li><a href="https://www.digitaleoverheid.nl/overzicht-van-alle-onderwerpen/digitale-inclusie/">Digitale inclusie</a> Door gegevens <em>via een API first strategie</em> openbaar te maken kunnen gedifferentieerde gebruikersinterfaces die voor minder digitaal vaardige burgers bruikbaar zijn.  </li>
+<li>De <a href="https://realisatieibds.pleio.nl/">Interbestuurlijke Data Strategie (IBDS)</a> is het resultaat van nauwe samenwerking tussen departementen, uitvoeringsorganisaties en koepels van medeoverheden. Het programma zorgt ervoor dat het makkelijker wordt om binnen de overheid verantwoord met data te werken. Een van de speerpunten van het IBDS is het ontwikkelen van overheidsbrede systeemfuncties waaronder een federatief datastelsel waarmee data beter <em>vindbaar en technisch uitwisselbaar</em> wordt.</li>
+<li><a href="https://digital-strategy.ec.europa.eu/nl/policies/data-act">EU Data Act of <em>Datawet</em></a> De datawet is gericht op eerlijke toegang tot en het gebruik van gegevens. Hierbij worden met name <em>Internet of Things</em> (IoT) apparaten genoemd en middelen voor openbare lichamen om toegang te krijgen tot gegevens die in het bezit zijn van de particuliere sector. De datawet maakt deel uit van de Europese datastrategie.</li>
+</ul><p>Voor al deze beleidsdoelen geldt dat API's er een rol in kunnen spelen maar dat de API standaarden en best practices er nog niet altijd in beeld zijn.</p></section><section id="omgeving"><h4 id="x2-2-2-omgeving"><span class="secno">2.2.2 </span>Omgeving</h4><p>Tot de omgeving van een publieke organisatie hoort iedereen die interactie heeft of wil hebben met een publieke organisatie. Burger, bedrijf, ketenpartner of andere organisaties uit de publieke sector. De omgeving van een organisatie uit de publieke sector is al jaren bekend met API's en de toepassing ervan. Zo herkent iedere burger hoe eenvoudige verschillende platforms uit de platform economie (Google Amazon Linkedin Meta) eenvoudig elkaars functionaliteit integreren. Denk aan de store in store concepten op bij grote online retailers, knoppen om informatie te delen op je favoriete sociale medium. 
+Het bedrijfsleven weet hoe via PSD2 de functionaliteit en data van de bankwereld via API's is opengebroken en interoperabel gemaakt is. Men weet ook hoe functionaliteit als betalingen, klantrelatiesystemen, boekhoudpakketten en salaris administratie middels API's met elkaar te integreren zijn. 
+De grootste kennis in de markt van (potentiële) software leveranciers in de publieke sector voor het verbinden van IT systemen ligt mede om bovengenoemde redenen bij API's.
+In de publieke sector zelf zijn API's in sommige sectoren ook al dominant, CBS ontsluit al haar statistische informatie al meer dan 10 jaar via API's, het digitaal stelsel omgevingswet heeft ze van begin af aan omarmt, het KNMI en het Kadaster en vele anderen bieden hun open data via API's aan zodat anderen deze kunnen hergebruiken. 
+API's pas je dus toe om goed aan te sluiten op de verwachtingen van je omgeving. 
+Niet alle organisaties zijn zo ver, sommige cruciale bedrijfsprocessen draaien nog op oude (maar meestal ook zeer stabiele) systemen die bedacht zijn voordat API's gemeengoed werden in de IT. Je zal hen moeten blijven bedienen tot zij de omslag hebben kunnen maken. Die omslag maken is vaak niet eenvoudig, in de bankwereld was er de PSD2 wetgeving nodig om dit te laten gebeuren. 
+In de gemeentelijk wereld wordt deze omslag gemaakt in het common ground initiatief. Net als bij PSD2 worden API's ook bij common ground ingezet als transitie mechanisme. API's worden gebruikt om in stappen over te gaan naar nieuwe manier van werken waarbij API's het ontkoppelpunt vormen.</p></section><section id="api-first"><h4 id="x2-2-3-api-first"><span class="secno">2.2.3 </span>API first</h4><p>Tot de omgeving van een publieke organisatie hoort iedereen die interactie heeft of wil hebben met een publieke organisatie. Burger, bedrijf, ketenpartner of andere organisaties uit de publieke sector. 
+De omgeving van organisaties in de publieke sector bedien je het best door hen de mogelijkheid te geven zoveel mogelijk op hun eigen voorwaarden gebruik te maken van data en functionaliteit die je als publieke organisatie aanbied. 
+Je moet ze dus niet dwingen om één kanaal te gebruiken. Tegenwoordig zijn er veel kanalen om functionaliteit en data &amp; functionaliteit langs te ontsluiten: </p><ul>
+<li>Websites, </li>
+<li>Mobiele Apps, </li>
+<li>Computer applicaties,</li>
+<li>IoT devices,</li>
+<li>Fysieke loketten,</li>
+<li>Brievenpost</li>
+</ul><p>Achter al deze ontsluitingskanalen zit een IT systeem. Het is in de huidige digitale samenleving niet reëel om al je kanalen volledig zelf in de hand te hebben. Door direct toegang te geven tot data en functionaliteit middels een API biedt je de mogelijkheid om deze via verschillende kanalen aan te bieden. Je kan voor ieder kanaal afwegen of je dat als organisatie zelf aanbied of dit aan een andere partij laat. Je opereert dus "API first": Altijd is er een goed gedocumenteerde machine interface die aan de omgeving ter beschikking gesteld kan worden. voor de kanalen die je zelf direct bedient (bijvoorbeeld een website) maak je gebruik van diezelfde interface. Het geeft je omgeving de mogelijkheid om daar waar er voor hen geen geschikt kanaal bestaat, dit zelf te maken, als ook om nieuwe mogelijkheden te ontdekken die je zelf nog niet had bedacht. Wanneer je de API met iedereen deelt geeft het ook je gehele omgeving in de basis een gelijke informatiepositie. De API first strategie is in lijn met het NORA principe <a href="https://www.noraonline.nl/wiki/Bouw_diensten_modulair_op">"bouw diensten modulair op"</a> en de bijbehorende implicatie <a href="https://www.noraonline.nl/wiki/Wissel_gegevens_tussen_(web)applicaties_uit_met_API%27s">"wissel gegevens tussen (web)applicaties uit met API's"</a>. Zoals Common ground en PSD2 laten zien is API first niet alleen een voorwaarde voor moderne IT systemen, het toepassen ervan is ook een middel voor modernisering. </p></section><section id="actie-1-houdt-regie-door-open-api-standaarden-toe-te-passen"><h4 id="x2-2-4-actie-1-houdt-regie-door-open-api-standaarden-toe-te-passen"><span class="secno">2.2.4 </span>Actie 1: Houdt regie door open API standaarden toe te passen</h4><p>API's vormen bij de grote platforms van de IT wereld, maar ook al bij nationale leveranciers een essentieel onderdeel van hun strategie. In de relatie met de markt houdt je als overheid de regie door zelf te bepalen hou informatie middels open API standaarden wordt uitgewisseld. Samenwerking met de markt op basis van open standaarden is wenselijk. Samenwerking op basis van leveranciers eigen oplossingen onder voorwaarden van die leverancier is (hoewel op korte termijn soms aantrekkelijk) op de lange termijn zeer risicovol. Vanwege de kans op "vendor lock-in" maar misschien nog wel meer vanwege de mogelijkheid dat we als publieke sector de controle verliezen over wat er met gevoelige informatie die wij bijhouden gebeurd. Met name als die bij de grote platforms terecht komen. De samenleving verwacht van organisaties in de publieke sector dat we zorgvuldig met hun gegevens omgaan. Het gebruik van niet open standaarden voor gegevensuitwisseling past daar niet bij.</p></section><section id="actie-2-druk-kosten-door-api-standaarden-toe-te-passen"><h4 id="x2-2-5-actie-2-druk-kosten-door-api-standaarden-toe-te-passen"><span class="secno">2.2.5 </span>Actie 2: Druk kosten door API standaarden toe te passen</h4><p>Als organisatie uit de publieke sector druk je kosten door zoveel mogelijk gebruik te maken van dat wat brede marktondersteuning heeft. Dan zijn er meer partijen die je kunnen helpen, is er meer personeel te vinden met de benodigde kennis en meer keuze betekent meer concurrentie en dus lagere kosten. Kennis over API's in momenteel zeer breed in de markt beschikbaar. Breder dan nog regelmatig toegepaste alternatieven als SOAP XML(WUS/ ebMS koppelvlakken van Digikoppeling). Het is dus logisch om hier op in te zetten, tegelijkertijd is het goed om innovaties goed te volgen. Dit is eenvoudig te volgen via de lijsten met verplichte en veelgebruikte standaarden van het forum standaardisatie. Daarin is te vinden dat er de REST API Design rules zijn evenals een (daarop aansluitend) REST API profiel binnen Digikoppeling. Gebruik de standaarden bij inkoop voor nieuwbouw en verbouw van IT systemen. 
+Het volgen van standaarden als de REST API design rules is in het belang van de kosten van de overheid in zijn geheel omdat breed gebruik van de standaard interoperabiliteit, wendbaarheid en bijkomende kostenvoordeel voor de hele publieke sector bewerkstelligt.</p></section><section id="actie-3-deel-kennis-over-toepassen-van-api-s"><h4 id="x2-2-6-actie-3-deel-kennis-over-toepassen-van-api-s"><span class="secno">2.2.6 </span>Actie 3: Deel Kennis over toepassen van API's</h4><p>Je staat als organisatie in de publieke sector in de uitvoering nooit alleen. Je maakt de functionaliteit niet alleen, je werkt altijd in een keten met andere overheden en niet overheden. De kern van de samenwerking zit voor een significant deel in de koppeling. Daarom is het op een uniforme manier aanpakken van de API's die daar invulling aan geven van belang. Als organisatie in de publieke sector deel je kennis over hoe je dat doet met de hele publieke sector en maakt waar mogelijk hergebruik van wat anderen al hebben gemaakt. Voor API's doen we dat binnen het kennisplatform API's. Daar maken we standaarden en best practices die we met elkaar delen. Het gaat hier om standaarden voor uniformiteit, en interoperabiliteit van API's, maar ook voor over ontwerpkeuzes binnen API's, voor de IT architectuur waarbinnen ze gebruikt worden als ook over de vindbaarheid van API's. We streven ernaar deze binnen bestaande gremia zoals de lijst verplichte standaarden van het forum standaardisatie voor standaarden en de NORA voor architectuur vast te stellen.</p></section><section id="actie-4-zorg-dat-api-s-vindbaar-zijn"><h4 id="x2-2-7-actie-4-zorg-dat-api-s-vindbaar-zijn"><span class="secno">2.2.7 </span>Actie 4: Zorg dat API's vindbaar zijn</h4><p>Het is niet alleen belangrijk om API's aan te bieden, ze moeten ook door de omgeving gevonden kunnen worden. 
+Het is belangrijk om een balans te vinden tussen vindbaarheid en vereiste inspanning om alle publieke informatie op verschillende plekken actueel te houden.
+Vindbaarheid verhoog je door het voor makers van API's zo laagdrempelig mogelijk te maken om API's te publiceren. 
+Praktisch zijn er, afhankelijk van de ambitie en middelen van een organisatie, meerdere manieren voor. Je kan een eigen developer portaal bouwen waar je API's ontsluit toegang regelt (indien nodig) en zorgt voor goede documentatie. Je kan ook hergebruik maken van de catalogi en portalen die de overheid biedt. 
+We werken als publieke sector aan afspraken (zoals in het Federatief Data Stelsel) om de vindbaarheid van API's in catalogi en portalen te vergroten waarbij het streven is dat informatie over API's eenmalig door de aanbieder wordt aangeleverd en in meerdere catalogi en portalen kan worden hergebruikt.
+API's moeten waar mogelijk (binnen grenzen openbaarheid) centraal en publiekelijk vindbaar zijn, dus niet alleen via de kanalen van de aanbiedende organisatie maar ook vanuit landelijke portalen/catalogi.</p></section></section><section id="intentieverklaring-api-strategie"><h3 id="x2-3-intentieverklaring-api-strategie"><span class="secno">2.3 </span>Intentieverklaring API strategie</h3><p>In onze visie zal de digitale overheid de komende jaren steeds meer veilig en efficiënt data uitwisselen door applicaties zoveel mogelijk te scheiden van de data, en deze data bij de bron te bewaren. Voorzieningen gaan data ophalen bij de bron zodra deze nodig is. Om deze data-uitwisseling mogelijk te maken, zijn platformen, API's en verplichte standaarden onmisbaar. Hiermee biedt de overheid toegang tot evenwichtige en consistente data sets, onafhankelijk van de complexiteit van achterliggende systemen, voor burgers, bedrijven en ketenpartners van de overheid. </p><p>Met deze intentieverklaring, verklaart onze organisatie dat wij de volgende afspraken tussen de deelnemers van het Kennisplatform API's zullen naleven:  </p><ol>
+<li><p>In lijn met de API first strategie bij te dragen aan modernisering van de IT voorzieningen in de overheid</p>
+</li>
+<li><p>Deelnemers aan het Kennisplatform API's leveren een actieve bijdrage aan standaardisatie van het gebruik van API's in en buiten het Kennisplatform API's.  </p>
+</li>
+<li><p>We houden ons aan de API standaarden die we samen hebben ontwikkeld welke op de lijst verplichte standaarden van het forum standaardisatie staan, zoals de <a href="https://forumstandaardisatie.nl/open-standaarden/rest-api-design-rules">REST API Design Rules</a> voor het aanbieden van RESTful API's en het <a href="https://forumstandaardisatie.nl/open-standaarden/nl-gov-assurance-profile-oauth-20">NL GOV Assurance Profile for OAuth 2.0</a> voor autorisatie op API's waar door gebruikers rechtendelegatie kan worden toegepast.  </p>
+</li>
+<li><p>De overheid registreert haar extern toegankelijke REST API's bij een centraal vindbare openbare catalogus, tenzij dit om beveiligingsredenen niet gewenst is. Zo kunnen ontwikkelaars de API's van de overheid altijd vinden.</p>
+</li>
+</ol></section><section id="praktijkvoorbeelden"><h3 id="x2-4-praktijkvoorbeelden"><span class="secno">2.4 </span>Praktijkvoorbeelden</h3><section id="de-api-op-de-basisregistratie-personen-brp-van-haal-centraal"><h4 id="x2-4-1-de-api-op-de-basisregistratie-personen-brp-van-haal-centraal"><span class="secno">2.4.1 </span>De API op de Basisregistratie Personen (BRP) van Haal Centraal</h4><p>Persoonsgegevens uit de Basisregistratie Personen (BRP) worden nu vaak gesynchroniseerd met een lokale kopiedatabase bij een gemeente. In de processen van de gemeente wordt dan die kopiedatabase bevraagd in processen waar persoonsgegevens nodig zijn. Binnen het programma <a href="https://www.vngrealisatie.nl/producten/haal-centraal">Haal Centraal</a> experimenteert de <a href="https://www.rvig.nl/">Rijksdienst voor Identiteitsgegevens</a> (RvIG), de vijf grote gemeenten (Amsterdam, Den Haag, Eindhoven, Rotterdam en Utrecht) en <a href="https://www.vngrealisatie.nl/">VNG Realisatie</a> met een API waarmee gemeenten in hun werkprocessen direct de Basisregistratie Personen (BRP) kunnen bevragen. In totaal 10 gemeenten gaan deze API gebruiken en beproeven in een pilot.</p><p>Over de voordelen van de BRP API heeft Haal Centraal een heldere <a href="https://youtu.be/1xzijzjA15A">video</a> gemaakt. De specificatie van de API uit de pilot is te vinden op <a href="https://github.com/VNG-Realisatie/Haal-Centraal-BRP-bevragen">Github repository van VNG</a>. Wanneer de pilot slaagt, komt mogelijk een API beschikbaar voor alle gemeenten en andere overheidsorganisaties die de BRP nu via het huidige berichtenverkeer raadplegen.</p></section><section id="de-api-voor-zaakgericht-werken-van-common-ground"><h4 id="x2-4-2-de-api-voor-zaakgericht-werken-van-common-ground"><span class="secno">2.4.2 </span>De API voor Zaakgericht Werken van Common Ground</h4><p>Veel gemeenten werken zaakgericht. Dit betekent dat informatie over dienstverlening aan inwoners in zaken is geordend in een zaaksysteem. 
+Deze manier van werken richt zich op het transparant afhandelen van een samenhangende hoeveelheid werk (een 'zaak'), welke een duidelijk omschreven aanleiding kent (bijvoorbeeld een aanvraag) en leidt tot een duidelijk omschreven resultaat. </p><p>ICT systemen ondersteunen zaakgericht werken met als <a href="https://vng.nl/sites/default/files/2021-03/20210302-ledenbrief-bijlage-meer-informatie-over-api-standaarden.pdf">voordelen</a> het automatische termijnbewaking en routeren van taken naar betrokken medewerkers of systemen.
+Met daarbij ook het parallel kunnen uitvoeren van samenhangende taken, geautomatiseerd toekennen van metadata en het duurzaam toegankelijk bewaren van het zaakdossier. <a href="https://www.vngrealisatie.nl/producten/api-standaarden-zaakgericht-werken">De API-standaarden voor zaakgericht werken</a> helpen bij het (ont)koppelen van zaaksystemen en de registers waar documenten en overige informatie in zijn opgeslagen. Als alle gemeenten de API-standaarden voor zaakgericht werken gebruiken, wordt de uitwisseling van gegevens voor deze systemen efficiënter. Het is bovendien een belangrijke stap in het realiseren van Common Ground, iets waar alle gemeenten naar streven.</p></section><section id="de-api-voor-basisregistratie-kadaster-brk-publiekrechtelijke-beperkingen"><h4 id="x2-4-3-de-api-voor-basisregistratie-kadaster-brk-publiekrechtelijke-beperkingen"><span class="secno">2.4.3 </span>De API voor Basisregistratie Kadaster (BRK) - Publiekrechtelijke Beperkingen</h4><p>De Wet kenbaarheid publiekrechtelijke beperkingen onroerende zaken (Wkpb) geeft inzicht in door de overheid opgelegde beperkingen op een stuk grond of een daarop staand gebouw. Sinds 2021 is de vernieuwde <a href="https://wetten.overheid.nl/BWBR0016876/2021-01-01">Wet kenbaarheid publiekrechtelijke beperkingen</a> (Wkpb) van kracht. Deze vernieuwde wet schrijft wijzigingen voor in het systeem voor het kenbaar maken van <a href="https://www.kadaster.nl/publiekrechtelijke-beperkingen">publiekrechtelijke beperkingen</a>. Inwoners, ondernemers en overige partijen kunnen alle informatie over beperkingen en bijbehorende brondocumenten bij één partij kunnen vinden: het Kadaster.</p><p>In het oude systeem registreerden de gemeenten hun eigen gegevens terwijl andere overheden de basisregistratie van het Kadaster gebruikten. Deze twee langs elkaar werkende systemen brachten allerlei problemen met zich mee. Het was niet mogelijk om gemeentelijke brondocumenten bij het Kadaster op te vragen. En soms bleek de gemeentelijke situatie van een pand of object niet overeen te komen met de kenmerken zoals die in de basisregisters van het Kadaster zijn vastgelegd. Voorts konden overheden in het oude systeem alleen beperkingen opleggen op een kadastraal perceel, wat in veel gevallen niet aansloot op de praktijk. De vernieuwde Wkpb registreert en beheert alle publiekrechtelijke beperkingen in de Basisregistratie Kadaster publiekrechtelijke beperkingen (BRK-PB). Overheden en organisaties uit de private sector hebben zo een unieke bron waar ze alle gegevens kunnen raadplegen. En omdat beperkingen nu, behalve op een perceel, ook gelegd kunnen worden op objecten uit de de basisregistraties Adressen en Gebouwen (BAG) en Grootschalige Topografie (BGT), of via een zelf vervaardigde contour, sluit de registratie veel beter aan op de uitvoeringspraktijk.</p><p>De <a href="https://www.kadaster.nl/zakelijk/registraties/basisregistraties/brk">BRK-PB</a> kan al benaderd worden met de <a href="https://www.kadaster.nl/zakelijk/producten/eigendom/brk-bevragen">BRK-API</a>. Het bij de bron registreren en beheren van gegevens heeft hier dus zichtbare meerwaarde, zowel voor de overheid als voor de private sector , zie ook dit <a href="https://www.binnenlandsbestuur.nl/digitaal/nieuws/notarissen-niet-gelukkig-met-lakse-gemeenten.15795830.lynkx">artikel in Binnenlands Bestuur</a>.</p></section><section id="de-api-voor-regie-op-gegevens"><h4 id="x2-4-4-de-api-voor-regie-op-gegevens"><span class="secno">2.4.4 </span>De API voor regie op gegevens</h4><p>De <a href="https://wetten.overheid.nl/BWBR0011468/2018-05-01">Wet bescherming persoonsgegevens</a> (Wrp) en z'n opvolger, de <a href="https://eur-lex.europa.eu/legal-content/NL/TXT/HTML/?uri=CELEX:32016R0679&amp;from=NL">Algemene verordening gegevensbescherming</a> (AVG) geven ons al bijna twintig jaar recht op inzage en correctie van de gegevens die de overheid over ons verzamelt en beheert. Dit betekent dat je als burger het recht hebt om te weten welke persoonsgegevens de overheid over je heeft vastgelegd en welke gegevens de overheid heeft gebruikt en uitgewisseld voor welk doel. Uit dit <a href="https://zoek.officielebekendmakingen.nl/blg-817465.pdf">onderzoek</a> uit 2017 van Berenschot (uitgevoerd in opdracht van BZK) blijkt dat volledig digitale inzage in alle relevante persoonsgegevens die onder de AVG vallen, in het huidige gegevenslandschap niet haalbaar is.</p><p>In de <a href="https://www.rijksoverheid.nl/documenten/brieven/2019/07/11/beleidsbrief-regie-op-gegevens-nadere-uitwerking">beleidsbrief regie op gegevens</a> regie op gegevens van 2019 onderstreept het kabinet nog eens het beleidsvoornemen om serieus werk te maken van regie op gegevens. Maar dan er zal er dus iets moeten gebeuren in het gegevenslandschap om dit mogelijk te maken.</p><p>Om het inzicht in de verstrekking van persoonsgegevens veel eenvoudiger te maken, is er door <a href="https://commonground.nl/cms/view/c99f1789-adba-4fa7-bc2d-e1f8a96618c5/api-standaarden-voor-logging-en-verwerking">VNG-Realisatie een model API opgesteld</a>, die overheden in staat kan stellen de verwerking van persoonsgegevens op een toegankelijke manier te tonen. Deze API haakt aan bij wat conform de AVG al tot stand komt: de organisatie-brede registers van verwerkingen van persoonsgegevens. Als de overheid gegevens bij de bron gaat beheren en ontsluiten met API's, wordt het gemakkelijker om bij de bron volledige inzage te geven. De overheid kan dan digitale inzage geven in een uniform gebruiksvriendelijk format, en ook de correctie van gegevens wordt eenvoudiger.</p></section></section><section id="samenvattend"><h3 id="x2-5-samenvattend"><span class="secno">2.5 </span>Samenvattend</h3><p>De platformeconomie biedt nieuwe kansen voor de digitale overheid. Om deze kansen te benutten en tegelijkertijd de dienstverlening van de digitale overheid te verbeteren vindt er transitie plaats in het gegevenslandschap. Initiatieven zoals Common Ground, Haal Centraal en het Digitaal Stelsel Omgevingswet (DSO) willen de digitale overheid efficiënter, slimmer, veiliger en beter beheersbaar maken door applicaties beter te scheiden van de gegevens en de gegevens alleen bij de bron te beheren. Hierdoor hoeven gegevens niet meer op grote schaal gedupliceerd en gesynchroniseerd te worden. In deze ambitie spelen API’s als ondersteunende technologie een belangrijke rol. Nagenoeg alle organisaties binnen de overheid zijn de omslag van traditionele IT naar een API-ecosysteem aan het maken. Dit hoofdstuk biedt een kader aan waarbinnen de overheid zich kan committeren bij ontwikkeling en te realiseren beleid rondom API’s. Om die reden krijgen organisaties die aan deze API Strategie hebben bijgedragen het verzoek om de intentieovereenkomst te ondertekenen.</p></section><section id="ondertekening"><h3 id="x2-6-ondertekening"><span class="secno">2.6 </span>Ondertekening</h3><p>De hieronder vermelde organisaties hebben bijgedragen aan deze API strategie voor de overheid en onderschrijven de basisafspraken:
+... | <a href="https://forumstandaardisatie.nl/">Forum Standaardisatie</a> | <a href="https://www.geonovum.nl">Geonovum</a> | <a href="https://www.ictu.nl/">ICTU</a>  | <a href="https://www.logius.nl/">Logius</a> | <a href="https://www.rijksoverheid.nl/ministeries/ministerie-van-binnenlandse-zaken-en-koninkrijksrelaties">Ministerie van Binnenlandse Zaken en Koninkrijksrelaties</a> | <a href="https://www.vngrealisatie.nl/">VNG Realisatie</a>  | ...</p><p><em>Dit is nog geen officiële lijst van ondertekenaars</em></p></section></section>
+    <section data-format="markdown" class="informative" aria-busy="false" id="standaarden"><!--OddPage--><h2 id="x3-standaarden"><span class="secno">3. </span>Standaarden</h2><p><em>Dit onderdeel is niet normatief.</em></p><p>Binnen de Nederlandse publieke sector zijn meerdere standaarden die betrekking hebben op APIs. In dit hoofdstuk geven we verwijzingen naar de standaarden die zijn voortgekomen uit het Kennisplatform APIs. Hieronder zijn de meest relevante standaarden opgenomen. Kijk voor een actueel en volledig overzicht van alle standaarden altijd op <a href="https://www.forumstandaardisatie.nl/lijst-open-standaarden/in_lijst/verplicht-pas-toe-leg-uit">forum standaardisatie</a>. </p><section id="api-designrules-nederlandse-api-strategie"><h3 id="x3-1-api-designrules-nederlandse-api-strategie"><span class="secno">3.1 </span>API Designrules (Nederlandse API Strategie)</h3><p>Deze sectie beschrijft de status en uitgangspunten voor de standaard "API Designrules". De standaard is een op zichzelfstaand document en is hier te vinden:</p><p><a href="https://logius-standaarden.github.io/API-Design-Rules/">https://logius-standaarden.github.io/API-Design-Rules/</a> (werkversie)</p><p><a href="https://publicatie.centrumvoorstandaarden.nl/api/adr/">https://publicatie.centrumvoorstandaarden.nl/api/adr/</a> (stabiele versie)</p><section id="oorsprong-standaard"><h4 id="x3-1-1-oorsprong-standaard"><span class="secno">3.1.1 </span>Oorsprong standaard</h4><p>De API designrules vinden hun oorsprong in de <a href="https://aandeslagmetdeomgevingswet.nl/digitaal-stelsel/aansluiten/standaarden/api-en-uri-strategie/">"API strategie" van het digitaal stelsel omgevingswet (DSO)</a>. Bij het opstellen van de API Designrules is de DSO API strategie het startpunt geweest en heeft de werkgroep API strategie gekeken hoe deze toepasbaar gemaakt kunnen worden voor de hele Nederlandse publieke sector.</p></section><section id="status-bij-forum-standaardisatie"><h4 id="x3-1-2-status-bij-forum-standaardisatie"><span class="secno">3.1.2 </span>Status bij forum standaardisatie</h4><p>De API designrules standaard is op 9 juli 2020 goedgekeurd door het OBDO voor opname op de "pas toe of leg uit lijst" van het <a href="https://www.forumstandaardisatie.nl/lijst-open-standaarden/in_lijst/verplicht-pas-toe-leg-uit">forum standaardisatie</a>. </p><section id="werkingsgebied-standaard"><h5 id="x3-1-2-1-werkingsgebied-standaard"><span class="secno">3.1.2.1 </span>Werkingsgebied standaard</h5><p>Bij aanmelding was het beoogd organisatorisch werkingsgebied:
+Overheden, semi-overheden en instellingen uit de publieke sector</p></section><section id="toepassingsgebied-standaard"><h5 id="x3-1-2-2-toepassingsgebied-standaard"><span class="secno">3.1.2.2 </span>Toepassingsgebied standaard</h5><p>Bij aanmelding was het beoogd functioneel toepassingsgebied:
+Het aanbieden van RESTful APIs ten behoeve van het ontsluiten van overheids informatie/functionaliteit en enkelvoudige datasets aan eenieder waarvoor deze bedoeld is(burger, bedrijf, andere overheid, etc…). Het ontsluiten van meervoudige en/of statistische datasets via één API valt buiten het functioneel werkingsgebied hiervoor staat de standaard ODATA reeds op de lijst met aanbevolen standaarden. </p></section></section></section><section id="api-designrules-modulen"><h3 id="x3-2-api-designrules-modulen"><span class="secno">3.2 </span>API Designrules modulen</h3><p>Deze sectie beschrijft de status en uitgangspunten voor de standaard "API Designrules modulen". De (concept) modulen zijn  op zichzelfstaand document en te vinden op github &amp; docs.geostandaarden.nl:</p><p><a href="https://geonovum.github.io/KP-APIs/API-strategie-extensies/">https://geonovum.github.io/KP-APIs/API-strategie-extensies/</a> (werkversie)</p><p><a href="https://docs.geostandaarden.nl/api/vv-hr-API-Strategie-ext-20190715/">https://docs.geostandaarden.nl/api/vv-hr-API-Strategie-ext-20190715/</a> (stabiele versie)</p><section id="oorsprong-standaard-0"><h4 id="x3-2-1-oorsprong-standaard"><span class="secno">3.2.1 </span>Oorsprong standaard</h4><p>De API designrules modulen bevatten onderwerpen die bij het opstellen van de eerste versie van de API designrules nog niet als stabiel werden beschouwd. Er wordt nog actief gewerkt om deze modulen tot een stabiele versie te maken. Uiteindelijk zal een deel van de modulen mogelijk direct onderdeel worden van de normatieve API design rules. Een ander deel zal een set van optionele modulen blijven die gebruikt kunnen worden wanneer specifieke extra techniek of functionaliteit nodig is.</p></section><section id="status-0"><h4 id="x3-2-2-status"><span class="secno">3.2.2 </span>Status</h4><p>De API designrules modulen zijn nog in ontwikkeling en hebben geen formele status.</p><section id="werkingsgebied-standaard-0"><h5 id="x3-2-2-1-werkingsgebied-standaard"><span class="secno">3.2.2.1 </span>Werkingsgebied standaard</h5><p>Een werkingsgebied is (nog) niet van toepassing.</p></section><section id="toepassingsgebied-standaard-0"><h5 id="x3-2-2-2-toepassingsgebied-standaard"><span class="secno">3.2.2.2 </span>Toepassingsgebied standaard</h5><p>Een toepassingsgebied (nog) niet van toepassing.</p></section></section></section><section id="nederlands-profiel-oauth"><h3 id="x3-3-nederlands-profiel-oauth"><span class="secno">3.3 </span>Nederlands profiel OAuth</h3><p>Deze sectie beschrijft de status en uitgangspunten voor het Nederlands profiel OAuth. het profiel zelf is een op zichzelfstaand document.
+Het Nederlands profiel OAuth is hier te vinden:</p><p><a href="https://publicatie.centrumvoorstandaarden.nl/api/oauth/">https://publicatie.centrumvoorstandaarden.nl/api/oauth/</a></p><p>In aanvulling hierop is er een document dat de verschillen met iGOV kort samenvat en voorziet van rationales:</p><p><a href="https://github.com/Logius-standaarden/OAuth-NL-profiel/blob/master/Additional%20specification%20and%20constraints%20of%20iGov-NL%20to%20the%20iGov%20profile.md">Additional specification and constraints of iGov-NL to the iGov profile</a></p><section id="oorsprong-standaard-1"><h4 id="x3-3-1-oorsprong-standaard"><span class="secno">3.3.1 </span>Oorsprong standaard</h4><p>Het opstellen van deze standaard is voortgekomen uit het Expert advies OAuth [<cite><a class="bibref" href="#bib-expert">Expert</a></cite>]. Daarin wordt aangeraden eerst een nederlands profiel op stellen alvorens OAuth op de pas toe of leg uit lijst van het forum standaardisatie te plaatsen. Het maken van dit Nederlandse profiel is opgepakt door de werkgroep Authenticatie/Autorisatie van het Kennisplatform API's.</p></section><section id="status-bij-forum-standaardisatie-0"><h4 id="x3-3-2-status-bij-forum-standaardisatie"><span class="secno">3.3.2 </span>Status bij forum standaardisatie</h4><p>Het Nederlands OAuth profiel is op 9 juli 2020 goedgekeurd door het OBDO voor opname op de "pas toe of leg uit lijst" van het <a href="https://www.forumstandaardisatie.nl/lijst-open-standaarden/in_lijst/verplicht-pas-toe-leg-uit">forum standaardisatie</a>. 
+De internationale standaard OAuth is opgenomen op <a href="https://www.forumstandaardisatie.nl/open-standaarden/lijst/aanbevolen">de lijst met aanbevolen standaarden</a>.</p><section id="werkingsgebied-standaard-1"><h5 id="x3-3-2-1-werkingsgebied-standaard"><span class="secno">3.3.2.1 </span>Werkingsgebied standaard</h5><p>Als organisatorisch werkingsgebied wordt in het expert advies geadviseerd:
+Nederlandse overheden (Rijk, provincies, gemeenten en waterschappen)
+en instellingen uit de (semi-) publieke sector</p></section><section id="toepassingsgebied-standaard-1"><h5 id="x3-3-2-2-toepassingsgebied-standaard"><span class="secno">3.3.2.2 </span>Toepassingsgebied standaard</h5><p>Als functioneel toepassingsgebied wordt in het expert advies voorgesteld:
+Het gebruik van OAuth 2.0 is verplicht voor applicaties waarbij gebruikers
+(resource owner) toestemming geven (impliciet of expliciet) aan een
+dienst (van een derde) om namens hem toegang te krijgen tot specifieke
+gegevens via een RESTful API.
+Het gaat dan om een RESTful API waar de resource owner recht tot
+toegang heeft.</p></section><section id="bijzonderheden"><h5 id="x3-3-2-3-bijzonderheden"><span class="secno">3.3.2.3 </span>Bijzonderheden</h5><section id="openid-connect-buiten-scope"><h6 id="x3-3-2-3-1-openid-connect-buiten-scope"><span class="secno">3.3.2.3.1 </span>OpenID connect buiten scope</h6><p>de expertgroep van het forum standaardisatie is op 7 juli en op 22 september 2016 bijeengekomen
+om de standaarden, de aandachtspunten en openstaande vragen uit
+het voorbereidingsdossier te bespreken. Daarbij is vastgesteld dat
+OpenID Connect niet voor opneming op de lijst open standaarden in
+aanmerking komt. Inmiddels is OpenID connect apart voorgedragen voor opname op de "pas toe of leg uit" lijst van het forum standaardisatie. Voor deze standaard komt ook een Nederlands profiel. Dit zal ook gebaseerd zijn op iGOV zoals in de volgende sectie uitgelegd wordt.</p></section><section id="aansluiting-op-internationale-standaard-igov"><h6 id="x3-3-2-3-2-aansluiting-op-internationale-standaard-igov"><span class="secno">3.3.2.3.2 </span>Aansluiting op internationale standaard iGov</h6><p>Het Nederlands profiel OAuth baseerd zich op het internationale iGOV OAuth 2.0 profiel [<cite><a class="bibref" href="#bib-igov.oauth2">iGOV.OAuth2</a></cite>]. Niet alle keuzes van dit internationale profiel worden overgenomen aangezien dit een aantal keuzes bevat die sterk leunen op de amerikaanse situatie. Het kan het best beschouwd worden als een fork waarbij in het profiel aangeven wordt waar afwijkingen zijn.
+iGov heeft naast het OAuth profiel ook een OpenID connect profiel [<cite><a class="bibref" href="#bib-igov.openid">iGOV.OpenID</a></cite>]. Wanneer mogelijk ook OpenID connect op de pas toe of leg uit lijst van het Forum standaardisatie komt kan het Nederlandse profiel OAuth uitgebreid worden met een Nederlandse variant van het iGov OpenID Connect profiel. De usecase die wordt beschreven aan het begin van het Nederlands profiel OAuth sorteert daar al op voor.</p></section></section></section></section></section>
+  
+
+<section id="references" class="appendix">
+      <!--OddPage--><h2 id="a-referenties"><span class="secno">A. </span>Referenties</h2>
+      
+    <section id="informatieve-referenties">
+        <h3 id="a-1-informatieve-referenties"><span class="secno">A.1 </span>Informatieve referenties</h3>
+      <dl class="bibliography">
+        <dt id="bib-expert">[Expert]</dt><dd><a href="https://www.forumstandaardisatie.nl/sites/bfs/files/Expertadvies%20OAuth%202.0.pdf"><cite>Expertadvies OAuth 2.0</cite></a>. P. Dam. Forum Standaardisatie. 24 februari 2017. URL: <a href="https://www.forumstandaardisatie.nl/sites/bfs/files/Expertadvies%20OAuth%202.0.pdf">https://www.forumstandaardisatie.nl/sites/bfs/files/Expertadvies%20OAuth%202.0.pdf</a></dd><dt id="bib-igov.oauth2">[iGOV.OAuth2]</dt><dd><a href="https://openid.net/specs/openid-igov-oauth2-1_0.html"><cite>International Government Assurance Profile (iGov) for OAuth 2.0</cite></a>. J. Richer, M. Varley, P. Grassi. OpenID foundation. October 5 2018. URL: <a href="https://openid.net/specs/openid-igov-oauth2-1_0.html">https://openid.net/specs/openid-igov-oauth2-1_0.html</a></dd><dt id="bib-igov.openid">[iGOV.OpenID]</dt><dd><a href="https://openid.net/specs/openid-igov-openid-connect-1_0.html"><cite>International Government Assurance Profile (iGov) for OpenID Connect 1.0 - draft 3</cite></a>. M. Varley, P. Grassi. OpenID foundation. October 5 2018. URL: <a href="https://openid.net/specs/openid-igov-openid-connect-1_0.html">https://openid.net/specs/openid-igov-openid-connect-1_0.html</a></dd>
+      </dl></section></section><p role="navigation" id="back-to-top"><a href="#title">
+  <abbr title="Naar begin">↑</abbr></a></p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
