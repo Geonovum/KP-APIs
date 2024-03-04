@@ -108,7 +108,7 @@ ul.index code{color:inherit}
 #index-defined-here .print-only{display:initial}
 }
 </style>
-<meta name="description" content="In dit document worden de volgende standaarden beschreven en met elkaar vergeleken:">
+<meta name="description" content="This ADR Module contains the requirements for ADR-HTTP Message and payload signing with JAdES">
 <style>
 .hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}
 .hljs-comment,.hljs-quote{color:#717277;font-style:italic}
@@ -303,7 +303,7 @@ ul.index code{color:inherit}
       "id": "jades"
     },
     "HTTP-MessageSig": {
-      "href": "https://datatracker.ietf.org/doc/draft-ietf-httpbis-message-signatures/",
+      "href": "https://datatracker.ietf.org/doc/rfc9421/",
       "title": "HTTP Message Signatures",
       "id": "http-messagesig"
     },
@@ -404,11 +404,11 @@ ul.index code{color:inherit}
         </p>
     <hr title="Separator for header">
   </div>
-  <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>In dit document worden de volgende standaarden beschreven en met elkaar vergeleken:</p>
+  <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>This ADR Module contains the requirements for ADR-HTTP Message and payload signing with JAdES</p>
 <ul>
 <li>JAdES [<cite><a class="bibref" data-link-type="biblio" href="#bib-jades" title="JAdES digital signatures">JAdES</a></cite>]</li>
-<li>HTTP Message Signatures (httpbis-message-signatures)  [<cite><a class="bibref" data-link-type="biblio" href="#bib-http-messagesig" title="HTTP Message Signatures">HTTP-MessageSig</a></cite>]</li>
 </ul>
+<p>This module is based on the <em>ISA² IPS REST API Profile v1.0 section 5.2.2 Message And Payload Level Security</em></p>
 </section>
   <section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen door het TO goedgekeurde consultatieversie.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#vergelijking-jades-vs-httpbis-message-signatures"><bdi class="secno">1. </bdi>Vergelijking JAdES vs httpbis-message-signatures</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1.1 </bdi>Inleiding</a></li><li class="tocline"><a class="tocxref" href="#digital-signature-algemeen"><bdi class="secno">1.2 </bdi>Digital Signature algemeen</a></li><li class="tocline"><a class="tocxref" href="#http-message-signatures"><bdi class="secno">1.3 </bdi>Http Message Signatures</a></li><li class="tocline"><a class="tocxref" href="#jades"><bdi class="secno">1.4 </bdi>JAdES</a></li><li class="tocline"><a class="tocxref" href="#vergelijking-en-use-cases"><bdi class="secno">1.5 </bdi>Vergelijking en Use Cases</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#http-message-signatures-httpbis-message-signatures-use-cases"><bdi class="secno">1.5.1 </bdi>HTTP Message Signatures (Httpbis-message-signatures) use-cases:</a></li><li class="tocline"><a class="tocxref" href="#jades-use-cases"><bdi class="secno">1.5.2 </bdi>JAdES use-cases:</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-a-httpbis-message-signatures"><bdi class="secno">1.6 </bdi>BIJLAGE A : HTTPBIS-Message-Signatures</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#signing-components"><bdi class="secno">1.6.1 </bdi>Signing components</a></li></ol></li><li class="tocline"><a class="tocxref" href="#bijlage-b-jades"><bdi class="secno">1.7 </bdi>BIJLAGE B : JAdES</a></li></ol></li><li class="tocline"><a class="tocxref" href="#conformance"><bdi class="secno">2. </bdi>Conformiteit</a></li><li class="tocline"><a class="tocxref" href="#index"><bdi class="secno">A. </bdi>Index</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#index-defined-here"><bdi class="secno">A.1 </bdi>Begrippen gedefinieerd door deze specificatie</a></li><li class="tocline"><a class="tocxref" href="#index-defined-elsewhere"><bdi class="secno">A.2 </bdi>Begrippen gedefinieerd door verwijzing</a></li></ol></li><li class="tocline"><a class="tocxref" href="#references"><bdi class="secno">B. </bdi>Referenties</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#informatieve-referenties"><bdi class="secno">B.1 </bdi>Informatieve referenties</a></li></ol></li></ol></nav><section class="informative" id="vergelijking-jades-vs-httpbis-message-signatures"><div class="header-wrapper"><h2 id="x1-vergelijking-jades-vs-httpbis-message-signatures"><bdi class="secno">1. </bdi>Vergelijking JAdES vs httpbis-message-signatures</h2><a class="self-link" href="#vergelijking-jades-vs-httpbis-message-signatures" aria-label="Permalink for Section 1."></a></div><p><em>Dit onderdeel is niet normatief.</em></p>
 <section id="inleiding"><div class="header-wrapper"><h3 id="x1-1-inleiding"><bdi class="secno">1.1 </bdi>Inleiding</h3><a class="self-link" href="#inleiding" aria-label="Permalink for Section 1.1"></a></div>
@@ -440,7 +440,7 @@ Digitale handtekeningen zijn gebaseerd op asymmetrische (of openbare sleutel) cr
 <p>Een ‘signed’ attribuut is een object, toegevoegd in de "digitaal signature" structuur. Het is een binair deel van het berekenen van het  digitale signature veld.  </p>
 <p>Afhankelijk van het business/juridische-scenario worden bepaalde velden in het ’signed-attributen’  en/of unsigned attributen structuur wel/niet toegevoegd.  </p>
 </section><section id="http-message-signatures"><div class="header-wrapper"><h3 id="x1-3-http-message-signatures"><bdi class="secno">1.3 </bdi>Http Message Signatures</h3><a class="self-link" href="#http-message-signatures" aria-label="Permalink for Section 1.3"></a></div>
-<p>Op moment van schrijven is dit de laatste versie van de standaard: <em>draft-ietf-httpbis-message-signatures-19</em> [<cite><a class="bibref" data-link-type="biblio" href="#bib-http-messagesig" title="HTTP Message Signatures">HTTP-MessageSig</a></cite>].</p>
+<p>Op moment van schrijven is dit de laatste versie van de standaard: ietf-httpbis-message-signature [<cite><a class="bibref" data-link-type="biblio" href="#bib-http-messagesig" title="HTTP Message Signatures">HTTP-MessageSig</a></cite>] (RFC 9421 - Proposed Standard).</p>
 <p>HTTP Message Signatures ondersteunt gebruiksscenario's waar het volledige HTTP-bericht mogelijk niet bekend is bij de ondertekenaar, en waar het bericht onderweg kan worden getransformeerd (bijvoorbeeld door tussenpersonen) voordat deze de ontvanger bereikt.
 De standaard beschrijft ook een middel voor de verzender van een ‘request’ om te verzoeken om een handtekening van de ontvanger toe te passen op de ‘response’ in een lopende HTTP-uitwisseling.</p>
 <p>De standaard geeft specifiek invulling aan:</p>
@@ -672,7 +672,7 @@ Met JAdES-handtekening is het niet mogelijk alleen een deel van het JSON payload
 <section id="references" class="appendix"><div class="header-wrapper"><h2 id="b-referenties"><bdi class="secno">B. </bdi>Referenties</h2><a class="self-link" href="#references" aria-label="Permalink for Appendix B."></a></div><section id="informatieve-referenties">
     <div class="header-wrapper"><h3 id="b-1-informatieve-referenties"><bdi class="secno">B.1 </bdi>Informatieve referenties</h3><a class="self-link" href="#informatieve-referenties" aria-label="Permalink for Appendix B.1"></a></div>
     <dl class="bibliography"><dt id="bib-http-messagesig">[HTTP-MessageSig]</dt><dd>
-      <a href="https://datatracker.ietf.org/doc/draft-ietf-httpbis-message-signatures/"><cite>HTTP Message Signatures</cite></a>. URL: <a href="https://datatracker.ietf.org/doc/draft-ietf-httpbis-message-signatures/">https://datatracker.ietf.org/doc/draft-ietf-httpbis-message-signatures/</a>
+      <a href="https://datatracker.ietf.org/doc/rfc9421/"><cite>HTTP Message Signatures</cite></a>. URL: <a href="https://datatracker.ietf.org/doc/rfc9421/">https://datatracker.ietf.org/doc/rfc9421/</a>
     </dd><dt id="bib-isa2 ips rest api profile">[ISA2 IPS REST API Profile]</dt><dd>
       <a href="https://ec.europa.eu/digital-building-blocks/wikis/download/attachments/323290750/%28ISA2%29.%28eDelivery%29.%28Piloting a REST API extension of CEF eDelivery%29.%28ISA%C2%B2 IPS REST API Profile%29.%28v1.0%29.pdf?api=v2"><cite>ISA2 IPS REST API Profile</cite></a>. URL: <a href="https://ec.europa.eu/digital-building-blocks/wikis/download/attachments/323290750/%28ISA2%29.%28eDelivery%29.%28Piloting a REST API extension of CEF eDelivery%29.%28ISA%C2%B2 IPS REST API Profile%29.%28v1.0%29.pdf?api=v2">https://ec.europa.eu/digital-building-blocks/wikis/download/attachments/323290750/%28ISA2%29.%28eDelivery%29.%28Piloting a REST API extension of CEF eDelivery%29.%28ISA%C2%B2 IPS REST API Profile%29.%28v1.0%29.pdf?api=v2</a>
     </dd><dt id="bib-jades">[JAdES]</dt><dd>
