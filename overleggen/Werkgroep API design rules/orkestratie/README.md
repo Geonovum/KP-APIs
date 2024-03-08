@@ -2,9 +2,22 @@
 
 Eerder dit jaar heeft Kadaster in samenwerking met Geonovum het IMX initiatief gestart. Dit initiatief heeft als ambitie om basisregistraties (en andere bronnen) in samenhang te kunnen bevragen door middel van API orkestratie. Om op een efficiënte manier te kunnen orkestreren moeten bron API’s voldoen aan diverse randvoorwaarden. Deze werkgroep is bedoeld om te onderzoeken welke randvoorwaarden dit zijn en op welke manier deze gestandaardiseerd zouden kunnen worden als design rules.
 
+## Verslag bijeenkomst 8 maart 2024
+
+Peter heeft [een beschrijving](API_Orchestration_Architecture_and_Definitions.md) opgesteld en toegelicht voor architectuur en de begrippen `Composite API` en `API orkestratie`. Martin heeft [het beveiligingsdocument](Orkestratie_beveiliging.md) bijgewerkt en toegelicht.
+
+Actiepunten:
+
+- Peter: toevoegen Archimate mapping/plaatje aan architectuurdocumentatie
+- Martin: presenteren beveiligingspatronen aan de werkgroep Beveiliging (13 maart)
+- Pano: Aanzet voor beschrijving hoe gegevens zich verhouden tot API's (vervolgactie: PROV).
+- Joost: Batching module verder formaliseren
+
+De volgende bijeenkomst staat gepland op vrijdag 22 maart van 15u tot 16u.
+
 ## Verslag bijeenkomst 16 februari 2024
 
-De bijgewerkte versie (v0.2) van het [beveiligingsdocument](https://github.com/Geonovum/KP-APIs/blob/master/overleggen/Werkgroep%20API%20design%20rules/orkestratie/Orkestratie_beveiliging.md) van Martin is besproken.
+De bijgewerkte versie (v0.2) van het [beveiligingsdocument](Orkestratie_beveiliging.md) van Martin is besproken.
 
 Actiepunten:
 
@@ -16,7 +29,7 @@ De volgende bijeenkomst staat gepland op vrijdag 8 maart van 9u tot 10:30u.
 
 ## Verslag bijeenkomst 2 februari 2024
 
-De nieuwe versie van het [batching voorstel](https://github.com/Geonovum/KP-APIs/blob/master/overleggen/Werkgroep%20API%20design%20rules/orkestratie/batch.md) is besproken.
+De nieuwe versie van het [batching voorstel](batch.md) is besproken.
 
 ## Verslag bijeenkomst 12 januari 2024
 
