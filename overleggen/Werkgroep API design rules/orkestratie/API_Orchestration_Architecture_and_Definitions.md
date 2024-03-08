@@ -18,3 +18,5 @@ In de context van data diensten (dwz als het alleen gaat om lezen/manipuleren va
 Zie bv [api-composition-pattern](https://crishantha.medium.com/microservices-patterns-api-composition-pattern-27040cae5bd3)
 
 ## Architectuur
+
+![API Orchestration](API_orkestratie.png)
