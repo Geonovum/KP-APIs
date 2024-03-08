@@ -9,9 +9,9 @@ API
 De Composite API biedt een resource aan waarin de data afkomstig van de verschillende (bron) API's is gecombineerd.
 (De composite API biedt dus een resource model aan dat gebaseerd is op transformaties van de resource modellen van de bevraagde (bron) API's. 
 
-**API Orchestratie** : is een proces waarbij meerdere (bron) API's worden aangeroepen om een bepaalde dienst voor de client van de API te realiseren.
+**API Orkestratie** : is een proces waarbij meerdere (bron) API's worden aangeroepen om een bepaalde dienst voor de client van de API te realiseren.
 
-In de context van data diensten (dwz als het alleen gaat om lezen/manipuleren van data resources conform het REST patroon) wordt een *Composite API* dus gerealiseerd door middel van *API Orchestratie*. API Orchestratie is het proces, de Composite API het resultaat.  
+In de context van data diensten (dwz als het alleen gaat om lezen/manipuleren van data resources conform het REST patroon) wordt een *Composite API* dus gerealiseerd door middel van *API Orkestratie*. API Orkestratie is het proces, de Composite API het resultaat.  
 
 
 
@@ -19,4 +19,4 @@ Zie bv [api-composition-pattern](https://crishantha.medium.com/microservices-pat
 
 ## Architectuur
 
-![API Orchestration](API_orkestratie.png)
+![API Orkestratie](API_orkestratie.png)
