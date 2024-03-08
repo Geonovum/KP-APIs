@@ -11,7 +11,7 @@ De Composite API biedt een resource aan waarin de data afkomstig van de verschil
 
 **API Orchestratie** : is een proces waarbij meerdere (bron) API's worden aangeroepen om een bepaalde dienst voor de client van de API te realiseren.
 
-In de context van data diensten (dwz als het alleen gaat om lezen/manipuleren van data resources conform het REST patroon) wordt een *composite API* dus gerealiseerd door middel van *API Orchestratie*. API Orchestratie is het proces, de Composite API het resultaat.  
+In de context van data diensten (dwz als het alleen gaat om lezen/manipuleren van data resources conform het REST patroon) wordt een *Composite API* dus gerealiseerd door middel van *API Orchestratie*. API Orchestratie is het proces, de Composite API het resultaat.  
 
 
 
