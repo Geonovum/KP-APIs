@@ -1,10 +1,10 @@
-<mxfile host="app.diagrams.net" modified="2023-12-15T12:24:41.614Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Safari/605.1.15" etag="VKKtf4O1guJ0HLDaeuEf" version="22.1.9" type="device" pages="2">
-  <diagram name="versie 07" id="p0oGLb0HkvXNJ8d6ti3i">
-    <mxGraphModel dx="1976" dy="917" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+<mxfile host="Electron" modified="2024-03-18T11:09:24.239Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.0.2 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="8MAD6XMn6Po4tebxjnl8" version="23.0.2" type="device" pages="2">
+  <diagram name="versie 101" id="p0oGLb0HkvXNJ8d6ti3i">
+    <mxGraphModel dx="1704" dy="1180" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="kcfjZlUG7A1tbnISsSj--0" />
         <mxCell id="kcfjZlUG7A1tbnISsSj--1" parent="kcfjZlUG7A1tbnISsSj--0" />
-        <mxCell id="kcfjZlUG7A1tbnISsSj--2" value="" style="endArrow=none;html=1;rounded=0;fontFamily=Verdana;fontColor=#11344B;strokeColor=#11344B;entryX=0.47;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" parent="kcfjZlUG7A1tbnISsSj--1" source="kcfjZlUG7A1tbnISsSj--22" target="kcfjZlUG7A1tbnISsSj--19" edge="1">
+        <mxCell id="kcfjZlUG7A1tbnISsSj--2" value="" style="endArrow=none;html=1;rounded=0;fontFamily=Verdana;fontColor=#11344B;strokeColor=#11344B;entryX=0.4;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" parent="kcfjZlUG7A1tbnISsSj--1" source="kcfjZlUG7A1tbnISsSj--22" target="kcfjZlUG7A1tbnISsSj--19" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="360" y="632.92" as="sourcePoint" />
             <mxPoint x="440" y="162.92000000000002" as="targetPoint" />
@@ -35,39 +35,39 @@
           <mxGeometry x="915.17" y="413" width="150" height="75" as="geometry" />
         </mxCell>
         <mxCell id="kcfjZlUG7A1tbnISsSj--9" value="Algemene documenten" style="swimlane;horizontal=0;rounded=1;strokeColor=#999900;fillColor=#FFFF99;fontFamily=Verdana;fontStyle=0;opacity=60;fontColor=#11344B;fontSize=12;" parent="kcfjZlUG7A1tbnISsSj--1" vertex="1">
-          <mxGeometry x="70" y="140" width="810" height="220" as="geometry" />
+          <mxGeometry x="70" y="140" width="810" height="180" as="geometry" />
         </mxCell>
         <UserObject label="Inleiding &lt;br style=&quot;font-size: 15px;&quot;&gt;NL API Strategie" link="https://docs.geostandaarden.nl/api/API-Strategie/" linkTarget="_blank" id="kcfjZlUG7A1tbnISsSj--10">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=4;fillColor=#FFFF99;strokeColor=#999900;fontColor=#11344B;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--9" vertex="1">
             <mxGeometry x="50" y="20" width="240" height="50" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="Gebruikerswensen &lt;br style=&quot;font-size: 15px;&quot;&gt;NL API Strategie" link="https://docs.geostandaarden.nl/api/API-Strategie/Gebruikerswensen/" linkTarget="_blank" id="kcfjZlUG7A1tbnISsSj--11">
+        <UserObject label="Gebruikerswensen &lt;br style=&quot;font-size: 15px;&quot;&gt;NL API Strategie" link="https://docs.geostandaarden.nl/api/API-Strategie-gebruikerswensen/" linkTarget="_blank" id="kcfjZlUG7A1tbnISsSj--11">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=4;fillColor=#FFFF99;strokeColor=#999900;fontColor=#11344B;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--9" vertex="1">
             <mxGeometry x="50" y="89.99999999999999" width="240" height="50" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="Architectuur &lt;br style=&quot;font-size: 15px;&quot;&gt;NL API Strategie" link="https://docs.geostandaarden.nl/api/API-Strategie/Architectuur/" linkTarget="_blank" id="kcfjZlUG7A1tbnISsSj--12">
+        <UserObject label="Architectuur &lt;br style=&quot;font-size: 15px;&quot;&gt;NL API Strategie" link="https://docs.geostandaarden.nl/api/API-Strategie-architectuur/" linkTarget="_blank" id="kcfjZlUG7A1tbnISsSj--12">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=4;fillColor=#FFFF99;strokeColor=#999900;fontColor=#11344B;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--9" vertex="1">
             <mxGeometry x="530" y="20" width="240" height="50" as="geometry" />
           </mxCell>
         </UserObject>
         <mxCell id="kcfjZlUG7A1tbnISsSj--13" value="Normatieve documenten" style="swimlane;horizontal=0;rounded=1;strokeColor=#2D7600;fillColor=#67AB9F;fontFamily=Verdana;fontStyle=0;opacity=60;fontColor=#11344B;fontSize=12;" parent="kcfjZlUG7A1tbnISsSj--1" vertex="1">
-          <mxGeometry x="70" y="360" width="810" height="220" as="geometry" />
+          <mxGeometry x="70" y="320" width="810" height="270" as="geometry" />
         </mxCell>
         <UserObject label="API Design Rules (ADR)" link="https://gitdocumentatie.logius.nl/publicatie/api/adr/" linkTarget="_blank" id="kcfjZlUG7A1tbnISsSj--14">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=4;fillColor=#67AB9F;strokeColor=#1B4700;fontColor=#11344B;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--13" vertex="1">
-            <mxGeometry x="50" y="20" width="240" height="50" as="geometry" />
+            <mxGeometry x="50" y="80" width="240" height="50" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="Open API Specification (OAS)" linkTarget="_blank" link="https://forumstandaardisatie.nl/open-standaarden/openapi-specification" id="kcfjZlUG7A1tbnISsSj--15">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=4;fillColor=#2CDB84;strokeColor=#2D7600;fontColor=#11344B;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--13" vertex="1">
-            <mxGeometry x="530" y="160" width="240" height="50" as="geometry" />
+            <mxGeometry x="530" y="140" width="240" height="50" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="NL GOV OAuth profiel" linkTarget="_blank" link="https://gitdocumentatie.logius.nl/publicatie/api/oauth/" id="kcfjZlUG7A1tbnISsSj--16">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=4;fillColor=#67AB9F;strokeColor=#1B4700;fontColor=#11344B;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--13" vertex="1">
-            <mxGeometry x="50" y="89.99999999999997" width="240" height="50" as="geometry" />
+            <mxGeometry x="50" y="19.99999999999997" width="240" height="50" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="Digikoppeling REST API koppelvlak specificatie" linkTarget="_blank" link="https://gitdocumentatie.logius.nl/publicatie/dk/restapi/" id="oj07cg5vzDKVVfCQQW5U-0">
@@ -75,117 +75,122 @@
             <mxGeometry x="530" y="19.999999999999986" width="240" height="50" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="NL GOV OIDC profiel" linkTarget="_blank" link="https://logius.gitlab.io/oidc/" id="LSv4BsPbH-jKuJ7znP7Q-1">
+        <UserObject label="NL GOV OIDC profiel" linkTarget="_blank" link="https://gitdocumentatie.logius.nl/publicatie/api/oidc/" id="LSv4BsPbH-jKuJ7znP7Q-1">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=4;fillColor=#2CDB84;strokeColor=#2D7600;fontColor=#11344B;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--13" vertex="1">
-            <mxGeometry x="530" y="90" width="240" height="50" as="geometry" />
+            <mxGeometry x="530" y="80" width="240" height="50" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="GEO module" link="https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/" linkTarget="_blank" id="kcfjZlUG7A1tbnISsSj--21">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=4;fillColor=#67AB9F;strokeColor=#1B4700;fontColor=#11344B;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--13" vertex="1">
+            <mxGeometry x="50" y="140" width="240" height="50" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Transport Security module" linkTarget="_blank" link="https://gitdocumentatie.logius.nl/publicatie/api/mod-ts/" id="kcfjZlUG7A1tbnISsSj--22">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=4;fillColor=#67AB9F;strokeColor=#1B4700;fontColor=#11344B;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--13" vertex="1">
+            <mxGeometry x="50" y="200" width="240" height="50" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="&lt;span&gt;NL API Strategie&lt;/span&gt;" link="https://docs.geostandaarden.nl/api/API-Strategie/" linkTarget="_blank" id="kcfjZlUG7A1tbnISsSj--19">
           <mxCell style="shape=loopLimit;whiteSpace=wrap;html=1;fontSize=20;fillColor=#1988C8;fontFamily=Verdana;fontStyle=1;size=140;fontColor=#FFFFFF;strokeColor=none;rounded=1;points=[[0,0,0,0,0],[0,0.26,0,0,0],[0,0.5,0,0,0],[0,0.74,0,0,0],[0,1,0,0,0],[0.07,1,0,0,0],[0.13,1,0,0,0],[0.2,1,0,0,0],[0.25,0,0,0,0],[0.25,1,0,0,0],[0.27,1,0,0,0],[0.33,1,0,0,0],[0.4,1,0,0,0],[0.47,1,0,0,0],[0.5,0,0,0,0],[0.5,1,0,0,0],[0.53,1,0,0,0],[0.6,1,0,0,0],[0.67,1,0,0,0],[0.73,1,0,0,0],[0.75,0,0,0,0],[0.75,1,0,0,0],[0.8,1,0,0,0],[0.87,1,0,0,0],[0.93,1,0,0,0],[1,0,0,0,0],[1,0.26,0,0,0],[1,0.5,0,0,0],[1,0.76,0,0,0],[1,1,0,0,0]];opacity=90;shadow=0;sketch=0;" parent="kcfjZlUG7A1tbnISsSj--1" vertex="1">
-            <mxGeometry x="80" y="49.92" width="800" height="70" as="geometry" />
+            <mxGeometry x="70" y="40" width="810" height="79.92" as="geometry" />
           </mxCell>
         </UserObject>
         <mxCell id="kcfjZlUG7A1tbnISsSj--20" value="Modulen documenten" style="swimlane;horizontal=0;rounded=1;strokeColor=#11344B;fillColor=#66B2FF;fontFamily=Verdana;fontStyle=0;opacity=60;fontColor=#11344B;fontSize=12;" parent="kcfjZlUG7A1tbnISsSj--1" vertex="1">
-          <mxGeometry x="70" y="580" width="810" height="620" as="geometry" />
+          <mxGeometry x="70" y="590" width="810" height="610" as="geometry" />
         </mxCell>
-        <UserObject label="GEO module *" link="https://docs.geostandaarden.nl/api/API-Strategie-mod-geo/" linkTarget="_blank" id="kcfjZlUG7A1tbnISsSj--21">
-          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=4;fillColor=#66B2FF;strokeColor=#11344B;fontColor=#11344B;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--20" vertex="1">
-            <mxGeometry x="50" y="20" width="240" height="50" as="geometry" />
-          </mxCell>
-        </UserObject>
-        <UserObject label="Transport Security module *" linkTarget="_blank" link="https://docs.geostandaarden.nl/api/API-Strategie-mod-transport-security/" id="kcfjZlUG7A1tbnISsSj--22">
-          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=4;fillColor=#66B2FF;strokeColor=#11344B;fontColor=#11344B;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--20" vertex="1">
-            <mxGeometry x="50" y="140" width="240" height="50" as="geometry" />
-          </mxCell>
-        </UserObject>
         <UserObject label="API Management module" linkTarget="_blank" id="kcfjZlUG7A1tbnISsSj--24">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=default;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--20" vertex="1">
-            <mxGeometry x="530" y="20" width="240" height="50" as="geometry" />
+            <mxGeometry x="530" y="9.5" width="240" height="50" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="Versioning module" linkTarget="_blank" id="kcfjZlUG7A1tbnISsSj--25">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=default;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--20" vertex="1">
-            <mxGeometry x="530" y="81.92" width="240" height="50" as="geometry" />
+            <mxGeometry x="530" y="71.42000000000002" width="240" height="50" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="API Access module" linkTarget="_blank" link="https://docs.geostandaarden.nl/api/API-Strategie-mod-access-control/" id="kcfjZlUG7A1tbnISsSj--28">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=4;fillColor=#66B2FF;strokeColor=#11344B;fontColor=#11344B;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--20" vertex="1">
-            <mxGeometry x="50" y="79" width="240" height="52.92" as="geometry" />
+            <mxGeometry x="50" y="9.5" width="240" height="52.92" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="Signing &amp;amp; Encription module" linkTarget="_blank" id="LSv4BsPbH-jKuJ7znP7Q-3">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=default;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--20" vertex="1">
-            <mxGeometry x="50" y="380" width="240" height="50" as="geometry" />
+            <mxGeometry x="50" y="251.5" width="240" height="50" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="Naming conventions module" linkTarget="_blank" link="https://docs.geostandaarden.nl/api/API-Strategie-mod-naming-conventions/" id="cu2Mxep7Tc58X5m-4Jiz-2">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=4;fillColor=#66B2FF;strokeColor=#11344B;fontColor=#11344B;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--20" vertex="1">
-            <mxGeometry x="50" y="259" width="240" height="52.92" as="geometry" />
+            <mxGeometry x="50" y="130.5" width="240" height="52.92" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="JSON module" linkTarget="_blank" id="cu2Mxep7Tc58X5m-4Jiz-3">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=default;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--20" vertex="1">
-            <mxGeometry x="530" y="320" width="240" height="50" as="geometry" />
+            <mxGeometry x="530" y="309.5" width="240" height="50" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="Filtering &amp;amp; Sorting module" linkTarget="_blank" id="cu2Mxep7Tc58X5m-4Jiz-4">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=default;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--20" vertex="1">
-            <mxGeometry x="530" y="140" width="240" height="50" as="geometry" />
+            <mxGeometry x="530" y="129.5" width="240" height="50" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="Search &amp;amp; Customization module" linkTarget="_blank" id="cu2Mxep7Tc58X5m-4Jiz-5">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=default;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--20" vertex="1">
-            <mxGeometry x="50" y="320" width="240" height="50" as="geometry" />
+            <mxGeometry x="50" y="191.5" width="240" height="50" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="Temporal module" linkTarget="_blank" id="cu2Mxep7Tc58X5m-4Jiz-6">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=default;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--20" vertex="1">
-            <mxGeometry x="530" y="380" width="240" height="50" as="geometry" />
+            <mxGeometry x="530" y="369.5" width="240" height="50" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="Hypermedia module" linkTarget="_blank" link="https://docs.geostandaarden.nl/api/API-Strategie-mod-hypermedia/" id="cu2Mxep7Tc58X5m-4Jiz-7">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=4;fillColor=#66B2FF;strokeColor=#11344B;fontColor=#11344B;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--20" vertex="1">
-            <mxGeometry x="50" y="200" width="240" height="50" as="geometry" />
+            <mxGeometry x="50" y="70.5" width="240" height="50" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="Pagination module" linkTarget="_blank" id="cu2Mxep7Tc58X5m-4Jiz-8">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=default;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--20" vertex="1">
-            <mxGeometry x="50" y="440" width="240" height="50" as="geometry" />
+            <mxGeometry x="50" y="311.5" width="240" height="50" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="Caching module" linkTarget="_blank" id="cu2Mxep7Tc58X5m-4Jiz-9">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=default;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--20" vertex="1">
-            <mxGeometry x="530" y="260.46000000000004" width="240" height="50" as="geometry" />
+            <mxGeometry x="530" y="249.96000000000004" width="240" height="50" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="Rate limiting module" linkTarget="_blank" id="cu2Mxep7Tc58X5m-4Jiz-10">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=default;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--20" vertex="1">
-            <mxGeometry x="530" y="200" width="240" height="50" as="geometry" />
+            <mxGeometry x="530" y="189.5" width="240" height="50" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="Error handling module" linkTarget="_blank" id="cu2Mxep7Tc58X5m-4Jiz-11">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=default;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--20" vertex="1">
-            <mxGeometry x="50" y="500" width="240" height="50" as="geometry" />
+            <mxGeometry x="50" y="371.5" width="240" height="50" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="Delegation module" linkTarget="_blank" id="cu2Mxep7Tc58X5m-4Jiz-23">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=0;fillColor=#E6E6E6;strokeColor=#808080;fontColor=#11344B;fontFamily=Verdana;dashed=1;" parent="kcfjZlUG7A1tbnISsSj--20" vertex="1">
-            <mxGeometry x="530" y="560" width="240" height="50" as="geometry" />
+            <mxGeometry x="50" y="550" width="240" height="50" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="Logging module" linkTarget="_blank" id="cu2Mxep7Tc58X5m-4Jiz-24">
+        <UserObject label="Orkestration module" linkTarget="_blank" id="cu2Mxep7Tc58X5m-4Jiz-24">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=0;fillColor=#E6E6E6;strokeColor=#808080;fontColor=#11344B;fontFamily=Verdana;dashed=1;" parent="kcfjZlUG7A1tbnISsSj--20" vertex="1">
-            <mxGeometry x="50" y="560" width="240" height="50" as="geometry" />
+            <mxGeometry x="50" y="431.5" width="240" height="50" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="API Monitoring module" linkTarget="_blank" id="kcfjZlUG7A1tbnISsSj--26">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=0;fillColor=#E6E6E6;strokeColor=#808080;fontColor=#11344B;fontFamily=Verdana;dashed=1;" parent="kcfjZlUG7A1tbnISsSj--20" vertex="1">
-            <mxGeometry x="530" y="440" width="240" height="50" as="geometry" />
+            <mxGeometry x="530" y="429.5" width="240" height="50" as="geometry" />
           </mxCell>
         </UserObject>
         <UserObject label="Discovery module" linkTarget="_blank" id="kcfjZlUG7A1tbnISsSj--23">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=0;fillColor=#E6E6E6;strokeColor=#808080;fontColor=#11344B;fontFamily=Verdana;dashed=1;" parent="kcfjZlUG7A1tbnISsSj--20" vertex="1">
-            <mxGeometry x="530" y="500" width="240" height="50" as="geometry" />
+            <mxGeometry x="530" y="489.5" width="240" height="50" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Logging module" linkTarget="_blank" id="LkvoZIMBD5W-l7TDxR82-0">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=0;fillColor=#E6E6E6;strokeColor=#808080;fontColor=#11344B;fontFamily=Verdana;dashed=1;" vertex="1" parent="kcfjZlUG7A1tbnISsSj--20">
+            <mxGeometry x="50" y="489.5" width="240" height="50" as="geometry" />
           </mxCell>
         </UserObject>
         <mxCell id="kcfjZlUG7A1tbnISsSj--29" value="Vastgestelde algemene documenten" style="rounded=1;whiteSpace=wrap;html=1;fontSize=15;fontStyle=0;fillColor=#FFFF99;strokeColor=#999900;fontColor=#11344B;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--1" vertex="1">
@@ -227,7 +232,7 @@
             <mxPoint x="410" y="132.92000000000002" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="kcfjZlUG7A1tbnISsSj--39" value="" style="endArrow=none;html=1;rounded=0;fontFamily=Verdana;fontColor=#11344B;strokeColor=#11344B;entryX=0.47;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" parent="kcfjZlUG7A1tbnISsSj--1" source="kcfjZlUG7A1tbnISsSj--21" target="kcfjZlUG7A1tbnISsSj--19" edge="1">
+        <mxCell id="kcfjZlUG7A1tbnISsSj--39" value="" style="endArrow=none;html=1;rounded=0;fontFamily=Verdana;fontColor=#11344B;strokeColor=#11344B;entryX=0.4;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" parent="kcfjZlUG7A1tbnISsSj--1" source="kcfjZlUG7A1tbnISsSj--21" target="kcfjZlUG7A1tbnISsSj--19" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="350" y="622.92" as="sourcePoint" />
             <mxPoint x="430" y="152.92000000000002" as="targetPoint" />
@@ -245,7 +250,7 @@
             <mxPoint x="470" y="192.92000000000002" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="kcfjZlUG7A1tbnISsSj--42" value="Laatst bijgewerkt:&lt;br&gt;&lt;br&gt;dd. 15-12-2023&lt;br&gt;Versie 0.9.9" style="text;html=1;strokeColor=#1988C8;fillColor=#1988C8;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Verdana;fontSize=15;fontColor=#FFFFFF;opacity=90;" parent="kcfjZlUG7A1tbnISsSj--1" vertex="1">
+        <mxCell id="kcfjZlUG7A1tbnISsSj--42" value="Laatst bijgewerkt:&lt;br&gt;&lt;br&gt;dd. 18-03-2024&lt;br&gt;Versie 1.0.1" style="text;html=1;strokeColor=#1988C8;fillColor=#1988C8;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Verdana;fontSize=15;fontColor=#FFFFFF;opacity=90;" parent="kcfjZlUG7A1tbnISsSj--1" vertex="1">
           <mxGeometry x="900" y="1020" width="180" height="143" as="geometry" />
         </mxCell>
         <mxCell id="kcfjZlUG7A1tbnISsSj--43" value="Infographic &lt;br&gt;NL API Strategie&lt;br&gt;" style="text;html=1;strokeColor=#1988C8;fillColor=#1988C8;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=Verdana;fontSize=15;fontColor=#FFFFFF;opacity=90;" parent="kcfjZlUG7A1tbnISsSj--1" vertex="1">
@@ -344,7 +349,7 @@
             <mxPoint x="466" y="130" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="cu2Mxep7Tc58X5m-4Jiz-26" value="" style="endArrow=none;html=1;rounded=0;fontFamily=Verdana;fontColor=#11344B;strokeColor=#11344B;entryX=0.53;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;edgeStyle=orthogonalEdgeStyle;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="kcfjZlUG7A1tbnISsSj--1" source="cu2Mxep7Tc58X5m-4Jiz-23" target="kcfjZlUG7A1tbnISsSj--19" edge="1">
+        <mxCell id="cu2Mxep7Tc58X5m-4Jiz-26" value="" style="endArrow=none;html=1;rounded=0;fontFamily=Verdana;fontColor=#11344B;strokeColor=#11344B;entryX=0.47;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="kcfjZlUG7A1tbnISsSj--1" source="cu2Mxep7Tc58X5m-4Jiz-23" target="kcfjZlUG7A1tbnISsSj--19" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="610" y="1115" as="sourcePoint" />
             <mxPoint x="514" y="130" as="targetPoint" />
@@ -361,6 +366,12 @@
         </mxCell>
         <mxCell id="sRfMGjkpbzP78YCGWp4Z-1" value="" style="rounded=1;whiteSpace=wrap;html=1;fontSize=20;verticalAlign=top;fontFamily=Verdana;fontStyle=1;fontColor=#11344B;strokeColor=#1988C8;arcSize=4;fillColor=none;" parent="sRfMGjkpbzP78YCGWp4Z-3" vertex="1">
           <mxGeometry width="180" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="LkvoZIMBD5W-l7TDxR82-1" value="" style="endArrow=none;html=1;rounded=0;fontFamily=Verdana;fontColor=#11344B;strokeColor=#11344B;entryX=0.47;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="kcfjZlUG7A1tbnISsSj--1" source="LkvoZIMBD5W-l7TDxR82-0" target="kcfjZlUG7A1tbnISsSj--19">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="370" y="1057" as="sourcePoint" />
+            <mxPoint x="466" y="130" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
