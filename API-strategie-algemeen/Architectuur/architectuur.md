@@ -136,7 +136,7 @@ Om als organisatie API's aan te bieden aan andere partijen op een gecontroleerde
 
 Het onderstaande API Capability model geeft weer aan welke onderwerpen men aandacht moet schenken bij het inrichten van API gedreven dienstverlening. De onderwerpen zijn gegroepeerd in de categorieën *Registratie & gebruik*, *Realisatie & beheer* en *Verkeersstroom beheer*.
 
-![API Capability Model](../media/API-Capability.png)
+![API Capability Model](../../media/API-Capability.png)
 
 ### Registratie & Gebruik
 
@@ -402,7 +402,7 @@ In cloud-native implementaties zie je steeds vaker een meer gedistribueerd model
 In het API-Capability model zijn de functionaliteiten in detail beschreven.
 [API-Capability model](#api-capability-model)
 
-![](../media/API-Management.jpg)
+![](../../media/API-Management.jpg)
 
 Figuur 5: Functionaliteit binnen API-Management
 
