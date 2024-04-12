@@ -18,6 +18,11 @@ De werkgroep heeft een vergelijking gemaakt van de 2 standaarden:
 [Vergelijking JAdES & HTTP Message Signatures](https://geonovum.github.io/KP-APIs/publicaties/REST_API_Signing_Standaarden/)
 
 
+## Relevante Tooling
+
+* https://ec.europa.eu/digital-building-blocks/DSS/webapp-demo/doc/dss-documentation.html
+* https://openid.net/developers/jwt-jws-jwe-jwk-and-jwa-implementations/
+
 ## Ontwikkelingen
 
 
