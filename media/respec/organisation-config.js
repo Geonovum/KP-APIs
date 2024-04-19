@@ -15,6 +15,7 @@ var organisationConfig = {
     latestVersion: ["nl_organisationPublishURL", "pubDomain", "/", "shortName"],
     thisVersion: ["nl_organisationPublishURL", "pubDomain", "/", "shortName", "/", "publishVersion"],
     prevVersion: ["nl_organisationPublishURL", "pubDomain", "/", "shortName", "/", "previousPublishVersion"],
+    isNoTrack: true,
     useLogo: false,
     useLabel: true,
 
