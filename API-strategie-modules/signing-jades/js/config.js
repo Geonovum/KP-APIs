@@ -1,7 +1,7 @@
 let respecConfig =
 {
   //voor specStatus mogelijkheden zie https://github.com/Logius-standaarden/respec/wiki/specStatus
-  specStatus: "WV",
+  specStatus: "CV",
   //voor specType mogelijkheden zie https://github.com/Logius-standaarden/respec/wiki/specType
   specType: "ST",
   pubDomain: "api",
