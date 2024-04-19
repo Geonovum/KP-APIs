@@ -7,7 +7,7 @@ let respecConfig =
   pubDomain: "api",
   shortName: "signing-jades",
   publishDate: "2023-06-24",
-  publishVersion: "0.9",
+  publishVersion: "1.0",
   // previousPublishVersion: "(none)",
   //  previousPublishDate: "(none)",
   //  previousMaturity: "WV",
@@ -28,10 +28,10 @@ let respecConfig =
       {
         name: "KPAPI",
         company: "KPAPI",
-        companyURL: "https://github.com/Geonovum/KPAPI",
+        companyURL: "https://github.com/Geonovum/KP-APIs",
       },
     ],
-  github: "https://github.com/Geonovum/KPAPI",
+  github: "https://github.com/Geonovum/KP-APIs",
   
   
  // Controls if linked "§" section markers are added to a document
