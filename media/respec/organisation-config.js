@@ -24,8 +24,8 @@ var organisationConfig = {
     localizationStrings: {
         en: {
             wv: "Draft",
-            cv: "Recommendation",
-            vv: "Proposed recommendation",
+            cv: "Candidate version",
+            vv: "Proposed version",
             def: "Definitive version",
             basis: "Document",
             eo: "Outdated version",
@@ -73,7 +73,7 @@ var organisationConfig = {
             sotd: "Status of This Document",
             def: `This is the definitive version of this document. Edits resulting from consultations have been applied.`,
             wv: `This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.`,
-            cv: `This is a proposed recommendation approved by TO. Comments regarding this document may be sent to `,
+            cv: `This is a proposed version approved by TO. Comments regarding this document may shared through GitHub: https://github.com/Geonovum/KP-APIs/issues`,
             vv: `This is the definitive concept of this document. Edits resulting from consultations have been applied.`,
             basis: "This document has no official standing.",
         },
