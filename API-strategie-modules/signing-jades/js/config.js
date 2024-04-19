@@ -6,7 +6,7 @@ let respecConfig =
   specType: "ST",
   pubDomain: "api",
   shortName: "signing-jades",
-  publishDate: "2023-06-24",
+  publishDate: "2024-04-17",
   thisVersion: "https://geonovum.github.io/KP-APIs/API-strategie-modules/signing-jades/",
   latestVersion: "https://geonovum.github.io/KP-APIs/API-strategie-modules/signing-jades/",
   //publishVersion: "1.0",
