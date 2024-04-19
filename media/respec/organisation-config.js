@@ -12,9 +12,9 @@ var organisationConfig = {
         url: "https://www.logius.nl/standaarden",
     }],
 
-    //latestVersion: ["nl_organisationPublishURL", "pubDomain", "/", "shortName"],
-    //thisVersion: ["nl_organisationPublishURL", "pubDomain", "/", "shortName", "/", "publishVersion"],
-    //prevVersion: ["nl_organisationPublishURL", "pubDomain", "/", "shortName", "/", "previousPublishVersion"],
+    latestVersion: ["nl_organisationPublishURL", "pubDomain", "/", "shortName"],
+    thisVersion: ["nl_organisationPublishURL", "pubDomain", "/", "shortName", "/", "publishVersion"],
+    prevVersion: ["nl_organisationPublishURL", "pubDomain", "/", "shortName", "/", "previousPublishVersion"],
     useLogo: false,
     useLabel: true,
 
