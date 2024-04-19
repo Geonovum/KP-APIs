@@ -74,7 +74,7 @@ var organisationConfig = {
             sotd: "Status of This Document",
             def: `This is the definitive version of this document. Edits resulting from consultations have been applied.`,
             wv: `This is a draft that could be altered, removed or replaced by other documents. It is not a recommendation approved by TO.`,
-            cv: `This is a proposed version approved by TO. Comments regarding this document may shared through GitHub: https://github.com/Geonovum/KP-APIs/issues`,
+            cv: `This is a proposed version approved by the technical commitee. Comments regarding this document may be shared through GitHub: https://github.com/Geonovum/KP-APIs/issues`,
             vv: `This is the definitive concept of this document. Edits resulting from consultations have been applied.`,
             basis: "This document has no official standing.",
         },
