@@ -32,7 +32,8 @@ let respecConfig =
       },
     ],
   github: "https://github.com/Geonovum/KP-APIs",
-  
+
+  edDraftURI: "https://geonovum.github.io/KP-APIs/API-strategie-modules/signing-jades/",
   
  // Controls if linked "§" section markers are added to a document
  addSectionLinks: true,
