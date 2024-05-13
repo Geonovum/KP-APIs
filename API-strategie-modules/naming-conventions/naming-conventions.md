@@ -6,7 +6,7 @@ Specifically, design rules related to the path segments and query strings of URI
 
 ### Path segments
 
-First, in order to avoid compatibility issues with web servers and frameworks that do not handle case sensitivity of URI's well, the use of spinal-case path segments is preferred over camelCase. Also, it is a more common implementation choice for path segments than snake_case.
+First, in order to avoid compatibility issues with web servers and frameworks that do not handle case sensitivity of URI's well, the use of spinal-case path segments is preferred over lowerCamelCase. Also, it is a more common implementation choice for path segments than snake_case.
 
 <span id="api-59"></span>
 <div class="rule" id="/naming/path-case">
