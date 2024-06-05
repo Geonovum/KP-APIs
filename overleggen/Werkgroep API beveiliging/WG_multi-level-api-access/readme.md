@@ -1,6 +1,10 @@
-# Inleiding
+# Inleiding - multi level api access
 
 Beveiliging is op meerdere niveau's te organiseren en er is duidelijk onderscheid nodig tussen de beveiliging van de onboarding en de beveiliging van de runtime gegevensuitwisseling. Waar vroeger alleen Digikoppeling, Diginetwerk en PKI Overheid certificaten de norm waren voor gegevensuitwisseling is het speelveld nu veranderd met meer standaarden, meer afspraken stelsels en meer (internationale) voorzieningen. We willen met deze werkgroep de huidige kennis en mogelijkheden in kaart brengen en aanbevelingen doen in de vorm van design rules of best practices.
+
+
+
+Heb je interesse om deel te nemen stuur dan een mail naar api@logius.nl tav Martin van der Plas
 
 
 
@@ -29,7 +33,7 @@ Aanleiding voor deze werkgroep is divers maar een aantal concrete punten zijn al
 
 
 
-Vraag 1: is MTLS af te schaffen ?
+### Vraag 1: is MTLS af te schaffen ?
 
 
 
@@ -52,4 +56,16 @@ Dit onderscheid tussen de 4 aspecten tijdens onboarding en de 4 aspecten tijdens
 
 
 
-Heb je interesse om deel te nemen stuur dan een mail naar 
+### Vraag 2: Hoe biedt je APIs aan op meerdere netwerken?
+@@@ todo
+
+
+### Vraag 3: Wat is wenselijk bij onboarding toegang tot APIs
+@@@ todo
+
+
+### Vraag 4: Hoe zet je federatieve autorisatie paraktisch in
+@@@ todo
+
+
+### Vraag 5: tbc...
