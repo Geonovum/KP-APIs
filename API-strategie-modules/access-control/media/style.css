@@ -1,0 +1,23 @@
+﻿/*-- Design rule block ------------------------------------------------------------*/
+.rule {
+  margin: 1em 0;
+  padding: 1em 2em;
+  border-left-width: 0.5em;
+  border-left-style: solid;
+  border-color: #8CCBF2;
+  background: rgb(241, 246, 253);
+}
+
+.rulelab {
+  color: #005A9C;
+}
+
+.rulelab a {
+  font-weight: bold;
+}
+
+.flag {
+  float: right;
+  text-decoration: underline dotted;
+  text-transform: capitalize;
+}
