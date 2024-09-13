@@ -8,7 +8,7 @@ let respecConfig =
   specType: "ST",
   pubDomain: "api",
   shortName: "encryption",
-  publishDate: "2024-04-17",
+  publishDate: "2024-09-06",
   thisVersion: "https://geonovum.github.io/KP-APIs/API-strategie-modules/encryption/",
   latestVersion: "https://geonovum.github.io/KP-APIs/API-strategie-modules/encryption/",
   // publishVersion: "1.0",
