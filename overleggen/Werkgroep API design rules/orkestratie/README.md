@@ -2,6 +2,33 @@
 
 Eerder dit jaar heeft Kadaster in samenwerking met Geonovum het IMX initiatief gestart. Dit initiatief heeft als ambitie om basisregistraties (en andere bronnen) in samenhang te kunnen bevragen door middel van API orkestratie. Om op een efficiënte manier te kunnen orkestreren moeten bron API’s voldoen aan diverse randvoorwaarden. Deze werkgroep is bedoeld om te onderzoeken welke randvoorwaarden dit zijn en op welke manier deze gestandaardiseerd zouden kunnen worden als design rules.
 
+## Verslag bijeenkomst 20 september 2024
+
+Martin heeft een korte samenvatting gegegeven van de OAuth sessie van afgelopen woensdag. Een vraag doe naar boven kwam is of Token Exchange ook zou kunnen werken in combinatie met eHerkenning? Met en zonder FSC?
+
+Voor ZoN wordt er gewerkt aan een beveiligingsarchitectuur voor toepassing van orkestratie (mbv IMX). Deze architectuur zou in de basis (afgezien van domein-specifieke elementen) identiek moeten zijn aan de beveiligingarchitectuur van deze werkgroep/module.
+
+Interessante onderwerpen waar we mogelijk wat over zouden kunnen opschrijven:
+
+- Fouttolerantie (graceful degradation, resiliency, retry policies, automatisch terugmelden).
+- Doodlopende links (afwijkingen van informatiemodel, actualiteits-issues, etc.)
+- Mapping en herleidbaarheid (zie IMX)
+- Historie en tijdreizen
+- Is er een standaard voor terugmelden? Contact zoeken met FDS (Steven) om te kijken in hoeverre er al aan dit soort onderwerpen wordt gewerkt.
+
+Actiepunten:
+
+- Joost: Batching module verder formaliseren
+- Joost: Relevante onderdelen uit IMX documentatie voor FDS extraheren
+- Martin: Uitbreiden beveiligingsarchitectuur:
+  1. Adresseren orkestratie in OAuth document + inleiding
+  2. Uitbreiden autorisatie-document voor orkestratie (o.a. Token Exchange, eHerkenning, FSC, etc.)
+- Frank/Martin: Aanzet maken voor orkestratie module
+
+Zodra we best practices en voorbeelden verder hebben uitgewerkt, gaan Peter en Pano het architectuurhoofdstuk verder uitbreiden.
+
+De volgende bijeenkomst staat gepland op vrijdag 25 oktober van 14:30u tot 16u.
+
 ## Verslag bijeenkomst 8 maart 2024
 
 Peter heeft [een beschrijving](API_Orchestration_Architecture_and_Definitions.md) opgesteld en toegelicht voor architectuur en de begrippen `Composite API` en `API orkestratie`. Martin heeft [het beveiligingsdocument](Orkestratie_beveiliging.md) bijgewerkt en toegelicht.
