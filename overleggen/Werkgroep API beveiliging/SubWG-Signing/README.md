@@ -28,6 +28,19 @@ De werkgroep heeft een vergelijking gemaakt van de 2 standaarden:
 
 ### Actueel
 
+update 27/9/2024
+
+De modules:
+* [ADR Module Signing](https://geonovum.github.io/KP-APIs/API-strategie-modules/signing-jades/)
+* [ADR Module Encryptie](https://geonovum.github.io/KP-APIs/API-strategie-modules/encryption/)
+
+Zijn in de stuurgroep KPAPI stabiel verklaard; (en daarmee ‘optioneel’ te gebruiken)
+
+Voor het Digikoppeling REST-API profiel loopt een wijzigingsvoorstel om te verwijzen naar deze modules (maar dan als verplicht) : [Signing & Encryptie toevoegen- Pull Request #30](
+https://github.com/Logius-standaarden/Digikoppeling-Koppelvlakstandaard-REST-API/pull/30/files)
+
+
+
 update 9/4/2024
 
 1 Binnen de context van het Kennisplatform API’s (specifiek werkgroep Beveiliging) zijn concept ADR modules ontwikkeld voor Signing en Encryptie 
