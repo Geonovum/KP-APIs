@@ -8,7 +8,7 @@ De werkgroep richt zich op het volgen van de ontwikkelingen in internationale en
 De werkgroep volgt m.n. de ontwikkelingen in onderstaande standaarden:
 
 * [JAdES](https://www.etsi.org/deliver/etsi_ts/119100_119199/11918201/01.01.01_60/ts_11918201v010101p.pdf)
-* [HTTP Message Signatures](https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-message-signatures) 
+* [HTTP Message Signatures](https://www.rfc-editor.org/rfc/rfc9421.html) 
 
 
 ## Vergelijking van JAdES en HTTP Message Signatures 
