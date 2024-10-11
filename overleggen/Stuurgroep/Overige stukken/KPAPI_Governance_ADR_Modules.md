@@ -63,28 +63,30 @@ flowchart TB
 |Uitwerken|Beheer| Uitwerking RFC  |in Bewerking -> in Review/ter Goedkeuring|
 |Beoordelen_Uitwerking|TO| Het TO beoordeelt de uitwerking en geeft aan of de rfc moet worden doorgevoerd |ter Goedkeuring->Gereed|
 
- 
+ > NB TO (Technisch Overleg) is hierbij een rol vervuld door de betrokken KPAPI werkgroep en is bedoeld om formeel onderdelen die door deelnemers of sub-werkgroepen zijn uitgewerkt te beoordelen  
 
 ## Release Proces
 
 ```mermaid
 flowchart TB
-    Samenstellen_Release--ter beoordeling-->Beoordelen_Release
-    Beoordelen_Release--akkoord-->Publieke_Consultatie
+    Samenstellen_Release--ter beoordeling-->Beoordelen_Release_TO
+    Beoordelen_Release_TO--akkoord-->Beoordelen_Release_SG
+    Beoordelen_Release_SG--akkoord-->Publieke_Consultatie
     Publieke_Consultatie--ter beoordeling-->Beoordelen_Consultatie
     Beoordelen_Consultatie--akkoord-->Samenstellen_Def_Release
-    Samenstellen_Def_Release[Samenstellen Definitieve Release]-->xx
+    Samenstellen_Def_Release[Samenstellen Definitieve Release]--ter beoordeling-->xx
     xx--akkoord-->Publicatie
 
     direction TB
     subgraph Technisch Overleg
     direction TB
-    Beoordelen_Release
+    Beoordelen_Release_TO[Beoordelen_Release]
     Beoordelen_Consultatie
     
     end
     subgraph KPAPI-Governance
     direction TB
+    Beoordelen_Release_SG[Beoordelen_Release]
     xx(Stuurgroep: Vaststellen_Release)
     
     end
@@ -100,7 +102,8 @@ flowchart TB
 |Activiteit | Verantwoordelijk | Toelichting | Release status| 
 |----|----|----|---|
 |Samenstellen_Release|Beheer | Goedgekeurde RFC's worden gebundeld in een nieuwe release van de standaard |ter Beoordeling|
-|Beoordelen_Release|TO|Het TO beoordeelt de release en geeft aan of deze kan worden geconsulteerd|ter Beoordeling -> in Consultatie
+|Beoordelen_Release|TO|Het TO beoordeelt de release en geeft aan of deze kan worden geconsulteerd|ter Beoordeling -> in Consultatie/  (TO Akkoord) |
+|Beoordelen_Release|Stuurgroep |De stuurgroep beoordeelt de release en geeft aan of deze kan worden geconsulteerd|in Consultatie/ (TO Akkoord) -> in Consultatie |
 |Publieke_Consultatie|Beheer| De Release wordt publiek geconsulteerd en reakties worden verzameld en voorgelegd aan TO |in Consultatie -> ter Goedkeuring|
 |Beoordelen_Consultatie|TO| Het TO beoordeelt de resultaten van de consultatie en geeft aan welke eventuele aanpassingen nodig zijn |ter Goedkeuring-> Release Akkoord|
 |Samenstellen_Definitieve_Release | Beheer | Samenstellen definitieve release | Release Akkoord-> ter Vaststelling|
