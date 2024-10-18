@@ -13,11 +13,14 @@ RFC & Release proces voor KPAPI ADR Modules. In de volgende hoofstukken wordt he
 
 - Stuurgroep : Goedkeuren Voorstel voor nieuwe ADR module
 
-- Werkgroep : Uitwerken module (via RFC proces)
+- Werkgroep : Uitwerken module (via RFC proces) [werkversie module]
 
-- Stuurgroep : Goedkeuren module (via Release proces)
+- Stuurgroep : Goedkeuren publieke consultatie (via Release proces)
 
+- Werkgroep : Publieke consultatie module (inclusief verwerking) [consultatieversie module]
 
+- Stuurgroep : vaststellen module (via Release proces) [vastgestelde/stabiele/aanvullende module]
+ 
 ### Soorten modules:
 
 #### Normatieve module
@@ -109,3 +112,11 @@ flowchart TB
 |Samenstellen_Definitieve_Release | Beheer | Samenstellen definitieve release | Release Akkoord-> ter Vaststelling|
 |Vaststellen_Release | Stuurgroep | Vaststellen release | ter Vaststelling -> Vastgesteld |
 |Publicatie | Beheer | Publiceren van de release en release notes | Vastgesteld | 
+
+## Aandachtspunten publieke consultatie
+* Een publieke consultatie loopt tenminste 30 dagen
+* Een consultatieversie ten behoeve van een publieke consultatie van een aanvullende module wordt gepubliceerd op https://docs/geostandaarden.nl/api
+* Een publieke consultatie wordt tenminste aangekondigt via de nieuwsbrief van het kennisplatform APIs, de website van Geonovum en de website van forum standaardisatie en social media zoals linkedin. Bij voorkeur wordt de consultatie gestart tijdens een fysieke meeting van het kennisplatform APIs.
+* Reactie op de publieke consultatie zijn mogelijk via een webformulier en/of issues op github. De afwegin wordt gemaakt aan de hand van de aard van de module en in hoeverre stakeholders vaardig zijn met Github.
+* De verwerking van reacties wordt op github gepubliceerd.
+* Bij het updaten van modules volgen we semantic versioning (Semver) om aan te geven wat impact van een verandering is. Voo Major(X) wijzigingen en Minor (Z) wijzigingen volgt altijd een publieke consultatie. Patch wijzigingen (Z) kunnen met alleen instemming van werkgroep en stuurgroep doorgevoerd worden.
