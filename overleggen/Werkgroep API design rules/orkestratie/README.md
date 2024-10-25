@@ -2,6 +2,21 @@
 
 Eerder dit jaar heeft Kadaster in samenwerking met Geonovum het IMX initiatief gestart. Dit initiatief heeft als ambitie om basisregistraties (en andere bronnen) in samenhang te kunnen bevragen door middel van API orkestratie. Om op een efficiënte manier te kunnen orkestreren moeten bron API’s voldoen aan diverse randvoorwaarden. Deze werkgroep is bedoeld om te onderzoeken welke randvoorwaarden dit zijn en op welke manier deze gestandaardiseerd zouden kunnen worden als design rules.
 
+## Verslag bijeenkomst 25 oktober 2024
+
+Actiepunten:
+
+- Frank: Opsplitsen in algemeen document en batching module. Indien mogelijk bundelen met algemene documentatie uit Access Control module.
+- Frank: aanpassing Access Control bespreekbaar maken in volgende sessie van werkgroep beveiliging
+- Joost: Vertaling naar het Engels
+- Joost: Batching module verder formaliseren
+- Joost: Relevante onderdelen uit IMX documentatie voor FDS extraheren
+- Martin: Uitbreiden beveiligingsarchitectuur:
+  1. Adresseren orkestratie in OAuth document + inleiding
+  2. Uitbreiden autorisatie-document voor orkestratie (o.a. Token Exchange, eHerkenning, FSC, etc.)
+
+De volgende bijeenkomst staat gepland op vrijdag 22 november van 14:30u tot 15:30u.
+
 ## Verslag bijeenkomst 20 september 2024
 
 Martin heeft een korte samenvatting gegegeven van de OAuth sessie van afgelopen woensdag. Een vraag doe naar boven kwam is of Token Exchange ook zou kunnen werken in combinatie met eHerkenning? Met en zonder FSC?
