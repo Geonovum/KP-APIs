@@ -1,4 +1,6 @@
-# Access Control
+# API Access Control
+
+API access control is a set of mechanisms and policies that regulate who or what can access an API and what operations they are allowed to perform. It ensures that only authorized users, clients, networks or systems can access specific endpoints or resources within the API.
 
 ## Introduction
 This section describes security principles, concepts and technologies to apply when working with APIs. Controls need to be applied for the security objectives of integrity, confidentiality and availability of the API and services and data provided thereby. The (new draft of the) [architecture section of the API strategy](https://docs.geostandaarden.nl/api/cv-hr-API-Strategie-20210628/#architectuur) contains architecture patterns for implementing API security. This module provides the details on the authentication & authorization capability of the API capability model detailed in the (new draft of the) [architecture section of the API strategy](https://geonovum.github.io/KP-APIs/API-strategie-algemeen/Architectuur/).
@@ -7,6 +9,39 @@ The scope of this section is limited to generic security controls that directly 
 In order to meet the complete security objectives, every implementer MUST also apply a range of controls not mentioned in this section.
 
 Note: security controls for signing and encrypting of application level messages will be part of a separate extension, Signing and Encryption.
+
+## API Access Layers
+
+Access to api's shall always be restricted based on one or more layers. Functional layers consist of the onboarding of users, client registration and runtime resource access limitations.
+
+![Three api access layers](../../media/API_Access_layers.png)
+
+### onboarding
+
+Onboarding is the process of guiding developers or users through the initial registration process, often including registration, KYC (or “Know Your Customer”) and obtaining authentication credentials of the user or the business the user is representing. Authentication credentials can be provided by the service provider or can beobtained from (Trust) Service providers [For example the TSP's that provide PKIO certificates](https://www.logius.nl/domeinen/toegang/pkioverheidcertificaat-aanvragen) or [the National eIDAS trust services](https://www.logius.nl/domeinen/toegang/eidas).
+
+### client registration
+
+With the registration and onborading of organisations and users representing the organisations the second step is often the client registration. The process for this layer depends on the type of service and client software. Clients kan be unregisterd, dynamically registerd, pre listed or onboarded explicitly by users. The main means of registration is based on the OAuth [Client registration flow](https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.1.0-rc.1/#use-case-client-credentials-flow) or the [Authorization code flow](https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.1.0-rc.1/#use-case-authorization-code-flow).
+
+### resource access
+
+@@@
+
+### network
+
+The baseline for API Access is the phisical network. Typically the network layer consists of the internet, however a national government will also provide api access via restricted networks. [For example the dutch diginetwork](https://www.logius.nl/domeinen/infrastructuur/diginetwerk).
+
+### https
+
+@@@
+eg PKIO or PKI config and DNS / CORS etc
+
+### policy enforcement
+
+@@@
+eg geolocation based restrictions, rate limiting 
+also jwt checks / tokens 
 
 ## API access patterns
 Because security is about compromises one should first be aware of what access patterns need to be supported. More information on API access patterns can be found in Dutch in [the architecture chapter of the Dutch API strategy](https://docs.geostandaarden.nl/api/API-Strategie/Architectuur/)
