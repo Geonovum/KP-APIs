@@ -13,7 +13,7 @@ Doel van dit hoofdstuk is om een hoog niveau overzicht te geven van relevante on
 Specifiek voor REST API's is dat deze 'Resource' gericht zijn en een uniforme manier bieden om resources te lezen, wijzigen, toevoegen
 of verwijderen.
 
-![](../../media/clip02.png)
+![](https://github.com/Geonovum/KP-APIs/raw/master/media/clip02.png)
 
 Figuur 1: De plaats van API's bij aanbod en gebruik van (gegevens)diensten;
 
