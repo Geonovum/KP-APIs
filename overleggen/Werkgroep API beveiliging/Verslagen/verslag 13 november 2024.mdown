@@ -1,0 +1,98 @@
+# Werkgroep Beveiliging
+
+**Datum:** 13-11-2024
+
+**Aanwezig:**
+Frank Terpstra (Geonovum)
+Joost Farla (Geonovum)
+Martin van der Plas (Logius)
+Erwin Reinhoud (Kennisnet)
+Hans Oostrom
+Peter Haasnoot (Logius)
+Bas Kooij
+Alexander Green (Logius)
+Heiko Hudig
+
+## Opening, mededelingen
+
+https://openid.net/10-years-on-openidconnect-published-as-iso-spec/ de door ons gekozen openidconnect versie is tot ISO standaard verheven
+https://digilab.overheid.nl/chat/?redirect_to=%2Fkennisplatform%2Fchannels%2Ftown-square
+Uitnodiging om ook op mattermost te komen om daar online te kunnen discussieren.
+
+https://github.com/Geonovum/KP-APIs/pull/608 staat open moeten we nog verwerken
+
+20-11 toevoegen FSC als aanbevolen (of misschien toch verplichte) standaard vast te stellen binnen GDI door Programmeringstafel gegevensuitwisseling (verwachting in december bij PGDI)
+
+## Het Nederlands profiel OAuth
+
+- Stand van zaken versie 1.1
+
+Ligt ter vaststelling bij programmeringstafel toegang. Stond geagendeerd maar is weer van de agenda gevallen.
+
+-     Features voor versie 1.2
+
+Aanvullingen voor token exchange, proof of possesion(POP) en demonstrating proof of possesion(DPOP) RFC 9449.
+
+- implementatie ervaringen
+
+Implementaties in onderwijsdomein met Edukoppeling profiel op NLGOV profiel OAuth. Vraag over gebruik PKIOverheid bij ondertekening access token. Kan ondertekening ook met eigen certificaat. Dit staat niet heel expliciet in de huidige standaard, wens tot verduidelijking. Endpoints van AS en RS zouden PKIOverheid moeten gebruiken, maar access token is interne vertrouwens relatie dus daarvoor zou je eigen certificaat kunnen gebruiken.
+Vraag moet verplichting PKIO voor TLS verbinding client naar endpoints wel gelden?
+Voordeel PKIO is dat je kan herleiden wat de achterliggende (overheids)organisatie van de server URL is. Voor client en token is dit al vastgesteld dus lijkt meerwaarde minder.
+Heb wanner je voor AS en RS geen mtls inzet moet je dan nog PKIO gebruiken?
+Wanneer je voor verkeer tussen AS en RS indien je die als intern beschouwd geen PKIO vereist dan maak je de implementatie van de AS eenvoudiger.
+Omgaan met meerdere certificaat hierarchien introduceert extra compliciteit.
+Meer uitleg en context in de standaard lijkt wenselijk. Dit kan door toevoegen meer usecase beschrijvingen in NLGov profiel maar mogelijk ook in access control module REST API designrules. Afspraak in klein committee met Erwin Reinhoud om dit uit te werken.
+
+- Internationale ontwikkelingen
+
+IGOV 2.0 nadert finale draft, wanneer het vastgesteld is kunnen we mogelijk volgende versie van NLGOV hierop baseren. Indien er nog een publieke consultatie volgt kunnen we daar nog op reageren.
+
+## Modules Signing en encryptie
+
+- Stand van zaken vaststelling
+  Stabiel verklaard door stuurgroep kennisplatform APIs
+  Voor Digikoppling REST API koppelvlak worden de modules voorgesteld als verplicht binnen Digikoppeling
+  Zorg over toepassingsgebied en onterecht toepassen (waardoor implementaties onnodig zwaar worden). Daarvoor toelichting toegevoegd om deze zorgen weg te nemen.
+
+Consultatie tot 4 december
+https://www.logius.nl/actueel/openbare-consultatie-wijzigingen-de-digikoppeling-standaard
+https://github.com/Logius-standaarden/Openbare-Consultaties/blob/master/20240919_Digikoppeling/README.md
+https://gitdocumentatie.logius.nl/publicatie/dk/restapi/rc202410/#http-message-signing-encryptie-in-het-digikoppeling-rest-api-profiel
+komt ook in nieuwsbrief kennisplatform
+
+## Beveiliging bij orkestratie
+
+https://geonovum.github.io/KP-APIs/API-strategie-modules/orchestration/#orkestratie-beveiliging
+voor volgende versie NLGOV profiel voegen we token exchange toe, dit is relevant voor orkestratie waar je APIs over meerdere domeinen heen kan bevragen en dan Tokens van een andere AS nodig hebt.
+
+Best practice die uitlegd wanneer je dit moet toepassen zal ook toegevoegd moeten worden
+https://github.com/Logius-standaarden/OAuth-NL-profiel/pull/69/files
+We willen meer een scheiding aanbrengen tussen designrules en bestpractices.
+
+Dus voorkomen dat wat normatief is niet meer herkenbaar is door deze scheiding aan te brengen.
+Werkgroep lijkt achter dit idee te staan. Dat betekent dat best practices op API strategie niveua komen en normatieve modules compact blijven.
+
+## Beveiliging bij notificaties
+
+BRO heeft cloud events implementatie met bijbehorend patroon voor beveiliging.
+Vereist dat ontvangende partij AS heeft waarvandaan het keys kan uitdelen aan verzendede partij. Zie documentatie https://gitdocumentatie.logius.nl/publicatie/notificatieservices/guidelines/#authorization
+
+Dit lijkt in algemene zin niet zinnig te zijn, legt erg sterke last op ontvanger
+
+Idee 1: token exchange inzetten voor langer levend token met beperkte scope voor afleveren notificaties.
+
+Idee 2: simpel oplossen met shared secret of ip whitelist ICM met webhook request. Afhankelijk van welke risico’s je wil afdekken. Zelfs een payment service partij als stripe gebruikt dit.
+
+Idee 3: Out of band in aanmeldingsportaal een APIkey genereren. Dus authenticatie autorisatie out of band goed regelen en relatief simpel lang geldig token bij notificaties zelf gebruiken.
+
+Voorkomen dat er misbruik wordt gemaakt van publieke webhook, daarnaast kunnen vaststellen dat notificaties daadwerkelijk van authentieke bron komen.
+Wat voor risico’s zijn er, indien notificatie zelf informatie arm is en je daarna nog meer moet ophalen bij goed beveiligd endpoint dan hoeft beveiliging voor notificaties niet heel zwaar te zijn.
+
+In ieder geval voorkomen dat een kwaadwillende anderen kan opgeven voor het ongewenst ontvangen van notificaties. Bijvoorbeeld bewijzen dat onvangende server van client is.
+Heeft websub hiervoor patronen?
+https://www.w3.org/TR/websub/#subscription-validation
+https://github.com/cloudevents/spec/blob/v1.0/http-webhook.md#4-abuse-protection
+
+## Rondvraag
+
+Erwin geinteresseerd in uitwerking en vorderingen in batching.
