@@ -26,7 +26,7 @@ De verschillende onderdelen van de NL API Strategie bevat de volgende documenten
 | Aanvullende module   | [API Hypermedia module](https://docs.geostandaarden.nl/api/API-Strategie-mod-hypermedia/)                                  | Stabiel </br> (Werkgroep Kennisplatform)                  | 12-07-2023                  |
 | Aanvullende module   | [ADR-HTTP Message and payload signing with JAdES](https://geonovum.github.io/KP-APIs/API-strategie-modules/signing-jades/) | Stabiel </br> (Werkgroep Kennisplatform)                  | 06-09-2024                  |
 | Aanvullende module   | [ADR-HTTP Payload encryption](https://geonovum.github.io/KP-APIs/API-strategie-modules/encryption/)                        | Stabiel </br> (Werkgroep Kennisplatform)                  | 06-09-2024                  |
-| Aanvullende module   | [API Batching](https://geonovum.github.io/KP-APIs/API-strategie-modules/batching/)                                         | Draft </br> (Werkgroep Kennisplatform)                    |                             |
+| Aanvullende module   | [API Batching](https://geonovum.github.io/KP-APIs/API-strategie-modules/batching/)                                         | Concept </br> (Werkgroep Kennisplatform)                  |                             |
 
 ## Folders
 

@@ -38,6 +38,6 @@ De verschillende onderdelen van de NL API Strategie bevat de volgende documenten
 | Aanvullende module   | [API Access control module](https://docs.geostandaarden.nl/api/API-Strategie-mod-access-control/)          | Vastgesteld </br> (door Kennisplatform)  | 08-03-2024              |
 | Aanvullende module   | [API Naming conventions module](https://docs.geostandaarden.nl/api/API-Strategie-mod-naming-conventions/)  | Vastgesteld </br> (door Kennisplatform)  | 08-03-2024              |
 | Aanvullende module   | [API Hypermedia module](https://docs.geostandaarden.nl/api/API-Strategie-mod-hypermedia/)                  | Stabiel </br> (Werkgroep Kennisplatform) | 12-07-2023              |
-| Aanvullende module   | [API Batching module](https://geonovum.github.io/KP-APIs/API-strategie-modules/batching/)                  | Draft </br> (Werkgroep Kennisplatform)   |                         |
+| Aanvullende module   | [API Batching module](https://geonovum.github.io/KP-APIs/API-strategie-modules/batching/)                  | Concept </br> (Werkgroep Kennisplatform) |                         |
 
 - Deze modules zijn normatief binnen de GDI, vaststellingsproces pas toe of leg uit lijst is nog in procedure
