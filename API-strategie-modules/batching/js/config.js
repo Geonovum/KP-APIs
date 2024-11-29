@@ -6,7 +6,7 @@ var documentConfig = {
   license: "cc-by",
   shortName: "API-Strategie-mod-batching",
   edDraftURI:
-    "https://github.com/Geonovum/KP-APIs/tree/master/API-strategie-modules/batching",
+    "https://geonovum.github.io/KP-APIs/API-strategie-modules/batching",
   editors: [
     {
       name: "Joost Farla",
@@ -41,5 +41,6 @@ var documentConfig = {
       companyURL: "https://skemu.com",
     },
   ],
-  github: "https://github.com/Geonovum/KP-APIs",
+  github:
+    "https://github.com/Geonovum/KP-APIs/tree/master/API-strategie-modules/batching",
 };
