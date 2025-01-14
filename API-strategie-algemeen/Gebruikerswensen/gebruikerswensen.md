@@ -84,6 +84,8 @@ De kern van dit verhaal is dat een API technisch gezien weliswaar een machine to
 
 ### Specifieke aanbevelingen voor een goede DX
 
+In eerdere versies van dit document stonden aanbevelingen die sindsdien zijn geïntegreerd in de [REST API Design Rules](https://forumstandaardisatie.nl/open-standaarden/rest-api-design-rules) standaard als verplichting. Daarom is het aangeraden de standaard eerst te lezen en daarna deze aanbevelingen.
+
 #### Aanbeveling 1: werk met (meerdere) persona’s
 
 Een API is weliswaar een machine tot machine koppeling, maar onthoud: API's ontwerp en bouw je niet voor een machine, maar voor een gebruiker: een
@@ -167,15 +169,7 @@ je gebruikers duidelijkheid biedt:
 > Maak duidelijk of en zo ja, wanneer er eventuele wijzigingen te verwachten
 > zijn en hoe lang de API minimaal beschikbaar blijft.
 
-##### Aanbeveling 5.3 Doe aan versiebeheer
-
-> Borg dat de toepassing van de gebruiker blijft werken, door te zorgen voor
-> backward compatability. Grotere updates kunnen als nieuwe versie worden
-> uitgebracht, waarbij oudere versies nog een gegarandeerde periode
-> beschikbaar blijven. Het versienummer kan in elke call staan, bijv. GET
-> /api/v1.0/... En versiebeheer slaat niet alleen op de API zelf, maar ook op de bijbehorende documentatie, Sandbox, etc.
-
-##### Aanbeveling 5.4 Sluit de feedback-loop: betrek de community
+##### Aanbeveling 5.3 Sluit de feedback-loop: betrek de community
 
 > Om echt van buiten naar binnen te kunnen werken, is het betrekken van de
 > community van gebruikers onmisbaar. De community kan vertellen hoe de
