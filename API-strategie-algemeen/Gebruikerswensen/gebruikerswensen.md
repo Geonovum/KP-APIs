@@ -84,9 +84,7 @@ De kern van dit verhaal is dat een API technisch gezien weliswaar een machine to
 
 ### Specifieke aanbevelingen voor een goede DX
 
-In eerdere versies van dit document stonden aanbevelingen die sindsdien zijn geintegreerd
-in de [REST API Design Rules](https://forumstandaardisatie.nl/open-standaarden/rest-api-design-rules) standaard als verplichting.
-Daarom is het aangeraden de standaard eerst te lezen en daarna deze aanbevelingen.
+In eerdere versies van dit document stonden aanbevelingen die sindsdien zijn geïntegreerd in de [REST API Design Rules](https://forumstandaardisatie.nl/open-standaarden/rest-api-design-rules) standaard als verplichting. Daarom is het aangeraden de standaard eerst te lezen en daarna deze aanbevelingen.
 
 #### Aanbeveling 1: werk met (meerdere) persona’s
 
