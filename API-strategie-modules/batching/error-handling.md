@@ -1,3 +1,13 @@
 # Error handling
 
-TODO: error responses, retry policies, limits, etc.
+## Invalid request
+
+TODO
+
+## Limit exceeding
+
+TODO
+
+## Partial failures
+
+TODO

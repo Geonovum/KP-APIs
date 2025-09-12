@@ -39,11 +39,16 @@ TODO
       </dd>
       <dt>Rationale</dt>
       <dd>
-         TODO
+         <p>Using a standardized <code>key</code> property for singular requests ensures consistency across all batch-enabled collections. It mirrors the way singular resources are addressed in URIs, making the mapping intuitive for both clients and server implementers. Supporting both scalar and compound identifiers provides flexibility for resources that require multi-part keys, while preserving strict typing and ordering prevents ambiguity in request processing.</p>
       </dd>
       <dt>Implications</dt>
       <dd>
-         TODO
+         <ul>
+            <li>Clients must always supply the <code>key</code> property for singular requests, with either a scalar or an ordered array depending on the resource’s identifier model.</li>
+            <li>Clients must use the same data types for identifier values as the canonical resource definition (e.g., string vs. integer), ensuring compatibility with singular endpoints.</li>
+            <li>Servers must validate the structure and types of the <code>key</code> property, and <a href="#invalid-request">reject requests</a> with malformed or incomplete identifiers.</li>
+            <li>By preserving the exact order of identifier parts, clients and servers avoid mismatches and maintain consistency with URI path semantics.</li>
+         </ul>
       </dd>
    </dl>
 </div>
