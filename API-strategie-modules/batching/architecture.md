@@ -22,8 +22,8 @@ Batch endpoints provide a standardized way to replace N+1 calls with just two ca
 
 Batching is not a transaction mechanism. Each request item in a batch is processed independently, and the success or failure of one item does not affect the others. There is no guarantee of atomicity, consistency, isolation, or durability (ACID) across items in a batch.
 
-- For **singular requests**, a missing or inaccessible resource is represented by `null`.
-- For **collection requests**, no matches are represented by an empty `items` array.
+- For <a href="#singular-request">singular requests</a>, a missing or inaccessible resource is represented by `null`.
+- For <a href="#collection-request">collection requests</a>, no matches are represented by an empty `items` array.
 - Partial errors must be conveyed at the item level, not by failing the entire batch.
 
 This design ensures resilience: a batch may contain both successful and unsuccessful entries, but the overall response is always delivered in a predictable format.
