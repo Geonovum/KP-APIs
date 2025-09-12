@@ -4,7 +4,7 @@ Batch endpoints provide a standardized way to retrieve multiple resources in a s
 
 ## Endpoint path
 
-<div class="rule" id="/batching/endpoint-path" data-type="technical">
+<div class="rule" id="/batching/path" data-type="technical">
    <p class="rulelab">Expose a standardized batch endpoint for collections</p>
    <dl>
       <dt>Statement</dt>

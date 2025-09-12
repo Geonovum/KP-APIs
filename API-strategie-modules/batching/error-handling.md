@@ -6,7 +6,7 @@ Errors are reported using an HTTP error status and a `problem+json` body. Item-l
 
 ## Invalid request
 
-<div class="rule" id="/batching/error-req-invalid" data-type="technical">
+<div class="rule" id="/batching/err-req-invalid" data-type="technical">
    <p class="rulelab">Reject invalid batch requests using problem+json</p>
    <dl>
       <dt>Statement</dt>
@@ -41,7 +41,7 @@ Errors are reported using an HTTP error status and a `problem+json` body. Item-l
 
 ## Request limit exceeding
 
-<div class="rule" id="/batching/error-req-limit" data-type="technical">
+<div class="rule" id="/batching/err-req-limit" data-type="technical">
    <p class="rulelab">Reject batch requests that exceed the maximum number of items</p>
    <dl>
       <dt>Statement</dt>
@@ -77,7 +77,7 @@ Errors are reported using an HTTP error status and a `problem+json` body. Item-l
 
 ## Response limit exceeding
 
-<div class="rule" id="/batching/error-res-limit" data-type="technical">
+<div class="rule" id="/batching/err-res-limit" data-type="technical">
    <p class="rulelab">Reject batch requests that would produce oversized responses</p>
    <dl>
       <dt>Statement</dt>
@@ -113,7 +113,7 @@ Errors are reported using an HTTP error status and a `problem+json` body. Item-l
 
 ## Invalid or unauthorized keys
 
-<div class="rule" id="/batching/error-invalid keys" data-type="technical">
+<div class="rule" id="/batching/err-invalid keys" data-type="technical">
    <p class="rulelab">Reject singular batch requests with invalid or unauthorized keys</p>
    <dl>
       <dt>Statement</dt>
