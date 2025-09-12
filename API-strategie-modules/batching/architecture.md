@@ -2,7 +2,7 @@
 
 Batching is an architectural pattern that complements the standard RESTful model of singular and collection endpoints. Its purpose is to improve efficiency in distributed systems by reducing network overhead and providing predictable request–response mappings in situations where multiple resources need to be fetched at once.
 
-## Distributed architecture
+## Data distribution
 
 Modern APIs often operate in a distributed data landscape. A single logical query may require access to multiple underlying systems or databases, each with its own identifiers, query capabilities, and performance characteristics. This distribution introduces challenges:
 
