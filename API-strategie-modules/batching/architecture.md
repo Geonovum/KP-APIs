@@ -18,6 +18,8 @@ A common inefficiency in distributed APIs is the _N+1 problem_. For example, a c
 
 Batch endpoints provide a standardized way to replace N+1 calls with just two calls: one to retrieve the initial collection and one batch request to fetch all related resources in parallel. This pattern reduces latency and lowers the load on both clients and servers.
 
+Batching is a performance optimization, not a replacement for singular or collection endpoints. Clients should use batching when multiple lookups are required at once, but continue to use singular or collection endpoints for simpler interactions.
+
 ## Transactionality
 
 Batching is not a transaction mechanism. Each request item in a batch is processed independently, and the success or failure of one item does not affect the others. There is no guarantee of atomicity, consistency, isolation, or durability (ACID) across items in a batch.
@@ -28,21 +30,11 @@ Batching is not a transaction mechanism. Each request item in a batch is process
 
 This design ensures resilience: a batch may contain both successful and unsuccessful entries, but the overall response is always delivered in a predictable format.
 
-## Role of batch endpoints
-
-Batch endpoints sit alongside singular and collection endpoints:
-
-- **Singular endpoints**: optimized for fetching or manipulating a single known resource.
-- **Collection endpoints**: optimized for querying resources based on filter criteria, with support for pagination.
-- **Batch endpoints**: optimized for submitting multiple independent requests in one call, reducing round-trips and ensuring deterministic mapping of requests to results.
-
-Batching is a performance optimization, not a replacement for singular or collection endpoints. Clients should use batching when multiple lookups are required at once, but continue to use singular or collection endpoints for simpler interactions.
-
 ## Design principles
 
 The following principles guide the architecture of batch endpoints:
 
-- **Complementary**: batch endpoints extend existing RESTful resources, they do not replace them.
+- **Complementary**: batch endpoints sit alongside singular and collection endpoints, they do not replace them.
 - **Deterministic**: every request item produces exactly one result item at the same array position.
 - **Scoped**: batch endpoints operate at the level of a single collection; a global batching mechanism is explicitly out of scope.
 - **Stateless**: each batch request is self-contained; no client state is stored between requests.
