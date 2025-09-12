@@ -1,6 +1,6 @@
 # Batch endpoints
 
-As described in the [[ADR]], there is a distinction between singular and collection resources. When applying batch operations, the request and response characteristics are different.
+Batch endpoints provide a standardized way to retrieve multiple resources in a single operation. They are designed to reduce the number of network round-trips and to mitigate the N+1 problem, where a client would otherwise need to issue many separate requests for related resources. Batch endpoints are exposed per collection and follow a uniform request and response format, ensuring predictable behavior across APIs.
 
 ## Endpoint path
 
@@ -40,7 +40,7 @@ As described in the [[ADR]], there is a distinction between singular and collect
       <dd>
          <p>A batch request must be sent as a JSON object containing a top-level <code>requests</code> property, whose value must be an ordered array of request items. Each entry in requests must be a JSON object that specifies exactly one selection criterion for that entry (see the specific rules for <a href="#singular-request">singular</a> and <a href="#collection-request">collection</a> requests). The order of the <code>requests</code> items is significant and preserved in the response.</p>
          <p>The batch request must be submitted using the <code>POST</code> method and content type <code>application/json</code>.
-         <p>An implementation-defined maximum applies to the number of entries in <code>requests</code>. Requests that exceed this maximum must be rejected (see <a href="#error-handling">Error handling</a>).
+         <p>An implementation-defined maximum applies to the number of entries in <code>requests</code>. Requests that exceed this maximum must be <a href="#request-limit-exceeding">rejected</a>.
          <p>The payload may include an additional top-level <code>context</code> property alongside <code>requests</code>, to provide contextual request criteria to apply on all request items (such as time travelling).</p>
          <div class="example">
             <p>For the <code>adressen</code> collection, the batch endpoint is:</p>

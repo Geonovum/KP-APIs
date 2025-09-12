@@ -1,6 +1,6 @@
 # Singular resources
 
-TODO
+Singular resource requests target one specific resource by its unique identifier. This chapter defines how such requests are represented in batch operations, using the `key` property to identify resources consistently with their canonical URI. The rules ensure that both simple and compound identifiers can be handled reliably in batch requests and responses.
 
 ## Singular request
 
@@ -55,4 +55,45 @@ TODO
 
 ## Singular response
 
-TODO
+<div class="rule" id="/batching/res-singular" data-type="technical">
+   <p class="rulelab">Return a list of singular results when batching singular resources</p>
+   <dl>
+      <dt>Statement</dt>
+      <dd>
+         <p>When returning the results of a batch of singular requests, the response must contain a top-level <code>results</code> property. The value of <code>results</code> must be an array with exactly the same number of items, and in the same order, as the <code>requests</code> array in the corresponding request.</p>
+         <p>Each entry in <code>results</code> must correspond to exactly one request item:</p>
+         <ul>
+            <li>If the resource exists and is accessible, the entry must be the resource object.</li>
+            <li>If the resource does not exist or cannot be accessed, the entry must be <code>null</code>.</li>
+         </ul>
+         <div class="example">
+            <p>Example response for two building resources, one found and one missing:</p>
+            <pre>
+               {
+                  "results": [
+                     {
+                        "identificatie": "3b9710c4-6614-467a-ab82-36822cf48db1",
+                        "naam": "Stadhuis",
+                        "bouwjaar": 1978
+                     },
+                     null
+                  ]
+               }
+            </pre>
+         </div>
+      </dd>
+      <dt>Rationale</dt>
+      <dd>
+         <p>Returning a <code>results</code> array of equal length and order ensures deterministic mapping between request and response items. Using <code>null</code> to represent missing or inaccessible resources clearly distinguishes this case from an empty or incomplete object, simplifying client-side error handling and reducing ambiguity.</p>
+      </dd>
+      <dt>Implications</dt>
+      <dd>
+         <ul>
+            <li>Clients can map each response entry directly to its request by array index, without correlation keys or additional matching logic.</li>
+            <li>Servers must always produce a <code>results</code> array of the same length as the request, even when some entries are <code>null</code>.</li>
+            <li>Clients must handle <code>null</code> entries gracefully, treating them as “resource not found or not accessible.”</li>
+            <li>This structure enables batch responses to remain predictable, consistent, and easy to process in client libraries and tooling.</li>
+         </ul>
+      </dd>
+   </dl>
+</div>

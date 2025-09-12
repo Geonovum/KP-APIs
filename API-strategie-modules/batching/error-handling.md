@@ -4,7 +4,11 @@
 
 TODO
 
-## Limit exceeding
+## Request limit exceeding
+
+TODO
+
+## Response limit exceeding
 
 TODO
 

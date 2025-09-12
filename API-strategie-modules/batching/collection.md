@@ -1,6 +1,6 @@
 # Collection resources
 
-TODO
+Collection resource requests allow clients to retrieve multiple resources that match a set of filter criteria. In batch operations, these requests are expressed with a standardized `filter` object. This chapter describes how such requests are structured, how results are returned, and how empty matches are represented. The rules align with existing collection query semantics while ensuring deterministic mapping between requests and responses.
 
 ## Collection request
 
@@ -44,4 +44,57 @@ TODO
 
 ## Collection response
 
-TODO
+<div class="rule" id="/batching/res-collection" data-type="technical">
+   <p class="rulelab">Return a list of collection results when batching collection resources</p>
+   <dl>
+      <dt>Statement</dt>
+      <dd>
+         <p>When returning the results of a batch of collection requests, the response must contain a top-level <code>results</code> property. The value of <code>results</code> must be an array with exactly the same number of items, and in the same order, as the <code>requests</code> array in the corresponding request.</p>
+         <p>Each entry in <code>results</code> must correspond to exactly one collection request and must be a JSON object containing an <code>items</code> property. The value of <code>items</code> must be an array of zero or more resource objects that match the specified filter criteria.</p>
+         <p>If no resources match a filter, the corresponding <code>items</code> array must be empty. The result entry itself must never be omitted.</p>
+         <p>Pagination of <code>items</code> within a result entry is currently not standardized. Implementations that support pagination may include additional fields (e.g. <code>nextToken</code> or <code>nextLink</code>) in the result entry. Such extensions must not alter the semantics of <code>items</code> and must be optional for clients to consume.</p>
+         <div class="example">
+            <p>Example response for two address collection requests, where the first returns matches and the second none:</p>
+            <pre>
+               {
+                  "results": [
+                     {
+                        "items": [
+                           {
+                              "identificatie": "12345",
+                              "postcode": "1234AB",
+                              "huisnummer": 1
+                           },
+                           {
+                              "identificatie": "67890",
+                              "postcode": "1234AB",
+                              "huisnummer": 2
+                           }
+                        ]
+                        // optional, implementation-specific
+                        "nextToken": "eyJwYWdlIjoxfQ=="
+                     },
+                     {
+                        "items": []
+                     }
+                  ]
+               }
+            </pre>
+         </div>
+      </dd>
+      <dt>Rationale</dt>
+      <dd>
+         <p>Standardizing collection results as objects with an <code>items</code> array ensures predictable and uniform handling across all batch-enabled collections. It distinguishes clearly between “no results” (<code>items</code> is empty) and “request missing” (not allowed). Preserving array length and order maintains deterministic mapping between request filters and result sets. Optional pagination fields allow flexibility for large collections without constraining implementations to a single standard prematurely.</p>
+      </dd>
+      <dt>Implications</dt>
+      <dd>
+         <ul>
+            <li>Clients can reliably map each collection request to its result by array position, simplifying client-side processing.</li>
+            <li>Servers must always return a result entry for each request, even if <code>items</code> is empty.</li>
+            <li>Clients must be prepared to handle large <code>items</code> arrays; servers may <a href="#response-limit-exceeding">enforce limits</a> per batch to protect performance.</li>
+            <li>Implementations that support pagination must document their chosen approach and ensure that clients can still consume <code>items</code> without using pagination extensions.</li>
+            <li>The lack of a standardized pagination mechanism means interoperability may vary until a common approach is agreed upon.</li>
+         </ul>
+      </dd>
+   </dl>
+</div>
