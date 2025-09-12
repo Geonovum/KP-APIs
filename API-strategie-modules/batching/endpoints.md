@@ -4,7 +4,7 @@ Batch endpoints provide a standardized way to retrieve multiple resources in a s
 
 ## Endpoint path
 
-<div class="rule" id="/batching/endpoint-path" data-type="technical">
+<div class="rule" id="/batching/path" data-type="technical">
    <p class="rulelab">Expose a standardized batch endpoint for collections</p>
    <dl>
       <dt>Statement</dt>
@@ -121,7 +121,7 @@ Batch endpoints provide a standardized way to retrieve multiple resources in a s
          <ul>
             <li>Clients can reliably map each request item to a result by array position, simplifying processing logic.</li>
             <li>Servers must always return a <code>results</code> array of the same length as <code>requests</code>, even if some entries are <code>null</code> or empty.</li>
-            <li><a href="#partial-failures">Partial failures</a> (e.g. unauthorized access, invalid ID) must be represented at the item level, not by omitting results.</li>
+            <li>Partial failures (e.g. unauthorized access, invalid ID) must result in an <a href="#invalid-or-unauthorized-keys">error response</a>.</li>
             <li>Additional metadata can be included at the top level, but must not affect the semantics of the <code>results</code> property.</li>
          </ul>
       </dd>
