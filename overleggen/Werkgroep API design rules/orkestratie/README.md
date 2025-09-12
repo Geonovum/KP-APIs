@@ -2,6 +2,19 @@
 
 Eerder dit jaar heeft Kadaster in samenwerking met Geonovum het IMX initiatief gestart. Dit initiatief heeft als ambitie om basisregistraties (en andere bronnen) in samenhang te kunnen bevragen door middel van API orkestratie. Om op een efficiënte manier te kunnen orkestreren moeten bron API’s voldoen aan diverse randvoorwaarden. Deze werkgroep is bedoeld om te onderzoeken welke randvoorwaarden dit zijn en op welke manier deze gestandaardiseerd zouden kunnen worden als design rules.
 
+## Verslag bijeenkomst 12 september 2025
+
+Doelstelling is om de batching module eind van deze maand gereed te hebben voor consultatie.
+
+Actiepunten:
+
+- Peter: bijwerken Archimate mapping/plaatje, en verwerken in het architectuurhoofdstuk
+- Martin: Relatie tot PBAC / FTV onderzoeken
+- Martin: Review aanpassingen Access Control module van Frank
+- Allen: [batching module](https://geonovum.github.io/KP-APIs/API-strategie-modules/batching/) reviewen en uiterlijk 19 september feedback delen
+
+De volgende bijeenkomst staat gepland op vrijdag 26 september van 13:00u tot 14:00u.
+
 ## Verslag bijeenkomst 4 juli 2025
 
 Actiepunten:
