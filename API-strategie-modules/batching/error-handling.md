@@ -1,6 +1,6 @@
 # Error handling
 
-Batch endpoints must use the standardized Problem Details (`problem+json`) [[rfc7807]] format to represent errors. Problem details provide a machine-readable structure while still being human-readable, ensuring interoperability and consistency across APIs.
+Batch endpoints must use the standardized Problem Details (`problem+json`) [[rfc9457]] format to represent errors. Problem details provide a machine-readable structure while still being human-readable, ensuring interoperability and consistency across APIs.
 
 Errors are reported using an HTTP error status and a `problem+json` body. Item-level errors within a batch response must not trigger a batch-level error but must be represented in the `results` array.
 
