@@ -10,7 +10,7 @@ This module defines rules for implementing batch operations in RESTful APIs. Bat
 
 The design rules specify when and how to expose batch endpoints, how to structure requests and responses, and how to handle errors consistently. By standardizing these aspects, batching ensures predictable client–server interactions, reduces the risk of divergent implementations, and promotes interoperability across APIs in distributed architectures.
 
-The scope of batching is limited to read operations. It does not include write operations, transactional guarantees across multiple requests, or global batch endpoints spanning multiple collections. Each batch item is processed independently, and partial successes or failures are explicitly allowed and expected.
+The scope of this batching module is limited to synchronous read operations. It does not include write operations, transactional guarantees across multiple requests, or global batch endpoints spanning multiple collections. Each batch item is processed independently, and partial successes or failures are explicitly allowed and expected. Asynchronous patterns like 'Claim-Check', 'Subscribe-Notification' and 'Call-back' are also out of scope.
 
 ## Use cases
 
