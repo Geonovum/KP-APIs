@@ -66,7 +66,7 @@ In deze context onderkennen we vier use cases
 
 - Service A,B & C delegeren toegang tot hun gegevens aan Service Y
 
-![Schematische weergave van Niet Transparante-Orkestratie](../../../media/orkestratie-Niet-transparante-Orkestratie.drawio.svg)
+![Schematische weergave van Niet Transparante-Orkestratie](../../media/orkestratie-Niet-transparante-Orkestratie.drawio.svg)
 
 ### Implicaties
 
@@ -102,13 +102,13 @@ Er is een direct verband tussen de Services en de identity van de client/gebruik
 - De autorisatie is per Service dynamisch in te stellen
 - Service Y moet overweg kunnen met het feit dat Service A,B & C de autorisatie kunnen weigeren
 
-![Schematische weergave van Transparante-Orkestratie](../../../media/orkestratie-Transparante-Orkestratie.drawio.svg)
+![Schematische weergave van Transparante-Orkestratie](../../media/orkestratie-Transparante-Orkestratie.drawio.svg)
 
 ## Variatie - Federated Identity Propagation
 
 1. Identity Service Provider Z kan ook de toegang zijn tot een gefedereerde omgeving van Identity providers waarbij Z door middel van  [OAuth Token Exchange](https://datatracker.ietf.org/doc/html/rfc8693) de Access tokens worden opgehaald bij de Identity providers van de verschillende Services en deze tokens door de client worden meegegeven bij het request
 
-![Schematische weergave van Federatieve Transparante-Orkestratie](../../../media/orkestratie-Federatief-Transparante-Orkestratie.drawio.svg)
+![Schematische weergave van Federatieve Transparante-Orkestratie](../../media/orkestratie-Federatief-Transparante-Orkestratie.drawio.svg)
 
 ### Implicaties Identity propagation
 
