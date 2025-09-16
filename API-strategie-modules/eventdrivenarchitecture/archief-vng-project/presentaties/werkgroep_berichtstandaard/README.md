@@ -1,0 +1,3 @@
+Binnen project Notificatieservices is in 2021 in commmunityverband samengewerkt met een aantal overheids- en uitvoeringsorganisaties en leveranciers. Binnen de community is een werkgroep geformeerd die zich heeft gericht op het ontwikkelen van een geschikte berichtstandaard. Dit heeft geresulteerd in het [NL GOV profile for CloudEvents](https://vng-realisatie.github.io/NL-GOV-profile-for-CloudEvents/).
+
+Deze map bevat de presentaties die zijn gebruikt tijdens plaatsgevonden bijeenkomsten van de werkgroep. Naast ontwikkeling van het profiel zijn daarin ook een aantal gerelateerde onderwerpen besproken zoals abonneren en filteren van events.
