@@ -4,7 +4,7 @@ let respecConfig = {
   // title is verplicht! Neem hier de titel van het document op ----------------------
   title: "API Access control module",
   //-- specStatus is verplicht! (activeer 1 van de volgende) --------------------------
-  specStatus: "def",                   // Werkversie
+  specStatus: "vv",                   // Werkversie
   //specStatus: "cv",               // Consultatieversie
   //specStatus: "vv",               // Versie ter vaststelling
   //specStatus: "def",              // Vastgestelde versie
@@ -35,20 +35,30 @@ let respecConfig = {
   //-- NB: in de werkversie uitzetten, want dan pakt Respec de pushdate ---------------
   //publishDate: "2023-12-21",
   //eventueel is het mogelijk een versienummer mee te geven, maar bij Geonovum werken we gewoonlijk alleen met datum als onderdeel van de permanente URI.
-  publishVersion: "1.0.0",
-  //previousVersion: "0.0.1",
+  publishVersion: "1.1.0",
+  previousVersion: "1.0.0",
   //-- Voor dit blok geldt: alleen als er eerdere versies zijn en altijd beiden aan/uit! 
   previousPublishDate: "2023-12-21",
-  previousMaturity: "vv",
+  previousMaturity: "def",
   //-- de namen van de Editor(s) / Redacteur(en)---------------------------------------
   //-- vul in: per Editor: name:, company:, companyURL: -------------------------------
   editors:
         [
-            {
-                name: "Kennisplatform API's",
-                company: "Kennisplatform API's",
-                companyURL: "https://github.com/Geonovum/KP-APIs",
-            }
+          {
+            name: "Joost Farla",
+            company: "Geonovum",
+            companyURL: "https://www.geonovum.nl",
+          },
+          {
+            name: "Frank Terpstra",
+            company: "Geonovum",
+            companyURL: "https://www.geonovum.nl",
+          },
+          {
+            name: "Martin van der Plas",
+            company: "Logius",
+            companyURL: "https://www.logius.nl",
+          }
         ],
     authors:
         [

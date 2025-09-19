@@ -3,6 +3,7 @@
 API access control is a set of mechanisms and policies that regulate who or what can access an API and what operations they are allowed to perform. It ensures that only authorized users, clients, networks or systems can access specific endpoints or resources within the API.
 
 ## Introduction
+
 This section describes security principles, concepts and technologies to apply when working with APIs. Controls need to be applied for the security objectives of integrity, confidentiality and availability of the API and services and data provided thereby. The [architecture section of the API strategy](https://docs.geostandaarden.nl/api/API-Strategie-architectuur/) contains architecture patterns for implementing API security. This module provides the details on the Identification, Authentication & Authorization capability of the [API capability model detailed in the architecture section of the API strategy](https://geonovum.github.io/KP-APIs/API-strategie-algemeen/Architectuur/#api-capability-model).
 
 The scope of this section is limited to generic security controls that directly influence the visible parts of an API. Effectively, only security standards directly applicable to interactions are discussed here.
@@ -32,21 +33,24 @@ When a user issues a client requests to a resource via a REST API, access must b
 
 When a client communicates with a REST API, the connection itself must be protected. **HTTPS** provides this by encrypting all traffic between client and server using **PKI certificates**. These certificates, issued by trusted authorities, verify the server’s identity and ensure that data cannot be intercepted or modified in transit. By enforcing HTTPS, APIs guarantee both **confidentiality** and **integrity** of network communications, forming the foundation of secure runtime interactions.
 
-The working of HTTPS is based on the TLS specification and is mandatory for all API's that conform to [the core set of API Design Rules](https://gitdocumentatie.logius.nl/publicatie/api/adr/2.1.0/#/core/transport/tls). One must also follow the latest [NCSC guidelines](https://www.ncsc.nl/documenten/publicaties/2025/juni/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2025-05). 
+The working of HTTPS is based on the TLS specification and is mandatory for all API's that conform to [the core set of API Design Rules](https://gitdocumentatie.logius.nl/publicatie/api/adr/2.1.0/#/core/transport/tls). One must also follow the latest [NCSC guidelines](https://www.ncsc.nl/documenten/publicaties/2025/juni/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2025-05).
 
 #### Network configuration
 
 The baseline for API Access is the phisical network. Typically the network layer consists of the internet, however a national government will also provide api access via restricted networks. [For example the dutch diginetwork](https://www.logius.nl/domeinen/infrastructuur/diginetwerk).
 
 ## API access patterns
+
 Because security is about compromises one should first be aware of what access patterns need to be supported. More information on API access patterns can be found in Dutch in [the architecture chapter of the Dutch API strategy](https://docs.geostandaarden.nl/api/API-Strategie/Architectuur/)
 
 ### Machine to machine
+
 Two different machines negotiate a secure point to point connection. One side acts as the client, the other as the server. Both sides identify and authenticate the other party.
 The server authorizes access to its resources by the client based on the established identity of the client. The authorizations for a client are determined by doing a lookup to an identity store based on the established identity of the client.
 Note that in Dutch government we often only identify organizations and not individual machines or their users. Therefor the access rights or permissions associated with a given identity might be far greater than needed. This is breaking the principle of least privilege.
 
 ### Rights delegation
+
 In the rights delegation pattern a system is granted access to a resource by and on behalf of the owner of that resource. The rights delegation access pattern can help solve the problem of machines having greater permissions/priviliges/access rights than necessary for the task at hand.
 Retrieving a resource at run-time requires a resource owner, a client, an authorization server and a resource server. The resource owner (often the end user) grants permissions to the client to access resources on its behalf.
 This grant is stored at the authorization server, after permissions are granted to the client to access resources on the resource server; with or without the presence of an end user.
@@ -57,15 +61,19 @@ To deny the client access to these resources after initial permission is granted
 > When combining the 'Machine to machine' and the 'Rights delegation' patterns it's advised to look into the FSC standard ad documented on [fsc-standaard.nl](https://fsc-standaard.nl/)
 
 ### Intermediaries
+
 In some usecases an intermediary application is placed in between the client and server application. Orchestration of multiple APIs through an orchestration server is an example of this, see for instance [IMX](https://geonovum.github.io/imx-digilab/). Another example is an API gateway performing some centralized tasks in an environment with multiple resource servers operated by multiple organizations, for instance ["het Knooppunt" in DSO](https://iplo.nl/publish/library/219/dso_-_gas_-_knooppunt_gegevensuitwisseling_1.pdf) or [centraal aansluitpunt](https://www.logius.nl/onze-dienstverlening/infrastructuur/centraal-aansluitpunt). In these cases these intermediaries can act either transparantly or opaque.
 
 #### Transparant intermediary
+
 The identity of the client application and its user is passed through the intermediary to the resource server(s). The resource server(s) can perform (fine grained) access control based on this identity. Usually either client and intermediary or intermediary and resourcource server(s) belong to one organization. Optionally in a federated setting token exchange can be used to put the identity of the client application/end user in a format issued by an identity provider trusted by the resource server(s). There are limits to what the intermediary can achieve, when the functionality required of the intermediary becomes complex (i.e. filtering, aggeragation in combination with orchestration) it becomes more sensible to integrate this functionality either at the client application or resource server. When passing information through an intermediary trust on the authenticity of this information needs to be established. This can be done either through contracts with requirements and audits, or through technical measures such as [signing](https://geonovum.github.io/KP-APIs/API-strategie-modules/signing-jades/) & [encryption](https://geonovum.github.io/KP-APIs/API-strategie-modules/encryption/). With a transparant intermediary error handling deserves additional focus as the resource server(s) can deny requests and these denials have to be handled properly. The transparant intermediary is the reccomended approach when resource servers and intermediary server are controlled by multiple organizations and some form of closed/restricted data/funtionality is involved.
 
 #### Opaque intermediary
+
 There is a decoupling between client application and resource server(s). The resource server(s) only know the identity of the intermediary server. The intermediary server authorizes access of the client application and its user to the resource server. Any fine grained access control is principly performed at the intermediary server based on identity. The resource server may receive additional information with a request that grants certain rights but the access decision passing this additional information has already been made at the intermediary server. A strong level of trust is needed between user, client intermediary as well as between the intermediary and resource servers. This will likely translate into contracts with requirements on all parties and associated audits. There is a large burden on the intermediary to ensure proper access control, also the intermediary poses a high risk to security when it is compromised as it can act on behalf of all potential client applications and their users. We consider this pattern acceptable when all resource servers and the intermediary are withing the control of one organization, or when only open data/functionality is involved.
 
 ### Session based API access pattern
+
 While this method is considered legacy it is in common use for handling access control to APIs, even though it conflicts with best practices for APIs. Because this pattern is more a standard web application pattern we refer to [the latest NCSC guidelines on the subject of web application security](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-webapplicaties) for security considerations.
 
 We consider this method to be mostly outside the scope of this document and refer to the aforementioned NCSC document for security considerations. We do provide some additional considerations for web clients in the section on [transport Security](https://docs.geostandaarden.nl/api/API-Strategie-mod-transport-security/).
@@ -95,21 +103,25 @@ This ensures that each API receives a valid and trusted identity token, even acr
 #### **1. Implicit Identity reuse – token based**
 
 **Rationale:**
+
 - There is a decoupling between the Services and the client. This is not an issue with open data but is with confidential data.
 - In practice this is how, for example, a general practitioner works and how many desks and government organizations operate.
 - The token / OAuth flow outlined here can also be another form of authentication or identification in these situations.
 - This situation is often used within a single organization, where all parts of the orchestration fall under the responsibility of one organization and the User is also employed by this organization.
 
 **Identity:**
+
 - Services A, B & C know the identity of Service Y, not of Client X or User U.
 - Service Y knows the identity of User U and/or Client X.
 
 **Authenticity:**
+
 - The authenticity of Client X is guaranteed by Identity Service Provider Z.
 - The authenticity of Client X is not directly known to Service A, B & C.
 - The authenticity of User U is known only within Service Y.
 
 **Integrity:**
+
 - The integrity of the data is guaranteed by Service Y.
 - Services A, B & C trust Service Y for the integrity of the data.
 
@@ -165,11 +177,9 @@ Identity Service Provider Z can also be the access point to a federated environm
 
 **Implications of Identity propagation:**
 
--	A strong trust relationship is required between both the Client & Service as well as between the composite Service and the system Services. This trust relationship will likely be translated into requirements, audits, and contracts to prevent Service Y from accessing the data that the resources return to the client.
--	From an organizational perspective, X, Y, Z, A & B will practically not all belong to different organizations. It is more logical if A, B & Y are part of one organization, or if X & Y are part of one organization. Service Y is only developed when there is a demand and an advantage for the Services or the client.
--	Depending on the situation, it is likely that Identity Provider Z is a general government service (such as DigiD or eHerkenning) or a service provided by one of the organizations in the orchestration.
-
-
+- A strong trust relationship is required between both the Client & Service as well as between the composite Service and the system Services. This trust relationship will likely be translated into requirements, audits, and contracts to prevent Service Y from accessing the data that the resources return to the client.
+- From an organizational perspective, X, Y, Z, A & B will practically not all belong to different organizations. It is more logical if A, B & Y are part of one organization, or if X & Y are part of one organization. Service Y is only developed when there is a demand and an advantage for the Services or the client.
+- Depending on the situation, it is likely that Identity Provider Z is a general government service (such as DigiD or eHerkenning) or a service provided by one of the organizations in the orchestration.
 
 ### Signing & Encryption
 
@@ -199,11 +209,10 @@ Delegating the policy enforcement decision follows the architectural pattern of 
 
 More information on this subject is available at [VNG Realisatie – Federative Access Management](https://vng-realisatie.github.io/ftv/), an initiative based on the [AuthZen specification](https://openid.net/wg/authzen/specifications/).
 
-
-
 ## Identification
 
 ### End Users and Organizations
+
 For identification of individual end users a pseudonym SHOULD be used when possible, to avoid exposing sensitive information about a user.
 This pseudonym can optionally be translatable to actual personal information in a separate service, but access to this service should be tightly controlled and limited only to cases where there is a legal need to use this information. Furthermore using a seperate service for translation provides a moment to audit when certain information about users is requested.
 
@@ -219,26 +228,25 @@ OIN's can be queried using the COR API https://portaal.digikoppeling.nl/register
 In the EU context use the eIDAS legal identifier. For more information see https://ec.europa.eu/digital-single-market/en/trust-services-and-eid and https://afsprakenstelsel.etoegang.nl/ for details.
 
 ### Clients
+
 Identification of clients is different from identification of the end user or organisation using the service.
 When using authorization servers, the authorization server issues the registered client a client identifier - a unique string representing the registration information provided by the client. The client identifier is not a secret; it is commonly public known and MUST NOT be relied upon for client authentication by itself. The client identifier is unique to the authorization server.
 
 Authorization servers MUST NOT allow clients to choose or influence their `client_id` value
 
-### DigiD
-@@@
+### eIDAS
 
-
-### EiDas
-@@@
+Willen we nog een verwijzing naar eIDAS opnemen?@@@
 > verwijzing eidas opnemen : https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/NL
 
-
 ## Authentication
+
 Authentication determines whether individuals and applications accessing APIs are really who they say they are. In the context of APIs, authentication is applicable to the *End-User*, i.e. the individual on behalf of whom API resources are being accessed, _and_ to the *Client*, i.e. the application that accesses the API resources on behalf of the End-User.
 
 Note that an End-User can be both a natural person as well as a legal person (organization). In case Client Authentication includes information about its governing organization, this may fulfill and obviate the need for End-User authentication. See the section "Client Credentials using OAuth 2.0" below.
 
 ### End-User authentication
+
 In most Use Cases that involve API interaction, authenticating the End-User on behalf of whom the API resources are accessed is required. This is typically matches with the rights delegation API access pattern.
 End-User authentication is not required in situations where the API Client is solely accessing API resources on behalf of itself or its governing organization, without requiring an End-User context, but may be used nevertheless. This happens in the machine to machine API access pattern.
 
@@ -267,6 +275,7 @@ Depending on the technology used by the applications accessing the API the Acces
 Using sessions and secure cookies is outside the scope of this document. For security considerations please refer to [the latest NCSC guidelines on the subject of web application security](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-webapplicaties).
 
 ### Client authentication
+
 The Client application that accesses API resources SHOULD be authenticated, both in the machine to machine and in the rights delegation API access patterns. Also note that, although listed separately, the aforementioned methods for End-User authentication require Client authentication as well.
 
 Note: Client Authentication is applicable to the Client accessing the API, the Client making request to the Authorization Server when applying OAuth/OpenID, or both. Client Authentication SHOULD be applied for both uses.
@@ -278,6 +287,7 @@ It is RECOMMENDED to use asymmetric (public-key based) methods for client authen
 The following methods can be used for Client authentication.
 
 #### Mutual TLS authentication (mTLS)
+
 Mutual TLS authentication, is a feature of TLS with which the Client authenticates itself to the Server using its X.509 certificate. Mutual TLS (mTLS) provides strong Client authentication for server-based Clients and cannot be used with Native or User-Agent-based Clients that are not backed with a server. Support for mTLS in combination with OAuth2 is specified in [RFC8705](https://www.rfc-editor.org/info/rfc8705).
 
 In contexts where Dutch (semi) governmental organizations are involved, the X.509 certificate used for Client authentication MUST be a PKIOverheid certificate. These are x509 certificates derived from a root certificate owned by the Dutch Government. For more information on PKIOverheid see https://www.logius.nl/diensten/pkioverheid.
@@ -286,13 +296,10 @@ In the API context, only Server, Services certificates or extended Validation ce
 See also the NCSC factsheet regarding the phasing out of publicly trusted web server (SSL/TLS) certificates by PKIOverheid :
 [Factsheet PKIoverheid stopt met webcertificaten](https://www.logius.nl/actueel/ncsc-maakt-factsheet-over-uitfasing-webcertificaten-van-pkioverheid).
 
-
-
 @@@ eg PKIO or PKI config and DNS / CORS etc
 
-
-
 #### Private key JWT
+
 With Private key JWT authentication [OpenID](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication), the Client registers a public key with the Server and accompanies every API request with a JWT signed using this key. This Client Authentication method is part of the OpenID Connect standards for Clients authenticating to the OpenID Provider, but the use of Private key JWT Client authentication is not limited to this use case.
 
 This authentication method may be used with Clients that are able to securely store asymmetric private keys and sign JWT's with this key.
@@ -302,20 +309,23 @@ In contexts where Dutch (semi) governmental organizations are involved, the cert
 [The NL GOV Assurance profile for OAuth 2.0](https://publicatie.centrumvoorstandaarden.nl/api/oauth/) REQUIRES the use of private_key_jwt for full clients, native clients with dynamically registered keys, and direct access clients as mentioned in the profile.
 
 #### Client secrets
+
 Clients SHOULD NOT be authenticated using client secrets. Methods using asymmetric keys are RECOMMENDED instead of client secrets, as they are both more secure and key management is easier, in particular when deployed at scale.  Various methods exists for authenticating clients using secrets. Methods including Client authentication using HTTP Basic authentication or communicating client credentials in the request body are prone to credential theft.
 
-
 #### Client authentication and Public clients
+
 In Use Cases that involve Native and User-Agent based Clients, strong Client authentication is generally not possible. Whereas it may be possible for individual Clients to implement a decent means of Client authentication (e.g. by using the Web Crypto API in User-Agent based Clients), the Server cannot make any assumptions about the confidentiality of credentials exchanged with such Clients.
 
 When dealing with Use Cases involving Native and User-Agent based Clients, the policies and standards described in [Section HTTP level security](https://geonovum.github.io/KP-APIs/API-strategie-modules/transport-security/#http-level-security) SHOULD be followed, as well as best practices [[OAuth2.Browser-Based-Apps]] and [[RFC8252]], which are defined for use with OAuth but may be applicable for API communication in general.
 
 #### Other Authentication Methods
+
 An API Server (Resource Server) or Authorization Server MAY support any suitable authentication scheme matching their security requirements. When using other authentication methods, the authorization server MUST define a mapping between the client identifier (registration record) and authentication scheme.
 
 Some additional authentication methods are defined in the [OAuth Token Endpoint Authentication Methods](https://www.iana.org/assignments/oauth-parameters/oauth-parameters.xhtml#token-endpoint-auth-method) registry, and may be useful as generic client authentication methods beyond the specific use of protecting the token endpoint.
 
 ### Client Credentials using OAuth 2.0
+
 In Use Cases where the Client is solely accessing API resources on behalf of itself or its governing organization, without requiring an End-User context, Client authentication using the OAuth 2.0 Client Credentials grant type can be appropriate. In such cases, the Authorization Server securely provides Client credentials to the Client upon registration (e.g. via an API Developer portal or out of bound process) and the Client uses these credentials to obtain an Access Token from the Authorization Server. The Access token than is used to access the API (Resource Server) using the Access Token.
 
 Note that existing Client Credentials, such as a PKIoverheid X.509 certificate, MAY be used. This preempts the need for providing additional credentials. Any of the above mentioned Client Authentication methods can be applied with the Client Credential flow.
@@ -365,7 +375,6 @@ When authentication is implicit or when just the presence of an Authorization he
     <img alt="flowchart describing responses when authentication is implicit" src="media/HTTP-FlowChart1.PNG"/>
     <figcaption>authentication is implicit</figcaption>
 </figure>
-
 
 Links from flow chart in figure above:
 
