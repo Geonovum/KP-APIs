@@ -1,6 +1,6 @@
 # API Access Control
 
-API access control is a set of mechanisms and policies that regulate who or what can access an API and what operations they are allowed to perform. It ensures that only authorized users, clients, networks or systems can access specific endpoints or resources within the API.
+API access control is a set of mechanisms and policies that regulate who or what can access an API and what operations they are allowed to perform. It ensures that only authorized users, clients, networks or systems can access specific endpoints or resources within the API. The exact measures that need to be taken to control access to the APIs depend on the required security safeguards. For assessing and prescribing the security, follow the guidelines of the [NCSC](https://www.ncsc.nl/) and the [BIO2/NIS2](https://bio-overheid.nl/)
 
 ## Introduction
 
@@ -23,7 +23,7 @@ Onboarding is the process of guiding developers or users through the initial reg
 
 ### Client registration
 
-With the registration and onborading of organisations and users representing the organisations the second step is often the client registration. The process for this layer depends on the type of service and client software. Clients kan be unregisterd, dynamically registerd, pre listed or onboarded explicitly by users. The main means of registration is based on the OAuth [Client registration flow](https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.1.0-rc.1/#use-case-client-credentials-flow) or the [Authorization code flow](https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.1.0-rc.1/#use-case-authorization-code-flow).
+With the registration and onboarding of organizations and users representing the organizations the second step is often the client registration. The process for this layer depends on the type of service and client software. Clients kan be unregistered, dynamically registered, pre listed or onboarded explicitly by users. The main means of registration is based on the OAuth [Client registration flow](https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.1.0-rc.1/#use-case-client-credentials-flow) or the [Authorization code flow](https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.1.0-rc.1/#use-case-authorization-code-flow).
 
 ### Runtime resource access
 
@@ -33,11 +33,11 @@ When a user issues a client requests to a resource via a REST API, access must b
 
 When a client communicates with a REST API, the connection itself must be protected. **HTTPS** provides this by encrypting all traffic between client and server using **PKI certificates**. These certificates, issued by trusted authorities, verify the server’s identity and ensure that data cannot be intercepted or modified in transit. By enforcing HTTPS, APIs guarantee both **confidentiality** and **integrity** of network communications, forming the foundation of secure runtime interactions.
 
-The working of HTTPS is based on the TLS specification and is mandatory for all API's that conform to [the core set of API Design Rules](https://gitdocumentatie.logius.nl/publicatie/api/adr/2.1.0/#/core/transport/tls). One must also follow the latest [NCSC guidelines](https://www.ncsc.nl/documenten/publicaties/2025/juni/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2025-05).
+The working of HTTPS is based on the TLS specification and is mandatory for all API's that conform to [the core set of API Design Rules](https://gitdocumentatie.logius.nl/publicatie/api/adr/2.1.0/#/core/transport/tls). One must also follow the latest [NCSC guidelines fot TLS](https://www.ncsc.nl/documenten/publicaties/2025/juni/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2025-05).
 
 #### Network configuration
 
-The baseline for API Access is the phisical network. Typically the network layer consists of the internet, however a national government will also provide api access via restricted networks. [For example the dutch diginetwork](https://www.logius.nl/domeinen/infrastructuur/diginetwerk).
+The baseline for API Access is the physical network. Typically the network layer consists of the internet, however a national government will also provide api access via restricted networks. [For example the dutch Diginetwork](https://www.logius.nl/domeinen/infrastructuur/diginetwerk).
 
 ## API access patterns
 
@@ -51,7 +51,7 @@ Note that in Dutch government we often only identify organizations and not indiv
 
 ### Rights delegation
 
-In the rights delegation pattern a system is granted access to a resource by and on behalf of the owner of that resource. The rights delegation access pattern can help solve the problem of machines having greater permissions/priviliges/access rights than necessary for the task at hand.
+In the rights delegation pattern a system is granted access to a resource by and on behalf of the owner of that resource. The rights delegation access pattern can help solve the problem of machines having greater permissions/privileges/access rights than necessary for the task at hand.
 Retrieving a resource at run-time requires a resource owner, a client, an authorization server and a resource server. The resource owner (often the end user) grants permissions to the client to access resources on its behalf.
 This grant is stored at the authorization server, after permissions are granted to the client to access resources on the resource server; with or without the presence of an end user.
 
@@ -62,19 +62,19 @@ To deny the client access to these resources after initial permission is granted
 
 ### Intermediaries
 
-In some usecases an intermediary application is placed in between the client and server application. Orchestration of multiple APIs through an orchestration server is an example of this, see for instance [IMX](https://geonovum.github.io/imx-digilab/). Another example is an API gateway performing some centralized tasks in an environment with multiple resource servers operated by multiple organizations, for instance ["het Knooppunt" in DSO](https://iplo.nl/publish/library/219/dso_-_gas_-_knooppunt_gegevensuitwisseling_1.pdf) or [centraal aansluitpunt](https://www.logius.nl/onze-dienstverlening/infrastructuur/centraal-aansluitpunt). In these cases these intermediaries can act either transparantly or opaque.
+In some usecases an intermediary application is placed in between the client and server application. Orchestration of multiple APIs through an orchestration server is an example of this, see for instance [IMX](https://geonovum.github.io/imx-digilab/). Another example is an API gateway performing some centralized tasks in an environment with multiple resource servers operated by multiple organizations, for instance ["het Knooppunt" in DSO](https://iplo.nl/publish/library/219/dso_-_gas_-_knooppunt_gegevensuitwisseling_1.pdf) or [centraal aansluitpunt](https://www.logius.nl/onze-dienstverlening/infrastructuur/centraal-aansluitpunt). In these cases these intermediaries can act either transparently or opaque.
 
 #### Transparant intermediary
 
-The identity of the client application and its user is passed through the intermediary to the resource server(s). The resource server(s) can perform (fine grained) access control based on this identity. Usually either client and intermediary or intermediary and resourcource server(s) belong to one organization. Optionally in a federated setting token exchange can be used to put the identity of the client application/end user in a format issued by an identity provider trusted by the resource server(s). There are limits to what the intermediary can achieve, when the functionality required of the intermediary becomes complex (i.e. filtering, aggeragation in combination with orchestration) it becomes more sensible to integrate this functionality either at the client application or resource server. When passing information through an intermediary trust on the authenticity of this information needs to be established. This can be done either through contracts with requirements and audits, or through technical measures such as [signing](https://geonovum.github.io/KP-APIs/API-strategie-modules/signing-jades/) & [encryption](https://geonovum.github.io/KP-APIs/API-strategie-modules/encryption/). With a transparant intermediary error handling deserves additional focus as the resource server(s) can deny requests and these denials have to be handled properly. The transparant intermediary is the reccomended approach when resource servers and intermediary server are controlled by multiple organizations and some form of closed/restricted data/funtionality is involved.
+The identity of the client application and its user is passed through the intermediary to the resource server(s). The resource server(s) can perform (fine grained) access control based on this identity. Usually either client and intermediary or intermediary and resource server(s) belong to one organization. Optionally in a federated setting token exchange can be used to put the identity of the client application/end user in a format issued by an identity provider trusted by the resource server(s). There are limits to what the intermediary can achieve, when the functionality required of the intermediary becomes complex (i.e. filtering, aggregation in combination with orchestration) it becomes more sensible to integrate this functionality either at the client application or resource server. When passing information through an intermediary trust on the authenticity of this information needs to be established. This can be done either through contracts with requirements and audits, or through technical measures such as [signing](https://geonovum.github.io/KP-APIs/API-strategie-modules/signing-jades/) & [encryption](https://geonovum.github.io/KP-APIs/API-strategie-modules/encryption/). With a transparant intermediary error handling deserves additional focus as the resource server(s) can deny requests and these denials have to be handled properly. The transparant intermediary is the recommended approach when resource servers and intermediary server are controlled by multiple organizations and some form of closed/restricted data/functionality is involved.
 
 #### Opaque intermediary
 
-There is a decoupling between client application and resource server(s). The resource server(s) only know the identity of the intermediary server. The intermediary server authorizes access of the client application and its user to the resource server. Any fine grained access control is principly performed at the intermediary server based on identity. The resource server may receive additional information with a request that grants certain rights but the access decision passing this additional information has already been made at the intermediary server. A strong level of trust is needed between user, client intermediary as well as between the intermediary and resource servers. This will likely translate into contracts with requirements on all parties and associated audits. There is a large burden on the intermediary to ensure proper access control, also the intermediary poses a high risk to security when it is compromised as it can act on behalf of all potential client applications and their users. We consider this pattern acceptable when all resource servers and the intermediary are withing the control of one organization, or when only open data/functionality is involved.
+There is a decoupling between client application and resource server(s). The resource server(s) only know the identity of the intermediary server. The intermediary server authorizes access of the client application and its user to the resource server. Any fine grained access control is principally performed at the intermediary server based on identity. The resource server may receive additional information with a request that grants certain rights but the access decision passing this additional information has already been made at the intermediary server. A strong level of trust is needed between user, client intermediary as well as between the intermediary and resource servers. This will likely translate into contracts with requirements on all parties and associated audits. There is a large burden on the intermediary to ensure proper access control, also the intermediary poses a high risk to security when it is compromised as it can act on behalf of all potential client applications and their users. We consider this pattern acceptable when all resource servers and the intermediary are withing the control of one organization, or when only open data/functionality is involved.
 
 ### Session based API access pattern
 
-While this method is considered legacy it is in common use for handling access control to APIs, even though it conflicts with best practices for APIs. Because this pattern is more a standard web application pattern we refer to [the latest NCSC guidelines on the subject of web application security](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-webapplicaties) for security considerations.
+While this method is considered legacy it is in common use for handling access control to APIs, even though it conflicts with best practices for APIs. Because this pattern is more a standard web application pattern we refer to [the latest NCSC guidelines on the subject of web application security](https://www.ncsc.nl/wat-kun-je-zelf-doen/weerbaarheid/beschermen/ict-beveiligingsrichtlijnen-voor-nieuwe-webapplicaties) for security considerations.
 
 We consider this method to be mostly outside the scope of this document and refer to the aforementioned NCSC document for security considerations. We do provide some additional considerations for web clients in the section on [transport Security](https://docs.geostandaarden.nl/api/API-Strategie-mod-transport-security/).
 
@@ -214,34 +214,41 @@ More information on this subject is available at [VNG Realisatie – Federative 
 ### End Users and Organizations
 
 For identification of individual end users a pseudonym SHOULD be used when possible, to avoid exposing sensitive information about a user.
-This pseudonym can optionally be translatable to actual personal information in a separate service, but access to this service should be tightly controlled and limited only to cases where there is a legal need to use this information. Furthermore using a seperate service for translation provides a moment to audit when certain information about users is requested.
+This pseudonym can optionally be translatable to actual personal information in a separate service, but access to this service should be tightly controlled and limited only to cases where there is a legal need to use this information. Furthermore using a separate service for translation provides a moment to audit when certain information about users is requested.
 
 Use of a Burger Service Number (BSN) is only allowed when the organization has a legal ground to do so. Even when an organization is eligible to use BSN's it is still RECOMMENDED to use a pseudonym that is only translatable to a BSN for a limited number of services/users within the organization.
 An example of this can be found in the [architecture of the "digitaal stelsel omgevingswet (DSO)"](https://aandeslagmetdeomgevingswet.nl/publish/library/219/dso_-_gas_-_knooppunt_toegang_iam.pdf)
 
 For identifying government organizations use the "organisatie-identificatienummer" (OIN).
 
-For identifying non-government organizations (companies, associations, foundations etc...) use the KVK number. These numbers are used in the PKIOverheid and e-Herkenning context respectively. See https://publicatie.centrumvoorstandaarden.nl/dk/oin/ and https://www.kvk.nl/over-kvk/over-het-handelsregister/ for more information on these identifiers.
+For identifying non-government organizations (companies, associations, foundations etc...) use the KVK number. These numbers are used in the PKIOverheid and e-Herkenning context respectively. See <https://publicatie.centrumvoorstandaarden.nl/dk/oin/> and <https://www.kvk.nl/over-kvk/over-het-handelsregister/> for more information on these identifiers.
 
-OIN's can be queried using the COR API https://portaal.digikoppeling.nl/registers/corApi/index or its webpage https://portaal.digikoppeling.nl/registers/. The API will also provide known mappings between OIN- and KVK numbers (some OIN's are not derived from the KVK number). KVK numbers are derived from the handelsregister, which can be queried see https://developers.kvk.nl/documentation/search-v2 for details.
+OIN's can be queried using the COR API <https://portaal.digikoppeling.nl/registers/corApi/index> or its webpage <https://portaal.digikoppeling.nl/registers/>. The API will also provide known mappings between OIN- and KVK numbers (some OIN's are not derived from the KVK number). KVK numbers are derived from the handelsregister, which can be queried see <https://developers.kvk.nl/documentation/search-v2> for details.
 
-In the EU context use the eIDAS legal identifier. For more information see https://ec.europa.eu/digital-single-market/en/trust-services-and-eid and https://afsprakenstelsel.etoegang.nl/ for details.
+In the EU context use the eIDAS legal identifier. For more information see <https://ec.europa.eu/digital-single-market/en/trust-services-and-eid> and <https://afsprakenstelsel.etoegang.nl/> for details.
 
 ### Clients
 
-Identification of clients is different from identification of the end user or organisation using the service.
+Identification of clients is different from identification of the end user or organization using the service.
 When using authorization servers, the authorization server issues the registered client a client identifier - a unique string representing the registration information provided by the client. The client identifier is not a secret; it is commonly public known and MUST NOT be relied upon for client authentication by itself. The client identifier is unique to the authorization server.
 
 Authorization servers MUST NOT allow clients to choose or influence their `client_id` value
 
 ### eIDAS
 
-Willen we nog een verwijzing naar eIDAS opnemen?@@@
-> verwijzing eidas opnemen : https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/NL
+eIDAS stands for Electronic Identification, Authentication and Trust Services. It’s an EU regulation (Regulation (EU) No 910/2014) that provides a legal framework for:
+
+- Electronic Identification (eID)
+- Electronic Signatures, Seals, and Timestamps
+- Electronic Documents & Archiving
+- Trust Services
+
+A list of currently active trust service providers is available on [eidas.ec.europa.eu](https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/NL).
+Currently, eIDAS 2.0 is on the way (expected 2026–2027). For now (2025) the use of PKIO certificates in combination with KvK and OIN numbers is still the most used trust service.
 
 ## Authentication
 
-Authentication determines whether individuals and applications accessing APIs are really who they say they are. In the context of APIs, authentication is applicable to the *End-User*, i.e. the individual on behalf of whom API resources are being accessed, _and_ to the *Client*, i.e. the application that accesses the API resources on behalf of the End-User.
+Authentication determines whether individuals and applications accessing APIs are really who they say they are. In the context of APIs, authentication is applicable to the *End-User*, i.e. the individual on behalf of whom API resources are being accessed, *and* to the *Client*, i.e. the application that accesses the API resources on behalf of the End-User.
 
 Note that an End-User can be both a natural person as well as a legal person (organization). In case Client Authentication includes information about its governing organization, this may fulfill and obviate the need for End-User authentication. See the section "Client Credentials using OAuth 2.0" below.
 
@@ -252,27 +259,41 @@ End-User authentication is not required in situations where the API Client is so
 
 The following methods can be used for End-User authentication:
 
-**SAML**
+#### SAML
+
 SAML is a standard for securely communicating assertions about an authenticated End-User from the Identity Provider to the Service Provider. Although it existed before APIs became mainstream and is not aimed at API authentication specifically, communicating Access Tokens that can be used to access API resources in the exchanged assertions is possible.
 
 [SAML 2.0 is included on the list of required standards by Forum Standaardisatie](https://forumstandaardisatie.nl/open-standaarden/saml). It is expected, however, that the following standards will become preferred over SAML in Use Cases that involve access to API resources.
 
-**OAuth**
+#### OAuth
+
 Although technically an authorization method, OAuth [[OAuth2]] is used as well for authenticating End-Users themselves and providing the Client with an Access Token upon successful End-User (and Client) authentication. This Access Token can be used to make authorized API requests. Using OAuth is appropriate when authorization is not dependent on an identifiable subject, the subject is different from the End-User or the Resource Server does not require authentication of the End-User itself.
 
-The NL GOV Assurance profile for OAuth 2.0 is included on the list of required standards by Forum Standaardisatie. The latest version of the profile can be found at https://publicatie.centrumvoorstandaarden.nl/api/oauth/.
+The NL GOV Assurance profile for OAuth 2.0 is included on the list of required standards by Forum Standaardisatie. The latest version of the profile can be found at <https://publicatie.centrumvoorstandaarden.nl/api/oauth/>.
 
-**OpenID Connect**
+#### OpenID Connect
+
 OpenID Connect [[OpenID.Core]] adds an identity layer on top of OAuth, making it into an actual authentication method. It enables API Clients to verify the identity of authenticated End-Users and to obtain profile information about the End-User.
 
-A Dutch Assurance profile for OpenID Connect is currently being drafted. It is expected to be added to the list of required standards by Forum Standaardisatie. The latest version of the draft profile can be found at https://logius.gitlab.io/oidc/.
+A Dutch Assurance profile for OpenID Connect is currently being drafted. It is expected to be added to the list of required standards by Forum Standaardisatie. The latest version of the draft profile can be found at <https://logius.gitlab.io/oidc/>.
 
-**Out of band**
+#### Out of band
+
 For some Use Cases it may be appropriate to distribute Access Tokens using an Out of band method. Out of band authentication is generally appropriate when API resources are accessed via an application that already supports a client authentication method and the End-User is rather static. Based on an End-User authentication performed, the application subsequently is provided with an Access Token for API access via a secure method.
 
 Depending on the technology used by the applications accessing the API the Access Token may technically be communicated using a secure cookie. This however limits the technologies used to create client applications.
 
-Using sessions and secure cookies is outside the scope of this document. For security considerations please refer to [the latest NCSC guidelines on the subject of web application security](https://www.ncsc.nl/documenten/publicaties/2019/mei/01/ict-beveiligingsrichtlijnen-voor-webapplicaties).
+Using sessions and secure cookies is outside the scope of this document. For security considerations please refer to [the latest NCSC guidelines on the subject of web application security](https://www.ncsc.nl/wat-kun-je-zelf-doen/weerbaarheid/beschermen/ict-beveiligingsrichtlijnen-voor-nieuwe-webapplicaties).
+
+#### Token Exchange
+
+OAuth 2.0 Token Exchange, defined in [RFC 8693](https://datatracker.ietf.org/doc/html/rfc8693), is an extension to OAuth that allows a client to exchange one security token for another. It is used when an application already holds a token but requires a different one to interact with another service, obtain a new scope, or convert between token formats such as SAML and JWT.
+
+The process works through the authorization server’s token endpoint. The client sends a request with a special grant type for token exchange and includes the token it already has, the type of that token, and the type of token it wants in return. Optional parameters such as the target audience or requested scopes can be included to tailor the new token. If the request is valid, the authorization server issues a new token with the desired properties and returns it in the response, sometimes along with a refresh token.
+
+This mechanism supports two main patterns: delegation, where a service acts on behalf of a user to call another service, and impersonation, where a service exchanges its own token for one that represents another identity. In both cases, token exchange avoids requiring the user to reauthenticate and ensures each service only receives the precise permissions it needs.
+
+Token exchange is particularly useful in microservice architectures, where one service may need to call another with a token specifically scoped to that backend, in cross-domain federation, where enterprise identity tokens are converted into OAuth tokens for cloud use, and in cloud environments where infrastructure tokens are transformed into standard access tokens for APIs.
 
 ### Client authentication
 
@@ -286,17 +307,15 @@ It is RECOMMENDED to use asymmetric (public-key based) methods for client authen
 
 The following methods can be used for Client authentication.
 
-#### Mutual TLS authentication (mTLS)
+#### Mutual TLS authentication (mTLS) based on PKIOverheid
 
 Mutual TLS authentication, is a feature of TLS with which the Client authenticates itself to the Server using its X.509 certificate. Mutual TLS (mTLS) provides strong Client authentication for server-based Clients and cannot be used with Native or User-Agent-based Clients that are not backed with a server. Support for mTLS in combination with OAuth2 is specified in [RFC8705](https://www.rfc-editor.org/info/rfc8705).
 
-In contexts where Dutch (semi) governmental organizations are involved, the X.509 certificate used for Client authentication MUST be a PKIOverheid certificate. These are x509 certificates derived from a root certificate owned by the Dutch Government. For more information on PKIOverheid see https://www.logius.nl/diensten/pkioverheid.
+In contexts where Dutch (semi) governmental organizations are involved, the X.509 certificate used for Client authentication MUST be a PKIOverheid certificate. These are x509 certificates derived from a root certificate owned by the Dutch Government. For more information on PKIOverheid see <https://www.logius.nl/diensten/pkioverheid>.
 
 In the API context, only Server, Services certificates or extended Validation certificates (as used for websites) SHOULD be used. Please note that in the current standard of PKIO the TSPs are not obligated to fill the OIN / HRN in the Subject.Serialnumber field for the private services chain, as it is optional. See the [Programme of Requirements part 3h: CP Server certificaten – domein Private Services](https://www.logius.nl/sites/default/files/bestanden/website/PvE%20deel3h%20v4.8%20V1.0.pdf) for details. For the extended Validation certificates, the chamber of commerce number is given in the Serial.Subject field see [Programme of Requirements part 3f: Certificate Policy for Extended Validation certificates in EV (G1) Domain](https://www.logius.nl/sites/default/files/public/bestanden/diensten/PKIoverheid/PvE%20EN%20part3f%20v4.8%20DEF.pdf) or the [website of Logius](https://www.logius.nl/diensten/pkioverheid/aansluiten-als-tsp/pogramma-van-eisen) for details.
 See also the NCSC factsheet regarding the phasing out of publicly trusted web server (SSL/TLS) certificates by PKIOverheid :
 [Factsheet PKIoverheid stopt met webcertificaten](https://www.logius.nl/actueel/ncsc-maakt-factsheet-over-uitfasing-webcertificaten-van-pkioverheid).
-
-@@@ eg PKIO or PKI config and DNS / CORS etc
 
 #### Private key JWT
 
@@ -355,7 +374,7 @@ In case the proper headers are not sent, then there are no authentication detail
   <p>This is in line with the way the OAuth standard appears on the comply or explain list of Forum Standaardisatie.</p>
 </div>
 
-See also [The NL GOV Assurance profile for OAuth 2.0](https://gitdocumentatie.logius.nl/publicatie/api/oauth/) for further explanation of the applicaton of OAuth.
+See also [The NL GOV Assurance profile for OAuth 2.0](https://gitdocumentatie.logius.nl/publicatie/api/oauth/) for further explanation of the application of OAuth.
 
 The [Digikoppeling standard](https://publicatie.centrumvoorstandaarden.nl/dk/actueel/) currently has a [RESTful API profile in development](https://gitdocumentatie.logius.nl/publicatie/dk/restapi/) that specifies how to use PKIOverheid x.509 certificates for authorization.
 
@@ -367,7 +386,7 @@ Note that authentication in the cases below is typically client authentication, 
 
 Note that usage of the Authorization header is part of the OAuth2 specifications.
 
-**Implicit authentication**
+#### Implicit authentication
 
 When authentication is implicit or when just the presence of an Authorization header is enough for authentication and/or authorization: use the flow chart in figure 1 to determine the correct error code.
 
@@ -378,13 +397,13 @@ When authentication is implicit or when just the presence of an Authorization he
 
 Links from flow chart in figure above:
 
-https://tools.ietf.org/html/rfc6750#section-3.1
+<https://tools.ietf.org/html/rfc6750#section-3.1>
 
-https://tools.ietf.org/html/rfc7231#section-6.5.4
+<https://tools.ietf.org/html/rfc7231#section-6.5.4>
 
-**Explicit authentication**
+#### Explicit authentication
 
-When authentication is explicit, that is the authentication credentials are actively verfied when present, use the flow chart in figure 2 to determine the correct error codes.
+When authentication is explicit, that is the authentication credentials are actively verified when present, use the flow chart in figure 2 to determine the correct error codes.
 
 <figure>
     <img alt="flowchart describing responses when authentication is explicit" src="media/HTTP-FlowChart2.PNG"/>
@@ -393,15 +412,15 @@ When authentication is explicit, that is the authentication credentials are acti
 
 Links from flow chart in figure above:
 
-https://tools.ietf.org/html/rfc7235#section-3.1
+<https://tools.ietf.org/html/rfc7235#section-3.1>
 
-https://tools.ietf.org/html/rfc6750#section-3.1
+<https://tools.ietf.org/html/rfc6750#section-3.1>
 
-https://tools.ietf.org/html/rfc7231#section-6.5.4
+<https://tools.ietf.org/html/rfc7231#section-6.5.4>
 
-**Explicit authentication while matching client authorization (`cnf`)**
+#### Explicit authentication while matching client authorization (`cnf`)
 
-When authentication is explicit and there is a check whether the provided authorization confirmation claim (`cnf`, see [[rfc7800]]) matches the credentials provided for authentication use the flow chart in figure 3 to esteblish the correct error codes.
+When authentication is explicit and there is a check whether the provided authorization confirmation claim (`cnf`, see [[rfc7800]]) matches the credentials provided for authentication use the flow chart in figure 3 to establish the correct error codes.
 
 <figure>
     <img alt="flowchart describing responses when authentication is explicit and client authorization confirmation claim (`cnf`) matches authentication." src="media/HTTP-FlowChart3.PNG"/>
@@ -410,25 +429,19 @@ When authentication is explicit and there is a check whether the provided author
 
 Links from flow chart in figure above:
 
-https://tools.ietf.org/html/rfc7235#section-3.1
+<https://tools.ietf.org/html/rfc7235#section-3.1>
 
-https://tools.ietf.org/html/rfc6750#section-3.1
+<https://tools.ietf.org/html/rfc6750#section-3.1>
 
-https://tools.ietf.org/html/rfc7800
+<https://tools.ietf.org/html/rfc7800>
 
-https://tools.ietf.org/html/rfc7231#section-6.5.4
+<https://tools.ietf.org/html/rfc7231#section-6.5.4>
 
-<!--First, it is established whether the requester (principal) has a valid authorisation(i.e. token is valid) then it is established whether this authorisation is valid for a requested resource. In case the requester is not authorised or the authorisation cannot be established, for example, the resource is required to establish authorisation and the resource does not exist, then a status error code `403 Forbidden` is returned. In this way, no information is returned about the existence of a resource to a non-authorised principal.
+<!--First, it is established whether the requester (principal) has a valid authorization(i.e. token is valid) then it is established whether this authorization is valid for a requested resource. In case the requester is not authorized or the authorization cannot be established, for example, the resource is required to establish authorization and the resource does not exist, then a status error code `403 Forbidden` is returned. In this way, no information is returned about the existence of a resource to a non-authorized principal.
 
-An additional advantage of the strategy that establishes whether there is authorisation is the opportunity to separate access control logic from business logic.-->
+An additional advantage of the strategy that establishes whether there is authorization is the opportunity to separate access control logic from business logic.-->
 
-## Usefull resources
+## Useful resources
 
-@@@
-
-- NCSC
-- 42crunch
-- FTV
-- Digikoppeling security
-- FSC
-- https://www.apisecuniversity.com/
+- [more information about security available at developer.overheid.nl](https://developer.overheid.nl/kennisbank/security/)
+- [more information about 'Baseline Informatiebeveiliging Overheid 2'](https://www.informatiebeveiligingsdienst.nl/project/baseline-informatiebeveiliging-overheid-versie-2-bio2/)
