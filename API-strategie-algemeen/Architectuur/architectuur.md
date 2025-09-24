@@ -484,7 +484,9 @@ Voor complexe Domeinen of gecombineerde Diensten waarbij meerdere bronnen worden
 
 Het Resource Model als logische view op achterliggende datamodellen heeft ook als voordeel dat op de laag van het Resource Model al integratie van data modellen kan plaatsvinden nog voordat de achterliggende modellen zijn aangepast of volledig geïntegreerd. Een (nieuw) geïntegreerd Resource model over meerdere achterliggende datamodellen heen kan zo databronnen integreren en aanbieden. Met behulp van een geïntegreerd resourcemodel op het niveau van API's kan sneller gestandaardiseerd worden en kan men ook sneller innoveren.
 
-![alt text](https://github.com/Geonovum/KP-APIs/raw/master/overleggen/Werkgroep%20API%20architectuur/uitwerkingen/media/API-Infomodel2.png)
+<!-- ![alt text](https://github.com/Geonovum/KP-APIs/raw/master/overleggen/Werkgroep%20API%20architectuur/uitwerkingen/media/API-Infomodel2.png) -->
+
+![alt text](https://github.com/Geonovum/KP-APIs/raw/master/media/API_orkestratie_v2.bmp) 
 
 Figuur 7: Geïntegreerd Resource Model
 
