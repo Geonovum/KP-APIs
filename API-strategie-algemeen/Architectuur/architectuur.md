@@ -486,7 +486,7 @@ Het Resource Model als logische view op achterliggende datamodellen heeft ook al
 
 <!-- ![alt text](https://github.com/Geonovum/KP-APIs/raw/master/overleggen/Werkgroep%20API%20architectuur/uitwerkingen/media/API-Infomodel2.png) -->
 
-![alt text](https://github.com/Geonovum/KP-APIs/raw/master/media/API_orkestratie_v2.bmp) 
+![alt text](https://github.com/Geonovum/KP-APIs/raw/orkestratie-archimate/media/API_orkestratie_v2.bmp) 
 
 Figuur 7: Geïntegreerd Resource Model
 
