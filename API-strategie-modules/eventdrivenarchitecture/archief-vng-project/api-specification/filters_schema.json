@@ -1,0 +1,258 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"description": "Comment describing your JSON Schema",
+	"type": "object",
+	"properties": {
+		"filters": {
+			"description": "This filter evaluates to 'true' if all contained filters are 'true'",
+			"type": "array",
+			"items": {
+				"title": "Filter entry",
+				"oneOf": [
+					{
+						"$ref": "#/definitions/AllFilter"
+					},
+					{
+						"$ref": "#/definitions/AnyFilter"
+					},
+					{
+						"$ref": "#/definitions/NotFilter"
+					},
+					{
+						"$ref": "#/definitions/ExactFilter"
+					},
+					{
+						"$ref": "#/definitions/PrefixFilter"
+					},
+					{
+						"$ref": "#/definitions/SuffixFilter"
+					}
+				]
+			}
+		}
+	},
+	"definitions": {
+		"Filter": {
+			"title": "Filter",
+			"description": "A filter from a selection of multiple filter types and dialects",
+			"type": "object",
+			"additionalProperties": true
+		},
+		"AllFilter": {
+			"allOf": [
+				{
+					"$ref": "#/definitions/Filter"
+				},
+				{
+					"type": "object",
+					"description": "all filter",
+					"properties": {
+						"all": {
+							"description": "This filter evaluates to 'true' if all contained filters are 'true'",
+							"type": "array",
+							"minItems": 1,
+							"items": {
+								"title": "Filter entry",
+								"oneOf": [
+									{
+										"$ref": "#/definitions/AllFilter"
+									},
+									{
+										"$ref": "#/definitions/AnyFilter"
+									},
+									{
+										"$ref": "#/definitions/NotFilter"
+									},
+									{
+										"$ref": "#/definitions/ExactFilter"
+									},
+									{
+										"$ref": "#/definitions/PrefixFilter"
+									},
+									{
+										"$ref": "#/definitions/SuffixFilter"
+									}
+								]
+							}
+						}
+					},
+					"additionalProperties": false
+				}
+			]
+		},
+		"AnyFilter": {
+			"allOf": [
+				{
+					"$ref": "#/definitions/Filter"
+				},
+				{
+					"type": "object",
+					"description": "any filter",
+					"properties": {
+						"any": {
+							"description": "This filter evaluates to 'true' if any contained filters are 'true'",
+							"type": "array",
+							"minItems": 1,
+							"items": {
+								"title": "Filter entry",
+								"oneOf": [
+									{
+										"$ref": "#/definitions/AllFilter"
+									},
+									{
+										"$ref": "#/definitions/AnyFilter"
+									},
+									{
+										"$ref": "#/definitions/NotFilter"
+									},
+									{
+										"$ref": "#/definitions/ExactFilter"
+									},
+									{
+										"$ref": "#/definitions/PrefixFilter"
+									},
+									{
+										"$ref": "#/definitions/SuffixFilter"
+									}
+								]
+							}
+						}
+					},
+					"additionalProperties": false
+				}
+			]
+		},
+		"NotFilter": {
+			"allOf": [
+				{
+					"$ref": "#/definitions/Filter"
+				},
+				{
+					"type": "object",
+					"description": "not filter",
+					"properties": {
+						"not": {
+							"type": "object",
+							"oneOf": [
+								{
+									"$ref": "#/definitions/AllFilter"
+								},
+								{
+									"$ref": "#/definitions/AnyFilter"
+								},
+								{
+									"$ref": "#/definitions/NotFilter"
+								},
+								{
+									"$ref": "#/definitions/ExactFilter"
+								},
+								{
+									"$ref": "#/definitions/PrefixFilter"
+								},
+								{
+									"$ref": "#/definitions/SuffixFilter"
+								}
+							]
+						}
+					},
+					"additionalProperties": false
+				}
+			]
+		},
+		"ExactFilter": {
+			"allOf": [
+				{
+					"$ref": "#/definitions/Filter"
+				},
+				{
+					"type": "object",
+					"title": "exact filter",
+					"description": "This filter evaluates to 'true' if the 'value' exactly matches the value of the indicated CloudEvents context attribute",
+					"properties": {
+						"exact": {
+							"$ref": "#/definitions/CloudEventsAttribute"
+						}
+					},
+					"additionalProperties": false
+				}
+			]
+		},
+		"PrefixFilter": {
+			"allOf": [
+				{
+					"$ref": "#/definitions/Filter"
+				},
+				{
+					"type": "object",
+					"title": "prefix filter",
+					"description": "This filter evaluates to 'true' if the 'value' is a prefix of the value of the indicated CloudEvents context attribute",
+					"properties": {
+						"prefix": {
+							"$ref": "#/definitions/CloudEventsAttribute"
+						}
+					},
+					"additionalProperties": false
+				}
+			]
+		},
+		"SuffixFilter": {
+			"allOf": [
+				{
+					"$ref": "#/definitions/Filter"
+				},
+				{
+					"type": "object",
+					"title": "suffix filter",
+					"description": "This filter evaluates to 'true' if the 'value' is a suffix of the value of the indicated CloudEvents context attribute",
+					"properties": {
+						"suffix": {
+							"$ref": "#/definitions/CloudEventsAttribute"
+						}
+					},
+					"additionalProperties": false
+				}
+			]
+		},
+		"CloudEventsAttribute": {
+			"type": "object",
+			"description": "CloudEvents defined attributes.",
+			"additionalProperties": {
+				"type": "string"
+			},
+			"properties": {
+				"id": {
+					"type": "string",
+					"description": "Identifies the event."
+				},
+				"source": {
+					"type": "string",
+					"description": "Identifies the context in which an event happened."
+				},
+				"specversion": {
+					"type": "string",
+					"description": "The version of the CloudEvents specification which the event uses."
+				},
+				"type": {
+					"type": "string",
+					"description": "Describes the type of event related to the originating occurrence."
+				},
+				"datacontenttype": {
+					"type": "string",
+					"description": "Content type of the data value."
+				},
+				"dataschema": {
+					"type": "string",
+					"description": "Identifies the schema that data adheres to."
+				},
+				"subject": {
+					"type": "string",
+					"description": "Describes the subject of the event in the context of the event producer."
+				},
+				"time": {
+					"type": "string",
+					"description": "Timestamp of when the occurrence happened."
+				}
+			}
+		}
+	}
+}
