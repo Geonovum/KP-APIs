@@ -1,6 +1,6 @@
 var documentConfig = {
   title: "Batching",
-  specStatus: "wv",
+  specStatus: "vv",
   specType: "st",
   pubDomain: "api",
   license: "cc-by",
