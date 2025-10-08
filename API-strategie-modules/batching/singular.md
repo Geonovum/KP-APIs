@@ -91,7 +91,7 @@ Singular resource requests target one specific resource by its unique identifier
          <ul>
             <li>Clients can map each response entry directly to its request by array index, without correlation keys or additional matching logic.</li>
             <li>Servers must always produce a <code>results</code> array of the same length as the request, even when some entries are <code>null</code>.</li>
-            <li>Clients must handle <code>null</code> entries gracefully, treating them as “resource not found or user not authorized.”</li>
+            <li>Clients must handle <code>null</code> entries gracefully, treating them as "resource not found" or "user not authorized".</li>
             <li>This structure enables batch responses to remain predictable, consistent, and easy to process in client libraries and tooling.</li>
          </ul>
       </dd>
