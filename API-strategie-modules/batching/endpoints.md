@@ -121,7 +121,7 @@ Batch endpoints provide a standardized way to retrieve multiple resources in a s
          <ul>
             <li>Clients can reliably map each request item to a result by array position, simplifying processing logic.</li>
             <li>Servers must always return a <code>results</code> array of the same length as <code>requests</code>, even if some entries are <code>null</code> or empty.</li>
-            <li>Partial failures (e.g. unauthorized access, invalid ID) must result in an <a href="#invalid-or-unauthorized-keys">error response</a>.</li>
+            <li>Requests containing invalid keys must result in an <a href="#invalid-keys">error response</a>.</li>
             <li>Additional metadata can be included at the top level, but must not affect the semantics of the <code>results</code> property.</li>
          </ul>
       </dd>

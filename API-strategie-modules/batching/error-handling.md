@@ -111,26 +111,25 @@ Errors are reported using an HTTP error status and a `problem+json` body. Item-l
    </dl>
 </div>
 
-## Invalid or unauthorized keys
+## Invalid keys
 
 <div class="rule" id="/batching/err-invalid keys" data-type="technical">
-   <p class="rulelab">Reject singular batch requests with invalid or unauthorized keys</p>
+   <p class="rulelab">Reject singular batch requests with invalid keys</p>
    <dl>
       <dt>Statement</dt>
       <dd>
-         <p>If a singular batch request contains invalid identifiers (for example, an invalid UUID) or identifiers for which the client is not authorized, the server must reject the entire batch with status code <code>400 Bad Request</code> and return a <code>problem+json</code> body. The response must indicate which keys caused the failure.</p>
+         <p>If a singular batch request contains invalid keys (for example, an invalid UUID), the server must reject the entire batch with status code <code>400 Bad Request</code> and return a <code>problem+json</code> body. The response must indicate which keys caused the failure.</p>
          <div class="example">
             <pre>
                 // HTTP/1.1 400 Bad Request
                 // Content-Type: application/problem+json
                 {
                     "type": "https://api.example.org/problems/invalid-keys",
-                    "title": "Invalid or unauthorized keys",
+                    "title": "Invalid keys",
                     "status": 400,
-                    "detail": "One or more provided keys are invalid or unauthorized.",
+                    "detail": "One or more provided keys are invalid.",
                     "invalidKeys": [
-                        "not-a-uuid",
-                        "3b9710c4-6614-467a-ab82-36822cf48db9"
+                        "not-a-uuid"
                     ]
                 }
             </pre>
@@ -138,13 +137,13 @@ Errors are reported using an HTTP error status and a `problem+json` body. Item-l
       </dd>
       <dt>Rationale</dt>
       <dd>
-         <p>Invalid or unauthorized keys represent client input errors. Rejecting the entire batch avoids returning mixed results that could confuse clients and ensures that request validation is strict and predictable. Including the list of failing keys helps clients identify and correct errors efficiently.</p>
+         <p>Invalid keys represent client input errors. Rejecting the entire batch avoids returning mixed results that could confuse clients and ensures that request validation is strict and predictable. Including the list of failing keys helps clients identify and correct errors efficiently.</p>
       </dd>
       <dt>Implications</dt>
       <dd>
          <ul>
-            <li>Servers must validate all keys before processing and reject the batch if any are invalid or unauthorized.</li>
-            <li>Clients must ensure that all identifiers conform to the expected format and that they are authorized to access them before submitting the request.</li>
+            <li>Servers must validate all keys before processing and reject the batch if any are invalid.</li>
+            <li>Clients must ensure that all identifiers conform to the expected format before submitting the request.</li>
             <li>The error response may include an <code>invalidKeys</code> array or equivalent field to indicate which keys failed, enabling corrective actions.</li>
          </ul>
       </dd>
