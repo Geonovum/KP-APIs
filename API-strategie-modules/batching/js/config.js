@@ -1,6 +1,13 @@
 var documentConfig = {
   title: "Batching",
   specStatus: "cv",
+  sotdText: {
+    ...organisationConfig,
+    en: {
+      ...organisationConfig.sotdText.en,
+      cv: 'This is a proposed version authored by the ADR "orchestration" working group. Comments regarding this document may be shared through GitHub: https://github.com/Geonovum/KP-APIs/issues',
+    },
+  },
   specType: "st",
   pubDomain: "api",
   license: "cc-by",
