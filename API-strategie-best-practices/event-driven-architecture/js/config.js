@@ -28,7 +28,7 @@ let respecConfig = {
   //-- shortName is verplicht! (komt in de URL: kies logische afkorting)--------------
   shortName: "API-Strategie-EDA",
   edDraftURI:
-    "https://geonovum.github.io/KP-APIs/API-strategie-modules/eventdrivearchitecture/",
+    "https://geonovum.github.io/KP-APIs/API-strategie-best-practices/event-driven-architecture/",
   //edDraftURI = De URI van de draft version. Deze wordt automatisch afgeleid van de github URI; maar kan hier overschreven worden.
   //edDraftURI: ["https://geonovum.github.io", "/", "shortName"],
 
