@@ -33,7 +33,7 @@ When a user issues a client requests to a resource via a REST API, access must b
 
 When a client communicates with a REST API, the connection itself must be protected. **HTTPS** provides this by encrypting all traffic between client and server using **PKI certificates**. These certificates, issued by trusted authorities, verify the server’s identity and ensure that data cannot be intercepted or modified in transit. By enforcing HTTPS, APIs guarantee both **confidentiality** and **integrity** of network communications, forming the foundation of secure runtime interactions.
 
-The working of HTTPS is based on the TLS specification and is mandatory for all API's that conform to [the core set of API Design Rules](https://gitdocumentatie.logius.nl/publicatie/api/adr/2.1.0/#/core/transport/tls). One must also follow the latest [NCSC guidelines fot TLS](https://www.ncsc.nl/documenten/publicaties/2025/juni/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2025-05).
+The working of HTTPS is based on the TLS specification and is mandatory for all API's that conform to [the core set of API Design Rules](https://gitdocumentatie.logius.nl/publicatie/api/adr/2.1.0/#/core/transport/tls). One must also follow the latest [NCSC guidelines for TLS](https://www.ncsc.nl/documenten/publicaties/2025/juni/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2025-05).
 
 #### Network configuration
 
