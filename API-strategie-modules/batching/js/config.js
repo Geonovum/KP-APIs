@@ -1,5 +1,5 @@
 var documentConfig = {
-  title: "Batching",
+  title: "API Batching module",
   specStatus: "cv",
   sotdText: {
     ...organisationConfig,
@@ -14,6 +14,7 @@ var documentConfig = {
   shortName: "API-Strategie-mod-batching",
   edDraftURI:
     "https://geonovum.github.io/KP-APIs/API-strategie-modules/batching",
+  publishDate: "2025-10-21",
   editors: [
     {
       name: "Joost Farla",
