@@ -47,7 +47,7 @@ Because security is about compromises one should first be aware of what access p
 
 Two different machines negotiate a secure point to point connection. One side acts as the client, the other as the server. Both sides identify and authenticate the other party.
 The server authorizes access to its resources by the client based on the established identity of the client. The authorizations for a client are determined by doing a lookup to an identity store based on the established identity of the client.
-Note that in Dutch government we often only identify organizations and not individual machines or their users. Therefor the access rights or permissions associated with a given identity might be far greater than needed. This is breaking the principle of least privilege.
+Note that in Dutch government we often only identify organizations and not individual machines or their users. Therefore the access rights or permissions associated with a given identity might be far greater than needed. This is breaking the principle of least privilege.
 
 ### Rights delegation
 
