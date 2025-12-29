@@ -6,6 +6,8 @@ het Kennis Platform API's Kort beschreven staat hoe je met GitHub werkt, hoe je
 met Markdown werkt en welke afspraken (Golden Rules) het gezamenlijk werken
 gemakkelijker maken.
 
+Dit is een test voor een nieuwe commit.
+
 GitHub Repository
 -----------------
 
