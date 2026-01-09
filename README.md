@@ -13,24 +13,24 @@ De API strategie bestaat uit een een inleidend document, verschillende normatiev
 
 De verschillende onderdelen van de NL API Strategie bevat de volgende documenten:
 
-| Onderdeel            | Documentnaam & </br> Verwijzing naar de laatst gepubliceerde versie                                                        | Status                                                    | Versie                      |
-| -------------------- | -------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- | --------------------------- |
-| Algemeen             | [Inleiding NL API Strategie](https://docs.geostandaarden.nl/api/API-Strategie/)                                            | Vastgesteld </br> (door Kennisplatform)                   | 2023-12-21                  |
-| Algemeen             | [Architectuur NL API Strategie](https://docs.geostandaarden.nl/api/API-Strategie-architectuur/)                            | Vastgesteld </br> (door Kennisplatform)                   | 2023-12-21                  |
-| Algemeen             | [Gebruikerswensen NL API Strategie](https://docs.geostandaarden.nl/api/API-Strategie-gebruikerswensen/)                    | Vastgesteld </br> (door Kennisplatform)                   | 2023-12-21                  |
-| Normatieve standaard | [API Design Rules (ADR)](https://gitdocumentatie.logius.nl/publicatie/api/adr/)                                            | Verplicht </br> (pas toe leg uit)                         | 2025-08-27 </br> v2.1.0     |
-| Normatieve standaard | [Open API Specification (OAS)](https://forumstandaardisatie.nl/open-standaarden/openapi-specification)                     | Verplicht </br> (pas toe leg uit)                         | 2018-05-25 </br> v3.0.1     |
-| Normatieve standaard | [NL GOV OAuth profiel](https://gitdocumentatie.logius.nl/publicatie/api/oauth/)                                            | Verplicht </br> (pas toe leg uit)                         | 2024-12-03 </br> v1.1.0     |
-| Normatieve standaard | [NL GOV OpenID Connect profile](https://gitdocumentatie.logius.nl/publicatie/api/oidc/)                                    | Verplicht </br> (pas toe leg uit)                         | 2023-09-18 </br> v1.0.1     |
-| Normatieve standaard | [Digikoppeling REST API koppelvlak specificatie](https://gitdocumentatie.logius.nl/publicatie/dk/restapi/)                 | Verplicht </br> (pas toe leg uit)                         | 2025-11-05 </br> v3.0.1     |
-| Normatieve module    | [API Geospatial Design Rules module](https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/)                            | Verplicht </br> (pas toe leg uit) | 2025-05-22 </br> v1.0.3 |
-| Normatieve module    | [API Transport Security module](https://gitdocumentatie.logius.nl/publicatie/api/mod-ts/)                                  | Verplicht </br> (pas toe leg uit) | 2024-06-06 </br> v1.0.2 |
-| Aanvullende module   | [API Access control module](https://docs.geostandaarden.nl/api/API-Strategie-mod-access-control/)                          | Stabiel </br> (Werkgroep Kennisplatform)                  | 2023-07-11                  |
-| Aanvullende module   | [API Naming conventions module](https://docs.geostandaarden.nl/api/API-Strategie-mod-naming-conventions/)                  | Stabiel </br> (Werkgroep Kennisplatform)                  | 2023-07-12                  |
-| Aanvullende module   | [API Hypermedia module](https://docs.geostandaarden.nl/api/API-Strategie-mod-hypermedia/)                                  | Stabiel </br> (Werkgroep Kennisplatform)                  | 2023-07-12                  |
-| Aanvullende module   | [ADR-HTTP Message and payload signing with JAdES](https://geonovum.github.io/KP-APIs/API-strategie-modules/signing-jades/) | Stabiel </br> (Werkgroep Kennisplatform)                  | 2024-09-06                  |
-| Aanvullende module   | [ADR-HTTP Payload encryption](https://geonovum.github.io/KP-APIs/API-strategie-modules/encryption/)                        | Stabiel </br> (Werkgroep Kennisplatform)                  | 2024-09-06                  |
-| Aanvullende module   | [API Batching](https://geonovum.github.io/KP-APIs/API-strategie-modules/batching/)                                         | Concept </br> (Werkgroep Kennisplatform)                  |                             |
+| Onderdeel            | Documentnaam & </br> Verwijzing naar de laatst gepubliceerde versie                                                        | Status                                                    |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| Algemeen             | [Inleiding NL API Strategie](https://docs.geostandaarden.nl/api/API-Strategie/)                                            | Vastgesteld </br> (door Kennisplatform)                   |
+| Algemeen             | [Architectuur NL API Strategie](https://docs.geostandaarden.nl/api/API-Strategie-architectuur/)                            | Vastgesteld </br> (door Kennisplatform)                   |
+| Algemeen             | [Gebruikerswensen NL API Strategie](https://docs.geostandaarden.nl/api/API-Strategie-gebruikerswensen/)                    | Vastgesteld </br> (door Kennisplatform)                   |
+| Normatieve standaard | [API Design Rules (ADR)](https://gitdocumentatie.logius.nl/publicatie/api/adr/)                                            | Verplicht </br> (pas toe leg uit)                         |
+| Normatieve standaard | [Open API Specification (OAS)](https://forumstandaardisatie.nl/open-standaarden/openapi-specification)                     | Verplicht </br> (pas toe leg uit)                         |
+| Normatieve standaard | [NL GOV OAuth profiel](https://gitdocumentatie.logius.nl/publicatie/api/oauth/)                                            | Verplicht </br> (pas toe leg uit)                         |
+| Normatieve standaard | [NL GOV OpenID Connect profile](https://gitdocumentatie.logius.nl/publicatie/api/oidc/)                                    | Verplicht </br> (pas toe leg uit)                         |
+| Normatieve standaard | [Digikoppeling REST API koppelvlak specificatie](https://gitdocumentatie.logius.nl/publicatie/dk/restapi/)                 | Verplicht </br> (pas toe leg uit)                         |
+| Normatieve module    | [API Geospatial Design Rules module](https://gitdocumentatie.logius.nl/publicatie/api/mod-geo/)                            | Verplicht </br> (pas toe leg uit)                         |
+| Normatieve module    | [API Transport Security module](https://gitdocumentatie.logius.nl/publicatie/api/mod-ts/)                                  | Verplicht </br> (pas toe leg uit)                         |
+| Aanvullende module   | [API Access control module](https://docs.geostandaarden.nl/api/API-Strategie-mod-access-control/)                          | Stabiel </br> (Werkgroep Kennisplatform)                  |
+| Aanvullende module   | [API Naming conventions module](https://docs.geostandaarden.nl/api/API-Strategie-mod-naming-conventions/)                  | Stabiel </br> (Werkgroep Kennisplatform)                  |
+| Aanvullende module   | [API Hypermedia module](https://docs.geostandaarden.nl/api/API-Strategie-mod-hypermedia/)                                  | Stabiel </br> (Werkgroep Kennisplatform)                  |
+| Aanvullende module   | [ADR-HTTP Message and payload signing with JAdES](https://geonovum.github.io/KP-APIs/API-strategie-modules/signing-jades/) | Stabiel </br> (Werkgroep Kennisplatform)                  |
+| Aanvullende module   | [ADR-HTTP Payload encryption](https://geonovum.github.io/KP-APIs/API-strategie-modules/encryption/)                        | Stabiel </br> (Werkgroep Kennisplatform)                  |
+| Aanvullende module   | [API Batching](https://geonovum.github.io/KP-APIs/API-strategie-modules/batching/)                                         | Concept </br> (Werkgroep Kennisplatform)                  |
 
 ## Folders
 
