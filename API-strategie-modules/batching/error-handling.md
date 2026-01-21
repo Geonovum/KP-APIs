@@ -37,6 +37,16 @@ Errors are reported using an HTTP error status and a `problem+json` body. Item-l
         <li>Error responses must include human-readable details and machine-readable fields for automated handling.</li>
         </ul>
     </dd>
+    <dt>How to test</dt>
+    <dd>
+        <ul>
+        <li>Issue an HTTP POST request to a batch endpoint with malformed JSON (e.g. missing closing braces) and validate that the server returns status code <code>400</code> with a <code>problem+json</code> response.</li>
+        <li>Issue a request with a body that is missing the required <code>requests</code> property and validate that the server returns status code <code>400</code>.</li>
+        <li>Validate that the error response contains the required problem+json fields: <code>type</code>, <code>title</code>, <code>status</code>, and <code>detail</code>.</li>
+        <li>Validate that the <code>Content-Type</code> header of the error response is <code>application/problem+json</code>.</li>
+        </ul>
+    </dd>
+   </dl>
 </div>
 
 ## Request limit exceeding
@@ -70,6 +80,16 @@ Errors are reported using an HTTP error status and a `problem+json` body. Item-l
             <li>Servers must document their maximum batch size and enforce it consistently.</li>
             <li>Clients must be prepared to split large batches into multiple smaller ones.</li>
             <li>Validation of request size becomes part of standard request validation logic, not just transport-level checks.</li>
+         </ul>
+      </dd>
+      <dt>How to test</dt>
+      <dd>
+         <ul>
+            <li>Determine the server's documented maximum batch size (e.g. 100 items).</li>
+            <li>Issue an HTTP POST request to a batch endpoint with a <code>requests</code> array containing more items than the maximum allowed.</li>
+            <li>Validate that the server returns status code <code>400</code> with a <code>problem+json</code> response.</li>
+            <li>Validate that the error response indicates that the request limit was exceeded.</li>
+            <li>Issue a request with exactly the maximum number of items and validate that it is accepted (status code <code>200</code>).</li>
          </ul>
       </dd>
    </dl>
@@ -106,6 +126,15 @@ Errors are reported using an HTTP error status and a `problem+json` body. Item-l
             <li>Servers must define reasonable response size limits and enforce them consistently across batch endpoints.</li>
             <li>Clients must anticipate possible rejections and adapt (e.g., by narrowing filter criteria or splitting requests).</li>
             <li>Clear feedback helps prevent repeated oversized queries and supports monitoring of misuse or misconfiguration.</li>
+         </ul>
+      </dd>
+      <dt>How to test</dt>
+      <dd>
+         <ul>
+            <li>Issue an HTTP POST request to a batch endpoint with collection requests that would produce a very large combined response (e.g. filters that match many resources).</li>
+            <li>Validate that if the server enforces response size limits, it returns status code <code>400</code> with a <code>problem+json</code> response when the limit would be exceeded.</li>
+            <li>Validate that the error response indicates that the response limit was exceeded and provides guidance on how to adjust the request.</li>
+            <li>Issue a request with narrower filter criteria that produces a smaller response and validate that it is accepted.</li>
          </ul>
       </dd>
    </dl>
@@ -145,6 +174,16 @@ Errors are reported using an HTTP error status and a `problem+json` body. Item-l
             <li>Servers must validate all keys before processing and reject the batch if any are invalid.</li>
             <li>Clients must ensure that all identifiers conform to the expected format before submitting the request.</li>
             <li>The error response may include an <code>invalidKeys</code> array or equivalent field to indicate which keys failed, enabling corrective actions.</li>
+         </ul>
+      </dd>
+      <dt>How to test</dt>
+      <dd>
+         <ul>
+            <li>Issue an HTTP POST request to a batch endpoint for singular resources with one or more invalid keys (e.g. a malformed UUID like <code>"not-a-uuid"</code>).</li>
+            <li>Validate that the server returns status code <code>400</code> with a <code>problem+json</code> response.</li>
+            <li>Validate that the error response indicates which keys are invalid (e.g. via an <code>invalidKeys</code> array).</li>
+            <li>Validate that the entire batch is rejected, not just the invalid items.</li>
+            <li>Issue a request with all valid keys (even for non-existing resources) and validate that the server returns status code <code>200</code> (with <code>null</code> for non-existing resources in the results).</li>
          </ul>
       </dd>
    </dl>

@@ -28,6 +28,16 @@ Batch endpoints provide a standardized way to retrieve multiple resources in a s
             <li>The rule does not mandate batch support for all collections; API designers must decide based on use cases and performance needs.</li>
          </ul>
       </dd>
+      <dt>How to test</dt>
+      <dd>
+         <ul>
+            <li>Identify a collection resource that supports batching (e.g. <code>/adressen</code>).</li>
+            <li>Issue an HTTP POST request to the batch endpoint by appending <code>/_batch</code> to the collection path (e.g. <code>POST /adressen/_batch</code>).</li>
+            <li>Validate that the server accepts the request and returns a valid response (status code <code>200</code>).</li>
+            <li>Validate that issuing the same request with a different HTTP method (e.g. GET) returns status code <code>405 Method Not Allowed</code>.</li>
+            <li>Validate that the batch endpoint path follows the pattern <code>{collection}/_batch</code> consistently across all batch-enabled collections.</li>
+         </ul>
+      </dd>
    </dl>
 </div>
 
@@ -69,6 +79,16 @@ Batch endpoints provide a standardized way to retrieve multiple resources in a s
             <li>Servers must validate the request structure and enforce the maximum number of allowed items.</li>
             <li>Clients can depend on a deterministic mapping between request items and response items by array position.</li>
             <li>The optional <code>context</code> property allows cross-cutting parameters to be added without introducing new endpoints or breaking existing clients.</li>
+         </ul>
+      </dd>
+      <dt>How to test</dt>
+      <dd>
+         <ul>
+            <li>Issue an HTTP POST request to a batch endpoint with <code>Content-Type: application/json</code> and a JSON body containing a <code>requests</code> array.</li>
+            <li>Validate that the server accepts the request and returns status code <code>200</code>.</li>
+            <li>Validate that a request without a <code>requests</code> property is rejected with status code <code>400</code>.</li>
+            <li>Validate that a request with an empty <code>requests</code> array is handled appropriately (either accepted with an empty <code>results</code> array, or rejected per server policy).</li>
+            <li>If the server supports a <code>context</code> property, validate that it can be included alongside <code>requests</code> and affects the response as documented.</li>
          </ul>
       </dd>
    </dl>
@@ -123,6 +143,17 @@ Batch endpoints provide a standardized way to retrieve multiple resources in a s
             <li>Servers must always return a <code>results</code> array of the same length as <code>requests</code>, even if some entries are <code>null</code> or empty.</li>
             <li>Requests containing invalid keys must result in an <a href="#invalid-keys">error response</a>.</li>
             <li>Additional metadata can be included at the top level, but must not affect the semantics of the <code>results</code> property.</li>
+         </ul>
+      </dd>
+      <dt>How to test</dt>
+      <dd>
+         <ul>
+            <li>Issue an HTTP POST request to a batch endpoint with a valid <code>requests</code> array containing multiple items.</li>
+            <li>Validate that the response contains a <code>results</code> array with exactly the same number of items as the <code>requests</code> array.</li>
+            <li>Validate that the order of items in <code>results</code> corresponds to the order of items in <code>requests</code>.</li>
+            <li>For singular requests, validate that found resources are returned as objects and missing or inaccessible resources are returned as <code>null</code>.</li>
+            <li>For collection requests, validate that each result entry contains an <code>items</code> array (which may be empty if no resources matched).</li>
+            <li>Validate that any additional top-level properties in the response do not interfere with the <code>results</code> array structure.</li>
          </ul>
       </dd>
    </dl>

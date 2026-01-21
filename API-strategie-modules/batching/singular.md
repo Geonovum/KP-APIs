@@ -50,6 +50,17 @@ Singular resource requests target one specific resource by its unique identifier
             <li>By preserving the exact order of identifier parts, clients and servers avoid mismatches and maintain consistency with URI path semantics.</li>
          </ul>
       </dd>
+      <dt>How to test</dt>
+      <dd>
+         <ul>
+            <li>Issue an HTTP POST request to a batch endpoint (e.g. <code>/gebouwen/_batch</code>) with a JSON body containing a <code>requests</code> array, where each item has a <code>key</code> property with a valid identifier.</li>
+            <li>Validate that a response with status code <code>200</code> is returned.</li>
+            <li>Validate that the response contains a <code>results</code> array with the same number of items as the <code>requests</code> array.</li>
+            <li>For resources with compound identifiers, issue a request where the <code>key</code> property is an array of values in the correct order and with the correct data types.</li>
+            <li>Validate that compound keys are processed correctly by verifying the returned resource matches the requested identifier parts.</li>
+            <li>Issue a request with an invalid or malformed key and validate that the server returns a <code>400 Bad Request</code> response.</li>
+         </ul>
+      </dd>
    </dl>
 </div>
 
@@ -93,6 +104,16 @@ Singular resource requests target one specific resource by its unique identifier
             <li>Servers must always produce a <code>results</code> array of the same length as the request, even when some entries are <code>null</code>.</li>
             <li>Clients must handle <code>null</code> entries gracefully, treating them as "resource not found" or "user not authorized".</li>
             <li>This structure enables batch responses to remain predictable, consistent, and easy to process in client libraries and tooling.</li>
+         </ul>
+      </dd>
+      <dt>How to test</dt>
+      <dd>
+         <ul>
+            <li>Issue an HTTP POST request to a batch endpoint with multiple singular requests (each containing a <code>key</code> property).</li>
+            <li>Validate that the response contains a <code>results</code> array with exactly the same number of items as the <code>requests</code> array.</li>
+            <li>Validate that the order of results matches the order of the original requests.</li>
+            <li>Request a mix of existing and non-existing resources and validate that existing resources return the resource object while non-existing resources return <code>null</code>.</li>
+            <li>Validate that <code>null</code> is returned for resources the user is not authorized to access (indistinguishable from non-existing resources).</li>
          </ul>
       </dd>
    </dl>

@@ -39,6 +39,16 @@ Collection resource requests allow clients to retrieve multiple resources that m
             <li>If no resources match a filter, servers must return an empty <code>items</code> array rather than omitting the result.</li>
          </ul>
       </dd>
+      <dt>How to test</dt>
+      <dd>
+         <ul>
+            <li>Issue an HTTP POST request to a batch endpoint (e.g. <code>/adressen/_batch</code>) with a JSON body containing a <code>requests</code> array, where each item has a <code>filter</code> object with valid filter criteria.</li>
+            <li>Validate that a response with status code <code>200</code> is returned.</li>
+            <li>Validate that the response contains a <code>results</code> array with the same number of items as the <code>requests</code> array.</li>
+            <li>Validate that each result entry contains an <code>items</code> array (which may be empty if no resources match).</li>
+            <li>Issue a request with an invalid or unsupported filter criterion and validate that the server returns a <code>400 Bad Request</code> response.</li>
+         </ul>
+      </dd>
    </dl>
 </div>
 
@@ -94,6 +104,16 @@ Collection resource requests allow clients to retrieve multiple resources that m
             <li>Clients must be prepared to handle large <code>items</code> arrays; servers may <a href="#response-limit-exceeding">enforce limits</a> per batch to protect performance.</li>
             <li>Implementations that support pagination must document their chosen approach and ensure that clients can still consume <code>items</code> without using pagination extensions.</li>
             <li>The lack of a standardized pagination mechanism means interoperability may vary until a common approach is agreed upon.</li>
+         </ul>
+      </dd>
+      <dt>How to test</dt>
+      <dd>
+         <ul>
+            <li>Issue an HTTP POST request to a batch endpoint with multiple collection requests (each containing a <code>filter</code> object).</li>
+            <li>Validate that the response contains a <code>results</code> array with exactly the same number of items as the <code>requests</code> array.</li>
+            <li>Validate that each entry in <code>results</code> is a JSON object containing an <code>items</code> property.</li>
+            <li>Validate that the order of results matches the order of the original requests.</li>
+            <li>Issue a request with a filter that matches no resources and validate that the corresponding result entry contains an empty <code>items</code> array (not <code>null</code> or omitted).</li>
          </ul>
       </dd>
    </dl>
