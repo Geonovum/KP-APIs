@@ -376,7 +376,7 @@ In case the proper headers are not sent, then there are no authentication detail
 
 See also [The NL GOV Assurance profile for OAuth 2.0](https://gitdocumentatie.logius.nl/publicatie/api/oauth/) for further explanation of the application of OAuth.
 
-The [Digikoppeling standard](https://publicatie.centrumvoorstandaarden.nl/dk/actueel/) currently has a [RESTful API profile](https://gitdocumentatie.logius.nl/publicatie/dk/restapi/) that specifies how to use PKIOverheid x.509 certificates for authorization. Digikoppeling now also includes the [federated service connectivity (FSC) standard](https://gitdocumentatie.logius.nl/publicatie/dk/restapi/3.0.1/#federated-service-connectivity-standaard-fsc) that further profiles the use of x509.
+The [Digikoppeling standard](https://gitdocumentatie.logius.nl/publicatie/dk/actueel/) currently has a [RESTful API profile](https://gitdocumentatie.logius.nl/publicatie/dk/restapi/) that specifies how to use PKIOverheid x.509 certificates for authorization. Digikoppeling now also includes the [federated service connectivity (FSC) standard](https://gitdocumentatie.logius.nl/publicatie/dk/restapi/#federated-service-connectivity-standaard-fsc) that further profiles the use of x509.
 
 ### Authorization errors
 
