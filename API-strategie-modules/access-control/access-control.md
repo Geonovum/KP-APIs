@@ -23,7 +23,7 @@ Onboarding is the process of guiding developers or users through the initial reg
 
 ### Client registration
 
-With the registration and onboarding of organizations and users representing the organizations the second step is often the client registration. The process for this layer depends on the type of service and client software. Clients kan be unregistered, dynamically registered, pre listed or onboarded explicitly by users. The main means of registration is based on the OAuth [Client registration flow](https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.1.0-rc.1/#use-case-client-credentials-flow) or the [Authorization code flow](https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.1.0-rc.1/#use-case-authorization-code-flow).
+With the registration and onboarding of organizations and users representing the organizations the second step is often the client registration. The process for this layer depends on the type of service and client software. Clients kan be unregistered, dynamically registered, pre listed or onboarded explicitly by users. The main means of registration is based on the OAuth [Client registration flow](https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.1.0-rc.1/#use-case-client-credentials-flow).
 
 ### Runtime resource access
 
@@ -31,13 +31,13 @@ When a user issues a client requests to a resource via a REST API, access must b
 
 #### HTTPS (TLS) configuration
 
-When a client communicates with a REST API, the connection itself must be protected. **HTTPS** provides this by encrypting all traffic between client and server using **PKI certificates**. These certificates, issued by trusted authorities, verify the server’s identity and ensure that data cannot be intercepted or modified in transit. By enforcing HTTPS, APIs guarantee both **confidentiality** and **integrity** of network communications, forming the foundation of secure runtime interactions.
+When a client communicates with a REST API, the connection itself must be protected. **HTTPS** provides this by encrypting all traffic between client and server using **PKI certificates**. These certificates, issued by trusted authorities, verify the server’s identity and ensure that data cannot be intercepted or modified in transit. By enforcing HTTPS, APIs provide a baseline for both **confidentiality** and **integrity** of network communications, forming the foundation of secure runtime interactions.
 
 The working of HTTPS is based on the TLS specification and is mandatory for all API's that conform to [the core set of API Design Rules](https://gitdocumentatie.logius.nl/publicatie/api/adr/2.1.0/#/core/transport/tls). One must also follow the latest [NCSC guidelines for TLS](https://www.ncsc.nl/documenten/publicaties/2025/juni/01/ict-beveiligingsrichtlijnen-voor-transport-layer-security-2025-05).
 
 #### Network configuration
 
-The baseline for API Access is the physical network. Typically the network layer consists of the internet, however a national government will also provide api access via restricted networks. [For example the dutch Diginetwork](https://www.logius.nl/domeinen/infrastructuur/diginetwerk).
+The baseline for API Access is the physical network. Typically the network layer consists of the internet, however a national government will also provide api access via restricted networks. [For example the dutch Diginetwork](https://www.logius.nl/domeinen/infrastructuur/diginetwerk). 
 
 ## API access patterns
 
@@ -62,7 +62,7 @@ To deny the client access to these resources after initial permission is granted
 
 ### Intermediaries
 
-In some usecases an intermediary application is placed in between the client and server application. Orchestration of multiple APIs through an orchestration server is an example of this, see for instance [IMX](https://geonovum.github.io/imx-digilab/). Another example is an API gateway performing some centralized tasks in an environment with multiple resource servers operated by multiple organizations, for instance ["het Knooppunt" in DSO](https://iplo.nl/publish/library/219/dso_-_gas_-_knooppunt_gegevensuitwisseling_1.pdf) or [centraal aansluitpunt](https://www.logius.nl/onze-dienstverlening/infrastructuur/centraal-aansluitpunt). In these cases these intermediaries can act either transparently or opaque.
+In some usecases an intermediary application is placed in between the client and server application. Orchestration of multiple APIs through an orchestration server is an example of this, see for instance [IMX](https://geonovum.github.io/imx-digilab/). Another example is an API gateway (not run by the resource server) performing some centralized tasks in an environment with multiple resource servers operated by multiple organizations, for instance ["het Knooppunt" in DSO](https://iplo.nl/publish/library/219/dso_-_gas_-_knooppunt_gegevensuitwisseling_1.pdf) or [centraal aansluitpunt](https://www.logius.nl/onze-dienstverlening/infrastructuur/centraal-aansluitpunt). In these cases these intermediaries can act either transparently or opaque.
 
 #### Transparant intermediary
 
@@ -303,7 +303,7 @@ Note: Client Authentication is applicable to the Client accessing the API, the C
 
 It is RECOMMENDED to use asymmetric (public-key based) methods for client authentication such as mTLS [RFC8705](https://www.rfc-editor.org/info/rfc8705) or "private_key_jwt" [OpenID](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication).
 
-[The NL GOV Assurance profile for OAuth 2.0](https://gitdocumentatie.logius.nl/publicatie/api/oauth/) REQUIRES the use of private_key_jwt for full clients, native clients with dynamically registered keys, and direct access clients as mentioned in the profile.
+[The NL GOV Assurance profile for OAuth 2.0](https://gitdocumentatie.logius.nl/publicatie/api/oauth/) REQUIRES the use of private_key_jwt for full clients, native clients with dynamically registered keys, and direct access clients as mentioned in the profile for [Authorization code flow](https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.1.0-rc.1/#use-case-authorization-code-flow).
 
 The following methods can be used for Client authentication.
 
@@ -376,7 +376,7 @@ In case the proper headers are not sent, then there are no authentication detail
 
 See also [The NL GOV Assurance profile for OAuth 2.0](https://gitdocumentatie.logius.nl/publicatie/api/oauth/) for further explanation of the application of OAuth.
 
-The [Digikoppeling standard](https://publicatie.centrumvoorstandaarden.nl/dk/actueel/) currently has a [RESTful API profile in development](https://gitdocumentatie.logius.nl/publicatie/dk/restapi/) that specifies how to use PKIOverheid x.509 certificates for authorization.
+The [Digikoppeling standard](https://publicatie.centrumvoorstandaarden.nl/dk/actueel/) currently has a [RESTful API profile](https://gitdocumentatie.logius.nl/publicatie/dk/restapi/) that specifies how to use PKIOverheid x.509 certificates for authorization. Digikoppeling now also includes the [federated service connectivity (FSC) standard](https://gitdocumentatie.logius.nl/publicatie/dk/restapi/3.0.1/#federated-service-connectivity-standaard-fsc) that further profiles the use of x509.
 
 ### Authorization errors
 
