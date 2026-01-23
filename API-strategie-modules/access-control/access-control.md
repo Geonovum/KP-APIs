@@ -295,6 +295,78 @@ This mechanism supports two main patterns: delegation, where a service acts on b
 
 Token exchange is particularly useful in microservice architectures, where one service may need to call another with a token specifically scoped to that backend, in cross-domain federation, where enterprise identity tokens are converted into OAuth tokens for cloud use, and in cloud environments where infrastructure tokens are transformed into standard access tokens for APIs.
 
+
+#### Representation relationships with Authoritative Registers (e.g. BVD-OG) using OAuth/OIDC
+
+Within the Dutch public sector, there are countless digital services where an API request is not performed solely on behalf of the authenticating end-user, but on behalf of another natural person or legal entity. These scenarios require multi-actor authorization, where multiple identities influence the authorization decision.
+
+A critical subset of these scenarios concerns **legal representation**. Legal representation must be explicitly distinguished from **voluntary authorization (mandating)**:
+  - In voluntary authorization, a legally competent person explicitly grants permission to another party to act on their behalf (for example through DigiD Machtigen).
+
+  - In legal representation, the authority to act follows directly from law or a judicial decision. The represented person does not (and often cannot) grant consent. This applies, among others, to minors, persons under guardianship or administration, and other legally incapacitated persons.
+
+For API access control, this distinction is fundamental:
+
+  - Voluntary authorization is based on explicit consent and mandate management.
+
+  - Legal representation is based on statutory authority that must be derived from authoritative registers, such as the BevoegdheidsVerklaringsDienst Ouderlijk Gezag (BVD-OG) for parental authority.
+
+
+In legal representation scenarios, an OAuth or OIDC access token necessarily reflects the involvement of multiple identities, even though it ultimately authorizes access for a single service consumer. The represented party — such as a minor or legally incapacitated person — is the entity on whose behalf the service is consumed and MUST therefore be identified as the primary subject of the authorization. 
+
+Consequently, the `sub` claim of the access token identifies the represented party, not the acting individual. The natural person who performs the interaction, such as a parent or guardian, is not modeled as a delegated actor using `act` or `may_act` claims as defined in [RFC8693], as no voluntary delegation has taken place; 
+instead, this person’s involvement forms part of the legal context that justifies the representation. 
+
+The access token does not convey how legal authority was established, nor does it constitute proof of that authority, but merely asserts that a valid representation relationship was determined during authorization. This determination is made by the Authorization Server, based on authoritative legal sources, and is reflected in the token only insofar as it is necessary for the resource server to make a correct, scope-specific authorization decision.
+
+##### Expressing Legal Representation Using Rich Authorization Requests and Authoritative Registers
+
+Legal representation is inherently scope-dependent and context-specific. Therefore, it is RECOMMENDED to express legal representation explicitly using the `authorization_details` structure defined in [RFC9396].
+
+Legal representation is inherently context-dependent and legally grounded, and therefore requires explicit expression within the authorization process. OAuth and OpenID Connect tokens do not create, transfer, or store legal authority; they merely assert the outcome of an authorization decision that has already been made. That decision MUST be based on validation against authoritative legal sources, such as the BevoegdheidsVerklaringsDienst Ouderlijk Gezag (BVD-OG) for parental authority, or other legally mandated registers for guardianship or administration. The Authorization Server, or an associated authorization component under its control, is responsible for consulting these sources and determining whether a valid legal representation relationship exists for the requested scope.
+
+Because legal representation is scope-specific and cannot be inferred solely from the authenticated identity, it SHOULD be explicitly conveyed to relying parties using Rich Authorization Requests [RFC9396]. The `authorization_details` structure allows the Authorization Server to include structured, machine-readable context about the represented party and the legal basis for representation, without embedding legal logic or source data into the token itself. This enables resource servers to make consistent authorization decisions while remaining decoupled from the underlying legal registries.
+
+The following example illustrates a parent acting on behalf of a minor child, where parental authority has been established through BVD-OG and asserted in the access token as representation context:
+
+```
+{
+  "scope": "openid brp_sensitief",
+  "sub": "parent-pseudonym",
+  "iss": "https://digid.nl",
+  "authorization_details": [
+    {
+      "type": "legal_representation",
+      "represented_party": {
+        "sub": "child-pseudonym",
+        "subject_type": "public",
+        "sub_id_type": "urn:nl-eid-gdi:1.0:id:pseudonym",
+        "mandate_type": "parental_authority",
+        "mandate_source": "BVD-OG"
+      }
+    }
+  ]
+}
+```
+In this construct, the `represented_party identifies` the service consumer, while the additional attributes indicate the statutory basis of the representation. The inclusion of a reference to the mandate type and its authoritative source enables resource servers to evaluate whether this form of legal representation is acceptable for the requested API operation and scope. Resource servers MUST NOT attempt to revalidate legal authority themselves, but instead rely on the trust relationship with the issuing Authorization Server and its obligation to validate representation against the appropriate authoritative registers.
+
+By combining authoritative source validation with explicit representation context conveyed through Rich Authorization Requests, this approach ensures that legal representation is consistently enforced across APIs, remains legally sound, and scales across domains without coupling individual services to specific legal data sources.
+
+##### Summary of guidelines for API Access Control:
+
+APIs that support legal representation MUST adhere to the following principles:
+
+1. APIs MUST explicitly distinguish between delegation and representation.
+1. Legal representation MUST NOT be modeled as voluntary delegation.
+3. Representation relationships MUST be explicitly scoped and expressed, preferably via authorization_details.
+4. Identity objects within authorization_details MUST NOT contain non-identity claims such as `exp`, `nbf`, or `aud`.
+5. Resource servers MUST base authorization decisions on:
+    - the represented party,
+    - the type of legal authority,
+    - and the requested scope.
+
+
+
 ### Client authentication
 
 The Client application that accesses API resources SHOULD be authenticated, both in the machine to machine and in the rights delegation API access patterns. Also note that, although listed separately, the aforementioned methods for End-User authentication require Client authentication as well.
