@@ -232,7 +232,7 @@ In the EU context use the eIDAS legal identifier. For more information see <http
 Identification of clients is different from identification of the end user or organization using the service.
 When using authorization servers, the authorization server issues the registered client a client identifier - a unique string representing the registration information provided by the client. The client identifier is not a secret; it is commonly public known and MUST NOT be relied upon for client authentication by itself. The client identifier is unique to the authorization server.
 
-Authorization servers MUST NOT allow clients to choose or influence their `client_id` value
+Client identifiers are assigned at registration and SHOULD be treated as the authoritative identifier for the client. If you allow dynamic client registration, ensure the authorization server issues sufficiently unique values and documents the registration rules; the server MUST ensure uniqueness and integrity of client identifiers.”
 
 ### eIDAS
 
@@ -319,7 +319,7 @@ See also the NCSC factsheet regarding the phasing out of publicly trusted web se
 
 #### Private key JWT
 
-With Private key JWT authentication [OpenID](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication), the Client registers a public key with the Server and accompanies every API request with a JWT signed using this key. This Client Authentication method is part of the OpenID Connect standards for Clients authenticating to the OpenID Provider, but the use of Private key JWT Client authentication is not limited to this use case.
+With Private key JWT authentication [OpenID](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication), the Client registers a public key with the Server and signs a JWT with its private key to authenticate to the Authorization Server. This Client Authentication method is part of the OpenID Connect standards for Clients authenticating to the OpenID Provider, but the use of Private key JWT Client authentication is not limited to this use case. It is however not a general-purpose mechanism to authenticate every resource request; resource access is performed with access tokens (bearer or proof-of-possession tokens). To bind token to client you use mTLS [[rfc8705]] or `cnf` claims (proof-of-possession [[RFC7800]]) or token-exchange patterns[[rfc8693]].
 
 This authentication method may be used with Clients that are able to securely store asymmetric private keys and sign JWT's with this key.
 
