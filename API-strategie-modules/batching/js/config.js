@@ -49,8 +49,7 @@ var documentConfig = {
       companyURL: "https://skemu.com",
     },
   ],
-  github:
-    "https://github.com/Geonovum/KP-APIs/tree/master/API-strategie-modules/batching",
+  github: "https://github.com/Geonovum/KP-APIs",
   localBiblio: {
     "OData JSON Format": {
       href: "https://docs.oasis-open.org/odata/odata-json-format/v4.01/odata-json-format-v4.01.html",
