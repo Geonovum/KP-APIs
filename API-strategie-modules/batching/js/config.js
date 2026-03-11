@@ -14,7 +14,7 @@ var documentConfig = {
   shortName: "API-Strategie-mod-batching",
   edDraftURI:
     "https://geonovum.github.io/KP-APIs/API-strategie-modules/batching",
-  publishDate: "2025-10-21",
+  publishDate: "2025-03-11",
   editors: [
     {
       name: "Joost Farla",
