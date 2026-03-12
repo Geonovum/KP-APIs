@@ -1,9 +1,9 @@
 ---
-name: Consultatie encryption
+name: Consultatie batching
 about: Describe this issue template's purpose here.
-title: "[Consultatie encryption] issue titel"
+title: "[Consultatie batching] issue titel"
 labels: Consultatie
-assignees: ''
+assignees: joostfarla, fterpstra
 
 ---
 
