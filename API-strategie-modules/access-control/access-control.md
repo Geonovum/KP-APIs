@@ -351,6 +351,28 @@ Note that existing Client Credentials, such as a PKIoverheid X.509 certificate, 
 
 Usage of the Client Credential method with OAuth is RECOMMENDED over direct authorization by the API Server (Resource Server), even if the authorization decision can be based directly on Client Authentication. This externalizes the authorization decision from the API implementation, allowing for easier modifications and management of both the decision logic as well as client authentication methods.
 
+The [NL GOV Assurance profile for OAuth 2.0](https://gitdocumentatie.logius.nl/publicatie/api/oauth/) supports Client Credentials. The [Forum Standaardisatie Comply-Or-Explain-List](https://www.forumstandaardisatie.nl/open-standaarden/nl-gov-assurance-profile-oauth-20) states when this profile has to be used: 
+
+_The NL GOV Assurance Profile for OAuth 2.0 must be applied to applications where users or resource owners implicitly or explicitly consent to a third-party service to access data via a REST API for which they have access rights._
+
+Client credentials can be used in this specific context for system2system interactions next to Authorization Code Flow, see [NL GOV Assurance profile for OAuth 2.0 - Client Credentials - examples](https://logius-standaarden.github.io/OAuth-NL-profiel/#use-case-client-credentials-flow)
+
+### Guidance for using NL GOV Assurance Profile for OAuth 2.0 vs Federated Service Connectivity (FCS)
+
+Both [NL GOV Assurance Profile for OAuth 2.0](https://gitdocumentatie.logius.nl/publicatie/api/oauth/) and [Federated Service Connectivity (FSC)](https://fsc-standaard.nl/) are relevant standards for access control.
+The [Forum Standaardisatie Comply-Or-Explain-List](https://www.forumstandaardisatie.nl/open-standaarden) states when a specific standard must be used. 
+
+The following guidelines can be used to select the appropriate standard for a specific context:
+
+* 1 In the use case a User/Resource owner gives consent to a third-party to access Data
+    * YES → NL GOV Assurance Profile for OAuth 2.0
+    * NO → go to step 2
+*  2 In the use case there is data exchange with central systems that are part of the General Digital Infrastructure (GDI) (for example base registries) or the data exchange is cross-sectoral between organizations. Also there is a need for two way authentication.
+    * YES → Digikoppeling REST-API profile with FSC
+    * NO → (prescribed standard – other choices allowed)
+
+
+
 ## Authorization
 
 It is RECOMMENDED to use token-based access to APIs. REST APIs SHOULD NOT maintain session state on the server. The authentication and authorization of a request SHOULD NOT depend on sessions. Instead, a token has to be sent with each request.
