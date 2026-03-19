@@ -8,7 +8,7 @@ In REST API's resources can have relations with each other. Three types of relat
 - one-to-many,
 - many-to-many.
 
-The first two relationship types are more or less treated in the existing design rule [API-06: Use nested URIs for child resources](https://publicatie.centrumvoorstandaarden.nl/api/adr/#api-06). For the last relationship type (many-to-many) there are no design rules or best practices yet. In this extension we will try to close the gap.
+The first two relationship types are more or less treated in the existing design rule [API-06: Use nested URIs for child resources](https://gitdocumentatie.logius.nl/publicatie/api/adr/#api-06). For the last relationship type (many-to-many) there are no design rules or best practices yet. In this extension we will try to close the gap.
 
 Below, we see an example of a many-to-many relation between resources in a REST API. Books can have more than one author and authors can have published more than one book. 
 

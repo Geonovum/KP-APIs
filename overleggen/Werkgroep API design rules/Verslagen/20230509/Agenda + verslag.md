@@ -73,7 +73,7 @@ Marcel neemt deze aanbevelingen mee.
 
 7. Stand van zaken modulaire opzet API DesignRules 
   - hernummeren rules. 
-Vanuit de bespreking van de vraag van Marcel komen we geruisloos uit bij dit agendapunt. Martin laat zien wat de oorspronkelijke opzet van de designrules is https://publicatie.centrumvoorstandaarden.nl/api/adr/. Verder laat hij de nieuwe opzet zien https://logius-standaarden.github.io/API-Design-Rules/. De codering is aangepast van een nummer naar een betekenisvolle naam. Martin demonstreert ook nog uit welke lagen de modulaire opzet bestaat en wat de status van de verschillende modules is. 
+Vanuit de bespreking van de vraag van Marcel komen we geruisloos uit bij dit agendapunt. Martin laat zien wat de oorspronkelijke opzet van de designrules is https://gitdocumentatie.logius.nl/publicatie/api/adr/. Verder laat hij de nieuwe opzet zien https://logius-standaarden.github.io/API-Design-Rules/. De codering is aangepast van een nummer naar een betekenisvolle naam. Martin demonstreert ook nog uit welke lagen de modulaire opzet bestaat en wat de status van de verschillende modules is. 
 
 8. Bijeenkomst API kennisplatform 11 mei 
 Frank geeft aan dat op 11 mei de bijeenkomst van het kennisplatform is en vraagt aan de werkgroep wanneer we de modulaire opzet afvinden. Afgesproken wordt dat de modulaire opzet wordt besproken op de bijeenkomst van het kennisplatform en vervolgens kan worden afgevinkt in de stuurgroep. 

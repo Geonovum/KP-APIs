@@ -221,7 +221,7 @@ An example of this can be found in the [architecture of the "digitaal stelsel om
 
 For identifying government organizations use the "organisatie-identificatienummer" (OIN).
 
-For identifying non-government organizations (companies, associations, foundations etc...) use the KVK number. These numbers are used in the PKIOverheid and e-Herkenning context respectively. See <https://publicatie.centrumvoorstandaarden.nl/dk/oin/> and <https://www.kvk.nl/over-kvk/over-het-handelsregister/> for more information on these identifiers.
+For identifying non-government organizations (companies, associations, foundations etc...) use the KVK number. These numbers are used in the PKIOverheid and e-Herkenning context respectively. See <https://gitdocumentatie.logius.nl/publicatie/dk/oin/> and <https://www.kvk.nl/over-kvk/over-het-handelsregister/> for more information on these identifiers.
 
 OIN's can be queried using the COR API <https://portaal.digikoppeling.nl/registers/corApi/index> or its webpage <https://portaal.digikoppeling.nl/registers/>. The API will also provide known mappings between OIN- and KVK numbers (some OIN's are not derived from the KVK number). KVK numbers are derived from the handelsregister, which can be queried see <https://developers.kvk.nl/documentation/search-v2> for details.
 
@@ -269,7 +269,7 @@ SAML is a standard for securely communicating assertions about an authenticated 
 
 Although technically an authorization method, OAuth [[OAuth2]] is used as well for authenticating End-Users themselves and providing the Client with an Access Token upon successful End-User (and Client) authentication. This Access Token can be used to make authorized API requests. Using OAuth is appropriate when authorization is not dependent on an identifiable subject, the subject is different from the End-User or the Resource Server does not require authentication of the End-User itself.
 
-The NL GOV Assurance profile for OAuth 2.0 is included on the list of required standards by Forum Standaardisatie. The latest version of the profile can be found at <https://publicatie.centrumvoorstandaarden.nl/api/oauth/>.
+The NL GOV Assurance profile for OAuth 2.0 is included on the list of required standards by Forum Standaardisatie. The latest version of the profile can be found at <https://gitdocumentatie.logius.nl/publicatie/api/oauth/>.
 
 #### OpenID Connect
 
@@ -325,7 +325,7 @@ This authentication method may be used with Clients that are able to securely st
 
 In contexts where Dutch (semi) governmental organizations are involved, the certificate used for signing the Private key JWT's MUST be a PKIOverheid certificate. In case the certificate is included in the JWT header, it includes identification of the client and registration of the public key may not be necessary.
 
-[The NL GOV Assurance profile for OAuth 2.0](https://publicatie.centrumvoorstandaarden.nl/api/oauth/) REQUIRES the use of private_key_jwt for full clients, native clients with dynamically registered keys, and direct access clients as mentioned in the profile.
+[The NL GOV Assurance profile for OAuth 2.0](https://gitdocumentatie.logius.nl/publicatie/api/oauth/) REQUIRES the use of private_key_jwt for full clients, native clients with dynamically registered keys, and direct access clients as mentioned in the profile.
 
 #### Client secrets
 
