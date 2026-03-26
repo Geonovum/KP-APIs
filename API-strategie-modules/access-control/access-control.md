@@ -367,7 +367,7 @@ The following guidelines can be used to select the appropriate standard for a sp
 1. In the use case a User/Resource owner gives consent to a third-party to access Data
    * YES → NL GOV Assurance Profile for OAuth 2.0
    * NO → go to 2
-2. In the use case there is data exchange with central systems that are part of the General Digital Infrastructure (GDI) (for example base registries) or the data exchange is cross-sectoral between organizations. Also there is a need for two way authentication.
+2. In the use case, data exchange occurs with General Digital Infrastructure (GDI) central systems (e.g., base registries), cross-sectoral between organizations, or requires mutual (two-way) authentication.
    * YES → Digikoppeling REST-API profile with FSC
    * NO → (prescribed standard – other choices allowed)
 
