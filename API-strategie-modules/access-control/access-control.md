@@ -362,7 +362,7 @@ Client credentials can be used in this specific context for system2system intera
 Both [NL GOV Assurance Profile for OAuth 2.0](https://gitdocumentatie.logius.nl/publicatie/api/oauth/) and [Federated Service Connectivity (FSC)](https://fsc-standaard.nl/) are relevant standards for access control.
 The [Forum Standaardisatie Comply-Or-Explain-List](https://www.forumstandaardisatie.nl/open-standaarden) states when a specific standard must be used. 
 
-The following guidelines can be used to select the appropriate standard for a specific context:
+The following guidelines should be used to select the appropriate standard for a specific context:
 
 1. In the use case a User/Resource owner gives consent to a third-party to access Data
    * YES → NL GOV Assurance Profile for OAuth 2.0
