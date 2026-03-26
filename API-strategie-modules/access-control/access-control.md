@@ -368,7 +368,7 @@ The following guidelines can be used to select the appropriate standard for a sp
    * YES → NL GOV Assurance Profile for OAuth 2.0
    * NO → go to 2
 2. In the use case, data exchange occurs with General Digital Infrastructure (GDI) central systems (e.g., base registries), cross-sectoral between organizations, or requires mutual (two-way) authentication.
-   * YES → Digikoppeling REST-API profile with FSC
+   * YES → Digikoppeling REST-API profile (using FSC)
    * NO → (prescribed standard – other choices allowed)
 
 
