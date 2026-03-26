@@ -18,7 +18,7 @@ De eerste twee lijken direct van toepassing voor de client credentials flow
 Heiko maakt usecase politie
 Martin voor kadaster usecase
 Deze moeten in de draft van de nieuwe standaard dit bestaande hoofdstuk aanvullen:
-https://publicatie.centrumvoorstandaarden.nl/api/oauth/#usecases
+https://gitdocumentatie.logius.nl/publicatie/api/oauth/#usecases
 
 **Scopes en claims**
 Wat zijn best practices? Interessante input:

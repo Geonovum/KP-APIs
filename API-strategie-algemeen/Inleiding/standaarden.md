@@ -8,7 +8,7 @@ Deze sectie beschrijft de status en uitgangspunten voor de standaard "API Design
 https://logius-standaarden.github.io/API-Design-Rules/ (werkversie)
 
 <!-- https://docs.geostandaarden.nl/api/API-Designrules/ (stabiele versie) -->
-https://publicatie.centrumvoorstandaarden.nl/api/adr/ (stabiele versie)
+https://gitdocumentatie.logius.nl/publicatie/api/adr/ (stabiele versie)
 
 ### Oorsprong standaard
 De API designrules vinden hun oorsprong in de ["API strategie" van het digitaal stelsel omgevingswet (DSO)](https://aandeslagmetdeomgevingswet.nl/digitaal-stelsel/aansluiten/standaarden/api-en-uri-strategie/). Bij het opstellen van de API Designrules is de DSO API strategie het startpunt geweest en heeft de werkgroep API strategie gekeken hoe deze toepasbaar gemaakt kunnen worden voor de hele Nederlandse publieke sector.
@@ -42,7 +42,7 @@ Een toepassingsgebied (nog) niet van toepassing.
 Deze sectie beschrijft de status en uitgangspunten voor het Nederlands profiel OAuth. het profiel zelf is een op zichzelfstaand document.
 Het Nederlands profiel OAuth is hier te vinden:
 <!-- https://geonovum.github.io/KP-APIs-OAuthNL/#dutch-government-assurance-profile-for-oauth-2-0 -->
-https://publicatie.centrumvoorstandaarden.nl/api/oauth/
+https://gitdocumentatie.logius.nl/publicatie/api/oauth/
 
 In aanvulling hierop is er een document dat de verschillen met iGOV kort samenvat en voorziet van rationales:
 

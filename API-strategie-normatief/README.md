@@ -5,9 +5,9 @@ De normatieve documenten van het kennisplatform zijn niet in deze repository opg
 
 |  Document    |repository/bron                                |
 | ------------------ | --------------------------------------- |
-|  [API Design Rules (ADR)](https://publicatie.centrumvoorstandaarden.nl/api/adr/) | [Github/Logius-standaarden/API-Design-Rules](https://github.com/Logius-standaarden/API-Design-Rules) |
-|  [NL GOV OAuth profiel](https://publicatie.centrumvoorstandaarden.nl/api/oauth/)                    |[Github/Logius-standaarden/OAuth-NL-profiel](https://github.com/Logius-standaarden/OAuth-NL-profiel)|
-| [Digikoppeling REST API koppelvlak specificatie](https://publicatie.centrumvoorstandaarden.nl/dk/restapi/)       |[Github/Logius-standaarden/Digikoppeling-Koppelvlakstandaard-REST-API](https://github.com/Logius-standaarden/Digikoppeling-Koppelvlakstandaard-REST-API)|
+|  [API Design Rules (ADR)](https://gitdocumentatie.logius.nl/publicatie/api/adr/) | [Github/Logius-standaarden/API-Design-Rules](https://github.com/Logius-standaarden/API-Design-Rules) |
+|  [NL GOV OAuth profiel](https://gitdocumentatie.logius.nl/publicatie/api/oauth/)                    |[Github/Logius-standaarden/OAuth-NL-profiel](https://github.com/Logius-standaarden/OAuth-NL-profiel)|
+| [Digikoppeling REST API koppelvlak specificatie](https://gitdocumentatie.logius.nl/publicatie/dk/restapi/)       |[Github/Logius-standaarden/Digikoppeling-Koppelvlakstandaard-REST-API](https://github.com/Logius-standaarden/Digikoppeling-Koppelvlakstandaard-REST-API)|
 | [Open API Specification (OAS)](https://forumstandaardisatie.nl/open-standaarden/openapi-specification) |[Github/OAI/OpenAPI-Specification](https://github.com/OAI/OpenAPI-Specification)|
 
 ## Verwijzing Kennisplatform APIs
