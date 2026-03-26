@@ -357,7 +357,7 @@ _The NL GOV Assurance Profile for OAuth 2.0 must be applied to applications wher
 
 Client credentials can be used in this specific context for system2system interactions next to Authorization Code Flow, see [NL GOV Assurance profile for OAuth 2.0 - Client Credentials - examples](https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.1.0-rc.1/#use-case-client-credentials-flow)
 
-### Guidance for using NL GOV Assurance Profile for OAuth 2.0 vs Federated Service Connectivity (FCS)
+### Guidance for using NL GOV Assurance Profile for OAuth 2.0 vs Federated Service Connectivity (FSC)
 
 Both [NL GOV Assurance Profile for OAuth 2.0](https://gitdocumentatie.logius.nl/publicatie/api/oauth/) and [Federated Service Connectivity (FSC)](https://fsc-standaard.nl/) are relevant standards for access control.
 The [Forum Standaardisatie Comply-Or-Explain-List](https://www.forumstandaardisatie.nl/open-standaarden) states when a specific standard must be used. 
