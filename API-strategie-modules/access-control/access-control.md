@@ -369,7 +369,7 @@ The following guidelines should be used to select the appropriate standard for a
    * NO → go to 2
 2. In the use case, data exchange occurs with General Digital Infrastructure (GDI) central systems (e.g., base registries), cross-sectoral between organizations, or requires mutual (two-way) authentication.
    * YES → Digikoppeling REST-API profile (using FSC)
-   * NO → Other standards allowed
+   * NO → Other standards allowed (e.g. NLGov OAuth 2.0 client credentials)
 
 
 
