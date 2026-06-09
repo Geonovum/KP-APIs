@@ -4,8 +4,8 @@ let respecConfig = {
   // title is verplicht! Neem hier de titel van het document op ----------------------
   title: "API Access control module",
   //-- specStatus is verplicht! (activeer 1 van de volgende) --------------------------
-  specStatus: "vv",                   // Werkversie
-  //specStatus: "cv",               // Consultatieversie
+  //specStatus: "wv",                   // Werkversie
+  specStatus: "cv",               // Consultatieversie
   //specStatus: "vv",               // Versie ter vaststelling
   //specStatus: "def",              // Vastgestelde versie
   //specStatus: "basis",            // Basis Document
@@ -33,7 +33,7 @@ let respecConfig = {
 
   //-- publishDate is verplicht -------------------------------------------------------
   //-- NB: in de werkversie uitzetten, want dan pakt Respec de pushdate ---------------
-  publishDate: "2025-09-19",
+  publishDate: "2026-06-09",
   //eventueel is het mogelijk een versienummer mee te geven, maar bij Geonovum werken we gewoonlijk alleen met datum als onderdeel van de permanente URI.
   publishVersion: "1.1.0",
   previousVersion: "1.0.0",
