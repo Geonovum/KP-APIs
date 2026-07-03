@@ -38,7 +38,7 @@
         <mxCell id="kcfjZlUG7A1tbnISsSj--9" value="Algemene documenten" style="swimlane;horizontal=0;rounded=1;strokeColor=#999900;fillColor=#FFFF99;fontFamily=Verdana;fontStyle=0;opacity=60;fontColor=#11344B;fontSize=12;" parent="kcfjZlUG7A1tbnISsSj--1" vertex="1">
           <mxGeometry x="70" y="140" width="810" height="220" as="geometry" />
         </mxCell>
-        <UserObject label="Inleiding &lt;br&gt;NL API Strategie" link="https://publicatie.centrumvoorstandaarden.nl/api/adr/" id="kcfjZlUG7A1tbnISsSj--10">
+        <UserObject label="Inleiding &lt;br&gt;NL API Strategie" link="https://gitdocumentatie.logius.nl/publicatie/api/adr/" id="kcfjZlUG7A1tbnISsSj--10">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fontStyle=4;fillColor=#FFFF99;strokeColor=#999900;fontColor=#11344B;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--9" vertex="1">
             <mxGeometry x="50" y="20" width="240" height="50" as="geometry" />
           </mxCell>
@@ -56,7 +56,7 @@
         <mxCell id="kcfjZlUG7A1tbnISsSj--13" value="Normatieve documenten" style="swimlane;horizontal=0;rounded=1;strokeColor=#2D7600;fillColor=#2CDB84;fontFamily=Verdana;fontStyle=0;opacity=60;fontColor=#11344B;fontSize=12;" parent="kcfjZlUG7A1tbnISsSj--1" vertex="1">
           <mxGeometry x="70" y="360" width="810" height="220" as="geometry" />
         </mxCell>
-        <UserObject label="API Design Rules (ADR)" link="https://publicatie.centrumvoorstandaarden.nl/api/adr/" linkTarget="_blank" id="kcfjZlUG7A1tbnISsSj--14">
+        <UserObject label="API Design Rules (ADR)" link="https://gitdocumentatie.logius.nl/publicatie/api/adr/" linkTarget="_blank" id="kcfjZlUG7A1tbnISsSj--14">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fontStyle=4;fillColor=#2CDB84;strokeColor=#2D7600;fontColor=#11344B;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--13" vertex="1">
             <mxGeometry x="50" y="20" width="240" height="50" as="geometry" />
           </mxCell>
@@ -66,12 +66,12 @@
             <mxGeometry x="50" y="90" width="240" height="50" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="NL GOV OAuth profiel" linkTarget="_blank" link="https://publicatie.centrumvoorstandaarden.nl/api/oauth/" id="kcfjZlUG7A1tbnISsSj--16">
+        <UserObject label="NL GOV OAuth profiel" linkTarget="_blank" link="https://gitdocumentatie.logius.nl/publicatie/api/oauth/" id="kcfjZlUG7A1tbnISsSj--16">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fontStyle=4;fillColor=#2CDB84;strokeColor=#2D7600;fontColor=#11344B;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--13" vertex="1">
             <mxGeometry x="50" y="159.99999999999997" width="240" height="50" as="geometry" />
           </mxCell>
         </UserObject>
-        <UserObject label="Digikoppeling REST API koppelvlak specificatie" linkTarget="_blank" link="https://publicatie.centrumvoorstandaarden.nl/dk/restapi/" id="oj07cg5vzDKVVfCQQW5U-0">
+        <UserObject label="Digikoppeling REST API koppelvlak specificatie" linkTarget="_blank" link="https://gitdocumentatie.logius.nl/publicatie/dk/restapi/" id="oj07cg5vzDKVVfCQQW5U-0">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fontStyle=4;fillColor=#2CDB84;strokeColor=#2D7600;fontColor=#11344B;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--13" vertex="1">
             <mxGeometry x="530" y="19.999999999999986" width="240" height="50" as="geometry" />
           </mxCell>
@@ -92,7 +92,7 @@
         <mxCell id="kcfjZlUG7A1tbnISsSj--20" value="Modulen documenten" style="swimlane;horizontal=0;rounded=1;strokeColor=#666666;fillColor=#B3B3B3;fontFamily=Verdana;fontStyle=0;opacity=60;fontColor=#11344B;fontSize=12;" parent="kcfjZlUG7A1tbnISsSj--1" vertex="1">
           <mxGeometry x="70" y="580" width="810" height="620" as="geometry" />
         </mxCell>
-        <UserObject label="GEO module" link="https://publicatie.centrumvoorstandaarden.nl/api/adr/" linkTarget="_blank" id="kcfjZlUG7A1tbnISsSj--21">
+        <UserObject label="GEO module" link="https://gitdocumentatie.logius.nl/publicatie/api/adr/" linkTarget="_blank" id="kcfjZlUG7A1tbnISsSj--21">
           <mxCell style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fontStyle=4;fillColor=#66B2FF;strokeColor=#11344B;fontColor=#11344B;fontFamily=Verdana;" parent="kcfjZlUG7A1tbnISsSj--20" vertex="1">
             <mxGeometry x="50" y="20" width="240" height="50" as="geometry" />
           </mxCell>
