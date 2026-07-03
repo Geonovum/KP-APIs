@@ -833,7 +833,7 @@ Spatial filtering is an extensive topic. There are use cases for geospatial oper
 <p>However, until the filtering module is written, the geospatial module retains rule API-GEO-2 about dealing with results of a global spatial query. This rule may be moved to the filtering module at a later stage.</p>
 </aside></div><div class="rule" id="api-geo-2">
 <p class="rulelab"><strong>API-GEO-2</strong>: Place results of a global spatial query in the relevant geometric context</p>
-<p>In case of a global query <code>/api/v1/_search</code>, results should be placed in the relevant geometric context, because results from different <a href="https://publicatie.centrumvoorstandaarden.nl/api/adr/#resources">collections</a>, i.e. different sets of resources of the same type, are retrieved. Express the name of the collection to which the results belong in the singular form using the property <code>type</code>. For example:</p>
+<p>In case of a global query <code>/api/v1/_search</code>, results should be placed in the relevant geometric context, because results from different <a href="https://gitdocumentatie.logius.nl/publicatie/api/adr/#resources">collections</a>, i.e. different sets of resources of the same type, are retrieved. Express the name of the collection to which the results belong in the singular form using the property <code>type</code>. For example:</p>
 <pre aria-busy="false"><code class="hljs json">  <span class="hljs-comment">// POST /api/v1/_search:</span>
   {
     <span class="hljs-attr">"currentPage"</span>: <span class="hljs-number">1</span>,
