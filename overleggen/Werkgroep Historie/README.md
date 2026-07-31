@@ -33,6 +33,19 @@ Aanpalende thema's: bitemporaliteit en typen tijd, herleidbaarheid/herhaalbaarhe
 
 **Woensdag 2 september 2026, 13:00 - 15:30 uur**, fysiek bij Geonovum, Amersfoort.
 
+### Agenda
+
+| Tijd          | Onderwerp                                                                                                                                               | Wie            |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| 13:00 - 13:10 | Opening, mededelingen en korte terugblik op de kick-off; doel van deze middag                                                                           | Joost Farla    |
+| 13:10 - 13:55 | Uit Betrouwbare Bron: stand van zaken, het vergezicht en de spanning tussen stand en event (inclusief het langetermijnbeeld uit het promotieonderzoek). | Jeanot Bijpost |
+| 13:55 - 14:10 | Pauze                                                                                                                                                   |                |
+| 14:10 - 14:55 | Startdocument: ontdekkingen, terugkerende patronen en open vraagstukken.                                                                                | Rob van Dort   |
+| 14:55 - 15:25 | Prioritering en eerste stap: bijhouden of bevragen? Toetsing aan concrete casuïstiek.                                                                   | Plenair        |
+| 15:25 - 15:30 | Afspraken, vervolgstappen en afsluiting                                                                                                                 | Joost Farla    |
+
+**Doel van de sessie:** een gedeeld beeld van de invalshoeken en de terminologie, en aan het einde een besluit over waar de werkgroep als eerste op inzet.
+
 ## Deelnemers
 
 | Naam             | Organisatie                |
