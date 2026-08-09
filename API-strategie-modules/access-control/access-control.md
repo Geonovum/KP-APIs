@@ -29,6 +29,9 @@ With the registration and onboarding of organizations and users representing the
 
 When a user issues a client requests to a resource via a REST API, access must be verified at runtime. An **API Gateway** acts as the gatekeeper, checking whether the provided **access token** is valid. These tokens are typically issued through standards like **OAuth 2.0 / OpenID Connect** or **SAML 2.0**. Only after successful validation will the request be forwarded to the backend service, ensuring secure and consistent runtime access to protected resources.
 
+![GetTokenUseToken](media/GetTokenUseToken.png)
+<center>step 1 get token, step 2 use token in request, step 3 gateway verifies token, step 4 resource accessed</center>
+
 #### HTTPS (TLS) configuration
 
 When a client communicates with a REST API, the connection itself must be protected. **HTTPS** provides this by encrypting all traffic between client and server using **PKI certificates**. These certificates, issued by trusted authorities, verify the server’s identity and ensure that data cannot be intercepted or modified in transit. By enforcing HTTPS, APIs provide a baseline for both **confidentiality** and **integrity** of network communications, forming the foundation of secure runtime interactions.
