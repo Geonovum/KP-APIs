@@ -25,26 +25,20 @@ Aanpalende thema's: bitemporaliteit en typen tijd, herleidbaarheid/herhaalbaarhe
 
 ## Notulen
 
-| Datum       | Onderwerp | Verslag                                |
-| ----------- | --------- | -------------------------------------- |
-| 1 juli 2026 | Kick-off  | [2026-07-01.md](Notulen/2026-07-01.md) |
+| Datum            | Onderwerp                                                        | Verslag                                |
+| ---------------- | ---------------------------------------------------------------- | -------------------------------------- |
+| 1 juli 2026      | Kick-off                                                         | [2026-07-01.md](Notulen/2026-07-01.md) |
+| 2 september 2026 | Presentaties Uit Betrouwbare Bron / Rob van Dort en prioritering | [2026-09-02.md](Notulen/2026-09-02.md) |
 
 ## Volgende sessie
 
-**Woensdag 2 september 2026, 13:00 - 15:30 uur**, fysiek bij Geonovum, Amersfoort.
+**Woensdag 23 september 2026, 13:00 - 14:30 uur**, online. De uitnodiging volgt per e-mail.
+
+**Doel van de sessie:** vaststellen van functionele uitgangspunten en principes (voorstel van Joost Farla, geëxtraheerd uit de gesprekken, het UBB-document en het startdocument) die de basis vormen voor de technische vertaling naar koppelvlakken. Prioriteit ligt bij bijhouden (inclusief corrigeren), maar niet los van bevragen; de casuïstiek van LV WOZ en LV BGT dient als toetssteen.
 
 ### Agenda
 
-| Tijd          | Onderwerp                                                                                                                                               | Wie            |
-| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
-| 13:00 - 13:10 | Opening, mededelingen en korte terugblik op de kick-off; doel van deze middag                                                                           | Joost Farla    |
-| 13:10 - 13:55 | Uit Betrouwbare Bron: stand van zaken, het vergezicht en de spanning tussen stand en event (inclusief het langetermijnbeeld uit het promotieonderzoek). | Jeanot Bijpost |
-| 13:55 - 14:10 | Pauze                                                                                                                                                   |                |
-| 14:10 - 14:55 | Startdocument: ontdekkingen, terugkerende patronen en open vraagstukken.                                                                                | Rob van Dort   |
-| 14:55 - 15:25 | Prioritering en eerste stap: bijhouden of bevragen? Toetsing aan concrete casuïstiek.                                                                   | Plenair        |
-| 15:25 - 15:30 | Afspraken, vervolgstappen en afsluiting                                                                                                                 | Joost Farla    |
-
-**Doel van de sessie:** een gedeeld beeld van de invalshoeken en de terminologie, en aan het einde een besluit over waar de werkgroep als eerste op inzet.
+Agenda volgt.
 
 ## Deelnemers
 
@@ -56,6 +50,8 @@ Aanpalende thema's: bitemporaliteit en typen tijd, herleidbaarheid/herhaalbaarhe
 | Pieter Bresters  | Geonovum                   |
 | Rijk van Haaften | Kadaster                   |
 | Mark Strijker    | Kadaster                   |
+| Rik Sprenkels    | Kadaster (DSO)             |
+| Ruud Kathmann    | Waarderingskamer           |
 | Ivo Hendriks     | VNG / Uit Betrouwbare Bron |
 | Jeanot Bijpost   | VNG / Uit Betrouwbare Bron |
 | Mark Westbroek   | VNG / Common Ground        |
