@@ -25,24 +25,17 @@ Aanpalende thema's: bitemporaliteit en typen tijd, herleidbaarheid/herhaalbaarhe
 
 ## Notulen
 
-| Datum            | Onderwerp                                                        | Verslag                                |
-| ---------------- | ---------------------------------------------------------------- | -------------------------------------- |
-| 1 juli 2026      | Kick-off                                                         | [2026-07-01.md](Notulen/2026-07-01.md) |
-| 2 september 2026 | Presentaties Uit Betrouwbare Bron / Rob van Dort en prioritering | [2026-09-02.md](Notulen/2026-09-02.md) |
+| Datum             | Onderwerp                                                        | Verslag                                |
+| ----------------- | ---------------------------------------------------------------- | -------------------------------------- |
+| 1 juli 2026       | Kick-off                                                         | [2026-07-01.md](Notulen/2026-07-01.md) |
+| 2 september 2026  | Presentaties Uit Betrouwbare Bron / Rob van Dort en prioritering | [2026-09-02.md](Notulen/2026-09-02.md) |
+| 23 september 2026 | Begrippen en principes voor raadplegen                           | [2026-09-23.md](Notulen/2026-09-23.md) |
 
 ## Volgende sessie
 
-**Woensdag 23 september 2026, 13:00 - 14:30 uur**, online. De uitnodiging volgt per e-mail.
+**Woensdag 14 oktober 2026, 13:00 - 14:30 uur**, online.
 
-**Doel van de sessie:** vaststellen van functionele uitgangspunten en principes (voorstel van Joost Farla, geëxtraheerd uit de gesprekken, het UBB-document en het startdocument) die de basis vormen voor de technische vertaling naar koppelvlakken. Prioriteit ligt bij bijhouden (inclusief corrigeren), maar niet los van bevragen; de casuïstiek van LV WOZ en LV BGT dient als toetssteen.
-
-### Agenda
-
-| Tijd          | Onderwerp                     |
-| ------------- | ----------------------------- |
-| 13:00 - 13:15 | Begrippen                     |
-| 13:15 - 14:15 | Zes principes voor raadplegen |
-| 14:15 - 14:30 | Vervolgafspraken              |
+**Doel van de sessie:** vervolg op het vaststellen van functionele uitgangspunten en principes (voorstel van Joost Farla) die de basis vormen voor de technische vertaling naar koppelvlakken. Eerst de resterende principes voor raadplegen, daarna de bijhoudingskant (inclusief corrigeren).
 
 ## Deelnemers
 
