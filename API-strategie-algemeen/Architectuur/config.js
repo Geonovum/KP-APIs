@@ -13,7 +13,7 @@
 //-- . . . . . :  20220412 - EJR - Vastgestelde versie van 09-03-2022 gemaakt
 //-- . . . . . :  20220909 - MvdP - Concept versie opzet voor Modulaire opbouw
 //-- . . . . . :  20220909 - Ft - Versie ter vaststelling voor Modulaire opbouw
-//--
+//-- . . . . . :  20250925 - MvdP - Orkestratie en Security bijgewerkt
 //-------------------------------------------------------------------------------------
 
 //-- Postprocessors -------------------------------------------------------------------
@@ -42,11 +42,11 @@ function custGHPG(respecConfig)
 
 var respecConfig =
 {
-  specStatus: "GN-DEF",
+  specStatus: "GN-VV",
   specType: "HR",
   pubDomain: "api",
-  //publishDate: "2023-01-13",
-  previousPublishDate: "2023-12-21",
+  publishDate: "2025-09-25",
+  previousPublishDate: "2024-03-12",
   previousMaturity: "GN-DEF",
   edDraftURI: "https://geonovum.github.io/KP-APIs/API-strategie-algemeen/Architectuur/",
   editors:
