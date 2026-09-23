@@ -38,7 +38,11 @@ Aanpalende thema's: bitemporaliteit en typen tijd, herleidbaarheid/herhaalbaarhe
 
 ### Agenda
 
-Agenda volgt.
+| Tijd          | Onderwerp                     |
+| ------------- | ----------------------------- |
+| 13:00 - 13:15 | Begrippen                     |
+| 13:15 - 14:15 | Zes principes voor raadplegen |
+| 14:15 - 14:30 | Vervolgafspraken              |
 
 ## Deelnemers
 
