@@ -364,7 +364,8 @@ The [Forum Standaardisatie Comply-Or-Explain-List](https://www.forumstandaardisa
 
 The following guidelines should be used to select the appropriate standard for a specific context:
 
-1. In the use case a User/Resource owner gives consent to a third-party to access Data
+0. In the use case a citizen wants to login to a government service provider the service provider MUST provide a login service compatible with NL GOV Assurance Profile for OAuth 2.0
+1. 1. In the use case a User/Resource owner gives consent to a third-party to access Data
    * YES → NL GOV Assurance Profile for OAuth 2.0
    * NO → go to 2
 2. In the use case, data exchange occurs with General Digital Infrastructure (GDI) central systems (e.g., base registries), cross-sectoral between organizations, or requires mutual (two-way) authentication.
