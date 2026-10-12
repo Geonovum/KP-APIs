@@ -269,7 +269,7 @@ SAML is a standard for securely communicating assertions about an authenticated 
 
 Although technically an authorization method, OAuth [[OAuth2]] is used as well for authenticating End-Users themselves and providing the Client with an Access Token upon successful End-User (and Client) authentication. This Access Token can be used to make authorized API requests. Using OAuth is appropriate when authorization is not dependent on an identifiable subject, the subject is different from the End-User or the Resource Server does not require authentication of the End-User itself.
 
-The NL GOV Assurance profile for OAuth 2.0 is included on the list of required standards by Forum Standaardisatie. The latest version of the profile can be found at <https://gitdocumentatie.logius.nl/publicatie/api/oauth/>.
+The NLgov Assurance profile for OAuth 2.0 is included on the list of required standards by Forum Standaardisatie. The latest version of the profile can be found at <https://gitdocumentatie.logius.nl/publicatie/api/oauth/>.
 
 #### OpenID Connect
 
@@ -303,7 +303,7 @@ Note: Client Authentication is applicable to the Client accessing the API, the C
 
 It is RECOMMENDED to use asymmetric (public-key based) methods for client authentication such as mTLS [RFC8705](https://www.rfc-editor.org/info/rfc8705) or "private_key_jwt" [OpenID](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication).
 
-[The NL GOV Assurance profile for OAuth 2.0](https://gitdocumentatie.logius.nl/publicatie/api/oauth/) REQUIRES the use of private_key_jwt for full clients, native clients with dynamically registered keys, and direct access clients.
+[The NLgov Assurance profile for OAuth 2.0](https://gitdocumentatie.logius.nl/publicatie/api/oauth/) REQUIRES the use of private_key_jwt for full clients, native clients with dynamically registered keys, and direct access clients.
 
 The following methods can be used for Client authentication.
 
@@ -325,7 +325,7 @@ This authentication method may be used with Clients that are able to securely st
 
 In contexts where Dutch (semi) governmental organizations are involved, the certificate used for signing the Private key JWT's MUST be a PKIOverheid certificate. In case the certificate is included in the JWT header, it includes identification of the client and registration of the public key may not be necessary.
 
-[The NL GOV Assurance profile for OAuth 2.0](https://gitdocumentatie.logius.nl/publicatie/api/oauth/) REQUIRES the use of private_key_jwt for full clients, native clients with dynamically registered keys, and direct access clients as mentioned in the profile.
+[The NLgov Assurance profile for OAuth 2.0](https://gitdocumentatie.logius.nl/publicatie/api/oauth/) REQUIRES the use of private_key_jwt for full clients, native clients with dynamically registered keys, and direct access clients as mentioned in the profile.
 
 #### Client secrets
 
@@ -351,21 +351,21 @@ Note that existing Client Credentials, such as a PKIoverheid X.509 certificate, 
 
 Usage of the Client Credential method with OAuth is RECOMMENDED over direct authorization by the API Server (Resource Server), even if the authorization decision can be based directly on Client Authentication. This externalizes the authorization decision from the API implementation, allowing for easier modifications and management of both the decision logic as well as client authentication methods.
 
-The [NL GOV Assurance profile for OAuth 2.0](https://gitdocumentatie.logius.nl/publicatie/api/oauth/) supports Client Credentials. The [Forum Standaardisatie Comply-Or-Explain-List](https://www.forumstandaardisatie.nl/open-standaarden/nl-gov-assurance-profile-oauth-20) states when this profile has to be used: 
+The [NLgov Assurance profile for OAuth 2.0](https://gitdocumentatie.logius.nl/publicatie/api/oauth/) supports Client Credentials. The [Forum Standaardisatie Comply-Or-Explain-List](https://www.forumstandaardisatie.nl/open-standaarden/nl-gov-assurance-profile-oauth-20) states when this profile has to be used: 
 
-_The NL GOV Assurance Profile for OAuth 2.0 must be applied to applications where users or resource owners implicitly or explicitly consent to a third-party service to access data via a REST API for which they have access rights._
+_The NLgov Assurance Profile for OAuth 2.0 must be applied to applications where users or resource owners implicitly or explicitly consent to a third-party service to access data via a REST API for which they have access rights._
 
-Client credentials can be used in this specific context for system2system interactions next to Authorization Code Flow, see [NL GOV Assurance profile for OAuth 2.0 - Client Credentials - examples](https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.1.0-rc.1/#use-case-client-credentials-flow)
+Client credentials can be used in this specific context for system2system interactions next to Authorization Code Flow, see [NLgov Assurance profile for OAuth 2.0 - Client Credentials - examples](https://gitdocumentatie.logius.nl/publicatie/api/oauth/v1.1.0-rc.1/#use-case-client-credentials-flow)
 
-### Guidance for using NL GOV Assurance Profile for OAuth 2.0 vs Federated Service Connectivity (FSC)
+### Guidance for using NLgov Assurance Profile for OAuth 2.0 vs Federated Service Connectivity (FSC)
 
-Both [NL GOV Assurance Profile for OAuth 2.0](https://gitdocumentatie.logius.nl/publicatie/api/oauth/) and [Federated Service Connectivity (FSC)](https://fsc-standaard.nl/) are relevant standards for access control.
+Both [NLgov Assurance Profile for OAuth 2.0](https://gitdocumentatie.logius.nl/publicatie/api/oauth/) and [Federated Service Connectivity (FSC)](https://fsc-standaard.nl/) are relevant standards for access control.
 The [Forum Standaardisatie Comply-Or-Explain-List](https://www.forumstandaardisatie.nl/open-standaarden) states when a specific standard must be used. 
 
 The following guidelines should be used to select the appropriate standard for a specific context:
 
 1. In the use case a User/Resource owner gives consent to a third-party to access Data
-   * YES → NL GOV Assurance Profile for OAuth 2.0
+   * YES → NLgov Assurance Profile for OAuth 2.0
    * NO → go to 2
 2. In the use case, data exchange occurs with General Digital Infrastructure (GDI) central systems (e.g., base registries), cross-sectoral between organizations, or requires mutual (two-way) authentication.
    * YES → Digikoppeling REST-API profile (using FSC)
@@ -396,7 +396,7 @@ In case the proper headers are not sent, then there are no authentication detail
   <p>This is in line with the way the OAuth standard appears on the comply or explain list of Forum Standaardisatie.</p>
 </div>
 
-See also [The NL GOV Assurance profile for OAuth 2.0](https://gitdocumentatie.logius.nl/publicatie/api/oauth/) for further explanation of the application of OAuth.
+See also [The NLgov Assurance profile for OAuth 2.0](https://gitdocumentatie.logius.nl/publicatie/api/oauth/) for further explanation of the application of OAuth.
 
 The [Digikoppeling standard](https://gitdocumentatie.logius.nl/publicatie/dk/actueel/) currently has a [RESTful API profile](https://gitdocumentatie.logius.nl/publicatie/dk/restapi/) that specifies how to use PKIOverheid x.509 certificates for authorization. Digikoppeling now also includes the [federated service connectivity (FSC) standard](https://gitdocumentatie.logius.nl/publicatie/dk/restapi/#federated-service-connectivity-standaard-fsc) that further profiles the use of x509.
 
