@@ -54,7 +54,6 @@ Aanpalende thema's: bitemporaliteit en typen tijd, herleidbaarheid/herhaalbaarhe
 | Ivo Hendriks     | VNG / Uit Betrouwbare Bron |
 | Jeanot Bijpost   | VNG / Uit Betrouwbare Bron |
 | Mark Westbroek   | VNG / Common Ground        |
-| Niels Bakker     | Sigmax                     |
 | Rob van Dort     | Zelfstandig                |
 
 ## Gerelateerde initiatieven en standaarden
