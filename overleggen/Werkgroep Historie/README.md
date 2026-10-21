@@ -30,12 +30,13 @@ Aanpalende thema's: bitemporaliteit en typen tijd, herleidbaarheid/herhaalbaarhe
 | 1 juli 2026       | Kick-off                                                         | [2026-07-01.md](Notulen/2026-07-01.md) |
 | 2 september 2026  | Presentaties Uit Betrouwbare Bron / Rob van Dort en prioritering | [2026-09-02.md](Notulen/2026-09-02.md) |
 | 23 september 2026 | Begrippen en principes voor raadplegen                           | [2026-09-23.md](Notulen/2026-09-23.md) |
+| 14 oktober 2026   | Beschikbaarheid en principes voor raadplegen (vervolg)           | [2026-10-14.md](Notulen/2026-10-14.md) |
 
 ## Volgende sessie
 
-**Woensdag 14 oktober 2026, 13:00 - 14:30 uur**, online.
+**Donderdag 5 november 2026, 10:30 - 12:00 uur**, in Utrecht (locatie volgt), voorafgaand aan de bijeenkomst van het Kennisplatform API's die middag.
 
-**Doel van de sessie:** vervolg op het vaststellen van functionele uitgangspunten en principes (voorstel van Joost Farla) die de basis vormen voor de technische vertaling naar koppelvlakken. Eerst de resterende principes voor raadplegen, daarna de bijhoudingskant (inclusief corrigeren).
+**Doel van de sessie:** start maken met functionele principes voor de bijhoudingskant.
 
 ## Deelnemers
 
@@ -47,6 +48,7 @@ Aanpalende thema's: bitemporaliteit en typen tijd, herleidbaarheid/herhaalbaarhe
 | Pieter Bresters  | Geonovum                   |
 | Rijk van Haaften | Kadaster                   |
 | Mark Strijker    | Kadaster                   |
+| Pieter Dijkstra  | Kadaster                   |
 | Rik Sprenkels    | Kadaster (DSO)             |
 | Ruud Kathmann    | Waarderingskamer           |
 | Ivo Hendriks     | VNG / Uit Betrouwbare Bron |
