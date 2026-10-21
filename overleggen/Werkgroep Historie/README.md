@@ -48,7 +48,6 @@ Aanpalende thema's: bitemporaliteit en typen tijd, herleidbaarheid/herhaalbaarhe
 | Pieter Bresters  | Geonovum                   |
 | Rijk van Haaften | Kadaster                   |
 | Mark Strijker    | Kadaster                   |
-| Pieter Dijkstra  | Kadaster                   |
 | Rik Sprenkels    | Kadaster (DSO)             |
 | Ruud Kathmann    | Waarderingskamer           |
 | Ivo Hendriks     | VNG / Uit Betrouwbare Bron |
