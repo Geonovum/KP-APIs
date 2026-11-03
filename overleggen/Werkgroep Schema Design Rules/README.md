@@ -60,14 +60,14 @@ Zelfde werkwijze als de API Design Rules: een issue per onderwerp met een concre
 
 ## Deelnemers
 
-| Naam              | Organisatie                        |
-| ----------------- | ---------------------------------- |
-| Dimitri van Hees  | developer.overheid.nl (voorzitter) |
-| Yashar Robert     | Gemeente Amsterdam                 |
-| Henri Korver      | VNG                                |
-| Michiel Tribbe    | Federatieve Toegangsverlening      |
-| Tim van der Lippe | Logius                             |
-| Joost Farla       | Geonovum                           |
+| Naam              | Organisatie           |
+| ----------------- | --------------------- |
+| Dimitri van Hees  | Geonovum (voorzitter) |
+| Yashar Robert     | Gemeente Amsterdam    |
+| Henri Korver      | VNG                   |
+| Michiel Trimpe    | VNG                   |
+| Tim van der Lippe | Logius                |
+| Joost Farla       | Geonovum              |
 
 ## Toetsset
 
