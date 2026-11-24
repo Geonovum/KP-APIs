@@ -31,12 +31,13 @@ Aanpalende thema's: bitemporaliteit en typen tijd, herleidbaarheid/herhaalbaarhe
 | 2 september 2026  | Presentaties Uit Betrouwbare Bron / Rob van Dort en prioritering | [2026-09-02.md](Notulen/2026-09-02.md) |
 | 23 september 2026 | Begrippen en principes voor raadplegen                           | [2026-09-23.md](Notulen/2026-09-23.md) |
 | 14 oktober 2026   | Beschikbaarheid en principes voor raadplegen (vervolg)           | [2026-10-14.md](Notulen/2026-10-14.md) |
+| 5 november 2026   | Functionele bijhoudings-API's en tijdreizen in het DSO-profiel   | [2026-11-05.md](Notulen/2026-11-05.md) |
 
 ## Volgende sessie
 
-**Donderdag 5 november 2026, 10:30 - 12:00 uur**, in Utrecht (locatie volgt), voorafgaand aan de bijeenkomst van het Kennisplatform API's die middag.
+**Woensdag 25 november 2026, 13:00 - 14:30 uur**, online.
 
-**Doel van de sessie:** start maken met functionele principes voor de bijhoudingskant.
+**Doel van de sessie:** invulling van het architectuurhoofdstuk.
 
 ## Deelnemers
 
