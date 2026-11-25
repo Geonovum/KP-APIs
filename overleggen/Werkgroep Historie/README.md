@@ -32,12 +32,13 @@ Aanpalende thema's: bitemporaliteit en typen tijd, herleidbaarheid/herhaalbaarhe
 | 23 september 2026 | Begrippen en principes voor raadplegen                           | [2026-09-23.md](Notulen/2026-09-23.md) |
 | 14 oktober 2026   | Beschikbaarheid en principes voor raadplegen (vervolg)           | [2026-10-14.md](Notulen/2026-10-14.md) |
 | 5 november 2026   | Functionele bijhoudings-API's en tijdreizen in het DSO-profiel   | [2026-11-05.md](Notulen/2026-11-05.md) |
+| 25 november 2026  | Bijhouden in de module Architectuur                              | [2026-11-25.md](Notulen/2026-11-25.md) |
 
 ## Volgende sessie
 
-**Woensdag 25 november 2026, 13:00 - 14:30 uur**, online.
+**Woensdag 16 december 2026, 12:30 - 14:00 uur**, online.
 
-**Doel van de sessie:** invulling van het architectuurhoofdstuk.
+**Doel van de sessie:** tweede deel van de openstaande punten over bijhouden in de module Architectuur: de vorm van functionele API's, generieke aspecten voor bijhouding, terugmelden, businesstransacties en correcties.
 
 ## Deelnemers
 
